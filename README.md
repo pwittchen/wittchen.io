@@ -1,8 +1,6 @@
 blog
 ====
-a source code of my personal website and blog
-
-static pages for the blog are generated with [hexo](https://hexo.io/) framework
+a source code of my personal website and blog managed by [hexo](https://hexo.io/) framework
 
 contents
 --------
