@@ -2,7 +2,7 @@ blog
 ====
 a source code of my personal website and blog
 
-output static pages for the blog are generated with [hexo](https://hexo.io/) framework
+static pages for the blog are generated with [hexo](https://hexo.io/) framework
 
 running
 -------
