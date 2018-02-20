@@ -35,6 +35,14 @@ ftpsync
 
 please note, you need to have remote FTP settings configured inside `config.json` file first
 
+after updating your FTP settings type:
+
+```
+git update-index --assume-unchanged config.json
+```
+
+now, changes in `config.json` file won't be commited
+
 references
 ----------
 - [hexo.io](https://hexo.io/)
