@@ -35,6 +35,9 @@ ftpsync
 
 please note, you need to have remote FTP settings configured inside `config.json` file first
 
+protecting secrets
+------------------
+
 after updating your FTP settings type:
 
 ```
