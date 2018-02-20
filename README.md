@@ -62,7 +62,7 @@ npm install
 gulp
 ```
 
-gulp is in `watching` mode and when `*.css` file is generated we can manually stop it
+gulp is in watching mode and when `*.css` file is generated we can manually stop it
 
 of course we need to have `gulp` installed
 
