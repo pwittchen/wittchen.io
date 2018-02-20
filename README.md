@@ -1,4 +1,4 @@
-# blog.wittchen.biz.pl
+# blog
 a source code of my personal website and blog
 
 References
