@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: pwittchen 
+theme: custom 
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,9 +81,12 @@ deploy:
 
 menu:
     Blog: /
-    Archive: /archives
+    About: /about
     Code: https://github.com/pwittchen
+    Projects: /projects
+    Archive: /archives
     Rss: /feed.xml
+    Contact: /contact
 
 startyear: 2013
 
