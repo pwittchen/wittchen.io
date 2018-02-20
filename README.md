@@ -66,6 +66,8 @@ gulp is in watching mode and when `*.css` file is generated we can manually stop
 
 of course we need to have `gulp` installed
 
+this work is required **only when we are changing style of the theme**
+
 writing
 -------
 
