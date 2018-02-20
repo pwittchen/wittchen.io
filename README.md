@@ -24,6 +24,17 @@ git commit
 git push
 ```
 
+protecting secrets
+------------------
+
+ignore `config.json` file locally:
+
+```
+git update-index --assume-unchanged config.json
+```
+
+now, changes in `config.json` file with FTP server credentials won't be commited
+
 deployment
 ----------
 
@@ -34,17 +45,6 @@ ftpsync
 ```
 
 please note, you need to have remote FTP settings configured inside `config.json` file first
-
-protecting secrets
-------------------
-
-after updating your FTP settings type:
-
-```
-git update-index --assume-unchanged config.json
-```
-
-now, changes in `config.json` file won't be commited
 
 references
 ----------
