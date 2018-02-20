@@ -55,6 +55,27 @@ theme
 
 this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo)
 
+writing
+-------
+
+to generate new post, type:
+
+```
+hexo new post <title>
+```
+
+to generate new draft, type:
+
+```
+hexo new draft <title>
+```
+
+to publish draft, type:
+
+```
+hexo publish <title>
+```
+
 references
 ----------
 - [hexo.io](https://hexo.io/)
