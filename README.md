@@ -13,6 +13,8 @@ npm install
 hexo server
 ```
 
+now, access website at: http://localhost:4000/.
+
 references
 ----------
 - [hexo.io](https://hexo.io/)
