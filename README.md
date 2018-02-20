@@ -2,8 +2,8 @@ blog
 ====
 a source code of my personal website and blog
 
-how to run it?
---------------
+running
+-------
 
 ```bash
 npm install hexo-cli -g
@@ -13,7 +13,18 @@ npm install
 hexo server
 ```
 
-now, access website at: http://localhost:4000/.
+now, access website at: `http://localhost:4000/`.
+
+deployment
+----------
+
+```
+npm install ftpsync
+hexo generate
+ftpsync
+```
+
+please note, you need to have remote FTP settings configured inside `config.json` file first
 
 references
 ----------
