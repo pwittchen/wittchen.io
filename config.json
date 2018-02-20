@@ -1,11 +1,11 @@
 {
   "local":"./public/",
-  "remote":"/",
-  "host":"",
+  "remote":"/domains/wittchen.biz.pl/public_html/blog",
+  "host":"wittchen.biz.pl",
   "port":21,
   "user":"",
   "pass":"",
-  "connections":"2",
+  "connections":"1",
   "ignore":[
     ".htaccess"
   ]
