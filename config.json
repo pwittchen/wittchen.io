@@ -1,6 +1,6 @@
 {
   "local":"./public/",
-  "remote":"/domains/wittchen.biz.pl/public_html/blog",
+  "remote":"/domains/wittchen.biz.pl/public_html/hexo",
   "host":"wittchen.biz.pl",
   "port":21,
   "user":"",
