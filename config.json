@@ -1,0 +1,12 @@
+{
+  "local":"./public/",
+  "remote":"/",
+  "host":"",
+  "port":21,
+  "user":"",
+  "pass":"",
+  "connections":"2",
+  "ignore":[
+    ".htaccess"
+  ]
+}
