@@ -93,4 +93,9 @@ references
 ----------
 - [hexo.io](https://hexo.io/)
 - [hexo-theme-apollo](https://github.com/pinggod/hexo-theme-apollo)
+- [jade template engine](http://jade-lang.com/)
 - [node-ftpsync](https://github.com/evanplaice/node-ftpsync)
+- [node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+- [gulp](https://gulpjs.com/)
+- [sass](https://sass-lang.com/)
