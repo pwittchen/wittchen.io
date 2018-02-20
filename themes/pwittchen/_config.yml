@@ -1,17 +1,17 @@
-menu:
-    Blog: /
-    Archive: /archives/
-    GitHub: https://github.com/pwittchen
-    Rss: /atom.xml
+#menu:
+#    Blog: /
+#    Archive: /archives/
+#    GitHub: https://github.com/pwittchen
+#    Rss: /atom.xml
 
 # Comment
 # e.g disqus: seansun
-disqus:
-duoshuo:
+# disqus:
+# duoshuo:
 
 # Analytics
 # google-analytics:
-ga: 
+# ga: 
 
 # Copyright Infomation
-startyear: 2013
+# startyear: 2013

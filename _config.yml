@@ -78,3 +78,17 @@ theme: pwittchen
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+menu:
+    Blog: /
+    Archive: /archives
+    Code: https://github.com/pwittchen
+    Rss: /feed.xml
+
+startyear: 2013
+
+feed:
+  type: atom
+  path: feed.xml
+  limit: 20
+  content_limit: 140 

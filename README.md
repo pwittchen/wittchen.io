@@ -46,6 +46,8 @@ ftpsync
 
 please note, you need to have remote FTP settings configured inside `config.json` file first
 
+I don't use `hexo deploy` command because it forces me to keep secrets in `_config.yml` file and I don't want to do it
+
 theme
 -----
 
