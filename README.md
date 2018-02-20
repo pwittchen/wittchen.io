@@ -5,7 +5,7 @@ a source code of my personal website and blog
 running
 -------
 
-```bash
+```
 npm install hexo-cli -g
 git clone https://github.com/pwittchen/blog.git
 cd blog
@@ -19,7 +19,7 @@ deployment
 ----------
 
 ```
-npm install ftpsync
+npm install ftpsync -g
 hexo generate
 ftpsync
 ```
