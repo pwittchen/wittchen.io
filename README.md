@@ -55,6 +55,17 @@ theme
 
 this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo)
 
+in order to generate `*.css` file from `*scss` file, go to `themes/custom/` and type:
+
+```
+npm install
+gulp
+```
+
+gulp is in `watching` mode and when `*.css` file is generated we can manually stop it
+
+of course we need to have `gulp` installed
+
 writing
 -------
 
