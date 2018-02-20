@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: Piotr Witttchen
+subtitle: personal website and blog
+description: personal website and blog
+author: Piotr Wittchen
+language: en
+timezone: Europe/Warsaw
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://hexo.wittchen.biz.pl
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
