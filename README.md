@@ -46,6 +46,11 @@ ftpsync
 
 please note, you need to have remote FTP settings configured inside `config.json` file first
 
+theme
+-----
+
+this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo)
+
 references
 ----------
 - [hexo.io](https://hexo.io/)
