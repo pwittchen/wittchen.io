@@ -15,6 +15,15 @@ hexo server
 
 now, access website at: `http://localhost:4000/`
 
+update
+------
+
+```
+git add -p
+git commit
+git push
+```
+
 deployment
 ----------
 
