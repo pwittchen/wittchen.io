@@ -4,6 +4,16 @@ a source code of my personal website and blog
 
 static pages for the blog are generated with [hexo](https://hexo.io/) framework
 
+contents
+--------
+- [running](#running)
+- [update](#running)
+- [secrets](#secrets)
+- [deployment](#deployment)
+- [theme](#theme)
+- [writing](#writing)
+- [references](#references)
+
 running
 -------
 
@@ -26,8 +36,8 @@ git commit
 git push
 ```
 
-protecting secrets
-------------------
+secrets
+-------
 
 ignore `config.json` file locally:
 
