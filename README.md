@@ -8,6 +8,7 @@ contents
 - [running](#running)
 - [update](#running)
 - [secrets](#secrets)
+- [generating](#generating)
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
@@ -57,6 +58,15 @@ to expose secrets again, type:
 make expose-secrets
 ```
 
+generating
+------------------
+
+to generate public directory with static files for the website, type:
+
+```
+make generate
+```
+
 deployment
 ----------
 
@@ -69,7 +79,7 @@ theme
 
 this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo)
 
-to generate `*.css` file from `*.scss`, type:
+to generate `*.css` file from `*.scss` and rebuild theme, type:
 
 ```
 make theme
