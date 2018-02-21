@@ -96,4 +96,7 @@ feed:
   type: atom
   path: feed.xml
   limit: 20
-  content_limit: 140 
+  content_limit: 140
+
+# google analytics tracking id
+ga: UA-2194664-7
