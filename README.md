@@ -116,10 +116,11 @@ make discard
 
 references
 ----------
-- [hexo.io](https://hexo.io/)
-- [hexo-theme-apollo](https://github.com/pinggod/hexo-theme-apollo)
-- [jade template engine](http://jade-lang.com/)
-- [node-ftpsync](https://github.com/evanplaice/node-ftpsync)
+- [hexo](https://hexo.io/)
+- [apollo](https://github.com/pinggod/hexo-theme-apollo)
+- [jade](http://jade-lang.com/)
+- [ftpsync](https://github.com/evanplaice/node-ftpsync)
+- [browsersync](https://browsersync.io/)
 - [node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [gulp](https://gulpjs.com/)
