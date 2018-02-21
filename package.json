@@ -1,6 +1,6 @@
 {
   "name": "my personal website and blog built with hexo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "hexo": {
     "version": "3.5.0"
