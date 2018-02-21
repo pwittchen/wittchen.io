@@ -20,5 +20,7 @@ deploy:
 	echo "starting deployment..."
 	hexo generate && ftpsync
 	echo "deployment is done"
+discard:
+	git checkout -- source
 clean:
 	rm -rf public
