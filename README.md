@@ -74,9 +74,7 @@ in order to generate `*.css` file from `*scss` file, go to `themes/custom/` and 
 make theme
 ```
 
-gulp is in watching mode and when `*.css` file is generated we can manually stop it
-
-of course we need to have `gulp` installed
+gulp is in watching mode and when `*.css` file is generated we can manually stop it by typing `Ctrl+C`
 
 this work is required **only when we are changing style of the theme**
 
