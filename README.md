@@ -4,6 +4,7 @@ a source code of my personal website and blog managed by [hexo](https://hexo.io/
 
 contents
 --------
+- [installing](#installing)
 - [running](#running)
 - [update](#running)
 - [secrets](#secrets)
@@ -12,13 +13,19 @@ contents
 - [writing](#writing)
 - [references](#references)
 
-running
--------
+installing
+----------
 
 ```
 git clone https://github.com/pwittchen/blog.git
 cd blog/
 make install
+```
+
+running
+-------
+
+```
 make run
 ```
 
