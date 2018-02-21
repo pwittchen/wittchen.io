@@ -13,6 +13,7 @@ expose-secrets:
 run:
 	echo "starting server..."
 	hexo server
+server: run
 generate:
 	hexo generate
 deploy:
