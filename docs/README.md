@@ -13,7 +13,6 @@ contents
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
-- [docs](#docs)
 - [references](#references)
 
 installing
@@ -113,27 +112,6 @@ to discard uncommited changes and files in posts, drafts and pages, type:
 
 ```
 make discard
-```
-
-docs
-----
-
-to generate docs, type:
-
-```
-make docs
-```
-
-to update docs, type:
-
-```
-make update-docs
-```
-
-to run server with docs, type:
-
-```
-make run-docs
 ```
 
 references

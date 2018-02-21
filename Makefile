@@ -23,5 +23,13 @@ deploy:
 discard:
 	git checkout -- source
 	git clean -f source
+docs:
+	mkdir docs
+	docsify init docs
+update-docs:
+	cp README.md docs
+run-docs:
+	docsify serve docs
 clean:
 	rm -rf public
+	rm -rf docs

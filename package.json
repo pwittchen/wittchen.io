@@ -1,12 +1,12 @@
 {
-  "name": "my personal website and blog built with hexo",
+  "name": "blog",
   "version": "0.0.1",
   "private": true,
   "hexo": {
     "version": "3.5.0"
   },
   "scripts": {
-    "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && sudo npm i ftpsync -g",
+    "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && sudo npm i ftpsync -g && sudo npm i docsify-cli -g",
     "protect-secrets": "git update-index --assume-unchanged config.json",
     "expose-secrets": "git update-index --no-assume-unchanged config.json"
   },
