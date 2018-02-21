@@ -19,3 +19,5 @@ deploy:
 	echo "starting deployment..."
 	hexo generate && ftpsync
 	echo "deployment is done"
+clean:
+	rm -rf public
