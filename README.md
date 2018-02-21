@@ -8,7 +8,6 @@ contents
 - [running](#running)
 - [update](#running)
 - [secrets](#secrets)
-- [generating](#generating)
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
@@ -59,15 +58,6 @@ make expose-secrets
 ```
 
 please note: `protect-secrets` rule is invoked during `install` rule
-
-generating
-------------------
-
-to generate `public/` directory with static files for the website, type:
-
-```
-make generate
-```
 
 deployment
 ----------
