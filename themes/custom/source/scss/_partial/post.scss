@@ -6,12 +6,12 @@
     .post-title {
         margin: 0.65em 0;
         color: #2c3e50;
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     .post-info {
         color: #7f8c8d;
-        margin: 1.2em 0;
+        margin: 1em 0;
         span {
             margin-left: 0.5rem;
         }
@@ -31,7 +31,7 @@
         position: relative;
         margin: 1em 0;
         a:before {
-            content: "#";
+            content: "»";
             color: #42b983;
             position: absolute;
             left: -0.7em;
@@ -47,11 +47,11 @@
     }
 
     h2, h3 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     h4, h5, h6 {
-        font-size: 18px;
+        font-size: 16px;
     }
     a {
         color: #42b983;
@@ -116,9 +116,9 @@
 
 code,
 pre {
-    font-size: 0.8em;
+    font-size: 0.9em;
     background-color: #f8f8f8;
-    font-family: 'Roboto Mono', Monaco, courier, monospace;
+    font-family: monospace;
 }
 
 .highlight {

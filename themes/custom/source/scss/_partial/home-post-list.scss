@@ -1,10 +1,9 @@
 .home.post-list {
     margin: 2em 0;
     .post-list-item {
-        padding: 1em 0 2em;
-        border-bottom: 1px solid #ddd;
+        padding: 0;
         &:last-child {
-            border-bottom: 0px;
+            border-bottom: 0;
         }
     }
     .post-content{
