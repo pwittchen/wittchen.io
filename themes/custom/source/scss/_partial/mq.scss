@@ -2,17 +2,17 @@ main.container {
     margin: 2em 10px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
     .wrap {
-        width: 700px;
+        width: 900px;
         margin: 0 auto;
     }
     header {
-        padding: 20px 100px;
+        padding: 20px 0;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
     .wrap {
         width: 100%;
     }

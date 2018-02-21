@@ -3,11 +3,16 @@ header {
 
     .logo-link {
         float: left;
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;        
     }
     
     .nav {
-        float: right;
-        left: 80px;
+        left: 0;
+        padding-top: 25px;
+        text-align: center;
     }
 
     .logo-link img {
