@@ -61,7 +61,7 @@ make expose-secrets
 generating
 ------------------
 
-to generate public directory with static files for the website, type:
+to generate `public/` directory with static files for the website, type:
 
 ```
 make generate
