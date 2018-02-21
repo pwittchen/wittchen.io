@@ -16,12 +16,13 @@ running
 -------
 
 ```
-npm install hexo-cli -g
 git clone https://github.com/pwittchen/blog.git
-cd blog
-npm install
-hexo server
+cd blog/
+make install
+make run
 ```
+
+we're using `--unsage-perm` flag in order to preinstall `hexo-cli` and `ftpsync`
 
 now, access website at: `http://localhost:4000/`
 
@@ -40,18 +41,22 @@ secrets
 ignore `config.json` file locally:
 
 ```
-git update-index --assume-unchanged config.json
+make protect-secrets
 ```
 
 now, changes in `config.json` file with FTP server credentials won't be commited
+
+to expose secrets again, type:
+
+```
+make expose-secrets
+```
 
 deployment
 ----------
 
 ```
-npm install ftpsync -g
-hexo generate
-ftpsync
+make deploy
 ```
 
 please note, you need to have remote FTP settings configured inside `config.json` file first
@@ -66,8 +71,7 @@ this blog has customized hexo theme based on [apollo](https://github.com/pinggod
 in order to generate `*.css` file from `*scss` file, go to `themes/custom/` and type:
 
 ```
-npm install
-gulp
+make theme
 ```
 
 gulp is in watching mode and when `*.css` file is generated we can manually stop it
