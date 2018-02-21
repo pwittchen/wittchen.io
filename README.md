@@ -121,7 +121,7 @@ references
 - [jade](http://jade-lang.com/)
 - [ftpsync](https://github.com/evanplaice/node-ftpsync)
 - [browsersync](https://browsersync.io/)
-- [node.js](https://nodejs.org/)
+- [node](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [gulp](https://gulpjs.com/)
 - [sass](https://sass-lang.com/)
