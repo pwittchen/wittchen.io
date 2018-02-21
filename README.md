@@ -98,6 +98,18 @@ to publish draft, type:
 hexo publish <title>
 ```
 
+to create new page, type:
+
+```
+hexo new page <title>
+```
+
+to discard uncommited changes on posts, drafts and pages, type:
+
+```
+make discard
+```
+
 references
 ----------
 - [hexo.io](https://hexo.io/)
