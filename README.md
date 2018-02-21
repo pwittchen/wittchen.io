@@ -58,6 +58,8 @@ to expose secrets again, type:
 make expose-secrets
 ```
 
+please note: `protect-secrets` rule is invoked during `install` rule
+
 generating
 ------------------
 
