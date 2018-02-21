@@ -22,5 +22,6 @@ deploy:
 	echo "deployment is done"
 discard:
 	git checkout -- source
+	git clean -f source
 clean:
 	rm -rf public

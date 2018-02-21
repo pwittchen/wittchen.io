@@ -108,7 +108,7 @@ to create new page, type:
 hexo new page <title>
 ```
 
-to discard uncommited changes on posts, drafts and pages, type:
+to discard uncommited changes and files in posts, drafts and pages, type:
 
 ```
 make discard
