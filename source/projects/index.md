@@ -23,4 +23,4 @@ Browse my side and open-source projects. List below doesn't contain commercial p
 * [ydownloader](https://github.com/pwittchen/ydownloader)
 * [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 
-and more... Visit my [GitHub profile](https://github.com/pwittchen).
+and more... You can even check [source code of this website](https://github.com/pwittchen/blog). Visit my [GitHub profile](https://github.com/pwittchen) to be up to date.
