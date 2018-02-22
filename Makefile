@@ -1,14 +1,14 @@
 all: clean run
-install: protect-secrets
+install: protect_secrets
 	sudo npm install --unsafe-perm
 	echo "install finished"
 theme:
 	cd themes/custom && sudo npm install && gulp
 	echo "theme build finished"
-protect-secrets:
+protect_secrets:
 	npm run protect-secrets
 	echo "secrets are safe"
-expose-secrets:
+expose_secrets:
 	npm run expose-secrets
 	echo "secrets ARE NOT SAFE"
 run:
@@ -27,11 +27,11 @@ discard:
 docs:
 	mkdir docs
 	docsify init docs
-update-docs:
+update_docs:
 	cp README.md docs
-clean-docs:
+clean_docs:
 	rm -rf docs
-run-docs:
+run_docs:
 	docsify serve docs
 clean:
 	rm -rf public

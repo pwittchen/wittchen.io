@@ -51,16 +51,16 @@ we don't want to commit FTP credentials to any remote repo
 to protect them, type:
 
 ```
-make protect-secrets
+make protect_secrets
 ```
 
 to expose secrets again, type:
 
 ```
-make expose-secrets
+make expose_secrets
 ```
 
-please note: `protect-secrets` rule is invoked during `install` rule
+please note: `protect_secrets` rule is invoked during `install` rule
 
 deployment
 ----------
@@ -127,19 +127,19 @@ make docs
 to update docs, type:
 
 ```
-make update-docs
+make update_docs
 ```
 
 to run server with docs, type:
 
 ```
-make run-docs
+make run_docs
 ```
 
 to clean docs, type:
 
 ```
-make clean-docs
+make clean_docs
 ```
 
 references
