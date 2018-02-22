@@ -1,4 +1,4 @@
-all: clean run
+all: clean generate update_docs run
 install: protect_secrets
 	sudo npm install --unsafe-perm
 	echo "install finished"
