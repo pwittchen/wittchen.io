@@ -13,6 +13,7 @@ contents
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
+- [docs](#docs)
 - [references](#references)
 
 installing
@@ -50,16 +51,16 @@ we don't want to commit FTP credentials to any remote repo
 to protect them, type:
 
 ```
-make protect-secrets
+make protect_secrets
 ```
 
 to expose secrets again, type:
 
 ```
-make expose-secrets
+make expose_secrets
 ```
 
-please note: `protect-secrets` rule is invoked during `install` rule
+please note: `protect_secrets` rule is invoked during `install` rule
 
 deployment
 ----------
@@ -112,6 +113,33 @@ to discard uncommited changes and files in posts, drafts and pages, type:
 
 ```
 make discard
+```
+
+docs
+----
+
+to generate docs, type:
+
+```
+make docs
+```
+
+to update docs, type:
+
+```
+make update_docs
+```
+
+to run server with docs, type:
+
+```
+make run_docs
+```
+
+to clean docs, type:
+
+```
+make clean_docs
 ```
 
 references
