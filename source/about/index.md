@@ -20,6 +20,6 @@ Want to know more?
 * see my code on [Github](https://github.com/pwittchen)
 * see my contributions on [StackOverflow](http://stackoverflow.com/users/1150795/piotr-wittchen)
 * check my tweets on [Twitter](https://twitter.com/piotr_wittchen)
-* download my apps from [Google Play](https://play.google.com/store/apps/dev?id=7269544076898428056)
+* download my Android apps from [Google Play](https://play.google.com/store/apps/dev?id=7269544076898428056)
 * check out my [coder stats](http://coderstats.net/github/#pwittchen)
 * and [git awards](http://git-awards.com/users/pwittchen)
