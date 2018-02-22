@@ -11,6 +11,10 @@ My name is **Piotr Wittchen**. I am **software developer** from Gliwice, Poland 
 Want to know more?
 ------------------
 
+{% raw %}
+<div id="avatar"></div>
+{% endraw %}
+
 * e-mail me at piotr@wittchen.biz.pl 
 * find me on [LinkedIn](http://www.linkedin.com/in/piotrwittchen)
 * see my code on [Github](https://github.com/pwittchen)
