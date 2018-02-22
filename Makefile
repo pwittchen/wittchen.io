@@ -28,8 +28,9 @@ docs:
 	docsify init docs
 update-docs:
 	cp README.md docs
+clean-docs:
+	rm -rf docs
 run-docs:
 	docsify serve docs
 clean:
 	rm -rf public
-	rm -rf docs

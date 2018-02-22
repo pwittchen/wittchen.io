@@ -136,6 +136,12 @@ to run server with docs, type:
 make run-docs
 ```
 
+to clean docs, type:
+
+```
+make clean-docs
+```
+
 references
 ----------
 - [hexo](https://hexo.io/)
