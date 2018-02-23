@@ -15,7 +15,7 @@ Want to know more?
 <div id="avatar"></div>
 {% endraw %}
 
-* e-mail me at piotr@wittchen.biz.pl 
+* email me at piotr@wittchen.biz.pl 
 * find me on [LinkedIn](http://www.linkedin.com/in/piotrwittchen)
 * see my code on [Github](https://github.com/pwittchen)
 * see my contributions on [StackOverflow](http://stackoverflow.com/users/1150795/piotr-wittchen)

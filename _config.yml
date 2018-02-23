@@ -9,7 +9,16 @@ description: personal website and blog
 author: Piotr Wittchen
 language: en
 timezone: Europe/Warsaw
+
+# address to repo with this project
 repo: https://github.com/pwittchen/blog
+
+# links to related to the author
+github: http://github.com/pwittchen
+stackoverflow: http://stackoverflow.com/users/1150795/piotr-wittchen
+twitter: https://twitter.com/piotr_wittchen
+linkedin: http://www.linkedin.com/in/piotrwittchen
+email: mailto:piotr@wittchen.biz.pl
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
