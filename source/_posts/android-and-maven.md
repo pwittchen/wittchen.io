@@ -1,7 +1,9 @@
 ---
 title: Android and Maven
 date: 2013-01-24 23:50:00
-tags: android, maven
+tags: 
+    - android
+    - maven
 ---
 
 Overview

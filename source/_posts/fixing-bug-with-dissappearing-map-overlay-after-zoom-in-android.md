@@ -1,7 +1,9 @@
 ---
 title: Fixing bug with dissappearing map overlay after zoom in Android
 date: 2013-01-21 22:16:00
-tags: android, java
+tags: 
+    - android
+    - java
 ---
 
 In Android 3.0 – HoneyComb (API 11) or higher occurs specific bug connected with map overlay. When we draw overlay on the map (e.g. routes, directions or polylines) after zooming to particular level, overlay disappear unexpectedly. We can fix this bug very easily by disabling hardware acceleration for drawing overlays. Below, you can see exemplary code snippet with map injected by RoboGuice and disabled hardware acceleration. Changing way of drawing overlays should fix the bug.

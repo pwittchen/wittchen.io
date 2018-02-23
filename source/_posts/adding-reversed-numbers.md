@@ -1,7 +1,9 @@
 ---
 title: Adding reversed numbers
 date: 2013-01-21 18:51:00
-tags: algorithms, ruby
+tags: 
+    - algorithms
+    - ruby
 ---
 In this post I will show you my approach to adding reversed numbers. This problem occurred during the ACM Central European Programming Contest, in Prague in 1998.
 

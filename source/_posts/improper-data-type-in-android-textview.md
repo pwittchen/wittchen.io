@@ -1,7 +1,8 @@
 ---
 title: Improper data type in Android TextView
 date: 2013-03-17 18:57:00
-tags: android
+tags: 
+    - android
 ---
 
 Identifying the problem

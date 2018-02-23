@@ -1,7 +1,8 @@
 ---
 title: Custom background for ActionBar and SherlockActionBar
 date: 2013-02-01 22:31:00
-tags: android
+tags: 
+    - android
 ---
 
 When you want to set custom background for Android ActionBar or SherlockActionBar instead of playing with your styles or views, you can use the following simple code snippet.

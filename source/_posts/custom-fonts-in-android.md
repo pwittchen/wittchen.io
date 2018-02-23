@@ -1,7 +1,8 @@
 ---
 title: Custom fonts in Android
 date: 2013-01-31 23:45:00
-tags: android
+tags: 
+    - android
 ---
 
 Using custom fonts in Android is quite simple, but requires to do some things programmatically and cannot be done using only XML file defining the view. Let's have a look on an example. Here we have a simple Android view file: 

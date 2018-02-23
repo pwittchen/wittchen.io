@@ -1,7 +1,8 @@
 ---
 title: Easy conversion from binary to decimal numbers in C
 date: 2013-01-28 02:02:00
-tags: c
+tags: 
+    - c
 ---
 
 Below, you can see simple and useful code snippet presenting conversion from binary to decimal number in C language without any sophisticated operations using only strtol function.

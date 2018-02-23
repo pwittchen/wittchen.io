@@ -1,7 +1,8 @@
 ---
 title: Distributed inter-process communication
 date: 2013-02-15 19:17:00
-tags: linux
+tags: 
+    - linux
 ---
 
 Project overview

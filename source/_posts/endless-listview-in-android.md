@@ -1,7 +1,8 @@
 ---
 title: Endless ListView in Android
 date: 2013-02-14 15:34:00
-tags: android
+tags: 
+    - android
 ---
 
 Some time ago, I had to implement Endless ListView in Android application. I checked different solutions, but some of them were overprogrammed or did not work well. Fortunately, I found simple solution, which solves the problem. Code snippet presenting mentioned approach, is placed below.
