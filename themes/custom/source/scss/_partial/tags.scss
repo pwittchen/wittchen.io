@@ -1,0 +1,18 @@
+.tags {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    .tag-title-link {
+        font-size: 1.1rem;
+    }
+    .tag-title-link {
+
+        padding-right: 8px;
+        color: #42b983;
+
+        &:hover {
+            border-bottom: 0;
+            color: #267B54;
+        }
+    }
+}
