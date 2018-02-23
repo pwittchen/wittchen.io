@@ -82,12 +82,13 @@ deploy:
 
 menu:
     Blog: /
-    About: /about
+    About: about
     Code: https://github.com/pwittchen
-    Projects: /projects
-    Talks: /talks
-    Archive: /archives
-    Rss: /feed.xml
+    Projects: projects
+    Talks: talks
+    Archive: archives
+    Tags: tags
+    Rss: feed.xml
     Contact: mailto:piotr@wittchen.biz.pl
 
 startyear: 2013
