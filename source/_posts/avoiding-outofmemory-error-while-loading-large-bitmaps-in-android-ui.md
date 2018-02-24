@@ -6,7 +6,7 @@ tags:
     - java
 ---
 
-Sometimes we may encounter an error connected with loading too large Bitmaps into Android UI. In such cases, we may receive `OutOfMemory Error` in stack trace. In Android, we are working with limited memory and we shouldn't load images with full resolution into UI. These images should be scaled down in order to save memory and increase performance of the application. It's very well described in official Android documentation in section [Loading Large Bitmaps Efficiently](http://developer.android.com/training/displaying-bitmaps/load-bitmap.html "Loading Large Bitmaps Efficiently"). It's worth reading. We can deal with memory problem in three easy steps:
+Sometimes we may encounter an error connected with loading too large Bitmaps into Android UI. In such cases, we may receive `OutOfMemoryError` in stack trace. In Android, we are working with limited memory and we shouldn't load images with full resolution into UI. These images should be scaled down in order to save memory and increase performance of the application. It's very well described in official Android documentation in section [Loading Large Bitmaps Efficiently](http://developer.android.com/training/displaying-bitmaps/load-bitmap.html "Loading Large Bitmaps Efficiently"). It's worth reading. We can deal with memory problem in three easy steps:
 
 1.  Read image dimensions and type
 2.  Scale down image
