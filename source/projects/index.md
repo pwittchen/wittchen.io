@@ -3,7 +3,9 @@ title: Projects
 date: 2018-02-21 20:33:39
 ---
 
-Browse my side and open-source projects. List below doesn't contain commercial projects I worked on or I am working on. 
+List below doesn't contain commercial projects I worked on or I am working on.
+
+It contains side and open-source projects only.
 
 * [EEG Analyzer](https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer)
 * [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork)
@@ -23,4 +25,4 @@ Browse my side and open-source projects. List below doesn't contain commercial p
 * [ydownloader](https://github.com/pwittchen/ydownloader)
 * [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 
-and more... You can even check [source code of this website](https://github.com/pwittchen/blog). Visit my [GitHub profile](https://github.com/pwittchen) to be up to date.
+and more... visit my [GitHub profile](https://github.com/pwittchen)

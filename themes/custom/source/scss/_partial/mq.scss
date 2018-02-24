@@ -2,9 +2,9 @@ main.container {
     margin: 2em 10px;
 }
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 800px) {
     .wrap {
-        width: 950px;
+        width: 800px;
         margin: 0 auto;
     }
     header {
@@ -12,7 +12,7 @@ main.container {
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 800px) {
     .wrap {
         width: 100%;
     }
@@ -21,8 +21,7 @@ main.container {
         a.logo-link,
         ul.nav.nav-list {
             float: none;
-            display: block;
-            text-align: center;
+            display: block; 
         }
         li.nav-list-item {
             padding: 10px 10px;
