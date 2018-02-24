@@ -13,6 +13,6 @@ In team projects it's important to prepare **issue workflow** and, so-called, **
 
 Besides the Version Control System, we also need to have other essential tools for software developement like issue tracker, etc. in order to realize work well. The easiest way to present definition of done (issue workflow) is to prepare a diagram. Exemplary diagram of such process introduced in one of the projects I am working in, is presented below.
 
-![](/images/posts/2014/issue_workflow.png)
+![](/images/posts/2014/issue-workflow-in-agile-projects/issue_workflow.png)
 
 Introducing such process in a project increases quality of the software, makes it more stable and whole work becomes systematic and well ordered.
