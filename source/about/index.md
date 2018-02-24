@@ -17,7 +17,7 @@ Want to know more?
 
 * email me at piotr@wittchen.biz.pl 
 * find me on [LinkedIn](http://www.linkedin.com/in/piotrwittchen)
-* see my code on [Github](https://github.com/pwittchen)
+* see my code on [GitHub](https://github.com/pwittchen)
 * see my contributions on [StackOverflow](http://stackoverflow.com/users/1150795/piotr-wittchen)
 * check my tweets on [Twitter](https://twitter.com/piotr_wittchen)
 * download my Android apps from [Google Play](https://play.google.com/store/apps/dev?id=7269544076898428056)
