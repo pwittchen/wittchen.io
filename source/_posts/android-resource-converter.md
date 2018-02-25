@@ -16,7 +16,7 @@ $ python xml2csv.py directory_with_resources
 Exemplary output looks as follows:
 
 ```
-key;strings\_english.xml;strings\_polish.xml
+key;strings_english.xml;strings_polish.xml
 hello_world;Hello World!;Witaj Świecie!
 app_name;My application;Moja aplikacja
 ```
