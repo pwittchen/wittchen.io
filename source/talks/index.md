@@ -8,7 +8,7 @@ Upcoming
 
 ### 2018
 
-*   2018-03-15 Get ready for java.util.concurrent.Flow! Hackin’ Gliwice (Gliwice, Poland)
+*   2018-03-15 **Get ready for java.util.concurrent.Flow!** Hackin’ Gliwice (Gliwice, Poland)
 
 Past
 ----
