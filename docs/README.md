@@ -25,6 +25,12 @@ cd blog/
 make install
 ```
 
+to upgrade project dependencies, type:
+
+```
+npm-upgrade
+```
+
 running
 -------
 
