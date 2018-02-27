@@ -4,6 +4,7 @@ date: 2015-07-06 15:37:00
 tags:
 	- java
 	- devoxx
+  - conferences
 ---
 
 Dr. [Venkat Subramaniam](http://agiledeveloper.com/) presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C++. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements. Perception of the world is based on experience and things we get used to. The same rule applies to programming languages. Most software developers are familiar with imperative programming paradigm. They often focus on describing computation in terms of statements and changing program state. This approach leads us to necessity of creating a lot of temporary variables and boilerplate code. Let’s have a look at the following code snippet: 
