@@ -16,7 +16,20 @@ Fixing the problem
 
 ### Attempt #1
 
-First, I tried to change `rootdelay` as error message said. I opened file `/etc/default/grub` I found there the following line: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` and changed it to: `GRUB_CMDLINE_LINUX_DEFAULT="rootdelay=90 quiet splash"` `rootdelay` became longer, but unfortunately it didn't fix the problem in my case.
+First, I tried to change `rootdelay` as error message said. I opened file `/etc/default/grub` 
+I found there the following line: 
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+```
+
+and changed it to: 
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="rootdelay=90 quiet splash"
+```
+
+`rootdelay` became longer, but unfortunately it didn't fix the problem in my case.
 
 ### Attempt #2
 
