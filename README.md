@@ -1,7 +1,7 @@
 blog
 ====
 
-this is source of [wittchen.biz.pl](http://wittchen.biz.pl) website
+this is source of [blog.wittchen.biz.pl](http://blog.wittchen.biz.pl) website
 
 contents
 --------
