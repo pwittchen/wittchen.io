@@ -34,16 +34,19 @@ Except for `Dockerfile`, ydocker repository also contains helper script `ydocker
 This script uses configuration file `ydocker.conf`, which has the following contents:
 
 ```
-DOCKER\_IMAGE\_NAME=sap-hybris-commerce-suite
-COMMERCE\_SUITE\_VERSION=latest
+DOCKER_IMAGE_NAME=sap-hybris-commerce-suite
+COMMERCE_SUITE_VERSION=latest
 RECIPE=b2c_acc
 HOST_PORT=9002
 CONTAINER_PORT=9002
 ```
 
-You can customize this configuration. E.g. choose a different version of the suite, different recipe or change server port. To build container, you can just type:
+You can customize this configuration. E.g. choose a different version of the suite, different recipe or change server port. 
+To build container, you can just type:
 
+```
 ./ydocker -b
+```
 
 Then, provide your credentials and Docker will:
 
