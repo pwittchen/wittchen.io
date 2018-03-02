@@ -85,6 +85,7 @@ pagination_dir: page
 theme: custom 
 
 # Deployment
+# note: I'm not using this hexo config and making deployment via Makefile and ftpsync
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
