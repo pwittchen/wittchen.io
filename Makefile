@@ -41,3 +41,8 @@ run_docs:
 clean:
 	rm -rf public
 	echo "public/ dir is deleted"
+clean_full:
+	rm -rf public
+	sudo rm -rf node_modules
+	sudo rm db.json
+
