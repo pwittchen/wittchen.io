@@ -18,11 +18,11 @@ github: http://github.com/pwittchen
 stackoverflow: http://stackoverflow.com/users/1150795/piotr-wittchen
 twitter: https://twitter.com/piotr_wittchen
 linkedin: http://www.linkedin.com/in/piotrwittchen
-email: mailto:piotr@wittchen.biz.pl
+email: mailto:piotr@wittchen.io
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://hexo.wittchen.biz.pl
+url: http://wittchen.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -99,7 +99,7 @@ menu:
     Archive: archives
     Tags: tags
     Rss: feed.xml
-    Contact: mailto:piotr@wittchen.biz.pl
+    Contact: mailto:piotr@wittchen.io
 
 startyear: 2013
 
