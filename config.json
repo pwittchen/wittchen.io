@@ -1,7 +1,7 @@
 {
   "local":"./public/",
-  "remote":"/domains/wittchen.biz.pl/public_html/hexo",
-  "host":"wittchen.biz.pl",
+  "remote":"/domains/wittchen.io/public_html",
+  "host":"s82.linuxpl.com",
   "port":21,
   "user":"",
   "pass":"",
