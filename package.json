@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "hexo": {
-    "version": "3.5.0"
+    "version": "3.6.0"
   },
   "scripts": {
     "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && sudo npm i ftpsync -g && sudo npm i docsify-cli -g && sudo npm i npm-upgrade -g",

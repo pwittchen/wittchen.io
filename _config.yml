@@ -11,13 +11,13 @@ language: en
 timezone: Europe/Warsaw
 
 # address to repo with this project
-repo: https://github.com/pwittchen/blog
+repo: https://github.com/pwittchen/wittchen.io
 
 # links to related to the author
-github: http://github.com/pwittchen
-stackoverflow: http://stackoverflow.com/users/1150795/piotr-wittchen
-twitter: https://twitter.com/piotr_wittchen
-linkedin: http://www.linkedin.com/in/piotrwittchen
+github: /gh 
+stackoverflow: /so
+twitter: /tw 
+linkedin: /in 
 email: mailto:piotr@wittchen.io
 
 # URL
@@ -93,13 +93,20 @@ deploy:
 menu:
     Blog: /
     About: about
-    Code: https://github.com/pwittchen
+    Code: /gh 
     Projects: projects
     Talks: talks
     Archive: archives
     Tags: tags
     Rss: feed.xml
     Contact: mailto:piotr@wittchen.io
+
+alias:
+    gh/index.html: https://github.com/pwittchen
+    in/index.html: https://www.linkedin.com/in/piotrwittchen
+    so/index.html: https://stackoverflow.com/users/1150795/piotr-wittchen
+    tw/index.html: https://twitter.com/piotr_wittchen
+    fb/index.html: https://www.facebook.com/piotr.wittchen
 
 startyear: 2013
 
