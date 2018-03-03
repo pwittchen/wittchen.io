@@ -1,8 +1,7 @@
-blog
-====
-a source code of [my personal website and blog](http://blog.wittchen.biz.pl) managed by [hexo](https://hexo.io/) framework
+overview
+========
 
-visit website on-line at: http://wittchen.biz.pl.
+this is source of [wittchen.io](http://wittchen.io) website
 
 contents
 --------

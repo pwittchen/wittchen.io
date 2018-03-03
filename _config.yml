@@ -93,7 +93,7 @@ deploy:
 menu:
     Blog: /
     About: about
-    Code: /gh 
+    Code: /code 
     Projects: projects
     Talks: talks
     Archive: archives
@@ -102,6 +102,7 @@ menu:
     Contact: mailto:piotr@wittchen.io
 
 alias:
+    code/index.html: https://github.com/pwittchen
     gh/index.html: https://github.com/pwittchen
     in/index.html: https://www.linkedin.com/in/piotrwittchen
     so/index.html: https://stackoverflow.com/users/1150795/piotr-wittchen
