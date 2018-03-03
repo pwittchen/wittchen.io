@@ -40,7 +40,8 @@ run_docs:
 	docsify serve docs
 clean:
 	rm -rf public
-	echo "public/ dir is deleted"
+	rm db.json
+	echo "clean is done"
 clean_full:
 	rm -rf public
 	sudo rm -rf node_modules
