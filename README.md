@@ -1,4 +1,4 @@
-overwiew
+overview
 ========
 
 this is source of [wittchen.io](http://wittchen.io) website
