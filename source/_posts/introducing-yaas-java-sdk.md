@@ -14,7 +14,7 @@ Introduction
 
 In my company, there's a concept of so-called "innovation day". I have the possibility to "use" 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I've decided to create [**YaaS Java SDK**](https://github.com/pwittchen/yaas-java-sdk). If you don't know what the [YaaS](http://yaas.io) is, check out my previous article about basic usage of YaaS proxy for the microservice. In a few words, it's a proxy for the microservices with authorization & monitoring capabilities, which allows using other services available on the YaaS market. SDK created by me is really simple, was created in a short period of time and does not cover all features of the YaaS. This SDK allows performing authorized requests to the microservices hidden behind YaaS proxy. Tech stack used for this project is as follows:
 
-*   [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) 8
+*   Java 8
 *   [Gradle](https://gradle.org/)
 *   [OkHttp3](http://square.github.io/okhttp/)
 *   [RxJava2](https://github.com/ReactiveX/RxJava) with [Reactive Streams](http://www.reactive-streams.org/)
