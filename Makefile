@@ -45,4 +45,5 @@ clean_full:
 	rm -rf public
 	sudo rm -rf node_modules
 	sudo rm db.json
+	"full clean done, run make install rule to re-create environment"
 
