@@ -4,7 +4,7 @@ date: 2017-03-19 19:32:00
 tags:
 	- android
 	- testing
-	- coverate
+	- coverage
 	- robolectric
 	- travis
 ---
