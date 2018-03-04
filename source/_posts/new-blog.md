@@ -37,7 +37,7 @@ Wordpress has them too. Of course, it's important feature, which cannot be avoid
 
 Thanks to [browsersync](https://browsersync.io/) I can edit my blog, while running it on localhost and see updates without refreshing page manually. It's really convenient and saves time.
 
-### I can use it wihtout leaving terminal
+### I can use it without leaving terminal
 
 Hexo gives us [CLI tool](https://github.com/hexojs/hexo-cli), which we can use for running blog locally, creating posts, pages and making deployment. I've made a wrapper for a few commands in `Makefile`.
 
