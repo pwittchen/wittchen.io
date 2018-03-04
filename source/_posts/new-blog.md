@@ -15,11 +15,11 @@ Features of Hexo
 
 ### Static website generator
 
-For a simple blog with static content I don't really need dynamic website like wordpress. Content of the articles changes quite rarely. I just generate static content and deploy it on the server.
+For a simple blog with static content I don't really need dynamic website like Wordpress. Content of the articles changes quite rarely. I just generate static content and deploy it to the server.
 
 ### Markdown support
 
-I can write articles with Markdown in any editor I want - sublime or even Vim! In addition, Hexo themes have really nice support for syntax coloring.
+I can write articles with Markdown in any editor I want - Sublime or even Vim! In addition, Hexo themes have really nice support for syntax coloring.
 
 ### It works off-line
 
