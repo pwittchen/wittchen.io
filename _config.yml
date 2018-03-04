@@ -93,7 +93,7 @@ deploy:
 menu:
     Blog: /
     About: about
-    Code: /code 
+    Code: code
     Projects: projects
     Talks: talks
     Archive: archives
@@ -108,8 +108,8 @@ alias:
     so/index.html: https://stackoverflow.com/users/1150795/piotr-wittchen
     tw/index.html: https://twitter.com/piotr_wittchen
     fb/index.html: https://www.facebook.com/piotr.wittchen
-    ps/index.html: /projects
-    ts/index.html: /talks
+    ps/index.html: projects
+    ts/index.html: talks
 
 startyear: 2013
 
