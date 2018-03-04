@@ -55,7 +55,7 @@ make deploy
 
 If you're interested in more technical details, you can view source code and documentation of this website at [github.com/pwittchen/wittchen.io](https://github.com/pwittchen/wittchen.io).
 
-Right now, website doesn't have a few features like comments and search. They're not crucial in my case, but I hopefully add them in the future.
+Right now, website doesn't have a few features like comments and search. They're not crucial in my case, but I will hopefully add them in the future.
 
 New domain
 ----------
