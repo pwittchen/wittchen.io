@@ -42,9 +42,7 @@ clean:
 	rm -rf public
 	rm db.json
 	echo "clean is done"
-clean_full:
-	rm -rf public
+clean_full: clean
 	sudo rm -rf node_modules
-	sudo rm db.json
 	"full clean done, run make install rule to re-create environment"
 
