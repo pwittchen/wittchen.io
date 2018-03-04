@@ -65,7 +65,7 @@ It's shorter and simpler.
 
 Old domains: [wittchen.biz.pl](http://wittchen.biz.pl) and [blog.wittchen.biz.pl](http://blog.wittchen.biz.pl) will redirect you to the new address.
 
-New RSS Feed address
+New RSS feed address
 --------------------
 
 There's also new RSS Feed address, which looks as follows: [wittchen.io/feed.xml](http://wittchen.io/feed.xml).
