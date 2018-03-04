@@ -15,4 +15,6 @@ Slides from the presentation are available below.
 
 [View Slides on SpeakerDeck](https://speakerdeck.com/pwittchen/fixing-a-billion-dollar-mistake)
 
+See a few pictures and archived meeting info at: [qualityexcites.pl/quality-meetup/meetup-15](https://qualityexcites.pl/quality-meetup/meetup-15)
+
 Thanks everyone for coming!
