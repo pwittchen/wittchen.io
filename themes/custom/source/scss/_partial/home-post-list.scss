@@ -1,12 +1,17 @@
 .home.post-list {
-    margin: 2em 0;
+    margin-top: 0;
     .post-list-item {
         font-size: 13px;
-        padding-top: 1em;
+        padding-top: 3px;
         text-align: left;
         &:last-child {
             border-bottom: 0;
         }
+    }
+    .post-info {
+        float: left;
+        line-height: 50%;
+        width: 90px;
     }
     .post-content{
         h2, h3, h4, h5, h6 {
@@ -17,7 +22,7 @@
         & > ul {
             list-style: initial;
         }
-    }
+    }    
     .read-more {     
         color: #42b983;
     }

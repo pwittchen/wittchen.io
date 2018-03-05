@@ -1,5 +1,5 @@
 ---
-title: Releasing ReactiveNetwork v. 0.11.0 with Walled Garden AKA Great Firewall support
+title: Releasing ReactiveNetwork v. 0.11.0
 date: 2017-08-06 06:38:00
 tags:
 	- android

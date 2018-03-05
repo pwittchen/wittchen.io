@@ -1,5 +1,5 @@
 ---
-title: Displaying image from the Internet resource inside the TextView in Android 
+title: Displaying image from the Internet inside the TextView
 date: 2013-03-19 23:04:00
 tags:
     - android

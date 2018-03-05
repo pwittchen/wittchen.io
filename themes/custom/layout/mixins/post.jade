@@ -10,12 +10,10 @@ mixin posts()
         - page.posts.each(function (item) {
             li.post-list-item
                 article.post-block
+                    +postInfo(item)
                     h2.post-title
                         a.post-title-link(href= url_for(item.path))
                             != item.title
-                    +postInfo(item)
-                    .post-content
-                        != item.excerpt
         - })
 
 //- Archive Page

@@ -1,5 +1,5 @@
 ---
-title: Emitting different RxJava Observables depending on the condition with flatMap operator
+title: Emitting different observables conditionally
 date: 2017-05-14 21:44:00
 tags:
 	- java
