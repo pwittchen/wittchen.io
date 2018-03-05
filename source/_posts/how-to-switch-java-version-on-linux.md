@@ -8,12 +8,20 @@ tags:
 
 Sometimes we need to run specific program with a concrete version of JVM. We can also work with Java 7, but we want to try Java 8. In such cases, we can have installed both Java 7 and 8 on our system and easily switch between them. In order to show current java version, we can simply type: `java -version` in terminal. On my computer I received the following response:
 
+```
 Picked up JAVA\_TOOL\_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar
 java version "1.8.0_25"
 Java(TM) SE Runtime Environment (build 1.8.0_25-b17)
 Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)
+```
 
-We can see that I am using Java 8. If we want to switch to Java 7, we can use the following command: `sudo update-alternatives --config java` I am using Polish lanugage version of Ubuntu, so I received response, which you can see below. If you are using another language version, you will see messages in your language.
+We can see that I am using Java 8. If we want to switch to Java 7, we can use the following command: 
+
+```
+sudo update-alternatives --config java
+```
+
+I am using Polish lanugage version of Ubuntu, so I received response, which you can see below. If you are using another language version, you will see messages in your language.
 
 ```
 Są 3 dostępne alternatywy dla java (dostarczające /usr/bin/java).
