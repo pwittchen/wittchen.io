@@ -41,6 +41,9 @@ main.container {
             left: 15px;
         }
     }
+    .post-info {
+        float: none !important;
+    }
     .ds-thread,
     #disqus_thread {
         margin: 2em 10px;
