@@ -9,7 +9,7 @@ tags:
 Sometimes we need to run specific program with a concrete version of JVM. We can also work with Java 7, but we want to try Java 8. In such cases, we can have installed both Java 7 and 8 on our system and easily switch between them. In order to show current java version, we can simply type: `java -version` in terminal. On my computer I received the following response:
 
 ```
-Picked up JAVA\_TOOL\_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar
+Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar
 java version "1.8.0_25"
 Java(TM) SE Runtime Environment (build 1.8.0_25-b17)
 Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)
@@ -40,7 +40,7 @@ Basically, we can just type number of a concrete version of JVM and press Enter.
 After that, when we type: `java -version`, we will see the following message:
 
 ```
-Picked up JAVA\_TOOL\_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar 
+Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar 
 java version "1.7.0_72"
 Java(TM) SE Runtime Environment (build 1.7.0_72-b14)
 Java HotSpot(TM) 64-Bit Server VM (build 24.72-b04, mixed mode)
