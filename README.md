@@ -18,8 +18,8 @@ installing
 ----------
 
 ```
-git clone https://github.com/pwittchen/blog.git
-cd blog/
+git clone https://github.com/pwittchen/wittchen.io.git
+cd wittchen.io/
 make install
 ```
 
