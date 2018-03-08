@@ -57,7 +57,7 @@ set -g @plugin 'pwittchen/tmux-plugin-spotify'
 When we are in Tmux, we can install plugins by pressing `prefix + I` to install plugins. In my case, `prefix = Ctrl+b`. After that, we can hit `Enter` and we're ready to go! Now, I could update my [`.tmux.conf`](https://github.com/pwittchen/dotfiles/blob/master/.tmux.conf) with the variables defined by my plugins:
 
 ```
-set -g status-right " 🔉 #{spotify\_song} ↑ #{uptime} ⇅ #{cpu} ☰ #{ram} ∴ #{ip} ↯ #{battery\_level} ⧖ #(date '+%a, %b %d, %H:%M') "
+set -g status-right " 🔉 #{spotify_song} ↑ #{uptime} ⇅ #{cpu} ☰ #{ram} ∴ #{ip} ↯ #{battery_level} ⧖ #(date '+%a, %b %d, %H:%M') "
 ```
 
 After this operation, I could remove custom scripts from my dotfiles and desired functionality is delivered via plugins. Moreover, anyone can install these plugins via tpm without messing with custom scripts! 
