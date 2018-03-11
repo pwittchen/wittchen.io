@@ -30,5 +30,5 @@ and more... visit my [GitHub profile](https://github.com/pwittchen)
 
 I also contributed to a few open-source projects created by others like:
 
-* [RxJava](https://github.com/ReactiveX/RxJava)
-* [JavaPoet](https://github.com/square/Javapoet)
+* [RxJava](https://github.com/ReactiveX/RxJava/commits?author=pwittchen)
+* [JavaPoet](https://github.com/square/Javapoet/commits?author=pwittchen)
