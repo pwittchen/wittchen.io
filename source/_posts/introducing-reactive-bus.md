@@ -21,7 +21,6 @@ Disposable observer = bus.receive().subscribe(new Consumer<Event>() {
       // handle event here
     }
   });
-
 ```
 
 Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:
