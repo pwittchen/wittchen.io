@@ -15,6 +15,7 @@ It contains side and open-source projects only.
 * [ReactiveSensors](https://github.com/pwittchen/ReactiveSensors)
 * [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons)
 * [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode)
+* [ReactiveBus](https://github.com/pwittchen/ReactiveBus)
 * [kirai](https://github.com/pwittchen/kirai)
 * [WeatherIconView](https://github.com/pwittchen/WeatherIconView)
 * [InfiniteScroll](https://github.com/pwittchen/InfiniteScroll)
@@ -26,3 +27,8 @@ It contains side and open-source projects only.
 * [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 
 and more... visit my [GitHub profile](https://github.com/pwittchen)
+
+I also contributed to a few open-source projects created by others like:
+
+* [RxJava](https://github.com/ReactiveX/RxJava)
+* [JavaPoet](https://github.com/square/Javapoet)
