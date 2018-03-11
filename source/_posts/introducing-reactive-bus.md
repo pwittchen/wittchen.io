@@ -1,5 +1,5 @@
 ---
-title: introducing ReactiveBus
+title: Introducing ReactiveBus
 tags:
   - java
   - rxjava
