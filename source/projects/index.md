@@ -26,9 +26,14 @@ It contains side and open-source projects only.
 * [ydownloader](https://github.com/pwittchen/ydownloader)
 * [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 
-and more... visit my [GitHub profile](https://github.com/pwittchen)
+and more...
 
-I also contributed to a few open-source projects created by others like:
+I also contributed to a few open-source projects created by other people e.g.:
 
 * [RxJava](https://github.com/ReactiveX/RxJava/commits?author=pwittchen)
 * [JavaPoet](https://github.com/square/Javapoet/commits?author=pwittchen)
+
+and others...
+
+Visit my [GitHub profile](https://github.com/pwittchen) to find more information.
+
