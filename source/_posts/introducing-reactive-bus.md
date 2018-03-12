@@ -47,7 +47,7 @@ You can include this tiny library in your project via Maven:
 <dependency>
     <groupId>com.github.pwittchen</groupId>
     <artifactId>reactivebus</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 <dependency>
     <groupId>io.reactivex.rxjava2</groupId>
@@ -59,7 +59,7 @@ You can include this tiny library in your project via Maven:
 or via Gradle:
 
 ```gradle
-implementation 'com.github.pwittchen:reactivebus:0.0.1'
+implementation 'com.github.pwittchen:reactivebus:0.0.2'
 implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
 ```
 
