@@ -29,6 +29,12 @@ Once, we created Event Bus object and our observer (or more precisely: disposabl
 bus.send(Event.create("my event"));
 ```
 
+We can also send some serializable data:
+
+```java
+bus.send(Event.create("my another event with data", serializableObject));
+```
+
 All events, will be received by the consumer in `subscribe(...)` method.
 
 If we want to stop propagation of the events, we can just dispose observer like any RxJava subscription:
