@@ -1,16 +1,9 @@
 ---
 title: Talks
-date: 2018-02-21 20:37:44
+date: 2018-03-15 22:28:00
 ---
 
-Upcoming
---------
-
-*   2018-03-15 **Get ready for java.util.concurrent.Flow!** Hackin’ Gliwice (Gliwice, Poland)
-
-Past
-----
-
+*   2018-03-15 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) Hackin’ Gliwice (Gliwice, Poland)
 *   2018-02-08 [Fixing a billion dollar mistake](https://speakerdeck.com/pwittchen/fixing-a-billion-dollar-mistake) Quality Meetup (Katowice, Poland)
 *   2017-12-16 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) infoMEET (Wrocław, Poland)
 *   2017-12-04 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) Kraków Java Users Group (Kraków, Poland)
