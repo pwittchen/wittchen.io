@@ -17,4 +17,6 @@ Slides from the presentation are available below.
 
 See a few pictures and archived meeting info at: [qualityexcites.pl/quality-meetup/meetup-15](https://qualityexcites.pl/quality-meetup/meetup-15)
 
+![](/images/posts/2018/quality-meetup-15-fixing-a-billion-dollar-mistake/qe-15-01.jpg)
+
 Thanks everyone for coming!
