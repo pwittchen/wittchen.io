@@ -1,10 +1,6 @@
 ---
 title: Dependency Injection with Dagger
 tags:
-    - dependency-injection
-    - dagger
-    - java
-    - android
 ---
 
 TBD.

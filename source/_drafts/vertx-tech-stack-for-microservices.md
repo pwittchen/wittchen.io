@@ -1,9 +1,6 @@
 ---
 title: Vert.x tech-stack for microservices
 tags:
-    - vertx
-    - java
-    - microservices
 ---
 
 - reactive systems

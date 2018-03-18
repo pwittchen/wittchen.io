@@ -1,10 +1,6 @@
 ---
 title: Android Architecture Components - overview
 tags:
-    - android
-    - architecture
-    - patterns
-    - software-engineering
 ---
 
 Introduction

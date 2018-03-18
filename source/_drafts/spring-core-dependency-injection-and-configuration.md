@@ -1,9 +1,6 @@
 ---
 title: Spring Core - Dependency Injection and Configuration
 tags:
-    - java
-    - spring
-    - dependency-injection
 ---
 
 TBD.
