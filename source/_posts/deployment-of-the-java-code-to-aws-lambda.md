@@ -1,11 +1,14 @@
 ---
 title: Deployment of the Java code to AWS Lambda
 tags:
-    - aws
-    - lambda
-    - serverless
-    - java
+  - aws
+  - lambda
+  - cloud
+  - serverless
+  - java
+date: 2018-03-18 16:50:02
 ---
+
 
 Introduction
 ------------
@@ -148,8 +151,8 @@ In case of JVM projects, we need to build them first:
 ./gradlew build
 ```
 
-Deployment to the Cloud!
-------------------------
+Deployment to the Cloud
+-----------------------
 
 Next, we can deploy our Lambda to the AWS Cloud!
 
@@ -233,11 +236,15 @@ We can also apply API Gateway to expose our Lambda to the external world.
 
 We can make our endpoint open or secured.
 
-Next, we can expand Gateway details and we should find "Invoke URL". We can call it:
+Next, we can expand Gateway details and we should find "Invoke URL". 
+
+We can call it:
 
 ```
 curl https://ipj76pb5yl.execute-api.us-east-1.amazonaws.com/prod/aws-java-gradle-dev-hello
 ```
+
+Of course, url will be different in your setup.
 
 after that, we should receive response:
 
@@ -312,6 +319,11 @@ In the "Monitoring" section, we can monitor usage of our service.
 
 ![](/images/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-monitoring.png)
 
+Update
+------
+
+If we want to update our function, we can simply modify it, rebuild code with `./gradlew build` and deploy it again with `sls deploy`. Once we have it configured it's really easy.
+
 Function Removal
 ----------------
 
@@ -333,11 +345,10 @@ Serverless: Stack removal finished...
 Serverless: Successfully archived your service on the Serverless Platform
 ```
 
-
 Summary
 -------
 
-TBD.
+To wrap up, AWS Lambda is a really convenient way to solve single tasks without worrying about infrastructure, deployment and scalability. If we need one job to be done - e.g. exposing endpoint, transforming images, sending notifications, tiny app running on the server or whatever is required, AWS Lambda is good choice for that. Moreover, thanks to Serverless Framework deployment becomes really easy. In addition, we can develop Lambdas in other languages like Kotlin, Groovy, Scala, Go, Python, C# and F#, so we're not limited just to one language. We also should remember that AWS is powerfull platform with about 100 different services and Lambda is just one of them. It's good to familiarize with AWS and other cloud computing platforms like Azure, GCP and so on because more companies start to invest in that and such solutions are becoming standard in certain areas.
 
 References
 ----------
