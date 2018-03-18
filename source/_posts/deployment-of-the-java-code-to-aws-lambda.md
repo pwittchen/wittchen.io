@@ -113,7 +113,7 @@ After that, we'll get the following project structure:
             └── log4j.properties
 ```
 
-If you want to browse source of such template, you can visit my [serverless-lambda-playground](https://github.com/pwittchen/serverless-lambda-playground repo.
+If you want to browse source of such template, you can visit my [serverless-lambda-playground](https://github.com/pwittchen/serverless-lambda-playground) repo.
 We can add our configurations in `serverless.yml` file:
 
 ```yml
