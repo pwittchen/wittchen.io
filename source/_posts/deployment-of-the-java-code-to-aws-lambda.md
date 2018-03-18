@@ -61,7 +61,15 @@ Serverless: Generating boilerplate...
 
   Serverless Error ---------------------------------------
 
-  Template "true" is not supported. Supported templates are: "aws-nodejs", "aws-nodejs-typescript", "aws-nodejs-ecma-script", "aws-python", "aws-python3", "aws-groovy-gradle", "aws-java-maven", "aws-java-gradle", "aws-kotlin-jvm-maven", "aws-kotlin-jvm-gradle", "aws-kotlin-nodejs-gradle", "aws-scala-sbt", "aws-csharp", "aws-fsharp", "aws-go", "aws-go-dep", "azure-nodejs", "google-nodejs", "kubeless-python", "kubeless-nodejs", "openwhisk-nodejs", "openwhisk-php", "openwhisk-python", "openwhisk-swift", "spotinst-nodejs", "spotinst-python", "spotinst-ruby", "spotinst-java8", "webtasks-nodejs", "plugin" and "hello-world".
+  Template "true" is not supported. Supported templates are: "aws-nodejs", 
+  "aws-nodejs-typescript", "aws-nodejs-ecma-script", "aws-python", 
+  "aws-python3", "aws-groovy-gradle", "aws-java-maven", 
+  "aws-java-gradle", "aws-kotlin-jvm-maven", "aws-kotlin-jvm-gradle", 
+  "aws-kotlin-nodejs-gradle", "aws-scala-sbt", "aws-csharp", "aws-fsharp", 
+  "aws-go", "aws-go-dep", "azure-nodejs", "google-nodejs", "kubeless-python", 
+  "kubeless-nodejs", "openwhisk-nodejs", "openwhisk-php", "openwhisk-python", 
+  "openwhisk-swift", "spotinst-nodejs", "spotinst-python", "spotinst-ruby", 
+  "spotinst-java8", "webtasks-nodejs", "plugin" and "hello-world".
 
   Get Support --------------------------------------------
      Docs:          docs.serverless.com
@@ -128,17 +136,19 @@ Main class is the `Handler` class:
 ```java
 public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayResponse> {
 
-	private static final Logger LOG = Logger.getLogger(Handler.class);
+  private static final Logger LOG = Logger.getLogger(Handler.class);
 
-	@Override
-	public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
-		LOG.info("received: " + input);
-		Response responseBody = new Response("Go Serverless v1.x! Your function executed successfully!", input);
-		return ApiGatewayResponse.builder()
-				.setStatusCode(200)
-				.setObjectBody(responseBody)
-				.setHeaders(Collections.singletonMap("X-Powered-By", "AWS Lambda & serverless"))
-				.build();
+  @Override
+  public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
+	LOG.info("received: " + input);
+	Response responseBody = new Response("Go Serverless v1.x! 
+	Your function executed successfully!", input);
+	return ApiGatewayResponse.builder()
+			.setStatusCode(200)
+			.setObjectBody(responseBody)
+			.setHeaders(Collections.singletonMap("X-Powered-By", 
+			"AWS Lambda & serverless"))
+			.build();
 	}
 }
 ```
