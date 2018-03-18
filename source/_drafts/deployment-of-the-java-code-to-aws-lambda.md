@@ -312,6 +312,28 @@ In the "Monitoring" section, we can monitor usage of our service.
 
 ![](/images/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-monitoring.png)
 
+Function Removal
+----------------
+
+If we want to remove our Function, we can just type:
+
+```
+sls remove
+```
+
+and we'll see the following messages:
+
+```
+Serverless: Getting all objects in S3 bucket...
+Serverless: Removing objects in S3 bucket...
+Serverless: Removing Stack...
+Serverless: Checking Stack removal progress...
+.........
+Serverless: Stack removal finished...
+Serverless: Successfully archived your service on the Serverless Platform
+```
+
+
 Summary
 -------
 
