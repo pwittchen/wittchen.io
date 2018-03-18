@@ -207,7 +207,7 @@ When, we type:
 sls info
 ```
 
-we should see information about the Lambda:
+We should see information about the Lambda:
 
 ```
 Service Information
@@ -223,7 +223,7 @@ functions:
   hello: aws-java-gradle-dev-hello
 ```
 
-We can view details of our Lambda in AWS Console
+We can view details of our Lambda in AWS Console.
 
 ![](/images/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-details.png)
 
@@ -246,7 +246,7 @@ curl https://ipj76pb5yl.execute-api.us-east-1.amazonaws.com/prod/aws-java-gradle
 
 Of course, url will be different in your setup.
 
-after that, we should receive response:
+After that, we should receive response:
 
 ```json
 {
@@ -315,7 +315,7 @@ Hooray! Our Lambda is working on-line now!
 Monitoring
 ----------
 
-In the "Monitoring" section, we can monitor usage of our service.
+In the "Monitoring" section of the AWS Lambda Functions Console, we can monitor usage of our service.
 
 ![](/images/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-monitoring.png)
 
