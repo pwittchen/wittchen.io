@@ -3,7 +3,7 @@ title: Projects
 date: 2018-02-21 20:33:39
 ---
 
-List below doesn't contain commercial projects I worked on. It contains side and open-source projects only.
+List below doesn't contain commercial projects I worked on in companies. It contains side and open-source projects only.
 
 Android apps:
 
