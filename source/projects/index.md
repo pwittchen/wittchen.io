@@ -3,28 +3,33 @@ title: Projects
 date: 2018-02-21 20:33:39
 ---
 
-List below doesn't contain commercial projects I worked on or I am working on.
+List below doesn't contain commercial projects I worked on. It contains side and open-source projects only.
 
-It contains side and open-source projects only.
+Android apps:
 
-* [EEG Analyzer](https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer)
-* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork)
-* [NetworkEvents](https://github.com/pwittchen/NetworkEvents)
-* [ReactiveWifi](https://github.com/pwittchen/ReactiveWiFi)
-* [prefser](https://github.com/pwittchen/prefser)
-* [ReactiveSensors](https://github.com/pwittchen/ReactiveSensors)
-* [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons)
-* [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode)
-* [ReactiveBus](https://github.com/pwittchen/ReactiveBus)
-* [kirai](https://github.com/pwittchen/kirai)
-* [WeatherIconView](https://github.com/pwittchen/WeatherIconView)
-* [InfiniteScroll](https://github.com/pwittchen/InfiniteScroll)
-* [swipe](https://github.com/pwittchen/swipe)
-* [gesture](https://github.com/pwittchen/gesture)
-* [android-quality-starter](https://github.com/pwittchen/android-quality-starter)
-* [ydocker](https://github.com/pwittchen/ydocker)
-* [ydownloader](https://github.com/pwittchen/ydownloader)
-* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
+* [EEG Analyzer](https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer) ⇩ 16500+
+
+Open-source projects:
+
+* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) ★ 1730+
+* [NetworkEvents](https://github.com/pwittchen/NetworkEvents) ★ 400+
+* [ReactiveWifi](https://github.com/pwittchen/ReactiveWiFi) ★ 120+
+* [prefser](https://github.com/pwittchen/prefser) ★ 200+
+* [ReactiveSensors](https://github.com/pwittchen/ReactiveSensors) ★ 120+
+* [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons) ★ 115+
+* [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode) ★ 5
+* [ReactiveBus](https://github.com/pwittchen/ReactiveBus) ★ 10+
+* [kirai](https://github.com/pwittchen/kirai) ★ 60+
+* [WeatherIconView](https://github.com/pwittchen/WeatherIconView) ★ 190+
+* [InfiniteScroll](https://github.com/pwittchen/InfiniteScroll) ★ 130+
+* [swipe](https://github.com/pwittchen/swipe) ★ 195+
+* [gesture](https://github.com/pwittchen/gesture) ★ 50+
+* [android-quality-starter](https://github.com/pwittchen/android-quality-starter) ★ 20+
+* [ydocker](https://github.com/pwittchen/ydocker) ★ 10+
+* [ydownloader](https://github.com/pwittchen/ydownloader) ★ 1
+* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 90+
+* [EEG Reader](https://github.com/pwittchen/EEGReader) ★ 15+
+* [Search Twitter](https://github.com/pwittchen/SearchTwitter) ★ 10
 
 and more...
 
