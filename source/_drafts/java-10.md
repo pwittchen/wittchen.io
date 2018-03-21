@@ -1,10 +1,9 @@
 ---
-title: Have you learnt Java 9? Java 10 is on the way!
+title: Have you learnt Java 9? Java 10 is out!
 tags:
-	- docker
-	- alpine
-	- linux
-	- java
+    - docker
+    - java
+    - java10
 ---
 
 TBD.
@@ -17,3 +16,5 @@ References
 - [JDK 10: What’s new in Java 10](https://www.infoworld.com/article/3230507/java/java-jdk-10-what-new-features-to-expect-in-the-next-java.html)
 - [Java 10 - The Story So Far](https://www.infoq.com/news/2017/11/Java10JEPs)
 - [How Java 10 will CHANGE the Way You Code](https://blog.takipi.com/how-java-10-will-change-the-way-you-code/)
+- [Java 10 - release notes from Oracle](http://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html)
+- [dockerfiles-java repo](https://github.com/pwittchen/dockerfiles-java)
