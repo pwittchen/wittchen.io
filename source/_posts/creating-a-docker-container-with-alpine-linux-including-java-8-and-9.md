@@ -29,7 +29,7 @@ ENV PATH="$JAVA_HOME/bin:${PATH}"
 RUN rm -rf *.tar.gz
 ```
 
-We're downloading JDK, unpacking it, moving to `/usr/local/share` directory, creating `$JAVA_HOME` environmental variable and adding `$JAVA_HOME/bin` to the `$PATH`. After that, we're removing downloaded `*.tar.gz` file. Repository with this project is available at: [https://github.com/pwittchen/docker-alpine-java9](https://github.com/pwittchen/docker-alpine-java9) We can also find it on Docker Hub: [https://hub.docker.com/r/pwittchen/alpine-java9/](https://hub.docker.com/r/pwittchen/alpine-java9/) To pull the image from Docker Hub, just type:
+We're downloading JDK, unpacking it, moving to `/usr/local/share` directory, creating `$JAVA_HOME` environmental variable and adding `$JAVA_HOME/bin` to the `$PATH`. After that, we're removing downloaded `*.tar.gz` file. We can find it on Docker Hub: [https://hub.docker.com/r/pwittchen/alpine-java9/](https://hub.docker.com/r/pwittchen/alpine-java9/) To pull the image from Docker Hub, just type:
 
 ```
 sudo docker pull pwittchen/alpine-java9
@@ -56,6 +56,10 @@ hello from docker!
 
 This container is not so small and has about 919.2 MB. It contains whole JDK, so probably this size could be reduced.
 
+**Note!** 
+
+Right now (21st of March 2018), this solution doesn't work any longer. Please, search for an official Alpine image with Java 9 or use image with Ubuntu and Java 9 located in [dockerfiles-java](https://github.com/pwittchen/dockerfiles-java) repo.
+
 Container with Java 8
 ---------------------
 
@@ -71,7 +75,7 @@ RUN apk fetch openjdk8
 RUN apk add openjdk8
 ```
 
-We can also find it on the web: GitHub: [https://github.com/pwittchen/docker-alpine-java8](https://github.com/pwittchen/docker-alpine-java8) Docker Hub: [https://hub.docker.com/r/pwittchen/alpine-java8/](https://hub.docker.com/r/pwittchen/alpine-java8/) and pull it from the Docker Hub:
+We can also find it on GitHub: [github.com/pwittchen/dockerfiles-java](https://github.com/pwittchen/dockerfiles-java) (inside the `alpine-java8` directory), Docker Hub: [https://hub.docker.com/r/pwittchen/alpine-java8/](https://hub.docker.com/r/pwittchen/alpine-java8/) and pull it from the Docker Hub:
 
 ```
 sudo docker pull pwittchen/alpine-java8
