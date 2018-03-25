@@ -23,7 +23,7 @@ Such situation happens when you performed changes locally and at the same time s
 It's shown on the diagram below.
 
 ```
-another developer ------o----commit----o------------------------------------------
+another developer ------o---(commit)---o------------------------------------------
                        /|\             |
                         |              |
                        pull          push
@@ -35,7 +35,7 @@ remote 'master' ----o---o--------------o------x-----------------o-------------o-
                    pull                      push (rejected)   pull          push
                     |                         |                 |             |
                    \|/                        |                \|/            |
-you ----------------o-------commit------------o-----------------o----(merge)--o----
+you ----------------o-------(commit)----------o-----------------o---(merge)---o----
 ```
 
 Actually, there's nothing wrong with it, but on the other hand you have "polluted" git log. Imagine everyone is following that approach and your code base changes frequently. After some period of time, you'll get a tons of `merge 'master' to 'master'` messages, which doesn't really tell you anything. It will be hard to navigate through the history of the repository and track changes. Luckily, we can avoid that.
