@@ -74,6 +74,18 @@ Now, our changes are stashed. We can list them as follows:
 git stash list
 ```
 
+To show what's in the most recent stash, we can type:
+
+```
+git stash show -p
+```
+
+To view an arbitrary stash, we can type something like:
+
+```
+git stash show -p stash@{1}
+```
+
 ### 4. Pull changes from the remote repository
 
 ```
