@@ -35,7 +35,7 @@ remote 'master' ----o---o--------------o------x-----------------o-------------o-
                    pull                      push (rejected)   pull          push
                     |                         |                 |             |
                    \|/                        |                \|/            |
-you ----------------o-------commit------------o-----------------o----(merge)-------
+you ----------------o-------commit------------o-----------------o----(merge)--o----
 ```
 
 Actually, there's nothing wrong with it, but on the other hand you have "polluted" git log. Imagine everyone is following that approach and your code base changes frequently. After some period of time, you'll get a tons of `merge 'master' to 'master'` messages, which doesn't really tell you anything. It will be hard to navigate through the history of the repository and track changes. Luckily, we can avoid that.
