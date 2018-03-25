@@ -15,7 +15,7 @@ If you are working with Git Version Control System, probably you have seen a com
 Merge branch 'master' to 'master'
 ```
 
-or something similar. You might even pushed such commits! Don't worry, so did I ;-).
+or something similar. You might have even pushed such commits! Don't worry, so did I ;-).
 In this article I'm going to explain why is it happenning and how to avoid it.
 
 Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository. When you are done with your changes, you committed everything and want to push changes. If there are no conflicts, Git wants you to synchronize local repository with the remote repository. That's why you need to merge changes from the remote master branch into your local master branch. After that you can finally push your changes.
