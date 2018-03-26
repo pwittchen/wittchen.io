@@ -26,13 +26,13 @@ Disposable observer = bus.receive().subscribe(new Consumer<Event>() {
 Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:
 
 ```java
-bus.send(Event.create("my event"));
+bus.send(Event.name("my event").build());
 ```
 
 We can also send some serializable data:
 
 ```java
-bus.send(Event.create("my another event with data", serializableObject));
+bus.send(Event.name("my another event with data").data(serializableObject).build());
 ```
 
 All events, will be received by the consumer in `subscribe(...)` method.
@@ -53,7 +53,7 @@ You can include this tiny library in your project via Maven:
 <dependency>
     <groupId>com.github.pwittchen</groupId>
     <artifactId>reactivebus</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.5</version>
 </dependency>
 <dependency>
     <groupId>io.reactivex.rxjava2</groupId>
@@ -65,7 +65,7 @@ You can include this tiny library in your project via Maven:
 or via Gradle:
 
 ```gradle
-implementation 'com.github.pwittchen:reactivebus:0.0.2'
+implementation 'com.github.pwittchen:reactivebus:0.0.5'
 implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
 ```
 
