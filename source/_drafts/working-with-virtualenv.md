@@ -1,5 +1,5 @@
 ---
-title: Working with virtualenv
+title: Working with virtualenv in Python
 tags:
     - python
     - virtualenv
