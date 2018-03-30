@@ -134,7 +134,7 @@ Next, we can rebase our changes:
 git rebase origin/master
 ```
 
-After this operation, we have put remote changes into our local repository without merge operations. Moreover, we preserved our local (not pushed) commits.
+During this operation, we have put changes from the remote repository into our local repository without merge operations. Moreover, we preserved our local (not pushed) commits.
 Now, we can push our changes to the remote repository:
 
 ```
