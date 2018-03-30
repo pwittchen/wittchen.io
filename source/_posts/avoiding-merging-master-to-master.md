@@ -98,9 +98,18 @@ git pull
 git stash apply
 ```
 
+or
+
+```
+git stash pop
+```
+
+if we want to delete our applied stash from the list of stashes
+
 ### 6. Commit and push your changes
 
 ```
+git add -A
 git commit -m "my elegant change"
 git push
 ```
