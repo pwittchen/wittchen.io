@@ -40,8 +40,8 @@ you ----------------o-------(commit)----------o-----------------o---(merge)---o-
 
 Actually, there's nothing wrong with it, but on the other hand you have "polluted" git log. Imagine everyone is following that approach and your code base changes frequently. After some period of time, you'll get a tons of `merge 'master' to 'master'` messages, which doesn't really tell you anything. It will be hard to navigate through the history of the repository and track changes. Luckily, we can avoid that.
 
-Solution
---------
+Solution #1
+-----------
 
 What to do, when Git wants you to merge remote `master` branch into local `master` branch?
 I think there may be various strategies to deal with that. I'm going to show you one approach
@@ -116,4 +116,33 @@ git push
 
 Now, we have our local repository synchronized with the remote one. We pushed our local changes and we didn't polluted git log with `merge 'master' to 'master'` commits. If you are not very comfortable with Git, try to practice this in a "test" repo before applying this approach in your production repo.
 
+Solution #2
+-----------
+
+I've got a feedback about this article from one of the readers (Thanks Cyprian! ;-) and there's a simpler way to solve that problem.
+
+We can use `rebase` functionality as follows:
+
+```
+git fetch origin
+```
+
+Now we have fetched changes from the `origin` (remote repo) without applying (merging) them in the local repo.
+Next, we can rebase our changes:
+
+```
+git rebase origin/master
+```
+
+After this operation, we have put remote changes into our local repository without merge operations. Moreover, we preserved our local (not pushed) commits.
+Now, we can push our changes to the remote repository:
+
+```
+git push
+```
+
+and we're done!
+
 I hope, this article will help to keep your git log clean.
+
+As you see, I'm open for any kind of constructive feedback about these articles, so you can send me e-mails. Probably, I'll add commenting functionality back to this blog, so feedback will be easier.
