@@ -1,8 +1,10 @@
 ---
-title: AWS (Amazon Web Services) - overview
+title: AWS (Amazon Web Services) - overview after 2 days of training
 tags:
     - aws
     - cloud
+    - tech-training
+    - chmurowisko
 ---
 
 Introduction
