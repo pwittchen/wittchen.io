@@ -1,6 +1,7 @@
 ---
 title: Dependency Injection with Dagger
 tags:
+    - java
 ---
 
 TBD.

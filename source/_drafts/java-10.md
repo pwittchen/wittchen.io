@@ -3,7 +3,6 @@ title: Have you learnt Java 9? Java 10 is out!
 tags:
     - docker
     - java
-    - java10
 ---
 
 TBD.
