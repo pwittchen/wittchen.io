@@ -6,7 +6,7 @@
     "version": "3.7.0"
   },
   "scripts": {
-    "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && npm i pwittchen/node-ftpsync#develop -g && sudo npm i docsify-cli -g && sudo npm i npm-upgrade -g",
+    "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && npm i ftpsync -g && sudo npm i docsify-cli -g && sudo npm i npm-upgrade -g",
     "protect-secrets": "git update-index --assume-unchanged config.json",
     "expose-secrets": "git update-index --no-assume-unchanged config.json"
   },
