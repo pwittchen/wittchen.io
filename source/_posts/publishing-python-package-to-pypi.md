@@ -9,7 +9,7 @@ date: 2018-04-08 11:47:49
 Introduction
 ------------
 
-I have my own tiny python project called [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux), which is (surprise!) command line interface for Spotify desktop app on Linux and is written in Python. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I've provided instructions how to install my Python script in the system via `curl` and `wget`, which is fine, but it's not recommended and official way to do it. Moreover, people may be afraid of running shell scripts from remote resources on their machines. That's why I decided to upload my project to [PyPi](http://pypi.org/), which is The Python Package Index.
+I have my own tiny Python project called [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux), which is (surprise!) command line interface for Spotify desktop app on Linux. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I've provided instructions how to install my Python script in the system via `curl` and `wget`, which is fine, but it's not recommended and official way to do it. Moreover, people may be afraid of running shell scripts from remote resources on their machines. That's why I decided to upload my project to [PyPi](http://pypi.org/), which is The Python Package Index.
 
 Publishing process
 ------------------
