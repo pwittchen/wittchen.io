@@ -14,7 +14,7 @@ I have my own tiny Python project called [spotify-cli-linux](https://github.com/
 Publishing process
 ------------------
 
-First I needed to create [my own account](https://pypi.org/user/pwittchen/) in PyPi, which can be done via official website.
+First, I needed to create [my own account](https://pypi.org/user/pwittchen/) in PyPi, which can be done via official website.
 
 Next, I needed to prepare `setup.py` file in my repository.
 
@@ -51,7 +51,13 @@ description-file = README.md
 
 where I defined `description-file` of my script.
 
-Next, I needed to install `twine`, which is a package used for publishing packages to PyPi. You can find other ways to do that on the web, but most of them are outdated and don't work.
+Next, I needed to install `twine`, which is a package used for publishing packages to PyPi. 
+
+```
+pip install twine
+```
+
+You can find other ways to do that on the web, but most of them are outdated and don't work.
 
 Next, you need to create `~/.pypirc` file in your home directory, with the following content:
 
