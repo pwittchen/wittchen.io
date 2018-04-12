@@ -13,7 +13,7 @@ contents
 - [theme](#theme)
 - [writing](#writing)
 - [rest api](#rest-api)
-- [references](#references)
+- [used tools](#used-tools)
 
 installing
 ----------
@@ -133,10 +133,12 @@ GET /api/articles/{article_id}.json
 GET /api/pages/{page_id}.json
 ```
 
-references
+used tools
 ----------
+- javascript, css, html
+- [make](https://www.gnu.org/software/make/manual/html_node/Introduction.html)
 - [hexo](https://hexo.io/)
-- [apollo](https://github.com/pinggod/hexo-theme-apollo)
+- [apollo hexo theme](https://github.com/pinggod/hexo-theme-apollo)
 - [jade](http://jade-lang.com/)
 - [ftpsync](https://github.com/evanplaice/node-ftpsync)
 - [browsersync](https://browsersync.io/)
