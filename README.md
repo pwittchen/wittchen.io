@@ -119,6 +119,19 @@ to discard uncommited changes and files in posts, drafts and pages, type:
 make discard
 ```
 
+rest api
+--------
+
+```
+GET /api/site.json
+GET /api/posts.json
+GET /api/posts/{page_number}.json
+GET /api/tags.json
+GET /api/tags/{tag_name}.json
+GET /api/articles/{article_id}.json
+GET /api/pages/{page_id}.json
+```
+
 references
 ----------
 - [hexo](https://hexo.io/)

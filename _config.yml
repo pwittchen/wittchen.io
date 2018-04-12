@@ -119,5 +119,27 @@ feed:
   limit: 20
   content_limit: 140
 
+# rest api configuration
+restful:
+  site: true
+  posts_size: 10
+  posts_props:
+    title: true
+    slug: false
+    date: true
+    updated: true
+    comments: false
+    path: true
+    excerpt: false
+    cover: false
+    content: false
+    keywords: false
+    categories: false
+    tags: true
+  categories: false
+  tags: true
+  post: true
+  pages: true
+
 # google analytics tracking id
 ga: UA-2194664-7
