@@ -12,6 +12,7 @@ contents
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
+- [rest api](#rest-api)
 - [references](#references)
 
 installing
