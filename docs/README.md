@@ -12,7 +12,8 @@ contents
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
-- [references](#references)
+- [rest api](#rest-api)
+- [used tools](#used-tools)
 
 installing
 ----------
@@ -119,10 +120,25 @@ to discard uncommited changes and files in posts, drafts and pages, type:
 make discard
 ```
 
-references
+rest api
+--------
+
+```
+GET /api/site.json
+GET /api/posts.json
+GET /api/posts/{page_number}.json
+GET /api/tags.json
+GET /api/tags/{tag_name}.json
+GET /api/articles/{article_id}.json
+GET /api/pages/{page_id}.json
+```
+
+used tools
 ----------
+- javascript, css, html
+- [make](https://www.gnu.org/software/make/manual/html_node/Introduction.html)
 - [hexo](https://hexo.io/)
-- [apollo](https://github.com/pinggod/hexo-theme-apollo)
+- [apollo hexo theme](https://github.com/pinggod/hexo-theme-apollo)
 - [jade](http://jade-lang.com/)
 - [ftpsync](https://github.com/evanplaice/node-ftpsync)
 - [browsersync](https://browsersync.io/)
