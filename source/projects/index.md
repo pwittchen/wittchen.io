@@ -27,7 +27,7 @@ Open-source projects:
 * [android-quality-starter](https://github.com/pwittchen/android-quality-starter) ★ 20+
 * [ydocker](https://github.com/pwittchen/ydocker) ★ 10+
 * [ydownloader](https://github.com/pwittchen/ydownloader) ★ 1
-* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 90+
+* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 100+
 * [EEG Reader](https://github.com/pwittchen/EEGReader) ★ 15+
 * [Search Twitter](https://github.com/pwittchen/SearchTwitter) ★ 10
 
