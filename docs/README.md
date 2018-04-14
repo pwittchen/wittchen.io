@@ -142,7 +142,7 @@ used tools
 - [jade](http://jade-lang.com/)
 - [ftpsync](https://github.com/evanplaice/node-ftpsync)
 - [browsersync](https://browsersync.io/)
-- [node](https://nodejs.org/)
+- [node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [gulp](https://gulpjs.com/)
 - [sass](https://sass-lang.com/)
