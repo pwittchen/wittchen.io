@@ -6,7 +6,8 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && sudo npm i docsify-cli -g && sudo npm i npm-upgrade -g && sudo npm i https://github.com/pwittchen/node-ftpsync.git#develop -g",
+    "preinstall": "echo \"beginning installation\"",
+    "postinstall": "echo \"finishing installation\"",
     "protect-secrets": "git update-index --assume-unchanged config.json",
     "expose-secrets": "git update-index --no-assume-unchanged config.json"
   },
@@ -28,6 +29,11 @@
     "hexo-server": "^0.3.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "docsify-cli": "^4.2.1",
+    "ftpsync": "git+https://github.com/pwittchen/node-ftpsync.git#develop",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "hexo-cli": "^1.1.0",
+    "npm-upgrade": "^1.3.0"
   }
 }
