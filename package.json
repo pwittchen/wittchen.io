@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "hexo": {
-    "version": "3.7.0"
+    "version": "3.7.1"
   },
   "scripts": {
-    "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && npm install https://github.com/pwittchen/node-ftpsync.git#develop -g && sudo npm i docsify-cli -g && sudo npm i npm-upgrade -g",
+    "preinstall": "sudo npm i hexo-cli -g && sudo npm i gulp -D && sudo npm i gulp-cli -g && sudo npm i docsify-cli -g && sudo npm i npm-upgrade -g && sudo npm i https://github.com/pwittchen/node-ftpsync.git#develop -g",
     "protect-secrets": "git update-index --assume-unchanged config.json",
     "expose-secrets": "git update-index --no-assume-unchanged config.json"
   },
