@@ -11,10 +11,10 @@ Android apps:
 
 Open-source projects:
 
-* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) ★ 1730+
+* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) ★ 1780+ (used by SkyScanner, Slack, Eero and other Android apps)
 * [NetworkEvents](https://github.com/pwittchen/NetworkEvents) ★ 400+
 * [ReactiveWifi](https://github.com/pwittchen/ReactiveWiFi) ★ 120+
-* [prefser](https://github.com/pwittchen/prefser) ★ 200+
+* [prefser](https://github.com/pwittchen/prefser) ★ 200+ (used by Toss.im and other Android apps)
 * [ReactiveSensors](https://github.com/pwittchen/ReactiveSensors) ★ 120+
 * [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons) ★ 115+
 * [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode) ★ 5
