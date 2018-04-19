@@ -102,7 +102,7 @@ menu:
     Archive: archives
     Tags: tags
     Rss: feed.xml
-    Contact: mailto:piotr@wittchen.io
+    Contact: contact
 
 alias:
     code/index.html: https://github.com/pwittchen
