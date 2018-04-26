@@ -19,7 +19,7 @@ generate:
 	echo "website is generated in public/ dir"
 deploy:
 	echo "starting deployment..."
-	hexo deploy
+	hexo generate && hexo deploy
 	echo "deployment FINISHED!"
 discard:
 	git checkout -- source
