@@ -49,7 +49,9 @@ git push
 secrets
 -------
 
-configure FTP credentials in `config.json` file
+configure FTP credentials in `_config.yml` file
+
+have a look at the [official documentation](https://hexo.io/docs/deployment.html#FTPSync)
 
 we don't want to commit FTP credentials to any remote repo
 

@@ -8,8 +8,8 @@
   "scripts": {
     "preinstall": "echo \"beginning installation\"",
     "postinstall": "echo \"finishing installation\"",
-    "protect-secrets": "git update-index --assume-unchanged config.json",
-    "expose-secrets": "git update-index --no-assume-unchanged config.json"
+    "protect-secrets": "git update-index --assume-unchanged _config.yml",
+    "expose-secrets": "git update-index --no-assume-unchanged _config.yml"
   },
   "dependencies": {
     "hexo": "^3.7.1",
