@@ -3,7 +3,7 @@ install: protect_secrets
 	sudo npm install --unsafe-perm
 	echo "installation finished"
 theme:
-	cd themes/custom && sudo npm install && gulp
+	cd themes/custom && sudo npm install --unsafe-perm && gulp
 protect_secrets:
 	npm run protect-secrets
 	echo "secrets are safe"

@@ -22,11 +22,11 @@
   },
   "homepage": "https://github.com/pinggod/hexo-theme-apollo#readme",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^2.0.4"
   },
   "dependencies": {
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^4.0.1"
   }
 }
