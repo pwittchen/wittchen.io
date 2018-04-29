@@ -30,6 +30,10 @@ to upgrade project dependencies, type:
 npm-upgrade
 ```
 
+if you encounter `EACCESS` errors during resolving dependencies, take a look at [npm docs](https://docs.npmjs.com/getting-started/fixing-npm-permissions)
+
+you can also call `sudo npm install --unsafe-perm` instead of `npm install`
+
 running
 -------
 
