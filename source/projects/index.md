@@ -11,12 +11,12 @@ Android apps:
 
 Open-source projects:
 
-* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) ★ 1780+ (used by SkyScanner, Slack, Eero and other Android apps)
+* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) ★ 1800+ (used by SkyScanner, Slack, Eero and other Android apps)
 * [NetworkEvents](https://github.com/pwittchen/NetworkEvents) ★ 400+
-* [ReactiveWifi](https://github.com/pwittchen/ReactiveWiFi) ★ 120+
+* [ReactiveWifi](https://github.com/pwittchen/ReactiveWiFi) ★ 130+
 * [prefser](https://github.com/pwittchen/prefser) ★ 200+ (used by Toss.im and other Android apps)
 * [ReactiveSensors](https://github.com/pwittchen/ReactiveSensors) ★ 120+
-* [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons) ★ 115+
+* [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons) ★ 120+
 * [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode) ★ 5
 * [ReactiveBus](https://github.com/pwittchen/ReactiveBus) ★ 10+
 * [kirai](https://github.com/pwittchen/kirai) ★ 60+
@@ -28,7 +28,7 @@ Open-source projects:
 * [ydocker](https://github.com/pwittchen/ydocker) ★ 10+
 * [ydownloader](https://github.com/pwittchen/ydownloader) ★ 1
 * [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 100+
-* [EEG Reader](https://github.com/pwittchen/EEGReader) ★ 15+
+* [EEG Reader](https://github.com/pwittchen/EEGReader) ★ 20+
 * [Search Twitter](https://github.com/pwittchen/SearchTwitter) ★ 10
 
 and more...
