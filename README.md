@@ -91,7 +91,7 @@ to generate `*.css` file from `*.scss` and rebuild theme, type:
 make theme
 ```
 
-after that `gulp` will be in watching mode and if you want to stop it, press `Ctrl+C`
+after that `gulp` will be in watching mode and if you want to stop it, press <kbd>Ctrl</kbd>+<kbd>C</kbd>
 
 writing
 -------
