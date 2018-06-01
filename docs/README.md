@@ -12,9 +12,9 @@ contents
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
-- [rest api](#rest-api)
+- [rest](#rest)
 - [docs](#docs)
-- [used tools](#used-tools)
+- [tools](#tools)
 
 installing
 ----------
@@ -127,8 +127,10 @@ to discard uncommited changes and files in posts, drafts and pages, type:
 make discard
 ```
 
-rest api
---------
+rest
+----
+
+you can use the following REST API:
 
 ```
 GET /api/site.json
@@ -148,8 +150,11 @@ docs
 - to clean docs, type: `make clean_docs`
 - to run website with docs, type: `make run_docs`
 
-used tools
-----------
+tools
+-----
+
+the following tools were used during development of this site:
+
 - javascript, css, html
 - [make](https://www.gnu.org/software/make/manual/html_node/Introduction.html)
 - [hexo](https://hexo.io/)
