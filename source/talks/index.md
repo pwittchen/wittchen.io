@@ -3,6 +3,12 @@ title: Talks
 date: 2018-03-15 22:28:00
 ---
 
+## Upcoming
+
+*   2018-11-19 **Brain-Computer Interfaces - Science Fiction or Reality?** Øredev (Malmö, Sweden)
+
+## Past
+
 *   2018-03-15 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) Hackin’ Gliwice (Gliwice, Poland)
 *   2018-02-08 [Fixing a billion dollar mistake](https://speakerdeck.com/pwittchen/fixing-a-billion-dollar-mistake) Quality Meetup (Katowice, Poland)
 *   2017-12-16 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) infoMEET (Wrocław, Poland)
