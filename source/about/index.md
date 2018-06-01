@@ -6,7 +6,7 @@ date: 2018-02-21 20:33:26
 Hi!
 ---
 
-My name is **Piotr Wittchen**. I am **software developer** from Gliwice, Poland and working at [SAP](https://www.sap.com) on [SAP Hybris Commerce Platform](https://hybris.com). I graduated Engineering and Master studies of Automatic Control, Electronics and Computer Science at Silesian University of Technology. I&nbsp;worked mostly with web and mobile applications. I also develop my open-source [projects](/projects). From time to time, I give [talks](/talks) related to software development at the conferences and meetups. Besides geeky stuff, I like fresh drip coffee brew, different kinds of sports, traveling, music and playing the guitar. If you would like to contact me or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
+My name is **Piotr Wittchen**. I am **software developer** from Gliwice, Poland and working at [SAP Hybris](https://www.hybris.com). I graduated Engineering and Master studies of Automatic Control, Electronics and Computer Science at Silesian University of Technology. I&nbsp;worked mostly with web and mobile applications. I also develop my open-source [projects](/projects). From time to time, I give [talks](/talks) related to software development at the conferences and meetups. Besides geeky stuff, I like fresh drip coffee brew, different kinds of sports, traveling, music and playing the guitar. If you would like to contact me or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
 
 Want to know more?
 ------------------
