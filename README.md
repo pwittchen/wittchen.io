@@ -143,10 +143,10 @@ GET /api/pages/{page_id}.json
 docs
 ----
 
-to generate docs, type: `make docs`
-to update docs, type: `make update_docs`
-to clean docs, type: `make clean_docs`
-to run website with docs, type: `make run_docs`
+- to generate docs, type: `make docs`
+- to update docs, type: `make update_docs`
+- to clean docs, type: `make clean_docs`
+- to run website with docs, type: `make run_docs`
 
 used tools
 ----------
