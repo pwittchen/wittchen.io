@@ -13,6 +13,7 @@ contents
 - [theme](#theme)
 - [writing](#writing)
 - [rest api](#rest-api)
+- [docs](#docs)
 - [used tools](#used-tools)
 
 installing
@@ -138,6 +139,14 @@ GET /api/tags/{tag_name}.json
 GET /api/articles/{article_id}.json
 GET /api/pages/{page_id}.json
 ```
+
+docs
+----
+
+to generate docs, type: `make docs`
+to update docs, type: `make update_docs`
+to clean docs, type: `make clean_docs`
+to run website with docs, type: `make run_docs`
 
 used tools
 ----------
