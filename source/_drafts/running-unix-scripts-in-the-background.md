@@ -34,4 +34,5 @@ References
 - [starting background process from a shell](https://unix.stackexchange.com/questions/276020/how-do-i-start-a-background-process-from-a-shell-script-and-log-the-output-of-th)
 - [understanding shell script idiom redirect 2>&1](https://www.brianstorti.com/understanding-shell-script-idiom-redirect/)
 - [running bash commands in the background - the right way](https://www.maketecheasier.com/run-bash-commands-background-linux/)
+- [what's the difference between nohup and ampersand?](https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand)
 - ...
