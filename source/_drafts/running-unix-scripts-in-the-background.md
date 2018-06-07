@@ -35,4 +35,5 @@ References
 - [understanding shell script idiom redirect 2>&1](https://www.brianstorti.com/understanding-shell-script-idiom-redirect/)
 - [running bash commands in the background - the right way](https://www.maketecheasier.com/run-bash-commands-background-linux/)
 - [what's the difference between nohup and ampersand?](https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand)
+- [run bash script as a daemon](https://stackoverflow.com/questions/19233529/run-bash-script-as-daemon)
 - ...
