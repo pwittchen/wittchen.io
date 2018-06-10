@@ -7,7 +7,7 @@ List below doesn't contain commercial projects I worked on in companies. It cont
 
 Android apps:
 
-* [EEG Analyzer](https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer) ⇩ 16500+
+* [EEG Analyzer](https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer) ⇩ 17000+
 
 Open-source projects:
 
