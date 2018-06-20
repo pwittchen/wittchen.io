@@ -22,7 +22,3 @@ Want to know more?
 * download my Android apps from [Google Play](https://play.google.com/store/apps/dev?id=7269544076898428056)
 * have a look at my [coder stats](http://coderstats.net/github/#pwittchen)
 * and [git awards](http://git-awards.com/users/pwittchen)
-
-Cheers!
-
-Piotr
