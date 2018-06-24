@@ -7,7 +7,6 @@ tags:
 date: 2018-06-24 23:39:18
 ---
 
-
 Today, I've released next version of my most popular open-source project - [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork). I've released version `0.12.4` for RxJava1.x and version `1.0.0` for RxJava2.x. Please note, RxJava1.x is [no longer officially supported](https://github.com/ReactiveX/RxJava/releases/tag/v1.3.8) and I'm going to follow the same approach in my RxJava-based projects. It's not the first release of this project, but I'm breaking the API and removing existing methods, so I decided to stick to proper versioning standard. I didn't always do it properly in the past, but it's never too late.
 
 ## Realization I have tech debt
