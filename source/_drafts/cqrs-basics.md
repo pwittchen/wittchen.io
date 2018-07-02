@@ -1,5 +1,5 @@
 ---
-title: CQRS basics 
+title: CQRS basics
 tags:
     - patterns
     - java
