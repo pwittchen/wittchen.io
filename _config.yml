@@ -14,7 +14,7 @@ timezone: Europe/Warsaw
 repo: https://github.com/pwittchen/wittchen.io
 
 # address of the rest api documentation
-restapi: https://github.com/pwittchen/wittchen.io#rest-api
+restapi: https://github.com/pwittchen/wittchen.io#rest
 
 # links related to the author
 github: /gh 
