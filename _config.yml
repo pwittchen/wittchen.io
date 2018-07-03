@@ -101,7 +101,7 @@ menu:
     Talks: talks
     Archive: archives
     Tags: tags
-    Rss: feed.xml
+    Rss: /feed.xml
     PayPal: paypal
     Contact: contact
 
@@ -119,7 +119,7 @@ startyear: 2013
 
 feed:
   type: atom
-  path: feed.xml
+  path: /feed.xml
   limit: 20
   content_limit: 140
 
