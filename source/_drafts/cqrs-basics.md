@@ -48,3 +48,5 @@ tags:
 ### Domain Driven Design (DDD)
 - https://en.wikipedia.org/wiki/Domain-driven_design
 - https://martinfowler.com/tags/domain%20driven%20design.html
+- https://bottega.com.pl/warsztat-ddd-modelowanie [PL]
+- https://bottega.com.pl/materialy.xhtm?cat=DDD [PL]
