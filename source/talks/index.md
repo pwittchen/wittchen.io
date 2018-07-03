@@ -26,3 +26,5 @@ date: 2018-03-15 22:28:00
 *   2015-10-27 [Reactive Libraries for Android](https://speakerdeck.com/pwittchen/reactive-libraries-for-android) Silesia Mobile Group (Katowice, Poland)
 *   2014-08-26 [Stuff you should know about Android](http://slides.com/piotrwittchen/stuff-you-should-know-about-android) Future Processing, Java Show and Tell (Gliwice, Poland)
 *   2013-05-27 [Brain-Computer Interface for mobile devices](http://slides.com/piotrwittchen/brain-computer-interface-for-mobile-devices) Silesian University of Technology (Gliwice, Poland)
+
+A few relations from the conferences I attended as a speaker, volunteer or attendee are under [#conferences](/tags/conferences/) tag on this blog.
