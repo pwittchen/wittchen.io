@@ -15,3 +15,4 @@ TBD.
 - https://github.com/AxonFramework/AxonFramework
 - http://www.axonframework.org/
 - http://squirrel.pl/blog/2015/08/31/introduction-to-event-sourcing-and-command-query-responsibility-segregation/
+- http://udidahan.com/2009/12/09/clarified-cqrs/
