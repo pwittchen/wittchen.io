@@ -52,7 +52,7 @@ I also created [installation script](https://github.com/pwittchen/pkup/blob/mast
 Tests
 -----
 
-There are python tests for this solution in [pkup\_doc\_test.py](https://github.com/pwittchen/pkup/blob/master/pkup_doc_test.py) file, but they're quite poor right now due to the limited amount of time. They can be a subject of improvements in the future. Note that such scripting solutions rarely have tests because they're small and created ad-hoc. Nevertheless, I wanted to follow the philosophy from [my last blog article](http://blog.wittchen.biz.pl/lifting-quality-of-a-shell-script/) and create tests for any kind of software I make.
+There are python tests for this solution in [pkup\_doc\_test.py](https://github.com/pwittchen/pkup/blob/master/pkup_doc_test.py) file, but they're quite poor right now due to the limited amount of time. They can be a subject of improvements in the future. Note that such scripting solutions rarely have tests because they're small and created ad-hoc. Nevertheless, I wanted to follow the philosophy from [my last blog article](/2016/11/30/lifting-quality-of-a-shell-script/) and create tests for any kind of software I make.
 
 Summary
 -------
