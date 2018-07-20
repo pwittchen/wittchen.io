@@ -46,29 +46,10 @@ make run
 docker
 ------
 
-to create container, type:
-
-```
-make docker_build
-```
-
-to run created container, type:
-
-```
-make docker_run
-```
-
-to kill running container, type:
-
-```
-make docker_kill
-```
-
-to delete created container, type:
-
-```
-make docker_delete
-```
+- to create container, type: `make docker_build`
+- to run created container, type: `make docker_run`
+- to kill running container, type: `make docker_kill`
+- to delete created container, type: `make docker_delete`
 
 update
 ------
