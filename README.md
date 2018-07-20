@@ -58,16 +58,16 @@ to run created container, type:
 make docker_run
 ```
 
-to stop running container, type:
+to kill running container, type:
 
 ```
-sudo docker ps
+make docker_kill
 ```
 
-find container ID and kill it with:
+to delete created container, type:
 
 ```
-sudo docker kill CONTAINER_ID
+make docker_delete
 ```
 
 update

@@ -29,6 +29,10 @@ docker_build: generate
 	sudo docker build -t wittchenio .
 docker_run:
 	sudo docker run -p 127.0.0.1:4000:4000 -t wittchenio
+docker_kill:
+	./docker/kill_docker.sh
+docker_delete:
+	./docker/delete_docker.sh
 docs:
 	mkdir docs
 	docsify init docs
