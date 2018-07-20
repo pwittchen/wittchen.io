@@ -7,6 +7,7 @@ contents
 --------
 - [installing](#installing)
 - [running](#running)
+- [docker](#docker)
 - [update](#running)
 - [secrets](#secrets)
 - [deployment](#deployment)
@@ -40,6 +41,33 @@ running
 
 ```
 make run
+```
+
+docker
+------
+
+to create container, type:
+
+```
+make docker_build
+```
+
+to run created container, type:
+
+```
+make docker_run
+```
+
+to stop running container, type:
+
+```
+sudo docker ps
+```
+
+find container ID and kill it with:
+
+```
+sudo docker kill CONTAINER_ID
 ```
 
 update

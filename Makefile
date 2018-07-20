@@ -25,6 +25,10 @@ discard:
 	git checkout -- source
 	git clean -f source
 	echo "pages and posts discarded"
+docker_build: generate
+	sudo docker build -t wittchenio .
+docker_run:
+	sudo docker run -p 127.0.0.1:4000:4000 -t wittchenio
 docs:
 	mkdir docs
 	docsify init docs
