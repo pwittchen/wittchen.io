@@ -53,7 +53,7 @@ We can now edit this message with command:
 git commit --amend
 ```
 
-You can read more about it in the [official Git documentation](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History)
+You can read more about it in the [official Git documentation](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History).
 
 ## Solution #3
 
