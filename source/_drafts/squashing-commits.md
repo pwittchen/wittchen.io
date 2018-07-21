@@ -4,7 +4,13 @@ tags:
     - git
 ---
 
-While creating a Pull Requests it's good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary. Some time ago I've found project http://rebaseandsqua.sh/ made by Jake Wharton. It's really useful, handy and allows us to rebase and squash commits quite easily. Some time ago I created a git alias for myself for merging last commits in `.gitconfig`:
+While creating a Pull Requests it's good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary. Some time ago I've found project http://rebaseandsqua.sh/ made by Jake Wharton. It's really useful, handy and allows us to rebase and squash commits quite easily. 
+
+If we want to understand this process and do it manually instead of delegating it to the script from the web, we should perform the following steps:
+
+//TDB.
+
+Some time ago I created a git alias for myself for merging last commits in `.gitconfig`:
 
 ```
 merge-local-commits = !sh -c 'git reset --soft HEAD~$1' -
@@ -30,3 +36,4 @@ and we are ready to override all the intermediate commits with the single commit
 git push -f
 ```
 
+I hope, now you won't be afraid of squashing your commits :-).
