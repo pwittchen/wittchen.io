@@ -69,7 +69,7 @@ We can invoke it with e.g.:
 git merge-local-commits 3
 ```
 
-It works pretty fine, but we need to remember how many commits we want to merge and type a commit message and perform commit again.
+It works pretty fine, but we need to remember how many commits we want to merge, type a commit message and perform commit again.
 
 ## Solution #4
 
