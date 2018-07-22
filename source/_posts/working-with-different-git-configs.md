@@ -40,7 +40,7 @@ If you're using different configs on the different machines with the same OS, yo
 ```bash
 . ~/.machine_name
 
-if \[ $machineName = "workMachine" \]; then
+if [ $machineName = "workMachine" ]; then
   setupGitForWork
 else
   setupGitPersonal
