@@ -34,9 +34,9 @@ Personalization
 I wanted to make a script available and usable for everyone, so I created [.pkup.conf](https://github.com/pwittchen/pkup/blob/master/.pkup.conf) file, which is responsible for personalization and configuration of the script. I think, it looks pretty straightforward.
 
 ```
-yDEV\_PROJECTS\_DIR=$yHYBRIS_SRC
-yDEV\_PROJECTS\_LIST=(backoffice platform-backoffice cockpitng backofficesearch pcm pcmbackoffice cockpit cockpit-core)
-yDEV\_REPORT\_DIR=~/Documents/hybris/pkup/raporty/doc/
+yDEV_PROJECTS_DIR=$yHYBRIS_SRC
+yDEV_PROJECTS_LIST=(backoffice platform-backoffice cockpitng backofficesearch pcm pcmbackoffice cockpit cockpit-core)
+yDEV_REPORT_DIR=~/Documents/hybris/pkup/raporty/doc/
 yDEV_NAME="Your name"
 yDEV_SURNAME="Your surname"
 yDEV_ROLE="Software Developer"
