@@ -35,7 +35,7 @@ We should see something like this in our editor of choice:
 ```
 pick 48d7c25 adding link to vim-jdb plugin in README.md
 pick 97376b4 Update README.md
-pick a92b5bf adding custom-squash alias to .gitconfig
+pick a92b5bf adding squash alias to .gitconfig
 ```
 
 Next, we can decide, which commits we want to squash:
@@ -43,7 +43,7 @@ Next, we can decide, which commits we want to squash:
 ```
 pick 48d7c25 adding link to vim-jdb plugin in README.md
 squash 97376b4 Update README.md
-squash a92b5bf adding custom-squash alias to .gitconfig
+squash a92b5bf adding squash alias to .gitconfig
 ```
 
 When, we save it, all of our commits will be squashed into one containing all commit messages.
@@ -76,13 +76,13 @@ It works pretty fine, but we need to remember how many commits we want to merge,
 Recently I've found another solution to this problem represented with the following alias:
 
 ```
-custom-squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\";   };f"
+squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\";   };f"
 ```
 
 It's doing the same thing as previous alias, but it preserves all the commit messages. Thanks to that, we can keep all of our commit messages or delete them and leave just one, which is the most relevant for the given change. When we want to "squash" 3 commits, we can just type:
 
 ```
-git custom-squash 3
+git squash 3
 ```
 
 and we are ready to override all the intermediate commits with the single commit for the Pull Request:
