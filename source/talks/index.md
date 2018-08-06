@@ -5,6 +5,7 @@ date: 2018-03-15 22:28:00
 
 ## Upcoming
 
+*   2018-10-20 **Is your app really connected?** Mobilization (Łódź, Poland)
 *   2018-11-19 **Brain-Computer Interfaces - Science Fiction or Reality?** Øredev (Malmö, Sweden)
 
 ## Past
