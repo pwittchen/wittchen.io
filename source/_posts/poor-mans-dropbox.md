@@ -113,4 +113,4 @@ On my Android phone, I'm using [Solid Explorer app](https://play.google.com/stor
 
 ## Summary
 
-I know this solution is far from perfect (I call it poor myself) and it doesn't handle synchronization in the other way (from server to local directory), but at least I have full control over it and nobody tells me what file system or operating system I have to use or what I need to leave encrypted or unecrypted. It's clean, simple and fine for me now. Maybe I'll enhance this solution in the future.
+I know this solution is far from perfect (I call it poor myself) and it doesn't handle synchronization in the other way (from server to local directory), but at least I have full control over it and nobody tells me what file system or operating system I have to use or what I need to leave encrypted or unencrypted. It's clean, simple and fine for me now. Maybe I'll enhance this solution in the future.
