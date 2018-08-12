@@ -5,7 +5,6 @@ tags:
   - unix
   - bash
   - cron
-  - lftp
   - ftp
 date: 2018-08-12 23:10:42
 ---
