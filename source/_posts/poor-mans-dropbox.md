@@ -42,7 +42,7 @@ After that, I've prepared `make_ftp_backup` script:
 
 echo "starting backup process"
 
-rm -rf ~/backup/*
+rm -rf ~/Backup/*
 
 echo "preparing directories to backup"
 
