@@ -61,6 +61,8 @@ HOST=your-host.com
 
 lftp ftp://$USER:$PASS@$HOST -e "set ftp:ssl-allow no; mirror -R -v --delete-first ~/Backup backup; quit"
 
+date >> ~/Dokumenty/logs/ftp_backup.log
+
 echo "backup process finished"
 ```
 
