@@ -85,6 +85,8 @@ It looks as follows:
 0 */2 * * * make_ftp_backup
 ```
 
+We can list our cron jobs by typing `crontab -l`.
+
 As you can see in the comments, I'm running my script every 2nd hour every day.
 I've found [very nice video explaining how to use cron](https://www.youtube.com/watch?v=QZJ1drMQz1A). If you're not familiar with it, check this link.
 Author of the video created useful snippets, which you can view at: https://github.com/CoreyMSchafer/code_snippets/tree/master/Cron-Tasks
