@@ -20,7 +20,7 @@ If you don't want to read all of this stuff, I can make a short summary:
 
 I had a few options:
 - leave my Dropbox directory unencrypted
-- swithc to another OS
+- switch to another OS
 - change service provider to something else
 - create my own solution
 
