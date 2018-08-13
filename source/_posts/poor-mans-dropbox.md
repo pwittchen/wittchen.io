@@ -24,7 +24,7 @@ I had a few options:
 - change service provider to something else
 - create my own solution
 
-I'm not going to change my OS now and existing alternatives to Dropbox aren't good enogh or are paid.
+I'm not going to change my OS now and existing alternatives to Dropbox aren't good enough.
 
 ## Preparing Poor Man's Dropbox
 
