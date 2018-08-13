@@ -6,7 +6,6 @@ tags:
 date: 2018-08-13 10:57:59
 ---
 
-
 I have good news! Once again, I have become the Media Partner of [JDD – one of the biggest Java conferences in Poland](http://jdd.org.pl).
 
 This time Java enthusiasts are going to meet at [Nowohuckie Centrum Kultury](https://nck.krakow.pl/) in Kraków, on the October 8-9th.
