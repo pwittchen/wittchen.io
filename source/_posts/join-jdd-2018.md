@@ -17,7 +17,7 @@ You can register at https://jdd2018.evenea.pl
 
 ## What new at JDD this year?
  
-One of the JDD 2018 goals is consistent and rich in content program, which was prepared by CFP ideas and JDD Program Committee suggestions. The schedule includes Spring, Serverless, Reactive Streams, GraphQL, REST Api, Reactive Programming and Java, Java 8, Java 9 i Java 10, of course! "Meat and practice" -­ live coding, case studies – this is what you can expect from JDD this year. Furthermore, there will be more lecturers from abroad – JDD opens wider for international content.
+One of the JDD 2018 goals is consistent and rich in content program, which was prepared by CFP ideas and JDD Program Committee suggestions. The schedule includes Spring, Serverless, Reactive Streams, GraphQL, REST Api, Reactive Programming and Java, Java 8, Java 9 and Java 10, of course! "Meat and practice" -­live coding, case studies – this is what you can expect from JDD this year. Furthermore, there will be more lecturers from abroad – JDD opens wider for international content.
 
 ## World-renowned Java experts and hands-on experiences
 
