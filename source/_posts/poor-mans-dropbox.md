@@ -107,10 +107,32 @@ Reference information for cron jobs placed there looks as follows:
 
 It really helps for preparing new cron jobs schedule. You can also visit [crontab.guru](http://crontab.guru/) website to test your cron jobs definitions.
 
+### Copying data from the server to the local directory
+
+Solution above just uploads local files to the remote server. Sometimes we may want to add some data from another computer or mobile device and access them later on the local computer. We shouldn't place this data to the `backup` directory because it may be overriden by the backup script. To solve this problem, we can create `input` directory on the remote server and `input` directory in the local file system. After that, we can create `get_ftp_input` script, which will copy remote directory to local file system.
+
+```bash
+#!/usr/bin/env bash
+
+USER=your-user
+PASS=your-password
+HOST=your-host.com
+
+echo "downloading input from the server"
+
+lftp ftp://$USER:$PASS@$HOST -e "set ftp:ssl-allow no; mirror -v input ~/Dokumenty/input; quit"
+
+date >> ~/Dokumenty/logs/ftp_input.log
+
+echo "download complete"
+```
+
+It's not real synchronization like in the Dropbox, but at least we have simple way add new files to the local computer from the different device with Internet access and FTP client. We can add this script to the crontab too, if we want to.
+
 ### Accessing files on the go
 
 On my Android phone, I'm using [Solid Explorer app](https://play.google.com/store/apps/details?id=pl.solidexplorer2) for browsing files and directories. It's really good app and it has FTP client built-in, so I can access my backup folder from my mobile phone if I need to.
 
 ## Summary
 
-I know this solution is far from perfect (I call it poor myself) and it doesn't handle synchronization in the other way (from server to local directory), but at least I have full control over it and nobody tells me what file system or operating system I have to use or what I need to leave encrypted or unencrypted. It's clean, simple and fine for me now. Maybe I'll enhance this solution in the future.
+I know this solution is far from perfect (I call it poor myself) and it doesn't handle two way synchronization, but at least I have full control over it and nobody tells me what file system or operating system I have to use or what I need to leave encrypted or unencrypted. It's clean, simple and fine for me now. Maybe I'll enhance this solution in the future.
