@@ -14,7 +14,7 @@ date: 2018-03-15 22:28:00
 *   2018-02-08 [Fixing a billion dollar mistake](https://speakerdeck.com/pwittchen/fixing-a-billion-dollar-mistake) Quality Meetup (Katowice, Poland)
 *   2017-12-16 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) infoMEET (Wrocław, Poland)
 *   2017-12-04 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) Kraków Java Users Group (Kraków, Poland)
-*   2017-12-01 [Is your app really connected?](https://speakerdeck.com/pwittchen/is-your-app-really-connected) DroidCon Poland (Kraków, Poland)
+*   2017-12-01 [Is your app really connected?](https://speakerdeck.com/pwittchen/is-your-app-really-connected-1) DroidCon Poland (Kraków, Poland)
 *   2017-11-18 [How to make open-source projects, which people want to use](https://speakerdeck.com/pwittchen/how-to-make-open-source-projects-which-people-want-to-use) SpreadIT (Gliwice, Poland)
 *   2017-11-08 [Reactive Programming – efficient server applications](https://speakerdeck.com/pwittchen/reactive-programming-efficient-server-applications) (presented with Arek Galwas) HYC (Gliwice, Poland)
 *   2017-10-20 [Git - tips and tricks](https://speakerdeck.com/pwittchen/git-tips-and-tricks) Meet and Code (Gliwice, Poland)
