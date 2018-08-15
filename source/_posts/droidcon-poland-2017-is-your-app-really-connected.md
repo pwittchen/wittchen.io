@@ -17,7 +17,7 @@ Below, you can see slides from this presentation.
 <script async class="speakerdeck-embed" data-id="374cefa56e1c4aaa9d12b8b427ebef74" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 {% endraw %}
 
-[View slides on SpeakerDeck](https://speakerdeck.com/pwittchen/is-your-app-really-connected)
+[View slides on SpeakerDeck](https://speakerdeck.com/pwittchen/is-your-app-really-connected-1)
 
 There's also tweet related to this presentation from [DroidCon Kraków](https://twitter.com/droidconkr):
 
