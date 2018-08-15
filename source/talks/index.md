@@ -28,4 +28,4 @@ date: 2018-03-15 22:28:00
 *   2014-08-26 [Stuff you should know about Android](http://slides.com/piotrwittchen/stuff-you-should-know-about-android) Future Processing, Java Show and Tell (Gliwice, Poland)
 *   2013-05-27 [Brain-Computer Interface for mobile devices](http://slides.com/piotrwittchen/brain-computer-interface-for-mobile-devices) Silesian University of Technology (Gliwice, Poland)
 
-A few relations from the conferences I attended as a speaker, volunteer or attendee are under [#conferences](/tags/conferences/) tag on this blog. You can also check [#meetups](/tags/meetups) tag for relations from meetups.
+A few relations from the conferences I attended as a speaker, volunteer, media partner or attendee are under [#conferences](/tags/conferences/) tag on this blog. You can also check [#meetups](/tags/meetups) tag for relations from meetups.
