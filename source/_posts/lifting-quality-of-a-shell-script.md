@@ -17,12 +17,12 @@ Writing a script with unit tests and continuous integration
 I'm not an expert in shell scripting, so I also wanted to learn more about it. In addition, I wanted to apply best software development practices in that script. Someone can say that in the case of a simple shell script proper engineering may be a superfluity, but in my opinion, the simplicity of the project is not an excuse for doing it the right way. Especially, if we want to use it in the future. That's why I divided this script into smaller functions, added command line arguments handling and help for the users. Moreover, I added [unit tests](https://github.com/pwittchen/ydownloader/blob/master/test.sh) with [shunit2](https://github.com/kward/shunit2) (yes, we can write unit tests for the shell scripts) and [continuous integration with Travis CI](https://travis-ci.org/pwittchen/ydownloader) server. In the "Clean Code" book, we can read that code without unit tests is not clean by definition. After dividing script into smaller functions, it was much easier to test it. My script is accepting command line arguments, so I needed to do the following trick to make it testable and include it in the testing script:
 
 ```bash
-if \[ "$TEST_MODE" == "" \]
+if [ "$TEST_MODE" == "" ]
 then
   TEST_MODE=false
 fi
 
-if \[ "$TEST_MODE" = false \] ; then
+if [ "$TEST_MODE" = false ] ; then
   # parse command line arguments here...
 else
   echo "TEST_MODE enabled"
@@ -48,7 +48,7 @@ testCutLastChars() {
   assertEquals $expectedValue $actualValue
 }
 
-\# more tests goes here...
+# more tests goes here...
 . ./shunit2/shunit2 # load shunit2
 ```
 
