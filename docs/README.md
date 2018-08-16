@@ -46,6 +46,8 @@ make run
 docker
 ------
 
+**please note**: in order to prepare this docker image correctly, you need to have `npm` and `hexo` installed locally; in this case, generated files will be just copied into the docker image and served via simple HTTP server and Python; it's not the best approach and it can be improved in the future
+
 - to create container, type: `make docker_build`
 - to run created container, type: `make docker_run`
 - to kill running container, type: `make docker_kill`
@@ -63,9 +65,9 @@ git push
 secrets
 -------
 
-configure FTP credentials in `_config.yml` file
+configure FTP credentials in `.ftpconfig` file
 
-have a look at the [official documentation](https://hexo.io/docs/deployment.html#FTPSync)
+we're using custom `deploy.sh` bash script with `lftp` under the hood because default `ftpsync` deployment is buggy, flaky and often doesn't work
 
 we don't want to commit FTP credentials to any remote repo
 
