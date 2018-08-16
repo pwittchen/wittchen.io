@@ -20,7 +20,6 @@ generate:
 deploy:
 	echo "starting deployment..."
 	hexo generate && ./deploy.sh
-	echo "deployment FINISHED!"
 discard:
 	git checkout -- source
 	git clean -f source
