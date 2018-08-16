@@ -8,8 +8,8 @@
   "scripts": {
     "preinstall": "echo \"beginning installation\"",
     "postinstall": "echo \"finishing installation\"",
-    "protect-secrets": "git update-index --assume-unchanged _config.yml",
-    "expose-secrets": "git update-index --no-assume-unchanged _config.yml"
+    "protect-secrets": "git update-index --assume-unchanged .ftpconfig",
+    "expose-secrets": "git update-index --no-assume-unchanged .ftpconfig"
   },
   "dependencies": {
     "docsify-cli": "^4.2.1",
