@@ -81,13 +81,13 @@ I've typed `crontab -e` to define new cron job via `vim` (you can use any editor
 It looks as follows:
 
 ```
-# Backup my important files to my FTP server every 2nd hour
-0 */2 * * * make_ftp_backup
+# Backup my important files to my FTP server every hour at minute zero
+0 * * * * make_ftp_backup
 ```
 
 We can list our cron jobs by typing `crontab -l`.
 
-As you can see in the comments, I'm running my script every 2nd hour every day.
+As you can see in the comments, I'm running my script every hour every day at minute zero.
 I've found [very nice video explaining how to use cron](https://www.youtube.com/watch?v=QZJ1drMQz1A). If you're not familiar with it, check this link.
 Author of the video created [useful code snippets](https://github.com/CoreyMSchafer/code_snippets/tree/master/Cron-Tasks) explaining crontab syntax.
 
