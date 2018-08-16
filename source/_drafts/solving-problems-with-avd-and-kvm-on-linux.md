@@ -5,19 +5,11 @@ tags:
     - linux
 ---
 
-I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems.
+I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message...
 
 ## /dev/kvm is not found
 
-After opening AVD window, I saw the following message:
-
-```
-/dev/kvm is not found
-```
-
-KVM (for Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V).
-In order to enable KVM, I needed to restart the computer and enter the BIOS by pressing <key>F1</key> key. Next, I entered `Security` tab and enabled Intel Virtualization Technology and Intel VT-d Feature. Now, I could press <key>F10</key> to save, exit nad restart the computer.
-Unfortunately, that wasn't the end of the story... I saw another message.
+KVM (for Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V). In order to enable KVM, I needed to restart the computer and enter the BIOS by pressing `F1` key. Next, I entered `Security` tab and enabled Intel Virtualization Technology and Intel VT-d Feature. Now, I could press `F10` to save, exit nad restart the computer. Unfortunately, that wasn't the end of the story. I saw another message...
 
 ## /dev/kvm device permission denied
 
@@ -47,9 +39,9 @@ This returned
 kvm:x:some_number:
 ```
 
-on my system: as there is nothing left to the final `:`, there are no users in the kvm group.
+As there is nothing left to the final `:`, there are no users in the kvm group.
 
-To add the user `username` to the kvm group, you could use:
+To add the user `username` to the kvm group, we could use:
 
 ```
 sudo adduser username kvm
@@ -57,19 +49,19 @@ sudo adduser username kvm
 
 which adds the user to the group.
 
-You can check your `username`, by typing:
+We can check our `username`, by typing:
 
 ```
 whoami
 ```
 
-check once again with
+check group members once again with:
 
 ```
 grep kvm /etc/group
 ```
 
-Your user should be there. Next, just restart the machine, create new AVD, start it and everything works!
+Our user should be there. Next, just restart the machine, create new AVD, start it and everything works!
 
 ## References
 - https://stackoverflow.com/questions/36527278/dev-kvm-not-found-error-on-windows-in-android-studio
