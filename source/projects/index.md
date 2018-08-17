@@ -19,6 +19,7 @@ Open-source projects:
 * [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons) ★ 120+
 * [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode) ★ 5
 * [ReactiveBus](https://github.com/pwittchen/ReactiveBus) ★ 10+
+* [RxBattery](https://github.com/pwittchen/RxBattery) ★ 1+
 * [kirai](https://github.com/pwittchen/kirai) ★ 60+
 * [WeatherIconView](https://github.com/pwittchen/WeatherIconView) ★ 190+
 * [InfiniteScroll](https://github.com/pwittchen/InfiniteScroll) ★ 130+
