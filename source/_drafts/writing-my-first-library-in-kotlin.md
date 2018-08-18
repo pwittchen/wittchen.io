@@ -12,7 +12,7 @@ Recently, I decided to create a tiny Android library called [RxBattery](https://
 
 ## Build System
 
-I used Gradle to build the project. It's popular for all JVM and Android apps nowadays and works fine with Kotlin. I just needed to add Kotlin Gradle Plugin and Kotlin STD Lib to the `build.gradle` file to the `classpath` dependencies in `buildscript` section. I also needed to define `sourceSets` to allow IntelliJ and Android Studio recognize directories with sources.
+I used Gradle to build the project. It's popular for JVM and Android apps nowadays and works fine with Kotlin. I just needed to add Kotlin Gradle Plugin and Kotlin STD Lib to the `build.gradle` file to the `classpath` dependencies in `buildscript` section. I also needed to define `sourceSets` to allow IntelliJ and Android Studio recognize directories with sources.
 
 ```groovy
 android {
