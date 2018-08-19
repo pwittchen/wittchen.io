@@ -101,6 +101,64 @@ ktlint {
 
 I also tried to generate **code coverage report**, to be able to verify what amount of code is covered by unit tests, but unfortunately Jacoco wasn't able to analyze Kotlin code. I saw on the web that people struggled with the same problem and a few of them could have solved that issue. Maybe I missed something and I could update it in the future.
 
+## Continuous Integration
+
+In my open-source projects, I use [Travis](https://travis-ci.org/) for CI. Everything can be configured in `.travis.yml` file and setup looks exactly the same as for Android libraries written in Java.
+
+```
+language: android
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-28
+    - android-28
+    - extra-android-support
+    - extra-android-m2repository
+  licenses:
+    - android-sdk-license-5be876d5
+    - android-sdk-license-c81a61d9
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
+
+jdk: oraclejdk8
+
+before_install:
+  - yes | sdkmanager "platforms;android-27"
+
+install:
+  - true
+
+script:
+  - ./gradlew clean build test check
+
+cache:
+  directories:
+- $HOME/.m2
+```
+
+I suppose that in case of writing pure Kotlin (non-Android), library configuration would be the same as in regular Java project because everything is built via Gradle. Configuration, which works fine for one of my pure Java libraries looks like that:
+
+```
+language: java
+
+install:
+  # Check install section: http://docs.travis-ci.com/user/build-configuration/#install
+  # If you'd like to skip the install stage entirely, set it to true and nothing will be run.
+  - true
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
+
+script:
+- ./gradlew clean build test check
+```
+
+I don't think that it would require any significant change in case of Kotlin.
+
 ## Kotlin vs. Java
 
 I've decided to use Kotlin instead of Java to learn a bit more about this language and try something new. Google promotes this language during Google I/O events and recommends to use it for Android development. Moreover, it's regular JVM language, so we can use it anywhere we want - on Android (mobile), on servers and even on desktop apps. I haven't discovered all the features of this language during writing this tiny project, but I have a few observations. Writing code is a bit strange because I got used to programming in Java. In Kotlin, we define the function or variable name first, then we put colon and we define the type next. It's opposite to Java, where types are defined first. 
