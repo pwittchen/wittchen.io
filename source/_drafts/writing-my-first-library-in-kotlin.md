@@ -250,4 +250,4 @@ Library deployment of the Kotlin project is exactly the same as Java project. I 
 
 ## Summary
 
-To wrap up, Kotlin is an interesting language. It's hard to say, if it's really better than Java although it has a few interesting features. Nevertheless, it's good to familiarize with it because it's being promoted by Google and JetBrains. JetBrains company actually created and develops this language, so due to this fact, I'm able to put more trust in that project. Last, but not least, learning new things broadens our mind and horizon.
+To wrap up, Kotlin is an interesting language. It's hard to say, if it's really better than Java although it has a few interesting features. Nevertheless, it's good to familiarize with it because it's being promoted by Google and JetBrains. JetBrains company actually created and develops this language, so due to this fact, I'm able to put more trust in that project. If you would like to see complete code and configuration of the project mentioned in this article, check out my [RxBattery](https://github.com/pwittchen/RxBattery) repository on GitHub. Last, but not least, learning new things broadens our mind and horizon.
