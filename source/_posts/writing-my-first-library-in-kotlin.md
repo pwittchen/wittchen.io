@@ -99,6 +99,8 @@ ktlint {
 }
 ```
 
+I also tried to generate **code coverage report**, to be able to verify what amount of code is covered by unit tests, but unfortunately Jacoco wasn't able to analyze Kotlin code. I saw on the web that people struggled with the same problem and a few of them could have solved that issue. Maybe I missed something and I could update it in the future.
+
 ## Kotlin vs. Java
 
 I've decided to use Kotlin instead of Java to learn a bit more about this language and try something new. Google promotes this language during Google I/O events and recommends to use it for Android development. Moreover, it's regular JVM language, so we can use it anywhere we want - on Android (mobile), on servers and even on desktop apps. I haven't discovered all the features of this language during writing this tiny project, but I have a few observations. Writing code is a bit strange because I got used to programming in Java. In Kotlin, we define the function or variable name first, then we put colon and we define the type next. It's opposite to Java, where types are defined first. 
