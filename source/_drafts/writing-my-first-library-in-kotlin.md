@@ -246,7 +246,7 @@ Next, we just call: `./gradlew dokka` and our JavaDoc is generated in defined `o
 
 ## Library Deployment
 
-...
+Library deployment of the Kotlin project is exactly the same as Java project. I simply used [`maven_push.gradle`](https://github.com/pwittchen/RxBattery/blob/master/maven_push.gradle) script created by Chris Banes some time ago, applied it in the library module and configured everything in `gradle.properties` and `library/gradle.properties`. Of course, I also needed to have my credentials configured in `~/.gradle/gradle.properties` file. Next, I could just call `./gradlew uploadArchives`, close and release library on the OSS SonaType website.
 
 ## Summary
 
