@@ -17,7 +17,7 @@ Open-source projects:
 * [prefser](https://github.com/pwittchen/prefser) ★ 200+ (used by Toss.im and other Android apps)
 * [ReactiveSensors](https://github.com/pwittchen/ReactiveSensors) ★ 120+
 * [ReactiveBeacons](https://github.com/pwittchen/ReactiveBeacons) ★ 120+
-* [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode) ★ 5
+* [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode) ★ 5+
 * [ReactiveBus](https://github.com/pwittchen/ReactiveBus) ★ 10+
 * [RxBattery](https://github.com/pwittchen/RxBattery) ★ 1+
 * [kirai](https://github.com/pwittchen/kirai) ★ 60+
@@ -27,10 +27,11 @@ Open-source projects:
 * [gesture](https://github.com/pwittchen/gesture) ★ 50+
 * [android-quality-starter](https://github.com/pwittchen/android-quality-starter) ★ 20+
 * [ydocker](https://github.com/pwittchen/ydocker) ★ 10+
-* [ydownloader](https://github.com/pwittchen/ydownloader) ★ 1
-* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 100+
+* [ydownloader](https://github.com/pwittchen/ydownloader) ★ 1+
+* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 150+
+* [noti.py](https://github.com/pwittchen/noti.py) ★ 1+
 * [EEG Reader](https://github.com/pwittchen/EEGReader) ★ 20+
-* [Search Twitter](https://github.com/pwittchen/SearchTwitter) ★ 10
+* [Search Twitter](https://github.com/pwittchen/SearchTwitter) ★ 10+
 
 and more...
 
