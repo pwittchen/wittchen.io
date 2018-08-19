@@ -1,11 +1,13 @@
 ---
 title: Writing my first library in Kotlin
 tags:
-    - java
-    - kotlin
-    - android
-    - gradle
+  - java
+  - kotlin
+  - android
+  - gradle
+date: 2018-08-19 10:24:19
 ---
+
 
 ## Introduction
 
