@@ -143,7 +143,7 @@ E.g. inheritance looks as follows:
 class MainActivity : AppCompatActivity()
 ```
 
-and sometimes, don't have variable provided in the lambda, when there's only one value - we can invoke this value by calling `it` object
+and sometimes we don't have variable provided in the lambda, when there's only one value and we can invoke this value by calling `it` object
 
 ```kotlin
 batteryDisposable = RxBattery
