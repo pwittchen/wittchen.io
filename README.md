@@ -171,7 +171,6 @@ the following tools were used during development of this site:
 - [hexo](https://hexo.io/)
 - [apollo hexo theme](https://github.com/pinggod/hexo-theme-apollo)
 - [jade](http://jade-lang.com/)
-- [ftpsync](https://github.com/evanplaice/node-ftpsync)
 - [browsersync](https://browsersync.io/)
 - [node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
@@ -179,3 +178,4 @@ the following tools were used during development of this site:
 - [sass](https://sass-lang.com/)
 - [turndown](https://domchristie.github.io/turndown/)
 - [docsify](https://docsify.js.org/)
+- [lftp](https://github.com/lavv17/lftp)
