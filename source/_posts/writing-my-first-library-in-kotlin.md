@@ -211,7 +211,7 @@ batteryDisposable = RxBattery
   .subscribe { textView.text = it.toString() }
 ```
 
-The thing I like about implicit Kotlin code is data classes. We can create something like that:
+The thing I like about implicit Kotlin code is **data classes**. We can create something like that:
 
 ```kotlin
 data class BatteryState(
@@ -225,6 +225,19 @@ data class BatteryState(
 ```
 
 and it will generate constructor with all these values, getters and `toString()` method. In Java, we would need to write it by hand, use code generators in the IDE or code generation libraries like Lombok.
+
+When we take a look at the **control flow** in Kotlin, except for `if` expression, `for` and `while` loops, we also have `when` expression, which can be kind of neat equivalent to `switch` instruction in Java. It looks like this:
+
+```kotlin
+ fun plugged(): Plugged {
+   return when (pluggedCode) {
+     BatteryManager.BATTERY_PLUGGED_AC -> Plugged.AC
+     BatteryManager.BATTERY_PLUGGED_USB -> Plugged.USB
+     BatteryManager.BATTERY_PLUGGED_WIRELESS -> Plugged.WIRELESS
+     else -> Plugged.UNKNOWN
+   }
+}
+```
 
 It's worth to say that there's good **inter-operability** between Java and Kotlin. We can use Kotlin modules and libraries in Java projects and vice-versa because everything compiles to the same byte-code. We can even create pure Java code in the Kotlin module. For example, I wanted to have static method called from the Kotlin library. In order to achieve that, I needed to wrap whole class in a Companion Object.
 
