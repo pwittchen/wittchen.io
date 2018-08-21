@@ -270,6 +270,15 @@ RxBatteryFactory.observe(this)
 
 It's good to know that it's possible because when we got stuck with implicit Kotlin syntaxt, we can always use Java in one particular scenario.
 
+Later, I figured out, we can simply add `@JvmStatic` annotation before the method signature and since now, method method will be visible as `static` in the Java modules as well and we no longer need additional Java code.
+
+```kotlin
+@JvmStatic
+fun observe(context: Context): Flowable<BatteryState> {
+  ...
+}
+```
+
 It's hard to say if in more complex project Kotlin would be a better choice. Right now, I'm more familar and comfortable with Java, but on the other hand, Kotlin has a few interesting features, which makes development better. Maybe I'll give this language more chances in the future to learn it better.
 
 ## Unit Tests
