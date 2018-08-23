@@ -292,6 +292,12 @@ fun observe(context: Context): Flowable<BatteryState> {
 }
 ```
 
+Moreover, all classes created in Kotlin are **final by default**. It can cause a problems during writing unit tests and creating mocks. If we want to have non-final class (e.g. in order to mock it), we need to mark it explicitly as `open`.
+
+```kotlin
+open class MyClass
+```
+
 Of course, things mentioned above are not all features of Kotlin. There's much more to discover - e.g. [couroutines](https://kotlinlang.org/docs/reference/coroutines.html). To learn more, check [Kotlin Language Reference](https://kotlinlang.org/docs/reference/), open-source projects in this language, books, and other articles on the web.
 
 It's hard to say if in more complex project Kotlin would be a better choice. Right now, I'm more familar and comfortable with Java, but on the other hand, Kotlin has a few interesting features, which makes development better. Maybe I'll give this language more chances in the future to learn it better.
