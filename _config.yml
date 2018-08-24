@@ -144,5 +144,8 @@ restful:
   post: true
   pages: true
 
+# disqus comments
+disqus_shortname: wittchenio
+
 # google analytics tracking id
 ga: UA-2194664-7
