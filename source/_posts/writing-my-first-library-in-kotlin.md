@@ -191,7 +191,7 @@ If we don't do that, code won't compile. We can avoid such null-checks, by using
 val status: Int = intent!!.getIntExtra(BatteryManager.EXTRA_STATUS, UNKNOWN)
 ```
 
-but by looking at the code, we can see that there are two exclamation marks, so clearly something must be wrong here, so we should think about improvement and when NPE occurs, it'll be easier to find.
+but by looking at the code, we can see that there are two exclamation marks, so clearly something must be wrong here and we should think about improvement. Moreover, when NPE occurs, it'll be easier to find.
 
 Kotlin is also **more concise** than Java. It's hard to say if it's an advantage or drawback. In Java we have more code, but we clearly know what's going on when the code is clean. In Kotlin a lot of stuff is **implicit**.
 
