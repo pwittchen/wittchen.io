@@ -6,7 +6,7 @@ date: 2018-02-21 20:33:26
 Hi!
 ---
 
-My name is **Piotr Wittchen**. I am [**software developer**](https://www.linkedin.com/in/piotrwittchen/) from Gliwice, Poland. I graduated Engineering and Master studies of Automatic Control, Electronics and Computer Science at Silesian University of Technology. I&nbsp;worked mostly with web and mobile applications. I also develop my open-source [projects](/projects). From time to time, I give [talks](/talks) related to software development at the conferences and meetups. Besides geeky stuff, I like fresh drip coffee brew, different kinds of sports, traveling, music and playing the guitar. If you would like to contact me or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
+My name is **Piotr Wittchen**. I am [**software developer**](https://www.linkedin.com/in/piotrwittchen/) from Gliwice, Poland. I develop open-source [projects](/projects) and from time to time give [talks](/talks) related to software development at the conferences and meetups. Besides geeky stuff, I like fresh drip coffee brew, different kinds of sports, traveling, music and playing the guitar. If you would like to contact me or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
 
 Want to know more?
 ------------------
