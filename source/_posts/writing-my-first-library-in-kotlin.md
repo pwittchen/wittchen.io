@@ -321,7 +321,7 @@ Unit tests in Kotlin are pretty similar to Java.
 }
 ```
 
-We can use JUnit and Java assertion libraries like Google Truth and mocking libraries like Mockito. There's also mockit-kotlin library, but in my case, I used mockito-core. There are also other mocking libraries like MockK and libraries for BDD like Spek.
+We can use JUnit and Java assertion libraries like Google Truth and mocking libraries like Mockito. There's also [mockit-kotlin](https://github.com/nhaarman/mockito-kotlin) library, but in my case, I used [mockito-core](https://github.com/mockito/mockito). There are also other mocking libraries like [Mockk](https://github.com/mockk/mockk) and libraries for BDD like [Spek](https://github.com/spekframework/spek). Moreover, we can achieve more concise syntax for unit tests using various kotlin libraries like [kotlintest](https://github.com/kotlintest/kotlintest). I haven't used it in this project yet, but I may update it in the future.
 
 ## JavaDoc
 
