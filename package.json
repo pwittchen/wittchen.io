@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "hexo": {
-    "version": "3.7.1"
+    "version": "3.7.0"
   },
   "scripts": {
     "preinstall": "echo \"beginning installation\"",
@@ -32,7 +32,7 @@
     "hexo-renderer-jade": "^0.4.1",
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.3.2",
+    "hexo-server": "^0.3.3",
     "npm-upgrade": "^1.4.1"
   }
 }
