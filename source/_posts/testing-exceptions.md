@@ -101,6 +101,6 @@ public void shouldTestExceptionWithRxJava() {
 
 For sure, it shouldn't be default choice and I wrote it just for a little experiment. Don't treat that as a production-ready code (unless there's a reson you really need something like that).
 
-I think, we can find event more ways of testing exceptions. In my opinion, solution with JUnit and `@Rule` annotation is the cleanest and most flexible one among all of the approaches presented here. It's good to mention that last two approaches are just experiments. I also recommend Truth for writing assertions. Nevertheless, libraries like FEST, AssertJ and others, which have fluent interfaces helping in error analysis are also worth considering in daily usage.
+I think, we can find even more ways of testing exceptions. In my opinion, solution with JUnit and `@Rule` annotation is the cleanest and most flexible one among all of the approaches presented here. It's good to mention that last two approaches are just experiments. I also recommend Truth for writing assertions. Nevertheless, libraries like FEST, AssertJ and others, which have fluent interfaces helping in error analysis are also worth considering in daily usage.
 
 Do you know other (maybe better) approaches of testing exceptions in Java? Share them in comments :-).
