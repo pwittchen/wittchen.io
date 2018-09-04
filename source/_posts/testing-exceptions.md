@@ -1,13 +1,15 @@
 ---
 title: Testing exceptions
 tags:
-    - java
-    - testing
+  - java
+  - testing
+date: 2018-09-04 19:49:26
 ---
+
 
 In Java, we can test exceptions via unit tests in a few different ways. In this article, I'll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 
-First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I'm using JUnit for unit tests and [Truth](https://google.github.io/truth/) for assertions.
+First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I'm using [JUnit](https://junit.org) for unit tests and [Truth](https://google.github.io/truth/) for assertions.
 
 ```java
 @Test
@@ -44,25 +46,26 @@ public ExpectedException expectedException = ExpectedException.none();
 public void shouldTestExceptionWithRuleAnnotation() throws RuntimeException {
   expectedException.expect(RuntimeException.class);
   expectedException.expectMessage(EXCEPTION_MESSAGE);
+
   throw new RuntimeException("message");
 }
 ```
 
-Alternatively, we can try to use [Vavr](https://www.vavr.io/) and `Try` interface.
+Alternatively, we can experiment with [Vavr](https://www.vavr.io/) and `Try` interface.
 
 ```java
 @Test
 public void shouldTestExceptionWithTryCatchAndVavr() {
   final Object object = 
     Try
-      .of(this::throwExceptionObject)
+      .of(this::throwException)
       .toOption()
       .getOrElse(new ErrorObject());
 
   assertThat(object).isInstanceOf(ErrorObject.class);
 }
 
-private Object throwExceptionObject() {
+private Object throwException() {
   throw new RuntimeException("message");
 }
 
@@ -90,6 +93,7 @@ and write test like that:
 @Test
 public void shouldTestExceptionWithRxJava() {
   final Throwable throwable = toCompletable(this::throwException).blockingGet();
+
   assertThat(throwable).isInstanceOf(RuntimeException.class);
   assertThat(throwable.getMessage()).isEqualTo(EXCEPTION_MESSAGE);
 }
@@ -97,6 +101,6 @@ public void shouldTestExceptionWithRxJava() {
 
 For sure, it shouldn't be default choice and I wrote it just for a little experiment. Don't treat that as a production-ready code (unless there's a reson you really need something like that).
 
-I think, we can find more ways of testing exceptions. In my opinion, solution with JUnit and `@Rule` annotation is the cleanest and most flexible one among all of the approaches presented here. I also recommend Truth for writing assertions. Nevertheless, libraries like FEST, AssertJ and others, which have fluent interface helping in error analysis are also worth considering in daily usage.
+I think, we can find event more ways of testing exceptions. In my opinion, solution with JUnit and `@Rule` annotation is the cleanest and most flexible one among all of the approaches presented here. It's good to mention that last two approaches are just experiments. I also recommend Truth for writing assertions. Nevertheless, libraries like FEST, AssertJ and others, which have fluent interfaces helping in error analysis are also worth considering in daily usage.
 
 Do you know other (maybe better) approaches of testing exceptions in Java? Share them in comments :-).
