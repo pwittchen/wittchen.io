@@ -5,9 +5,9 @@ tags:
     - testing
 ---
 
-In Java, we can test exceptions via unit tests in a few different ways. In this article, Ill present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
+In Java, we can test exceptions via unit tests in a few different ways. In this article, I'll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 
-First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I''m using JUnit for unit tests and [Truth](https://google.github.io/truth/) for assertions.
+First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I'm using JUnit for unit tests and [Truth](https://google.github.io/truth/) for assertions.
 
 ```java
 @Test
