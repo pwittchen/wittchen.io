@@ -22,5 +22,4 @@ Want to know more?
 * download my Android apps from [Google Play](https://play.google.com/store/apps/dev?id=7269544076898428056)
 * have a look at my [coder stats](http://coderstats.net/github/#pwittchen)
 * and [git awards](http://git-awards.com/users/pwittchen)
-* [buy me a coffee](https://www.buymeacoffee.com/AyF3Uam) if you find my code or content useful
 * or use [paypal.me](https://www.paypal.me/pwittchen) for the money transfer
