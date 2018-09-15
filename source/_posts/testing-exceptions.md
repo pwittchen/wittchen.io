@@ -49,7 +49,7 @@ public void shouldTestExceptionWithAssertJ() throws RuntimeException {
 }
 ```
 
-Third method allows us to test exception type, message and other details without wrapping method call with try-catch block, what increases code readibility and makes it clear. In order to achieve that, we need `@Rule` annotation and `ExpectedException` object like in the code snippet below. What is important in this example, we have to define assertions in the beginning and invoke method, which will throw an exception after these assertions. It's different order than in a regular unit test.
+Another method allows us to test exception type, message and other details without wrapping method call with try-catch block, what increases code readibility and makes it clear. In order to achieve that, we need `@Rule` annotation and `ExpectedException` object like in the code snippet below. What is important in this example, we have to define assertions in the beginning and invoke method, which will throw an exception after these assertions. It's different order than in a regular unit test.
 
 ```java
 
