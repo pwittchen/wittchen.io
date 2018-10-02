@@ -1,6 +1,11 @@
 .archive {
     max-width: 800px;
     margin: auto;
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+    }
+
     .post-item {
         padding: 2px 0 0 50px;
     }
