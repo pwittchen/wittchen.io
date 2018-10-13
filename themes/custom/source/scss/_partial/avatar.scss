@@ -1,5 +1,5 @@
 #avatar {
-    background-image: url('https://en.gravatar.com/userimage/27873164/6e88202f879760e6312053474d803843.jpg?size=200');
+    background-image: url('http://pl.gravatar.com/userimage/27873164/91310e2e9236f640475d160276cfc97a.jpg?size=200i');
     width: 200px;
     height: 200px;
     background-size: cover;
@@ -7,4 +7,9 @@
     border-radius: 50%;
     margin-top: 1px;
     float: right;
+}
+
+#avatar:hover {
+    background-image: url('https://pl.gravatar.com/userimage/27873164/6e88202f879760e6312053474d803843.jpg?size=200');
+
 }
