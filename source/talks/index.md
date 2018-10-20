@@ -5,12 +5,12 @@ date: 2018-03-15 22:28:00
 
 ## Upcoming
 
-*   2018-10-20 **Is your app really connected?** Mobilization (Łódź, Poland)
 *   2018-11-19 **Brain-Computer Interfaces - Science Fiction or Reality?** Øredev (Malmö, Sweden)
 *   2019-01-10 **TBA** Toast Android Developers Meetup (Wrocław, Poland)
 
 ## Past
 
+*   2018-10-20 [Is your app really connected?](https://speakerdeck.com/pwittchen/is-your-app-really-connected-1) Mobilization (Łódź, Poland)
 *   2018-09-13 **Brain-Computer Interfaces - Science Fiction or Reality?** SAP Lunch Talks (Gliwice, Poland)
 *   2018-03-15 [Get ready for java.util.concurrent.Flow!](https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow) Hackin’ Gliwice (Gliwice, Poland) [watch video [PL]](https://www.youtube.com/watch?v=D546dLLFsPg)
 *   2018-02-08 [Fixing a billion dollar mistake](https://speakerdeck.com/pwittchen/fixing-a-billion-dollar-mistake) Quality Meetup (Katowice, Poland)
