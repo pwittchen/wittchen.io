@@ -21,3 +21,4 @@ TBD.
 - https://stackoverflow.com/questions/2129044/java-heap-terminology-young-old-and-permanent-generations
 - http://javahonk.com/how-many-types-memory-areas-allocated-by-jvm/
 - https://stackoverflow.com/questions/10695298/java-gc-why-two-survivor-regions
+- https://stackoverflow.com/questions/24074164/what-is-the-use-of-metaspace-in-java-8
