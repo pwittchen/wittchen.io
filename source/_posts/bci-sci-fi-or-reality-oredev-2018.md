@@ -1,9 +1,11 @@
 ---
 title: Brain-Computer Interfaces - Science Fiction or Reality? My talk at Øredev 2018
 tags:
-    - bci
-    - conferences
+  - bci
+  - conferences
+date: 2018-11-21 21:59:06
 ---
+
 
 Recently, I had an opportunity to speak at the software development conference abroad for the first time. I visited Malmö in Sweden and gave a talk during the [Øredev](http://oredev.org/) 2018 conference. The main theme of the conference was Deus Ex Machina, so I decided to adapt to this topic and prepared presentation about Brain-Computer Interfaces, which is my interest since the end of my studies at the Silesian University of Technology where I wrote a Master Thesis about similar topic. Before the conference, I prepared the same presentation in Polish during the SAP Lunch Talks for the colleagues from my company in Gliwice, Poland.
 
@@ -28,6 +30,7 @@ Attending such international event as a speaker was really interesting experienc
 - https://github.com/pwittchen/neurosky-android-sdk
 - https://github.com/pwittchen/EEGReader
 - http://wittchen.io/tags/bci/
+- https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality
 - https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer
 - http://developer.choosemuse.com/
 - http://developer.neurosky.com/
