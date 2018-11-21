@@ -13,11 +13,8 @@ Recently, I had an opportunity to speak at the software development conference a
 
 After my presentation people sent tweets on the web and even made really nice notes!
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Communication between Brain and Computer is no longer a science fiction. <a href="https://twitter.com/piotr_wittchen?ref_src=twsrc%5Etfw">@piotr_wittchen</a> demonstrating  <a href="https://twitter.com/hashtag/BrainComputerInterface?src=hash&amp;ref_src=twsrc%5Etfw">#BrainComputerInterface</a> using <a href="https://twitter.com/hashtag/NeuroSky?src=hash&amp;ref_src=twsrc%5Etfw">#NeuroSky</a> <a href="https://twitter.com/oredev?ref_src=twsrc%5Etfw">@oredev</a> <a href="https://twitter.com/hashtag/oredev?src=hash&amp;ref_src=twsrc%5Etfw">#oredev</a> <a href="https://t.co/XInuHVwLIK">pic.twitter.com/XInuHVwLIK</a></p>&mdash; Roshan Khan (@roshan_khan) <a href="https://twitter.com/roshan_khan/status/1064559411199467520?ref_src=twsrc%5Etfw">November 19, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Brain Computer Interfaces (BCI) are already reality, though sophisticated applications are still to come. <a href="https://twitter.com/piotr_wittchen?ref_src=twsrc%5Etfw">@piotr_wittchen</a> <a href="https://twitter.com/hashtag/oredev?src=hash&amp;ref_src=twsrc%5Etfw">#oredev</a> <a href="https://t.co/QhaeL24UGH">pic.twitter.com/QhaeL24UGH</a></p>&mdash; Katrina Clokie (@katrina_tester) <a href="https://twitter.com/katrina_tester/status/1064560075786866688?ref_src=twsrc%5Etfw">November 19, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+- https://twitter.com/roshan_khan/status/1064559411199467520
+- https://twitter.com/katrina_tester/status/1064560075786866688
 
 Except for interactions on the web, I got some questions from the audience during the Q&A session and after the presentation. Moreover, people were willing to talk about the subject of the presentation during the conference what was really nice and shown their interest in this area. If you didn't have an opportunity to see this presentation, but you are interested in watching it, it should be available on YouTube and I'll add appropriate link on the [talks](http://wittchen.io/talks/) page on this website once I get it.
 
@@ -28,6 +25,7 @@ Attending such international event as a speaker was really interesting experienc
 ## References and links
 - https://github.com/pwittchen/neurosky-android-sdk
 - https://github.com/pwittchen/EEGReader
+- http://wittchen.io/tags/bci/
 - https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer
 - http://developer.choosemuse.com/
 - http://developer.neurosky.com/
