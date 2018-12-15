@@ -57,15 +57,17 @@ class Application {
       Javalin
           .create()
           .enableCorsForAllOrigins()
-          .requestLogger { ctx, executionTime ->
-            logger.info("${ctx.method()} ${ctx.path()} ${ctx.status()} took $executionTime ms")
+          .requestLogger { ctx, time ->
+            logger.info("${ctx.method()} ${ctx.path()} ${ctx.status()} took $time ms")
           }.routes {
             get("/voucher") { component.voucherHttpFacade().getAll(it) }
             get("/voucher/:group") { component.voucherHttpFacade().getGroup(it) }
             get("/health") { it.json(Health("UP")).status(HttpStatus.OK_200) }
             get("/") { it.status(HttpStatus.FORBIDDEN_403) }
           }
-          .event(JavalinEvent.SERVER_STARTING) { component.voucherController().loadVouchers() }
+          .event(JavalinEvent.SERVER_STARTING) {
+            component.voucherController().loadVouchers()
+          }
           .start(7000)
     }
   }
