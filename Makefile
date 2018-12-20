@@ -50,6 +50,6 @@ clean:
 	rm db.json
 	echo "clean is done"
 clean_full: clean
-	sudo rm -rf node_modules
+	sudo rm -rf node_modules && rm -rf themes/custom/node_modules
 	"full clean done, run make install rule to re-create environment"
 
