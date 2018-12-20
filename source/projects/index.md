@@ -11,7 +11,7 @@ Android apps:
 
 Open-source projects:
 
-* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) ★ 1900+ (used by SkyScanner, Slack, Eero and other Android apps)
+* [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) ★ 2000+ (used by SkyScanner, Slack, Eero and other Android apps)
 * [NetworkEvents](https://github.com/pwittchen/NetworkEvents) ★ 400+
 * [ReactiveWifi](https://github.com/pwittchen/ReactiveWiFi) ★ 130+
 * [prefser](https://github.com/pwittchen/prefser) ★ 200+ (used by Toss.im and other Android apps)
@@ -20,7 +20,7 @@ Open-source projects:
 * [ReactiveAirplaneMode](https://github.com/pwittchen/ReactiveAirplaneMode) ★ 5+
 * [ReactiveBus](https://github.com/pwittchen/ReactiveBus) ★ 10+
 * [RxBattery](https://github.com/pwittchen/RxBattery) ★ 3+
-* [RxBiometric](https://github.com/pwittchen/RxBiometric) ★ 90+
+* [RxBiometric](https://github.com/pwittchen/RxBiometric) ★ 180+
 * [kirai](https://github.com/pwittchen/kirai) ★ 60+
 * [WeatherIconView](https://github.com/pwittchen/WeatherIconView) ★ 190+
 * [InfiniteScroll](https://github.com/pwittchen/InfiniteScroll) ★ 130+
@@ -29,7 +29,7 @@ Open-source projects:
 * [android-quality-starter](https://github.com/pwittchen/android-quality-starter) ★ 20+
 * [ydocker](https://github.com/pwittchen/ydocker) ★ 10+
 * [ydownloader](https://github.com/pwittchen/ydownloader) ★ 1+
-* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 150+
+* [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) ★ 190+
 * [noti.py](https://github.com/pwittchen/noti.py) ★ 1+
 * [NeuroSky Android SDK](https://github.com/pwittchen/neurosky-android-sdk) ★ 2+
 * [EEG Reader](https://github.com/pwittchen/EEGReader) ★ 20+
