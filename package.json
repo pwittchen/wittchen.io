@@ -12,11 +12,11 @@
     "expose-secrets": "git update-index --no-assume-unchanged .ftpconfig"
   },
   "dependencies": {
-    "docsify-cli": "^4.2.1",
+    "docsify-cli": "^4.3.0",
     "ftpsync": "^0.2.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
-    "hexo": "^3.7.1",
+    "hexo": "^3.8.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-cli": "^1.1.0",
     "hexo-deployer-ftpsync": "^0.1.1",
@@ -33,7 +33,7 @@
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "npm": "^6.4.1",
+    "npm": "^6.5.0",
     "npm-upgrade": "^1.4.1"
   }
 }
