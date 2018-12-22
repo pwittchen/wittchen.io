@@ -5,7 +5,7 @@ date: 2018-03-15 22:28:00
 
 ## Upcoming
 
-*   2019-01-10 **Brain-Computer Interfaces - Science Fiction or Reality?** Toast Android Developers Meetup (Wrocław, Poland)
+*   2019-01-10 **Brain-Computer Interfaces - Science Fiction or Reality?** Toast Meetup (Wrocław, Poland)
 
 ## Past
 
