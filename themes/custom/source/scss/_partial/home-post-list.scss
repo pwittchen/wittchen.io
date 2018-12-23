@@ -15,7 +15,7 @@
     }
 
     .post-info {
-        float: left;
+        float: right;
         line-height: 45%;
         width: 90px;
         font-family: 'Roboto', sans-serif;
@@ -29,8 +29,8 @@
         & > ul {
             list-style: initial;
         }
-    }    
-    .read-more {     
+    }
+    .read-more {
         color: #42b983;
     }
 }
