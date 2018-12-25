@@ -3,7 +3,8 @@ title: Projects
 date: 2018-05-06 12:53:00
 ---
 
-List below doesn't contain commercial projects I worked on in companies. It contains side and open-source projects only.
+List below doesn't contain commercial projects I worked on in various companies.
+If you are interested in them, check [my LinkedIn profile](http://www.linkedin.com/in/piotrwittchen) for details.
 
 Android apps:
 
