@@ -3,12 +3,7 @@ title: Talks
 date: 2018-03-15 22:28:00
 ---
 
-## Upcoming
-
-*   2019-01-10 **Brain-Computer Interfaces - Science Fiction or Reality?** Toast Meetup (Wrocław, Poland)
-
-## Past
-
+*   2019-01-10 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Toast Meetup (Wrocław, Poland)
 *   2018-11-19 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Øredev (Malmö, Sweden)
 *   2018-10-20 [Is your app really connected?](https://speakerdeck.com/pwittchen/is-your-app-really-connected-1) Mobilization (Łódź, Poland) [watch video [EN]](https://www.youtube.com/watch?v=LDZjQ1dXgU4)
 *   2018-09-13 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) SAP Lunch Talks (Gliwice, Poland)
