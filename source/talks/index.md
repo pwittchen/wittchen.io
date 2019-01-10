@@ -1,6 +1,6 @@
 ---
 title: Talks
-date: 2018-03-15 22:28:00
+date: 2019-01-11 00:41:00
 ---
 
 *   2019-01-10 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Toast Meetup (Wrocław, Poland)
