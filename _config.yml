@@ -15,12 +15,15 @@ repo: https://github.com/pwittchen/wittchen.io
 
 # address of the rest api documentation
 restapi: https://github.com/pwittchen/wittchen.io#rest
+# address of tags and archives
+tags: /tags
+archives: /archives
 
 # links related to the author
 github: /gh 
 stackoverflow: /so
 twitter: /tw 
-linkedin: /in 
+linkedin: /in
 email: mailto:piotr@wittchen.io
 
 # URL
@@ -99,9 +102,6 @@ menu:
     Code: code
     Projects: projects
     Talks: talks
-    Archive: archives
-    Tags: tags
-    Rss: /feed.xml
     Contact: contact
 
 alias:
