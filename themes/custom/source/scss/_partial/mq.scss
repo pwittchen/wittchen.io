@@ -18,7 +18,15 @@ main.container {
     }
     header {
         padding: 20px 0;
-        a.logo-link,
+        .nav {
+            text-align: left;
+        }
+        a.logo-link {
+            width: 100%;
+            float: none;
+            display: block;
+            padding-bottom: 10px;
+        }
         ul.nav.nav-list {
             float: none;
             display: block; 
