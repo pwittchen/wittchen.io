@@ -3,20 +3,21 @@ header {
 
     .logo-link {
         float: left;
-        width: 100%;
         padding-left: 10px;
         font-size: 25px;
         font-family: 'Roboto', sans-serif;
-        text-align: center;
+        text-align: left;
         font-weight: 300;
         text-transform: uppercase;
     }
 
     .nav {
         left: 0;
-        text-align: center;
+        text-align: right;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
+        margin-top: -7.5pt;
+        margin-right: 12pt;
     }
 
     .nav-list-item {
