@@ -3,6 +3,8 @@ title: Talks
 date: 2019-01-11 00:41:00
 ---
 
+## Talks I presented in the past
+
 *   2019-01-10 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Toast Meetup (Wrocław, Poland)
 *   2018-11-19 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Øredev (Malmö, Sweden)
 *   2018-10-20 [Is your app really connected?](https://speakerdeck.com/pwittchen/is-your-app-really-connected-1) Mobilization (Łódź, Poland) [watch video [EN]](https://www.youtube.com/watch?v=LDZjQ1dXgU4)
@@ -25,6 +27,8 @@ date: 2019-01-11 00:41:00
 *   2014-08-26 [Stuff you should know about Android](http://slides.com/piotrwittchen/stuff-you-should-know-about-android) Future Processing, Java Show and Tell (Gliwice, Poland)
 *   2013-05-27 [Brain-Computer Interface for mobile devices](http://slides.com/piotrwittchen/brain-computer-interface-for-mobile-devices) Silesian University of Technology (Gliwice, Poland)
 
+## Photos from the events
+
 ![](/images/pages/talks/jdd_2017.jpg)
 
 *JDD Conference, 2017-10-03, Kraków, Poland*
@@ -32,5 +36,7 @@ date: 2019-01-11 00:41:00
 ![](/images/pages/talks/toast_21.jpg)
 
 *Toast Meetup, 2019-01-10, Wrocław, Poland*
+
+## Summaries
 
 A few relations from the conferences I attended as a speaker, volunteer, media partner or attendee are under [#conferences](/tags/conferences/) tag on this blog. You can also check [#meetups](/tags/meetups) tag for relations from meetups.
