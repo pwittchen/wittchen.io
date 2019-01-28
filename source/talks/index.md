@@ -25,4 +25,12 @@ date: 2019-01-11 00:41:00
 *   2014-08-26 [Stuff you should know about Android](http://slides.com/piotrwittchen/stuff-you-should-know-about-android) Future Processing, Java Show and Tell (Gliwice, Poland)
 *   2013-05-27 [Brain-Computer Interface for mobile devices](http://slides.com/piotrwittchen/brain-computer-interface-for-mobile-devices) Silesian University of Technology (Gliwice, Poland)
 
+![](/images/pages/talks/jdd_2017.jpg)
+
+*JDD Conference, 2017-10-03, Kraków, Poland*
+
+![](/images/pages/talks/toast_21.jpg)
+
+*Toast Meetup, 2019-01-10, Wrocław, Poland*
+
 A few relations from the conferences I attended as a speaker, volunteer, media partner or attendee are under [#conferences](/tags/conferences/) tag on this blog. You can also check [#meetups](/tags/meetups) tag for relations from meetups.
