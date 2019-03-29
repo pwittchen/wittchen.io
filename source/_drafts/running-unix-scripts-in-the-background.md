@@ -27,6 +27,11 @@ service
 
 TBD.
 
+docker
+------
+
+TBD.
+
 References
 ----------
 - [nohup command](https://linux.101hacks.com/unix/nohup-command/)
@@ -37,4 +42,5 @@ References
 - [what's the difference between nohup and ampersand?](https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand)
 - [run bash script as a daemon](https://stackoverflow.com/questions/19233529/run-bash-script-as-daemon)
 - [how to run a shell script at startup](https://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup)
+- [how to start a docker container as a daemon](https://linuxconfig.org/how-to-start-a-docker-container-as-daemon-process)
 - ...
