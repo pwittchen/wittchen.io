@@ -36,4 +36,5 @@ References
 - [running bash commands in the background - the right way](https://www.maketecheasier.com/run-bash-commands-background-linux/)
 - [what's the difference between nohup and ampersand?](https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand)
 - [run bash script as a daemon](https://stackoverflow.com/questions/19233529/run-bash-script-as-daemon)
+- [how to run a shell script at startup](https://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup)
 - ...
