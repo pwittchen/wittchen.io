@@ -37,6 +37,8 @@ esac
 echo "CAQI: $CAQI ($MSG)"
 ```
 
+Please note, script above was created for API v. 1. If you're interested in the latest version of the script, have a look at https://github.com/pwittchen/airly.sh repository.
+
 It works fine on Linux. The only requirement is to install [jq](https://stedolan.github.io/jq/). For macOS, I needed to change `jq` to `/usr/local/bin/jq` to make it work. I gathered information about air quality level from this website: [https://www.airqualitynow.eu/pl/about_indices_definition.php](https://www.airqualitynow.eu/pl/about_indices_definition.php) [PL]. Of course, we need to replace `API_KEY` with our api key, which we can get from [https://developer.airly.eu/](https://developer.airly.eu/) website as well as `YOUR_LATITUDE` and `YOUR_LONGITUDE` with coordinates of our location. It can be static location in our city. We can get them e.g. from Google Maps. 
 
 As a result, we have beautiful text in our top panel: 
