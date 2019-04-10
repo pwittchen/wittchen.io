@@ -12,8 +12,6 @@
     "expose-secrets": "git update-index --no-assume-unchanged .ftpconfig"
   },
   "dependencies": {
-    "docsify-cli": "^4.3.0",
-    "ftpsync": "^0.2.0",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
     "hexo": "^3.8.0",

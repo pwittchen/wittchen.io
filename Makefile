@@ -1,4 +1,4 @@
-all: clean generate update_docs run
+all: clean generate run
 install: protect_secrets
 	sudo npm install --unsafe-perm
 	echo "installation finished"
@@ -24,19 +24,6 @@ discard:
 	git checkout -- source
 	git clean -f source
 	echo "pages and posts discarded"
-docs:
-	mkdir docs
-	docsify init docs
-	echo "docs generated"
-update_docs:
-	cp README.md docs
-	echo "docs updated"
-clean_docs:
-	rm -rf docs
-	echo "docs/ dir is deleted"
-run_docs:
-	echo "starting docs server..."
-	docsify serve docs
 clean:
 	rm -rf public
 	rm db.json

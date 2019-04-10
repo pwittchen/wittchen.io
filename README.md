@@ -13,7 +13,6 @@ contents
 - [theme](#theme)
 - [writing](#writing)
 - [rest](#rest)
-- [docs](#docs)
 - [tools](#tools)
 
 installing
@@ -142,14 +141,6 @@ GET /api/articles/{article_id}.json
 GET /api/pages/{page_id}.json
 ```
 
-docs
-----
-
-- to generate docs, type: `make docs`
-- to update docs, type: `make update_docs`
-- to clean docs, type: `make clean_docs`
-- to run website with docs, type: `make run_docs`
-
 tools
 -----
 
@@ -166,5 +157,4 @@ the following tools were used during development of this site:
 - [gulp](https://gulpjs.com/)
 - [sass](https://sass-lang.com/)
 - [turndown](https://domchristie.github.io/turndown/)
-- [docsify](https://docsify.js.org/)
 - [lftp](https://github.com/lavv17/lftp)
