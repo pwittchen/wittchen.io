@@ -1,5 +1,5 @@
 ---
-title: Brain-Computer Interfaces - Science Fiction or Reality? My talk at Øredev 2018
+title: Brain-Computer Interfaces - Science Fiction or Reality?
 tags:
   - bci
   - conferences
