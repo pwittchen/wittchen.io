@@ -1,5 +1,5 @@
 ---
-title: Publishing JVM library to Maven Central Repository
+title: Publishing a JVM library to the Maven Central Repository
 tags:
     - java
     - maven
