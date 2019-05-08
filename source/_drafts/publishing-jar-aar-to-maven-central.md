@@ -1,5 +1,5 @@
 ---
-title: Publishing a JVM library to the Maven Central Repository
+title: Publishing a JAR/AAR to the Maven Central
 tags:
     - java
     - maven
@@ -39,3 +39,11 @@ As a Java/JVM/Android developers we rely on the work of other people through fra
 ## Summary
 
 ...
+
+## Links
+- https://stackoverflow.com/questions/28846802/how-to-manually-publish-jar-to-maven-central
+- https://chris.banes.dev/2013/08/27/pushing-aars-to-maven-central/
+- https://dzone.com/articles/deploy-maven-central
+- https://central.sonatype.org/pages/ossrh-guide.html#deployment
+- https://central.sonatype.org/pages/apache-maven.html
+- https://central.sonatype.org/pages/working-with-pgp-signatures.html
