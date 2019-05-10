@@ -18,6 +18,7 @@ restapi: https://github.com/pwittchen/wittchen.io#rest
 # address of tags and archives
 tags: /tags
 archives: /archives
+newsletter: http://eepurl.com/gqTCEb
 
 # links related to the author
 github: /gh 
