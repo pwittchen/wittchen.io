@@ -12,9 +12,9 @@ tags:
 
 As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a `*.jar` or `*.aar` file with others. Drawback of such solution is the fact that source of distribution may not be trusted. We also have problems with versioning. Consumers of the library have to constantly download and update the files. It's much better to publish our library to Maven Central Repository and allow others to easily and seamlessly add it as an external dependency to `pom.xml` file (in case of Maven) or `build.gradle` file (in case of Gradle). In such case dependency is managed by the appropriate build system and distributed via trusted source. Let's see how to do this.
 
-## Generating PGP Key
+## Generating GPG Key
 
-In order to generate [PGP](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) key, we need to open the terminal and type the following command:
+In order to generate GPG key, we need to open the terminal and type the following command:
 
 ```
 gpg2 --gen-key
@@ -25,7 +25,10 @@ Then, we should see the output:
 ```
 ...
 gpg: key YOUR_KEY_ID marked as ultimately trusted
+...
 ```
+
+Read more at: https://alexcabal.com/creating-the-perfect-gpg-keypair
 
 ## Distributing public key
 
@@ -37,6 +40,18 @@ gpg --keyserver hkp://pool.sks-keyservers.net --send-keys YOUR_KEY_ID
 
 We can distribute our key to multiple servers to speed up the synchronization process (pgp.mit.edu, keyserver.ubuntu.com, etc.)
 
+We can also list our keys as follows:
+
+```
+gpg2 --list-keys
+```
+
+To list secret keys, we can type:
+
+```
+gpg2 --list-secret-keys
+```
+
 ## Preparing Gradle configuration
 
 In my case, I used Gradle as a build system, which works well for Java, Kotlin and Android projects. We can use Maven for this purpose as well. As a reference, I used [a Gradle script prepared by Chris Banes](https://github.com/chrisbanes/gradle-mvn-push). You can have a look at it in [one of my projects](https://github.com/pwittchen/ReactiveNetwork/blob/RxJava2.x/maven_push.gradle).
@@ -46,7 +61,7 @@ In my libraries, I usually have the following structure:
 ```
 /
 ├── library
-    ├── gradle.properties
+│   ├── gradle.properties
 │   └── build.gradle
 │
 ├── build.gradle
@@ -93,7 +108,7 @@ apply from: '../maven_push.gradle'
 ...
 ```
 
-In the `$HOME/.gradle/gradle.properties` file, I keep system-wide release configuration for SonaType:
+In the `$HOME/.gradle/gradle.properties` file, I keep system-wide release configuration for Sonatype:
 
 ```
 signing.keyId=YOUR_KEY_ID
@@ -104,15 +119,16 @@ NEXUS_USERNAME=YOUR_NEXUS_USERNAME
 NEXUS_PASSWORD=YOUR_NEXUS_PASSWORD
 ```
 
-Of course, you need to provide your own path to `secretKeyRingFile`, which was created during generating PGP key.
+Of course, you need to provide your own path to `secretKeyRingFile`, which was created during generating key.
 
 If you're interested in the complete project structure prepared for library release, you can have a look at the following examples:
 - Java library (compiled into `*.jar` file): https://github.com/pwittchen/kirai
-- Android library (compiled into `*.aar` file): https://github.com/pwittchen/ReactiveNetwork
+- Android library written in Java (compiled into `*.aar` file): https://github.com/pwittchen/ReactiveNetwork
+- Android library written in Kotlin (compiled into `*.aar` file): https://github.com/pwittchen/RxBiometric
 
 ## Creating Jira ticket for Sonatype
 
-We should create a [SonaType Jira account](https://issues.sonatype.org/secure/Signup!default.jspa) and [a new project ticket](https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&pid=10134). You can have a look at [my first issue](https://issues.sonatype.org/browse/OSSRH-13199). It took a bit longer in my case, because I needed to adjust package name. 
+We should create a [Sonatype Jira account](https://issues.sonatype.org/secure/Signup!default.jspa) and [a new project ticket](https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&pid=10134). You can have a look at [my first issue](https://issues.sonatype.org/browse/OSSRH-13199). It took a bit longer in my case, because I needed to adjust package name. 
 
 To avoid my mistakes, have a look at the following guides:
 - https://central.sonatype.org/pages/ossrh-guide.html
@@ -144,11 +160,11 @@ I have promoted my first release. Thanks.
 
 ## Wait for the Maven sync
 
-After all of these steps, we need to wait for the acceptance from the people from SonaType and Maven Sync. Maven Sync can take no longer than 48 hours. It's usually faster, but it won't happen immediately after releasing and closing an artifact.
+After all of these steps, we need to wait for the acceptance from the people from Sonatype and Maven Sync. Maven Sync can take no longer than 48 hours. It's usually faster, but it won't happen immediately after releasing and closing an artifact like in the release of the Python packages.
 
 ## Summary
 
-We can see, that release process may be overwhelming and time consuming, but **once we releae the first artifact, we can skip most of these steps** like generating PGP keys and creating Jira ticket. We just need to have Gradle or Maven configuration, upload artifacts, release and close them via sonatype website and wait for the Maven Sync. Process of releasing new versions of the same artifact is the same as the first release. We just need to bump library version in the Gradle configuration. In the future, I'm planning to write another article, which shows how to skip manual steps of going to SonaType website and releasig artifacts via clicking on the page, so everything will be automated via CLI.
+We can see, that release process may be overwhelming and time consuming, but **once we releae the first artifact, we can skip most of these steps** like generating keys and creating Jira ticket. We just need to have Gradle or Maven configuration, upload artifacts, release and close them via sonatype website and wait for the Maven Sync. Process of releasing new versions of the same artifact is the same as the first release. We just need to bump library version in the Gradle configuration. In the future, I'm planning to write another article, which shows how to skip manual steps of going to Sonatype website and releasig artifacts via clicking on the page, so everything will be automated via CLI.
 
 ## Links and references
 - https://stackoverflow.com/questions/28846802/how-to-manually-publish-jar-to-maven-central
@@ -157,5 +173,6 @@ We can see, that release process may be overwhelming and time consuming, but **o
 - https://central.sonatype.org/pages/gradle.html
 - https://central.sonatype.org/pages/apache-maven.html
 - https://central.sonatype.org/pages/working-with-pgp-signatures.html
+- https://alexcabal.com/creating-the-perfect-gpg-keypair
 - https://central.sonatype.org/pages/ossrh-guide.html$
 - https://central.sonatype.org/pages/choosing-your-coordinates.html$
