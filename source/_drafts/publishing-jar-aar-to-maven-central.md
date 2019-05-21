@@ -106,6 +106,10 @@ NEXUS_PASSWORD=YOUR_NEXUS_PASSWORD
 
 Of course, you need to provide your own path to `secretKeyRingFile`, which was created during generating PGP key.
 
+If you're interested in the complete project structure prepared for library release, you can have a look at the following examples:
+- Java library (compiled into `*.jar` file): https://github.com/pwittchen/kirai
+- Android library (compiled into `*.aar` file): https://github.com/pwittchen/ReactiveNetwork
+
 ## Creating Jira ticket for Sonatype
 
 We should create a [SonaType Jira account](https://issues.sonatype.org/secure/Signup!default.jspa) and [a new project ticket](https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&pid=10134). You can have a look at [my first issue](https://issues.sonatype.org/browse/OSSRH-13199). It took a bit longer in my case, because I needed to adjust package name. 
