@@ -150,10 +150,12 @@ After all of these steps, we need to wait for the acceptance from the people fro
 
 We can see, that release process may be overwhelming and time consuming, but **once we releae the first artifact, we can skip most of these steps** like generating PGP keys and creating Jira ticket. We just need to have Gradle or Maven configuration, upload artifacts, release and close them via sonatype website and wait for the Maven Sync. Process of releasing new versions of the same artifact is the same as the first release. We just need to bump library version in the Gradle configuration. In the future, I'm planning to write another article, which shows how to skip manual steps of going to SonaType website and releasig artifacts via clicking on the page, so everything will be automated via CLI.
 
-## Links
+## Links and references
 - https://stackoverflow.com/questions/28846802/how-to-manually-publish-jar-to-maven-central
 - https://chris.banes.dev/2013/08/27/pushing-aars-to-maven-central/
 - https://dzone.com/articles/deploy-maven-central
-- https://central.sonatype.org/pages/ossrh-guide.html#deployment
+- https://central.sonatype.org/pages/gradle.html
 - https://central.sonatype.org/pages/apache-maven.html
 - https://central.sonatype.org/pages/working-with-pgp-signatures.html
+- https://central.sonatype.org/pages/ossrh-guide.html$
+- https://central.sonatype.org/pages/choosing-your-coordinates.html$
