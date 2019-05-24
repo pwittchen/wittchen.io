@@ -10,9 +10,11 @@ tags:
 
 ## Introduction
 
-As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a `*.jar` or `*.aar` file with others. Drawback of such solution is the fact that source of distribution may not be trusted. We also have problems with versioning. Consumers of the library have to constantly download and update the files. It's much better to publish our library to Maven Central Repository and allow others to easily and seamlessly add it as an external dependency to `pom.xml` file (in case of Maven) or `build.gradle` file (in case of Gradle). In such case dependency is managed by the appropriate build system and distributed via trusted source. Let's see how to do this.
+As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a `*.jar` or `*.aar` file with others. Drawback of such solution is the fact that source of distribution may not be trusted. We also have problems with versioning. Consumers of the library have to constantly download and update the files. It's much better to publish our library to Maven Central Repository and allow others to easily and seamlessly add it as an external dependency to `pom.xml` file (in case of Maven) or `build.gradle` file (in case of Gradle). In such case, dependency is managed by the appropriate build system and distributed via trusted source. This may be not easy for the first time that's why I decided to collect this information in a single article. Let's see how to do this.
 
 ## Generating GPG Key
+
+Before we upload library, we need to generate GPG key.
 
 In order to generate GPG key, we need to open the terminal and type the following command:
 
@@ -164,7 +166,7 @@ After all of these steps, we need to wait for the acceptance from the people fro
 
 ## Summary
 
-We can see, that release process may be overwhelming and time consuming, but **once we releae the first artifact, we can skip most of these steps** like generating keys and creating Jira ticket. We just need to have Gradle or Maven configuration, upload artifacts, release and close them via sonatype website and wait for the Maven Sync. Process of releasing new versions of the same artifact is the same as the first release. We just need to bump library version in the Gradle configuration. In the future, I'm planning to write another article, which shows how to skip manual steps of going to Sonatype website and releasig artifacts via clicking on the page, so everything will be automated via CLI.
+We can see, that release process may be overwhelming and time consuming, but **once we releae the first artifact, we can skip most of these steps** like generating keys and creating Jira ticket. We just need to have Gradle or Maven configuration, upload artifacts, release and close them via sonatype website and wait for the Maven Sync. Process of releasing new versions of the same artifact is the same as the first release. During the next release, we simply need to bump library version in the Gradle configuration before uploading artifacts. In the future, I'm planning to write another article, which shows how to skip manual steps of going to Sonatype website and releasig artifacts via clicking on the page, so everything will be automated via CLI.
 
 ## Links and references
 - https://stackoverflow.com/questions/28846802/how-to-manually-publish-jar-to-maven-central
