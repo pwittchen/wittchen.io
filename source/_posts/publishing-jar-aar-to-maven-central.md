@@ -1,12 +1,14 @@
 ---
 title: Publishing a JAR/AAR to the Maven Central
 tags:
-    - java
-    - maven
-    - gradle
-    - sonatype
-    - open-source
+  - java
+  - maven
+  - gradle
+  - sonatype
+  - open-source
+date: 2019-05-24 19:18:27
 ---
+
 
 ## Introduction
 
