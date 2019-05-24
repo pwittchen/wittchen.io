@@ -14,7 +14,7 @@ date: 2019-05-24 19:18:27
 
 As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a `*.jar` or `*.aar` file with others. Drawback of such solution is the fact that source of distribution may not be trusted. We also have problems with versioning. Consumers of the library have to constantly download and update the files. It's much better to publish our library to Maven Central Repository and allow others to easily and seamlessly add it as an external dependency to `pom.xml` file (in case of Maven) or `build.gradle` file (in case of Gradle). In such case, dependency is managed by the appropriate build system and distributed via trusted source. This may be not easy for the first time that's why I decided to collect this information in a single article. Let's see how to do this.
 
-## Generating GPG Key
+## Generating a GPG Key
 
 Before we upload library, we need to generate GPG key.
 
@@ -34,7 +34,7 @@ gpg: key YOUR_KEY_ID marked as ultimately trusted
 
 Read more at: https://alexcabal.com/creating-the-perfect-gpg-keypair
 
-## Distributing public key
+## Distributing the public key
 
 Next, we need to distribute public key. We can do that as follows:
 
@@ -56,7 +56,7 @@ To list secret keys, we can type:
 gpg2 --list-secret-keys
 ```
 
-## Preparing Gradle configuration
+## Preparing the Gradle configuration
 
 In my case, I used Gradle as a build system, which works well for Java, Kotlin and Android projects. We can use Maven for this purpose as well. As a reference, I used [a Gradle script prepared by Chris Banes](https://github.com/chrisbanes/gradle-mvn-push). You can have a look at it in [one of my projects](https://github.com/pwittchen/ReactiveNetwork/blob/RxJava2.x/maven_push.gradle).
 
@@ -130,7 +130,7 @@ If you're interested in the complete project structure prepared for library rele
 - Android library written in Java (compiled into `*.aar` file): https://github.com/pwittchen/ReactiveNetwork
 - Android library written in Kotlin (compiled into `*.aar` file): https://github.com/pwittchen/RxBiometric
 
-## Creating Jira ticket for Sonatype
+## Creating a Jira ticket for Sonatype
 
 We should create a [Sonatype Jira account](https://issues.sonatype.org/secure/Signup!default.jspa) and [a new project ticket](https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&pid=10134). You can have a look at [my first issue](https://issues.sonatype.org/browse/OSSRH-13199). It took a bit longer in my case, because I needed to adjust package name. 
 
@@ -154,7 +154,7 @@ and wait while artifacts are being uploaded.
 
 Next, we need to go to the http://oss.sonatype.org website, log in and on the left-hand side, click "Staging Repositories". Then, we need to sort artifacts by date (Updated column), to view the recently updated items. We should find our artifact (it should be on the top) and click it. We can verify its contents to ensure that everything is ok (package name, version, etc.) and then, we should press "Release" on our artifact. Once release is done, we should press "Close" on the artifact.
 
-## Comment Jira ticket
+## Commenting the Jira ticket
 
 When we are done with the previous steps, we should go back to our Jira ticket and provide the comment:
 
@@ -162,7 +162,7 @@ When we are done with the previous steps, we should go back to our Jira ticket a
 I have promoted my first release. Thanks.
 ```
 
-## Wait for the Maven sync
+## Waiting for the Maven sync
 
 After all of these steps, we need to wait for the acceptance from the people from Sonatype and Maven Sync. Maven Sync can take no longer than 48 hours. It's usually faster, but it won't happen immediately after releasing and closing an artifact like in the release of the Python packages.
 
