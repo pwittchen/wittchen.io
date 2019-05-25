@@ -123,6 +123,8 @@ NEXUS_USERNAME=YOUR_NEXUS_USERNAME
 NEXUS_PASSWORD=YOUR_NEXUS_PASSWORD
 ```
 
+`YOUR_NEXUS_USERNAME` and `YOUR_NEXU_PASSWORD` can be defined during account creation on the http://oss.sonatype.org website.
+
 Of course, you need to provide your own path to `secretKeyRingFile`, which was created during generating key.
 
 If you're interested in the complete project structure prepared for library release, you can have a look at the following examples:
