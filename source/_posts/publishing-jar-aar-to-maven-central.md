@@ -142,6 +142,8 @@ To avoid my mistakes, have a look at the following guides:
 
 Please note, this step is required for the first time only as well as generating keys. After that, we we'll be able to release as many artifacts under the given package name as we want. These steps need to be repeated in the case of registering the new package name.
 
+This is reasonable from the security and stability perspective because random people cannot just override widely used packages what might cause serious problems in many projects around the world.
+
 ## Uploading an artifact
 
 Once, we have everything set up, we can go to our project via terminal, and type:
