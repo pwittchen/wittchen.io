@@ -61,7 +61,13 @@ Now, I could check group members once again with:
 grep kvm /etc/group
 ```
 
-My user should be there. Next, I could just restart the machine, create new AVD, start it and everything worked! I could finally use my Android emulator.
+My user should be there. Next, I could just restart the machine, create new AVD, start it and everything worked! I could finally use my Android emulator. Optionally, if you still have a problem, you can call the following command:
+
+```
+sudo chown username /dev/kvm
+```
+
+and replace `username` with your username
 
 ## References
 - https://stackoverflow.com/questions/36527278/dev-kvm-not-found-error-on-windows-in-android-studio
