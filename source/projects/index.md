@@ -38,9 +38,9 @@ and more...
 
 I also contributed to a few open-source projects created by other people e.g.:
 
-* [RxJava](https://github.com/ReactiveX/RxJava/commits?author=pwittchen)
-* [JavaPoet](https://github.com/square/Javapoet/commits?author=pwittchen)
-* [screenFetch](https://github.com/KittyKatt/screenFetch/commits?author=pwittchen)
+* [RxJava](https://github.com/ReactiveX/RxJava/pulls?q=author:pwittchen)
+* [JavaPoet](https://github.com/square/javapoet/pulls?q=author:pwittchen)
+* [screenFetch](https://github.com/KittyKatt/screenFetch/pulls?q=author:pwittchen)
 
 and others...
 
