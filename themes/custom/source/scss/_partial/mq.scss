@@ -2,9 +2,9 @@ main.container {
     margin: 0em 10px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
     .wrap {
-        width: 800px;
+        width: 950px;
         margin: 0 auto;
     }
     header {
@@ -12,7 +12,7 @@ main.container {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
     .wrap {
         width: 100%;
     }
