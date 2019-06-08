@@ -17,17 +17,18 @@ server: run
 generate:
 	hexo generate
 	echo "website is generated in public/ dir"
-deploy:
+deploy: clean_public
 	echo "starting deployment..."
 	hexo generate && ./deploy.sh
 discard:
 	git checkout -- source
 	git clean -f source
 	echo "pages and posts discarded"
-clean:
-	rm -rf public
+clean: clean_public
 	rm db.json
 	echo "clean is done"
+clean_public:
+	rm -rf public
 clean_full: clean
 	sudo rm -rf node_modules && rm -rf themes/custom/node_modules
 	"full clean done, run make install rule to re-create environment"
