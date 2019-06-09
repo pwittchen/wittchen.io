@@ -75,6 +75,6 @@ My complete `release.sh` script looks like that:
 ./gradlew clean build test check uploadArchives closeAndReleaseRepository
 ```
 
-Before upload and release, I'm also cleaning everything, building an artifact, run tests and static code analysis. It's not required, but it's good to do that.
+Before upload and release, I also clean everything, build an artifact, run tests and static code analysis. It's not required, but it's good to do that.
 
 If you are interested in complete project configuration, you can have a look at the https://github.com/pwittchen/ReactiveNetwork repository. It's an Android library, but the same configuration can be applied to any JVM project built with Gradle. I have performed library release with this plugin a few times and it seems to work well.
