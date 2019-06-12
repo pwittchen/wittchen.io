@@ -43,4 +43,5 @@ References
 - [run bash script as a daemon](https://stackoverflow.com/questions/19233529/run-bash-script-as-daemon)
 - [how to run a shell script at startup](https://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup)
 - [how to start a docker container as a daemon](https://linuxconfig.org/how-to-start-a-docker-container-as-daemon-process)
+- [how to start a service automatically when Ubuntu starts](https://unix.stackexchange.com/questions/84252/how-to-start-a-service-automatically-when-ubuntu-starts)
 - ...
