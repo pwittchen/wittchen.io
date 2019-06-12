@@ -89,6 +89,20 @@ Please note, we should not rely on `$PATH` or other environmental variables in `
 
 We can list our cron jobs by typing `crontab -l`.
 
+After editing, we could call:
+
+```
+sudo service cron reload
+```
+
+or (if it didn't work):
+
+```
+sudo service cron restart
+```
+
+Cron job should work start working without it, but in case of problems, you can invoke that commands.
+
 As you can see in the comments, I'm running my script every hour every day at minute zero.
 I've found [very nice video explaining how to use cron](https://www.youtube.com/watch?v=QZJ1drMQz1A). If you're not familiar with it, check this link.
 Author of the video created [useful code snippets](https://github.com/CoreyMSchafer/code_snippets/tree/master/Cron-Tasks) explaining crontab syntax.
