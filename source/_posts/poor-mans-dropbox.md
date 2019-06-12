@@ -82,8 +82,10 @@ It looks as follows:
 
 ```
 # Backup my important files to my FTP server every hour at minute zero
-0 * * * * make_ftp_backup
+0 * * * * /usr/local/bin/make_ftp_backup
 ```
+
+Please note, we should not rely on `$PATH` or other environmental variables in `crontab` because most of them are ignored by this service. That's why I provided complete path to the script.
 
 We can list our cron jobs by typing `crontab -l`.
 
