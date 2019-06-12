@@ -105,7 +105,7 @@ Reference information for cron jobs placed there looks as follows:
 # * * * * *  command_to_execute
 ```
 
-It really helps for preparing new cron jobs schedule. You can also visit [crontab.guru](http://crontab.guru/) website to test your cron jobs definitions.
+It really helps for preparing new cron jobs schedule. You can also visit [crontab.guru](http://crontab.guru/) website to test your cron jobs definitions. It's also good to read more about [troubleshooting crontab](https://serverfault.com/questions/449651/why-is-my-crontab-not-working-and-how-can-i-troubleshoot-it) in case of encountering any problems.
 
 ### Copying data from the server to the local directory
 
