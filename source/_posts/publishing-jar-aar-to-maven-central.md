@@ -182,5 +182,6 @@ We can see, that release process may be overwhelming and time consuming, but **o
 - https://central.sonatype.org/pages/apache-maven.html
 - https://central.sonatype.org/pages/working-with-pgp-signatures.html
 - https://alexcabal.com/creating-the-perfect-gpg-keypair
-- https://central.sonatype.org/pages/ossrh-guide.html$
-- https://central.sonatype.org/pages/choosing-your-coordinates.html$
+- https://central.sonatype.org/pages/ossrh-guide.html
+- https://central.sonatype.org/pages/choosing-your-coordinates.html
+- https://gist.github.com/diegopacheco/13c0754f0ab36482f4f804ef3f05f989
