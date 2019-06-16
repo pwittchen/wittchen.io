@@ -5,4 +5,34 @@ tags:
     - interview
 ---
 
-TBD.
+## Introduction
+
+...
+
+## Technical talk
+
+...
+
+## Non-technical talk
+
+...
+
+## Home assignment
+
+...
+
+## Pair-programming
+
+...
+
+## Algorithmic tasks (FANG style)
+
+...
+
+## Combination of many types
+
+...
+
+## Summary
+
+...
