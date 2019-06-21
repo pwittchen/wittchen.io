@@ -10,7 +10,7 @@ date: 2019-06-08 10:58:10
 ---
 
 
-In my [previous article](/2019/05/24/publishing-jar-aar-to-maven-central/) I published information about publishing JAR/AAR library to the Maven Central Repository. A few steps of that process were automated, but a few of them were still manual. I mean closing and release process which had to be done by manual clicking on the Sonatype website. Fortunately, it's possible to automate it. In order to do that, I used [gradle-nexus-staging-plugin](https://github.com/Codearte/gradle-nexus-staging-plugin) developed by [Codearte](https://github.com/Codearte). Thanks to this plugin I could get rid of the remaining manual steps left in the release process. 
+In my [previous article](/publishing-jar-aar-to-maven-central/) I published information about publishing JAR/AAR library to the Maven Central Repository. A few steps of that process were automated, but a few of them were still manual. I mean closing and release process which had to be done by manual clicking on the Sonatype website. Fortunately, it's possible to automate it. In order to do that, I used [gradle-nexus-staging-plugin](https://github.com/Codearte/gradle-nexus-staging-plugin) developed by [Codearte](https://github.com/Codearte). Thanks to this plugin I could get rid of the remaining manual steps left in the release process. 
 
 **Please note**, if you want to apply configuration described in this article to your project, you need to perform the steps described in the article about [Publishing JAR/AAR to the Maven Central](/2019/05/24/publishing-jar-aar-to-maven-central/).
 
