@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
   },
   "scripts": {
     "preinstall": "echo \"beginning installation\"",
@@ -12,9 +12,9 @@
     "expose-secrets": "git update-index --no-assume-unchanged .ftpconfig"
   },
   "dependencies": {
-    "gulp": "^4.0.0",
-    "gulp-cli": "^2.0.1",
-    "hexo": "^3.8.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "hexo": "^3.9.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-cli": "^2.0.0",
     "hexo-deployer-ftpsync": "^0.1.1",
@@ -31,7 +31,7 @@
     "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "npm": "^6.5.0",
+    "npm": "^6.10.0",
     "npm-upgrade": "^1.4.1"
   }
 }
