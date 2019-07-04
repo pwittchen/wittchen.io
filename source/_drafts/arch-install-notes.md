@@ -22,11 +22,11 @@ tags:
 
 ## First things
 
-## UEFI check
+### UEFI check
 
 ...
 
-## Internet check
+### Internet check
 
 ...
 
@@ -56,27 +56,29 @@ tags:
 
 ...
 
-## Changing root
+## Operations inside the system
+
+### Changing root
 
 ...
 
-## Installing network manager
+### Installing network manager
 
 ...
 
-## Installing GRUB
+### Installing GRUB
 
 ...
 
-## Setting password
+### Setting password
 
 ...
 
-## Setting locale
+### Setting locale
 
 ...
 
-## Setting timezone
+### Setting timezone
 
 ...
 
