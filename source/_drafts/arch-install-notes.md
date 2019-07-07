@@ -60,9 +60,20 @@ timedatectl set-ntp true
 
 ## Partitions
 
+Let's see what partitions do we have on our system. We can view them with `lsblk` program.
+
+```
+lsblk
+```
+Before we start doing anything, we should remove existing partitions. We can do it with `fdisk` tool by running it with our main disk as a parameter. Usually it will be `/dev/sda`, but in my case it was `/dev/nvme0n1`. We can get this name from `lsblk` output.
+
+```
+fdisk /dev/nvme0n1
+```
+
 ### Removing existing partitions
 
-...
+Next, we can choose different options. In our case, we need to choose `:d` to delete partitions. We need to call this option for each partition.
 
 ### Creating new partitions
 
