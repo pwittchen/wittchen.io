@@ -77,21 +77,63 @@ fdisk /dev/nvme0n1
 
 Next, we can choose different options. In our case, we need to choose `:d` to delete partitions. We need to call this option for each partition.
 
+Sometimes, we may have problems with installation or removing old partitions. In that case, we can use alternative method of cleaning disk:
+
+```
+sgdisk --zap-all /dev/nvme0n1p1
+```
+
 ### Creating new partitions
 
-...
+Now, we have to prepare our disk for the future system installation. Our goal is to have the following configuration of the partitions
+
+```
+nvme0n1     259:0    0   477G  0 disk
+├─nvme0n1p1 259:1    0   200M  0 part /boot
+├─nvme0n1p2 259:2    0    24G  0 part [SWAP]
+├─nvme0n1p3 259:3    0    25G  0 part /
+└─nvme0n1p4 259:4    0 427,8G  0 part /home
+```
+
+This is the output from my current system and `nvme0n1` is the disk. First partition (`nvme0n1p1`) is `boot` partition used during the system boot. Next partition (`nvme0n1p2`) is a SWAP partition, which acts as an overflow for our RAM memory, when it gets filled up. Third partition (`nvme0n1p3`) is root partition, which is the root of the file system and programs will be installed there. The last partition (`nvme0n1p4`) is home partition, where we are going to keep our files.
+
+In order to create new partition, we have to call `fdisk /dev/nvme0n1p1` (if we haven't done it yet).
+Let's create boot partition. Type `:c` for create. We leave first sector empty, hit <kbd>Enter</kbd> in the last sector we put `+200M` for 200 megabytes, which is recommended value for boot partitoin and confirm it with <kbd>Enter</kbd>. We follow this procedure for SWAP, which should have size = `1.5 * size of RAM in computer`. I currently have 16GB of RAM, so it's `1.5 * 16 GB = 24 GB`, so I put `+24G` in the last sector. Next, we can create root partition. It should have around `+25G`. You can decrease it if you have small disk or increase it if you have huge disk and plans to install a lot of programs. In the end, we are creating home partition, where in the last sector option we can just hit <kbd>Enter</kbd> and `fdisk` will assign remaining disk space to this partition. When we're done, we should confirm our partition configuration with `:w` like write. Then, we can type `lsblk` again to see our written configuration. It should look like in the example above.
 
 ### Creating file systems
 
-...
+Next, we can to create file systems on our partitions. In general, we can use `ext4`, which is Linux file system. Some devices may have boot problems or may have specific BIOS setup. In that case, it's recommended to use `FAT32` file system. Let's use `mkfs` program to create file systems.
+
+We will create `FAT32` file system on our boot partition:
+
+```
+mkfs.vfat -F32 /dev/nvme0n1p1
+```
+
+Then, we will create `ext4` file systems on root and home partitions:
+
+```
+mkfs.ext4 /dev/nvme0n1p3
+mkfs.ext4 /dev/nvme0n1p4
+```
 
 ### Creating SWAP
 
-...
+Now, we can create SWAP on the `nvme0n1p2` partition:
+
+```
+mkswap /dev/nvme0n1p2
+```
+
+Next, we can turn the SWAP on:
+
+```
+swap on /dev/nvme0n1p2
+```
 
 ### Mounting partitions
 
-...
+Right now, we are ready to mount our partitions.
 
 ## Operations inside the system
 
