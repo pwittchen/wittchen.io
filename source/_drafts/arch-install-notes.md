@@ -26,21 +26,37 @@ dd if=/path/to/arch.iso of=/dev/sdb status="progress"
 
 ### BIOS configuration
 
-...
+We need to go into the BIOS before installation. It may be different on different computers. On mine it's hitting <kbd>Enter</kbd> after reboot and then <kbd>F1</kbd>. Inside BIOS, we need to change order of booting devices and move USB drive to the top. I also had to disable secure boot and quick boot. Moreover I set `UEFI/Legacy Boot` to `Both` (`UEFI/Legacy Boot Priority`: `UEFI First`, `CSM Support`: `YES`). Sometimes network boot may interrupt boot process, so I set it to `USB HDD`. I had to play more with this stuff after installation boot freshly installed system. It may be different on your computer. Sometimes, there may be no issue with it.
 
 ## First things
 
 ### UEFI check
 
-...
+Once we have booted installer from USB stick, we need to perform [UEFI](https://pl.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface) check as follows.
+
+```
+ls /sys/firmware/efivars
+```
+
+If it outputs an error or nothing, that's ok and we can proceed with installation. If you see bunch of files, then installation procedure may be different or may require additional steps.
 
 ### Internet check
 
-...
+We need to check an internet connection because we will need it to download packages. We can do it just by simple ping:
+
+```
+ping wittchen.io
+```
+
+When we see response, that's ok
 
 ## System time and date initial setup
 
-...
+To perform system time and date initial setup, we need to run the following command:
+
+```
+timedatectl set-ntp true
+```
 
 ## Partitions
 
