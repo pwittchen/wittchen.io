@@ -26,7 +26,7 @@ dd if=/path/to/arch.iso of=/dev/sdb status="progress"
 
 ### BIOS configuration
 
-We need to go into the BIOS before installation. It may be different on different computers. On mine it's hitting <kbd>Enter</kbd> after reboot and then <kbd>F1</kbd>. Inside BIOS, we need to change order of booting devices and move USB drive to the top. I also had to disable secure boot and quick boot. Moreover I set `UEFI/Legacy Boot` to `Both` (`UEFI/Legacy Boot Priority`: `UEFI First`, `CSM Support`: `YES`). Sometimes network boot may interrupt boot process, so I set it to `USB HDD`. I had to play more with this stuff after installation boot freshly installed system. It may be different on your computer. Sometimes, there may be no issue with it.
+We need to go into the BIOS before installation. It may be different on different computers. On mine it's hitting <kbd>Enter</kbd> after reboot and then <kbd>F1</kbd>. Inside BIOS, we need to change order of booting devices and move USB drive to the top. I also had to disable secure boot and quick boot. Moreover I set `UEFI/Legacy Boot` to `Both` (`UEFI/Legacy Boot Priority`: `UEFI First`, `CSM Support`: `YES`). Sometimes network boot may interrupt boot process, so I set it to `USB HDD`. I had to play more with this stuff on freshly installed system because it was not booting in the beginning. It may be different on your computer. Sometimes, there may be no issue with it.
 
 ## First things
 
