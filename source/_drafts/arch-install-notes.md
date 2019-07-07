@@ -8,20 +8,21 @@ tags:
 
 ## Introduction
 
-...
+For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn't have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn't wat to spend too much time on reading documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with it on my own. Due to these facts I was discouraged to install Arch. Recently, I found awesome video about [Full Arch Linux Install](https://www.youtube.com/watch?v=4PBqpX0_UOc) by [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) where everything is explained very clearly in each step. I watched it one time without doing anything and then, watched it next time performing all the steps described there. I had a few issues related to my hardware and BIOS, but I managed to install Arch on my ThinkPad T470s thanks to this video. During the installation, I made a few notes for myself for the future possible installations. Maybe you'll find them useful too. The whole process is actually simpler than I thought. It just requires some practical knowledge about Linux, patience and "can do" attitude. I divided this article into steps and sub-steps, which are required to perform the installation. Please, keep in mind the fact that in the end of the installation, we will have an empty command prompt with plain OS without any GUI and we will have to install the graphical environment from the terminal. It will not be covered in this article, but I think, I'll cover it in another one.
 
 ## Booting installer from USB
 
 ### Creating bootable USB
 
-In order to create bootable USB, we need to download `*.iso` file with Arch from https://www.archlinux.org/download/. We also need to have `dd` (disk dump) program installed.
-We need to invoke `lsblk` before inserting USB drive to see our drives and invoke `lsblk` again after instertin the USB drive to see, which one it is. We can also have a look at disk sizes, what helps in recognizing our disk. Next, we can call `dd`:
+In order to create bootable USB, we need to download `*.iso` file with Arch from https://www.archlinux.org/download/. We also need to have `dd` (disk dump) program installed. We need to invoke `lsblk` before inserting USB drive to see our drives and invoke `lsblk` again after inserting the USB drive to see, which one it is. We can also have a look at disk sizes, what helps in recognizing our disk. Next, we can call `dd`:
 
 ```bash
 dd if=/path/to/arch.iso of=/dev/sdb status="progress"
 ```
 
-**Note**: please, be sure that you are writing on the correct disk! In the example above, we're writing to `/dev/sdb`. It may be the same in your case, but **it may be different too**! It's just an example.
+`status="progress"` parameter will allow us to monitor progress of the whole process.
+
+**Note**: please, be sure that you are writing on the correct disk! In the example above, we're writing to `/dev/sdb`. It may be the same in your case, but it may be different too! It's just an example!
 
 ### BIOS configuration
 
