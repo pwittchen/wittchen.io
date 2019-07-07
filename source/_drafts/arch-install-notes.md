@@ -128,7 +128,7 @@ mkswap /dev/nvme0n1p2
 Next, we can turn the SWAP on:
 
 ```
-swap on /dev/nvme0n1p2
+swapon /dev/nvme0n1p2
 ```
 
 ### Mounting partitions
