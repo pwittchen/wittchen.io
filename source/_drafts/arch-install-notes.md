@@ -48,7 +48,9 @@ We need to check an internet connection because we will need it to download pack
 ping wittchen.io
 ```
 
-When we see response, that's ok
+When we see response, that's ok.
+
+It's worth to mention, that it's good to have ethernet cable connection for the installation process. Optionally, you can use `wifi-menu` to connect wirelessly, but it's not recommended for the installation.
 
 ## System time and date initial setup
 
