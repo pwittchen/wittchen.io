@@ -3,7 +3,7 @@ overview
 
 this is source of [wittchen.io](http://wittchen.io) website
 
-**note**: this blog is based on the [hexo](https://hexo.io/) framework for static website generation.
+**note**: this blog is based on the [hexo](https://hexo.io/) framework for static website generation
 
 contents
 --------
