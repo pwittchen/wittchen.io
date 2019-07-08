@@ -3,8 +3,6 @@ overview
 
 this is source of [wittchen.io](http://wittchen.io) website
 
-**note**: this blog is based on the [hexo](https://hexo.io/) framework for static website generation
-
 contents
 --------
 - [installing](#installing)
@@ -19,6 +17,10 @@ contents
 
 installing
 ----------
+
+**note**: this blog is based on the [hexo](https://hexo.io/) framework for static website generation
+
+clone repo and run installation:
 
 ```
 git clone https://github.com/pwittchen/wittchen.io.git
