@@ -31,7 +31,7 @@
     "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "npm": "^6.10.0",
+    "npm": "^6.10.1",
     "npm-upgrade": "^2.0.0"
   }
 }
