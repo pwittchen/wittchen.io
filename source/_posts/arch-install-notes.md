@@ -34,7 +34,7 @@ We need to go into the BIOS before installation. It may be different on differen
 
 ### UEFI check
 
-Once we have booted installer from USB stick, we need to perform [UEFI](https://pl.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface) check as follows.
+Once we have booted installer from USB stick, we need to perform [UEFI](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface) check as follows.
 
 ```
 ls /sys/firmware/efivars
