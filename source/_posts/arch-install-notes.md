@@ -192,7 +192,7 @@ We can do it as follows:
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-My `/etc/fstab` file look like that:
+My `/etc/fstab` file looks like that:
 
 ```
 # Static information about the filesystems.
