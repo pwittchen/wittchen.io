@@ -1,5 +1,5 @@
 ---
-title: Arch Linux - install notes
+title: Arch Linux - installation notes
 tags:
   - arch
   - linux
