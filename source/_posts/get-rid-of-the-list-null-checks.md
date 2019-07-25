@@ -1,8 +1,10 @@
 ---
 title: Get rid of the list null-checks
 tags:
-    - java
+  - java
+date: 2019-07-25 23:18:43
 ---
+
 
 During development of the legacy Java applications, we still have to deal with `null`. It's possible to avoid it completly when we're designing application from the scratch, applying proper code constructions, static code analysis and we're consistent during code reviews. Nevertheless in majority of the cases we will encounter `null` in daily projects. We may even expect them in the method inputs and we have to be prepared for it. With the functional programming in Java we can deal with them in quite elegant way, but I often see people are not using features available nowadays.
 
