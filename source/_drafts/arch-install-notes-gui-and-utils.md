@@ -1,5 +1,5 @@
 ---
-title: Arch Linux install (GUI and services) notes
+title: Arch Linux - installation notes no. 2 (GUI and utils)
 tags:
     - arch
     - linux
