@@ -1,10 +1,12 @@
 ---
 title: Arch Linux - installation notes no. 2 (GUI and utils)
 tags:
-    - arch
-    - linux
-    - gnome
+  - arch
+  - linux
+  - gnome
+date: 2019-07-27 09:31:30
 ---
+
 
 ## Introduction
 
@@ -16,11 +18,13 @@ There are two main types of the Linux graphical environments for desktop:
 - Window Managers
 - Desktop Environments
 
-Window Managers are much simpler, require a lot of configuration, learning how to use it and you see all windows at once. Moreover, usually you can use them without a mouse and mouse is useless most of the time because you cannot drag and drop windows. Once you master it, working with Window Manager can be very efficient. Example of popular Window Manager is [i3](https://i3wm.org/). This environments are also lightweight. On the other hand, we have Desktop Environments. They're full of features, windows can be stacked one on another and you can drag and drop them. Several Desktop Environments are extensible through plugins. These kind of graphical interfaces are known to majority of computer users. You can see them on Windows or macOS. Example of the popular Linux Desktop Environments are [Gnome](https://www.gnome.org/), [Xfce](https://xfce.org/) and [KDE](https://kde.org/). Of course, mentioned Window Managers and Desktop Environments are not the only avaiable. There are more. I just mentioned these because I've heard about them.
+Window Managers are much simpler, require a lot of configuration, learning how to use them and you see all windows at once. Moreover, usually you can use them without a mouse and mouse is useless most of the time because you cannot drag and drop windows. Once you master it, working with Window Manager can be very efficient. Example of popular Window Manager is [i3](https://i3wm.org/). This environments are also lightweight. On the other hand, we have Desktop Environments. They're full of features, windows can be stacked one on another and you can drag and drop them. Several Desktop Environments are extensible through plugins. These kind of graphical interfaces are known to majority of computer users. You can see them on Windows or macOS. Examples of the popular Linux Desktop Environments are [Gnome](https://www.gnome.org/), [Xfce](https://xfce.org/) and [KDE](https://kde.org/). Of course, mentioned Window Managers and Desktop Environments are not the only avaiable. There are more. I just mentioned these because I've heard about them or tried them.
 
-I'm using Gnome Desktop Environment, so I will show you how to install it in this article
+I'm using Gnome Desktop Environment right now, so I will show you how to install it in this article
 
 ### Installing X Window System
+
+X Window system is a GUI component created in 80s at MIT. One of the most popular implementation of X is X.org, which we're going to install. Gnome is built on top of X that's why, we're installing X first.
 
 To install X Window system, we can type:
 
@@ -80,7 +84,9 @@ We can type `alsamixer` to view and adjust the configuration.
 
 We can also test our speaker with `speaker-test -c 2` command or via Gnome GUI.
 
-Once we're done, it's good to reboot the computer.
+Once we're done, it's good to reboot the computer. 
+
+Sometimes it may be required to perform additional configuration depending on our type of computer or specific sound devices.
 
 ## Bluetooth
 
@@ -115,7 +121,9 @@ bluetoothctl
 [bluetooth] trust [MAC address]
 ```
 
-We should perform the same procedure for all our Bluetooth devices
+We should perform the same procedure for all our Bluetooth devices.
+
+After next reboot, our devices should connect automatically before login.
 
 ## Other packages 
 
@@ -135,4 +143,4 @@ It's also good to remember that, we can use [aur](https://aur.archlinux.org/) re
 
 ## Summary
 
-Now, we have prepared simple, basic and clean desktop environment. From this point, we can proceed with the further adjustments and customizations (or leave it as it is :-).
+Now, we have prepared simple, basic and clean desktop environment. From this point, we can proceed with the further adjustments and customizations (or leave it as it is :-). In the past I worked with Windows, macOS and Ubuntu Linux and personally I think I like Arch Linux distribution with such setup the most. I can control everything, I know what is working under the hood and how it's configured, I have installed only software packages I really need, updates are seamless and everything just works. It's really hard to break anything on this system if you know what you're doing. Moreover, documentation and community are great. Of course, it requires some learning and time in the beginning, but if you're working with computers or like playing with them, in my opinion it's time well invested because Linux knowledge can be our great asset at work or in daily usage of the computer.
