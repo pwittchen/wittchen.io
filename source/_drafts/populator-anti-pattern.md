@@ -1,5 +1,5 @@
 ---
-title: Populator anti-pattern
+title: Modifying mehtod's input parameters
 tags:
     - java
     - anti-patterns
@@ -10,3 +10,4 @@ TBD.
 
 ## References
 - https://softwareengineering.stackexchange.com/a/245809/189814
+- https://github.com/denizozger/clean-code#methods
