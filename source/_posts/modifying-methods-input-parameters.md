@@ -9,7 +9,7 @@ date: 2019-08-05 18:27:30
 ---
 
 
-During maintenance of the legacy projects I sometimes see constructions like:
+During maintenance of the legacy projects, I sometimes see constructions like:
 
 ```java
 void appendFooter(Report report);
