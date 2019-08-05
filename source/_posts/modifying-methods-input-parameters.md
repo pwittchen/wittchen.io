@@ -1,11 +1,13 @@
 ---
 title: Modifying mehtod's input parameters
 tags:
-    - java
-    - anti-patterns
-    - bad-practices
-    - clean-code
+  - java
+  - anti-patterns
+  - bad-practices
+  - clean-code
+date: 2019-08-05 18:27:30
 ---
+
 
 During maintenance of the legacy projects I sometimes see constructions like:
 
