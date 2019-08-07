@@ -21,6 +21,12 @@ or
 void populate(Data data);
 ```
 
+I even saw something like this:
+
+```java
+void populate(Source source, Target target);
+```
+
 What is wrong with these statements?
 
 They're using so called *output argument*. In the examples above, we're passing a `report` or `data` variable, which usually are going to be global variables available in the scope of the whole class. These methods takes them as an argument and modify them. This idea comes from pre-OOP times and could be applied in programs written in C. Nevertheless, in Java, this technique should be avoided and is considered as a **bad practice**.
@@ -48,7 +54,14 @@ final Object value = createValue();
 data.setValue(value);
 ```
 
-Now, we clearly see where objects are created, data is immutable, input parameters are not modified inside the methods and all method's variables are available only in the scope of the method.
+and
+
+```java
+Source source = createSource();
+target.setValue(source);
+```
+
+Now, we clearly see where objects are created, data is immutable, input parameters are not modified inside the methods, we don't rely on the global state inside particular methods and all method's variables are available only in the scope of the method.
 
 ## References
 - https://softwareengineering.stackexchange.com/a/245809/189814
