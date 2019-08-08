@@ -17,6 +17,10 @@ tags:
 
 ...
 
+## Written assessments/exams
+
+...
+
 ## Home assignment
 
 ...
@@ -26,6 +30,10 @@ tags:
 ...
 
 ## Algorithmic tasks (FANG style)
+
+...
+
+## Riddles
 
 ...
 
