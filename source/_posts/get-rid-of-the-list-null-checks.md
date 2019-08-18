@@ -2,7 +2,7 @@
 title: Get rid of the list null-checks
 tags:
   - java
-date: 2019-07-25 23:18:43
+date: 2019-07-28 23:18:43
 ---
 
 
