@@ -1,12 +1,12 @@
 ---
-title: Formatting USB drive on Linux
+title: Formatting USB disk on Linux
 tags:
     - linux
     - usb
     - drive
 ---
 
-Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn't format this disk with GUI tools for some reason and I kept getting errors or information that it's not possible. In case you don't know, on Linux everything is always possible, so I quit that GUI garbage, opened terminal and start playing with good old and simple programs.
+Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn't format this disk with GUI tools for some reason and I kept getting errors or information that it's not possible. In case you don't know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.
 
 When we insert disk and type:
 
@@ -65,7 +65,7 @@ To do that, we can type:
 fdisk /dev/sdb
 ```
 
-Next, we can use `d` for deleting partition.
+next, we can use `d` for deleting partition:
 
 ```
 Welcome to fdisk (util-linux 2.34).
@@ -77,7 +77,7 @@ Selected partition 1
 Partition 1 has been deleted.
 ```
 
-and `n` for creating a new one.
+and `n` for creating a new one:
 
 ```
 Command (m for help): n
@@ -105,19 +105,19 @@ The partition table has been altered.
 Syncing disks.
 ```
 
-Next, we can umount drive:
+next, we can umount drive:
 
 ```
 sudo umount /dev/sdb
 ```
 
-and create a file system - in our case, we'll use FAT32 file system in order to make USB drive accessible across all operating systems.
+and create a file system - in our case, we'll use FAT32 file system in order to make USB drive accessible across all operating systems
 
 ```
 sudo mkfs.vfat /dev/sdb1
 ```
 
-after that, we can create a label for our disk with name `disk3` (it can be anything) :
+after that, we can create a label for our disk with name `disk3` (it can be anything):
 
 ```
 sudo mlabel - /dev/sdb1 ::disk3
