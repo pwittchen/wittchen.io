@@ -21,5 +21,4 @@ Want to know more?
 * see my contributions on [StackOverflow](http://stackoverflow.com/users/1150795/piotr-wittchen)
 * download my Android apps from [Google Play](https://play.google.com/store/apps/dev?id=7269544076898428056)
 * have a look at my [coder stats](http://coderstats.net/github/#pwittchen) and [git awards](http://git-awards.com/users/pwittchen)
-* listen to my playlists on [Spotify](https://open.spotify.com/user/1166657647)
-* or use [PayPal.me](https://www.paypal.me/pwittchen) for the money transfer or donations if you find my articles or projects useful
+* and listen to my playlists on [Spotify](https://open.spotify.com/user/1166657647)
