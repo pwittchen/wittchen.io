@@ -12,7 +12,7 @@ tags:
 Introduction
 ------------
 
-Some time ago, I've written an article about [Test coverage report for Android application](/2015/06/03/test-coverage-in-android-applications/). It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I've written instrumentation unit tests, which needed to be executed on a real device or an emulator. It's a good approach when you want to test functionalities strongly connected with the device. E.g. when you want to test operations on a real SQLite database or something like that. Nevertheless, this approach has huge disadvantages. It's hard to run tests on the Continous Integration server because we need to have the emulator or device up & connected all the time and also tests need to interact properly with the device to get passed what is not so easy. In most cases, mocking part of the application's behavior is enough. In that case, we can easily run tests on a CI server and have deterministic test results. In order to do that, we can use [**Robolectric**](http://robolectric.org/).
+Some time ago, I've written an article about [Test coverage report for Android application](/test-coverage-in-android-applications/). It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I've written instrumentation unit tests, which needed to be executed on a real device or an emulator. It's a good approach when you want to test functionalities strongly connected with the device. E.g. when you want to test operations on a real SQLite database or something like that. Nevertheless, this approach has huge disadvantages. It's hard to run tests on the Continous Integration server because we need to have the emulator or device up & connected all the time and also tests need to interact properly with the device to get passed what is not so easy. In most cases, mocking part of the application's behavior is enough. In that case, we can easily run tests on a CI server and have deterministic test results. In order to do that, we can use [**Robolectric**](http://robolectric.org/).
 
 Gradle configuration
 --------------------
@@ -89,9 +89,9 @@ Here we are performing clean, build an application, running unit tests, generati
 Writing unit tests with Robolectric
 -----------------------------------
 
-Next we can place our tests in `src/test/` directory. 
+Next we can place our tests in `src/test/` directory.
 
-Sample unit test can look as follows: 
+Sample unit test can look as follows:
 
 ```java
 @RunWith(RobolectricTestRunner.class) @Config(constants = BuildConfig.class)
@@ -114,18 +114,18 @@ because Robolectric didn't work with the Android SDK newer than 23. Moreover, I 
 Summary
 -------
 
-When we have everything configured, we can push our tests to the GitHub repository, Travis CI build will be triggered and we can beautiful test coverage report, which can help to improve our tests. 
+When we have everything configured, we can push our tests to the GitHub repository, Travis CI build will be triggered and we can beautiful test coverage report, which can help to improve our tests.
 
 ![](/images/posts/2017/test-coverage-android-travis/codecovio-report-1.png)
 
-We can also click on the main package and see detailed coverage information for the several packages. 
+We can also click on the main package and see detailed coverage information for the several packages.
 
 ![](/images/posts/2017/test-coverage-android-travis/codecovio-report-2.png)
 
-Moreover, we can analyze coverage change in time. 
+Moreover, we can analyze coverage change in time.
 
 ![](/images/posts/2017/test-coverage-android-travis/codecovio-report-3.png)
 
-I've applied approach described in this article in [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) open-source library. 
+I've applied approach described in this article in [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) open-source library.
 
 If want to see the complete solution, take a look at the source code of this project or see [its coverage report on-line](https://codecov.io/gh/pwittchen/ReactiveNetwork).

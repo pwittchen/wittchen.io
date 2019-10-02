@@ -7,7 +7,7 @@ tags:
 	- coverage
 ---
 
-**Update:** see newer article about [**Unit test coverage report with Travis CI for Robolectric on Android**](/2017/03/19/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/). For a long time, I wasn't able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I've found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don't use. Other developers also stopped using it for the new projects. E.g. [Sqlbrite](https://github.com/square/sqlbrite) from Square is using AndroidJUnit4 runner as my projects do. Recently, I've found [an interesting discussion on Reddit](http://www.reddit.com/r/androiddev/comments/2v1n2u/code_coverage_in_android_studio/), where we can find information about enabling test coverage very easily without additional plugins, scripts and many lines of configuration. Moreover, Android SDK currently has built-in support for [Emma Test Coverage](http://emma.sourceforge.net/), what we can read in [official documentation](http://developer.android.com/reference/android/test/InstrumentationTestRunner.html). Basically, the only thing we need to do, is to apply `jacoco-android` plugin in `build.gradle` file:
+**Update:** see newer article about [**Unit test coverage report with Travis CI for Robolectric on Android**](/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/). For a long time, I wasn't able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I've found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don't use. Other developers also stopped using it for the new projects. E.g. [Sqlbrite](https://github.com/square/sqlbrite) from Square is using AndroidJUnit4 runner as my projects do. Recently, I've found [an interesting discussion on Reddit](http://www.reddit.com/r/androiddev/comments/2v1n2u/code_coverage_in_android_studio/), where we can find information about enabling test coverage very easily without additional plugins, scripts and many lines of configuration. Moreover, Android SDK currently has built-in support for [Emma Test Coverage](http://emma.sourceforge.net/), what we can read in [official documentation](http://developer.android.com/reference/android/test/InstrumentationTestRunner.html). Basically, the only thing we need to do, is to apply `jacoco-android` plugin in `build.gradle` file:
 
 
 ```gradle
@@ -42,11 +42,11 @@ When we open `index.html` file, we can see visual report from test coverage, whi
 /build/outputs/code-coverage/connected/
 ```
 
-In some cases, we may need this file. E.g. if chosen Jenkins plugin or another tool will need it in order to generate test coverage report properly. Below, you can see exemplary test coverage report for [Prefser](https://github.com/pwittchen/prefser), which is an open-source Android library. 
+In some cases, we may need this file. E.g. if chosen Jenkins plugin or another tool will need it in order to generate test coverage report properly. Below, you can see exemplary test coverage report for [Prefser](https://github.com/pwittchen/prefser), which is an open-source Android library.
 
 ![prefser_test_coverage_report_03.06.2015](/images/posts/2015/test-coverage/prefser_test_coverage_report_03.06.2015.png)
 
-This report was generated with [JaCoCo](http://www.eclemma.org/jacoco/) code coverage library. After analyzing test coverage report, I've added a few new unit tests, slightly modified the project and managed to obtain **100% test coverage**. 
+This report was generated with [JaCoCo](http://www.eclemma.org/jacoco/) code coverage library. After analyzing test coverage report, I've added a few new unit tests, slightly modified the project and managed to obtain **100% test coverage**.
 
 ![prefser_test_coverage_04.06.2015](/images/posts/2015/test-coverage/prefser_test_coverage_04.06.2015.png)
 
