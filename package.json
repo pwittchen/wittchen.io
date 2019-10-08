@@ -30,9 +30,9 @@
     "hexo-renderer-jade": "^0.4.1",
     "hexo-renderer-marked": "^2.0.0",
     "hexo-server": "^1.0.0",
-    "hexo-renderer-stylus": "^1.0.0",
-    "npm": "^6.11.1",
-    "npm-upgrade": "^2.0.0"
+    "hexo-renderer-stylus": "^1.1.0",
+    "npm": "^6.11.3",
+    "npm-upgrade": "^2.0.2"
   },
   "optionalDependencies": {
     "fsevents": "*"
