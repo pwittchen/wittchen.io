@@ -38,7 +38,7 @@ tags:
 - http://udidahan.com/2009/12/09/clarified-cqrs/
 - https://bulldogjob.pl/articles/122-cqrs-i-event-sourcing-czyli-latwa-droga-do-skalowalnosci-naszych-systemow [PL]
 
-### Event Sourcing
+### Event Sourcing (ES)
 - https://martinfowler.com/eaaDev/EventSourcing.html
 - http://microservices.io/patterns/data/event-sourcing.html
 
