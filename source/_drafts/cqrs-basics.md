@@ -36,6 +36,7 @@ tags:
 - http://www.axonframework.org/
 - http://squirrel.pl/blog/2015/08/31/introduction-to-event-sourcing-and-command-query-responsibility-segregation/
 - http://udidahan.com/2009/12/09/clarified-cqrs/
+- https://bulldogjob.pl/articles/122-cqrs-i-event-sourcing-czyli-latwa-droga-do-skalowalnosci-naszych-systemow [PL]
 
 ### Event Sourcing
 - https://martinfowler.com/eaaDev/EventSourcing.html
