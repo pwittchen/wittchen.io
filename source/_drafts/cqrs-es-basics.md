@@ -1,5 +1,5 @@
 ---
-title: CQRS basics
+title: CQRS + ES - basics
 tags:
     - patterns
     - software-enginnering
