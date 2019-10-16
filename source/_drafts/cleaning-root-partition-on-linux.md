@@ -57,6 +57,6 @@ For example, here are the contents of the `/usr/` directory:
 @   0,0   B [          ]  lib64
 ```
 
-I've noticed that there were logs in `/var/log/journal/`, which have significant size. I also had a lot of downloaded packages in `/var/cache/pacman/`. These data could be cleaned and saved me a few GB of space, so I stopped seeing notification. During cleanup, we can also have a look at other cache data, logs and `/tmp/` directory. To verify disk sizes and used space, we can use `df -H` command.
+I've noticed that there were logs in `/var/log/journal/`, which have significant size. I also had a lot of downloaded packages in `/var/cache/pacman/`. As I noticed `pacman -Sc` command don't clean all the caches and keeps the newest packages, so if we want to remove everything or almost everything, we can configure pacman appropriately or remove packages manually. These data could be cleaned and saved me a few GB of space, so I stopped seeing notification. During cleanup, we can also have a look at other cache data, logs and `/tmp/` directory. To verify disk sizes and used space, we can use `df -H` command.
 
 I hope, you'll find this tips useful and avoid resizing root partition or system re-installation.
