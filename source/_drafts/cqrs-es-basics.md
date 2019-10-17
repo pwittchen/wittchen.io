@@ -51,3 +51,6 @@ tags:
 - https://martinfowler.com/tags/domain%20driven%20design.html
 - https://bottega.com.pl/warsztat-ddd-modelowanie [PL]
 - https://bottega.com.pl/materialy.xhtm?cat=DDD [PL]
+
+### Others
+- [DROP DATABASE - presentation](https://www.youtube.com/watch?v=9qppMkaCJjA) [PL]
