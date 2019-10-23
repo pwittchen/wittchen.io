@@ -48,6 +48,8 @@ make expose_secrets
 
 please note: `protect_secrets` rule is invoked during `install` rule
 
+secrets for **automatic deployment** with GitHub Actions are stored in `Secrets` tab directly in GitHub repository.
+
 deployment
 ----------
 
