@@ -1,0 +1,18 @@
+name: Publish Website
+on: push
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+        LOCAL_DIR : "public"
+        ARGS: --delete --transfer-all
+
