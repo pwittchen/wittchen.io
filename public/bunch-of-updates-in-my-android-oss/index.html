@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Bunch of updates in my OSS for Android · Piotr Wittchen</title><meta name="description" content="Bunch of updates in my OSS for Android - Piotr Wittchen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400"><link rel="search" type="application/opensearchdescription+xml" href="http://wittchen.io/atom.xml" title="Piotr Wittchen"></head><body><div class="wrap"><header><a href="/" class="logo-link"><div>Piotr Wittchen</div></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/code" target="_self" class="nav-list-link">CODE</a></li><li class="nav-list-item"><a href="/projects" target="_self" class="nav-list-link">PROJECTS</a></li><li class="nav-list-item"><a href="/talks" target="_self" class="nav-list-link">TALKS</a></li><li class="nav-list-item"><a href="/contact" target="_self" class="nav-list-link">CONTACT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Bunch of updates in my OSS for Android</h1><div class="post-info">Nov 8, 2015</div><div class="post-content"><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with <a href="https://kotlinlang.org/" target="_blank" rel="noopener">Kotlin</a> language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it’s still in beta version. If you are interested in Kotlin programming for Android, take a look at <a href="https://kotlinlang.org/docs/tutorials/kotlin-android.html" target="_blank" rel="noopener">Getting started with Android and Kotlin</a> guide from official Kotlin website. You can also take a look at <a href="https://github.com/pwittchen/ReactiveNetwork/tree/master/app-kotlin" target="_blank" rel="noopener">one of my sample apps</a> written in Kotlin and <a href="https://github.com/pwittchen/ReactiveNetwork/blob/master/app-kotlin/build.gradle" target="_blank" rel="noopener">its configuration in Gradle</a>.</p>
+<h2 id="Summary-of-updates"><a href="#Summary-of-updates" class="headerlink" title="Summary of updates"></a>Summary of updates</h2><h3 id="ReactiveNetwork-v-0-1-3"><a href="#ReactiveNetwork-v-0-1-3" class="headerlink" title="ReactiveNetwork v. 0.1.3"></a><a href="https://github.com/pwittchen/ReactiveNetwork" target="_blank" rel="noopener">ReactiveNetwork</a> v. 0.1.3</h3><ul>
+<li>fixed bug with incorrect status after going back from background inside the sample app reported in issue <a href="https://github.com/pwittchen/ReactiveNetwork/issues/31" target="_blank" rel="noopener">#31</a></li>
+<li>fixed RxJava usage in sample app</li>
+<li>fixed RxJava usage in code snippets in <code>README.md</code></li>
+<li>added static code analysis</li>
+<li>updated code formatting</li>
+<li>added sample <a href="https://github.com/pwittchen/ReactiveNetwork/tree/master/app-kotlin" target="_blank" rel="noopener">sample app in Kotlin</a></li>
+</ul>
+<p>Unfortunately, in Android we cannot use Java 8 yet and code should be written in Java 7. We can do some hacks like using RetroLambda or libraries implementing part of functionalities available in Java 8 like streams, but these solutions are still hacks - not the right way. In Kotlin we can use lambdas like in Java 8. In addition, we have a lot of other cool features, which allow us to write less lines of code and detect possible mistakes while writing apps. E.g. Kotlin helps us to avoid NPEs with its additional operators like <code>!!</code>, which tells us that NPE can occur, so we can think of eliminating this possibility. If we don’t use this operator when we should, IntelliJ IDEA or Android Studio will warn us. Below, we can see exemplary usage of ReactiveNetwork library with Kotlin. In this code snippet, we are using so called <em>synthetic properties</em> from <a href="https://kotlinlang.org/docs/tutorials/android-plugin.html" target="_blank" rel="noopener">Kotlin Extensions for Android</a>. Value <code>connectivity_status</code> is an id of the view defined in XML layout. We can call it directly in Kotlin code and treat as object. It’s really useful and allows us to avoid calling <code>findViewById(...)</code> method for every view in Activity or injecting views with additional libraries like ButterKnife or KotterKnife. It means that we can get rid of a lot of boilerplate code.</p>
+<h3 id="ReactiveSensors"><a href="#ReactiveSensors" class="headerlink" title="ReactiveSensors"></a><a href="https://github.com/pwittchen/ReactiveSensors" target="_blank" rel="noopener">ReactiveSensors</a></h3><ul>
+<li>fixed RxJava usage in sample app</li>
+<li>fixed RxJava usage in code snippets in <code>README.md</code></li>
+<li>added static code analysis</li>
+<li>refactored sample app and removed repetitions in code</li>
+</ul>
+<p>In this project I made only changes inside the documentation, improved Gradle configuration and added another sample app. There were no changes inside the library code, so there was no need to release new library version to Maven Central Repository. Moreover, I’m going to add sample app in Kotlin for this project in the nearest future.</p>
+<h3 id="ReactiveBeacons-v-0-3-0"><a href="#ReactiveBeacons-v-0-3-0" class="headerlink" title="ReactiveBeacons v. 0.3.0"></a><a href="https://github.com/pwittchen/ReactiveBeacons" target="_blank" rel="noopener">ReactiveBeacons</a> v. 0.3.0</h3><ul>
+<li>replaced <code>distinct()</code> operator with <code>distinctUntilChanged()</code> operator in <code>Observable observe()</code> method in <code>ReactiveBeacons</code> class</li>
+<li>added permissions <code>ACCESS_FINE_LOCATION</code> and <code>ACCESS_COARSE_LOCATION</code> to satisfy requirements of Android 6</li>
+<li>renamed <code>void requestBluetoothAccessIfDisabled(activity)</code> method to <code>void requestBluetoothAccess(activity)</code></li>
+<li>added <code>boolean isBluetoothEnabled()</code> method</li>
+<li>added <code>boolean isLocationEnabled(context)</code> method</li>
+<li>added <code>void requestLocationAccess(activity)</code> method</li>
+<li>modified sample app in order to make it work on Android 6 Marshmallow</li>
+<li>reduced target API from 23 to 22 in library due to problems with additional permissions and new permission model (it can be subject of improvements in the next releases)</li>
+<li>added package private <code>AccessRequester</code> class</li>
+<li>added <a href="https://github.com/pwittchen/ReactiveBeacons/tree/master/app-kotlin" target="_blank" rel="noopener">sample app in Kotlin</a></li>
+</ul>
+<h3 id="WeatherIconView-v-1-1-0"><a href="#WeatherIconView-v-1-1-0" class="headerlink" title="WeatherIconView v. 1.1.0"></a><a href="https://github.com/pwittchen/WeatherIconView" target="_blank" rel="noopener">WeatherIconView</a> v. 1.1.0</h3><ul>
+<li>added icons from 2.0 version of the original <a href="https://github.com/erikflowers/weather-icons/" target="_blank" rel="noopener">weather-icons project</a></li>
+<li>updated compile sdk version</li>
+<li>updated Gradle Build Tools version</li>
+</ul>
+<h3 id="Prefser-v-2-0-2"><a href="#Prefser-v-2-0-2" class="headerlink" title="Prefser v. 2.0.2"></a><a href="https://github.com/pwittchen/prefser" target="_blank" rel="noopener">Prefser</a> v. 2.0.2</h3><ul>
+<li>fixed bug reported in issue <a href="https://github.com/pwittchen/prefser/issues/70" target="_blank" rel="noopener">#70</a>: <code>get(...)</code> method now returns a <code>null</code> value instead of “null” string when setting default value to null of String type</li>
+<li>fixed RxJava usage in sample app</li>
+<li>fixed RxJava usage in code snippets in <code>README.md</code></li>
+<li>changed code formatting to <code>SquareAndroid</code></li>
+<li>added static code analysis</li>
+<li>improved code according to static code analysis suggestions</li>
+</ul>
+<h3 id="Kirai-v-1-1-0"><a href="#Kirai-v-1-1-0" class="headerlink" title="Kirai v. 1.1.0"></a><a href="https://github.com/pwittchen/kirai" target="_blank" rel="noopener">Kirai</a> v. 1.1.0</h3><ul>
+<li>removed <code>formatter(...)</code> method from <code>Kirai</code> class</li>
+<li>added <code>format(...)</code> method accepting implementation of <code>Formatter</code> interface to <code>Kirai</code> class</li>
+<li>added <code>Syntax</code> interface and <code>HtmlSyntax</code> class implementing this interface</li>
+<li>added <code>put(String key, Object value, Syntax syntax)</code> method to <code>Piece</code> class</li>
+<li>set <code>HtmlSyntax</code> as default <code>Syntax</code> implementation in <code>Piece</code> class</li>
+<li>removed dependencies to Android SDK</li>
+<li>updated project dependencies</li>
+<li>applied <code>Square</code> code style</li>
+<li>updated tests, sample app and code snippets in <code>README.md</code></li>
+<li>added gh-pages with JavaDoc</li>
+</ul>
+<p>Any suggestions of further improvements are more than welcome as usual!</p>
+</div></article></div></main><footer><div class="paginator"><a href="/new-release-of-kirai-140/" class="prev">PREV</a><a href="/an-opinionated-guide-to-modern-java-by-parallel-universe/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'wittchenio';
+var disqus_identifier = 'bunch-of-updates-in-my-android-oss/';
+var disqus_title = 'Bunch of updates in my OSS for Android';
+var disqus_url = 'http://wittchen.io/bunch-of-updates-in-my-android-oss/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//undefined.disqus.com/count.js" async></script><div class="copyright"><p>© 2013 - 2019 <a href="http://wittchen.io">Piotr Wittchen</a></p><p><a href="https://github.com/pwittchen/wittchen.io">source</a> / <a href="/feed.xml">rss</a> / <a href="/archives">archives</a> / <a href="/tags">tags</a> / <a href="https://github.com/pwittchen/wittchen.io#rest">api</a> / <a href="/gh">github</a> / <a href="/so">stackoverflow</a> / <a href="/in">linkedin</a> / <a href="mailto:piotr@wittchen.io">email</a></p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-2194664-7",'auto');ga('send','pageview');</script></body></html>

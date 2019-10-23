@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Different ways of squashing commits · Piotr Wittchen</title><meta name="description" content="Different ways of squashing commits - Piotr Wittchen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400"><link rel="search" type="application/opensearchdescription+xml" href="http://wittchen.io/atom.xml" title="Piotr Wittchen"></head><body><div class="wrap"><header><a href="/" class="logo-link"><div>Piotr Wittchen</div></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/code" target="_self" class="nav-list-link">CODE</a></li><li class="nav-list-item"><a href="/projects" target="_self" class="nav-list-link">PROJECTS</a></li><li class="nav-list-item"><a href="/talks" target="_self" class="nav-list-link">TALKS</a></li><li class="nav-list-item"><a href="/contact" target="_self" class="nav-list-link">CONTACT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Different ways of squashing commits</h1><div class="post-info">Jul 21, 2018</div><div class="post-content"><p>While creating a Pull Requests it’s good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary. </p>
+<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution #1"></a>Solution #1</h2><p>Some time ago I’ve found project <a href="http://rebaseandsqua.sh/" target="_blank" rel="noopener">http://rebaseandsqua.sh/</a> made by Jake Wharton. It’s really useful, handy and allows us to rebase and squash commits quite easily. </p>
+<p>We can just call:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl rebaseandsqua.sh | sh</span><br></pre></td></tr></table></figure>
+
+<p>then edit our commit messages and push the changes.</p>
+<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution #2"></a>Solution #2</h2><p>If we want to understand this process and do it manually instead of delegating it to the script from the web, we should perform the following steps:</p>
+<p>First, we need to decide how many commits, we want to squash. Let’s say 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
+
+<p>We should see something like this in our editor of choice:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pick 48d7c25 adding link to vim-jdb plugin in README.md</span><br><span class="line">pick 97376b4 Update README.md</span><br><span class="line">pick a92b5bf adding squash alias to .gitconfig</span><br></pre></td></tr></table></figure>
+
+<p>Next, we can decide, which commits we want to squash:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pick 48d7c25 adding link to vim-jdb plugin in README.md</span><br><span class="line">squash 97376b4 Update README.md</span><br><span class="line">squash a92b5bf adding squash alias to .gitconfig</span><br></pre></td></tr></table></figure>
+
+<p>When, we save it, all of our commits will be squashed into one containing all commit messages.<br>We can now edit this message with command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<p>You can read more about it in the <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History" target="_blank" rel="noopener">official Git documentation</a>.</p>
+<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution #3"></a>Solution #3</h2><p>Some time ago I created a git alias for myself for merging last commits in <code>.gitconfig</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">merge-local-commits = !sh -c &apos;git reset --soft HEAD~$1&apos; -</span><br></pre></td></tr></table></figure>
+
+<p>We can invoke it with e.g.:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge-local-commits 3</span><br></pre></td></tr></table></figure>
+
+<p>It works pretty fine, but we need to remember how many commits we want to merge, type a commit message and perform commit again.</p>
+<h2 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution #4"></a>Solution #4</h2><p>Recently I’ve found another solution to this problem represented with the following alias:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">squash = &quot;!f()&#123; git reset --soft HEAD~$&#123;1&#125; &amp;&amp; git commit --edit -m\&quot;$(git log --format=%B --reverse HEAD..HEAD@&#123;1&#125;)\&quot;;   &#125;;f&quot;</span><br></pre></td></tr></table></figure>
+
+<p>It’s doing the same thing as previous alias, but it preserves all the commit messages. Thanks to that, we can keep all of our commit messages or delete them and leave just one, which is the most relevant for the given change. When we want to “squash” 3 commits, we can just type:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git squash 3</span><br></pre></td></tr></table></figure>
+
+<p>and we are ready to override all the intermediate commits with the single commit for the Pull Request:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f</span><br></pre></td></tr></table></figure>
+
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>As you can see, there are many ways to squash commits into one. Probably there are another solutions, which are not described in this article. You can pratice them in some kind of “dummy” repo and then, when you’ll feel comfortable with it, introduce it in your daily workflow. I hope, now you won’t be afraid of squashing your commits :-).</p>
+</div></article></div></main><footer><div class="paginator"><a href="/poor-mans-dropbox/" class="prev">PREV</a><a href="/releasing-reactive-network-1/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'wittchenio';
+var disqus_identifier = 'squashing-commits/';
+var disqus_title = 'Different ways of squashing commits';
+var disqus_url = 'http://wittchen.io/squashing-commits/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//undefined.disqus.com/count.js" async></script><div class="copyright"><p>© 2013 - 2019 <a href="http://wittchen.io">Piotr Wittchen</a></p><p><a href="https://github.com/pwittchen/wittchen.io">source</a> / <a href="/feed.xml">rss</a> / <a href="/archives">archives</a> / <a href="/tags">tags</a> / <a href="https://github.com/pwittchen/wittchen.io#rest">api</a> / <a href="/gh">github</a> / <a href="/so">stackoverflow</a> / <a href="/in">linkedin</a> / <a href="mailto:piotr@wittchen.io">email</a></p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-2194664-7",'auto');ga('send','pageview');</script></body></html>

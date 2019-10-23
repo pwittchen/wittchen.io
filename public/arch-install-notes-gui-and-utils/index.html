@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Arch Linux - installation notes no. 2 (GUI and utils) · Piotr Wittchen</title><meta name="description" content="Arch Linux - installation notes no. 2 (GUI and utils) - Piotr Wittchen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400"><link rel="search" type="application/opensearchdescription+xml" href="http://wittchen.io/atom.xml" title="Piotr Wittchen"></head><body><div class="wrap"><header><a href="/" class="logo-link"><div>Piotr Wittchen</div></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/code" target="_self" class="nav-list-link">CODE</a></li><li class="nav-list-item"><a href="/projects" target="_self" class="nav-list-link">PROJECTS</a></li><li class="nav-list-item"><a href="/talks" target="_self" class="nav-list-link">TALKS</a></li><li class="nav-list-item"><a href="/contact" target="_self" class="nav-list-link">CONTACT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Arch Linux - installation notes no. 2 (GUI and utils)</h1><div class="post-info">Jul 27, 2019</div><div class="post-content"><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In my <a href="/arch-install-notes">previous article</a> I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.</p>
+<h2 id="Desktop-Environment-DE-Windows-Manager-WM"><a href="#Desktop-Environment-DE-Windows-Manager-WM" class="headerlink" title="Desktop Environment (DE) / Windows Manager (WM)"></a>Desktop Environment (DE) / Windows Manager (WM)</h2><p>There are two main types of the Linux graphical environments for desktop:</p>
+<ul>
+<li>Window Managers</li>
+<li>Desktop Environments</li>
+</ul>
+<p>Window Managers are much simpler, require a lot of configuration, learning how to use them and you see all windows at once. Moreover, usually you can use them without a mouse and mouse is useless most of the time because you cannot drag and drop windows. Once you master it, working with Window Manager can be very efficient. Example of popular Window Manager is <a href="https://i3wm.org/" target="_blank" rel="noopener">i3</a>. This environments are also lightweight. On the other hand, we have Desktop Environments. They’re full of features, windows can be stacked one on another and you can drag and drop them. Several Desktop Environments are extensible through plugins. These kind of graphical interfaces are known to majority of computer users. You can see them on Windows or macOS. Examples of the popular Linux Desktop Environments are <a href="https://www.gnome.org/" target="_blank" rel="noopener">Gnome</a>, <a href="https://xfce.org/" target="_blank" rel="noopener">Xfce</a> and <a href="https://kde.org/" target="_blank" rel="noopener">KDE</a>. Of course, mentioned Window Managers and Desktop Environments are not the only avaiable. There are more. I just mentioned these because I’ve heard about them or tried them.</p>
+<p>I’m using Gnome Desktop Environment right now, so I will show you how to install it in this article</p>
+<h3 id="Installing-X-Window-System"><a href="#Installing-X-Window-System" class="headerlink" title="Installing X Window System"></a>Installing X Window System</h3><p>X Window system is a GUI component created in 80s at MIT. One of the most popular implementation of X is X.org, which we’re going to install. Gnome is built on top of X that’s why, we’re installing X first.</p>
+<p>To install X Window system, we can type:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xorg-server xorg-xinit xorg-server-utils</span><br></pre></td></tr></table></figure>
+
+<p>To install desktop features, we can type:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xorg-twm xorg-xclock xterm</span><br></pre></td></tr></table></figure>
+
+<p>Now, we can start X Window system, in which we will install Gnome</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startx</span><br></pre></td></tr></table></figure>
+
+<h3 id="Installing-Gnome"><a href="#Installing-Gnome" class="headerlink" title="Installing Gnome"></a>Installing Gnome</h3><p>Let’s install required fonts:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ttf-dejavu</span><br></pre></td></tr></table></figure>
+
+<p>Now, we’re ready to install Gnome:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gnome</span><br></pre></td></tr></table></figure>
+
+<p>Enable the display manager:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable gdm.service</span><br></pre></td></tr></table></figure>
+
+<p>Now, we can reboot our system and once computer restarts, we should see Gnome GUI</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sound"><a href="#Sound" class="headerlink" title="Sound"></a>Sound</h2><p>Sound is usually not enabled by default on Arch and we need to install required software:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S alsa-utils</span><br></pre></td></tr></table></figure>
+
+<p><code>alsa-utils</code> package is recommended for this task</p>
+<p>We can type <code>alsamixer</code> to view and adjust the configuration.</p>
+<p>We can also test our speaker with <code>speaker-test -c 2</code> command or via Gnome GUI.</p>
+<p>Once we’re done, it’s good to reboot the computer. </p>
+<p>Sometimes it may be required to perform additional configuration depending on our type of computer or specific sound devices.</p>
+<h2 id="Bluetooth"><a href="#Bluetooth" class="headerlink" title="Bluetooth"></a>Bluetooth</h2><p>If we’re using Bluetooth mouse, keyboard, headphones or speaker, we should install appropriate Bluetooth software:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S pulseaudio-bluetooth</span><br></pre></td></tr></table></figure>
+
+<p>Now, we should enable <code>bluetooth.service</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable bluetooth.service</span><br></pre></td></tr></table></figure>
+
+<p>You can connect Bluetooth Device via <code>bluetoothctl</code> or via Gnome GUI.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl</span><br><span class="line">[bluetooth] power on</span><br><span class="line">[bluetooth] agent on</span><br><span class="line">[bluetooth] scan on</span><br><span class="line">[NEW] Device [MAC address]</span><br><span class="line">[bluetooth] pair [MAC address]</span><br><span class="line">[bluetooth] connect [MAC address]</span><br></pre></td></tr></table></figure>
+
+<p>Please note, that devices won’t connect automatically after turning the computer on. In order to achieve that, we should mark them as trusted.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl</span><br><span class="line">[bluetooth] trust [MAC address]</span><br></pre></td></tr></table></figure>
+
+<p>We should perform the same procedure for all our Bluetooth devices.</p>
+<p>After next reboot, our devices should connect automatically before login.</p>
+<h2 id="Other-packages"><a href="#Other-packages" class="headerlink" title="Other packages"></a>Other packages</h2><p>Things mentioned above are necessary for running regular desktop environment. Other stuff should be adjusted to our needs. We should keep in mind the fact that Arch is minimalistic distro and it shouldn’t be polluted by too many packages. We should install only what we need. Once we’re are not using a specified program, it’s good to remove it. We should read more about <code>pacman</code>, which is Arch package manager. It allows us to install packages, update and manage them. In order to update our whole operating system and its packages, we can type:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syuw</span><br></pre></td></tr></table></figure>
+
+<p>That’s one of the many pacman features. We can install new packages calling <code>pacman</code> with <code>-S</code> parameter:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S package</span><br></pre></td></tr></table></figure>
+
+<p>It’s also good to remember that, we can use <a href="https://aur.archlinux.org/" target="_blank" rel="noopener">aur</a> repository, which provides third-party packages from users and vendors in case we want to install a specific kind of software. While playing with aur, I was tired of repatitive tasks, so I created (yet another) simple aur helper available here: <a href="https://github.com/pwittchen/aur.sh" target="_blank" rel="noopener">https://github.com/pwittchen/aur.sh</a>, which you can use. Please note, it doesn’t resolve package dependencies yet.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Now, we have prepared simple, basic and clean desktop environment. From this point, we can proceed with the further adjustments and customizations (or leave it as it is :-). In the past I worked with Windows, macOS and Ubuntu Linux and personally I think I like Arch Linux distribution with such setup the most. I can control everything, I know what is working under the hood and how it’s configured, I have installed only software packages I really need, updates are seamless and everything just works. It’s really hard to break anything on this system if you know what you’re doing. Moreover, documentation and community are great. Of course, it requires some learning and time in the beginning, but if you’re working with computers or like playing with them, in my opinion it’s time well invested because Linux knowledge can be our great asset at work or in daily usage of the computer.</p>
+</div></article></div></main><footer><div class="paginator"><a href="/get-rid-of-the-list-null-checks/" class="prev">PREV</a><a href="/arch-install-notes/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'wittchenio';
+var disqus_identifier = 'arch-install-notes-gui-and-utils/';
+var disqus_title = 'Arch Linux - installation notes no. 2 (GUI and utils)';
+var disqus_url = 'http://wittchen.io/arch-install-notes-gui-and-utils/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//undefined.disqus.com/count.js" async></script><div class="copyright"><p>© 2013 - 2019 <a href="http://wittchen.io">Piotr Wittchen</a></p><p><a href="https://github.com/pwittchen/wittchen.io">source</a> / <a href="/feed.xml">rss</a> / <a href="/archives">archives</a> / <a href="/tags">tags</a> / <a href="https://github.com/pwittchen/wittchen.io#rest">api</a> / <a href="/gh">github</a> / <a href="/so">stackoverflow</a> / <a href="/in">linkedin</a> / <a href="mailto:piotr@wittchen.io">email</a></p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-2194664-7",'auto');ga('send','pageview');</script></body></html>
