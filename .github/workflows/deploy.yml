@@ -1,5 +1,10 @@
 name: Publish Website
-on: push
+on: 
+  push:
+    branches: 
+      - master
+    paths:
+      - 'public/*'
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
