@@ -8,8 +8,6 @@
   "scripts": {
     "preinstall": "echo \"beginning installation\"",
     "postinstall": "echo \"finishing installation\"",
-    "protect-secrets": "git update-index --assume-unchanged .ftpconfig",
-    "expose-secrets": "git update-index --no-assume-unchanged .ftpconfig"
   },
   "dependencies": {
     "gulp": "^4.0.2",

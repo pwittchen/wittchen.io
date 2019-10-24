@@ -1,15 +1,9 @@
 all: clean generate run
-install: protect_secrets
+install:
 	sudo npm install --unsafe-perm
 	echo "installation finished"
 theme:
 	cd themes/custom && sudo npm install --unsafe-perm && gulp
-protect_secrets:
-	npm run protect-secrets
-	echo "secrets are safe"
-expose_secrets:
-	npm run expose-secrets
-	echo "secrets are NOT safe"
 run:
 	echo "starting server..."
 	hexo server
@@ -17,9 +11,6 @@ server: run
 generate:
 	hexo generate
 	echo "website is generated in public/ dir"
-deploy: clean_public
-	echo "starting deployment..."
-	hexo generate && ./deploy.sh
 discard:
 	git checkout -- source
 	git clean -f source

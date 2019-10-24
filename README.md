@@ -7,7 +7,6 @@ contents
 --------
 - [installing](#installing)
 - [running](#running)
-- [secrets](#secrets)
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
@@ -31,33 +30,8 @@ running
 make run
 ```
 
-secrets
--------
-
-to protect FTP credentials, type:
-
-```
-make protect_secrets
-```
-
-to expose them again, type:
-
-```
-make expose_secrets
-```
-
-please note: `protect_secrets` rule is invoked during `install` rule
-
-secrets for **automatic deployment** with GitHub Actions are stored in `Secrets` tab directly in GitHub repository.
-
 deployment
 ----------
-
-manual deployment:
-
-```
-make deploy
-```
 
 there's configured automatic deployment triggered **on push** with GitHub Actions in:
 
