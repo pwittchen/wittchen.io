@@ -59,7 +59,7 @@ manual deployment:
 make deploy
 ```
 
-there's also configured automatic deployment triggered **on push** with GitHub Actions in:
+there's configured automatic deployment triggered **on push** with GitHub Actions in:
 
 ```
 .github/workflows/deploy.yml
