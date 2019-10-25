@@ -5,10 +5,6 @@
   "hexo": {
     "version": "3.9.0"
   },
-  "scripts": {
-    "preinstall": "echo \"beginning installation\"",
-    "postinstall": "echo \"finishing installation\"",
-  },
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
