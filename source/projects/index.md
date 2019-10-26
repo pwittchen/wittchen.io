@@ -14,4 +14,5 @@ Selected open-source projects:
 I also contributed to a few open-source projects created by other people: [RxJava](https://github.com/ReactiveX/RxJava/pulls?q=author:pwittchen), [JavaPoet](https://github.com/square/javapoet/pulls?q=author:pwittchen), [screenFetch](https://github.com/KittyKatt/screenFetch/pulls?q=author:pwittchen) and more.
 
 Visit [my GitHub profile](https://github.com/pwittchen) to find more information.
+If you would like to support my open-source development, you can have a look at [my GitHub Sponsors Dashboard](https://github.com/sponsors/pwittchen).
 
