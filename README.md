@@ -1,7 +1,7 @@
 overview
 ========
 
-this is source of [wittchen.io](http://wittchen.io) website
+this is source of [wittchen.io](http://wittchen.io) website based on [hexo](https://hexo.io/)
 
 contents
 --------
@@ -14,10 +14,6 @@ contents
 
 installing
 ----------
-
-**note**: this blog is based on the [hexo](https://hexo.io/) framework for static website generation
-
-clone repo and run installation:
 
 ```
 make install
