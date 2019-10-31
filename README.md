@@ -35,10 +35,9 @@ there's configured automatic deployment triggered **on push** with GitHub Action
 .github/workflows/deploy.yml
 ```
 
-**note**: before deployment, it's recommended to clean and re-generate `public/` dir as follows:
+**note**: before deployment, you need to re-generate `public/` dir as follows:
 
 ```
-make clean
 make generate
 ```
 
