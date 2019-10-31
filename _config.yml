@@ -95,7 +95,6 @@ deploy:
 
 menu:
     Writing: archives
-    About: about
     Code: code
     Projects: projects
     Talks: talks
