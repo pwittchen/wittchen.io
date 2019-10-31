@@ -41,6 +41,8 @@ there's configured automatic deployment triggered **on push** with GitHub Action
 make generate
 ```
 
+after that, just commit and push your changes
+
 theme
 -----
 
