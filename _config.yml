@@ -17,9 +17,9 @@ tags: /tags
 archives: /archives
 
 # links related to the author
-github: /gh 
+github: /gh
 stackoverflow: /so
-twitter: /tw 
+twitter: /tw
 linkedin: /in
 email: mailto:piotr@wittchen.io
 
@@ -47,7 +47,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false 
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -55,7 +55,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -64,7 +64,7 @@ index_generator:
   path: ''
   per_page: 15
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -85,7 +85,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: custom 
+theme: custom
 
 # Deployment
 # note: I'm not using this hexo config and making deployment via Makefile and ftpsync
@@ -94,7 +94,7 @@ deploy:
   type:
 
 menu:
-    Blog: /
+    Writing: archives
     About: about
     Code: code
     Projects: projects

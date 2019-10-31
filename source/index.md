@@ -1,12 +1,14 @@
 ---
-title: About
-date: 2018-02-21 20:33:26
+title: Hi! 👋
+date: 2019-10-31 20:33:26
 ---
 
-Hi! 👋
-------
-
 My name is **Piotr Wittchen**. I am the [**software developer**](https://www.linkedin.com/in/piotrwittchen/) from Gliwice, Poland. I like working on Unix systems (I use Arch btw. ;-). I also develop open-source [projects](/projects) and from time to time give [talks](/talks) related to software development at the conferences and meetups. Besides geeky stuff, I like fresh drip coffee brew, different kinds of sports, traveling, music and playing the guitar. If you would like to contact me, start cooperation or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
+
+Writing
+-------
+
+Feel free to have a look at [my articles](/archives). Most of them is connected with tech stuff, Linux, Java and programming, but you may see other topics and areas covered here in the future. If you want to be up to date with the latest articles, subscribe to my [RSS](/feed.xml) feed.
 
 Want to know more?
 ------------------
