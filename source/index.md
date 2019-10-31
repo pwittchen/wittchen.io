@@ -11,7 +11,7 @@ My name is **Piotr Wittchen**. I am the [**software developer**](https://www.lin
 Writing
 -------
 
-Feel free to have a look at [my articles](/archives). Most of them is connected with tech stuff, Linux, Java and programming, but you may see other topics and areas covered here in the future. If you want to be up to date with the latest articles, subscribe to my [RSS](/feed.xml) feed.
+Feel free to have a look at [my articles](/archives). Most of them is connected with tech stuff, Linux, Java and programming, but you may see other topics and areas covered here in the future. You can also filter articles by [tags](/tags). If you want to be up to date with the latest articles, subscribe to my [RSS](/feed.xml) feed.
 
 Want to know more?
 ------------------
