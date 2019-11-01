@@ -38,9 +38,9 @@
 <li>Now you should be able to access your service at: <code>https://api.eu.yaas.io/orgranization/service/v1</code></li>
 </ol>
 <p>Below you can see a screenshot from service configuration inside the YaaS Builder. </p>
-<p><img src="/images/posts/2017/yaas-as-a-proxy-for-microservice/yass_builder_service.png" alt></p>
+<p><img src="/images/posts/2017/yaas-as-a-proxy-for-microservice/yass_builder_service.png" alt=""></p>
 <h2 id="Securing-the-endpoint-of-the-microservice"><a href="#Securing-the-endpoint-of-the-microservice" class="headerlink" title="Securing the endpoint of the microservice"></a>Securing the endpoint of the microservice</h2><p>We have created our service. Now, we want to secure its endpoint. To do so, we can create Authorization Rule from the Service configuration inside YaaS Builder. </p>
-<p><img src="/images/posts/2017/yaas-as-a-proxy-for-microservice/yaas_builder_rule.png" alt></p>
+<p><img src="/images/posts/2017/yaas-as-a-proxy-for-microservice/yaas_builder_rule.png" alt=""></p>
 <p>We can define methods of the HTTP request, endpoint address, and other parameters. When we’re done, we can proceed to more tricky part. Authorization procedure of the microservice endpoint is presented in the scheme below. </p>
 <p><img src="/images/posts/2017/yaas-as-a-proxy-for-microservice/calling_yaas_microservice_diagram.png" alt="calling microservice with authorization via YaaS proxy"></p>
 <p>First, we need to obtain Bearer ID. To do so, we need to perform HTTP request with Client ID and Client Secret. We can do it from terminal via curl:</p>

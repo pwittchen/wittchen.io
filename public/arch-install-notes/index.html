@@ -19,7 +19,6 @@
 
 <h2 id="Partitions"><a href="#Partitions" class="headerlink" title="Partitions"></a>Partitions</h2><p>Let’s see what partitions do we have on our system. We can view them with <code>lsblk</code> program.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
-
 <p>Before we start doing anything, we should remove existing partitions. We can do it with <code>fdisk</code> tool by running it with our main disk as a parameter. Usually it will be <code>/dev/sda</code>, but in my case it was <code>/dev/nvme0n1</code>. We can get this name from <code>lsblk</code> output.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/nvme0n1</span><br></pre></td></tr></table></figure>
 

@@ -15,7 +15,6 @@
 <p>In this example, <code>highlightListItem(int)</code> method will highlight chosen item on a <code>ListView</code> available in a variable <code>contactListView</code>.</p>
 <p><strong>Clicking programmatically</strong> is much more easier, than highlighting item. We can simply use the method below assuming, that we properly created contactListView attribute and assigned it to appropriate view.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">clickOnListItem</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">    contactList.performItemClick(contactListView, position, contactListView.getItemIdAtPosition(position));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 </div></article></div></main><footer><div class="paginator"><a href="/selected-aspects-of-creating-mobile-android-applications/" class="prev">PREV</a><a href="/how-to-read-contacts-in-android-device-using-contentresolver/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'wittchenio';
 var disqus_identifier = 'how-to-highlight-and-click-on-listview-item-in-android-programmatically/';
 var disqus_title = 'How to highlight and click on ListView item in Android programmatically?';

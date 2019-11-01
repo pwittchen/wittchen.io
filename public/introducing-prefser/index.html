@@ -11,9 +11,9 @@
 <li>Sets</li>
 </ul>
 <p>In addition, Prefser transforms <a href="http://developer.android.com/reference/android/content/SharedPreferences.OnSharedPreferenceChangeListener.html" target="_blank" rel="noopener">OnSharedPreferenceChangeListener</a> into Observables from RxJava:</p>
-<p>Observable<string> observe(final SharedPreferences sharedPreferences);<br>Observable<string> observeDefaultPreferences();</string></string></p>
+<p>Observable<String> observe(final SharedPreferences sharedPreferences);<br>Observable<String> observeDefaultPreferences();</p>
 <p>You can <a href="https://github.com/pwittchen/prefser#subscribing-for-data-updates" target="_blank" rel="noopener">subscribe one of these Observables</a> and monitor updates of SharedPreferences with powerful RxJava. Moreover, you can <a href="https://github.com/pwittchen/prefser#reading-data-from-observables" target="_blank" rel="noopener">observe single preference</a> under a specified key with the following method:</p>
-<p><t> Observable<t> observe(final String key, final Class classOfT, final T defaultValue)</t></t></p>
+<p><T> Observable<T> observe(final String key, final Class classOfT, final T defaultValue)</p>
 <p><img src="/images/posts/2015/introducing-prefser/prefser_observable_diagram.png" alt="prefser_observable_diagram"></p>
 <p>For more details, examples and download instructions visit GitHub webiste of the project at: </p>
 <p><a href="https://github.com/pwittchen/prefser" target="_blank" rel="noopener">https://github.com/pwittchen/prefser</a></p>
