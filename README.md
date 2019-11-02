@@ -38,8 +38,7 @@ there's configured automatic deployment triggered **on push** with GitHub Action
 **note**: before deployment, you need to re-generate `public/` dir as follows:
 
 ```
-make clean
-make generate
+make regenerate
 ```
 
 after that, just commit and push your changes

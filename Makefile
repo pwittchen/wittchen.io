@@ -11,6 +11,7 @@ server: run
 generate:
 	hexo generate
 	echo "website is generated in public/ dir"
+regenerate: clean generate
 discard:
 	git checkout -- source
 	git clean -f source
