@@ -29,7 +29,7 @@ main.container {
         }
         ul.nav.nav-list {
             float: none;
-            display: block; 
+            display: block;
         }
         li.nav-list-item {
             padding: 10px 10px;
@@ -55,5 +55,8 @@ main.container {
     .ds-thread,
     #disqus_thread {
         margin: 2em 10px;
+    }
+    #avatar {
+        display: none;
     }
 }
