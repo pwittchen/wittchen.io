@@ -4,6 +4,8 @@ theme:
 	cd themes/custom && sudo npm install --unsafe-perm && gulp
 run:
 	hexo server
+rundrafts:
+	hexo server --drafts
 server: run
 generate:
 	hexo generate
