@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wittchen.io/github-actions-in-action/</loc>
+    
+    <lastmod>2019-11-04T13:11:36.719Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/index.html</loc>
     
     <lastmod>2019-11-02T15:04:00.346Z</lastmod>
@@ -142,13 +149,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/transform-vim-into-efficient-ide/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/tmux-auto-pane/</loc>
     
     <lastmod>2019-07-03T22:51:02.816Z</lastmod>
@@ -163,7 +163,21 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/transform-vim-into-efficient-ide/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/unit-testing-support-for-android-studio-11/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/versioning-android-applications/</loc>
     
     <lastmod>2019-07-03T22:51:02.816Z</lastmod>
     
@@ -184,20 +198,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/using-tmux/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/versioning-android-applications/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/weather-icons-for-android-applications/</loc>
     
     <lastmod>2019-07-03T22:51:02.816Z</lastmod>
@@ -206,6 +206,20 @@
   
   <url>
     <loc>http://wittchen.io/working-with-different-git-configs/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/using-tmux/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/zen-of-java-library-release-process/</loc>
     
     <lastmod>2019-07-03T22:51:02.816Z</lastmod>
     
@@ -226,13 +240,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/zen-of-java-library-release-process/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.816Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/contact/index.html</loc>
     
     <lastmod>2019-07-03T22:51:02.816Z</lastmod>
@@ -247,13 +254,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/introducing-network-events/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/introducing-reactive-airplane-mode/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -262,6 +262,13 @@
   
   <url>
     <loc>http://wittchen.io/introducing-reactive-beacons/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/introducing-network-events/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -289,13 +296,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/introducing-yaas-java-sdk/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/issue-workflow-in-agile-projects/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -310,7 +310,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/joining-lists-of-rxjava-observables/</loc>
+    <loc>http://wittchen.io/introducing-yaas-java-sdk/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -324,13 +324,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/justifying-block-of-text-inside-textview-in-android/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/kirai-flavored-android-string-formatting-library/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -338,7 +331,14 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/kyma-meets-ccv2-hackathon-summary/</loc>
+    <loc>http://wittchen.io/justifying-block-of-text-inside-textview-in-android/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/joining-lists-of-rxjava-observables/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -352,6 +352,20 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/learning-python/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/kyma-meets-ccv2-hackathon-summary/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/learning-android/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -359,7 +373,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/learning-python/</loc>
+    <loc>http://wittchen.io/micro-location-based-on-wifi-access-points/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -380,7 +394,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/micro-location-based-on-wifi-access-points/</loc>
+    <loc>http://wittchen.io/mockito-on-android/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -388,6 +402,13 @@
   
   <url>
     <loc>http://wittchen.io/monitoring-usage-of-oss/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/my-approach-to-git-aliases/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -408,13 +429,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/my-approach-to-git-aliases/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/network-events-v102/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -429,6 +443,13 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/new-reactive-data-types-in-rxjava2/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/new-release-of-kirai-140/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -436,7 +457,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/new-reactive-data-types-in-rxjava2/</loc>
+    <loc>http://wittchen.io/prefser-207/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -457,20 +478,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/prefser-207/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/publishing-jar-aar-to-maven-central/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/publishing-android-application-in-google-play-store/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -485,14 +492,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/mockito-on-android/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/quality-meetup-15-fixing-a-billion-dollar-mistake/</loc>
+    <loc>http://wittchen.io/publishing-jar-aar-to-maven-central/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/reactive-network-2/</loc>
+    <loc>http://wittchen.io/quality-meetup-15-fixing-a-billion-dollar-mistake/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -514,6 +514,20 @@
   
   <url>
     <loc>http://wittchen.io/reactivebeacons-060-rxjava2/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/reactive-network-2/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -534,7 +548,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</loc>
+    <loc>http://wittchen.io/releasing-prefser-2/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -542,20 +556,6 @@
   
   <url>
     <loc>http://wittchen.io/release-of-prefser-210-with-rxjava2/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/releasing-network-events-2/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/releasing-prefser-2/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -576,7 +576,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/releasing-weather-icon-view-1-for-android/</loc>
+    <loc>http://wittchen.io/releasing-network-events-2/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -597,7 +597,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/searching-word-in-a-string-with-kmp-algorithm/</loc>
+    <loc>http://wittchen.io/releasing-weather-icon-view-1-for-android/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -611,14 +611,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/selected-aspects-of-creating-mobile-android-applications/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/</loc>
+    <loc>http://wittchen.io/searching-word-in-a-string-with-kmp-algorithm/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -632,14 +625,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/software-for-common-users-on-ubuntu/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/solving-problems-with-avd-and-kvm-on-linux/</loc>
+    <loc>http://wittchen.io/selected-aspects-of-creating-mobile-android-applications/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
@@ -653,6 +639,13 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/solving-problems-with-avd-and-kvm-on-linux/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/squashing-commits/</loc>
     
     <lastmod>2019-07-03T22:51:02.813Z</lastmod>
@@ -660,9 +653,16 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/avoiding-outofmemory-error-while-loading-large-bitmaps-in-android-ui/</loc>
+    <loc>http://wittchen.io/software-for-common-users-on-ubuntu/</loc>
     
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.813Z</lastmod>
     
   </url>
   
@@ -681,6 +681,13 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/basics-of-git/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/basic-code-refactoring-principles/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
@@ -688,7 +695,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/bci-for-mobile-devices-intro/</loc>
+    <loc>http://wittchen.io/avoiding-outofmemory-error-while-loading-large-bitmaps-in-android-ui/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -702,7 +709,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/basics-of-git/</loc>
+    <loc>http://wittchen.io/bci-for-mobile-devices-intro/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -737,20 +744,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/bunch-of-updates-in-my-android-oss/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/control-spotify-on-linux-like-a-hacker/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/converting-cd-to-mp3-on-linux/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
@@ -758,14 +751,21 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/creating-a-docker-container-with-alpine-linux-including-java-8-and-9/</loc>
+    <loc>http://wittchen.io/bunch-of-updates-in-my-android-oss/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wittchen.io/custom-background-for-actionbar-and-sherlockactionbar/</loc>
+    <loc>http://wittchen.io/creating-fat-aar/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/control-spotify-on-linux-like-a-hacker/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -786,7 +786,14 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/creating-fat-aar/</loc>
+    <loc>http://wittchen.io/creating-a-docker-container-with-alpine-linux-including-java-8-and-9/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/custom-background-for-actionbar-and-sherlockactionbar/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -807,21 +814,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/different-build-config-for-debug-and-release-version-of-the-android-app/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/distributed-inter-process-communication/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/droidcon-poland-2017-is-your-app-really-connected/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -835,7 +828,21 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/droidcon-poland-2017-is-your-app-really-connected/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/easy-conversion-from-binary-to-decimal-numbers-in-c/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/different-build-config-for-debug-and-release-version-of-the-android-app/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -849,7 +856,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/endless-listview-in-android/</loc>
+    <loc>http://wittchen.io/eeg-analyzer-android-app/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -863,7 +870,21 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/eeg-analyzer-android-app/</loc>
+    <loc>http://wittchen.io/excluding-generated-code-from-jacoco-report/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/endless-listview-in-android/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/facebook-is-making-bci/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -878,13 +899,6 @@
   
   <url>
     <loc>http://wittchen.io/fixing-bug-with-dissappearing-map-overlay-after-zoom-in-android/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/facebook-is-making-bci/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -912,13 +926,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/excluding-generated-code-from-jacoco-report/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/handling-different-android-versions-with-strategy-pattern/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
@@ -926,14 +933,21 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/hello-kotlin/</loc>
+    <loc>http://wittchen.io/gnome-classic-ubuntu/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wittchen.io/gnome-classic-ubuntu/</loc>
+    <loc>http://wittchen.io/how-to-make-open-source-projects-which-people-want-to-use/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/hello-kotlin/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -954,21 +968,21 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</loc>
+    <loc>http://wittchen.io/improper-data-type-in-android-textview/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wittchen.io/how-to-make-open-source-projects-which-people-want-to-use/</loc>
+    <loc>http://wittchen.io/how-to-read-contacts-in-android-device-using-contentresolver/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wittchen.io/how-to-update-forked-github-repository/</loc>
+    <loc>http://wittchen.io/how-to-switch-java-version-on-linux/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -982,14 +996,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/installing-release-and-debug-version-of-app-on-a-single-device/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/improper-data-type-in-android-textview/</loc>
+    <loc>http://wittchen.io/how-to-update-forked-github-repository/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -1003,7 +1010,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/how-to-switch-java-version-on-linux/</loc>
+    <loc>http://wittchen.io/installing-release-and-debug-version-of-app-on-a-single-device/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
@@ -1024,21 +1031,21 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/how-to-read-contacts-in-android-device-using-contentresolver/</loc>
+    <loc>http://wittchen.io/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</loc>
     
     <lastmod>2019-07-03T22:51:02.810Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wittchen.io/adding-reversed-numbers/</loc>
+    <loc>http://wittchen.io/3-alternatives-to-evernote/</loc>
     
     <lastmod>2019-07-03T22:51:02.806Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wittchen.io/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/</loc>
+    <loc>http://wittchen.io/2-cool-terminal-emulators-for-linux/</loc>
     
     <lastmod>2019-07-03T22:51:02.806Z</lastmod>
     
@@ -1052,7 +1059,21 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/adding-reversed-numbers/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.806Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/5-ways-to-attend-expansive-it-conferences-for-almost-free/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.806Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wittchen.io/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/</loc>
     
     <lastmod>2019-07-03T22:51:02.806Z</lastmod>
     
@@ -1073,13 +1094,6 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/analyzing-performance-of-web-app-with-chrome-dev-tools/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.806Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wittchen.io/android-and-maven/</loc>
     
     <lastmod>2019-07-03T22:51:02.806Z</lastmod>
@@ -1087,7 +1101,7 @@
   </url>
   
   <url>
-    <loc>http://wittchen.io/android-resource-converter/</loc>
+    <loc>http://wittchen.io/analyzing-performance-of-web-app-with-chrome-dev-tools/</loc>
     
     <lastmod>2019-07-03T22:51:02.806Z</lastmod>
     
@@ -1108,21 +1122,14 @@
   </url>
   
   <url>
+    <loc>http://wittchen.io/android-resource-converter/</loc>
+    
+    <lastmod>2019-07-03T22:51:02.806Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wittchen.io/automate-boring-stuff/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.806Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/3-alternatives-to-evernote/</loc>
-    
-    <lastmod>2019-07-03T22:51:02.806Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wittchen.io/2-cool-terminal-emulators-for-linux/</loc>
     
     <lastmod>2019-07-03T22:51:02.806Z</lastmod>
     
