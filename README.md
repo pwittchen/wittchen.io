@@ -43,6 +43,8 @@ make regenerate
 
 after that, just commit and push your changes
 
+also see [uptime](https://stats.uptimerobot.com/ZwxAGU5rxy) of the running website
+
 theme
 -----
 

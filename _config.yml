@@ -13,6 +13,7 @@ timezone: Europe/Warsaw
 # links to internal and external blog stuff
 repo: https://github.com/pwittchen/wittchen.io
 restapi: https://github.com/pwittchen/wittchen.io#rest
+uptime: https://stats.uptimerobot.com/ZwxAGU5rxy
 tags: /tags
 archives: /archives
 
