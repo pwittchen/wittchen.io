@@ -11,4 +11,5 @@ TBD.
 References
 ----------
 - https://developer.android.com/jetpack/
+- https://developer.android.com/jetpack/docs/guide
 - ...
