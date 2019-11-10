@@ -22,7 +22,7 @@ Want to know more?
 
 * email me at piotr@wittchen.io
 * find me on [LinkedIn](http://www.linkedin.com/in/piotrwittchen) and follow me on [Twitter](https://twitter.com/piotr_wittchen)
-* review my code on [GitHub](https://github.com/pwittchen) and see my [dotfiles](https://github.com/pwittchen/dotfiles) with personal configs
+* review my code on [GitHub](https://github.com/pwittchen)
 * see my contributions on [StackOverflow](http://stackoverflow.com/users/1150795/piotr-wittchen)
 * download my Android apps from [Google Play](https://play.google.com/store/apps/dev?id=7269544076898428056)
 * have a look at my [coder stats](http://coderstats.net/github/#pwittchen) and [git awards](http://git-awards.com/users/pwittchen)

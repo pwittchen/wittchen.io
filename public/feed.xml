@@ -96,9 +96,9 @@
     
       <category term="linux" scheme="http://wittchen.io/tags/linux/"/>
     
-      <category term="gnome" scheme="http://wittchen.io/tags/gnome/"/>
-    
       <category term="arch" scheme="http://wittchen.io/tags/arch/"/>
+    
+      <category term="gnome" scheme="http://wittchen.io/tags/gnome/"/>
     
   </entry>
   
@@ -231,9 +231,9 @@
     
       <category term="linux" scheme="http://wittchen.io/tags/linux/"/>
     
-      <category term="gnome" scheme="http://wittchen.io/tags/gnome/"/>
-    
       <category term="arch" scheme="http://wittchen.io/tags/arch/"/>
+    
+      <category term="gnome" scheme="http://wittchen.io/tags/gnome/"/>
     
   </entry>
   
@@ -349,11 +349,11 @@
     
     
     
-      <category term="kotlin" scheme="http://wittchen.io/tags/kotlin/"/>
-    
       <category term="hybris" scheme="http://wittchen.io/tags/hybris/"/>
     
       <category term="hackathon" scheme="http://wittchen.io/tags/hackathon/"/>
+    
+      <category term="kotlin" scheme="http://wittchen.io/tags/kotlin/"/>
     
       <category term="kyma" scheme="http://wittchen.io/tags/kyma/"/>
     
@@ -407,9 +407,9 @@
     
     
     
-      <category term="android" scheme="http://wittchen.io/tags/android/"/>
-    
       <category term="java" scheme="http://wittchen.io/tags/java/"/>
+    
+      <category term="android" scheme="http://wittchen.io/tags/android/"/>
     
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
@@ -521,9 +521,9 @@
     
     
     
-      <category term="android" scheme="http://wittchen.io/tags/android/"/>
-    
       <category term="java" scheme="http://wittchen.io/tags/java/"/>
+    
+      <category term="android" scheme="http://wittchen.io/tags/android/"/>
     
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
