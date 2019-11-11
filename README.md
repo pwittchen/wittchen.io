@@ -7,27 +7,20 @@ this is source of [wittchen.io](http://wittchen.io) website based on [hexo](http
 
 contents
 --------
-- [installing](#installing)
 - [running](#running)
 - [deployment](#deployment)
 - [theme](#theme)
 - [writing](#writing)
 - [rest](#rest)
 
-installing
-----------
-
-```
-make install
-```
-
 running
 -------
 
 ```
-make run
+installing dependencies:                      make install
+running server locally:                       make run
+running server locally with posts and drafts: make rundrafts
 ```
-
 deployment
 ----------
 
@@ -45,8 +38,6 @@ make regenerate
 
 after that, just commit and push your changes
 
-also see [uptime](https://stats.uptimerobot.com/ZwxAGU5rxy) of the running website
-
 theme
 -----
 
@@ -63,34 +54,14 @@ after that `gulp` will be in watching mode and if you want to stop it, press <kb
 writing
 -------
 
-to generate new post, type:
+create and manage content with the following commands:
 
 ```
-hexo new post <title>
-```
-
-to generate new draft, type:
-
-```
-hexo new draft <title>
-```
-
-to publish draft, type:
-
-```
-hexo publish <title>
-```
-
-to create new page, type:
-
-```
-hexo new page <title>
-```
-
-to discard uncommited changes and files in posts, drafts and pages, type:
-
-```
-make discard
+create new post:                        hexo new post <title>
+create new draft:                       hexo new draft <title>
+publish draft:                          hexo publish <title>
+create new page:                        hexo new page <title>
+discard uncommitted changes and files:  make discard
 ```
 
 rest
