@@ -18,6 +18,7 @@ jobs:
         args: clean
     - name: generate
       uses: heowc/action-hexo@master
+      with:
         args: generate
     - name: deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
