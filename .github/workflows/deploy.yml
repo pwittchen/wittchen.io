@@ -1,7 +1,7 @@
 name: Publish Website
-on: 
+on:
   push:
-    branches: 
+    branches:
       - master
     paths:
       - 'public/*'
@@ -10,7 +10,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - name: checkout
+      uses: actions/checkout@master
     - name: deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
@@ -20,4 +21,3 @@ jobs:
         REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
         LOCAL_DIR : "public"
         ARGS: --delete --transfer-all
-
