@@ -6,12 +6,12 @@ on:
     paths:
       - 'public/*'
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: FTP-Deploy-Action
+    - name: deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}
