@@ -407,9 +407,9 @@
     
     
     
-      <category term="java" scheme="http://wittchen.io/tags/java/"/>
-    
       <category term="android" scheme="http://wittchen.io/tags/android/"/>
+    
+      <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
@@ -521,9 +521,9 @@
     
     
     
-      <category term="java" scheme="http://wittchen.io/tags/java/"/>
-    
       <category term="android" scheme="http://wittchen.io/tags/android/"/>
+    
+      <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
