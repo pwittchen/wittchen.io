@@ -12,6 +12,13 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@master
+    - name: clean
+      uses: heowc/action-hexo@master
+      with:
+        args: clean
+    - name: generate
+      uses: heowc/action-hexo@master
+        args: generate
     - name: deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
