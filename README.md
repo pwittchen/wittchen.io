@@ -41,9 +41,7 @@ after that, just commit and push your changes
 theme
 -----
 
-this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo)
-
-to generate/regenerate theme, type:
+this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo) and to generate/regenerate theme, type:
 
 ```
 make theme
