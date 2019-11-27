@@ -43,7 +43,7 @@ theme
 
 this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo)
 
-to generate/regenerate `*.css` files from `*.scss` and rebuild theme, type:
+to generate/regenerate theme, type:
 
 ```
 make theme
