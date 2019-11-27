@@ -43,13 +43,11 @@ theme
 
 this blog has customized hexo theme based on [apollo](https://github.com/pinggod/hexo-theme-apollo)
 
-to generate `*.css` file from `*.scss` and rebuild theme, type:
+to generate/regenerate `*.css` files from `*.scss` and rebuild theme, type:
 
 ```
 make theme
 ```
-
-after that `gulp` will be in watching mode and if you want to stop it, press <kbd>Ctrl</kbd>+<kbd>C</kbd>
 
 writing
 -------
