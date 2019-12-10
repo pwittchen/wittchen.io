@@ -3,6 +3,8 @@ title: Talks
 date: 2019-01-11 00:41:00
 ---
 
+If you would like to invite me for the conference or a meetup to give a talk, feel free to [contact](/contact) me!
+
 *   2019-01-10 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Toast Meetup (Wrocław, Poland)
 *   2018-11-19 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Øredev (Malmö, Sweden)
 *   2018-10-20 [Is your app really connected?](https://speakerdeck.com/pwittchen/is-your-app-really-connected-1) Mobilization (Łódź, Poland) [watch video [EN]](https://www.youtube.com/watch?v=LDZjQ1dXgU4)
