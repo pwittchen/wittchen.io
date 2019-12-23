@@ -3,8 +3,8 @@ title: About
 date: 2019-10-31 14:58:00
 ---
 
-Hi! 👋
-------
+Hi!
+---
 
 My name is **Piotr Wittchen**. I am the [**software developer**](https://www.linkedin.com/in/piotrwittchen/) from Poland. I graduated with MS in Computer Science from the Silesian University of Technology in Poland and worked as a software engineer in several big and small companies. I contribute to open-source [projects](/projects) and from time to time give [talks](/talks) related to software development at the conferences and meetups. Besides geeky stuff, I like fresh drip coffee brew, different kinds of sports, traveling, music and playing the guitar. If you would like to contact me, start cooperation or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
 
