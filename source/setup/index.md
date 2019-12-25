@@ -32,6 +32,7 @@ Software
 - torrent client: [Transmission](https://transmissionbt.com/)
 - to do list: [Nozbe](https://nozbe.com/)
 - notes: [Evernote](evernote.com)
+- password manager: [pass](https://www.passwordstore.org/)
 - presentations: [Google Slides](http://slides.google.com/)
 - calendar: [Google Calendar](https://calendar.google.com/)
 - email: [Gmail](http://gmail.com/)
