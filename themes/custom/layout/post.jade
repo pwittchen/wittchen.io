@@ -14,7 +14,7 @@ block container
 block pagination
     include mixins/paginator
     +post()
-    if page.title != "About" && page.title != "Projects" && page.title != "Talks" && page.title != "Contact"
+    if page.title != "About" && page.title != "Projects" && page.title != "Talks" && page.title != "Contact" && page.title != "Setup"
         include partial/comment
 
 block copyright
