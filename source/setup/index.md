@@ -30,6 +30,8 @@ Software
 - RSS reader: [Newsboat](https://newsboat.org/)
 - Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org/)
 - Torrent client: [Transmission](https://transmissionbt.com/)
+- To do list: [Nozbe](https://nozbe.com/)
+- Notes: [Evernote](evernote.com)
 - presentations: [Google Slides](http://slides.google.com/)
 - calendar: [Google Calendar](https://calendar.google.com/)
 - email: [Gmail](http://gmail.com/)
