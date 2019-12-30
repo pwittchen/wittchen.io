@@ -37,6 +37,11 @@ Software
 - calendar: [Google Calendar](https://calendar.google.com/)
 - email: [Gmail](http://gmail.com/)
 
+Configuration
+-------------
+- [dotfiles](https://github.com/pwittchen/dotfiles)
+- [wallpapers](https://github.com/pwittchen/wallpapers)
+
 Hardware
 --------
 - ThinkPad T470S laptop
@@ -47,8 +52,6 @@ Hardware
 - JBL Charge 3 speaker
 - Sennheiser Momentum True Wireless headphones
 - Rhode SmartLav microphone
-- Xiaomi Mi LED Desk Lamp
-- Google Pixel 2 phone
 - LaCie Rugged Mini 1TB USB 3.0 external hard drive
-
-To see my current system setup, you can have a look at my [dotfiles](https://github.com/pwittchen/dotfiles). You can also check [wallpapers](https://github.com/pwittchen/wallpapers) I use on my desktop.
+- Google Pixel 2 phone
+- Xiaomi Mi LED Desk Lamp
