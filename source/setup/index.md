@@ -16,7 +16,7 @@ Software
 - OS: [Arch Linux](https://www.archlinux.org/)
 - WM: [i3](https://i3wm.org/)
 - shell: [zsh](https://www.zsh.org/) + [oh my zsh](https://ohmyz.sh/) + [tmux](https://github.com/tmux/tmux/wiki)
-- terminal: Gnome Terminal invoked by [i3-sensible-terminal](https://build.i3wm.org/docs/i3-sensible-terminal.html)
+- terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable/)
 - text editor: [vim](https://vim.org)
 - IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea/) + [Android Studio](https://developer.android.com/studio/)
 - VCS: [Git](https://git-scm.com/)
