@@ -110,7 +110,8 @@ alias:
     fb/index.html: https://www.facebook.com/piotr.wittchen
     ps/index.html: projects
     ts/index.html: talks
-    mail/index.html: http://wittchen.io/roundcube/
+    mail/index.html: http://wittchen.io/roundcube
+    poczta/index.html: http://wittchen.io/roundcube
 
 startyear: 2013
 
