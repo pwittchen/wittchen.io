@@ -304,7 +304,7 @@ Of course, we can set `pl_PL.UTF-8` too or any other language we want to use as 
 You can browse time zones in `/usr/share/zoneinfo` directory. To set our time zone, we need to create a symbolic lin between desired time zone and `/etc/localtime` file. Once we change our time zone, we can create a symbolic link again.
 
 ```
-ls -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 ```
 
 My time zone is Warsaw in Europe, but you can set your own time zone here.
