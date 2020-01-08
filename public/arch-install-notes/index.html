@@ -111,7 +111,7 @@
 
 <p>Of course, we can set <code>pl_PL.UTF-8</code> too or any other language we want to use as default system language. I personally use English as a OS language, bacause it’s easier to diagnose possible issues, when you have English messages in terminal. Nevertheles, I use Polish as an input language, to be able to use Polish letters, european metric system, Polish currency, etc. It should be adjusted to our needs.</p>
 <h3 id="Setting-timezone"><a href="#Setting-timezone" class="headerlink" title="Setting timezone"></a>Setting timezone</h3><p>You can browse time zones in <code>/usr/share/zoneinfo</code> directory. To set our time zone, we need to create a symbolic lin between desired time zone and <code>/etc/localtime</code> file. Once we change our time zone, we can create a symbolic link again.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime</span><br></pre></td></tr></table></figure>
 
 <p>My time zone is Warsaw in Europe, but you can set your own time zone here.</p>
 <h3 id="Setting-hostname"><a href="#Setting-hostname" class="headerlink" title="Setting hostname"></a>Setting hostname</h3><p>To create our <code>hostname</code>, which is name of the computer, we can edit <code>/etc/hostname</code> file and put our name there.</p>
