@@ -55,5 +55,8 @@ Hardware
 - LaCie Rugged Mini 1TB USB 3.0 external hard drive
 - Google Pixel 2 phone
 - Xiaomi Mi LED Desk Lamp
+
+Desk
+----
 - IKEA SKARSTA Desk
 - IKEA JÄRVFJÄLLET Chair
