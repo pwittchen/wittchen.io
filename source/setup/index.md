@@ -15,15 +15,15 @@ Software
 --------
 - OS: [Arch Linux](https://www.archlinux.org/)
 - WM: [i3](https://i3wm.org/)
-- shell: [zsh](https://www.zsh.org/) + [oh my zsh](https://ohmyz.sh/) + [tmux](https://github.com/tmux/tmux/wiki)
+- shell: [Zsh](https://www.zsh.org/) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
 - terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable/)
-- text editor: [vim](https://vim.org)
+- text editor: [Vim](https://vim.org)
 - IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea/) + [Android Studio](https://developer.android.com/studio/)
 - VCS: [Git](https://git-scm.com/)
 - web browser: [Brave](https://brave.com/)
-- file manager: [ranger](https://github.com/ranger/ranger) + [mc](https://github.com/MidnightCommander/mc)
-- PDF viewer: [zathura](https://pwmt.org/projects/zathura/)
-- image viewer: [sxiv](https://github.com/muennich/sxiv)
+- file manager: [Ranger](https://github.com/ranger/ranger) + [mc](https://github.com/MidnightCommander/mc)
+- PDF viewer: [Zathura](https://pwmt.org/projects/zathura/)
+- image viewer: [Sxiv](https://github.com/muennich/sxiv)
 - image editing: [Gthumb](https://wiki.gnome.org/Apps/Gthumb) + [Pixeluvo](http://www.pixeluvo.com/)
 - music: [Spotify](https://www.spotify.com/)
 - videos: [VLC](https://www.videolan.org/vlc/)
@@ -32,7 +32,7 @@ Software
 - torrent client: [Transmission](https://transmissionbt.com/)
 - to do list: [Nozbe](https://nozbe.com/)
 - notes: [Evernote](evernote.com)
-- password manager: [pass](https://www.passwordstore.org/)
+- password manager: [Pass](https://www.passwordstore.org/)
 - presentations: [Google Slides](http://slides.google.com/)
 - calendar: [Google Calendar](https://calendar.google.com/)
 - email: [Gmail](http://gmail.com/)
@@ -58,5 +58,6 @@ Hardware
 
 Desk
 ----
-- IKEA SKARSTA Desk
-- IKEA JÄRVFJÄLLET Chair
+- IKEA SKARSTA desk
+- IKEA JÄRVFJÄLLET chair
+- IKEA KOLON floor protector
