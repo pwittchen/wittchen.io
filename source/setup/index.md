@@ -54,10 +54,11 @@ Hardware
 - Rhode SmartLav microphone
 - LaCie Rugged Mini 1TB USB 3.0 external hard drive
 - Google Pixel 2 phone
-- Xiaomi Mi LED Desk Lamp
 
 Desk
 ----
 - IKEA SKARSTA desk
 - IKEA JÄRVFJÄLLET chair
 - IKEA KOLON floor protector
+- Xiaomi Mi LED Desk Lamp
+- Tsmn.cc Leather Mousepad
