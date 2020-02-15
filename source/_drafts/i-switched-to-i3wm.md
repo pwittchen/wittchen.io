@@ -293,6 +293,14 @@ It's powerful thing and we can configure and customize our own key bindings for 
 
 TBD.
 
+## Working with multiple screens
+
+TBD.
+
+## WiFi and Bluetooth
+
+TDB.
+
 ## Final thoughts
 
 TBD.
