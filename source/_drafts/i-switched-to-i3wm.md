@@ -230,14 +230,14 @@ bindsym XF86AudioPrev exec "spotifycli --prev"
 
 bar {
 	workspace_buttons yes
-    position top
-    status_command i3status
+    	position top
+    	status_command i3status
 	font pango:Roboto 10
 	height 25
 	tray_output none
 
 	colors {
-			background #17212b
+		background #17212b
         	statusline #ffffff
         	separator  #666666
         	active_workspace   #2c3e50 #2c3e50 #1abc9c
@@ -270,6 +270,7 @@ We don't need to know a lot of keybinding to move aroud the system and use it.
 
 Here are a few default shortcuts I use daily:
 - `$mod+Enter` - opens terminal window
+- `$mod+d` - opens `dmenu` with available programs (start typing your program name and Hit enter; hit `Esc` to close it)
 - `$mod+arrow` - switches between windows (arrows: left, right, top, bottom)
 - `$mod+Shift+arrow` - moves windows (arrows: left, right, top, bottom)
 - `$mod+number` - switches between workspaces (1, 2, 3, etc.)
@@ -291,24 +292,273 @@ It's powerful thing and we can configure and customize our own key bindings for 
 
 ## Status bar configuration as a code
 
-TBD.
+Besides system configuration described above, we can keep status bar configuration as a code too! Configuration of the i3bar is well described in the [official documentation](https://i3wm.org/docs/userguide.html#_configuring_i3bar). As you could see in my `~/.config/i3/config` file above `bar` section looks as follows:
+
+```
+bar {
+	workspace_buttons yes
+    	position top
+    	status_command i3status
+	font pango:Roboto 10
+	height 25
+	tray_output none
+
+	colors {
+		background #17212b
+        	statusline #ffffff
+        	separator  #666666
+        	active_workspace   #2c3e50 #2c3e50 #1abc9c
+        	focused_workspace  #2c3e50 #2c3e50 #1abc9c
+        	inactive_workspace #2c3e50 #2c3e50 #ecf0f1
+        	urgent_workspace   #e74c3c #e74c3c #ecf0f1
+    	}
+}
+```
+
+Command called `status_command` invokes `i3status` program, which is default setup, but there are at least a few programs, which can be used instead of this to customize and enhance status bar. For now, I decided to use default option because it's good enough for me. You can also see that I customized colors, font, height, removed tray icons and moved status bar to the top (default position is bottom).
+
+When we are using `i3status`, then detailed configuration of status bar is located in `~/.config/i3status/config` file. You can check my current config below and in my [dotfiles repository](https://github.com/pwittchen/dotfiles/blob/master/.config/i3status/config)
+
+```
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors 		= true
+        interval	= 10
+    	color_good      = '#88b090'
+    	color_degraded  = '#ccdc90'
+    	color_bad       = '#e89393'
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery 0"
+order += "battery 1"
+order += "disk /"
+order += "disk /home"
+order += "load"
+order += "cpu_usage"
+order += "memory"
+order += "volume master"
+order += "read_file spotify"
+order += "read_file screen_brightness"
+order += "read_file pacman_new_packages"
+order += "read_file rss"
+order += "read_file aqi"
+order += "read_file weather"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = " %quality %essid %ip"
+        format_down = ""
+}
+
+ethernet _first_ {
+        format_up = "%ip (%speed)"
+        format_down = ""
+}
+
+battery 0 {
+    format = "%status %percentage %remaining → 0"
+    format_down = ""
+    last_full_capacity = true
+    integer_battery_capacity = true
+    low_threshold = 11
+    threshold_type = percentage
+    hide_seconds = true
+    status_chr = " "
+    status_bat = " "
+    status_unk = " "
+    status_full = " "
+}
+
+battery 1 {
+    format = "%status %percentage %remaining → 1"
+    format_down = ""
+    last_full_capacity = true
+    integer_battery_capacity = true
+    low_threshold = 11
+    threshold_type = percentage
+    hide_seconds = true
+    status_chr = " "
+    status_bat = " "
+    status_unk = " "
+    status_full = " "
+}
+
+disk "/" {
+	format = " %avail"
+}
+
+disk "/home" {
+        format = "⌂ %avail"
+}
+
+load {
+        format = " %1min"
+}
+
+cpu_usage {
+	format = "💻 %usage"
+}
+
+memory {
+        format = "⛁ %used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+volume master {
+        format = "🔉 %volume"
+        format_muted = "🔇 %volume"
+        device = "default"
+}
+
+read_file spotify {
+        format = "♪ %content"
+        path = "/var/log/scripts/spotify.log"
+}
+
+read_file screen_brightness {
+        format = "🔆 %content%"
+        path = "/var/log/scripts/screen_brightness.log"
+}
+
+read_file pacman_new_packages {
+	format = "📦 %content"
+	path = "/var/log/scripts/pacman_new_packages.log"
+}
+
+read_file rss {
+	format = "📶 %content"
+	path = "/var/log/scripts/newsboat.log"
+}
+
+read_file aqi {
+	format = "%content"
+	path = "/var/log/scripts/aqi.log"
+}
+
+read_file weather {
+	format = "%content"
+	path = "/var/log/scripts/weather.log"
+}
+
+tztime local {
+        format = " %a %Y-%m-%d ⌚ %H:%M %Z %z  "
+}
+```
+
+We can setup refresh interval of our status bar, which is 10 s in my case, but we can increase or decrease it if we want.
+
+As you can see, I configured multiple things. Going from the left:
+- network connectivity (WiFi + strength or wired connection + IP address)
+- usage of battery 0
+- usage of battery 1 (I have 2 batteries in my Thinkpad)
+- free space on the root directory
+- free space in the home directory
+- load (number of processes waiting to be executed)
+- usage of CPU
+- usage of RAM
+- sound
+- currently played Spotify song
+- screen brightness
+- number of new pacman packages to be updated
+- number of new RSS news from newsboat
+- air quality in my city monitored via Airly
+- weather in my city
+- date, time and time zone
+
+To make it all work, I needed to write a few additional scripts in Python and Bash, create log files to be read in the status bar, configure dunst notifications to monitor changing Spotify songs, etc. Maybe I'll put details of these configs in the separate articles.
+
+## Notifications
+
+By default i3 doesn't have any notifications. If we want to have them, we need to install notification daemon. We have a few choices. I decided to go with [dunst](https://dunst-project.org/), which is nice and minimalistic notification daemon. It's also configurable and we can put its configuration into `~/.config/dunst/dunstrc` file. You can check my configuration for this daemon in my [dotfiles repo](https://github.com/pwittchen/dotfiles/blob/master/.config/dunst/dunstrc) as well as previous configs. I've done a few adjustments in this file to make notifications be consistent with colors of the system and my personal preferences. I also moved notification window a little bit down because it was covering status bar. You can test notification with `notify-send` command. Remember to kill `dunst` after applying changes in the config to see them. Moreover, after installing `dunst`, we need to start it to invoke the daemon and then after future system start-ups it will start automatically.
 
 ## Working with multiple screens
 
-TBD.
+In my current setup, I have laptop screen and external monitor. By default, i3 utilizes all available screens and first workspace is located in my primary (laptop) monitor. When I would like to use this workspace on my external screen, when laptop lid is closed, then I need to disable laptop screen. It's not neccessary, when you are using both laptop and external monitor. To do that, I'm using [xrandr](https://wiki.archlinux.org/index.php/Xrandr) program. I created wrapper for this program called `monitor.sh`, which you can find in `.scripts` directory in my dotfiles repository.
+
+Key functionalities of this script looks as follows:
+
+```bash
+function list {
+  xrandr --listmonitors
+}
+
+function laptopoff {
+  xrandr --output eDP-1 --off
+}
+
+function laptopmirror {
+  xrandr --output eDP-1 --mode 1920x1080 --output HDMI-2 --mode 1920x1080 --same-as eDP-1
+}
+
+function reset {
+  xrandr --auto
+}
+
+function wallreload {
+  feh --bg-scale ~/Pictures/wallpapers/mountains/aerial-photography-of-snowy-field-viewing-mountain.jpg
+}
+```
+
+When I start the system, log in and close the laptop lid, I need to execute `monitor.sh laptopoff` to disable laptop screen, and then `monitor.sh wallreload` to reload wallpaper and adjust it into the higher resolution for the workspace 1. `eDP-` is name of my laptop monitor and it may be different in your case. In order, to reset settings, I can use `reset` command. It's more convenient than remembering all `xrandr` commands.
 
 ## WiFi and Bluetooth
 
-TDB.
+### WiFi
+
+i3 doesn't have any control panel window known from desktop environments like Gnome. If we want to use WiFi and Bluetooth, we need command line tools (or GUI if we prefer) installed additionally in the system. For WiFi, I'm using [nmcli](https://wiki.archlinux.org/index.php/NetworkManager#Usage). To list WiFi networks, we can type:
+
+```
+nmcli dev wifi
+```
+
+To connect to the given network, we can type:
+
+
+```
+nmcli --ask device wifi connect hot_spot_name
+```
+
+I also created wrapper for this, which you can find in `network.sh` file inside `.scripts` directory in my dotfiles repository.
+
+### Bluetooth
+
+We have the same story with Bluetooth. In order to connect to bluetooth devices, I'm using `bluetoothctl` program.
+
+To display devices, we can type:
+
+```
+bluetoothctl devices
+```
+
+In order to connect to the device, we can type:
+
+
+```
+bluetoothctl connect mac_address
+```
+
+I also created wrapper for this stuff, which allows me to connect to different devices, enable/disable bluetooth, start scanning, show paired devices, etc. You can find it in `bluetooth.sh` in my dotfiles repository in the same place where previous scripts are located.
 
 ## Final thoughts
 
-TBD.
+i3 WM is definitely great Window Manager. Probably the best I have been using so far. Initial configuration and setup can be overwhelming, but once we can into it, it will become clear and simple. Whole system is very fast, highly configurable, we can store complete configuration in the files and easily reproduce it on other machines or in our own machine in case when something will go wrong or we just want to reinstall the system. Using shortcuts and tiling windows all the time may be odd in the beginning, but once we get used into it, usage of this system is very efficient and conveninent. I have been using MS Windows, macOS, Unity desktop environment and Gnome in the past. i3wm is my favorite environment so far. Once we perform all the configuration in the beginning, we don't have to touch it later until we want to change or add something. I wouldn't recommend this WM to someone who doesn't like computers, configurations, solving problems, etc. If you want something working out of the box, which you can trade for speed, high customization, control over your system, etc., then you should choose macOS, Windows or maybe Gnome if you prefer Linux.
+
+![](/images/posts/2020/i-switched-to-i3wm/screen_i3wm_2020_01.png)
 
 ## References
 
 - [i3wm.org - official website](https://i3wm.org/)
 - [i3wm.org/docs - official docs (very informative)](https://i3wm.org/docs/)
-- [i3 Arch Linux config](https://www.youtube.com/watch?v=uD3qSgsQPRg)
-- [Tiling Window Management and i3wm config additions](https://www.youtube.com/watch?v=GKviflL9XeI)
-- [Co to jest Tiling? [PL]](https://www.youtube.com/watch?v=BWZQMWm4_v8)
+- [i3 Arch Linux config (video)](https://www.youtube.com/watch?v=uD3qSgsQPRg)
+- [Tiling Window Management and i3wm config additions (video)](https://www.youtube.com/watch?v=GKviflL9XeI)
+- [Co to jest Tiling? [PL] (video)](https://www.youtube.com/watch?v=BWZQMWm4_v8)
