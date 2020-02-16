@@ -1,10 +1,12 @@
 ---
 title: I switched to i3 WM
 tags:
-    - linux
-    - arch
-    - wm
+  - linux
+  - arch
+  - wm
+date: 2020-02-16 13:16:49
 ---
+
 
 ## Introduction
 
