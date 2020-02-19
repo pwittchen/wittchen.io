@@ -512,7 +512,7 @@ function wallreload {
 }
 ```
 
-When I start the system, log in and close the laptop lid, I need to execute `monitor.sh laptopoff` to disable laptop screen, and then `monitor.sh wallreload` to reload wallpaper and adjust it into the higher resolution for the workspace 1. `eDP-` is name of my laptop monitor and it may be different in your case. In order, to reset settings, I can use `reset` command. It's more convenient than remembering all `xrandr` commands.
+When I start the system, log in and close the laptop lid, I need to execute `monitor.sh laptopoff` to disable laptop screen, and then `monitor.sh wallreload` to reload wallpaper and adjust it into the higher resolution for the workspace 1. `eDP-1` is name of my laptop monitor and it may be different in your case. In order, to reset settings, I can use `reset` command. It's more convenient than remembering all `xrandr` commands.
 
 ## WiFi and Bluetooth
 
