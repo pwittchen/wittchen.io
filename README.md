@@ -30,7 +30,7 @@ to deploy website, type:
 make deploy
 ```
 
-to learn details about deployment, see the following files:
+to learn details about deployment, see the source of the following files:
 
 ```
 Makefile
