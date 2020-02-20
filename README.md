@@ -30,10 +30,10 @@ there's configured automatic deployment triggered **on push** with GitHub Action
 .github/workflows/deploy.yml
 ```
 
-**note**: before deployment, you need to re-generate `public/` dir and commit changes as follows:
+to regenerate `public/` dir, commit and push changes, which will trigger deployment type:
 
 ```
-make regenerate
+make deploy
 ```
 
 after that, just push your changes
