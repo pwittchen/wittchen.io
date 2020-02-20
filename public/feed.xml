@@ -6,7 +6,7 @@
   <link href="//feed.xml" rel="self"/>
   
   <link href="http://wittchen.io/"/>
-  <updated>2020-02-19T06:59:29.649Z</updated>
+  <updated>2020-02-20T10:30:31.160Z</updated>
   <id>http://wittchen.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spotify song in i3 status bar</title>
+    <link href="http://wittchen.io/spotify-song-in-i3-status-bar/"/>
+    <id>http://wittchen.io/spotify-song-in-i3-status-bar/</id>
+    <published>2020-02-20T10:29:13.000Z</published>
+    <updated>2020-02-20T10:30:31.160Z</updated>
+    
+    <content type="html"><![CDATA[<p>While customizing my i3 status bar, I wanted to have currently played Spotify song in it. Some time ago, I created an open source script in Python called <a href="https://github.com/pwittchen/spotify-cli-linux" target="_blank" rel="noopener">spotify-cli-linux</a> and I wanted to use it. When we want to put something custom into the i3 status bar, the easiest way to do it, is to save data into the file and then read the file.</p><p>I created the following config inside <code>~/.config/i3status/config</code> file:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">order += <span class="string">"read_file spotify"</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">read_file spotify &#123;</span><br><span class="line">        format = <span class="string">"♪ %content"</span></span><br><span class="line">        path = <span class="string">"/var/log/scripts/spotify.log"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">....</span><br></pre></td></tr></table></figure><h2 id="Approach-1-cron-job"><a href="#Approach-1-cron-job" class="headerlink" title="Approach #1 - cron job"></a>Approach #1 - cron job</h2><p>The i3 status bar is refreshed automatically according to the configuration. Now, I just needed the way to save the song into the <code>/var/log/scripts/spotify.log</code> file. My first idea was to create a cron job, which will save the song every given interval.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/2 * * * * /usr/bin/spotifycli --statusshort &gt; /var/<span class="built_in">log</span>/scripts/spotify.log</span><br></pre></td></tr></table></figure><p>Typical song has 2 minutes or more, so it should work. Unfortunately, my script uses <code>dbus</code> under the hood, which doesn’t have an access to the session of the desktop user. After searching the web for a while, I noticed that passing data from the user session into this script is not a trivial thing and cannot be done quickly. I decided to search for another solution.</p><h2 id="Approach-2-media-buttons"><a href="#Approach-2-media-buttons" class="headerlink" title="Approach #2 - media buttons"></a>Approach #2 - media buttons</h2><p>I wanted to be able to control spotify via media buttons on my keyboard. On i3 it doesn’t work out of the box, and we need to configure it. To do that, I added the folloiwng key bindings in <code>~/.config/i3/config</code> file:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bindsym XF86AudioPlay <span class="built_in">exec</span> <span class="string">"spotifycli --playpause"</span></span><br><span class="line">bindsym XF86AudioNext <span class="built_in">exec</span> <span class="string">"spotifycli --next"</span></span><br><span class="line">bindsym XF86AudioPrev <span class="built_in">exec</span> <span class="string">"spotifycli --prev"</span></span><br></pre></td></tr></table></figure><p>It works fine. We can also improve it, to make it work with other players, make it more general, etc., but in my case I use just Spotify for the music and podcasts, so it’s enough for me.</p><p>We can update this functioanlity to save song whenever we change it or start it:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bindsym XF86AudioPlay <span class="built_in">exec</span> <span class="string">"spotifycli --playpause &amp;&amp; spotifycli --statusshort &gt; /var/log/scripts/spotify.log"</span></span><br><span class="line">bindsym XF86AudioNext <span class="built_in">exec</span> <span class="string">"spotifycli --next &amp;&amp; spotifycli --statusshort &gt; /var/log/scripts/spotify.log"</span></span><br><span class="line">bindsym XF86AudioPrev <span class="built_in">exec</span> <span class="string">"spotifycli --prev &amp;&amp; spotifycli --statusshort &gt; /var/log/scripts/spotify.log"</span></span><br></pre></td></tr></table></figure><p>and this will work, but unfortunately, when song will change automatically on the playlist, status won’t be updated, so this solution is not right.</p><h2 id="Appraoch-3-correct-notifications"><a href="#Appraoch-3-correct-notifications" class="headerlink" title="Appraoch #3 (correct) - notifications"></a>Appraoch #3 (correct) - notifications</h2><p>Spotify desktop application is sending notifications whenever the song changes. On i3, we need to install notification daemon/server, to make it work. On <a href="https://wiki.archlinux.org/index.php/Desktop_notifications#Notification_servers" target="_blank" rel="noopener">Arch Wiki</a>, we can see list of the popular daemons. I decided to use <a href="https://dunst-project.org/" target="_blank" rel="noopener">Dunst</a> because it’s simple, light-weight, open-source, configurable, is actively developed and supported by its maintainers. Once I installed Dunst and started it to enable daemon, I started receiving system notifications (including Spotify).</p><p>I edited Dunst configuration in <code>~/.config/dust/dunstrc</code> file and added handler for Spotify:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[spotify]</span><br><span class="line">    appname = Spotify</span><br><span class="line">    urgency = normal</span><br><span class="line">    script  = ~/.scripts/spotify_log.sh</span><br></pre></td></tr></table></figure><p><code>spotify_log.sh</code> script looks as follows:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line">/usr/bin/spotifycli --statusshort &gt; /var/<span class="built_in">log</span>/scripts/spotify.log</span><br></pre></td></tr></table></figure><p>Now, whenever I receive a system notification from Spotify that song is changed, currently played song is saved into the file, this file is read by i3 status bar and refreshed in a given interval. Thanks to that, it doesn’t matter if song changes itself or I change it - it’s updated anyway and that’s what I wanted.</p><p><img src="/images/posts/2020/spotify-song-in-i3-status-bar/i3bar_spotify.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;While customizing my i3 status bar, I wanted to have currently played Spotify song in it. Some time ago, I created an open source script 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="linux" scheme="http://wittchen.io/tags/linux/"/>
+    
+      <category term="bash" scheme="http://wittchen.io/tags/bash/"/>
+    
+      <category term="python" scheme="http://wittchen.io/tags/python/"/>
+    
+      <category term="arch" scheme="http://wittchen.io/tags/arch/"/>
+    
+      <category term="spotify" scheme="http://wittchen.io/tags/spotify/"/>
+    
+      <category term="i3" scheme="http://wittchen.io/tags/i3/"/>
+    
+  </entry>
   
   <entry>
     <title>I switched to i3 WM</title>
@@ -317,9 +351,9 @@
     
       <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
-      <category term="open-source" scheme="http://wittchen.io/tags/open-source/"/>
-    
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
+    
+      <category term="open-source" scheme="http://wittchen.io/tags/open-source/"/>
     
       <category term="library" scheme="http://wittchen.io/tags/library/"/>
     
@@ -349,11 +383,11 @@
     
       <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
-      <category term="maven" scheme="http://wittchen.io/tags/maven/"/>
+      <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
       <category term="open-source" scheme="http://wittchen.io/tags/open-source/"/>
     
-      <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
+      <category term="maven" scheme="http://wittchen.io/tags/maven/"/>
     
       <category term="sonatype" scheme="http://wittchen.io/tags/sonatype/"/>
     
@@ -411,9 +445,9 @@
     
     
     
-      <category term="conferences" scheme="http://wittchen.io/tags/conferences/"/>
-    
       <category term="bci" scheme="http://wittchen.io/tags/bci/"/>
+    
+      <category term="conferences" scheme="http://wittchen.io/tags/conferences/"/>
     
   </entry>
   
@@ -437,9 +471,9 @@
     
     
     
-      <category term="java" scheme="http://wittchen.io/tags/java/"/>
-    
       <category term="android" scheme="http://wittchen.io/tags/android/"/>
+    
+      <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
@@ -551,39 +585,13 @@
     
     
     
-      <category term="java" scheme="http://wittchen.io/tags/java/"/>
-    
       <category term="android" scheme="http://wittchen.io/tags/android/"/>
+    
+      <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
       <category term="kotlin" scheme="http://wittchen.io/tags/kotlin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Solving problems with AVD and KVM on Linux</title>
-    <link href="http://wittchen.io/solving-problems-with-avd-and-kvm-on-linux/"/>
-    <id>http://wittchen.io/solving-problems-with-avd-and-kvm-on-linux/</id>
-    <published>2018-08-16T20:01:06.000Z</published>
-    <updated>2019-07-03T22:51:02.813Z</updated>
-    
-    <content type="html"><![CDATA[<p>I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message…</p><h2 id="dev-kvm-is-not-found"><a href="#dev-kvm-is-not-found" class="headerlink" title="/dev/kvm is not found"></a>/dev/kvm is not found</h2><p>KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V). In order to enable KVM, I needed to restart the computer and enter the BIOS by pressing <code>F1</code> key before the system boot. Next, I entered <code>Security</code> tab and enabled <code>Intel Virtualization Technology</code> and <code>Intel VT-d Feature</code>. Now, I could press <code>F10</code> to save, exit nad restart the computer. Unfortunately, that wasn’t the end of the story. I saw another error message…</p><h2 id="dev-kvm-device-permission-denied"><a href="#dev-kvm-device-permission-denied" class="headerlink" title="/dev/kvm device permission denied"></a>/dev/kvm device permission denied</h2><p>Luckily, I found answer to this issue on <a href="https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied$" target="_blank" rel="noopener">StackOverflow</a>. I just needed to install <code>qemu-kvm</code> and add my user to the <code>kvm</code> group.</p><p>I installed required software:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install qemu-kvm</span><br></pre></td></tr></table></figure><p>Then, checked the ownership of <code>/dev/kvm</code>:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al /dev/kvm</span><br></pre></td></tr></table></figure><p>The user was root, the group kvm. To check which users are in the kvm group, I could use:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep kvm /etc/group</span><br></pre></td></tr></table></figure><p>This returned:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kvm:x:some_number:</span><br></pre></td></tr></table></figure><p>As there is nothing left to the final <code>:</code>, there are no users in the kvm group.</p><p>To add the user <code>username</code> to the kvm group, I could use:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser username kvm</span><br></pre></td></tr></table></figure><p>I can check my <code>username</code>, by typing:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami</span><br></pre></td></tr></table></figure><p>Now, I could check group members once again with:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep kvm /etc/group</span><br></pre></td></tr></table></figure><p>My user should be there. Next, I could just restart the machine, create new AVD, start it and everything worked! I could finally use my Android emulator. Optionally, if you still have a problem, you can call the following command:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown username /dev/kvm</span><br></pre></td></tr></table></figure><p>and replace <code>username</code> with your username</p><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul><li><a href="https://stackoverflow.com/questions/36527278/dev-kvm-not-found-error-on-windows-in-android-studio" target="_blank" rel="noopener">https://stackoverflow.com/questions/36527278/dev-kvm-not-found-error-on-windows-in-android-studio</a></li><li><a href="https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied" target="_blank" rel="noopener">https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied</a></li><li><a href="https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new And
-      
-    
-    </summary>
-    
-    
-    
-      <category term="linux" scheme="http://wittchen.io/tags/linux/"/>
-    
-      <category term="android" scheme="http://wittchen.io/tags/android/"/>
     
   </entry>
   

@@ -1,13 +1,15 @@
 ---
 title: Spotify song in i3 status bar
 tags:
-    - linux
-    - arch
-    - i3
-    - python
-    - bash
-    - spotify
+  - linux
+  - arch
+  - i3
+  - python
+  - bash
+  - spotify
+date: 2020-02-20 11:29:13
 ---
+
 
 While customizing my i3 status bar, I wanted to have currently played Spotify song in it. Some time ago, I created an open source script in Python called [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux) and I wanted to use it. When we want to put something custom into the i3 status bar, the easiest way to do it, is to save data into the file and then read the file.
 
@@ -74,7 +76,7 @@ I edited Dunst configuration in `~/.config/dust/dunstrc` file and added handler 
 
 `spotify_log.sh` script looks as follows:
 
-```
+```bash
 #!/usr/bin/env bash
 /usr/bin/spotifycli --statusshort > /var/log/scripts/spotify.log
 ```
