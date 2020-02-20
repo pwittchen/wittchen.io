@@ -30,13 +30,13 @@ there's configured automatic deployment triggered **on push** with GitHub Action
 .github/workflows/deploy.yml
 ```
 
-**note**: before deployment, you need to re-generate `public/` dir as follows:
+**note**: before deployment, you need to re-generate `public/` dir and commit changes as follows:
 
 ```
 make regenerate
 ```
 
-after that, just commit and push your changes
+after that, just push your changes
 
 theme
 -----

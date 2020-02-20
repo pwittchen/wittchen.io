@@ -9,7 +9,9 @@ rundrafts:
 server: run
 generate:
 	hexo generate
-regenerate: clean generate
+commit:
+	git add -A && git commit -m "updating 'public' dir"
+regenerate: clean generate commit
 discard:
 	git checkout -- source
 	git clean -f source
