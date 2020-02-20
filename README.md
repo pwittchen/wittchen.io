@@ -24,19 +24,18 @@ running server locally with posts and drafts: make rundrafts
 deployment
 ----------
 
-there's configured automatic deployment triggered **on push** with GitHub Actions in:
-
-```
-.github/workflows/deploy.yml
-```
-
-to regenerate `public/` dir, commit and push changes, which will trigger deployment type:
+to deploy website, type:
 
 ```
 make deploy
 ```
 
-after that, just push your changes
+to learn details about deployment, see the following files:
+
+```
+Makefile
+.github/workflows/deploy.yml
+```
 
 theme
 -----
