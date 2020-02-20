@@ -61,7 +61,7 @@ bindsym XF86AudioPrev exec "spotifycli --prev && spotifycli --statusshort > /var
 
 and this will work, but unfortunately, when song will change automatically on the playlist, status won't be updated, so this solution is not right.
 
-## Appraoch #3 (correct) - notifications
+## Approach #3 (correct) - notifications
 
 Spotify desktop application is sending notifications whenever the song changes. On i3, we need to install notification daemon/server, to make it work. On [Arch Wiki](https://wiki.archlinux.org/index.php/Desktop_notifications#Notification_servers), we can see list of the popular daemons. I decided to use [Dunst](https://dunst-project.org/) because it's simple, light-weight, open-source, configurable, is actively developed and supported by its maintainers. Once I installed Dunst and started it to enable daemon, I started receiving system notifications (including Spotify).
 
