@@ -9,7 +9,7 @@ rundrafts:
 generate:
 	hexo generate
 commit:
-	git add -A && git commit -m "updating 'public' dir"
+	git add -A && git commit -m "updating 'public' dir -> new website deployment"
 push:
 	git push
 deploy: clean generate commit push
