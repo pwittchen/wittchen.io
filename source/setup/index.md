@@ -25,7 +25,7 @@ Software
 - PDF viewer: [Zathura](https://pwmt.org/projects/zathura/)
 - image viewer: [Sxiv](https://github.com/muennich/sxiv)
 - image editing: [Gthumb](https://wiki.gnome.org/Apps/Gthumb) + [Pixeluvo](http://www.pixeluvo.com/)
-- music: [Spotify](https://www.spotify.com/)
+- music and podcasts: [Spotify](https://www.spotify.com/) + [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 - videos: [VLC](https://www.videolan.org/vlc/)
 - RSS reader: [Newsboat](https://newsboat.org/)
 - Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org/)
