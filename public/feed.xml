@@ -38,9 +38,9 @@
     
       <category term="linux" scheme="http://wittchen.io/tags/linux/"/>
     
-      <category term="bash" scheme="http://wittchen.io/tags/bash/"/>
-    
       <category term="python" scheme="http://wittchen.io/tags/python/"/>
+    
+      <category term="bash" scheme="http://wittchen.io/tags/bash/"/>
     
       <category term="arch" scheme="http://wittchen.io/tags/arch/"/>
     
