@@ -36,6 +36,7 @@ Software
 - presentations: [Google Slides](http://slides.google.com/)
 - calendar: [Google Calendar](https://calendar.google.com/)
 - email: [Gmail](http://gmail.com/)
+- invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
 
 Configuration
 -------------
@@ -45,15 +46,15 @@ Configuration
 Hardware
 --------
 - ThinkPad T470S laptop
-- Samsung C34H890WJUX Curved monitor
-- Logitech Bluetooth Keyboard K380
-- Logitech MX Master Mouse
-- Logitech Webcam C925e 1080p
-- JBL Charge 3 speaker
-- Sennheiser Momentum True Wireless headphones
-- Rhode SmartLav microphone
-- LaCie Rugged Mini 1TB USB 3.0 external hard drive
-- Google Pixel 2 phone
+- [Samsung C34H890WJUX Curved monitor](https://www.x-kom.pl/p/384162-monitor-led-32-i-wiekszy-samsung-c34h890wjux-curved.html?partnerid=100489039&sm12=Mjk=&ts=1583966834&token=f2fa124dd475113a22d84580304b145d&86)
+- [Logitech Bluetooth Keyboard K380](https://www.x-kom.pl/p/267644-klawiatura-bezprzewodowa-logitech-bluetooth-keyboard-k380-szara.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&98)
+- [Logitech MX Master Mouse](https://www.x-kom.pl/p/370388-myszka-bezprzewodowa-logitech-mx-master-2s-wireless-mouse-graphite.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&101)
+- [Logitech Webcam C925e 1080p](https://www.x-kom.pl/p/345863-kamera-internetowa-logitech-webcam-c925e-1080p.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&81)
+- [JBL Charge 3 speaker](https://www.x-kom.pl/p/500958-glosnik-przenosny-jbl-charge-3-stealth-edition-czarny.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&88)
+- [Sennheiser Momentum True Wireless headphones](https://www.x-kom.pl/p/471041-sluchawki-bezprzewodowe-sennheiser-momentum-true-wireless-czarny.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&99)
+- [Rhode SmartLav microphone](https://www.x-kom.pl/p/530122-mikrofon-rode-smartlav.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&57)
+- [LaCie Rugged Mini 1TB USB 3.0 external hard drive](https://www.x-kom.pl/p/298286-dysk-zewnetrzny-przenosny-lacie-rugged-mini-1tb-usb-30.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&89)
+- [Google Pixel 2 phone](https://www.x-kom.pl/p/500321-smartfon-telefon-google-pixel-3a-64gb-white.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&78)
 
 Desk
 ----
