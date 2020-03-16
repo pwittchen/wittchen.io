@@ -30,7 +30,7 @@ Software
 - RSS reader: [Newsboat](https://newsboat.org/)
 - Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org/)
 - torrent client: [Transmission](https://transmissionbt.com/)
-- to do list: [Nozbe](https://nozbe.com/)
+- to do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
 - notes: [Evernote](evernote.com)
 - password manager: [Pass](https://www.passwordstore.org/)
 - presentations: [Google Slides](http://slides.google.com/)
