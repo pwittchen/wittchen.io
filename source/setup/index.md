@@ -8,34 +8,34 @@ Here's the list of equipment and software I use personally and professionally:
 Servers
 -------
 
-- W1GB hosting server by [linuxpl.com](https://linuxpl.com/)
-- [mikr.us](https://mikr.us/) VPS
+- W1GB hosting server by [linuxpl.com](https://linuxpl.com)
+- [mikr.us](https://mikr.us) VPS
 
 Software
 --------
-- OS: [Arch Linux](https://www.archlinux.org/)
-- WM: [i3](https://i3wm.org/)
-- shell: [Zsh](https://www.zsh.org/) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
-- terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable/)
+- OS: [Arch Linux](https://www.archlinux.org)
+- WM: [i3](https://i3wm.org)
+- shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
+- terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable)
 - text editor: [Vim](https://vim.org)
-- IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea/) + [Android Studio](https://developer.android.com/studio/)
-- VCS: [Git](https://git-scm.com/)
-- web browser: [Brave](https://brave.com/)
+- IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio)
+- VCS: [Git](https://git-scm.com)
+- web browser: [Brave](https://brave.com)
 - file manager: [Ranger](https://github.com/ranger/ranger) + [mc](https://github.com/MidnightCommander/mc)
-- PDF viewer: [Zathura](https://pwmt.org/projects/zathura/)
+- PDF viewer: [Zathura](https://pwmt.org/projects/zathura)
 - image viewer: [Sxiv](https://github.com/muennich/sxiv)
-- image editing: [Gthumb](https://wiki.gnome.org/Apps/Gthumb) + [Pixeluvo](http://www.pixeluvo.com/)
+- image editing: [Gthumb](https://wiki.gnome.org/Apps/Gthumb) + [Pixeluvo](http://www.pixeluvo.com)
 - music and podcasts: [Spotify](https://www.spotify.com/) + [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 - videos: [VLC](https://www.videolan.org/vlc/)
 - RSS reader: [Newsboat](https://newsboat.org/)
-- Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org/)
-- torrent client: [Transmission](https://transmissionbt.com/)
+- Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org)
+- torrent client: [Transmission](https://transmissionbt.com)
 - to do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
 - notes: [Evernote](evernote.com)
-- password manager: [Pass](https://www.passwordstore.org/)
-- presentations: [Google Slides](http://slides.google.com/)
-- calendar: [Google Calendar](https://calendar.google.com/)
-- email: [Gmail](http://gmail.com/)
+- password manager: [Pass](https://www.passwordstore.org)
+- presentations: [Google Slides](http://slides.google.com)
+- calendar: [Google Calendar](https://calendar.google.com)
+- email: [Gmail](http://gmail.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
 
 Configuration
@@ -45,7 +45,7 @@ Configuration
 
 Hardware
 --------
-- ThinkPad T470S laptop
+- [ThinkPad T470S](https://allegro.pl/kategoria/laptopy-ibm-lenovo-77920?string=Thinkpad%20T470S&bmatch=baseline-al-product-cl-eyesa2-engag-dict43-ele-1-1-0326) laptop (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
 - [Samsung C34H890WJUX Curved monitor](https://www.x-kom.pl/p/384162-monitor-led-32-i-wiekszy-samsung-c34h890wjux-curved.html?partnerid=100489039&sm12=Mjk=&ts=1583966834&token=f2fa124dd475113a22d84580304b145d&86)
 - [Logitech Bluetooth Keyboard K380](https://www.x-kom.pl/p/267644-klawiatura-bezprzewodowa-logitech-bluetooth-keyboard-k380-szara.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&98)
 - [Logitech MX Master Mouse](https://www.x-kom.pl/p/370388-myszka-bezprzewodowa-logitech-mx-master-2s-wireless-mouse-graphite.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&101)
@@ -58,8 +58,8 @@ Hardware
 
 Desk
 ----
-- IKEA SKARSTA desk
-- IKEA JÄRVFJÄLLET chair
-- IKEA KOLON floor protector
+- [IKEA SKARSTA desk](https://www.ikea.com/pl/pl/p/skarsta-biurko-z-regulacja-wysokosci-bialy-s59324818)
+- [IKEA JÄRVFJÄLLET chair](https://www.ikea.com/pl/pl/p/jaervfjaellet-krzeslo-biurowe-z-podlokietnikami-gunnared-ciemnoszary-czarny-s99275632)
+- [IKEA KOLON floor protector](https://www.ikea.com/pl/pl/p/kolon-ochraniacz-podlogi-44881100)
 - [Xiaomi Mi LED Desk Lamp](https://www.x-kom.pl/p/541128-inteligentna-lampa-xiaomi-mi-led-desk-lamp-1s-lampka-biurkowa.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&96)
 - [Tsmn.cc Leather Mousepad](http://tsmn.cc/shop/accessories/other/leather-mousepad)
