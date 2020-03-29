@@ -62,4 +62,4 @@ Desk
 - IKEA JÄRVFJÄLLET chair
 - IKEA KOLON floor protector
 - [Xiaomi Mi LED Desk Lamp](https://www.x-kom.pl/p/541128-inteligentna-lampa-xiaomi-mi-led-desk-lamp-1s-lampka-biurkowa.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&96)
-- Tsmn.cc Leather Mousepad
+- [Tsmn.cc Leather Mousepad](http://tsmn.cc/shop/accessories/other/leather-mousepad)
