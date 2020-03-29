@@ -38,9 +38,9 @@
     
       <category term="linux" scheme="http://wittchen.io/tags/linux/"/>
     
-      <category term="bash" scheme="http://wittchen.io/tags/bash/"/>
-    
       <category term="python" scheme="http://wittchen.io/tags/python/"/>
+    
+      <category term="bash" scheme="http://wittchen.io/tags/bash/"/>
     
       <category term="arch" scheme="http://wittchen.io/tags/arch/"/>
     
@@ -417,11 +417,11 @@
     
       <category term="hackathon" scheme="http://wittchen.io/tags/hackathon/"/>
     
+      <category term="kotlin" scheme="http://wittchen.io/tags/kotlin/"/>
+    
       <category term="kyma" scheme="http://wittchen.io/tags/kyma/"/>
     
       <category term="sap" scheme="http://wittchen.io/tags/sap/"/>
-    
-      <category term="kotlin" scheme="http://wittchen.io/tags/kotlin/"/>
     
   </entry>
   
