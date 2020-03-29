@@ -7,7 +7,6 @@ tags:
 date: 2020-03-29 20:29:36
 ---
 
-
 Some time ago, I was using macOS. The thing I liked about this OS since Mojave version was the dynamic wallpaper feature. Wallpaper representing picture of the Mojave desert in California was dynamically changing during the day. In the morning, we could see the dawn and sunrise, later picture during the midday, in the evening, desert during the dusk and finally picture at night. I liked the fact that wallpaper were adjusting to the daytime. I wanted to have the same thing on my Linux. Luckily, on Arch and i3, it's pretty easy to achieve.
 
 I could create very simple bash script:
