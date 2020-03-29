@@ -417,11 +417,11 @@
     
       <category term="hackathon" scheme="http://wittchen.io/tags/hackathon/"/>
     
-      <category term="kotlin" scheme="http://wittchen.io/tags/kotlin/"/>
-    
       <category term="kyma" scheme="http://wittchen.io/tags/kyma/"/>
     
       <category term="sap" scheme="http://wittchen.io/tags/sap/"/>
+    
+      <category term="kotlin" scheme="http://wittchen.io/tags/kotlin/"/>
     
   </entry>
   
