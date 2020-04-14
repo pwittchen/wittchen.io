@@ -18,7 +18,7 @@ Software
 - shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
 - terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable)
 - text editor: [Vim](https://vim.org)
-- IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio)
+- IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) ([JetBrains](https://www.jetbrains.com/) stuff in general)
 - VCS: [Git](https://git-scm.com)
 - web browser: [Brave](https://brave.com)
 - file manager: [Ranger](https://github.com/ranger/ranger) + [mc](https://github.com/MidnightCommander/mc)
