@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Routing internet via SSH tunnel on Raspberry Pi · Piotr Wittchen</title><meta name="description" content="Routing internet via SSH tunnel on Raspberry Pi - Piotr Wittchen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400"><link rel="search" type="application/opensearchdescription+xml" href="http://wittchen.io/atom.xml" title="Piotr Wittchen"><link rel="alternate" href="/feed.xml" title="Piotr Wittchen" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><div>Piotr Wittchen</div></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">WRITING</a></li><li class="nav-list-item"><a href="/code" target="_self" class="nav-list-link">CODE</a></li><li class="nav-list-item"><a href="/projects" target="_self" class="nav-list-link">PROJECTS</a></li><li class="nav-list-item"><a href="/talks" target="_self" class="nav-list-link">TALKS</a></li><li class="nav-list-item"><a href="/contact" target="_self" class="nav-list-link">CONTACT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Routing internet via SSH tunnel on Raspberry Pi</h1><div class="post-info">Jul 25, 2015</div><div class="post-content"><h2 id="Problem-overview"><a href="#Problem-overview" class="headerlink" title="Problem overview"></a>Problem overview</h2><p>Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it’s quite slow. To sum the things up two goals were clear:</p>
+<ol>
+<li>to have fast and reliable internet connection on the laptop</li>
+<li>to be able to connect to Raspberry Pi via SSH in order to control it from the laptop</li>
+</ol>
+<h2 id="Enabling-SSH-server-on-Raspberry-Pi"><a href="#Enabling-SSH-server-on-Raspberry-Pi" class="headerlink" title="Enabling SSH server on Raspberry Pi"></a>Enabling SSH server on Raspberry Pi</h2><p>Before we proceed to the next steps, we need to enable SSH server on Raspberry Pi if we haven’t done it in the past. In order to do that, we need to go through the following steps:</p>
+<ol>
+<li>login with the following information when prompted: username: <code>pi</code> password: <code>raspberry</code></li>
+<li>type the following command in the terminal: <code>sudo raspi-config</code></li>
+<li>then navigate to <code>ssh</code></li>
+<li>hit Enter</li>
+<li>select <code>enable ssh server</code></li>
+<li>reboot device</li>
+<li>we are done!</li>
+</ol>
+<h2 id="Sshuttle-to-the-rescue"><a href="#Sshuttle-to-the-rescue" class="headerlink" title="Sshuttle to the rescue"></a>Sshuttle to the rescue</h2><p>I tried a few different approaches to solve described problem, but up to now the only one solution satisfies me well. I’ve found discussion starting with the question <a href="http://askubuntu.com/questions/45075/how-do-i-route-my-internet-through-a-ssh-tunnel" target="_blank" rel="noopener">How do I route my internet through a SSH tunnel?</a> In this discussion, I’ve read about great tool called <a href="https://github.com/apenwarr/sshuttle/" target="_blank" rel="noopener">sshuttle</a>, which works as a poor man’s VPN.</p>
+<blockquote>
+<p><strong>sshuttle</strong> is a transparent proxy server that forwards over a SSH connection and sets up a proxy by running Python scripts on the remote server. sshuttle can be run under the following conditions:</p>
+<ul>
+<li>client machine or router is Linux-based, FreeBSD or Mac OS</li>
+<li>administrative privileges on client</li>
+<li>access to remote network via SSH</li>
+<li>no administrator privileges on remote network</li>
+<li>availability of Python on remote server</li>
+</ul>
+</blockquote>
+<p>sshutle can be installed with the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sshuttle</span><br></pre></td></tr></table></figure>
+
+<p>The basic command for running sshuttle with routing all traffic is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshuttle -r username@sshserver:port 0/0</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Upon the execution of the command, a sudo password prompt will appear and subsequently the password to SSH account. No other details will appear except for a short message and return to shell upon failure. For more status messages, run sshuttle in verbose mode with the -v flag. In this example all internet traffic except DNS is routed through the VPN. -r flag denotes the remote hostname and optional username and port that follows in the above example. 0/0 is short for 0.0.0.0/0 that represents the subnets to route over the VPN. The usage of 0/0 routes all the traffic except DNS requests to the remote server. DNS tunelling is possible with the usage of -H flag. Please read the man page (man sshuttle) for the details of options and modes under which sshuttle can run. For information about the concept and more examples, refer to the project page.</p>
+</blockquote>
+<p>- André Paramés on askubuntu.com</p>
+<h2 id="Connecting-to-Raspberry-Pi-and-tunneling-internet-connection"><a href="#Connecting-to-Raspberry-Pi-and-tunneling-internet-connection" class="headerlink" title="Connecting to Raspberry Pi and tunneling internet connection"></a>Connecting to Raspberry Pi and tunneling internet connection</h2><p>Luckily, all requirements were satisfied by Raspberry Pi and I could use it with sshuttle, so I’ve installed this software on my laptop. I’ve connected to my local network through WiFi. Then, I’ve scanned network with <code>nmap</code> to find IP of Raspberry Pi.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP 192.168.1.0/24</span><br></pre></td></tr></table></figure>
+
+<p>My local network consists of only few devices and each of them has a description, so I could easily identify IP of the Raspberry Pi. Output looked like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Nmap scan report for livebox.home (192.168.1.1)</span><br><span class="line">Host is up (0.0070s latency).</span><br><span class="line">Nmap scan report for laptop-piotra-\*samsung-ultrabook\*.home (192.168.1.14)</span><br><span class="line">Host is up (0.00011s latency).</span><br><span class="line">Nmap scan report for pc36.home (192.168.1.17)</span><br><span class="line">Host is up (0.018s latency).</span><br><span class="line">Nmap done: 256 IP addresses (3 hosts up) scanned in 2.64 seconds</span><br></pre></td></tr></table></figure>
+
+<p>Right now, active devices in my network are: router, my laptop and Raspberry Pi, with IP: 192.168.1.17. After that, I connected to Raspberry Pi with the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshuttle -r pi@192.168.1.17 0/0</span><br></pre></td></tr></table></figure>
+
+<p>It asked me about the local password and then about the password of remote host, which is <code>raspberry</code> by default and I saw the following message:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connected.</span><br></pre></td></tr></table></figure>
+
+<p>Everything was fine. I was connected to Raspberry Pi and I was able to access internet through it. Next, I opened another terminal window and tried to connect to Raspberry Pi via SSH. Please note, that you have to enable remote access via SSH on Raspberry Pi before you try to establish connection. When SSH is enabled, you can type the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@192.168.1.17</span><br></pre></td></tr></table></figure>
+
+<p>Then I typed correct password and I was connected!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Linux raspberrypi 3.18.7+ #755 PREEMPT Thu Feb 12 17:14:31 GMT 2015 armv6l</span><br><span class="line"></span><br><span class="line">The programs included with the Debian GNU/Linux system are free software;</span><br><span class="line">the exact distribution terms for each program are described in the</span><br><span class="line">individual files in /usr/share/doc/*/copyright.</span><br><span class="line"></span><br><span class="line">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent</span><br><span class="line">permitted by applicable law.</span><br><span class="line">Last login: Sat Jul 25 01:49:00 2015 from pc36.home</span><br></pre></td></tr></table></figure>
+
+<h2 id="Short-summary"><a href="#Short-summary" class="headerlink" title="Short summary"></a>Short summary</h2><p>What is surprising tunneled internet connection was fast and stable when I was accessing it through Raspberry Pi. When I was accessing internet directly through WiFi on the router it was really slow for some unknown reason. Luckily, I’ve achieved my goals: I’ve fast internet connection on the laptop and I could establish SSH connection with Raspberry Pi over local network.</p>
+</div></article></div></main><footer><div class="paginator"><a href="/releasing-network-events-2/" class="prev">PREV</a><a href="/searching-word-in-a-string-with-kmp-algorithm/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'wittchenio';
+var disqus_identifier = 'routing-internet-via-ssh-tunnel-on-raspberry-pi/';
+var disqus_title = 'Routing internet via SSH tunnel on Raspberry Pi';
+var disqus_url = 'http://wittchen.io/routing-internet-via-ssh-tunnel-on-raspberry-pi/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//undefined.disqus.com/count.js" async></script><div class="copyright"><p>© 2013 - 2020 <a href="http://wittchen.io">Piotr Wittchen</a></p><p><a href="https://github.com/pwittchen/wittchen.io">source</a> / <a href="https://stats.uptimerobot.com/ZwxAGU5rxy">uptime</a> / <a href="/feed.xml">rss</a> / <a href="/archives">writing</a> / <a href="/tags">tags</a> / <a href="https://github.com/pwittchen/wittchen.io#rest">api</a> / <a href="/gh">github</a> / <a href="/so">stackoverflow</a> / <a href="/in">linkedin</a> / <a href="mailto:piotr@wittchen.io">email</a></p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-2194664-7",'auto');ga('send','pageview');</script></body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Introducing YaaS Java SDK · Piotr Wittchen</title><meta name="description" content="Introducing YaaS Java SDK - Piotr Wittchen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400"><link rel="search" type="application/opensearchdescription+xml" href="http://wittchen.io/atom.xml" title="Piotr Wittchen"><link rel="alternate" href="/feed.xml" title="Piotr Wittchen" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><div>Piotr Wittchen</div></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">WRITING</a></li><li class="nav-list-item"><a href="/code" target="_self" class="nav-list-link">CODE</a></li><li class="nav-list-item"><a href="/projects" target="_self" class="nav-list-link">PROJECTS</a></li><li class="nav-list-item"><a href="/talks" target="_self" class="nav-list-link">TALKS</a></li><li class="nav-list-item"><a href="/contact" target="_self" class="nav-list-link">CONTACT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Introducing YaaS Java SDK</h1><div class="post-info">May 28, 2017</div><div class="post-content"><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In my company, there’s a concept of so-called “innovation day”. I have the possibility to “use” 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I’ve decided to create <a href="https://github.com/pwittchen/yaas-java-sdk" target="_blank" rel="noopener"><strong>YaaS Java SDK</strong></a>. If you don’t know what the <a href="http://yaas.io" target="_blank" rel="noopener">YaaS</a> is, check out my previous article about basic usage of YaaS proxy for the microservice. In a few words, it’s a proxy for the microservices with authorization &amp; monitoring capabilities, which allows using other services available on the YaaS market. SDK created by me is really simple, was created in a short period of time and does not cover all features of the YaaS. This SDK allows performing authorized requests to the microservices hidden behind YaaS proxy. Tech stack used for this project is as follows:</p>
+<ul>
+<li>Java 8</li>
+<li><a href="https://gradle.org/" target="_blank" rel="noopener">Gradle</a></li>
+<li><a href="http://square.github.io/okhttp/" target="_blank" rel="noopener">OkHttp3</a></li>
+<li><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener">RxJava2</a> with <a href="http://www.reactive-streams.org/" target="_blank" rel="noopener">Reactive Streams</a></li>
+<li><a href="https://github.com/google/gson" target="_blank" rel="noopener">Gson</a></li>
+</ul>
+<p>For unit testing I used:</p>
+<ul>
+<li><a href="http://junit.org/" target="_blank" rel="noopener">JUnit</a></li>
+<li><a href="https://github.com/google/truth" target="_blank" rel="noopener">Truth</a></li>
+<li><a href="http://mockito.org/" target="_blank" rel="noopener">Mockito</a></li>
+</ul>
+<h2 id="Quick-start"><a href="#Quick-start" class="headerlink" title="Quick start"></a>Quick start</h2><p>I wanted to make this SDK as simple as possible so the user can add YaaS integration to the Java application within just a few lines of code.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">YaaSProject project = <span class="keyword">new</span> YaaSProject.Builder()</span><br><span class="line">    .withClientId(<span class="string">"YOUR_CLIENT_ID"</span>)</span><br><span class="line">    .withClientSecret(<span class="string">"YOUR_CLIENT_SECRET"</span>)</span><br><span class="line">    .withOrganization(<span class="string">"YOUR_ORGANIZATION"</span>)</span><br><span class="line">    .withService(<span class="string">"YOUR_SERVICE"</span>)</span><br><span class="line">    .withVersion(<span class="string">"v1"</span>)</span><br><span class="line">    .withZone(Zone.EU)</span><br><span class="line">    .build();</span><br><span class="line"></span><br><span class="line">Client client = <span class="keyword">new</span> YaaS(project);</span><br><span class="line"></span><br><span class="line">client.get(<span class="string">"path/to/your/endpoint"</span>)</span><br><span class="line">    .subscribe(response -&gt; System.out.println(response.body().string()));</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, it looks really simple and straightforward. In the code snippet above, we’ve done the following thigs:</p>
+<ol>
+<li>Defined YaaS Project with YaaS service</li>
+<li>Created YaaS Client</li>
+<li>Performed HTTP GET request to the endpoint of the microservice asynchronously</li>
+<li>Received and printed body of the HTTP response from the microservice on the current thread as a String</li>
+</ol>
+<p>All of that was done with <code>Single</code> type from RxJava2, which wraps <code>Response</code> type from OkHttp. We have a reactive stream of HTTP response here and we can do with it whatever RxJava2 offers us. Like filtering, mapping, throttling, combining it with other stream and so on. For more information, visit repository of the project at: <a href="https://github.com/pwittchen/yaas-java-sdk" target="_blank" rel="noopener">https://github.com/pwittchen/yaas-java-sdk</a>.</p>
+<h2 id="Future-plans"><a href="#Future-plans" class="headerlink" title="Future plans"></a>Future plans</h2><p>I have the following plans related to this project, which may be realized when I’ll have time:</p>
+<ul>
+<li>Add more unit tests (I didn’t have enough time to cover all cases)</li>
+<li>Add continuous integration</li>
+<li>Integrate YaaS with SAP Hybris Backoffice or SAP Hybris Core Platform through this SDK (PoC)</li>
+<li>YaaS Android SDK (copy YaaS Java SDK, downgrade it to Java 7 &amp; optionally migrate to Kotlin and create sample mobile app)</li>
+<li>Optionally, add more features to YaaS Java SDK</li>
+<li>Optionally, deploy an artifact to Maven Central repository</li>
+<li>Optionally, create SDKs for different programming languages (especially those I don’t know well or I don’t know at all - just to learn them)</li>
+</ul>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p>Interesting links related to this article:</p>
+<ul>
+<li><a href="https://github.com/pwittchen/yaas-java-sdk" target="_blank" rel="noopener">Source code of the YaaS Java SDK</a></li>
+<li><a href="http://blog.wittchen.biz.pl/basic-usage-of-yaas-as-a-proxy-for-the-microservice/" target="_blank" rel="noopener">Basic usage of YaaS as a proxy for the microservice</a></li>
+<li><a href="https://yaas.io" target="_blank" rel="noopener">YaaS website</a></li>
+<li><a href="http://hybris.com" target="_blank" rel="noopener">SAP Hybris website</a></li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/new-reactive-data-types-in-rxjava2/" class="prev">PREV</a><a href="/prefser-207/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'wittchenio';
+var disqus_identifier = 'introducing-yaas-java-sdk/';
+var disqus_title = 'Introducing YaaS Java SDK';
+var disqus_url = 'http://wittchen.io/introducing-yaas-java-sdk/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//undefined.disqus.com/count.js" async></script><div class="copyright"><p>© 2013 - 2020 <a href="http://wittchen.io">Piotr Wittchen</a></p><p><a href="https://github.com/pwittchen/wittchen.io">source</a> / <a href="https://stats.uptimerobot.com/ZwxAGU5rxy">uptime</a> / <a href="/feed.xml">rss</a> / <a href="/archives">writing</a> / <a href="/tags">tags</a> / <a href="https://github.com/pwittchen/wittchen.io#rest">api</a> / <a href="/gh">github</a> / <a href="/so">stackoverflow</a> / <a href="/in">linkedin</a> / <a href="mailto:piotr@wittchen.io">email</a></p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-2194664-7",'auto');ga('send','pageview');</script></body></html>
