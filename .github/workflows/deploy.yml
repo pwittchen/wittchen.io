@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'public/*'
 jobs:
   build:
     name: Build
@@ -17,4 +19,5 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+        LOCAL_DIR : "public"
         ARGS: --delete --transfer-all
