@@ -3,7 +3,7 @@ wittchen.io
 
 this is source of [wittchen.io](http://wittchen.io), which is my personal website and blog based on [hexo](https://hexo.io/)
 
-[![uptime](https://badgen.net/uptime-robot/month/m783763238-194e22dd4ca99109b8958ff7)](https://stats.uptimerobot.com/ZwxAGU5rxy) ![last commit](https://badgen.net/github/last-commit/pwittchen/wittchen.io)
+[![uptime](https://badgen.net/uptime-robot/month/m783763238-194e22dd4ca99109b8958ff7)](https://stats.uptimerobot.com/ZwxAGU5rxy) ![last commit](https://badgen.net/github/last-commit/pwittchen/wittchen.io) ![Publish Website](https://github.com/pwittchen/wittchen.io/workflows/Publish%20Website/badge.svg)
 
 contents
 --------
