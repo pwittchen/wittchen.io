@@ -66,9 +66,9 @@
     
       <category term="linux" scheme="http://wittchen.io/tags/linux/"/>
     
-      <category term="bash" scheme="http://wittchen.io/tags/bash/"/>
-    
       <category term="python" scheme="http://wittchen.io/tags/python/"/>
+    
+      <category term="bash" scheme="http://wittchen.io/tags/bash/"/>
     
       <category term="arch" scheme="http://wittchen.io/tags/arch/"/>
     
@@ -379,9 +379,9 @@
     
       <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
-      <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
-    
       <category term="open-source" scheme="http://wittchen.io/tags/open-source/"/>
+    
+      <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
       <category term="library" scheme="http://wittchen.io/tags/library/"/>
     
@@ -411,11 +411,11 @@
     
       <category term="java" scheme="http://wittchen.io/tags/java/"/>
     
-      <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
+      <category term="maven" scheme="http://wittchen.io/tags/maven/"/>
     
       <category term="open-source" scheme="http://wittchen.io/tags/open-source/"/>
     
-      <category term="maven" scheme="http://wittchen.io/tags/maven/"/>
+      <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
       <category term="sonatype" scheme="http://wittchen.io/tags/sonatype/"/>
     
@@ -473,9 +473,9 @@
     
     
     
-      <category term="bci" scheme="http://wittchen.io/tags/bci/"/>
-    
       <category term="conferences" scheme="http://wittchen.io/tags/conferences/"/>
+    
+      <category term="bci" scheme="http://wittchen.io/tags/bci/"/>
     
   </entry>
   
@@ -499,9 +499,9 @@
     
     
     
-      <category term="android" scheme="http://wittchen.io/tags/android/"/>
-    
       <category term="java" scheme="http://wittchen.io/tags/java/"/>
+    
+      <category term="android" scheme="http://wittchen.io/tags/android/"/>
     
       <category term="gradle" scheme="http://wittchen.io/tags/gradle/"/>
     
