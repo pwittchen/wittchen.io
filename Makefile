@@ -8,6 +8,7 @@ rundrafts:
 	hexo server --drafts
 generate:
 	hexo generate
+	cp .htaccess public/
 commit:
 	git add -A && git commit -m "updating 'public' dir -> new website deployment"
 push:
