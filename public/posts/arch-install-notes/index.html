@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Arch Linux - installation notes" />
+<meta property="og:description" content="Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/arch-install-notes/" />
+<meta property="article:published_time" content="2019-07-24T23:59:20+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Arch Linux - installation notes | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Arch Linux - installation notes</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#booting-installer-from-usb">Booting installer from USB</a>
+      <ul>
+        <li><a href="#creating-bootable-usb">Creating bootable USB</a></li>
+        <li><a href="#bios-configuration">BIOS configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#first-things">First things</a>
+      <ul>
+        <li><a href="#uefi-check">UEFI check</a></li>
+        <li><a href="#internet-check">Internet check</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-time-and-date-initial-setup">System time and date initial setup</a></li>
+    <li><a href="#partitions">Partitions</a>
+      <ul>
+        <li><a href="#removing-existing-partitions">Removing existing partitions</a></li>
+        <li><a href="#creating-new-partitions">Creating new partitions</a></li>
+        <li><a href="#creating-file-systems">Creating file systems</a></li>
+        <li><a href="#creating-swap">Creating SWAP</a></li>
+        <li><a href="#mounting-partitions">Mounting partitions</a></li>
+      </ul>
+    </li>
+    <li><a href="#arch-installation">Arch installation</a></li>
+    <li><a href="#creating-fstab">Creating fstab</a></li>
+    <li><a href="#operations-inside-the-system">Operations inside the system</a>
+      <ul>
+        <li><a href="#changing-root">Changing root</a></li>
+        <li><a href="#installing-network-manager">Installing network manager</a></li>
+        <li><a href="#installing-grub">Installing GRUB</a></li>
+        <li><a href="#setting-password">Setting password</a></li>
+        <li><a href="#setting-locale">Setting locale</a></li>
+        <li><a href="#setting-timezone">Setting timezone</a></li>
+        <li><a href="#setting-hostname">Setting hostname</a></li>
+      </ul>
+    </li>
+    <li><a href="#finalization">Finalization</a>
+      <ul>
+        <li><a href="#unmounting-file-systems">Unmounting file systems</a></li>
+        <li><a href="#rebooting">Rebooting</a></li>
+      </ul>
+    </li>
+    <li><a href="#whats-next">What&rsquo;s next?</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/arch-install-notes/">Arch Linux - installation notes</a>
+  </h1>
+  
+  <h5>Jul 24, 2019</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/arch/">arch</a>, 
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own. Due to these facts I was discouraged to install Arch. Recently, I found awesome video about <a href="https://www.youtube.com/watch?v=4PBqpX0_UOc">Full Arch Linux Install</a> by <a href="https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA">Luke Smith</a> where everything is explained very clearly in each step. I watched it one time without doing anything and then, watched it next time performing all the steps described there. I had a few issues related to my hardware and BIOS, but I managed to install Arch on my ThinkPad T470s thanks to this video. During the installation, I made a few notes for myself for the future possible installations. Maybe you&rsquo;ll find them useful too. The whole process is actually simpler than I thought. It just requires some practical knowledge about Linux, patience and &ldquo;can do&rdquo; attitude. I divided this article into steps and sub-steps, which are required to perform the installation. Please, keep in mind the fact that in the end of the installation, we will have an empty command prompt with plain OS without any GUI and we will have to install the graphical environment from the terminal. It will not be covered in this article, but I think, I&rsquo;ll cover it in another one. Of course, this article contains just my notes, which help me understand everything well because and I like documenting this kind of things for the future. If you searching for Arch installation guide, I recommend you to see linked video or an <a href="https://wiki.archlinux.org/index.php/Installation_guide">official Arch installation guide</a> in Arch Wiki. This article can be additional resource to this stuff.</p>
+<h2 id="booting-installer-from-usb">
+  Booting installer from USB
+  <a class="anchor" href="#booting-installer-from-usb">#</a>
+</h2>
+<h3 id="creating-bootable-usb">
+  Creating bootable USB
+  <a class="anchor" href="#creating-bootable-usb">#</a>
+</h3>
+<p>In order to create bootable USB, we need to download <code>*.iso</code> file with Arch from <a href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a>. We also need to have <code>dd</code> (disk dump) program installed. We need to invoke <code>lsblk</code> before inserting USB drive to see our drives and invoke <code>lsblk</code> again after inserting the USB drive to see, which one it is. We can also have a look at disk sizes, what helps in recognizing our disk. Next, we can call <code>dd</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/path/to/arch.iso of<span style="color:#f92672">=</span>/dev/sdb status<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;progress&#34;</span>
+</code></pre></div><p><code>status=&quot;progress&quot;</code> parameter will allow us to monitor progress of the whole process.</p>
+<p><strong>Note</strong>: please, be sure that you are writing on the correct disk! In the example above, we&rsquo;re writing to <code>/dev/sdb</code>. It may be the same in your case, but it may be different too! It&rsquo;s just an example!</p>
+<h3 id="bios-configuration">
+  BIOS configuration
+  <a class="anchor" href="#bios-configuration">#</a>
+</h3>
+<p>We need to go into the BIOS before installation. It may be different on different computers. On mine it&rsquo;s hitting <!-- raw HTML omitted -->Enter<!-- raw HTML omitted --> after reboot and then <!-- raw HTML omitted -->F1<!-- raw HTML omitted -->. Inside BIOS, we need to change order of booting devices and move USB drive to the top. I also had to disable secure boot and quick boot. Moreover I set <code>UEFI/Legacy Boot</code> to <code>Both</code> (<code>UEFI/Legacy Boot Priority</code>: <code>UEFI First</code>, <code>CSM Support</code>: <code>YES</code>). Sometimes network boot may interrupt boot process, so I set it to <code>USB HDD</code>. I had to play more with this stuff on freshly installed system because it was not booting in the beginning. It may be different on your computer. Sometimes, there may be no issue with it.</p>
+<h2 id="first-things">
+  First things
+  <a class="anchor" href="#first-things">#</a>
+</h2>
+<h3 id="uefi-check">
+  UEFI check
+  <a class="anchor" href="#uefi-check">#</a>
+</h3>
+<p>Once we have booted installer from USB stick, we need to perform <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface">UEFI</a> check as follows.</p>
+<pre><code>ls /sys/firmware/efivars
+</code></pre><p>If it outputs an error or nothing, that&rsquo;s ok and we can proceed with installation. If you see bunch of files, then installation procedure may be different or may require additional steps.</p>
+<h3 id="internet-check">
+  Internet check
+  <a class="anchor" href="#internet-check">#</a>
+</h3>
+<p>We need to check an internet connection because we will need it to download packages. We can do it just by simple ping:</p>
+<pre><code>ping wittchen.io
+</code></pre><p>When we see response, that&rsquo;s ok.</p>
+<p>It&rsquo;s worth to mention, that it&rsquo;s good to have ethernet cable connection for the installation process. Optionally, you can use <code>wifi-menu</code> to connect wirelessly, but it&rsquo;s not recommended for the installation.</p>
+<h2 id="system-time-and-date-initial-setup">
+  System time and date initial setup
+  <a class="anchor" href="#system-time-and-date-initial-setup">#</a>
+</h2>
+<p>To perform system time and date initial setup, we need to run the following command:</p>
+<pre><code>timedatectl set-ntp true
+</code></pre><h2 id="partitions">
+  Partitions
+  <a class="anchor" href="#partitions">#</a>
+</h2>
+<p>Let&rsquo;s see what partitions do we have on our system. We can view them with <code>lsblk</code> program.</p>
+<pre><code>lsblk
+</code></pre><p>Before we start doing anything, we should remove existing partitions. We can do it with <code>fdisk</code> tool by running it with our main disk as a parameter. Usually it will be <code>/dev/sda</code>, but in my case it was <code>/dev/nvme0n1</code>. We can get this name from <code>lsblk</code> output.</p>
+<pre><code>fdisk /dev/nvme0n1
+</code></pre><h3 id="removing-existing-partitions">
+  Removing existing partitions
+  <a class="anchor" href="#removing-existing-partitions">#</a>
+</h3>
+<p>Next, we can choose different options. In our case, we need to choose <code>:d</code> to delete partitions. We need to call this option for each partition.</p>
+<p>Sometimes, we may have problems with installation or removing old partitions. In that case, we can use alternative method of cleaning disk:</p>
+<pre><code>sgdisk --zap-all /dev/nvme0n1p1
+</code></pre><h3 id="creating-new-partitions">
+  Creating new partitions
+  <a class="anchor" href="#creating-new-partitions">#</a>
+</h3>
+<p>Now, we have to prepare our disk for the future system installation. Our goal is to have the following configuration of the partitions</p>
+<pre><code>nvme0n1     259:0    0   477G  0 disk
+├─nvme0n1p1 259:1    0   200M  0 part /boot
+├─nvme0n1p2 259:2    0    24G  0 part [SWAP]
+├─nvme0n1p3 259:3    0    25G  0 part /
+└─nvme0n1p4 259:4    0 427,8G  0 part /home
+</code></pre><p>This is the output from my current system and <code>nvme0n1</code> is the disk. First partition (<code>nvme0n1p1</code>) is <code>boot</code> partition used during the system boot. Next partition (<code>nvme0n1p2</code>) is a SWAP partition, which acts as an overflow for our RAM memory, when it gets filled up. Third partition (<code>nvme0n1p3</code>) is root partition, which is the root of the file system and programs will be installed there. The last partition (<code>nvme0n1p4</code>) is home partition, where we are going to keep our files.</p>
+<p>In order to create new partition, we have to call <code>fdisk /dev/nvme0n1p1</code> (if we haven&rsquo;t done it yet).
+Let&rsquo;s create boot partition. Type <code>:c</code> for create. We leave first sector empty, hit <!-- raw HTML omitted -->Enter<!-- raw HTML omitted --> in the last sector we put <code>+200M</code> for 200 megabytes, which is recommended value for boot partitoin and confirm it with <!-- raw HTML omitted -->Enter<!-- raw HTML omitted -->. We follow this procedure for SWAP, which should have size = <code>1.5 * size of RAM in computer</code>. I currently have 16GB of RAM, so it&rsquo;s <code>1.5 * 16 GB = 24 GB</code>, so I put <code>+24G</code> in the last sector. Next, we can create root partition. It should have around <code>+25G</code>. You can decrease it if you have small disk or increase it if you have huge disk and plans to install a lot of programs. In the end, we are creating home partition, where in the last sector option we can just hit <!-- raw HTML omitted -->Enter<!-- raw HTML omitted --> and <code>fdisk</code> will assign remaining disk space to this partition. When we&rsquo;re done, we should confirm our partition configuration with <code>:w</code> like write. Then, we can type <code>lsblk</code> again to see our written configuration. It should look like in the example above.</p>
+<h3 id="creating-file-systems">
+  Creating file systems
+  <a class="anchor" href="#creating-file-systems">#</a>
+</h3>
+<p>Next, we can to create file systems on our partitions. In general, we can use <code>ext4</code>, which is Linux file system. Some devices may have boot problems or may have specific BIOS setup. In that case, it&rsquo;s recommended to use <code>FAT32</code> file system. Let&rsquo;s use <code>mkfs</code> program to create file systems.</p>
+<p>We will create <code>FAT32</code> file system on our boot partition:</p>
+<pre><code>mkfs.vfat -F32 /dev/nvme0n1p1
+</code></pre><p>Then, we will create <code>ext4</code> file systems on root and home partitions:</p>
+<pre><code>mkfs.ext4 /dev/nvme0n1p3
+mkfs.ext4 /dev/nvme0n1p4
+</code></pre><h3 id="creating-swap">
+  Creating SWAP
+  <a class="anchor" href="#creating-swap">#</a>
+</h3>
+<p>Now, we can create SWAP on the <code>nvme0n1p2</code> partition:</p>
+<pre><code>mkswap /dev/nvme0n1p2
+</code></pre><p>Next, we can turn the SWAP on:</p>
+<pre><code>swapon /dev/nvme0n1p2
+</code></pre><h3 id="mounting-partitions">
+  Mounting partitions
+  <a class="anchor" href="#mounting-partitions">#</a>
+</h3>
+<p>Right now, we are ready to mount our partitions.</p>
+<p>We can mount the root partition as follows:</p>
+<pre><code>mount /dev/nvme0n1p3 /mnt
+</code></pre><p>When we list this partition:</p>
+<pre><code>ls /mnt
+</code></pre><p>we should see <code>lost+found</code> file, which is a generic system file.</p>
+<p>Now on the root partition we can create home and boot directories.</p>
+<pre><code>mkdir /mnt/home
+mkdir /mnt/boot
+</code></pre><p>and mount our previously created partitions into these dirs:</p>
+<pre><code>mount /dev/nvme0n1p1 /mnt/boot
+mount /dev/nvme0n1p4 /mnt/home
+</code></pre><p>and then we can type <code>lsblk</code> to see that everything is created properly.</p>
+<h2 id="arch-installation">
+  Arch installation
+  <a class="anchor" href="#arch-installation">#</a>
+</h2>
+<p>Now, there is an easy part. We have everything prepared and we&rsquo;re ready to install the operating system.</p>
+<p>Arch can be installed with literally <strong>one command</strong>:</p>
+<pre><code>pacstrap /mnt base
+</code></pre><p>It&rsquo;s recommended to install <code>base-devel</code> package, which contains additional software, which may be required to run everything. We can also install <code>vim</code>, to have an editor to edit our configs and other stuff. The final command can look like this:</p>
+<pre><code>pacstrap /mnt base base-devel vim
+</code></pre><h2 id="creating-fstab">
+  Creating fstab
+  <a class="anchor" href="#creating-fstab">#</a>
+</h2>
+<p>We should also create <code>fstab</code> file, which contains information about system drives and mounted partitions and file systems.
+We can do it as follows:</p>
+<pre><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre><p>My <code>/etc/fstab</code> file looks like that:</p>
+<pre><code># Static information about the filesystems.
+# See fstab(5) for details.
+
+# &lt;file system&gt; &lt;dir&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt;
+# /dev/nvme0n1p3
+UUID=d94887d0-daff-4a4b-a28a-1de3fdadbb58/         ext4      rw,relatime0 1
+
+# /dev/nvme0n1p1
+UUID=97B8-B124      /boot     vfat      rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro0 2
+
+# /dev/nvme0n1p4
+UUID=75b24330-5ca7-47fc-a6ea-3d4cd826df4d/home     ext4      rw,relatime0 2
+
+# /dev/nvme0n1p2
+UUID=2788826f-9abf-44c7-b2d5-15323be8ba4enone      swap      defaults  0 0
+</code></pre><h2 id="operations-inside-the-system">
+  Operations inside the system
+  <a class="anchor" href="#operations-inside-the-system">#</a>
+</h2>
+<h3 id="changing-root">
+  Changing root
+  <a class="anchor" href="#changing-root">#</a>
+</h3>
+<p>Now, we can change the root:</p>
+<pre><code>arch-chroot /mnt
+</code></pre><p>After typing command above, we jumped from the bootable USB drive into the operating system installed on the disk of our computer.</p>
+<p>Now, we&rsquo;re able to perform operations inside the system.</p>
+<h3 id="installing-network-manager">
+  Installing network manager
+  <a class="anchor" href="#installing-network-manager">#</a>
+</h3>
+<p>First of all, we should install network manger via <code>pacman</code> to have network and Internet connectivity:</p>
+<pre><code>pacman -S networkmanager
+</code></pre><p>to enable network manager, we can type:</p>
+<pre><code>systemctl enable NetworkManager
+</code></pre><h3 id="installing-grub">
+  Installing GRUB
+  <a class="anchor" href="#installing-grub">#</a>
+</h3>
+<p>We also have to install GRUB, which will be responsible for booting our operating system:</p>
+<pre><code>pacman -S grub
+</code></pre><p>Next, we have to configure it:</p>
+<pre><code>grub-install --target=i386-pc /dev/nvme0n1
+</code></pre><p>Please note, we provided path to the disk (drive) - not the partition.</p>
+<p>Next, we should create <code>/boot/grub/grub.cfg</code> configuration file:</p>
+<pre><code>grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><h3 id="setting-password">
+  Setting password
+  <a class="anchor" href="#setting-password">#</a>
+</h3>
+<p>to set the password, we can just type:</p>
+<pre><code>passwd
+</code></pre><h3 id="setting-locale">
+  Setting locale
+  <a class="anchor" href="#setting-locale">#</a>
+</h3>
+<p>To set locale, we need to edit <code>/etc/locale.gen</code> (e.g. via vim) and uncomment desired locales (one or more).</p>
+<p>In my case I uncommented:</p>
+<pre><code>pl_PL.UTF-8
+pl_PL ISO-8859-2
+en_US.UTF-8
+en_US ISO-88591
+</code></pre><p>becasue I wanted to use both Polish and English language.</p>
+<p>Now, we can type:</p>
+<pre><code>locale-gen
+</code></pre><p>To set default locale, we have to edit <code>/etc/locale.conf</code> and set <code>LANG</code> variable as follows:</p>
+<pre><code>LANG=en_US.UTF-8
+</code></pre><p>Of course, we can set <code>pl_PL.UTF-8</code> too or any other language we want to use as default system language. I personally use English as a OS language, bacause it&rsquo;s easier to diagnose possible issues, when you have English messages in terminal. Nevertheles, I use Polish as an input language, to be able to use Polish letters, european metric system, Polish currency, etc. It should be adjusted to our needs.</p>
+<h3 id="setting-timezone">
+  Setting timezone
+  <a class="anchor" href="#setting-timezone">#</a>
+</h3>
+<p>You can browse time zones in <code>/usr/share/zoneinfo</code> directory. To set our time zone, we need to create a symbolic lin between desired time zone and <code>/etc/localtime</code> file. Once we change our time zone, we can create a symbolic link again.</p>
+<pre><code>ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+</code></pre><p>My time zone is Warsaw in Europe, but you can set your own time zone here.</p>
+<h3 id="setting-hostname">
+  Setting hostname
+  <a class="anchor" href="#setting-hostname">#</a>
+</h3>
+<p>To create our <code>hostname</code>, which is name of the computer, we can edit <code>/etc/hostname</code> file and put our name there.</p>
+<p>My hostname is <code>arch</code>.</p>
+<h2 id="finalization">
+  Finalization
+  <a class="anchor" href="#finalization">#</a>
+</h2>
+<h3 id="unmounting-file-systems">
+  Unmounting file systems
+  <a class="anchor" href="#unmounting-file-systems">#</a>
+</h3>
+<p>Before we reboot our computer, we should unmount partitions:</p>
+<pre><code>umount -R /mnt
+</code></pre><h3 id="rebooting">
+  Rebooting
+  <a class="anchor" href="#rebooting">#</a>
+</h3>
+<p>To reboot computer, we can just type:</p>
+<pre><code>reboot
+</code></pre><h2 id="whats-next">
+  What&rsquo;s next?
+  <a class="anchor" href="#whats-next">#</a>
+</h2>
+<p>Once, our computer will be restarted, GRUB should boot our operating system and we should see the black screen with white letters and command prompt. It means, everything went fine, our system is installed and booted! Now, we&rsquo;re ready to install other sutff (e.g. Desktop Environment or Window Manager). We can also leave it without GUI, if our computer has really low specs or when we&rsquo;re planning to use this machine as a server or something like that.</p>
+<h2 id="summary">
+  Summary
+  <a class="anchor" href="#summary">#</a>
+</h2>
+<p>To wrap up, installing Arch is not trivial and requires some proficiency with Linux and terminal. Neverhteless, once you have some basics, it&rsquo;s no that hard as we can expect. In addition, we have great documentation and resources on the web about it. Going through this process can be nice lesson. You can see, how much stuff automatic installers are doing for us. Moreover, we can totally adjust system to our needs. We don&rsquo;t need to have a bloat of not necessary packages and programs like we have on Ubuntu. We can install exactly what we need and track our packages. I haven&rsquo;t mentioned it before, but Arch has rolling release system. It means, there are no huge system updates like in Ubuntu, Windows or macOS. We can gradually update our system by installing small amount of single packages and our system can be up to date basically everyday. I&rsquo;m using Arch for a few weeks for now and it seems to be one of the best and most stable operating systems I have used so far. It&rsquo;s quite hard to break something on this system until you explicitly break it (e.g. by typing into terminal commands you don&rsquo;t understand). It&rsquo;s also light-weight and customizable. I cannot recommend this system to people who are not familiar with Linux, don&rsquo;t like to play with computers and software, don&rsquo;t want to fix stuff for themselves, customize system etc., but if you&rsquo;re are not in this group, this OS may be for you.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/arch-install-notes.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#booting-installer-from-usb">Booting installer from USB</a>
+      <ul>
+        <li><a href="#creating-bootable-usb">Creating bootable USB</a></li>
+        <li><a href="#bios-configuration">BIOS configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#first-things">First things</a>
+      <ul>
+        <li><a href="#uefi-check">UEFI check</a></li>
+        <li><a href="#internet-check">Internet check</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-time-and-date-initial-setup">System time and date initial setup</a></li>
+    <li><a href="#partitions">Partitions</a>
+      <ul>
+        <li><a href="#removing-existing-partitions">Removing existing partitions</a></li>
+        <li><a href="#creating-new-partitions">Creating new partitions</a></li>
+        <li><a href="#creating-file-systems">Creating file systems</a></li>
+        <li><a href="#creating-swap">Creating SWAP</a></li>
+        <li><a href="#mounting-partitions">Mounting partitions</a></li>
+      </ul>
+    </li>
+    <li><a href="#arch-installation">Arch installation</a></li>
+    <li><a href="#creating-fstab">Creating fstab</a></li>
+    <li><a href="#operations-inside-the-system">Operations inside the system</a>
+      <ul>
+        <li><a href="#changing-root">Changing root</a></li>
+        <li><a href="#installing-network-manager">Installing network manager</a></li>
+        <li><a href="#installing-grub">Installing GRUB</a></li>
+        <li><a href="#setting-password">Setting password</a></li>
+        <li><a href="#setting-locale">Setting locale</a></li>
+        <li><a href="#setting-timezone">Setting timezone</a></li>
+        <li><a href="#setting-hostname">Setting hostname</a></li>
+      </ul>
+    </li>
+    <li><a href="#finalization">Finalization</a>
+      <ul>
+        <li><a href="#unmounting-file-systems">Unmounting file systems</a></li>
+        <li><a href="#rebooting">Rebooting</a></li>
+      </ul>
+    </li>
+    <li><a href="#whats-next">What&rsquo;s next?</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

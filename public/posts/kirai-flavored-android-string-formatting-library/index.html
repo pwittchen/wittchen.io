@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview #  Recently I&rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Kirai - flavored Android string formatting library" />
+<meta property="og:description" content="Overview #  Recently I&rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/" />
+<meta property="article:published_time" content="2015-01-13T19:12:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Kirai - flavored Android string formatting library | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kirai - flavored Android string formatting library</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#download">Download</a></li>
+    <li><a href="#open-source">Open-source</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/kirai-flavored-android-string-formatting-library/">Kirai - flavored Android string formatting library</a>
+  </h1>
+  
+  <h5>Jan 13, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/open-source/">open-source</a>
+  </div>
+  
+
+
+  <p><h2 id="overview">
+  Overview
+  <a class="anchor" href="#overview">#</a>
+</h2>
+<p>Recently I&rsquo;ve developed and realased to Maven Central Repository <strong><a href="https://github.com/pwittchen/kirai/">Kirai</a></strong>, which is <strong>flavored Android string formatting library</strong>. Kirai means <em>phrase</em> in Swahili language. Project is inspired by <a href="https://github.com/square/phrase">phrase</a>, <a href="https://github.com/polok/TaggerString">TaggerString</a> and <a href="https://github.com/quiqueqs/BabushkaText">BabushkaText</a>. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well. It was my first deployment, so it wasn&rsquo;t so easy, but people from Sonatype are helpful, problems were solved very quickly and release went quite smooth.</p>
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<p>Usage of the library is quite simple:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Basic Usage
+</span><span style="color:#75715e"></span>
+CharSequence formatted <span style="color:#f92672">=</span> Kirai
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hi {first_name}, your are {age} years old.&#34;</span><span style="color:#f92672">)</span>
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;first_name&#34;</span><span style="color:#f92672">,</span> firstName<span style="color:#f92672">)</span>
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span> age<span style="color:#f92672">)</span>
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">();</span>
+
+<span style="color:#75715e">// Flavored Usage
+</span><span style="color:#75715e"></span>
+CharSequence formatted <span style="color:#f92672">=</span> Kirai
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hi {first_name}, your are {age} years old.&#34;</span><span style="color:#f92672">)</span>
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Piece<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;first_name&#34;</span><span style="color:#f92672">,</span> firstName<span style="color:#f92672">).</span><span style="color:#a6e22e">bold</span><span style="color:#f92672">().</span><span style="color:#a6e22e">italic</span><span style="color:#f92672">().</span><span style="color:#a6e22e">big</span><span style="color:#f92672">())</span>
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Piece<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span> age<span style="color:#f92672">).</span><span style="color:#a6e22e">underline</span><span style="color:#f92672">().</span><span style="color:#a6e22e">color</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#FF0000&#34;</span><span style="color:#f92672">))</span>
+   <span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">();</span>
+
+textView<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>formatted<span style="color:#f92672">);</span>
+
+</code></pre></div><h2 id="download">
+  Download
+  <a class="anchor" href="#download">#</a>
+</h2>
+<p>You can depend on this library through Maven:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>com.github.pwittchen.kirai<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>library<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><p>or through Gradle:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
+  compile <span style="color:#e6db74">&#39;com.github.pwittchen.kirai:library:1.0.0&#39;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="open-source">
+  Open-source
+  <a class="anchor" href="#open-source">#</a>
+</h2>
+<p>Library is open-source and available on GitHub at: <a href="https://github.com/pwittchen/kirai/">https://github.com/pwittchen/kirai/</a> If you want to know more about library, check GitHub website of the project. Feel free to use it or fork it!</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/kirai-flavored-android-string-formatting-library.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#download">Download</a></li>
+    <li><a href="#open-source">Open-source</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

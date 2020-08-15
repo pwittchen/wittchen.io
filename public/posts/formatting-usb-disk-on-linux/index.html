@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Formatting USB disk on Linux" />
+<meta property="og:description" content="Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/formatting-usb-disk-on-linux/" />
+<meta property="article:published_time" content="2019-09-01T09:16:07+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Formatting USB disk on Linux | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Formatting USB disk on Linux</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/formatting-usb-disk-on-linux/">Formatting USB disk on Linux</a>
+  </h1>
+  
+  <h5>Sep 1, 2019</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><p>Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.</p>
+<p>When we insert disk and type:</p>
+<pre><code>lsblk
+</code></pre><p>we can see the output:</p>
+<pre><code>NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0         7:0    0 181,1M  1 loop /var/lib/snapd/snap/spotify/36
+loop1         7:1    0 147,3M  1 loop /var/lib/snapd/snap/skype/66
+loop2         7:2    0  88,5M  1 loop /var/lib/snapd/snap/core/7270
+loop3         7:3    0   236M  1 loop /var/lib/snapd/snap/kde-frameworks-5/27
+loop4         7:4    0 180,2M  1 loop /var/lib/snapd/snap/spotify/35
+loop5         7:5    0 149,6M  1 loop /var/lib/snapd/snap/slack/16
+sdb           8:16   1   7,5G  0 disk
+└─sdb1        8:17   1   7,5G  0 part /run/media/pw/DISK3
+nvme0n1     259:0    0   477G  0 disk
+├─nvme0n1p1 259:1    0   200M  0 part /boot
+├─nvme0n1p2 259:2    0    24G  0 part [SWAP]
+├─nvme0n1p3 259:3    0    25G  0 part /
+└─nvme0n1p4 259:4    0 427,8G  0 part /home
+</code></pre><p>When we type:</p>
+<pre><code>sudo fdisk -l
+</code></pre><p>we&rsquo;ll see:</p>
+<pre><code>...
+
+Disk /dev/sdb: 7,51 GiB, 8053063680 bytes, 15728640 sectors
+Disk model: USB DISK
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x40a863e7
+
+Device     Boot Start      End  Sectors  Size Id Type
+/dev/sdb1        2048 15728639 15726592  7,5G 83 Linux
+</code></pre><p>Now, we have basic information about our USB drive. It&rsquo;s located in <code>/dev/sdb</code> and has <code>7,5 GB</code> of space.
+Sometimes, we can have mulitple partitions on our drive. In such case, we may want to delete them and create new partition.</p>
+<p>To do that, we can type:</p>
+<pre><code>fdisk /dev/sdb
+</code></pre><p>next, we can use <code>d</code> for deleting partition:</p>
+<pre><code>Welcome to fdisk (util-linux 2.34).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Command (m for help): d
+Selected partition 1
+Partition 1 has been deleted.
+</code></pre><p>and <code>n</code> for creating a new one:</p>
+<pre><code>Command (m for help): n
+Partition type
+p   primary (0 primary, 0 extended, 4 free)
+e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1):
+First sector (2048-15728639, default 2048):
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-15728639, default 15728639):
+
+Created a new partition 1 of type 'Linux' and of size 7,5 GiB.
+Partition #1 contains a vfat signature.
+
+Do you want to remove the signature? [Y]es/[N]o: Y
+
+The signature will be removed by a write command.
+</code></pre><p>after that, we can confirm the process with <code>w</code> command:</p>
+<pre><code>Command (m for help): w
+The partition table has been altered.
+Syncing disks.
+</code></pre><p>next, we can umount drive:</p>
+<pre><code>sudo umount /dev/sdb
+</code></pre><p>and create a file system - in our case, we&rsquo;ll use FAT32 file system in order to make USB drive accessible across all operating systems</p>
+<pre><code>sudo mkfs.vfat /dev/sdb1
+</code></pre><p>after that, we can create a label for our disk with name <code>disk3</code> (it can be anything):</p>
+<pre><code>sudo mlabel - /dev/sdb1 ::disk3
+</code></pre><p>Please note, when we create file system of a different type, we need to use different commands for creating disk labels. For more information about that, read article about <a href="https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux">renaming USB devices on Linux</a>.</p>
+<p>That&rsquo;s it! Maybe it&rsquo;s not that easy as clicking on the GUI, but we can see whole process and format any disk even when something seems to be messed up.</p>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux">https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux</a></li>
+<li><a href="https://www.cyberciti.biz/faq/linux-disk-format/">https://www.cyberciti.biz/faq/linux-disk-format/</a></li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/formatting-usb-disk-on-linux.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

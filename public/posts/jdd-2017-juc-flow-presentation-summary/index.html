@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Recently on the JDD 2017 conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.
+ View presentation on SpeakerDeck
+Code snippets shown during this presentation are available at https://github.com/pwittchen/java-flow-experiments. I have done a tiny live coding session during this talk.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="JDD 2017 - Get ready for java.util.concurrent.Flow! - summary" />
+<meta property="og:description" content="Recently on the JDD 2017 conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.
+ View presentation on SpeakerDeck
+Code snippets shown during this presentation are available at https://github.com/pwittchen/java-flow-experiments. I have done a tiny live coding session during this talk." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/jdd-2017-juc-flow-presentation-summary/" />
+<meta property="article:published_time" content="2017-10-05T16:19:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>JDD 2017 - Get ready for java.util.concurrent.Flow! - summary | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>JDD 2017 - Get ready for java.util.concurrent.Flow! - summary</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/jdd-2017-juc-flow-presentation-summary/">JDD 2017 - Get ready for java.util.concurrent.Flow! - summary</a>
+  </h1>
+  
+  <h5>Oct 5, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>, 
+      <a href="/tags/conferences/">conferences</a>
+  </div>
+  
+
+
+  <p><p>Recently on the <a href="http://jdd.org.pl">JDD 2017</a> conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.</p>
+
+
+
+<script async class="speakerdeck-embed" data-id="93c73ed4eaae4201a41d85bb381d1bb4" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+
+<p><a href="https://speakerdeck.com/pwittchen/get-ready-for-java-dot-util-dot-concurrent-dot-flow">View presentation on SpeakerDeck</a></p>
+<p>Code snippets shown during this presentation are available at <a href="https://github.com/pwittchen/java-flow-experiments">https://github.com/pwittchen/java-flow-experiments</a>. I have done a tiny live coding session during this talk. Luckily, everything went fine, the code was compiled and executed without errors. Everything I&rsquo;ve done during this presentation and additional exploratory unit tests could be found in this repository so you can check it out if you&rsquo;re interested.</p>
+<p>There were also tweets made by the audience just before the presentation.</p>
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Going to learn about the new Flow in <a href="https://twitter.com/hashtag/Java9?src=hash&amp;ref_src=twsrc%5Etfw">#Java9</a> at <a href="https://twitter.com/hashtag/JDD_Krakow?src=hash&amp;ref_src=twsrc%5Etfw">#JDD_Krakow</a> <a href="https://t.co/60JIEJYwWn">pic.twitter.com/60JIEJYwWn</a></p>&mdash; Radosław Skupnik (@Myzzreal) <a href="https://twitter.com/Myzzreal/status/915199721366593536?ref_src=twsrc%5Etfw">October 3, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>I can say that conference room was full. There were even people sitting on the floor due to lack of free chairs what really surprised me. In the Eventory app, more than 85 people joined the lecture, but in reality, there could be about 100 people or more. It was really flattering that such huge and great audience decided to listen to my talk. In fact, that was the biggest audience I have ever had during the public presentation so far. Moreover, people were asking many interesting questions during Q&amp;A session and after the presentation, so it means they were interested in this topic and they wanted to learn more, understand it and apply it in their projects. If you haven&rsquo;t had the opportunity to see this presentation, but you would like to, JDD organizers will provide video recordings from the sessions. In addition, you can monitor Talks page on this blog, where I publish my past and upcoming sessions. Probably, I&rsquo;ll present this topic again during one or two meetups because people are interested in it. Joining JDD 2017 as a speaker was a great experience. It cost me an additional work and effort after hours, but at the end of the day, it was totally worth it and it was much easier to establish contacts and meet new people as a speaker than as an attendee, what is important for me. Moreover, I could learn new things from other people as well because general level of the conference presentations was pretty high. Thanks for the interesting questions, discussions, other good presentations and support before the talk! Below you can find two pictures from this talk made by JDD 2017 photographers.</p>
+<p><img src="/posts/2017/jdd-2017-juc-flow-presentation-summary/jdd-01.jpg" alt="" /></p>
+<p><img src="/posts/2017/jdd-2017-juc-flow-presentation-summary/jdd-02.jpg" alt="" /></p>
+<p>You can watch this presentation on-line:</p>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dO3J4q9uAHg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+<p><a href="https://www.youtube.com/watch?v=dO3J4q9uAHg">Watch video on YouTube</a></p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/jdd-2017-juc-flow-presentation-summary.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sometimes we may want to set different address of the back-end web service for debuggable and release version of our Android app. E.g. predefined static host and port for release version of the application and our local IP address and predefined port for debuggable version of the application. In second case, we can deploy back-end webservice on our local machine for testing purposes. We can customize all of that in build.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Different build config for debug and release version of the Android app" />
+<meta property="og:description" content="Sometimes we may want to set different address of the back-end web service for debuggable and release version of our Android app. E.g. predefined static host and port for release version of the application and our local IP address and predefined port for debuggable version of the application. In second case, we can deploy back-end webservice on our local machine for testing purposes. We can customize all of that in build." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/different-build-config-for-debug-and-release-version-of-the-android-app/" />
+<meta property="article:published_time" content="2014-10-08T17:52:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Different build config for debug and release version of the Android app | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Different build config for debug and release version of the Android app</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/different-build-config-for-debug-and-release-version-of-the-android-app/">Different build config for debug and release version of the Android app</a>
+  </h1>
+  
+  <h5>Oct 8, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/gradle/">gradle</a>
+  </div>
+  
+
+
+  <p><p>Sometimes we may want to set different address of the back-end web service for debuggable and release version of our Android app. E.g. predefined static host and port for release version of the application and our local IP address and predefined port for debuggable version of the application. In second case, we can deploy back-end webservice on our local machine for testing purposes. We can customize all of that in build.gradle file. We can use <code>variant.buildType.isDebuggable()</code> instruction to check build type of the app. I described way of <a href="http://blog.wittchen.biz.pl/updating-android-xml-resources-dynamically-before-compilation-via-gradle/">Updating Android XML resources before compilation via Gradle</a> in <a href="http://blog.wittchen.biz.pl/updating-android-xml-resources-dynamically-before-compilation-via-gradle/">one of my previous posts</a>, so you can check it if you don&rsquo;t understand <code>replaceBackendAddressInResources(variant, host, port)</code> method. After proper configuration, setting of the back-end url is straightforward. Please check the code between <code>// configuration of the back-end address - begin</code> and <code>// configuration of the back-end address - end</code> comments.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#f92672">import</span> java.text.SimpleDateFormat
+apply plugin: <span style="color:#e6db74">&#39;com.android.application&#39;</span>
+
+android <span style="color:#f92672">{</span>
+    compileSdkVersion <span style="color:#ae81ff">20</span>
+    buildToolsVersion <span style="color:#e6db74">&#39;20.0.0&#39;</span>
+
+    compileOptions <span style="color:#f92672">{</span>
+        sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
+        targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
+    <span style="color:#f92672">}</span>
+
+    lintOptions <span style="color:#f92672">{</span>
+        abortOnError <span style="color:#66d9ef">false</span>
+        disable <span style="color:#e6db74">&#39;MissingTranslation&#39;</span>
+    <span style="color:#f92672">}</span>
+
+    defaultConfig <span style="color:#f92672">{</span>
+        applicationId <span style="color:#e6db74">&#34;com.android.app&#34;</span>
+        minSdkVersion <span style="color:#ae81ff">15</span>
+        targetSdkVersion <span style="color:#ae81ff">19</span>
+        versionCode <span style="color:#ae81ff">1</span>
+        versionName <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> buildTime<span style="color:#f92672">()</span>
+        testInstrumentationRunner <span style="color:#e6db74">&#34;com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner&#34;</span>
+    <span style="color:#f92672">}</span>
+
+    buildTypes <span style="color:#f92672">{</span>
+        release <span style="color:#f92672">{</span>
+            runProguard <span style="color:#66d9ef">false</span>
+            proguardFiles <span style="color:#a6e22e">getDefaultProguardFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;proguard-android.txt&#39;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#39;proguard-rules.pro&#39;</span>
+            signingConfig signingConfigs<span style="color:#f92672">.</span><span style="color:#a6e22e">releaseConfig</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// configuration of the back-end address - begin
+</span><span style="color:#75715e"></span>
+    applicationVariants<span style="color:#f92672">.</span><span style="color:#a6e22e">all</span> <span style="color:#f92672">{</span> variant <span style="color:#f92672">-&gt;</span>
+        variant<span style="color:#f92672">.</span><span style="color:#a6e22e">mergeResources</span><span style="color:#f92672">.</span><span style="color:#a6e22e">doLast</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>variant<span style="color:#f92672">.</span><span style="color:#a6e22e">buildType</span><span style="color:#f92672">.</span><span style="color:#a6e22e">isDebuggable</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                replaceBackendAddressInResources<span style="color:#f92672">(</span>variant<span style="color:#f92672">,</span> obtainLocalIpAddress<span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;8443&#34;</span><span style="color:#f92672">)</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                replaceBackendAddressInResources<span style="color:#f92672">(</span>variant<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;PUT YOUR PRODUCTION SERVER ADRESS HERE&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;PRODUCTION PORT&#34;</span><span style="color:#f92672">)</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// configuration of the back-end address - end
+</span><span style="color:#75715e"></span>
+    packagingOptions <span style="color:#f92672">{</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/DEPENDENCIES.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;LICENSE.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/DEPENDENCIES&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/notice.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/license.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/dependencies.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/LGPL2.1&#39;</span>
+        exclude <span style="color:#e6db74">&#39;ASL-2.0.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;LGPL-3.0.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/ASL-2.0.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/LGPL-3.0.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/services/javax.annotation.processing.Processor&#39;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+dependencies <span style="color:#f92672">{</span>
+    compile <span style="color:#a6e22e">fileTree</span><span style="color:#f92672">(</span>dir: <span style="color:#e6db74">&#39;libs&#39;</span><span style="color:#f92672">,</span> include: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;*.jar&#39;</span><span style="color:#f92672">])</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">replaceBackendAddressInResources</span><span style="color:#f92672">(</span>variant<span style="color:#f92672">,</span> host<span style="color:#f92672">,</span> port<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// replace the #const_backend_url# with your specific ip address
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">def</span> protocol <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://&#34;</span>
+    <span style="color:#66d9ef">def</span> backendAddress <span style="color:#f92672">=</span> protocol <span style="color:#f92672">+</span> host <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">+</span> port <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span>
+    File valuesFile <span style="color:#f92672">=</span> file<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${buildDir}/intermediates/res/${variant.dirName}/values/values.xml&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>valuesFile<span style="color:#f92672">.</span><span style="color:#a6e22e">exists</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+        String content <span style="color:#f92672">=</span> valuesFile<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;UTF-8&#39;</span><span style="color:#f92672">)</span>
+        content <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span><span style="color:#a6e22e">replaceAll</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#const_backend_url#&#34;</span><span style="color:#f92672">,</span> backendAddress<span style="color:#f92672">)</span>
+        valuesFile<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>content<span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;UTF-8&#39;</span><span style="color:#f92672">)</span>
+        println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Replacing #const_backend_url# with &#34;</span> <span style="color:#f92672">+</span> backendAddress <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; in file: &#34;</span> <span style="color:#f92672">+</span> valuesFile<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;File: &#34;</span> <span style="color:#f92672">+</span> valuesFile<span style="color:#f92672">.</span><span style="color:#a6e22e">path</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; does not exist&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">obtainLocalIpAddress</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    InetAddress inetAddress <span style="color:#f92672">=</span> InetAddress<span style="color:#f92672">.</span><span style="color:#a6e22e">getLocalHost</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> address <span style="color:#f92672">=</span> inetAddress<span style="color:#f92672">.</span><span style="color:#a6e22e">getAddress</span><span style="color:#f92672">();</span>
+    String ipAddress <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> address<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            ipAddress <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;.&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        ipAddress <span style="color:#f92672">+=</span> address<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xFF</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    ipAddress
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">buildTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">def</span> df <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyyMMddHHmmss&#34;</span><span style="color:#f92672">)</span>
+    df<span style="color:#f92672">.</span><span style="color:#a6e22e">setTimeZone</span><span style="color:#f92672">(</span>TimeZone<span style="color:#f92672">.</span><span style="color:#a6e22e">getTimeZone</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Europe/Warsaw&#34;</span><span style="color:#f92672">))</span>
+    <span style="color:#66d9ef">return</span> df<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">())</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;git rev-parse --short HEAD&#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">().</span><span style="color:#a6e22e">text</span><span style="color:#f92672">.</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">()</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Now, you can create release and debug version of the app with different addresses of the web service what is very useful during the process of development and deployment of the project. We can use this trick also for setting different parameters depending on our needs.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/different-build-config-for-debug-and-release-version-of-the-android-app.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

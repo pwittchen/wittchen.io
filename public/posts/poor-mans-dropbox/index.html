@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dropbox abandons Linux users #  Recently, I&rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&rsquo;ll stop syncing my files in November. I couldn&rsquo;t understand why. I&rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&rsquo;ll need to access them from another computer or mobile device.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Poor Man&#39;s Dropbox" />
+<meta property="og:description" content="Dropbox abandons Linux users #  Recently, I&rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&rsquo;ll stop syncing my files in November. I couldn&rsquo;t understand why. I&rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&rsquo;ll need to access them from another computer or mobile device." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/poor-mans-dropbox/" />
+<meta property="article:published_time" content="2018-08-12T23:10:42+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Poor Man&#39;s Dropbox | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Poor Man&#39;s Dropbox</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#dropbox-abandons-linux-users">Dropbox abandons Linux users</a></li>
+    <li><a href="#preparing-poor-mans-dropbox">Preparing Poor Man&rsquo;s Dropbox</a>
+      <ul>
+        <li><a href="#backup-script">Backup script</a></li>
+        <li><a href="#scheduling-backup">Scheduling backup</a></li>
+        <li><a href="#copying-data-from-the-server-to-the-local-directory">Copying data from the server to the local directory</a></li>
+        <li><a href="#accessing-files-on-the-go">Accessing files on the go</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/poor-mans-dropbox/">Poor Man&#39;s Dropbox</a>
+  </h1>
+  
+  <h5>Aug 12, 2018</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><h2 id="dropbox-abandons-linux-users">
+  Dropbox abandons Linux users
+  <a class="anchor" href="#dropbox-abandons-linux-users">#</a>
+</h2>
+<p>Recently, I&rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&rsquo;ll stop syncing my files in November. I couldn&rsquo;t understand why. I&rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&rsquo;ll need to access them from another computer or mobile device. I googled this issue and found pretty long thread on the <a href="https://www.dropboxforum.com/t5/Syncing-and-uploads/Dropbox-client-warns-me-that-it-ll-stop-syncing-in-Nov-why/td-p/290058">Dropbox Forum</a>. There&rsquo;s also <a href="https://www.reddit.com/r/linux/comments/966xt0/linux_dropbox_client_will_stop_syncing_on_any/">ongoing discussion on reddit</a>.</p>
+<p>If you don&rsquo;t want to read all of this stuff, I can make a short summary:</p>
+<ul>
+<li>Dropbox app will support the following file systems: NTFS for Windows, HFS+ or APFS for Mac, and Ext4 for Linux</li>
+<li>Dropbox app will not support encrypted directories even if you&rsquo;re using Ext4 file system on Linux</li>
+</ul>
+<p>I had a few options:</p>
+<ul>
+<li>leave my Dropbox directory unencrypted</li>
+<li>switch to another OS</li>
+<li>change service provider to something else</li>
+<li>create my own solution</li>
+</ul>
+<p>I&rsquo;m not going to change my OS now and existing alternatives to Dropbox aren&rsquo;t good enough.</p>
+<h2 id="preparing-poor-mans-dropbox">
+  Preparing Poor Man&rsquo;s Dropbox
+  <a class="anchor" href="#preparing-poor-mans-dropbox">#</a>
+</h2>
+<p>I&rsquo;ve decided to create Poor Man&rsquo;s Dropbox with <code>bash</code>, <code>lftp</code> and <code>cron</code>. I think it&rsquo;s nice opportunity to learn something new and solve my own problem at the same time. I have my own personal FTP server where I host my website. This server has about 4 GB of disk space. I&rsquo;m not using all of this space because my website has only text and maybe a few small pics. I also store my photos on the local drive, Google Photos and external physical drive and I&rsquo;m not going to backup them on the FTP server. I&rsquo;d like to backup a several dirs with documents, config files, text files and spreadsheets. In such case, mentioned amount of disk space is enough.</p>
+<p>In the beginning, I&rsquo;ve created a special directory for backup in my local file system: <code>~/Backup/</code>.
+Next, I&rsquo;ve created <code>backup/</code> directory on the FTP server.</p>
+<p>After that, I&rsquo;ve prepared <code>make_ftp_backup</code> script:</p>
+<h3 id="backup-script">
+  Backup script
+  <a class="anchor" href="#backup-script">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>
+echo <span style="color:#e6db74">&#34;starting backup process&#34;</span>
+
+rm -rf ~/Backup/*
+
+echo <span style="color:#e6db74">&#34;preparing directories to backup&#34;</span>
+
+cp -avr ~/Dokumenty/finance ~/Backup/finance
+cp -avr ~/Dokumenty/gym ~/Backup/gym
+cp -avr ~/Dokumenty/licenses ~/Backup/licenses
+cp -avr ~/Dokumenty/secret ~/Backup/secret
+cp -avr ~/Dokumenty/sonatype ~/Backup/sonatype
+cp -avr ~/Dokumenty/presentations ~/Backup/presentations
+
+echo <span style="color:#e6db74">&#34;uploading data to the FTP server&#34;</span>
+
+USER<span style="color:#f92672">=</span>your-user
+PASS<span style="color:#f92672">=</span>your-password
+HOST<span style="color:#f92672">=</span>your-host.com
+
+lftp ftp://$USER:$PASS@$HOST -e <span style="color:#e6db74">&#34;set ftp:ssl-allow no; mirror -R -v --delete-first ~/Backup backup; quit&#34;</span>
+
+date &gt;&gt; ~/Dokumenty/logs/ftp_backup.log
+
+echo <span style="color:#e6db74">&#34;backup process finished&#34;</span>
+</code></pre></div><p>Once I had my script ready, I made it executable: <code>chmod +x make_ftp_backup</code>
+and placed it in <code>/usr/local/bin/</code> directory.</p>
+<p>Now, I could test it by typing the following command in the terminal: <code>make_ftp_backup</code>.</p>
+<p>Script is pretty simple. It deletes old backup files from the local directory, copies updated files to this directory, removes old files on the FTP server and uploads fresh backup files to the server.</p>
+<h3 id="scheduling-backup">
+  Scheduling backup
+  <a class="anchor" href="#scheduling-backup">#</a>
+</h3>
+<p>Of course, I&rsquo;m not going to make backups manually, so I used <code>cron</code> to automate this job.
+I&rsquo;ve typed <code>crontab -e</code> to define new cron job via <code>vim</code> (you can use any editor of your choice).</p>
+<p>It looks as follows:</p>
+<pre><code># Backup my important files to my FTP server every hour at minute zero
+0 * * * * /usr/local/bin/make_ftp_backup
+</code></pre><p>Please note, we should not rely on <code>$PATH</code> or other environmental variables in <code>crontab</code> because most of them are ignored by this service. That&rsquo;s why I provided complete path to the script.</p>
+<p>We can list our cron jobs by typing <code>crontab -l</code>.</p>
+<p>After editing, we could call:</p>
+<pre><code>sudo service cron reload
+</code></pre><p>or (if it didn&rsquo;t work):</p>
+<pre><code>sudo service cron restart
+</code></pre><p>Cron job should work start working without it, but in case of problems, you can invoke that commands.</p>
+<p>As you can see in the comments, I&rsquo;m running my script every hour every day at minute zero.
+I&rsquo;ve found <a href="https://www.youtube.com/watch?v=QZJ1drMQz1A">very nice video explaining how to use cron</a>. If you&rsquo;re not familiar with it, check this link.
+Author of the video created <a href="https://github.com/CoreyMSchafer/code_snippets/tree/master/Cron-Tasks">useful code snippets</a> explaining crontab syntax.</p>
+<p>Reference information for cron jobs placed there looks as follows:</p>
+<pre><code># ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                   7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command_to_execute
+</code></pre><p>It really helps for preparing new cron jobs schedule. You can also visit <a href="http://crontab.guru/">crontab.guru</a> website to test your cron jobs definitions. It&rsquo;s also good to read more about <a href="https://serverfault.com/questions/449651/why-is-my-crontab-not-working-and-how-can-i-troubleshoot-it">troubleshooting crontab</a> in case of encountering any problems.</p>
+<h3 id="copying-data-from-the-server-to-the-local-directory">
+  Copying data from the server to the local directory
+  <a class="anchor" href="#copying-data-from-the-server-to-the-local-directory">#</a>
+</h3>
+<p>Solution above just uploads local files to the remote server. Sometimes we may want to add some data from another computer or mobile device and access them later on the local computer. We shouldn&rsquo;t place this data to the <code>backup</code> directory because it may be overriden by the backup script. To solve this problem, we can create <code>input</code> directory on the remote server and <code>input</code> directory in the local file system. After that, we can create <code>get_ftp_input</code> script, which will copy remote directory to local file system.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>
+USER<span style="color:#f92672">=</span>your-user
+PASS<span style="color:#f92672">=</span>your-password
+HOST<span style="color:#f92672">=</span>your-host.com
+
+echo <span style="color:#e6db74">&#34;downloading input from the server&#34;</span>
+
+lftp ftp://$USER:$PASS@$HOST -e <span style="color:#e6db74">&#34;set ftp:ssl-allow no; mirror -v input ~/Dokumenty/input; quit&#34;</span>
+
+date &gt;&gt; ~/Dokumenty/logs/ftp_input.log
+
+echo <span style="color:#e6db74">&#34;download complete&#34;</span>
+</code></pre></div><p>It&rsquo;s not real synchronization like in the Dropbox, but at least we have simple way add new files to the local computer from the different device with Internet access and FTP client. We can add this script to the crontab too, if we want to.</p>
+<h3 id="accessing-files-on-the-go">
+  Accessing files on the go
+  <a class="anchor" href="#accessing-files-on-the-go">#</a>
+</h3>
+<p>On my Android phone, I&rsquo;m using <a href="https://play.google.com/store/apps/details?id=pl.solidexplorer2">Solid Explorer app</a> for browsing files and directories. It&rsquo;s really good app and it has FTP client built-in, so I can access my backup folder from my mobile phone if I need to.</p>
+<h2 id="summary">
+  Summary
+  <a class="anchor" href="#summary">#</a>
+</h2>
+<p>I know this solution is far from perfect (I call it poor myself) and it doesn&rsquo;t handle two way synchronization, but at least I have full control over it and nobody tells me what file system or operating system I have to use or what I need to leave encrypted or unencrypted. It&rsquo;s clean, simple and fine for me now. Maybe I&rsquo;ll enhance this solution some day. E.g. I can add a new script performing backup whenever I change any file in defined list of directories. In order to do that, I&rsquo;ll need a file watcher running as a system service in the background. The biggest room is the room for improvement.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/poor-mans-dropbox.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#dropbox-abandons-linux-users">Dropbox abandons Linux users</a></li>
+    <li><a href="#preparing-poor-mans-dropbox">Preparing Poor Man&rsquo;s Dropbox</a>
+      <ul>
+        <li><a href="#backup-script">Backup script</a></li>
+        <li><a href="#scheduling-backup">Scheduling backup</a></li>
+        <li><a href="#copying-data-from-the-server-to-the-local-directory">Copying data from the server to the local directory</a></li>
+        <li><a href="#accessing-files-on-the-go">Accessing files on the go</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

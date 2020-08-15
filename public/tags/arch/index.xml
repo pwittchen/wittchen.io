@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>arch on Piotr Wittchen</title>
+    <link>https://wittchen.io/tags/arch/</link>
+    <description>Recent content in arch on Piotr Wittchen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Feb 2020 13:16:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://wittchen.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I switched to i3 WM</title>
+      <link>https://wittchen.io/posts/i-switched-to-i3wm/</link>
+      <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/i-switched-to-i3wm/</guid>
+      <description>Introduction #  From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.</description>
+    </item>
+    
+    <item>
+      <title>Fixing font rendering on Firefox and Arch Linux</title>
+      <link>https://wittchen.io/posts/fixing-font-rendering-on-firefox-and-arch-linux/</link>
+      <pubDate>Fri, 01 Nov 2019 11:57:02 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/fixing-font-rendering-on-firefox-and-arch-linux/</guid>
+      <description>After the recent Firefox update (70.0.1 64-bit), I&amp;rsquo;ve got a problem with font rendering on Arch Linux. I&amp;rsquo;ve installed this update probably on 31.10.2019 or 01.11.2019 (I&amp;rsquo;m not exactly sure right now). On several pages (e.g. Facebook or Github) fonts weren&amp;rsquo;t rendered correctly. It looked like fonts without anti-aliasing what was quite ugly.
+I figured out that I can go to the Firefox Settings and in the &amp;ldquo;Fonts and Colors&amp;rdquo; section, go to &amp;ldquo;Advanced&amp;rdquo; and turn off the option &amp;ldquo;Allow pages to choose their own fonts, instead of your selection above&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux - installation notes no. 2 (GUI and utils)</title>
+      <link>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</link>
+      <pubDate>Sat, 27 Jul 2019 09:31:30 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</guid>
+      <description>Introduction #  In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
+Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of the Linux graphical environments for desktop:
+ Window Managers Desktop Environments  Window Managers are much simpler, require a lot of configuration, learning how to use them and you see all windows at once.</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux - installation notes</title>
+      <link>https://wittchen.io/posts/arch-install-notes/</link>
+      <pubDate>Wed, 24 Jul 2019 23:59:20 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/arch-install-notes/</guid>
+      <description>Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.</description>
+    </item>
+    
+  </channel>
+</rss>

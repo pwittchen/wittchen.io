@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Piotr Wittchen</title>
+    <link>https://wittchen.io/tags/git/</link>
+    <description>Recent content in git on Piotr Wittchen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Jul 2018 11:21:54 +0000</lastBuildDate>
+    
+	<atom:link href="https://wittchen.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Different ways of squashing commits</title>
+      <link>https://wittchen.io/posts/squashing-commits/</link>
+      <pubDate>Sat, 21 Jul 2018 11:21:54 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/squashing-commits/</guid>
+      <description>While creating a Pull Requests it&amp;rsquo;s good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary.
+Solution #1 #  Some time ago I&amp;rsquo;ve found project http://rebaseandsqua.sh/ made by Jake Wharton. It&amp;rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.
+We can just call:
+curl rebaseandsqua.sh | sh then edit our commit messages and push the changes.</description>
+    </item>
+    
+    <item>
+      <title>Avoiding merging master to master branch in Git</title>
+      <link>https://wittchen.io/posts/avoiding-merging-master-to-master/</link>
+      <pubDate>Sun, 25 Mar 2018 13:35:06 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/avoiding-merging-master-to-master/</guid>
+      <description>Problem #  If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
+Merge branch &#39;master&#39; to &#39;master&#39; or something similar. You might have even pushed such commits! Don&amp;rsquo;t worry, so did I ;-). In this article I&amp;rsquo;m going to explain why is it happenning and how to avoid it.
+Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository.</description>
+    </item>
+    
+    <item>
+      <title>Meet and Code 2017 - &#34;Git – tips &amp; tricks&#34; presentation</title>
+      <link>https://wittchen.io/posts/git-tips-and-tricks-meet-and-code-gliwice/</link>
+      <pubDate>Sat, 21 Oct 2017 10:36:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/git-tips-and-tricks-meet-and-code-gliwice/</guid>
+      <description>Recently, during Meet &amp;amp; Code event organized by Media 3.0 and SAP Hybris, I&amp;rsquo;ve gave a talk for university and high-school students about basics of Git. Presentation was titled Git - tips &amp;amp; tricks and was organized at the Silesian Univeristy of Technology in the AEI Department where I was studying a few years ago. Presentation covered quite essential usage of Git, which could be helpful for people who are planning to learn it from the scratch.</description>
+    </item>
+    
+    <item>
+      <title>Review your changes in the code before the commit</title>
+      <link>https://wittchen.io/posts/review-your-changes-before-the-commit/</link>
+      <pubDate>Sun, 26 Mar 2017 22:18:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/review-your-changes-before-the-commit/</guid>
+      <description>Most of the people use git as follows.
+ they create a feature branch they make some changes they add all the changes: git add -A they commit changes: git commit -m &amp;quot;I&#39;ve done changes&amp;quot; they push it: git push  There&amp;rsquo;s a problem with such approach. When we created a lot of changes, it may happen that we forgot to delete something and we pushed some garbage to the remote repository.</description>
+    </item>
+    
+    <item>
+      <title>My approach to Git aliases</title>
+      <link>https://wittchen.io/posts/my-approach-to-git-aliases/</link>
+      <pubDate>Sun, 12 Mar 2017 13:20:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/my-approach-to-git-aliases/</guid>
+      <description>While we are working with Version Control Systems like Git, it&amp;rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your .gitconfig file, which is usually located in your home directory and place a few aliases in the [alias] section. For example:
+[alias] ls = log --pretty=format:&amp;quot;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&amp;quot; --decorate Then you can type: git ls in your Git repository to see pretty Git log.</description>
+    </item>
+    
+    <item>
+      <title>Working with different Git configs</title>
+      <link>https://wittchen.io/posts/working-with-different-git-configs/</link>
+      <pubDate>Fri, 10 Mar 2017 19:30:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/working-with-different-git-configs/</guid>
+      <description>Short introduction #  Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
+Different configs for different Operating Systems #  On my private computer, I use Linux. I use Git for my private projects and I use my private e-mail address there. At the same time, I use Git at work on macOS with exactly the same Git configuration, but with a different e-mail address.</description>
+    </item>
+    
+    <item>
+      <title>Automate boring stuff</title>
+      <link>https://wittchen.io/posts/automate-boring-stuff/</link>
+      <pubDate>Sun, 01 Jan 2017 11:10:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/automate-boring-stuff/</guid>
+      <description>Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.</description>
+    </item>
+    
+    <item>
+      <title>3 questions about your Git repository</title>
+      <link>https://wittchen.io/posts/3-questions-about-your-git-repo/</link>
+      <pubDate>Mon, 28 Dec 2015 21:37:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/3-questions-about-your-git-repo/</guid>
+      <description>Introduction #  Can you answer the following questions about your Git repository?
+ Does development branch has all changes from master branch? Is your gitlog a crap? How old are your branches?  If not, but you want to know answers, you&amp;rsquo;re lucky, because I prepared 3 simple scripts for you, which can help to find it out.
+Does development branch has all changes from master branch? #  git-branch-comparator is a python script, which checks if development branch has all changes from master branch in Git repository.</description>
+    </item>
+    
+    <item>
+      <title>Checking consistency of git branches</title>
+      <link>https://wittchen.io/posts/checking-consistency-of-git-branches/</link>
+      <pubDate>Thu, 14 May 2015 15:16:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/checking-consistency-of-git-branches/</guid>
+      <description>Recently I&amp;rsquo;ve created a simple Python script, which checks whether &amp;lsquo;development&amp;rsquo; branch has all changes from &amp;lsquo;master&amp;rsquo; branch in a Git repository. It&amp;rsquo;s important when we work in a Git Flow. Branch inconsistency may occur when change with hot-fix will be committed to &amp;lsquo;master&amp;rsquo; branch and we forget to merge &amp;lsquo;master&amp;rsquo; branch back to &amp;lsquo;development&amp;rsquo; branch to have our hot-fix in a &amp;lsquo;development&amp;rsquo; version of the project as well. We should keep branch consistency to avoid merge conflicts and problems with release of the project in the future.</description>
+    </item>
+    
+    <item>
+      <title>Basics of Git</title>
+      <link>https://wittchen.io/posts/basics-of-git/</link>
+      <pubDate>Thu, 27 Nov 2014 21:49:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/basics-of-git/</guid>
+      <description>Introduction #  Git is very popular Version Control System used in many software projects today. In my opinion, it&amp;rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository.</description>
+    </item>
+    
+    <item>
+      <title>How to update forked GitHub repository?</title>
+      <link>https://wittchen.io/posts/how-to-update-forked-github-repository/</link>
+      <pubDate>Fri, 07 Nov 2014 12:29:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/how-to-update-forked-github-repository/</guid>
+      <description>When you fork GitHub repository, you usually want to have your fork up to date with the original repository. You can update your fork in a few easy steps. Just look at the following example of the Git commands:
+Add the remote, call it upstream:
+git remote add upstream https://github.com/whoever/whatever.git Fetch all the branches of that remote into remote-tracking branches, such as upstream/master:
+git fetch upstream Make sure that you&amp;rsquo;re on your master branch:</description>
+    </item>
+    
+    <item>
+      <title>Versioning Android applications</title>
+      <link>https://wittchen.io/posts/versioning-android-applications/</link>
+      <pubDate>Sat, 13 Sep 2014 12:49:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/versioning-android-applications/</guid>
+      <description>When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed.</description>
+    </item>
+    
+    <item>
+      <title>Updating Android XML resources before compilation via Gradle</title>
+      <link>https://wittchen.io/posts/updating-android-xml-resources-before-compilation-via-gradle/</link>
+      <pubDate>Wed, 10 Sep 2014 21:22:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/updating-android-xml-resources-before-compilation-via-gradle/</guid>
+      <description>Problem #  In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&amp;rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?</description>
+    </item>
+    
+  </channel>
+</rss>

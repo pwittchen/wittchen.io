@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&rsquo;s possible to create micro-location for Android mobile devices.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Micro-location based on WiFi Access Points" />
+<meta property="og:description" content="Introduction #  Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&rsquo;s possible to create micro-location for Android mobile devices." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/micro-location-based-on-wifi-access-points/" />
+<meta property="article:published_time" content="2014-09-21T13:16:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Micro-location based on WiFi Access Points | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Micro-location based on WiFi Access Points</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#implementation">Implementation</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/micro-location-based-on-wifi-access-points/">Micro-location based on WiFi Access Points</a>
+  </h1>
+  
+  <h5>Sep 21, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and <a href="http://en.wikipedia.org/wiki/MAC_address">MAC</a> addresses (or more precisely: <a href="http://en.wiktionary.org/wiki/BSSID">BSSID</a>) it&rsquo;s possible to create micro-location for Android mobile devices.</p>
+<h2 id="overview">
+  Overview
+  <a class="anchor" href="#overview">#</a>
+</h2>
+<p>On the image below, you can see approximate location of WiFi Access Points in the F3 building of Future Processing company. Other buildings also have their own Access Points, but they weren&rsquo;t taken into consideration during the initial experiment. Android gives us possibility to scan available WiFi Access Points and measure their signal strength. Appropriate <a href="http://developer.android.com/reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a> allows us to react on event of changing WiFi Access Points signal strength, what can be interpreted as movement of person having mobile device. When such event occurs, we can read list of available Access Points, measure their signal strength, detect Access Point with the strongest signal, map it to specific room location and start WiFi scan again in order to retrieve fresh list of the Access Points as soon as possible. We have to remember that WiFi scanning is an asynchronous operation, so we don&rsquo;t know, when we receive the results. That&rsquo;s why event-driven development is good approach in such case. We can use pure Android BroadcastReceiver or use <a href="http://square.github.io/otto/">Otto Event Bus</a> to make our code annotation-based, fine-grained and clear.</p>
+<p><img src="/posts/2014/micro-location-based-on-wifi-access-points/fp-buildings-hot-spots.png" alt="fp-buildings-hot-spots" /></p>
+<p><em>Original image comes from <a href="http://www.future-processing.com">www.future-processing.com</a> website.</em></p>
+<h2 id="implementation">
+  Implementation
+  <a class="anchor" href="#implementation">#</a>
+</h2>
+<p>To implement micro-location I used open-source <a href="https://github.com/pwittchen/NetworkEvents">NetworkEvents</a> Android library, which I have written earlier and described in <a href="http://blog.wittchen.biz.pl/networkevents-android-library/">one of my previous blog posts</a>. First, we should create <code>AccessPoint</code> model.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AccessPoint</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> String mac<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String keyName<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String fineName<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AccessPoint</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AccessPoint</span><span style="color:#f92672">(</span>String mac<span style="color:#f92672">,</span> String keyName<span style="color:#f92672">,</span> String fineName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mac</span> <span style="color:#f92672">=</span> mac<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">keyName</span> <span style="color:#f92672">=</span> keyName<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fineName</span> <span style="color:#f92672">=</span> fineName<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getMac</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> mac<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getKeyName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> keyName<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getFineName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> fineName<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><code>AccessPoint</code> class can cotain <code>mac</code> address of the particular Access Point, <code>keyName</code> as additional identifier of the Access Point location and <code>fineName</code> containing readable name of the Access Point location, which can be displayed for the user. After that, we have to create <code>RoomLocator</code> class. This class contains <code>getNearestAccessPoint()</code> method, which reads list of the available Access Points and returns one with the strongest signal. We have to remember, that <strong>we have to fill</strong> <code>accessPointsRoomList</code> <strong>HashMap with our map of the Access Points</strong>. In this case, MAC address of the Access Point, which is String value, should be treated as a key in the HashMap.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RoomLocator</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> AccessPoint<span style="color:#f92672">&gt;</span> accessPointsRoomList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+
+    <span style="color:#66d9ef">public</span> AccessPoint <span style="color:#a6e22e">getNearestAccessPoint</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        WifiManager wifiManager <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>WifiManager<span style="color:#f92672">)</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getSystemService</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">WIFI_SERVICE</span><span style="color:#f92672">);</span>
+        List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;</span> accessPointsScanResult <span style="color:#f92672">=</span> wifiManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getScanResults</span><span style="color:#f92672">();</span>
+        AccessPoint nearestAccessPoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        ScanResult bestSignal <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        String currentNearestBSSID<span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>ScanResult scanResult <span style="color:#f92672">:</span> accessPointsScanResult<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            currentNearestBSSID <span style="color:#f92672">=</span> scanResult<span style="color:#f92672">.</span><span style="color:#a6e22e">BSSID</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">();</span>
+
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>accessPointsRoomList<span style="color:#f92672">.</span><span style="color:#a6e22e">containsKey</span><span style="color:#f92672">(</span>currentNearestBSSID<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">continue</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>bestSignal <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> WifiManager<span style="color:#f92672">.</span><span style="color:#a6e22e">compareSignalLevel</span><span style="color:#f92672">(</span>bestSignal<span style="color:#f92672">.</span><span style="color:#a6e22e">level</span><span style="color:#f92672">,</span> scanResult<span style="color:#f92672">.</span><span style="color:#a6e22e">level</span><span style="color:#f92672">)</span> <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                nearestAccessPoint <span style="color:#f92672">=</span> accessPointsRoomList<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>currentNearestBSSID<span style="color:#f92672">);</span>
+                bestSignal <span style="color:#f92672">=</span> scanResult<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">return</span> nearestAccessPoint<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>After that, we can use <a href="https://github.com/pwittchen/NetworkEvents">NetworkEvents</a> to listen, when signal strength of the Access Points is being changed. This usually happens, when user is moving with the smartphone. We can do that very easily with <code>@Subscribe</code> annotation. When mentioned event occurs, we can call <code>getNearestAccessPoint()</code> method from <code>RoomLocator</code> class. Of course, we can create provider for this class and access it in static way. In addition, please read <a href="http://blog.wittchen.biz.pl/networkevents-android-library/">my previous post about Network Events</a> library if you want to know, how to use it properly.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Subscribe</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wifiAccessPointsRefreshed</span><span style="color:#f92672">(</span>WifiAccessPointsSignalStrengthChangedEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+   AccessPoint accessPoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RoomLocator<span style="color:#f92672">().</span><span style="color:#a6e22e">getNearestAccessPoint</span><span style="color:#f92672">();</span>
+   Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> accessPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getFineName</span><span style="color:#f92672">(),</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>That&rsquo;s it. Every time, when <code>WifiAccessPointsSignalStrengthChangedEvent</code> will occur, you will get fresh information about Access Point with the strongest signal, which can be treated as your location. I&rsquo;ve tested this solution and it actually works. Please remember that such application can work only in buildings with many different Access Points in different rooms on different floors (usually in IT companies).</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/micro-location-based-on-wifi-access-points.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#implementation">Implementation</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

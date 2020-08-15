@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Automate boring stuff" />
+<meta property="og:description" content="Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/automate-boring-stuff/" />
+<meta property="article:published_time" content="2017-01-01T11:10:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Automate boring stuff | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Automate boring stuff</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#how-the-report-looks-in-practice">How the report looks in practice?</a></li>
+    <li><a href="#lets-automate-it">Let&rsquo;s automate it!</a>
+      <ul>
+        <li><a href="#generating-diff-files-from-git-repos">Generating <code>*.diff</code> files from Git repos</a></li>
+        <li><a href="#generating-docx-document">Generating <code>*.docx</code> document</a></li>
+      </ul>
+    </li>
+    <li><a href="#personalization">Personalization</a></li>
+    <li><a href="#installation-and-uninstallation">Installation and uninstallation</a></li>
+    <li><a href="#tests">Tests</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/automate-boring-stuff/">Automate boring stuff</a>
+  </h1>
+  
+  <h5>Jan 1, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/git/">git</a>, 
+      <a href="/tags/python/">python</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for <em>Podwyższone Koszty Uzyskania Przychodu</em> in the Polish language. It&rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.</p>
+<h2 id="how-the-report-looks-in-practice">
+  How the report looks in practice?
+  <a class="anchor" href="#how-the-report-looks-in-practice">#</a>
+</h2>
+<p>As a programmer, I simply create software as a source code. Added, removed and modified lines of code in the existing codebase are treated as my creative work. Luckily, we use Git so I can generate <code>*.diff</code> files from the Git repositories I&rsquo;m contributing to. Besides that, I need to prepare document as a <code>*.docx</code> file with a short description of my work. My tasks look different every month, but <strong>report actually looks almost the same every month</strong>. Preparing this report is boring and repeatable stuff.</p>
+<h2 id="lets-automate-it">
+  Let&rsquo;s automate it!
+  <a class="anchor" href="#lets-automate-it">#</a>
+</h2>
+<h3 id="generating-diff-files-from-git-repos">
+  Generating <code>*.diff</code> files from Git repos
+  <a class="anchor" href="#generating-diff-files-from-git-repos">#</a>
+</h3>
+<p>I simply created a <a href="https://github.com/pwittchen/pkup/blob/master/pkup">shell script</a>, which goes through predefined project directories and saves <code>*.diff</code> files with names the same as project directory with changes performed by me from the 20th day of the last month until now.</p>
+<h3 id="generating-docx-document">
+  Generating <code>*.docx</code> document
+  <a class="anchor" href="#generating-docx-document">#</a>
+</h3>
+<p>Next, I created a <a href="https://github.com/pwittchen/pkup/blob/master/pkup_doc.py">python script</a>, which is parametrized and used by shell script. It uses <a href="https://python-docx.readthedocs.io/en/latest/">python-docx</a> library for generating <code>*.docx</code> report. I&rsquo;ve chosen such option, because it&rsquo;s one of the simplest solutions I&rsquo;ve found and it&rsquo;s lightweight. Moreover it can be easily used on Unix systems and integrated with shell scripts.</p>
+<h2 id="personalization">
+  Personalization
+  <a class="anchor" href="#personalization">#</a>
+</h2>
+<p>I wanted to make a script available and usable for everyone, so I created <a href="https://github.com/pwittchen/pkup/blob/master/.pkup.conf">.pkup.conf</a> file, which is responsible for personalization and configuration of the script. I think, it looks pretty straightforward.</p>
+<pre><code>yDEV_PROJECTS_DIR=$yHYBRIS_SRC
+yDEV_PROJECTS_LIST=(backoffice platform-backoffice cockpitng backofficesearch pcm pcmbackoffice cockpit cockpit-core)
+yDEV_REPORT_DIR=~/Documents/hybris/pkup/raporty/doc/
+yDEV_NAME=&quot;Your name&quot;
+yDEV_SURNAME=&quot;Your surname&quot;
+yDEV_ROLE=&quot;Software Developer&quot;
+yDEV_DEPARTMENT=&quot;P&amp;I&quot;
+yDEV_MANAGER=&quot;Your manager name and surname&quot;
+</code></pre><h2 id="installation-and-uninstallation">
+  Installation and uninstallation
+  <a class="anchor" href="#installation-and-uninstallation">#</a>
+</h2>
+<p>I also created <a href="https://github.com/pwittchen/pkup/blob/master/install.sh">installation script</a>, which allows to start using the scripts faster. Installation script install dependencies for python script, copies shell script and python script into <code>/usr/local/bin/</code> directory and <code>.pkup.conf</code> file into home directory. Configuration file needs to be adjusted by the user manually after installtion. Of course, there&rsquo;s another script, which can be used for <a href="https://github.com/pwittchen/pkup/blob/master/uninstall.sh">uninstallation</a>.</p>
+<h2 id="tests">
+  Tests
+  <a class="anchor" href="#tests">#</a>
+</h2>
+<p>There are python tests for this solution in <a href="https://github.com/pwittchen/pkup/blob/master/pkup_doc_test.py">pkup_doc_test.py</a> file, but they&rsquo;re quite poor right now due to the limited amount of time. They can be a subject of improvements in the future. Note that such scripting solutions rarely have tests because they&rsquo;re small and created ad-hoc. Nevertheless, I wanted to follow the philosophy from <a href="/2016/11/30/lifting-quality-of-a-shell-script/">my last blog article</a> and create tests for any kind of software I make.</p>
+<h2 id="summary">
+  Summary
+  <a class="anchor" href="#summary">#</a>
+</h2>
+<p>I&rsquo;ve spent some time for preparing this stuff, but it was fun and I think it should save me and hopefully my co-workers some amount of time during creating reports every month. In the future, it can be improved by automatic generation of report messages and sending data to the server.</p>
+<p>To sum up, <strong>preparing reports manually is boring</strong>. <strong>Generating reports automatically is exciting</strong>!</p>
+<p>Complete solution described in this article with documentation is available on GitHub:
+<a href="https://github.com/pwittchen/pkup"><strong>https://github.com/pwittchen/pkup</strong></a>.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/automate-boring-stuff.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#how-the-report-looks-in-practice">How the report looks in practice?</a></li>
+    <li><a href="#lets-automate-it">Let&rsquo;s automate it!</a>
+      <ul>
+        <li><a href="#generating-diff-files-from-git-repos">Generating <code>*.diff</code> files from Git repos</a></li>
+        <li><a href="#generating-docx-document">Generating <code>*.docx</code> document</a></li>
+      </ul>
+    </li>
+    <li><a href="#personalization">Personalization</a></li>
+    <li><a href="#installation-and-uninstallation">Installation and uninstallation</a></li>
+    <li><a href="#tests">Tests</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="There are many approaches concerning selecting items on Android&rsquo;s ListView. Unfortunately most of them don&rsquo;t work. I was struggling with this problem for some time and decided to publish my solution, which is actually quite easy.
+The problem #  I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen). I also want to click on item of the ListView programmatically.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="How to highlight and click on ListView item in Android programmatically?" />
+<meta property="og:description" content="There are many approaches concerning selecting items on Android&rsquo;s ListView. Unfortunately most of them don&rsquo;t work. I was struggling with this problem for some time and decided to publish my solution, which is actually quite easy.
+The problem #  I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen). I also want to click on item of the ListView programmatically." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically/" />
+<meta property="article:published_time" content="2014-03-06T21:43:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>How to highlight and click on ListView item in Android programmatically? | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>How to highlight and click on ListView item in Android programmatically?</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically/">How to highlight and click on ListView item in Android programmatically?</a>
+  </h1>
+  
+  <h5>Mar 6, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>
+  </div>
+  
+
+
+  <p><p>There are many approaches concerning selecting items on Android&rsquo;s ListView. Unfortunately most of them don&rsquo;t work. I was struggling with this problem for some time and decided to publish my solution, which is actually quite easy.</p>
+<h2 id="the-problem">
+  The problem
+  <a class="anchor" href="#the-problem">#</a>
+</h2>
+<p>I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen).
+I also want to click on item of the ListView programmatically.</p>
+<h2 id="solution">
+  Solution
+  <a class="anchor" href="#solution">#</a>
+</h2>
+<p>We have to create our own adapter. Let&rsquo;s call it ContactsAdapter.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContactsAdapter</span> <span style="color:#66d9ef">extends</span> BaseAdapter <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> ArrayList list<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> selectedItem <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span> <span style="color:#75715e">// no item selected by default
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// put neccessary code here - it&#39;s not important in this description
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ContactsAdapter</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;</span> contacts<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">();</span>
+        list<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>contacts<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> View <span style="color:#a6e22e">getView</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> position<span style="color:#f92672">,</span> View convertView<span style="color:#f92672">,</span> ViewGroup parent<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">final</span> View result<span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>convertView <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            result <span style="color:#f92672">=</span> LayoutInflater<span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span>parent<span style="color:#f92672">.</span><span style="color:#a6e22e">getContext</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">inflate</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">item_contact</span><span style="color:#f92672">,</span> parent<span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            result <span style="color:#f92672">=</span> convertView<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        highlightItem<span style="color:#f92672">(</span>position<span style="color:#f92672">,</span> result<span style="color:#f92672">);</span>
+
+        Contact contact <span style="color:#f92672">=</span> getItem<span style="color:#f92672">(</span>position<span style="color:#f92672">);</span>
+        <span style="color:#f92672">((</span>TextView<span style="color:#f92672">)</span> result<span style="color:#f92672">.</span><span style="color:#a6e22e">findViewById</span><span style="color:#f92672">(</span>android<span style="color:#f92672">.</span><span style="color:#a6e22e">R</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">text1</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>contact<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * methods from StringUtils calls:
+</span><span style="color:#75715e">     * getContext().getResources().getColor(int resourceId)
+</span><span style="color:#75715e">     * getContext().getResources().getDrawable(int resourceId)
+</span><span style="color:#75715e">     * You can use them in your own context 
+</span><span style="color:#75715e">     * (e.g. generic application context or you can pass activity context)
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#a6e22e">@TargetApi</span><span style="color:#f92672">(</span>Build<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_CODES</span><span style="color:#f92672">.</span><span style="color:#a6e22e">JELLY_BEAN</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">highlightItem</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> position<span style="color:#f92672">,</span> View result<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>position <span style="color:#f92672">==</span> selectedItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// you can define your own color of selected item here
+</span><span style="color:#75715e"></span>            result<span style="color:#f92672">.</span><span style="color:#a6e22e">setBackgroundColor</span><span style="color:#f92672">(</span>StringUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">getColorFromResources</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">color</span><span style="color:#f92672">.</span><span style="color:#a6e22e">light_blue</span><span style="color:#f92672">));</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// you can define your own default selector here
+</span><span style="color:#75715e"></span>            result<span style="color:#f92672">.</span><span style="color:#a6e22e">setBackground</span><span style="color:#f92672">(</span>StringUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">getDrawableFromResources</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">drawable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">abs__list_selector_holo_light</span><span style="color:#f92672">));</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setSelectedItem</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> selectedItem<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">selectedItem</span> <span style="color:#f92672">=</span> selectedItem<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// put rest of your necessary code here...
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Important methods are:</p>
+<ul>
+<li><code>View getView(int position, View convertView, ViewGroup parent)</code> - returns View of the single list item on the given position</li>
+<li><code>void highlightItem(int position, View result)</code> - highlights item on a given position (sets proper background)</li>
+<li><code>public void setSelectedItem(int selectedItem)</code> - sets item to highlight</li>
+</ul>
+<p>Now, we have to set our adapter in a ListView in activity.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResume</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    List<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;</span> contacts <span style="color:#f92672">=</span> getContactsFromYourSource<span style="color:#f92672">();</span>
+    ContactsAdapter contactsAdapter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ContactsAdapter<span style="color:#f92672">(</span>contacts<span style="color:#f92672">);</span>
+    contactListView<span style="color:#f92672">.</span><span style="color:#a6e22e">setAdapter</span><span style="color:#f92672">(</span>contactsAdapter<span style="color:#f92672">);</span>
+    highlightListItem<span style="color:#f92672">(</span>2<span style="color:#f92672">);</span> <span style="color:#75715e">// this simple function call does the trick
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">highlightListItem</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> position<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    ContactsAdapter contactsAdapter <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ContactsAdapter<span style="color:#f92672">)</span> contactListView<span style="color:#f92672">.</span><span style="color:#a6e22e">getAdapter</span><span style="color:#f92672">();</span>
+    contactsAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">setSelectedItem</span><span style="color:#f92672">(</span>position<span style="color:#f92672">);</span>
+    <span style="color:#75715e">// in some cases, it may be necessary to re-set adapter (as in the line below)
+</span><span style="color:#75715e"></span>    contactListView<span style="color:#f92672">.</span><span style="color:#a6e22e">setAdapter</span><span style="color:#f92672">(</span>contactsAdapter<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>In this example, <code>highlightListItem(int)</code> method will highlight chosen item on a <code>ListView</code> available in a variable <code>contactListView</code>.</p>
+<p><strong>Clicking programmatically</strong> is much more easier, than highlighting item. We can simply use the method below assuming, that we properly created contactListView attribute and assigned it to appropriate view.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clickOnListItem</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> position<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    contactList<span style="color:#f92672">.</span><span style="color:#a6e22e">performItemClick</span><span style="color:#f92672">(</span>contactListView<span style="color:#f92672">,</span> position<span style="color:#f92672">,</span> contactListView<span style="color:#f92672">.</span><span style="color:#a6e22e">getItemIdAtPosition</span><span style="color:#f92672">(</span>position<span style="color:#f92672">));</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="What is a terminal multiplexer? It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.
+ - tmux.github.io
+Tmux feature, which I find very useful is tiling terminal window. We can have several tiles with different terminals within a single terminal window.
+How to use tiling? #  First, we need to install tmux:">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Using tmux" />
+<meta property="og:description" content="What is a terminal multiplexer? It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.
+ - tmux.github.io
+Tmux feature, which I find very useful is tiling terminal window. We can have several tiles with different terminals within a single terminal window.
+How to use tiling? #  First, we need to install tmux:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/using-tmux/" />
+<meta property="article:published_time" content="2015-09-20T11:04:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Using tmux | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Using tmux</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-use-tiling">How to use tiling?</a></li>
+    <li><a href="#creating-4-tiles-automatically">Creating 4 tiles automatically</a></li>
+    <li><a href="#recap">Recap</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/using-tmux/">Using tmux</a>
+  </h1>
+  
+  <h5>Sep 20, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><blockquote>
+<p><strong>What is a terminal multiplexer?</strong> It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.</p>
+</blockquote>
+<p><em>- tmux.github.io</em></p>
+<p><img src="/posts/2015/using-tmux/ss-tmux1.png" alt="ss-tmux1" /></p>
+<p>Tmux feature, which I find very useful is <strong>tiling terminal window</strong>. We can have several tiles with different terminals within a single terminal window.</p>
+<h2 id="how-to-use-tiling">
+  How to use tiling?
+  <a class="anchor" href="#how-to-use-tiling">#</a>
+</h2>
+<p>First, we need to install tmux:</p>
+<p>$ sudo apt-get install tmux</p>
+<p>Then, we need to start it:</p>
+<p>$ tmux</p>
+<p>When we are inside tmux, we can execute its commands. It&rsquo;s good to check <a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man1/tmux.1?query=tmux&amp;sec=1">full list of tmux key bindings</a>. Default initial key binding for different commands is <code>Ctrl+B</code>. When we hold <code>Ctrl</code> and then press <code>B</code>, we can press next key for specific command. It&rsquo;s tricky and it isn&rsquo;t intuitive at the first time. For example, if we want to <strong>split terminal window vertically</strong>, we need to do the following thing: Start <code>tmux</code>, Hold <code>Ctrl</code>, press <code>B</code> (while holding <code>Ctrl</code>), release buttons and press <code>%</code> key (equivalent to <code>Shift+5</code>). If we want to <strong>split terminal window horizontally</strong>, we need to do the following thing: Start <code>tmux</code>, Hold <code>Ctrl</code>, press <code>B</code> (while holding <code>Ctrl</code>), release buttons and press <code>&quot;</code> key (equivalent to <code>Shift+'</code> - code for <code>'</code> sign is <code>47</code> for <code>xdotool</code>). We can create any tile configuration we want like in <a href="https://i3wm.org/">i3</a> windows manager.</p>
+<p><img src="/posts/2015/using-tmux/tmux-tiles.png" alt="tmux-tiles" /></p>
+<p>If we want to <strong>switch between tiles</strong>, we need to use the following key combination: Hold <code>Ctrl</code>, press <code>B</code> (while holding <code>Ctrl</code>), release buttons and press <code>O</code> key (&ldquo;O&rdquo; letter - not zero).</p>
+<h2 id="creating-4-tiles-automatically">
+  Creating 4 tiles automatically
+  <a class="anchor" href="#creating-4-tiles-automatically">#</a>
+</h2>
+<p>Popular terminal windows configuration is 4 tiles (2 columns and 2 rows). We can split windows horizontally or vertically pretty fast with default shortcuts, but creating layout consisting of 4 tiles requires some clicking. I&rsquo;ve written a simple script, which generates such layout for us automatically and saves the time. First, we need to install <a href="http://www.semicomplete.com/projects/xdotool/">xdotool</a>:</p>
+<pre><code>$ sudo apt-get install xdotool
+</code></pre><p>Next, we can create file named <code>tmux-4tiles</code>, set its <code>chmod</code> to 777 and save it in <code>/usr/local/bin/</code> directory. File should have the following content:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">\#</span> generates <span style="color:#ae81ff">4</span> tiles in tmux <span style="color:#f92672">(</span>requires tmux and xdotool<span style="color:#f92672">)</span>
+xdotool key ctrl+b shift+5 <span style="color:#f92672">&amp;&amp;</span> xdotool key ctrl+b shift+48 <span style="color:#f92672">&amp;&amp;</span> xdotool key ctrl+b o <span style="color:#f92672">&amp;&amp;</span> xdotool key ctrl+b shift+48 ctrl+b o ctrl+b o ctrl+b o <span style="color:#f92672">&amp;&amp;</span> clear
+</code></pre></div><p>When, we are done, we can enter tmux:</p>
+<pre><code>$ tmux
+</code></pre><p>and run the script:</p>
+<pre><code>$ tmux-4tiles
+</code></pre><p>After that, we&rsquo;ll get the following layout:</p>
+<p><img src="/posts/2015/using-tmux/tmux-4tiles.png" alt="tmux-4tiles" /></p>
+<p>We can automate generating different layouts for our purposes in the same way.</p>
+<h2 id="recap">
+  Recap
+  <a class="anchor" href="#recap">#</a>
+</h2>
+<p>In my opinion, tmux is very useful tool for people working with terminal who want to have organized windows in an elegant way.</p>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li>tmux website: <a href="https://tmux.github.io/">https://tmux.github.io/</a></li>
+<li>tmux source code: <a href="https://github.com/tmux/tmux">https://github.com/tmux/tmux</a></li>
+<li>xdotool website: <a href="http://www.semicomplete.com/projects/xdotool/">http://www.semicomplete.com/projects/xdotool/</a></li>
+<li>xdotool source code: <a href="https://github.com/jordansissel/xdotool">https://github.com/jordansissel/xdotool</a></li>
+<li>cliclick: <a href="http://www.bluem.net/en/mac/cliclick/">http://www.bluem.net/en/mac/cliclick/</a> - an alternative for xdotool for Mac OS X users</li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/using-tmux.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-use-tiling">How to use tiling?</a></li>
+    <li><a href="#creating-4-tiles-automatically">Creating 4 tiles automatically</a></li>
+    <li><a href="#recap">Recap</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

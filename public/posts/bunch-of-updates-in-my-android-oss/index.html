@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with Kotlin language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it&rsquo;s still in beta version.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Bunch of updates in my OSS for Android" />
+<meta property="og:description" content="Introduction #  In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with Kotlin language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it&rsquo;s still in beta version." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/bunch-of-updates-in-my-android-oss/" />
+<meta property="article:published_time" content="2015-11-08T16:53:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Bunch of updates in my OSS for Android | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Bunch of updates in my OSS for Android</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#summary-of-updates">Summary of updates</a>
+      <ul>
+        <li><a href="#reactivenetworkhttpsgithubcompwittchenreactivenetwork-v-013"><a href="https://github.com/pwittchen/ReactiveNetwork">ReactiveNetwork</a> v. 0.1.3</a></li>
+        <li><a href="#reactivesensorshttpsgithubcompwittchenreactivesensors"><a href="https://github.com/pwittchen/ReactiveSensors">ReactiveSensors</a></a></li>
+        <li><a href="#reactivebeaconshttpsgithubcompwittchenreactivebeacons-v-030"><a href="https://github.com/pwittchen/ReactiveBeacons">ReactiveBeacons</a> v. 0.3.0</a></li>
+        <li><a href="#weathericonviewhttpsgithubcompwittchenweathericonview-v-110"><a href="https://github.com/pwittchen/WeatherIconView">WeatherIconView</a> v. 1.1.0</a></li>
+        <li><a href="#prefserhttpsgithubcompwittchenprefser-v-202"><a href="https://github.com/pwittchen/prefser">Prefser</a> v. 2.0.2</a></li>
+        <li><a href="#kiraihttpsgithubcompwittchenkirai-v-110"><a href="https://github.com/pwittchen/kirai">Kirai</a> v. 1.1.0</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/bunch-of-updates-in-my-android-oss/">Bunch of updates in my OSS for Android</a>
+  </h1>
+  
+  <h5>Nov 8, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/open-source/">open-source</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with <a href="https://kotlinlang.org/">Kotlin</a> language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it&rsquo;s still in beta version. If you are interested in Kotlin programming for Android, take a look at <a href="https://kotlinlang.org/docs/tutorials/kotlin-android.html">Getting started with Android and Kotlin</a> guide from official Kotlin website. You can also take a look at <a href="https://github.com/pwittchen/ReactiveNetwork/tree/master/app-kotlin">one of my sample apps</a> written in Kotlin and <a href="https://github.com/pwittchen/ReactiveNetwork/blob/master/app-kotlin/build.gradle">its configuration in Gradle</a>.</p>
+<h2 id="summary-of-updates">
+  Summary of updates
+  <a class="anchor" href="#summary-of-updates">#</a>
+</h2>
+<h3 id="reactivenetworkhttpsgithubcompwittchenreactivenetwork-v-013">
+  <a href="https://github.com/pwittchen/ReactiveNetwork">ReactiveNetwork</a> v. 0.1.3
+  <a class="anchor" href="#reactivenetworkhttpsgithubcompwittchenreactivenetwork-v-013">#</a>
+</h3>
+<ul>
+<li>fixed bug with incorrect status after going back from background inside the sample app reported in issue <a href="https://github.com/pwittchen/ReactiveNetwork/issues/31">#31</a></li>
+<li>fixed RxJava usage in sample app</li>
+<li>fixed RxJava usage in code snippets in <code>README.md</code></li>
+<li>added static code analysis</li>
+<li>updated code formatting</li>
+<li>added sample <a href="https://github.com/pwittchen/ReactiveNetwork/tree/master/app-kotlin">sample app in Kotlin</a></li>
+</ul>
+<p>Unfortunately, in Android we cannot use Java 8 yet and code should be written in Java 7. We can do some hacks like using RetroLambda or libraries implementing part of functionalities available in Java 8 like streams, but these solutions are still hacks - not the right way. In Kotlin we can use lambdas like in Java 8. In addition, we have a lot of other cool features, which allow us to write less lines of code and detect possible mistakes while writing apps. E.g. Kotlin helps us to avoid NPEs with its additional operators like <code>!!</code>, which tells us that NPE can occur, so we can think of eliminating this possibility. If we don&rsquo;t use this operator when we should, IntelliJ IDEA or Android Studio will warn us. Below, we can see exemplary usage of ReactiveNetwork library with Kotlin. In this code snippet, we are using so called <em>synthetic properties</em> from <a href="https://kotlinlang.org/docs/tutorials/android-plugin.html">Kotlin Extensions for Android</a>. Value <code>connectivity_status</code> is an id of the view defined in XML layout. We can call it directly in Kotlin code and treat as object. It&rsquo;s really useful and allows us to avoid calling <code>findViewById(...)</code> method for every view in Activity or injecting views with additional libraries like ButterKnife or KotterKnife. It means that we can get rid of a lot of boilerplate code.</p>
+<h3 id="reactivesensorshttpsgithubcompwittchenreactivesensors">
+  <a href="https://github.com/pwittchen/ReactiveSensors">ReactiveSensors</a>
+  <a class="anchor" href="#reactivesensorshttpsgithubcompwittchenreactivesensors">#</a>
+</h3>
+<ul>
+<li>fixed RxJava usage in sample app</li>
+<li>fixed RxJava usage in code snippets in <code>README.md</code></li>
+<li>added static code analysis</li>
+<li>refactored sample app and removed repetitions in code</li>
+</ul>
+<p>In this project I made only changes inside the documentation, improved Gradle configuration and added another sample app. There were no changes inside the library code, so there was no need to release new library version to Maven Central Repository. Moreover, I&rsquo;m going to add sample app in Kotlin for this project in the nearest future.</p>
+<h3 id="reactivebeaconshttpsgithubcompwittchenreactivebeacons-v-030">
+  <a href="https://github.com/pwittchen/ReactiveBeacons">ReactiveBeacons</a> v. 0.3.0
+  <a class="anchor" href="#reactivebeaconshttpsgithubcompwittchenreactivebeacons-v-030">#</a>
+</h3>
+<ul>
+<li>replaced <code>distinct()</code> operator with <code>distinctUntilChanged()</code> operator in <code>Observable observe()</code> method in <code>ReactiveBeacons</code> class</li>
+<li>added permissions <code>ACCESS_FINE_LOCATION</code> and <code>ACCESS_COARSE_LOCATION</code> to satisfy requirements of Android 6</li>
+<li>renamed <code>void requestBluetoothAccessIfDisabled(activity)</code> method to <code>void requestBluetoothAccess(activity)</code></li>
+<li>added <code>boolean isBluetoothEnabled()</code> method</li>
+<li>added <code>boolean isLocationEnabled(context)</code> method</li>
+<li>added <code>void requestLocationAccess(activity)</code> method</li>
+<li>modified sample app in order to make it work on Android 6 Marshmallow</li>
+<li>reduced target API from 23 to 22 in library due to problems with additional permissions and new permission model (it can be subject of improvements in the next releases)</li>
+<li>added package private <code>AccessRequester</code> class</li>
+<li>added <a href="https://github.com/pwittchen/ReactiveBeacons/tree/master/app-kotlin">sample app in Kotlin</a></li>
+</ul>
+<h3 id="weathericonviewhttpsgithubcompwittchenweathericonview-v-110">
+  <a href="https://github.com/pwittchen/WeatherIconView">WeatherIconView</a> v. 1.1.0
+  <a class="anchor" href="#weathericonviewhttpsgithubcompwittchenweathericonview-v-110">#</a>
+</h3>
+<ul>
+<li>added icons from 2.0 version of the original <a href="https://github.com/erikflowers/weather-icons/">weather-icons project</a></li>
+<li>updated compile sdk version</li>
+<li>updated Gradle Build Tools version</li>
+</ul>
+<h3 id="prefserhttpsgithubcompwittchenprefser-v-202">
+  <a href="https://github.com/pwittchen/prefser">Prefser</a> v. 2.0.2
+  <a class="anchor" href="#prefserhttpsgithubcompwittchenprefser-v-202">#</a>
+</h3>
+<ul>
+<li>fixed bug reported in issue <a href="https://github.com/pwittchen/prefser/issues/70">#70</a>: <code>get(...)</code> method now returns a <code>null</code> value instead of &ldquo;null&rdquo; string when setting default value to null of String type</li>
+<li>fixed RxJava usage in sample app</li>
+<li>fixed RxJava usage in code snippets in <code>README.md</code></li>
+<li>changed code formatting to <code>SquareAndroid</code></li>
+<li>added static code analysis</li>
+<li>improved code according to static code analysis suggestions</li>
+</ul>
+<h3 id="kiraihttpsgithubcompwittchenkirai-v-110">
+  <a href="https://github.com/pwittchen/kirai">Kirai</a> v. 1.1.0
+  <a class="anchor" href="#kiraihttpsgithubcompwittchenkirai-v-110">#</a>
+</h3>
+<ul>
+<li>removed <code>formatter(...)</code> method from <code>Kirai</code> class</li>
+<li>added <code>format(...)</code> method accepting implementation of <code>Formatter</code> interface to <code>Kirai</code> class</li>
+<li>added <code>Syntax</code> interface and <code>HtmlSyntax</code> class implementing this interface</li>
+<li>added <code>put(String key, Object value, Syntax syntax)</code> method to <code>Piece</code> class</li>
+<li>set <code>HtmlSyntax</code> as default <code>Syntax</code> implementation in <code>Piece</code> class</li>
+<li>removed dependencies to Android SDK</li>
+<li>updated project dependencies</li>
+<li>applied <code>Square</code> code style</li>
+<li>updated tests, sample app and code snippets in <code>README.md</code></li>
+<li>added gh-pages with JavaDoc</li>
+</ul>
+<p>Any suggestions of further improvements are more than welcome as usual!</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/bunch-of-updates-in-my-android-oss.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#summary-of-updates">Summary of updates</a>
+      <ul>
+        <li><a href="#reactivenetworkhttpsgithubcompwittchenreactivenetwork-v-013"><a href="https://github.com/pwittchen/ReactiveNetwork">ReactiveNetwork</a> v. 0.1.3</a></li>
+        <li><a href="#reactivesensorshttpsgithubcompwittchenreactivesensors"><a href="https://github.com/pwittchen/ReactiveSensors">ReactiveSensors</a></a></li>
+        <li><a href="#reactivebeaconshttpsgithubcompwittchenreactivebeacons-v-030"><a href="https://github.com/pwittchen/ReactiveBeacons">ReactiveBeacons</a> v. 0.3.0</a></li>
+        <li><a href="#weathericonviewhttpsgithubcompwittchenweathericonview-v-110"><a href="https://github.com/pwittchen/WeatherIconView">WeatherIconView</a> v. 1.1.0</a></li>
+        <li><a href="#prefserhttpsgithubcompwittchenprefser-v-202"><a href="https://github.com/pwittchen/prefser">Prefser</a> v. 2.0.2</a></li>
+        <li><a href="#kiraihttpsgithubcompwittchenkirai-v-110"><a href="https://github.com/pwittchen/kirai">Kirai</a> v. 1.1.0</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

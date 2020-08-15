@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message&hellip;
+/dev/kvm is not found #  KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V).">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Solving problems with AVD and KVM on Linux" />
+<meta property="og:description" content="I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message&hellip;
+/dev/kvm is not found #  KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/solving-problems-with-avd-and-kvm-on-linux/" />
+<meta property="article:published_time" content="2018-08-16T22:01:06+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Solving problems with AVD and KVM on Linux | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Solving problems with AVD and KVM on Linux</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#devkvm-is-not-found">/dev/kvm is not found</a></li>
+    <li><a href="#devkvm-device-permission-denied">/dev/kvm device permission denied</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/solving-problems-with-avd-and-kvm-on-linux/">Solving problems with AVD and KVM on Linux</a>
+  </h1>
+  
+  <h5>Aug 16, 2018</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><p>I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message&hellip;</p>
+<h2 id="devkvm-is-not-found">
+  /dev/kvm is not found
+  <a class="anchor" href="#devkvm-is-not-found">#</a>
+</h2>
+<p>KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V). In order to enable KVM, I needed to restart the computer and enter the BIOS by pressing <code>F1</code> key before the system boot. Next, I entered <code>Security</code> tab and enabled <code>Intel Virtualization Technology</code> and <code>Intel VT-d Feature</code>. Now, I could press <code>F10</code> to save, exit nad restart the computer. Unfortunately, that wasn&rsquo;t the end of the story. I saw another error message&hellip;</p>
+<h2 id="devkvm-device-permission-denied">
+  /dev/kvm device permission denied
+  <a class="anchor" href="#devkvm-device-permission-denied">#</a>
+</h2>
+<p>Luckily, I found answer to this issue on <a href="https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied$">StackOverflow</a>. I just needed to install <code>qemu-kvm</code> and add my user to the <code>kvm</code> group.</p>
+<p>I installed required software:</p>
+<pre><code>sudo apt install qemu-kvm
+</code></pre><p>Then, checked the ownership of <code>/dev/kvm</code>:</p>
+<pre><code>ls -al /dev/kvm
+</code></pre><p>The user was root, the group kvm. To check which users are in the kvm group, I could use:</p>
+<pre><code>grep kvm /etc/group
+</code></pre><p>This returned:</p>
+<pre><code>kvm:x:some_number:
+</code></pre><p>As there is nothing left to the final <code>:</code>, there are no users in the kvm group.</p>
+<p>To add the user <code>username</code> to the kvm group, I could use:</p>
+<pre><code>sudo adduser username kvm
+</code></pre><p>I can check my <code>username</code>, by typing:</p>
+<pre><code>whoami
+</code></pre><p>Now, I could check group members once again with:</p>
+<pre><code>grep kvm /etc/group
+</code></pre><p>My user should be there. Next, I could just restart the machine, create new AVD, start it and everything worked! I could finally use my Android emulator. Optionally, if you still have a problem, you can call the following command:</p>
+<pre><code>sudo chown username /dev/kvm
+</code></pre><p>and replace <code>username</code> with your username</p>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/36527278/dev-kvm-not-found-error-on-windows-in-android-studio">https://stackoverflow.com/questions/36527278/dev-kvm-not-found-error-on-windows-in-android-studio</a></li>
+<li><a href="https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied">https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine">https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine</a></li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/solving-problems-with-avd-and-kvm-on-linux.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#devkvm-is-not-found">/dev/kvm is not found</a></li>
+    <li><a href="#devkvm-device-permission-denied">/dev/kvm device permission denied</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

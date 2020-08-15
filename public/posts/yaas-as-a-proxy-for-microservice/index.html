@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  The company, where I currently work - SAP Hybris is developing a project called YaaS, which is an abbreviation of Hybris as a Service. Unfortunately, this article is not sponsored yet :). What a pity :(. I just like to understand many things &amp; how they work to see the bigger picture. Moreover, company strategy is to leverage YaaS and search for the new possibilities and use cases of this project.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Basic usage of YaaS as a proxy for the microservice" />
+<meta property="og:description" content="Introduction #  The company, where I currently work - SAP Hybris is developing a project called YaaS, which is an abbreviation of Hybris as a Service. Unfortunately, this article is not sponsored yet :). What a pity :(. I just like to understand many things &amp; how they work to see the bigger picture. Moreover, company strategy is to leverage YaaS and search for the new possibilities and use cases of this project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/yaas-as-a-proxy-for-microservice/" />
+<meta property="article:published_time" content="2017-04-30T22:45:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Basic usage of YaaS as a proxy for the microservice | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Basic usage of YaaS as a proxy for the microservice</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#creating-a-simple-proxy-for-the-microservice">Creating a simple proxy for the microservice</a></li>
+    <li><a href="#securing-the-endpoint-of-the-microservice">Securing the endpoint of the microservice</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/yaas-as-a-proxy-for-microservice/">Basic usage of YaaS as a proxy for the microservice</a>
+  </h1>
+  
+  <h5>Apr 30, 2017</h5>
+
+
+
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>The company, where I currently work - <a href="http://hybris.com">SAP Hybris</a> is developing a project called <a href="https://www.yaas.io/">YaaS</a>, which is an abbreviation of Hybris as a Service. Unfortunately, this article is not sponsored yet :). What a pity :(. I just like to understand many things &amp; how they work to see the bigger picture. Moreover, company strategy is to leverage YaaS and search for the new possibilities and use cases of this project. There are situations where delegating some work to a separate service makes sense so this knowledge may be useful even when we&rsquo;re developing the monolithic enterprise applications. That&rsquo;s why I wrote this article. I work in a completely different project - Enterprise Commerce Platform, where I&rsquo;m the part of the Backoffice team. As you can read on the official website, <em>YaaS is a microservices ecosystem helping businesses to rapidly augment and build new, highly flexible solutions</em>. It&rsquo;s kind of marketing statement, which business people may like. Nevertheless, for developers, it&rsquo;s just a bunch of buzzwords, which does not help you to understand this project. One of the aims of this article is to explain it in a simple and clear way. <a href="http://yaas.io"><img src="/posts/2017/yaas-as-a-proxy-for-microservice/yaas_header.jpg" alt="yaas - hybris as a service" /></a> From <strong>the technical point of view</strong>, YaaS gives you the following possibilities:</p>
+<ul>
+<li>it can be a proxy for your microservice, which can be deployed anywhere</li>
+<li>it gives you separate proxy servers for EU and US, which you can use depending on the server or user location</li>
+<li>it provides you a domain like <code>api.eu.yaas.io/yourorganization/yourservice/</code></li>
+<li>it provides secured connection</li>
+<li>it gives a mechanism, which allows you to secure endpoints of your microservice via dynamically generated token</li>
+<li>it gives you the possibility to manage access to your service for advanced use cases with features like clients, roles, etc.</li>
+<li>it gives you monitoring possibilities</li>
+<li>it allows you to perform versioning of your API</li>
+<li>it allows you to integrate other services/packages from <a href="https://market.yaas.io/">YaaS Market</a> with your service</li>
+<li>it gives you web interface called <a href="https://builder.yaas.io/">YaaS Builder</a>, which you can use for managing your projects and organization</li>
+</ul>
+<p>YaaS <strong>is NOT</strong>:</p>
+<ul>
+<li>the hosting platform like Heroku or AWS - you need to have another place where you can deploy your service (like Heroku or whatever)</li>
+<li>the part of the Core Hybris Platform - it&rsquo;s completely separate project, but it can be integrated with the Hybris Platform</li>
+</ul>
+<p>The official website of the project is: <a href="https://www.yaas.io/">www.yaas.io</a>. In this article, I won&rsquo;t explain all the features of YaaS. I will simply show you:</p>
+<ul>
+<li>how to create a simple proxy for your microservice</li>
+<li>how to secure endpoint of your microservice</li>
+<li>how to access secured endpoint of your microservice</li>
+</ul>
+<p>Maybe I&rsquo;ll explain more features in the separate articles in the future.</p>
+<h2 id="creating-a-simple-proxy-for-the-microservice">
+  Creating a simple proxy for the microservice
+  <a class="anchor" href="#creating-a-simple-proxy-for-the-microservice">#</a>
+</h2>
+<p>We need to do the following steps:</p>
+<ol>
+<li>Go to <a href="https://builder.yaas.io">https://builder.yaas.io</a></li>
+<li>Create an account &amp; log in</li>
+<li>Create an organization</li>
+<li>Create a project</li>
+<li>Within the project create a service</li>
+<li>Provide address to your service</li>
+<li>Provide API version (e.g. <code>v1</code>)</li>
+<li>Deploy service</li>
+<li>Right now, your service is deployed, but not accessible yet</li>
+<li>Create a Client and assign it to your service</li>
+<li>Now you should be able to access your service at: <code>https://api.eu.yaas.io/orgranization/service/v1</code></li>
+</ol>
+<p>Below you can see a screenshot from service configuration inside the YaaS Builder.</p>
+<p><img src="/posts/2017/yaas-as-a-proxy-for-microservice/yass_builder_service.png" alt="" /></p>
+<h2 id="securing-the-endpoint-of-the-microservice">
+  Securing the endpoint of the microservice
+  <a class="anchor" href="#securing-the-endpoint-of-the-microservice">#</a>
+</h2>
+<p>We have created our service. Now, we want to secure its endpoint. To do so, we can create Authorization Rule from the Service configuration inside YaaS Builder.</p>
+<p><img src="/posts/2017/yaas-as-a-proxy-for-microservice/yaas_builder_rule.png" alt="" /></p>
+<p>We can define methods of the HTTP request, endpoint address, and other parameters. When we&rsquo;re done, we can proceed to more tricky part. Authorization procedure of the microservice endpoint is presented in the scheme below.</p>
+<p><img src="/posts/2017/yaas-as-a-proxy-for-microservice/calling_yaas_microservice_diagram.png" alt="calling microservice with authorization via YaaS proxy" /></p>
+<p>First, we need to obtain Bearer ID. To do so, we need to perform HTTP request with Client ID and Client Secret. We can do it from terminal via curl:</p>
+<pre><code>curl -X POST -i
+-H &quot;Content-Type: application/x-www-form-urlencoded&quot;
+-d &quot;grant_type=client_credentials&amp;client_id=YOUR_CLIENT_ID&amp;client_secret=YOUR_CLIENT_SECRET&quot;
+https://api.eu.yaas.io/hybris/oauth2/v1/token
+</code></pre><p>Then, we&rsquo;ll receive a response like that:</p>
+<pre><code>{&quot;token_type&quot;:&quot;Bearer&quot;,&quot;access_token&quot;:&quot;023-018f03da-cdb7-4710-a4cf-70f89e23003f&quot;,&quot;expires_in&quot;:3600,&quot;scope&quot;:&quot;hybris.tenant=pwtest&quot;}
+</code></pre><p>and we can make an authorized call to our microservice:</p>
+<pre><code>curl -X POST -i
+-H &quot;Authorization: Bearer 023-018f03da-cdb7-4710-a4cf-70f89e23003f&quot;
+-H &quot;Content-Type: application/json&quot;
+-d &quot;&quot;
+https://api.eu.yaas.io/pwittchen/test/v1/endpoint
+</code></pre><p>after that, we should receive a response from the microservice. Note, that Bearer ID will be valid for the particular amount of time. <strong>Hint #1</strong>: To make calls more readable in the article, I split them into lines. If you&rsquo;re making a real call it&rsquo;s better to have whole instruction in <strong>a single line</strong>. <strong>Hint #2</strong>: You can get Client Secret and Client ID from the YaaS Builder while editing your Client.</p>
+<h2 id="summary">
+  Summary
+  <a class="anchor" href="#summary">#</a>
+</h2>
+<p>As we could see, creating a microservice proxy and securing the endpoint is not so complicated, but it&rsquo;s not straightforward as well. It requires some knowledge about YaaS and its design. Using this approach won&rsquo;t be a good idea every time, but I think there are use cases when it can be useful. Especially, when we care about monitoring &amp; security and when we want to have unified &amp; controlled access to our services. Here are a few of my ideas of delegating work to the microservice from the monolithic enterprise commerce application:</p>
+<ul>
+<li>file or image storage</li>
+<li>backups of the data</li>
+<li>classification of the products - e.g. we can delegate images to the external service, which will use machine learning and neural networks to classify products by colors or by something else</li>
+<li>long running operations &amp; queues - e.g. we can delegate such things to the separate microservice to relieve CPU &amp; Memory of the server, where core system is running and simply receive push notification with final result of the operation from the microservice when the work is done</li>
+<li>sending e-mails and other types of notifications</li>
+<li>and more&hellip; (if you have your own ideas - share them in comments!)</li>
+</ul>
+<p>I think the basic idea could be the distribution of computations to the different servers, what may extend capabilities of the core system, make it faster, lighter and more stable. In addition, it should make work of developers easier and more joyful because they could work on the smaller parts of the system, which have a clearly specified goal and smaller codebase, which is easier to manage.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/yaas-as-a-proxy-for-microservice.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#creating-a-simple-proxy-for-the-microservice">Creating a simple proxy for the microservice</a></li>
+    <li><a href="#securing-the-endpoint-of-the-microservice">Securing the endpoint of the microservice</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

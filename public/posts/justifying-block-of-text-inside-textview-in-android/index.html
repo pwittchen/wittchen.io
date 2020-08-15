@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Justifying text inside TextView in Android is not that simple as we may expect it to be. Unfortunately, Android does not have attribute for TextView, which supports justifying text. We can set alignment to the right or to the left, but we cannot simply justify text with generic attributes. In order to do that, we need to perform a few tricks. First of all, we need to create file named justified_textview.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Justifying block of text inside TextView in Android" />
+<meta property="og:description" content="Justifying text inside TextView in Android is not that simple as we may expect it to be. Unfortunately, Android does not have attribute for TextView, which supports justifying text. We can set alignment to the right or to the left, but we cannot simply justify text with generic attributes. In order to do that, we need to perform a few tricks. First of all, we need to create file named justified_textview." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/justifying-block-of-text-inside-textview-in-android/" />
+<meta property="article:published_time" content="2013-08-31T22:14:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Justifying block of text inside TextView in Android | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Justifying block of text inside TextView in Android</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/justifying-block-of-text-inside-textview-in-android/">Justifying block of text inside TextView in Android</a>
+  </h1>
+  
+  <h5>Aug 31, 2013</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>
+  </div>
+  
+
+
+  <p><p>Justifying text inside <code>TextView</code> in Android is not that simple as we may expect it to be. Unfortunately, Android does not have attribute for <code>TextView</code>, which supports justifying text. We can set alignment to the right or to the left, but we cannot simply justify text with generic attributes. In order to do that, we need to perform a few tricks. First of all, we need to create file named <code>justified_textview.css</code> and we need to put it into the <code>assets/</code> directory of our project. We will use it later in our custom view. Source code of this CSS stylesheet is presented below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.0</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">color</span>: rgb(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">justify</span>;
+    <span style="color:#75715e">/* background: rgba(217, 217, 217, 1.0);  you can set your background here,
+</span><span style="color:#75715e">                                              it&#39;s kind of fix for older versions of Android OS */</span>
+}
+
+@<span style="color:#66d9ef">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">-webkit-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">)</span> {
+    <span style="color:#75715e">/* CSS for high-density screens */</span>
+    <span style="color:#f92672">body</span> {
+        <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.05</span><span style="color:#66d9ef">em</span>;
+    }
+}
+
+@<span style="color:#66d9ef">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">-webkit-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">2</span>.<span style="color:#a6e22e">0</span><span style="color:#f92672">)</span> {
+    <span style="color:#75715e">/* CSS for extra high-density screens */</span>
+    <span style="color:#f92672">body</span> {
+        <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.1</span><span style="color:#66d9ef">em</span>;
+    }
+}
+</code></pre></div><p>Next, we need to create class for customized view extending WebView. Let&rsquo;s call it <em>JustifiedTextView</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.github.sample.view<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> android.content.Context<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.content.res.TypedArray<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.graphics.Color<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.os.Build<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.text.TextUtils<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.util.AttributeSet<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.util.TypedValue<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.view.View<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.webkit.WebView<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> com.github.sample.R<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JustifiedTextView</span> <span style="color:#66d9ef">extends</span> WebView <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> String text<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">JustifiedTextView</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span>context<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">JustifiedTextView</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Context context<span style="color:#f92672">,</span> <span style="color:#66d9ef">final</span> AttributeSet attrs<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span>context<span style="color:#f92672">,</span> attrs<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">JustifiedTextView</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Context context<span style="color:#f92672">,</span> <span style="color:#66d9ef">final</span> AttributeSet attrs<span style="color:#f92672">,</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> defStyle<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>context<span style="color:#f92672">,</span> attrs<span style="color:#f92672">,</span> defStyle<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>attrs <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">final</span> TypedValue typedValue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TypedValue<span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">final</span> TypedArray typedArray <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">obtainStyledAttributes</span><span style="color:#f92672">(</span>attrs<span style="color:#f92672">,</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">styleable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">JustifiedTextView</span><span style="color:#f92672">,</span> defStyle<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>typedArray <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                typedArray<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">styleable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">JustifiedTextView_text</span><span style="color:#f92672">,</span> typedValue<span style="color:#f92672">);</span>
+
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>typedValue<span style="color:#f92672">.</span><span style="color:#a6e22e">resourceId</span> <span style="color:#f92672">&gt;</span> 0 <span style="color:#f92672">&amp;&amp;</span> TextUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">(</span>text<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                    text <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>typedValue<span style="color:#f92672">.</span><span style="color:#a6e22e">resourceId</span><span style="color:#f92672">);</span>
+                    text<span style="color:#f92672">.</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\n&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&lt;br /&gt;&#34;</span><span style="color:#f92672">);</span>
+                    loadDataWithBaseURL<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;file:///android_asset/&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&lt;html&gt;&lt;head&gt;&#34;</span> <span style="color:#f92672">+</span>
+                            <span style="color:#e6db74">&#34;&lt;link rel=\&#34;stylesheet\&#34; type=\&#34;text/css\&#34; href=\&#34;justified_textview.css\&#34; /&gt;&#34;</span> <span style="color:#f92672">+</span>
+                            <span style="color:#e6db74">&#34;&lt;/head&gt;&lt;body&gt;&#34;</span> <span style="color:#f92672">+</span> text <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/body&gt;&lt;/html&gt;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;text/html&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF8&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+                <span style="color:#f92672">}</span>
+
+                setTransparentBackground<span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setTransparentBackground</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>Build<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION</span><span style="color:#f92672">.</span><span style="color:#a6e22e">SDK_INT</span> <span style="color:#f92672">&gt;=</span> 11<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                setLayerType<span style="color:#f92672">(</span>View<span style="color:#f92672">.</span><span style="color:#a6e22e">LAYER_TYPE_SOFTWARE</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> NoSuchMethodError e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;could not set layer&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            setBackgroundColor<span style="color:#f92672">(</span>Color<span style="color:#f92672">.</span><span style="color:#a6e22e">TRANSPARENT</span><span style="color:#f92672">);</span>
+            setBackgroundDrawable<span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+            setBackgroundResource<span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getText</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> text<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>String currentText<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> currentText<span style="color:#f92672">;</span>
+        text<span style="color:#f92672">.</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\n&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&lt;br /&gt;&#34;</span><span style="color:#f92672">);</span>
+        loadDataWithBaseURL<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;file:///android_asset/&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&lt;html&gt;&lt;head&gt;&#34;</span> <span style="color:#f92672">+</span>
+                <span style="color:#e6db74">&#34;&lt;link rel=\&#34;stylesheet\&#34; type=\&#34;text/css\&#34; href=\&#34;justified_textview.css\&#34; /&gt;&#34;</span> <span style="color:#f92672">+</span>
+                <span style="color:#e6db74">&#34;&lt;/head&gt;&lt;body&gt;&#34;</span> <span style="color:#f92672">+</span> text <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/body&gt;&lt;/html&gt;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;text/html&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF8&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+
+        setTransparentBackground<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>After that, we need to update <code>res/values/attrs.xml</code> file and put inside the following declaration:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;declare-styleable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;JustifiedTextView&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;attr</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">format=</span><span style="color:#e6db74">&#34;reference&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/declare-styleable&gt;</span>
+</code></pre></div><p>Now, we are ready to use our custom <code>JustifiedTextView</code>. In order to do that, we need to create layout containing <code>JustifiedTextView</code> as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;com.github.sample.view.JustifiedTextView</span>
+            <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/tv_information&#34;</span>
+            <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+<span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span> <span style="color:#f92672">/&gt;</span>
+</code></pre></div><p>Next, we can access <code>JustifiedTextView</code> in our activity:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">private</span> JustifiedTextView tvInformation<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    tvInformation <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>JustifiedTextView<span style="color:#f92672">)</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tv_information</span><span style="color:#f92672">);</span>
+    tVinformation<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sample text&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// ...
+</span></code></pre></div><p>We can also set text inside XML layout instead of doing this programmatically. It depends on our project. We also should turn off hardware acceleration for given activity in <code>AndroidManifest.xml</code> file in order to bring this solution to work.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;activity</span>
+    <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;.activity.justifiedTextViewActivity&#34;</span>
+    <span style="color:#a6e22e">android:configChanges=</span><span style="color:#e6db74">&#34;orientation|keyboardHidden&#34;</span>
+    <span style="color:#a6e22e">android:hardwareAccelerated=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div><p>That&rsquo;s it. It&rsquo;s not perfect solution and it&rsquo;s kind of workaround, but I haven&rsquo;t found any better idea how to deal with this problem. I tested a few solutions and this one is, in my opinion, the best available and most elegant option for now. <strong>Please note: There may be a problem with proper execution of this solution on Android OS version lower than 3.0 (API 11).</strong></p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/justifying-block-of-text-inside-textview-in-android.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

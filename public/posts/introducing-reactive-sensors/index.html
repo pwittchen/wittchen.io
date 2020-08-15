@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Another month, another library. Recently, I&rsquo;ve released yet another reactive library called ReactiveSensors. It&rsquo;s an open-source Android library monitoring hardware sensors with RxJava Observables. Library is compatible with RxJava 1.0.&#43; and RxAndroid 1.0.&#43; and uses them under the hood.
+Library is available at: https://github.com/pwittchen/ReactiveSensors.
+In my opinion, hardware sensors are perfect case for applying RxJava, because in fact we&rsquo;re constantly receiving a stream of events emitted by many sensors. With Reactive Programming approach we have plenty of possibilities and easy API for manipulating received sensor&rsquo;s data.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Introducing ReactiveSensors" />
+<meta property="og:description" content="Another month, another library. Recently, I&rsquo;ve released yet another reactive library called ReactiveSensors. It&rsquo;s an open-source Android library monitoring hardware sensors with RxJava Observables. Library is compatible with RxJava 1.0.&#43; and RxAndroid 1.0.&#43; and uses them under the hood.
+Library is available at: https://github.com/pwittchen/ReactiveSensors.
+In my opinion, hardware sensors are perfect case for applying RxJava, because in fact we&rsquo;re constantly receiving a stream of events emitted by many sensors. With Reactive Programming approach we have plenty of possibilities and easy API for manipulating received sensor&rsquo;s data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/introducing-reactive-sensors/" />
+<meta property="article:published_time" content="2015-09-05T20:03:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Introducing ReactiveSensors | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Introducing ReactiveSensors</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/introducing-reactive-sensors/">Introducing ReactiveSensors</a>
+  </h1>
+  
+  <h5>Sep 5, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>
+  </div>
+  
+
+
+  <p><p>Another month, another library. Recently, I&rsquo;ve released yet another reactive library called <a href="https://github.com/pwittchen/ReactiveSensors">ReactiveSensors</a>. It&rsquo;s an open-source Android library monitoring hardware sensors with RxJava Observables. Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood.</p>
+<p>Library is available at: <a href="https://github.com/pwittchen/ReactiveSensors">https://github.com/pwittchen/ReactiveSensors</a>.</p>
+<p>In my opinion, hardware sensors are perfect case for applying RxJava, because in fact we&rsquo;re constantly receiving a stream of events emitted by many sensors. With Reactive Programming approach we have plenty of possibilities and easy API for manipulating received sensor&rsquo;s data.</p>
+<p>Usage of the library is really simple. You just need to subscribe an Observable with RxJava in the same way like in any other reactive library.</p>
+<p>Code sample below demonstrates how to observe Gyroscope sensor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> ReactiveSensors<span style="color:#f92672">(</span>context<span style="color:#f92672">).</span><span style="color:#a6e22e">observeSensor</span><span style="color:#f92672">(</span>Sensor<span style="color:#f92672">.</span><span style="color:#a6e22e">TYPE_GYROSCOPE</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>ReactiveSensorEvent<span style="color:#f92672">.</span><span style="color:#a6e22e">filterSensorChanged</span><span style="color:#f92672">())</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Action1<span style="color:#f92672">&lt;</span>ReactiveSensorEvent<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+      <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>ReactiveSensorEvent reactiveSensorEvent<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SensorEvent event <span style="color:#f92672">=</span> reactiveSensorEvent<span style="color:#f92672">.</span><span style="color:#a6e22e">getSensorEvent</span><span style="color:#f92672">();</span>
+
+        <span style="color:#66d9ef">float</span> x <span style="color:#f92672">=</span> event<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">[</span>0<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">float</span> y <span style="color:#f92672">=</span> event<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">[</span>1<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">float</span> z <span style="color:#f92672">=</span> event<span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">[</span>2<span style="color:#f92672">];</span>
+
+        String message <span style="color:#f92672">=</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;x = %f, y = %f, z = %f&#34;</span><span style="color:#f92672">,</span> x<span style="color:#f92672">,</span> y<span style="color:#f92672">,</span> z<span style="color:#f92672">);</span>
+
+        Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;gyroscope readings&#34;</span><span style="color:#f92672">,</span> message<span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">});</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Please note that we are filtering events occuring when sensors reading change with <code>ReactiveSensorEvent.filterSensorChanged()</code> method. There&rsquo;s also event describing change of sensor&rsquo;s accuracy, which can be filtered with <code>ReactiveSensorEvent.filterAccuracyChanged()</code> method. When we don&rsquo;t apply any filter, we will be notified both about sensor readings and accuracy changes.</p>
+<p>We can observe <strong>any hardware sensor</strong> in the same way. You can check <a href="http://developer.android.com/guide/topics/sensors/sensors_overview.html#sensors-intro">list of all sensors in official Android documentation</a>.</p>
+<p>I&rsquo;ve created <a href="https://github.com/pwittchen/ReactiveSensors#good-practices">section about Good Practices</a> regarding working with hardware sensors on Android in <code>README.md</code> file in the GitHub repository.You should also read an article about <a href="http://developer.android.com/guide/topics/sensors/sensors_overview.html#sensors-practices">Best Practices for Accessing and Using Sensors in official Android documentation</a>.</p>
+<p>Read more in the <code>README.md</code> file located in the repository of the library at: <a href="https://github.com/pwittchen/ReactiveSensors">https://github.com/pwittchen/ReactiveSensors</a>.</p>
+<p>You can also find JavaDoc at: <a href="http://pwittchen.github.io/ReactiveSensors/">http://pwittchen.github.io/ReactiveSensors/</a>.</p>
+<p>If you want to use ReactiveSensors in your project, add the following dependency to your <code>build.gradle</code> file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
+  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivesensors:0.0.1&#39;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Feel free to send me feedback, report an issue or fork the library!</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/introducing-reactive-sensors.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

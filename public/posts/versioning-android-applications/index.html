@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Versioning Android applications" />
+<meta property="og:description" content="When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/versioning-android-applications/" />
+<meta property="article:published_time" content="2014-09-13T12:49:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Versioning Android applications | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Versioning Android applications</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/versioning-android-applications/">Versioning Android applications</a>
+  </h1>
+  
+  <h5>Sep 13, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/gradle/">gradle</a>, 
+      <a href="/tags/git/">git</a>
+  </div>
+  
+
+
+  <p><p>When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">Boy Scout Rule</a> and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed. In addition, <a href="http://en.wikipedia.org/wiki/Quality_assurance">QA</a> Engineer needs to know, which version of the project he or she should check. That&rsquo;s why we should introduce versioning system to our project. In Android Manifest we have <code>versionCode</code> and <code>versionName</code>. The <code>versionCode</code> is used for updates on Google Play Store and it has to be integer value. We should increment <code>versionCode</code> before releasing new version of the application for the users. The <code>versionName</code> available in Android Manifest is a string value and we can use it to store information, which we need in a current project. When we use Git as a Version Control System, we can put SHA value of a specific commit into our version name. In addition, we can add date and time of compilation to this variable. After that, our <code>versionName</code> contains very detailed information about current version of our application. Exemplary <code>versionName</code> will look in as follows: <code>f935ea7-20140913144001</code>. We can obtain that with proper configuration of <code>build.gradle</code> file containing <code>buildTime()</code> method and <code>gitSha()</code> method. Please, take a look at creation of <code>versionName</code> in 35th line of the <code>build.gradle</code> file presented below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#f92672">import</span> java.text.SimpleDateFormat
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">buildTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">def</span> df <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyyMMddHHmmss&#34;</span><span style="color:#f92672">)</span>
+    df<span style="color:#f92672">.</span><span style="color:#a6e22e">setTimeZone</span><span style="color:#f92672">(</span>TimeZone<span style="color:#f92672">.</span><span style="color:#a6e22e">getTimeZone</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Europe/Warsaw&#34;</span><span style="color:#f92672">))</span>
+    <span style="color:#66d9ef">return</span> df<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">())</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;git rev-parse --short HEAD&#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">().</span><span style="color:#a6e22e">text</span><span style="color:#f92672">.</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">()</span>
+<span style="color:#f92672">}</span>
+
+apply plugin: <span style="color:#e6db74">&#39;android&#39;</span>
+apply plugin: <span style="color:#e6db74">&#39;android-test&#39;</span>
+
+android <span style="color:#f92672">{</span>
+    packagingOptions <span style="color:#f92672">{</span>
+        exclude <span style="color:#e6db74">&#39;LICENSE.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE&#39;</span>
+        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE.txt&#39;</span>
+        exclude <span style="color:#e6db74">&#39;values/attrs.xml&#39;</span>
+        exclude <span style="color:#e6db74">&#39;values/dimens.xml&#39;</span>
+        exclude <span style="color:#e6db74">&#39;values/colors.xml&#39;</span>
+    <span style="color:#f92672">}</span>
+
+    compileSdkVersion <span style="color:#ae81ff">19</span>
+    buildToolsVersion <span style="color:#e6db74">&#34;19.0.3&#34;</span>
+
+    defaultConfig <span style="color:#f92672">{</span>
+        minSdkVersion <span style="color:#ae81ff">14</span>
+        targetSdkVersion <span style="color:#ae81ff">19</span>
+        versionCode <span style="color:#ae81ff">1</span>
+        versionName <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> buildTime<span style="color:#f92672">()</span>
+    <span style="color:#f92672">}</span>
+
+    compileOptions <span style="color:#f92672">{</span>
+        sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
+        targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/versioning-android-applications.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

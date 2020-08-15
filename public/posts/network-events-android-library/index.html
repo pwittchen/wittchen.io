@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Please note: This post is outdated. Check newest API on the GitHub.
+Introduction #  NetworkEvents is an Android library, which I&rsquo;ve created recently for one of the projects. It uses Otto Event Bus to support event driven programming. We can use appropriate annotations and perform any action, when connectivity status changes. E.g. when device will go offline, connects to the mobile network, connects to the WiFi network, connects to the WiFi network with Internet access or connects to WiFi network without Internet access.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="NetworkEvents - Android library" />
+<meta property="og:description" content="Please note: This post is outdated. Check newest API on the GitHub.
+Introduction #  NetworkEvents is an Android library, which I&rsquo;ve created recently for one of the projects. It uses Otto Event Bus to support event driven programming. We can use appropriate annotations and perform any action, when connectivity status changes. E.g. when device will go offline, connects to the mobile network, connects to the WiFi network, connects to the WiFi network with Internet access or connects to WiFi network without Internet access." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/network-events-android-library/" />
+<meta property="article:published_time" content="2014-08-19T14:59:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>NetworkEvents - Android library | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>NetworkEvents - Android library</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#where-can-i-get-it">Where can I get it?</a></li>
+    <li><a href="#how-to-use-it">How to use it?</a>
+      <ul>
+        <li><a href="#1-initialize-eventbus-and-networkevents">1. Initialize EventBus and NetworkEvents</a></li>
+        <li><a href="#2-registerunregister-eventbus-and-networkevents">2. Register/Unregister EventBus and NetworkEvents</a></li>
+        <li><a href="#3-subscribe-events">3. Subscribe events</a></li>
+        <li><a href="#remarks">Remarks</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/network-events-android-library/">NetworkEvents - Android library</a>
+  </h1>
+  
+  <h5>Aug 19, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>
+  </div>
+  
+
+
+  <p><p><strong>Please note: This post is outdated. Check newest API on the <a href="https://github.com/pwittchen/NetworkEvents">GitHub</a>.</strong></p>
+<h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>NetworkEvents is an Android library, which I&rsquo;ve created recently for one of the projects. It uses <a href="http://square.github.io/otto/">Otto Event Bus</a> to support event driven programming. We can use appropriate annotations and perform any action, when connectivity status changes. E.g. when device will go offline, connects to the mobile network, connects to the WiFi network, connects to the WiFi network with Internet access or connects to WiFi network without Internet access. Android API does not allow to determine whether specific WiFi Access Point is connected to the Internet, but this library does. In addition, we can monitor change of the signal strength of available WiFi Access Points in the same manner as connectivity status.</p>
+<h2 id="where-can-i-get-it">
+  Where can I get it?
+  <a class="anchor" href="#where-can-i-get-it">#</a>
+</h2>
+<p>NetworkEvents library is open-source and available on GitHub at: <a href="https://github.com/pwittchen/NetworkEvents">https://github.com/pwittchen/NetworkEvents</a>. You can clone this repository and see how it works. It contains <a href="https://github.com/pwittchen/NetworkEvents/tree/master/example">sample project</a> using library module dependency. Network Events library is placed in separate module. Android Studio is recommended IDE.</p>
+<h2 id="how-to-use-it">
+  How to use it?
+  <a class="anchor" href="#how-to-use-it">#</a>
+</h2>
+<h3 id="1-initialize-eventbus-and-networkevents">
+  1. Initialize EventBus and NetworkEvents
+  <a class="anchor" href="#1-initialize-eventbus-and-networkevents">#</a>
+</h3>
+<p>You can do it in <code>onCreate()</code> method of the activity in case of using library in activity.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Bus bus <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Bus<span style="color:#f92672">();</span>
+NetworkEvents networkEvents <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> NetworkEvents<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> bus<span style="color:#f92672">);</span>
+</code></pre></div><h3 id="2-registerunregister-eventbus-and-networkevents">
+  2. Register/Unregister EventBus and NetworkEvents
+  <a class="anchor" href="#2-registerunregister-eventbus-and-networkevents">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResume</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onResume</span><span style="color:#f92672">();</span>
+  bus<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+  networkEvents<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onPause</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onPause</span><span style="color:#f92672">();</span>
+  bus<span style="color:#f92672">.</span><span style="color:#a6e22e">unregister</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+  networkEvents<span style="color:#f92672">.</span><span style="color:#a6e22e">unregister</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="3-subscribe-events">
+  3. Subscribe events
+  <a class="anchor" href="#3-subscribe-events">#</a>
+</h3>
+<p>We can subscribe two or just one event. It depends on our needs.
+The following events are available:</p>
+<ul>
+<li><code>ConnectivityStatusChangedEvent</code></li>
+<li><code>WifiAccessPointsSignalStrengthChangedEvent</code></li>
+</ul>
+<p>Subscribing events is simple. Look at the code below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Subscribe</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">connectivityStatusChanged</span><span style="color:#f92672">(</span>ConnectivityStatusChangedEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#75715e">// you can perform here any action you want to
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// in this example we are displaying toast with Connectivity Status
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// and another toast with WiFi info
+</span><span style="color:#75715e"></span>
+  Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> event<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnectivityStatus</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(),</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+  Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> event<span style="color:#f92672">.</span><span style="color:#a6e22e">getWifiInfo</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(),</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#a6e22e">@Subscribe</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wifiAccessPointsRefreshed</span><span style="color:#f92672">(</span>WifiAccessPointsSignalStrengthChangedEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#75715e">// you can perform here any action you want to
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// in this example we are retrieving list of available access points
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// and storing it on the List
+</span><span style="color:#75715e"></span>
+  WifiManager wifiManager <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>WifiManager<span style="color:#f92672">)</span> getSystemService<span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">WIFI_SERVICE</span><span style="color:#f92672">);</span>
+  List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;</span> accessPoints <span style="color:#f92672">=</span> wifiManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getScanResults</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>That’s it! For more details, check NetworkEvents project on GitHub at: <a href="https://github.com/pwittchen/NetworkEvents">https://github.com/pwittchen/NetworkEvents</a>
+<code>README.md</code> file also contains some details.</p>
+<h3 id="remarks">
+  Remarks
+  <a class="anchor" href="#remarks">#</a>
+</h3>
+<p>EventBus and NetworkEvents can be accessed via Singletons to avoid multiple instances of these classes.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/network-events-android-library.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#where-can-i-get-it">Where can I get it?</a></li>
+    <li><a href="#how-to-use-it">How to use it?</a>
+      <ul>
+        <li><a href="#1-initialize-eventbus-and-networkevents">1. Initialize EventBus and NetworkEvents</a></li>
+        <li><a href="#2-registerunregister-eventbus-and-networkevents">2. Register/Unregister EventBus and NetworkEvents</a></li>
+        <li><a href="#3-subscribe-events">3. Subscribe events</a></li>
+        <li><a href="#remarks">Remarks</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

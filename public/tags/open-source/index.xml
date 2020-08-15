@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>open-source on Piotr Wittchen</title>
+    <link>https://wittchen.io/tags/open-source/</link>
+    <description>Recent content in open-source on Piotr Wittchen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Jun 2018 23:39:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://wittchen.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Releasing ReactiveNetwork v. 1.0.0 (paying the technical debt)</title>
+      <link>https://wittchen.io/posts/releasing-reactive-network-1/</link>
+      <pubDate>Sun, 24 Jun 2018 23:39:18 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/releasing-reactive-network-1/</guid>
+      <description>Today, I&amp;rsquo;ve released next version of my most popular open-source project - ReactiveNetwork. I&amp;rsquo;ve released version 0.12.4 for RxJava1.x and version 1.0.0 for RxJava2.x. Please note, RxJava1.x is no longer officially supported and I&amp;rsquo;m going to follow the same approach in my RxJava-based projects. It&amp;rsquo;s not the first release of this project, but I&amp;rsquo;m breaking the API and removing existing methods, so I decided to stick to proper versioning standard. I didn&amp;rsquo;t always do it properly in the past, but it&amp;rsquo;s never too late.</description>
+    </item>
+    
+    <item>
+      <title>DroidCon Poland 2017 - Is your app really connected?</title>
+      <link>https://wittchen.io/posts/droidcon-poland-2017-is-your-app-really-connected/</link>
+      <pubDate>Sat, 02 Dec 2017 01:39:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/droidcon-poland-2017-is-your-app-really-connected/</guid>
+      <description>Yesterday, I gave a presentation about connectivity in the Android apps during the DroidCon Poland 2017 Conference in Kraków.
+Below, you can see slides from this presentation.
+ View slides on SpeakerDeck
+There&amp;rsquo;s also tweet related to this presentation from DroidCon Kraków:
+Piotr Wittchen tells us about how we can we keep the track of network &amp;#x1f30e; or Internet connectivity changes in our app &amp;#x1f4f1;&amp;#x1f198;&amp;#x1f642; pic.twitter.com/7YGGzNJeb2
+&amp;mdash; droidcon Kraków (@droidconkr) December 2, 2017  I hope, you enjoyed it.</description>
+    </item>
+    
+    <item>
+      <title>Introducing ReactiveAirplaneMode</title>
+      <link>https://wittchen.io/posts/introducing-reactive-airplane-mode/</link>
+      <pubDate>Tue, 15 Aug 2017 19:28:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
+      <description>I&amp;rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
+ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.</description>
+    </item>
+    
+    <item>
+      <title>Releasing ReactiveNetwork v. 0.11.0</title>
+      <link>https://wittchen.io/posts/reactivenetwork-v-0110-walled-garden/</link>
+      <pubDate>Sun, 06 Aug 2017 06:38:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/reactivenetwork-v-0110-walled-garden/</guid>
+      <description>In the latest release of ReactiveNetwork library, I focused on Walled Garden AKA Great Firewall support during checking Internet connectivity. There are countries with limited Internet access like China and in such cases, pinging commonly known host like www.google.com may have different results than in other countries because it may be blocked. We may get false positive results because users will generally have an access to the Internet, but they don&amp;rsquo;t have access only to several websites.</description>
+    </item>
+    
+    <item>
+      <title>Releasing ReactiveNetwork v. 0.10.0</title>
+      <link>https://wittchen.io/posts/releasing-reactivenetwork-v-0100/</link>
+      <pubDate>Thu, 20 Jul 2017 20:02:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/releasing-reactivenetwork-v-0100/</guid>
+      <description>I&amp;rsquo;ve recently released ReactiveNetwork library v. 0.10.0 for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&amp;rsquo;m developing for approximately 2 years now. In this version, I&amp;rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: Release for RxJava1.x
+ bumped RxJava1 version to 1.3.0 bumped test dependencies created Code of Conduct updated Kotlin version in sample apps added retrolambda to the sample Java app - issue #163 fixed behavior of network observing in disconnected state - issue #159  Release for RxJava2.</description>
+    </item>
+    
+    <item>
+      <title>Release of prefser v. 2.1.0 with RxJava2 support</title>
+      <link>https://wittchen.io/posts/release-of-prefser-210-with-rxjava2/</link>
+      <pubDate>Mon, 19 Jun 2017 16:56:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/release-of-prefser-210-with-rxjava2/</guid>
+      <description>I&amp;rsquo;ve recently released new version of prefser library for Android. In case you don&amp;rsquo;t know, it&amp;rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. This version has the new artifact, which has codebase migrated to RxJava2.x. As usual, I kept backward compatibility with RxJava1.x. You can find more details about the project at https://github.com/pwittchen/prefser. If you want to use it in your mobile project, you need the following dependencies in the build.</description>
+    </item>
+    
+    <item>
+      <title>Releasing Prefser v. 2.0.7</title>
+      <link>https://wittchen.io/posts/prefser-207/</link>
+      <pubDate>Sun, 28 May 2017 20:48:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/prefser-207/</guid>
+      <description>I&amp;rsquo;ve recently released new version of Prefser. It&amp;rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. The new version number is 2.0.7. In this release, I performed mostly internal work not related to the external library API. Nevertheless, it&amp;rsquo;s important for the library development in the future. The following things were done:
+ updated dependencies updated Gradle configuration migrated unit tests to Robolectric started executing unit tests on Travis CI added integration with codecov.</description>
+    </item>
+    
+    <item>
+      <title>Monitoring usage of open-source projects</title>
+      <link>https://wittchen.io/posts/monitoring-usage-of-oss/</link>
+      <pubDate>Tue, 02 May 2017 19:51:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/monitoring-usage-of-oss/</guid>
+      <description>While developing open-source projects it&amp;rsquo;s important to monitor usage of them. Having that information we know on which projects we should concentrate the most and which are becoming more popular. In this short article, I&amp;rsquo;ll present you two tools, which can help you with that.
+GitHub #  On GitHub, each project has &amp;ldquo;Traffic&amp;rdquo; tab. After clicking on it, we can see how many visitors and unique visitors we have, we can also check how many project clones and unique clones were performed (including CI servers).</description>
+    </item>
+    
+    <item>
+      <title>ReactiveNetwork - release v. 0.9.0 with RxJava2.x support</title>
+      <link>https://wittchen.io/posts/reactivenetwork-090-rxjava2/</link>
+      <pubDate>Tue, 11 Apr 2017 06:04:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/reactivenetwork-090-rxjava2/</guid>
+      <description>This time, I upgraded my another reactive Android open-source project called ReactiveNetwork to RxJava2.x. Many thanks goes to @tushar-acharya who performed initial migration to the newer version of RxJava. During migration, I&amp;rsquo;ve also created new package rx2 to avoid potential import conflicts during migration inside Android apps. Besides migration, I&amp;rsquo;ve updated sample apps, documentation &amp;amp; JavaDocs on Github pages. You can still use RxJava1.x version and it&amp;rsquo;s available on the branch with that name.</description>
+    </item>
+    
+    <item>
+      <title>How to make open-source projects, which people want to use</title>
+      <link>https://wittchen.io/posts/how-to-make-open-source-projects-which-people-want-to-use/</link>
+      <pubDate>Sat, 01 Apr 2017 17:22:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/how-to-make-open-source-projects-which-people-want-to-use/</guid>
+      <description>Today at Kariera IT conference in Katowice, Poland, I presented talk explaining how to make open-source projects, which people want to use from my perspective. Below, you can find slides from my presentation. Thank you all for the attendance, interesting questions and organizers for inviting me. I hope you learned something new. Of course, any constructive feedback for this talk will be appreciated :).
+ Link: How to make open-source projects, which people want to use</description>
+    </item>
+    
+    <item>
+      <title>ReactiveNetwork - release of v. 0.2.0</title>
+      <link>https://wittchen.io/posts/reactive-network-2/</link>
+      <pubDate>Thu, 11 Feb 2016 19:19:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/reactive-network-2/</guid>
+      <description>I&amp;rsquo;ve recently released new version of ReactiveNetwork library for Android. Here are the fresh release notes for version 0.2.0:
+ added possibility to observe WiFi signal level with observeWifiSignalLevel(context, numLevels) and observeWifiSignalLevel(context) method created WifiSignalLevel enum added internet check to parameters of getConnectivityStatus(context, checkInternet) method made getConnectivityStatus(context, checkInternet) method public changed String variable status in ConnectivityStatus enum to description and made it public changed output of the toString() method in ConnectivityStatus to keep consistency with another enum made ReactiveNetwork class non-final bumped Kotlin version in sample app to 1.</description>
+    </item>
+    
+    <item>
+      <title>New release of Kirai - elegant string formatting library for Java</title>
+      <link>https://wittchen.io/posts/new-release-of-kirai-140/</link>
+      <pubDate>Sun, 22 Nov 2015 20:34:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/new-release-of-kirai-140/</guid>
+      <description>I&amp;rsquo;ve recently released version 1.4.0 of Kirai library. Kirai means phrase in Swahili language. It&amp;rsquo;s string formatting library written in Java. It originally started as an Android library, but it evolved to pure Java library. It&amp;rsquo;s first possibilities were basic string formatting and text formatting for Android TextViews. Now, it allows to format strings for Java, Web, Android and even Unix Terminal! Have you ever wanted to have colorful and styled text in your mobile app, website or terminal app?</description>
+    </item>
+    
+    <item>
+      <title>Bunch of updates in my OSS for Android</title>
+      <link>https://wittchen.io/posts/bunch-of-updates-in-my-android-oss/</link>
+      <pubDate>Sun, 08 Nov 2015 16:53:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/bunch-of-updates-in-my-android-oss/</guid>
+      <description>Introduction #  In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with Kotlin language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it&amp;rsquo;s still in beta version.</description>
+    </item>
+    
+    <item>
+      <title>Introducing ReactiveNetwork</title>
+      <link>https://wittchen.io/posts/introducing-reactive-network/</link>
+      <pubDate>Mon, 10 Aug 2015 21:52:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/introducing-reactive-network/</guid>
+      <description>I&amp;rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&amp;rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
+Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.
+This library is much simpler and easier to use than NetworkEvents.</description>
+    </item>
+    
+    <item>
+      <title>Releasing prefser 2.0.0</title>
+      <link>https://wittchen.io/posts/releasing-prefser-2/</link>
+      <pubDate>Thu, 06 Aug 2015 22:34:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/releasing-prefser-2/</guid>
+      <description>I&amp;rsquo;ve recently released Prefser library v. 2.0.0. Prefser is a wrapper for Android SharedPreferences with object serialization and RxJava Observables. This update couldn&amp;rsquo;t be done without help of awesome open-source community and people who reported new issues and created pull requests. Thanks for that! A lot of issues related to RxJava was fixed. Moreover, now we can store and retrieve lists of objects of any type with Prefser. Examples of library usage can be found in README.</description>
+    </item>
+    
+    <item>
+      <title>Releasing NetworkEvents 2.0.0</title>
+      <link>https://wittchen.io/posts/releasing-network-events-2/</link>
+      <pubDate>Fri, 31 Jul 2015 09:28:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/releasing-network-events-2/</guid>
+      <description>I&amp;rsquo;ve recently released NetworkEvents library v. 2.0.0. It&amp;rsquo;s an Android library listening network connection state and change of the Wifi signal strength. It has a few significant changes in the API and new features, which people were requesting on GitHub. Moreover, codebase was slightly refactored and updated. I&amp;rsquo;m going to keep major.minor.patch convention AKA semantic versioning now:
+ major - new feature or update - backward incompatible minor - new feature - backward compatible patch - bug-fix - backward compatible  A few changes are backward incompatible, so I&amp;rsquo;ve increased major number.</description>
+    </item>
+    
+    <item>
+      <title>Releasing Weather Icon View v. 1.0.0 for Android</title>
+      <link>https://wittchen.io/posts/releasing-weather-icon-view-1-for-android/</link>
+      <pubDate>Tue, 21 Jul 2015 17:34:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/releasing-weather-icon-view-1-for-android/</guid>
+      <description>Today I released Weather Icon View library v. 1.0.0 It&amp;rsquo;s very simple and easy to use Android library, which allows you to use Weather Icons created by Erik Flowers in your mobile applications. This library was already available on GitHub as I wrote in one of my previous posts, but today it was released to Maven Central Repository and you can use it as Maven or Gradle dependency. I was encouraged to make this project more available by the open-source community and people who find it useful as I could read in the issue reported on the repository website.</description>
+    </item>
+    
+    <item>
+      <title>Releasing prefser v. 1.0.5</title>
+      <link>https://wittchen.io/posts/releasing-prefser-v-105/</link>
+      <pubDate>Thu, 18 Jun 2015 20:46:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/releasing-prefser-v-105/</guid>
+      <description>I am happy to announce that I released version 1.0.5 of Prefser Android library. Prefser is a wrapper for Android SharedPreferences with object serialization and RxJava Observables. What has been done in this version:
+ Removed final keyword from Prefser class in order to allow class mocking thanks to @plackemacher Removed unused imports from Prefser class Added test coverage report generation Increased test coverage to 100% Added abstraction for JsonConverter and default GsonConverter Added getAndObserve(.</description>
+    </item>
+    
+    <item>
+      <title>Introducing prefser</title>
+      <link>https://wittchen.io/posts/introducing-prefser/</link>
+      <pubDate>Sun, 22 Feb 2015 22:39:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/introducing-prefser/</guid>
+      <description>I&amp;rsquo;ve recently released Prefser, which is a wrapper for Android SharedPreferences with object serialization and RxJava Observables. Prefser wraps SharedPreferences and thanks to Java Generics provides you simpler API than classic SharedPreferences with only two methods:
+void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class classOfT, T defaultValue); Classic SharedPreferences allows you to store only primitive data types and set of strings. Thanks to Gson serialization, Prefser allows you to store:</description>
+    </item>
+    
+    <item>
+      <title>NetworkEvents v. 1.0.2</title>
+      <link>https://wittchen.io/posts/network-events-v102/</link>
+      <pubDate>Sun, 15 Feb 2015 00:16:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/network-events-v102/</guid>
+      <description>I&amp;rsquo;ve recently released NetworkEvents v. 1.0.2. In case, you don&amp;rsquo;t know it, it&amp;rsquo;s an Android library listening network connection state and change of the Wifi signal strength. This version has small improvements:
+ Updated ping method in NetworkHelper class. Detection of Internet access in WiFi network works faster and is more reliable. Added example of usage of NetworkEvents with Dagger in example-dagger directory in the repository of the project.  Right now, we check Internet connection in a different way.</description>
+    </item>
+    
+    <item>
+      <title>Introducing NetworkEvents</title>
+      <link>https://wittchen.io/posts/introducing-network-events/</link>
+      <pubDate>Sat, 31 Jan 2015 20:35:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/introducing-network-events/</guid>
+      <description>I have released NetworkEvents library for Android. It&amp;rsquo;s a wrapper for system Broadcast Receivers built with Otto library. It allows you to listen change of connectivity status (connected to WiFi network with or without Internet access, mobile network, off-line) and change of the WiFi signal strength very easily with @Subscribe annotation. The only thing you need to do, is to create Bus and NetworkEvents objects, register them in onResume() method and unregister them in onPause() method in your activity.</description>
+    </item>
+    
+    <item>
+      <title>Android resource converter</title>
+      <link>https://wittchen.io/posts/android-resource-converter/</link>
+      <pubDate>Sat, 17 Jan 2015 00:19:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/android-resource-converter/</guid>
+      <description>In international projects sometimes there&amp;rsquo;s a need to send resource files to the client in order to have translated strings. Client doesn&amp;rsquo;t have to understand XML notation and editing two or more files at the same time is inconvenient. It&amp;rsquo;s easier to send file which can be edited in MS Excel or Libre Office Calc. I&amp;rsquo;ve created Python scripts, which are able to convert Android xml resources with translations to a single *.</description>
+    </item>
+    
+    <item>
+      <title>Kirai - flavored Android string formatting library</title>
+      <link>https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/</link>
+      <pubDate>Tue, 13 Jan 2015 19:12:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/</guid>
+      <description>Overview #  Recently I&amp;rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well.</description>
+    </item>
+    
+  </channel>
+</rss>

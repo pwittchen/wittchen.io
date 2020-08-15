@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Problem overview #  Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&rsquo;s quite slow.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Routing internet via SSH tunnel on Raspberry Pi" />
+<meta property="og:description" content="Problem overview #  Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&rsquo;s quite slow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/routing-internet-via-ssh-tunnel-on-raspberry-pi/" />
+<meta property="article:published_time" content="2015-07-25T01:38:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Routing internet via SSH tunnel on Raspberry Pi | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Routing internet via SSH tunnel on Raspberry Pi</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem-overview">Problem overview</a></li>
+    <li><a href="#enabling-ssh-server-on-raspberry-pi">Enabling SSH server on Raspberry Pi</a></li>
+    <li><a href="#sshuttle-to-the-rescue">Sshuttle to the rescue</a></li>
+    <li><a href="#connecting-to-raspberry-pi-and-tunneling-internet-connection">Connecting to Raspberry Pi and tunneling internet connection</a></li>
+    <li><a href="#short-summary">Short summary</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/routing-internet-via-ssh-tunnel-on-raspberry-pi/">Routing internet via SSH tunnel on Raspberry Pi</a>
+  </h1>
+  
+  <h5>Jul 25, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><h2 id="problem-overview">
+  Problem overview
+  <a class="anchor" href="#problem-overview">#</a>
+</h2>
+<p>Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&rsquo;s quite slow. To sum the things up two goals were clear:</p>
+<ol>
+<li>to have fast and reliable internet connection on the laptop</li>
+<li>to be able to connect to Raspberry Pi via SSH in order to control it from the laptop</li>
+</ol>
+<h2 id="enabling-ssh-server-on-raspberry-pi">
+  Enabling SSH server on Raspberry Pi
+  <a class="anchor" href="#enabling-ssh-server-on-raspberry-pi">#</a>
+</h2>
+<p>Before we proceed to the next steps, we need to enable SSH server on Raspberry Pi if we haven&rsquo;t done it in the past. In order to do that, we need to go through the following steps:</p>
+<ol>
+<li>login with the following information when prompted: username: <code>pi</code> password: <code>raspberry</code></li>
+<li>type the following command in the terminal: <code>sudo raspi-config</code></li>
+<li>then navigate to <code>ssh</code></li>
+<li>hit Enter</li>
+<li>select <code>enable ssh server</code></li>
+<li>reboot device</li>
+<li>we are done!</li>
+</ol>
+<h2 id="sshuttle-to-the-rescue">
+  Sshuttle to the rescue
+  <a class="anchor" href="#sshuttle-to-the-rescue">#</a>
+</h2>
+<p>I tried a few different approaches to solve described problem, but up to now the only one solution satisfies me well. I&rsquo;ve found discussion starting with the question <a href="http://askubuntu.com/questions/45075/how-do-i-route-my-internet-through-a-ssh-tunnel">How do I route my internet through a SSH tunnel?</a> In this discussion, I&rsquo;ve read about great tool called <a href="https://github.com/apenwarr/sshuttle/">sshuttle</a>, which works as a poor man&rsquo;s VPN.</p>
+<blockquote>
+<p><strong>sshuttle</strong> is a transparent proxy server that forwards over a SSH connection and sets up a proxy by running Python scripts on the remote server. sshuttle can be run under the following conditions:</p>
+<ul>
+<li>client machine or router is Linux-based, FreeBSD or Mac OS</li>
+<li>administrative privileges on client</li>
+<li>access to remote network via SSH</li>
+<li>no administrator privileges on remote network</li>
+<li>availability of Python on remote server</li>
+</ul>
+</blockquote>
+<p>sshutle can be installed with the following command:</p>
+<pre><code>sudo apt-get install sshuttle
+</code></pre><p>The basic command for running sshuttle with routing all traffic is:</p>
+<pre><code>sshuttle -r username@sshserver:port 0/0
+</code></pre><blockquote>
+<p>Upon the execution of the command, a sudo password prompt will appear and subsequently the password to SSH account. No other details will appear except for a short message and return to shell upon failure. For more status messages, run sshuttle in verbose mode with the -v flag. In this example all internet traffic except DNS is routed through the VPN. -r flag denotes the remote hostname and optional username and port that follows in the above example. 0/0 is short for 0.0.0.0/0 that represents the subnets to route over the VPN. The usage of 0/0 routes all the traffic except DNS requests to the remote server. DNS tunelling is possible with the usage of -H flag. Please read the man page (man sshuttle) for the details of options and modes under which sshuttle can run. For information about the concept and more examples, refer to the project page.</p>
+</blockquote>
+<p>- André Paramés on askubuntu.com</p>
+<h2 id="connecting-to-raspberry-pi-and-tunneling-internet-connection">
+  Connecting to Raspberry Pi and tunneling internet connection
+  <a class="anchor" href="#connecting-to-raspberry-pi-and-tunneling-internet-connection">#</a>
+</h2>
+<p>Luckily, all requirements were satisfied by Raspberry Pi and I could use it with sshuttle, so I&rsquo;ve installed this software on my laptop. I&rsquo;ve connected to my local network through WiFi. Then, I&rsquo;ve scanned network with <code>nmap</code> to find IP of Raspberry Pi.</p>
+<pre><code>nmap -sP 192.168.1.0/24
+</code></pre><p>My local network consists of only few devices and each of them has a description, so I could easily identify IP of the Raspberry Pi. Output looked like this:</p>
+<pre><code>Nmap scan report for livebox.home (192.168.1.1)
+Host is up (0.0070s latency).
+Nmap scan report for laptop-piotra-\*samsung-ultrabook\*.home (192.168.1.14)
+Host is up (0.00011s latency).
+Nmap scan report for pc36.home (192.168.1.17)
+Host is up (0.018s latency).
+Nmap done: 256 IP addresses (3 hosts up) scanned in 2.64 seconds
+</code></pre><p>Right now, active devices in my network are: router, my laptop and Raspberry Pi, with IP: 192.168.1.17. After that, I connected to Raspberry Pi with the following command:</p>
+<pre><code>sshuttle -r pi@192.168.1.17 0/0
+</code></pre><p>It asked me about the local password and then about the password of remote host, which is <code>raspberry</code> by default and I saw the following message:</p>
+<pre><code>Connected.
+</code></pre><p>Everything was fine. I was connected to Raspberry Pi and I was able to access internet through it. Next, I opened another terminal window and tried to connect to Raspberry Pi via SSH. Please note, that you have to enable remote access via SSH on Raspberry Pi before you try to establish connection. When SSH is enabled, you can type the following command:</p>
+<pre><code>ssh pi@192.168.1.17
+</code></pre><p>Then I typed correct password and I was connected!</p>
+<pre><code>Linux raspberrypi 3.18.7+ #755 PREEMPT Thu Feb 12 17:14:31 GMT 2015 armv6l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Jul 25 01:49:00 2015 from pc36.home
+</code></pre><h2 id="short-summary">
+  Short summary
+  <a class="anchor" href="#short-summary">#</a>
+</h2>
+<p>What is surprising tunneled internet connection was fast and stable when I was accessing it through Raspberry Pi. When I was accessing internet directly through WiFi on the router it was really slow for some unknown reason. Luckily, I&rsquo;ve achieved my goals: I&rsquo;ve fast internet connection on the laptop and I could establish SSH connection with Raspberry Pi over local network.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/routing-internet-via-ssh-tunnel-on-raspberry-pi.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem-overview">Problem overview</a></li>
+    <li><a href="#enabling-ssh-server-on-raspberry-pi">Enabling SSH server on Raspberry Pi</a></li>
+    <li><a href="#sshuttle-to-the-rescue">Sshuttle to the rescue</a></li>
+    <li><a href="#connecting-to-raspberry-pi-and-tunneling-internet-connection">Connecting to Raspberry Pi and tunneling internet connection</a></li>
+    <li><a href="#short-summary">Short summary</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

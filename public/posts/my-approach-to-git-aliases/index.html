@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="While we are working with Version Control Systems like Git, it&rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your .gitconfig file, which is usually located in your home directory and place a few aliases in the [alias] section. For example:
+[alias] ls = log --pretty=format:&quot;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&quot; --decorate Then you can type: git ls in your Git repository to see pretty Git log.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="My approach to Git aliases" />
+<meta property="og:description" content="While we are working with Version Control Systems like Git, it&rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your .gitconfig file, which is usually located in your home directory and place a few aliases in the [alias] section. For example:
+[alias] ls = log --pretty=format:&quot;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&quot; --decorate Then you can type: git ls in your Git repository to see pretty Git log." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/my-approach-to-git-aliases/" />
+<meta property="article:published_time" content="2017-03-12T13:20:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>My approach to Git aliases | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>My approach to Git aliases</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#further-reading">Further reading</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/my-approach-to-git-aliases/">My approach to Git aliases</a>
+  </h1>
+  
+  <h5>Mar 12, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/git/">git</a>
+  </div>
+  
+
+
+  <p><p>While we are working with Version Control Systems like Git, it&rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your <code>.gitconfig</code> file, which is usually located in your home directory and place a few aliases in the <code>[alias]</code> section. For example:</p>
+<pre><code>[alias]
+  ls = log --pretty=format:&quot;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&quot; --decorate
+</code></pre><p>Then you can type: <code>git ls</code> in your Git repository to see pretty Git log. Sometimes people go further and create many more aliases like:</p>
+<pre><code>cp = cherry-pick
+st = status
+cl = clone
+ci = commit
+co = checkout
+br = branch
+</code></pre><p>and so on. I&rsquo;ve seen configurations containing about <strong>20 aliases or more</strong> consisting of shortcuts, which have 2 or 3 letters. Usually, we don&rsquo;t use 20 commands every day. I can remember e.g. 5 shortcuts, but I don&rsquo;t want to remember more. Instead of alias:</p>
+<pre><code>lcm = log -1 --pretty=%B
+</code></pre><p>I prefer:</p>
+<pre><code>last-commit-msg = log -1 --pretty=%B
+</code></pre><p>When I&rsquo;m using terminal on Linux or macOS, I have type hinting, so I can type: <code>git la</code>, hit <code>Tab</code> and terminal will autocomplete my command to <code>git last-commit-</code>. Then I can hit <code>Tab</code> again and I can choose one of my aliases and select one by hitting <code>Enter</code>. <img src="/posts/2017/my-approach-to-git-aliases/git-alias-hint.png" alt="git alias hints in unix terminal" /> Now, I don&rsquo;t have to remember all of my aliases. <strong>I treat my <code>.gitconfig</code> file as a documentation</strong>. Whenever I want to browse aliases, I can type <code>git list-aliases</code> (it&rsquo;s also an alias to <code>!git config -l | grep alias | cut -c 7- | sort</code>) and if I want to find aliases related to diffs, I can type <code>git list-aliases | grep diff</code>. I also have more descriptive aliases like:</p>
+<p>undo-last-commit = reset &ndash;hard HEAD^</p>
+<p>so I know what this command actually does. Morover, divided my aliases into <strong>separate sections</strong> and marked these sections with comments. The sections are as follows:</p>
+<ul>
+<li>showing metadata</li>
+<li>showing urls</li>
+<li>showing commits, logs &amp; branches</li>
+<li>ignoring files</li>
+<li>adding &amp; reviewing changes</li>
+<li>resetting and reverting changes</li>
+<li>merging changes</li>
+<li>branching</li>
+<li>showing diffs</li>
+<li>searching files</li>
+</ul>
+<p>It allows me to keep my aliases in more organized way. It&rsquo;s useful when our <code>.gitconfig</code> file &ldquo;lives&rdquo; and we update it during the work day if we need to. Maybe this approach won&rsquo;t be the best way of using Git for everyone, but <strong>it works for me</strong> and allows me to solve my daily tasks easier and faster. You can find complete source of my <code>.gitconfig</code> file in my <a href="https://github.com/pwittchen/dotfiles">dotfiles</a> repository at <a href="https://github.com/pwittchen/dotfiles/blob/master/.gitconfig">https://github.com/pwittchen/dotfiles/blob/master/.gitconfig</a>.</p>
+<h3 id="further-reading">
+  Further reading
+  <a class="anchor" href="#further-reading">#</a>
+</h3>
+<ul>
+<li><a href="http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/">Must Have Git Aliases: Advanced Examples</a></li>
+<li><a href="https://gist.github.com/mwhite/6887990">The Ultimate Git Alias Setup</a></li>
+</ul>
+<p>Happy coding!</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/my-approach-to-git-aliases.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#further-reading">Further reading</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

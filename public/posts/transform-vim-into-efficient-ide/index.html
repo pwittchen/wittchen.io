@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Transform Vim into efficient IDE" />
+<meta property="og:description" content="Introduction #  Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/transform-vim-into-efficient-ide/" />
+<meta property="article:published_time" content="2017-04-16T19:32:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Transform Vim into efficient IDE | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Transform Vim into efficient IDE</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#learning-basics">Learning basics</a></li>
+    <li><a href="#efficient-navigation-and-file-editing">Efficient navigation and file editing</a></li>
+    <li><a href="#personal-configuration">Personal configuration</a></li>
+    <li><a href="#plugin-manager">Plugin manager</a></li>
+    <li><a href="#useful-plugins">Useful plugins</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/transform-vim-into-efficient-ide/">Transform Vim into efficient IDE</a>
+  </h1>
+  
+  <h5>Apr 16, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim. Moreover, Vim is default editor for a few Unix tools like Git, so it&rsquo;s good to know how to use it when we accidentally open it. In addition, sometimes we have an access only to the terminal (e.g. via ssh) and we need to perform a task on the remote server, so we don&rsquo;t have any possibility to use editors with GUI. In such cases, Vim is a perfect solution. Last, but not least - if you want to be a <strong>real</strong> <em>h4x0r</em>, you should know it (or at least its basics) ;-).</p>
+<h2 id="learning-basics">
+  Learning basics
+  <a class="anchor" href="#learning-basics">#</a>
+</h2>
+<p>Vim is not an intuitive text editor like many others. <strong>It needs to be learned. Just like a programming language.</strong> There are a few basic things, which you need to know to use Vim:</p>
+<ul>
+<li>Opening editor: just type <code>vi</code> or <code>vi filename</code> to open file.</li>
+<li>Basic modes: interactive (enter it with <code>i</code> key), visual (enter it via <code>v</code> key), read only (default - go back to this mode via <code>Esc</code> key). You can also use <code>Esc</code> key to cancel any kind of operation.</li>
+<li>Navigation: to navigate in the document, we need to be in read only mode and instead of arrow keys, we use <code>h</code> (left), <code>j</code> (down), <code>k</code> (up), <code>l</code> (right). Note that these keys are close to each other in a row on the keyboard. Such setup may be even more comfortable than arrow keys.</li>
+<li>Saving changes in file: to save file, type <code>:w</code>.</li>
+<li>Quiting: To quit vim, type <code>:q</code>.</li>
+<li>Quiting without saving: <code>:q!</code>.</li>
+<li>Quiting with saving: <code>:wq</code>.</li>
+</ul>
+<p>In my opinion, <strong>the best way to learn Vim basics</strong> is to use <code>vimtutor</code> application. Just open terminal and type <code>vimtutor</code>. It will open a text file with Vim tutorial inside Vim and you can follow instructions in this file to learn how to use this editor. You can also use other resources like:</p>
+<ul>
+<li><a href="http://www.openvim.com/">http://www.openvim.com/</a> (interactive on-line tutorial)</li>
+<li><a href="https://linuxconfig.org/vim-tutorial">https://linuxconfig.org/vim-tutorial</a></li>
+<li><a href="http://www.nuxified.org/vi_survival_guide/">http://www.nuxified.org/vi_survival_guide/</a></li>
+<li><a href="https://github.com/mhinz/vim-galore">https://github.com/mhinz/vim-galore</a></li>
+<li>and many others</li>
+</ul>
+<h2 id="efficient-navigation-and-file-editing">
+  Efficient navigation and file editing
+  <a class="anchor" href="#efficient-navigation-and-file-editing">#</a>
+</h2>
+<p>Thanks to various key bindings, Vim allows you to navigate &amp; edit files very quickly. E.g. you can jump between words with <code>w</code> key. You can also combine different key bindings. E.g. <code>d</code> is for deleting text. When you combine <code>d</code> &amp; <code>w</code> (<code>dw</code>) you can delete single word. This &ldquo;Vim language&rdquo; can be a subject of the separate article, so I won&rsquo;t explain it in details in this article. It&rsquo;s good to go through tutorials and learn this editor as you use it.</p>
+<h2 id="personal-configuration">
+  Personal configuration
+  <a class="anchor" href="#personal-configuration">#</a>
+</h2>
+<p>You can customize Vim and keep its configuration in <code>.vimrc</code> file located in your home directory. Below, you can find my configuration with comments. I copied it from somewhere and modified a little bit.</p>
+<pre><code>set clipboard=unnamed       &quot;Enable clipboard
+filetype plugin indent on   &quot;Enable indent plugin
+syntax enable               &quot;Enable syntax coloring
+syntax on                   &quot;Turn syntax coloring on
+:color desert               &quot;Set desert syntax coloring
+set nocompatible            &quot;Allow Vim-only settings even if they break vi keybindings.
+:filetype on                &quot;Enable filetype detection
+set incsearch               &quot;Find as you type
+set ignorecase              &quot;Ignore case in search
+set scrolloff=5             &quot;Number of lines to keep above/below cursor
+set smartcase               &quot;Only ignore case when all letters are lowercase
+set number                  &quot;Show line numbers
+set wildmode=longest,list   &quot;Complete longest string, then list alternatives
+set fileformats=unix        &quot;Use Unix line endings
+set smartindent             &quot;Smart autoindenting on new line
+set smarttab                &quot;Respect space/tab settings
+set history=300             &quot;Number of commands to remember
+set backspace=2             &quot;Use standard backspace behavior
+set hlsearch                &quot;Highlight matches in search
+set ruler                   &quot;Show line and column number
+set formatoptions=1         &quot;Don't wrap text after a one-letter word
+set linebreak               &quot;Break lines when appropriate
+set autoindent              &quot;Auto indent based on previous line
+
+                            &quot;Prepare tab/space indent settings
+set tabstop=4               &quot;Set Tab width to 4
+set shiftwidth=4            &quot;Indents will have width of 4
+set softtabstop=4           &quot;Set the number of columns for tab
+set expandtab               &quot;Expand tabs to spaces
+
+execute pathogen#infect()
+</code></pre><h2 id="plugin-manager">
+  Plugin manager
+  <a class="anchor" href="#plugin-manager">#</a>
+</h2>
+<p>We can enhance Vim by adding additional plugins. There are a few plugin managers for Vim. I personally like <a href="https://github.com/tpope/vim-pathogen">pathogen</a> because it&rsquo;s quite easy to install and easy to use.</p>
+<h2 id="useful-plugins">
+  Useful plugins
+  <a class="anchor" href="#useful-plugins">#</a>
+</h2>
+<p>I use 3 plugins right now:</p>
+<ul>
+<li><a href="https://github.com/scrooloose/nerdtree">nerdtree</a> (adds sidebar with list of files and directories)</li>
+<li><a href="https://github.com/majutsushi/tagbar">tagbar</a> (adds overview of the currently edited file with navigation like list of methods, attributes etc. and works for different programming languages)</li>
+<li><a href="https://github.com/kien/ctrlp.vim">ctrlp</a> (adds very fast file search)</li>
+</ul>
+<h2 id="summary">
+  Summary
+  <a class="anchor" href="#summary">#</a>
+</h2>
+<p>Below, you can see my setup with nerdtree &amp; tagbar opened. As you can see, Vim can be very powerful and customizable editor &amp; can make our work more efficient. It has a lot of features. Nevertheless it&rsquo;s not easy to learn and we have to spend some time to learn how to use it. I think, the best approach is to learn the basics, start using it and then learn rest of the stuff we need during the time. Of course, it has drawbacks like lack of default debugger, steep learning curve and so on. On the other hand, I still think it&rsquo;s worth to learn it. There are also languages with command line debuggers, so you can combine Vim with Tmux and have everything you need on one screen. I hope you&rsquo;ll find my tips helpful and you&rsquo;ll be encouraged to give this editor a try. It&rsquo;s definitely not a tool for newbies, but I suppose you are not one of them ;-). <img src="/posts/2017/transform-vim-into-efficient-ide/vim-config-01.png" alt="" /></p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/transform-vim-into-efficient-ide.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#learning-basics">Learning basics</a></li>
+    <li><a href="#efficient-navigation-and-file-editing">Efficient navigation and file editing</a></li>
+    <li><a href="#personal-configuration">Personal configuration</a></li>
+    <li><a href="#plugin-manager">Plugin manager</a></li>
+    <li><a href="#useful-plugins">Useful plugins</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

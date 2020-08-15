@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Piotr Wittchen</title>
+    <link>https://wittchen.io/tags/</link>
+    <description>Recent content in Tags on Piotr Wittchen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://wittchen.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>i3</title>
+      <link>https://wittchen.io/tags/i3/</link>
+      <pubDate>Sun, 29 Mar 2020 20:29:36 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/i3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://wittchen.io/tags/linux/</link>
+      <pubDate>Sun, 29 Mar 2020 20:29:36 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://wittchen.io/tags/python/</link>
+      <pubDate>Thu, 20 Feb 2020 11:29:13 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arch</title>
+      <link>https://wittchen.io/tags/arch/</link>
+      <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/arch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://wittchen.io/tags/java/</link>
+      <pubDate>Mon, 05 Aug 2019 18:27:30 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gradle</title>
+      <link>https://wittchen.io/tags/gradle/</link>
+      <pubDate>Sat, 08 Jun 2019 10:58:10 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/gradle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://wittchen.io/tags/kotlin/</link>
+      <pubDate>Fri, 14 Dec 2018 14:34:01 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bci</title>
+      <link>https://wittchen.io/tags/bci/</link>
+      <pubDate>Wed, 21 Nov 2018 21:59:06 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/bci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conferences</title>
+      <link>https://wittchen.io/tags/conferences/</link>
+      <pubDate>Wed, 21 Nov 2018 21:59:06 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://wittchen.io/tags/android/</link>
+      <pubDate>Tue, 02 Oct 2018 00:01:31 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://wittchen.io/tags/testing/</link>
+      <pubDate>Sat, 22 Sep 2018 16:51:47 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://wittchen.io/tags/git/</link>
+      <pubDate>Sat, 21 Jul 2018 11:21:54 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>https://wittchen.io/tags/open-source/</link>
+      <pubDate>Sun, 24 Jun 2018 23:39:18 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rxjava</title>
+      <link>https://wittchen.io/tags/rxjava/</link>
+      <pubDate>Sun, 11 Mar 2018 20:02:45 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/rxjava/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://wittchen.io/tags/ubuntu/</link>
+      <pubDate>Sat, 01 Aug 2015 13:41:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

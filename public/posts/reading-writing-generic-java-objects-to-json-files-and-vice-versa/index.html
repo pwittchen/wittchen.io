@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview #  Recently, I have written small set of methods for a FileHelper using Jackson library in Android application, which allows to save generic Java objects and list of generic objects in JSON format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was LinkedHashMap, which wasn&rsquo;t the list of desired generic objects.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Reading/writing generic Java objects to JSON files and vice versa" />
+<meta property="og:description" content="Overview #  Recently, I have written small set of methods for a FileHelper using Jackson library in Android application, which allows to save generic Java objects and list of generic objects in JSON format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was LinkedHashMap, which wasn&rsquo;t the list of desired generic objects." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa/" />
+<meta property="article:published_time" content="2014-08-27T21:19:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Reading/writing generic Java objects to JSON files and vice versa | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Reading/writing generic Java objects to JSON files and vice versa</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#helper-class">Helper class</a></li>
+    <li><a href="#usage">Usage</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa/">Reading/writing generic Java objects to JSON files and vice versa</a>
+  </h1>
+  
+  <h5>Aug 27, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>
+  </div>
+  
+
+
+  <p><h2 id="overview">
+  Overview
+  <a class="anchor" href="#overview">#</a>
+</h2>
+<p>Recently, I have written small set of methods for a FileHelper using <a href="http://jackson.codehaus.org/">Jackson library</a> in Android application, which allows to save <a href="http://en.wikipedia.org/wiki/Generics_in_Java">generic Java objects</a> and list of generic objects in <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was <a href="http://docs.oracle.com/javase/6/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a>, which wasn&rsquo;t the list of desired generic objects. After adjusting Jackson library, I finally achieved my goal. You can see helper class below.</p>
+<h2 id="helper-class">
+  Helper class
+  <a class="anchor" href="#helper-class">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Helper is using Jackson library and Google Guava
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileHelper</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>Type<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">saveObjectToFile</span><span style="color:#f92672">(</span>Object object<span style="color:#f92672">,</span> TypeReference<span style="color:#f92672">&lt;</span>Type<span style="color:#f92672">&gt;</span> type<span style="color:#f92672">,</span> String fileName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        ObjectMapper mapper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectMapper<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            FileOutputStream fileOutputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>fileName<span style="color:#f92672">);</span>
+            OutputStreamWriter outputStreamWriter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OutputStreamWriter<span style="color:#f92672">(</span>fileOutputStream<span style="color:#f92672">,</span> Charsets<span style="color:#f92672">.</span><span style="color:#a6e22e">UTF_8</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">());</span>
+            Writer writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter<span style="color:#f92672">(</span>outputStreamWriter<span style="color:#f92672">);</span>
+            mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">writerWithType</span><span style="color:#f92672">(</span>type<span style="color:#f92672">).</span><span style="color:#a6e22e">writeValue</span><span style="color:#f92672">(</span>writer<span style="color:#f92672">,</span> object<span style="color:#f92672">);</span>
+            fileOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            outputStreamWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            writer<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>FileNotFoundException exception<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            exception<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException exception<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            exception<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>ReturnedObject<span style="color:#f92672">&gt;</span> ReturnedObject <span style="color:#a6e22e">readObjectFromFile</span><span style="color:#f92672">(</span>String fileName<span style="color:#f92672">,</span> Class<span style="color:#f92672">&lt;</span>ReturnedObject<span style="color:#f92672">&gt;</span> returnedObjectClass<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        ReturnedObject object <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        ObjectMapper mapper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectMapper<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">final</span> JavaType type <span style="color:#f92672">=</span> mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">getTypeFactory</span><span style="color:#f92672">().</span><span style="color:#a6e22e">constructType</span><span style="color:#f92672">(</span>returnedObjectClass<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            object <span style="color:#f92672">=</span> mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">readValue</span><span style="color:#f92672">(</span>Files<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>fileName<span style="color:#f92672">),</span> Charsets<span style="color:#f92672">.</span><span style="color:#a6e22e">UTF_8</span><span style="color:#f92672">),</span> type<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>FileNotFoundException exception<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            exception<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException exception<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            exception<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> object<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>ReturnedObject<span style="color:#f92672">&gt;</span> List<span style="color:#f92672">&lt;</span>ReturnedObject<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">readObjectListFromFile</span><span style="color:#f92672">(</span>String fileName<span style="color:#f92672">,</span> Class<span style="color:#f92672">&lt;</span>ReturnedObject<span style="color:#f92672">&gt;</span> returnedObjectClass<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        List<span style="color:#f92672">&lt;</span>ReturnedObject<span style="color:#f92672">&gt;</span> objectList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+        ObjectMapper mapper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectMapper<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">final</span> CollectionType collectionType <span style="color:#f92672">=</span> mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">getTypeFactory</span><span style="color:#f92672">().</span><span style="color:#a6e22e">constructCollectionType</span><span style="color:#f92672">(</span>List<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> returnedObjectClass<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            objectList <span style="color:#f92672">=</span> mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">readValue</span><span style="color:#f92672">(</span>Files<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>fileName<span style="color:#f92672">),</span> Charsets<span style="color:#f92672">.</span><span style="color:#a6e22e">UTF_8</span><span style="color:#f92672">),</span> collectionType<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>FileNotFoundException exception<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            exception<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException exception<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            exception<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> objectList<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">fileExists</span><span style="color:#f92672">(</span>String fileName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        File file <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>fileName<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">exists</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<p>You can use this helper in the following way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// initializing object and list of the objects
+</span><span style="color:#75715e"></span>MyObject myObject <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyObject<span style="color:#f92672">();</span>
+List<span style="color:#f92672">&lt;</span>MyObject<span style="color:#f92672">&gt;</span> myObjectList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+
+<span style="color:#75715e">// saving object to file
+</span><span style="color:#75715e"></span>FileHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">saveObjectToFile</span><span style="color:#f92672">(</span>myObject<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> TypeReference<span style="color:#f92672">&lt;</span>MyObject<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{},</span> <span style="color:#e6db74">&#34;my_object.json&#34;</span><span style="color:#f92672">);</span>
+
+<span style="color:#75715e">// reading object from file
+</span><span style="color:#75715e"></span>MyObject myObjectRead <span style="color:#f92672">=</span> FileHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">readObjectFromFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;my_object.json&#34;</span><span style="color:#f92672">,</span> MyObject<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+<span style="color:#75715e">// saving list of the objects to file
+</span><span style="color:#75715e"></span>FileHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">saveObjectToFile</span><span style="color:#f92672">(</span>myObjectList<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> TypeReference<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>MyObject<span style="color:#f92672">&gt;&gt;()</span> <span style="color:#f92672">{},</span> <span style="color:#e6db74">&#34;list_of_my_objects.json&#34;</span><span style="color:#f92672">);</span>
+
+<span style="color:#75715e">// reading list of the objects from a file
+</span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span>MyObject<span style="color:#f92672">&gt;</span> myObjectListRead <span style="color:#f92672">=</span> FileHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">readObjectListFromFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;list_of_my_objects.json&#34;</span><span style="color:#f92672">,</span> MyObject<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+</code></pre></div></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#helper-class">Helper class</a></li>
+    <li><a href="#usage">Usage</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

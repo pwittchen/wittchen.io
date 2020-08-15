@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  In my company, there&rsquo;s a concept of so-called &ldquo;innovation day&rdquo;. I have the possibility to &ldquo;use&rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&rsquo;ve decided to create YaaS Java SDK. If you don&rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Introducing YaaS Java SDK" />
+<meta property="og:description" content="Introduction #  In my company, there&rsquo;s a concept of so-called &ldquo;innovation day&rdquo;. I have the possibility to &ldquo;use&rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&rsquo;ve decided to create YaaS Java SDK. If you don&rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/introducing-yaas-java-sdk/" />
+<meta property="article:published_time" content="2017-05-28T21:24:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Introducing YaaS Java SDK | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Introducing YaaS Java SDK</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#quick-start">Quick start</a></li>
+    <li><a href="#future-plans">Future plans</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/introducing-yaas-java-sdk/">Introducing YaaS Java SDK</a>
+  </h1>
+  
+  <h5>May 28, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>In my company, there&rsquo;s a concept of so-called &ldquo;innovation day&rdquo;. I have the possibility to &ldquo;use&rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&rsquo;ve decided to create <a href="https://github.com/pwittchen/yaas-java-sdk"><strong>YaaS Java SDK</strong></a>. If you don&rsquo;t know what the <a href="http://yaas.io">YaaS</a> is, check out my previous article about basic usage of YaaS proxy for the microservice. In a few words, it&rsquo;s a proxy for the microservices with authorization &amp; monitoring capabilities, which allows using other services available on the YaaS market. SDK created by me is really simple, was created in a short period of time and does not cover all features of the YaaS. This SDK allows performing authorized requests to the microservices hidden behind YaaS proxy. Tech stack used for this project is as follows:</p>
+<ul>
+<li>Java 8</li>
+<li><a href="https://gradle.org/">Gradle</a></li>
+<li><a href="http://square.github.io/okhttp/">OkHttp3</a></li>
+<li><a href="https://github.com/ReactiveX/RxJava">RxJava2</a> with <a href="http://www.reactive-streams.org/">Reactive Streams</a></li>
+<li><a href="https://github.com/google/gson">Gson</a></li>
+</ul>
+<p>For unit testing I used:</p>
+<ul>
+<li><a href="http://junit.org/">JUnit</a></li>
+<li><a href="https://github.com/google/truth">Truth</a></li>
+<li><a href="http://mockito.org/">Mockito</a></li>
+</ul>
+<h2 id="quick-start">
+  Quick start
+  <a class="anchor" href="#quick-start">#</a>
+</h2>
+<p>I wanted to make this SDK as simple as possible so the user can add YaaS integration to the Java application within just a few lines of code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">YaaSProject project <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> YaaSProject<span style="color:#f92672">.</span><span style="color:#a6e22e">Builder</span><span style="color:#f92672">()</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">withClientId</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;YOUR_CLIENT_ID&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">withClientSecret</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;YOUR_CLIENT_SECRET&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">withOrganization</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;YOUR_ORGANIZATION&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">withService</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;YOUR_SERVICE&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">withVersion</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;v1&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">withZone</span><span style="color:#f92672">(</span>Zone<span style="color:#f92672">.</span><span style="color:#a6e22e">EU</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+
+Client client <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> YaaS<span style="color:#f92672">(</span>project<span style="color:#f92672">);</span>
+
+client<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;path/to/your/endpoint&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span>response <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>response<span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">().</span><span style="color:#a6e22e">string</span><span style="color:#f92672">()));</span>
+</code></pre></div><p>As you can see, it looks really simple and straightforward. In the code snippet above, we&rsquo;ve done the following thigs:</p>
+<ol>
+<li>Defined YaaS Project with YaaS service</li>
+<li>Created YaaS Client</li>
+<li>Performed HTTP GET request to the endpoint of the microservice asynchronously</li>
+<li>Received and printed body of the HTTP response from the microservice on the current thread as a String</li>
+</ol>
+<p>All of that was done with <code>Single</code> type from RxJava2, which wraps <code>Response</code> type from OkHttp. We have a reactive stream of HTTP response here and we can do with it whatever RxJava2 offers us. Like filtering, mapping, throttling, combining it with other stream and so on. For more information, visit repository of the project at: <a href="https://github.com/pwittchen/yaas-java-sdk">https://github.com/pwittchen/yaas-java-sdk</a>.</p>
+<h2 id="future-plans">
+  Future plans
+  <a class="anchor" href="#future-plans">#</a>
+</h2>
+<p>I have the following plans related to this project, which may be realized when I&rsquo;ll have time:</p>
+<ul>
+<li>Add more unit tests (I didn&rsquo;t have enough time to cover all cases)</li>
+<li>Add continuous integration</li>
+<li>Integrate YaaS with SAP Hybris Backoffice or SAP Hybris Core Platform through this SDK (PoC)</li>
+<li>YaaS Android SDK (copy YaaS Java SDK, downgrade it to Java 7 &amp; optionally migrate to Kotlin and create sample mobile app)</li>
+<li>Optionally, add more features to YaaS Java SDK</li>
+<li>Optionally, deploy an artifact to Maven Central repository</li>
+<li>Optionally, create SDKs for different programming languages (especially those I don&rsquo;t know well or I don&rsquo;t know at all - just to learn them)</li>
+</ul>
+<h2 id="links">
+  Links
+  <a class="anchor" href="#links">#</a>
+</h2>
+<p>Interesting links related to this article:</p>
+<ul>
+<li><a href="https://github.com/pwittchen/yaas-java-sdk">Source code of the YaaS Java SDK</a></li>
+<li><a href="http://blog.wittchen.biz.pl/basic-usage-of-yaas-as-a-proxy-for-the-microservice/">Basic usage of YaaS as a proxy for the microservice</a></li>
+<li><a href="https://yaas.io">YaaS website</a></li>
+<li><a href="http://hybris.com">SAP Hybris website</a></li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/introducing-yaas-java-sdk.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#quick-start">Quick start</a></li>
+    <li><a href="#future-plans">Future plans</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

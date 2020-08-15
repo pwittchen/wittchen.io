@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  When you want to publish your Android application in Google Play Store, first you need to go to https://play.google.com/apps/publish/ website and create a Developer account. Its cost is $25. You can read more about that at: https://support.google.com/googleplay/android-developer/answer/113468?hl=en.
+Problems with payments during registration #  Remember that you need to have appropriate debit card in order to proceed with payments. E.g. I have debit card in PKO BP (Polish bank), which has two-stage authorization.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Publishing Android application in Google Play store" />
+<meta property="og:description" content="Introduction #  When you want to publish your Android application in Google Play Store, first you need to go to https://play.google.com/apps/publish/ website and create a Developer account. Its cost is $25. You can read more about that at: https://support.google.com/googleplay/android-developer/answer/113468?hl=en.
+Problems with payments during registration #  Remember that you need to have appropriate debit card in order to proceed with payments. E.g. I have debit card in PKO BP (Polish bank), which has two-stage authorization." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/publishing-android-application-in-google-play-store/" />
+<meta property="article:published_time" content="2014-08-31T14:44:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Publishing Android application in Google Play store | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Publishing Android application in Google Play store</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#problems-with-payments-during-registration">Problems with payments during registration</a></li>
+    <li><a href="#developer-console">Developer Console</a></li>
+    <li><a href="#apk">APK</a>
+      <ul>
+        <li><a href="#preparing-apk-file-to-upload">Preparing APK file to upload</a></li>
+        <li><a href="#uploading-apk-file">Uploading APK file</a></li>
+      </ul>
+    </li>
+    <li><a href="#store-listing">Store listing</a>
+      <ul>
+        <li><a href="#basic-information">Basic information</a></li>
+        <li><a href="#graphic-assets---screenshots">Graphic assets - screenshots</a></li>
+        <li><a href="#graphic-assets---hi-res-icon-promo-images--video">Graphic assets - Hi-res icon, promo images &amp; video</a></li>
+        <li><a href="#categorization-contact-details--privacy-policy">Categorization, Contact Details &amp; Privacy Policy</a></li>
+        <li><a href="#translations">Translations</a></li>
+      </ul>
+    </li>
+    <li><a href="#pricing--distribution">Pricing &amp; Distribution</a></li>
+    <li><a href="#in-app-products">In-app Products</a></li>
+    <li><a href="#services-and-apis">Services and APIs</a></li>
+    <li><a href="#optimization-tips">Optimization tips</a></li>
+    <li><a href="#launch-checklist">Launch checklist</a></li>
+    <li><a href="#ready-to-publish">Ready to publish</a></li>
+    <li><a href="#last-words">Last words</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/publishing-android-application-in-google-play-store/">Publishing Android application in Google Play store</a>
+  </h1>
+  
+  <h5>Aug 31, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>When you want to publish your Android application in Google Play Store, first you need to go to <a href="https://play.google.com/apps/publish/">https://play.google.com/apps/publish/</a> website and create a Developer account. Its cost is $25. You can read more about that at: <a href="https://support.google.com/googleplay/android-developer/answer/113468?hl=en">https://support.google.com/googleplay/android-developer/answer/113468?hl=en</a>.</p>
+<h2 id="problems-with-payments-during-registration">
+  Problems with payments during registration
+  <a class="anchor" href="#problems-with-payments-during-registration">#</a>
+</h2>
+<p>Remember that you need to have appropriate debit card in order to proceed with payments. E.g. I have debit card in PKO BP (Polish bank), which has two-stage authorization. Most of debit cards has two-stage authorization for the registration of the card in on-line payment system and next payments are verified only once. In my bank every payment is verified twice. It&rsquo;s more secure, but due to this security policy I was not able to pay for my developer account at all! I decided to create another bank account for on-line payments in bank, which has one-stage authorization for regular payments. I&rsquo;ve chosen mBank (another Polish bank). Finally, I was able to proceed with payments and create my developer account.</p>
+<h2 id="developer-console">
+  Developer Console
+  <a class="anchor" href="#developer-console">#</a>
+</h2>
+<p>When you have your developer account created, you can access <a href="https://play.google.com/apps/publish/">Developer Console</a> with your Google credentials. <a href="/posts/2014/publishing-android-app-in-google-play/all_applications.png"><img src="/posts/2014/publishing-android-app-in-google-play/all_applications.png" alt="all_applications" /></a> When you create your application, you can choose it from the list of available applications and you can manage several sections. <a href="/posts/2014/publishing-android-app-in-google-play/google_play_chosen_app.png"><img src="/posts/2014/publishing-android-app-in-google-play/google_play_chosen_app.png" alt="google_play_chosen_app" /></a> You don&rsquo;t have to to everything in one session, you can save a &ldquo;draft&rdquo; of your application and fill rest of the elements e.g. next day.</p>
+<h2 id="apk">
+  APK
+  <a class="anchor" href="#apk">#</a>
+</h2>
+<h3 id="preparing-apk-file-to-upload">
+  Preparing APK file to upload
+  <a class="anchor" href="#preparing-apk-file-to-upload">#</a>
+</h3>
+<p>Before we publish our app in Google Play Store, we need to generate signed <code>*.apk</code> file. In Android Studio, we can choose <code>Generate Signed APK...</code> option from <code>Build</code> menu. <a href="/posts/2014/publishing-android-app-in-google-play/generate_signed_apk.png"><img src="/posts/2014/publishing-android-app-in-google-play/generate_signed_apk.png" alt="generate_signed_apk" /></a> If we don&rsquo;t have our key store, we need to create one. <a href="/posts/2014/publishing-android-app-in-google-play/create_new_keystore.png"><img src="/posts/2014/publishing-android-app-in-google-play/create_new_keystore.png" alt="create_new_keystore" /></a> <strong>Very important</strong>: We need to remember or save somewhere our <strong>key store password</strong> and <strong>alias password</strong> (they can be the same). We also need to save somewhere (in a few different places) our <strong>key store file</strong>. Key store file, key store password and alias password are necessary for signing app. If we want to update uploaded app in the future, we need to sign it with exactly the same key store file and we need to know mentioned passwords to perform sign operation. Passwords can be changed, but we need to know old passwords to do it. When we will sign our app with a different key store file, we won&rsquo;t be able to update our app after uploading. Next, we need to set master password. <a href="/posts/2014/publishing-android-app-in-google-play/master_password.png"><img src="/posts/2014/publishing-android-app-in-google-play/master_password.png" alt="master_password" /></a> After that, we can click <code>Next</code> and finalize generating <code>*.apk</code> file. In this step, we can optionally run <a href="http://proguard.sourceforge.net/">ProGuard</a>. <a href="/posts/2014/publishing-android-app-in-google-play/generate_apk_proguard.png"><img src="/posts/2014/publishing-android-app-in-google-play/generate_apk_proguard.png" alt="generate_apk_proguard" /></a> If everything went ok, we should see the following window. <a href="/posts/2014/publishing-android-app-in-google-play/apk_generated.png"><img src="/posts/2014/publishing-android-app-in-google-play/apk_generated.png" alt="apk_generated" /></a> Now, we are ready to upload our <code>*.apk</code> file to Google Play Store.</p>
+<h3 id="uploading-apk-file">
+  Uploading APK file
+  <a class="anchor" href="#uploading-apk-file">#</a>
+</h3>
+<p>In APK section you can upload your application compiled into <code>*.apk</code> file to Google Play Store. <a href="/posts/2014/publishing-android-app-in-google-play/apk_section.png"><img src="/posts/2014/publishing-android-app-in-google-play/apk_section.png" alt="apk_section" /></a> You can also set up Beta testing or Alpha testing and distribute your app to selected group of testers. When, we uploaded our <code>*.apk</code> file, application is marked as &ldquo;Draft&rdquo;. <a href="/posts/2014/publishing-android-app-in-google-play/publishing_app_01.png"><img src="/posts/2014/publishing-android-app-in-google-play/publishing_app_01.png" alt="publishing_app_01" /></a> We need to provide all mandatory information in several sections. When, I filled everything, my application was still a &ldquo;Draft&rdquo;. I could display message &ldquo;Why can&rsquo;t I publish?&rdquo; and see details. <a href="/posts/2014/publishing-android-app-in-google-play/why_cant_i_publish.png"><img src="/posts/2014/publishing-android-app-in-google-play/why_cant_i_publish.png" alt="why_cant_i_publish" /></a> I needed to go to &ldquo;Pricing and Distribution&rdquo; section and check mandatory fields. <a href="/posts/2014/publishing-android-app-in-google-play/pricing_and_distribution_agreements.png"><img src="/posts/2014/publishing-android-app-in-google-play/pricing_and_distribution_agreements.png" alt="pricing_and_distribution_agreements" /></a> I also needed to mark checkbox <em>Not submitting a privacy policy URL at this time.</em> in &ldquo;Store Listing&rdquo; section (&ldquo;Privacy Policy&rdquo; subsection).</p>
+<h2 id="store-listing">
+  Store listing
+  <a class="anchor" href="#store-listing">#</a>
+</h2>
+<h3 id="basic-information">
+  Basic information
+  <a class="anchor" href="#basic-information">#</a>
+</h3>
+<p>In store listing, you need to provide basic information about your app. <a href="/posts/2014/publishing-android-app-in-google-play/store_listing_basic_info.png"><img src="/posts/2014/publishing-android-app-in-google-play/store_listing_basic_info.png" alt="store_listing_basic_info" /></a></p>
+<h3 id="graphic-assets---screenshots">
+  Graphic assets - screenshots
+  <a class="anchor" href="#graphic-assets---screenshots">#</a>
+</h3>
+<p>Next, you need to provide screenshots of your app. Screenshots for the phone are necessary, but screenshots for the tablets are optional. <a href="/posts/2014/publishing-android-app-in-google-play/graphic_assets.png"><img src="/posts/2014/publishing-android-app-in-google-play/graphic_assets.png" alt="graphic_assets" /></a></p>
+<h3 id="graphic-assets---hi-res-icon-promo-images--video">
+  Graphic assets - Hi-res icon, promo images &amp; video
+  <a class="anchor" href="#graphic-assets---hi-res-icon-promo-images--video">#</a>
+</h3>
+<p>Then, you need to provide promo images &amp; video. Two options are mandatory. <a href="/posts/2014/publishing-android-app-in-google-play/promo_images.png"><img src="/posts/2014/publishing-android-app-in-google-play/promo_images.png" alt="promo_images" /></a></p>
+<h3 id="categorization-contact-details--privacy-policy">
+  Categorization, Contact Details &amp; Privacy Policy
+  <a class="anchor" href="#categorization-contact-details--privacy-policy">#</a>
+</h3>
+<p>Next, we can categorize our app, set up Contact Details and Privacy Policy if it&rsquo;s necessary. If we don&rsquo;t have Privacy Policy, we need to check the field <em>Not submitting a Privacy Policy URL at this time</em>. <a href="/posts/2014/publishing-android-app-in-google-play/categorization_contact-details_privacy_policy.png"><img src="/posts/2014/publishing-android-app-in-google-play/categorization_contact-details_privacy_policy.png" alt="categorization_contact-details_privacy_policy" /></a></p>
+<h3 id="translations">
+  Translations
+  <a class="anchor" href="#translations">#</a>
+</h3>
+<p>We can manage translations and prepare different description, application name, screenshot and other details for different languages. In my case, I prepared description and screenshots in Polish and English language versions. <a href="/posts/2014/publishing-android-app-in-google-play/google_play_translations.png"><img src="/posts/2014/publishing-android-app-in-google-play/google_play_translations.png" alt="google_play_translations" /></a></p>
+<h2 id="pricing--distribution">
+  Pricing &amp; Distribution
+  <a class="anchor" href="#pricing--distribution">#</a>
+</h2>
+<p>In this section you can provide information about distribution. You can determine whether your app will be available all-around the world or only in selected countries. You can also determine if it will be free or paid. <a href="/posts/2014/publishing-android-app-in-google-play/pricing_and_distribution.png"><img src="/posts/2014/publishing-android-app-in-google-play/pricing_and_distribution.png" alt="pricing_and_distribution" /></a></p>
+<h2 id="in-app-products">
+  In-app Products
+  <a class="anchor" href="#in-app-products">#</a>
+</h2>
+<p>We are able to create in-app products. Application, which I was publishing does not have such feature. You can read more about that at: <a href="http://developer.android.com/google/play/billing/api.html">http://developer.android.com/google/play/billing/api.html</a></p>
+<h2 id="services-and-apis">
+  Services and APIs
+  <a class="anchor" href="#services-and-apis">#</a>
+</h2>
+<p>In this section, you can set up Google Cloud Messaging (GCM), Licensing &amp; In-app billing and Google Play Game Services. Here you can get license keys and link your mobile app with server application if it&rsquo;s neccessary. There is also feature called App Indexing from Google Search, where you can deep link into your app from Google search.</p>
+<h2 id="optimization-tips">
+  Optimization tips
+  <a class="anchor" href="#optimization-tips">#</a>
+</h2>
+<p>Here you can see some optimization tips from Google, which you can apply for your app, to make it better.</p>
+<h2 id="launch-checklist">
+  Launch checklist
+  <a class="anchor" href="#launch-checklist">#</a>
+</h2>
+<p>Don&rsquo;t forget to browse Google&rsquo;s <a href="http://developer.android.com/distribute/tools/launch-checklist.html">Lauch Checklist</a>.</p>
+<h2 id="ready-to-publish">
+  Ready to publish
+  <a class="anchor" href="#ready-to-publish">#</a>
+</h2>
+<p>After proving all the information, my application was finally ready to publish! <a href="/posts/2014/publishing-android-app-in-google-play/ready_to_publish.png"><img src="/posts/2014/publishing-android-app-in-google-play/ready_to_publish.png" alt="ready_to_publish" /></a> I could click <code>Publish this app</code> button and deploy my application to Google Play Store. After that, my application was marked as <strong>Published</strong> on the list of the applications. It&rsquo;s worth mentioning that applications are not available on Google Play Store immediately after publishing, but within a few hours. I was informed about that after clicking the <code>Publish this app</code> button. <a href="/posts/2014/publishing-android-app-in-google-play/app_published_waiting.png"><img src="/posts/2014/publishing-android-app-in-google-play/app_published_waiting.png" alt="app_published_waiting" /></a> You can see that my app was successfully published. You can download it at: <a href="https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer">https://play.google.com/store/apps/details?id=com.pwittchen.eeganalyzer</a>. It&rsquo;s specific application reading brain waves from <a href="http://store.neurosky.com/products/brainwave-starter-kit">NeuroSky MindWave Mobile</a> device, so you need to have such device in order to use this app. It can be connected via Bluetooth to the Android smartphone or tablet.</p>
+<h2 id="last-words">
+  Last words
+  <a class="anchor" href="#last-words">#</a>
+</h2>
+<p>Information provided in this article does not cover all functionalities and possibilities of Google Play Store. If you want to learn more, please read official Google&rsquo;s websites.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/publishing-android-application-in-google-play-store.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#problems-with-payments-during-registration">Problems with payments during registration</a></li>
+    <li><a href="#developer-console">Developer Console</a></li>
+    <li><a href="#apk">APK</a>
+      <ul>
+        <li><a href="#preparing-apk-file-to-upload">Preparing APK file to upload</a></li>
+        <li><a href="#uploading-apk-file">Uploading APK file</a></li>
+      </ul>
+    </li>
+    <li><a href="#store-listing">Store listing</a>
+      <ul>
+        <li><a href="#basic-information">Basic information</a></li>
+        <li><a href="#graphic-assets---screenshots">Graphic assets - screenshots</a></li>
+        <li><a href="#graphic-assets---hi-res-icon-promo-images--video">Graphic assets - Hi-res icon, promo images &amp; video</a></li>
+        <li><a href="#categorization-contact-details--privacy-policy">Categorization, Contact Details &amp; Privacy Policy</a></li>
+        <li><a href="#translations">Translations</a></li>
+      </ul>
+    </li>
+    <li><a href="#pricing--distribution">Pricing &amp; Distribution</a></li>
+    <li><a href="#in-app-products">In-app Products</a></li>
+    <li><a href="#services-and-apis">Services and APIs</a></li>
+    <li><a href="#optimization-tips">Optimization tips</a></li>
+    <li><a href="#launch-checklist">Launch checklist</a></li>
+    <li><a href="#ready-to-publish">Ready to publish</a></li>
+    <li><a href="#last-words">Last words</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="During Hack Your Career event at the Silesian University of Technology, I&rsquo;ve prepared a presentation titled Reactive Programming - Efficient Server Applications with a colleague from work. Arek told about theory of Reactive Programming, shown basic concepts, data types and a few examples in the code. During my part of the presentation, I&rsquo;ve wrote a very simple server and client in Java (9 on the server, 7 on the client) with Vert.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Simple reactive HTTP client and server with RxJava, Vert.x and Android" />
+<meta property="og:description" content="During Hack Your Career event at the Silesian University of Technology, I&rsquo;ve prepared a presentation titled Reactive Programming - Efficient Server Applications with a colleague from work. Arek told about theory of Reactive Programming, shown basic concepts, data types and a few examples in the code. During my part of the presentation, I&rsquo;ve wrote a very simple server and client in Java (9 on the server, 7 on the client) with Vert." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/" />
+<meta property="article:published_time" content="2017-11-09T22:30:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Simple reactive HTTP client and server with RxJava, Vert.x and Android | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Simple reactive HTTP client and server with RxJava, Vert.x and Android</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/">Simple reactive HTTP client and server with RxJava, Vert.x and Android</a>
+  </h1>
+  
+  <h5>Nov 9, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>
+  </div>
+  
+
+
+  <p><p>During <a href="https://www.facebook.com/Hack.your.Career/">Hack Your Career</a> event at the Silesian University of Technology, I&rsquo;ve prepared a presentation titled <a href="https://speakerdeck.com/pwittchen/reactive-programming-efficient-server-applications">Reactive Programming - Efficient Server Applications</a> with a colleague from work. Arek told about theory of Reactive Programming, shown basic concepts, data types and a few examples in the code. During my part of the presentation, I&rsquo;ve wrote a very simple server and client in Java (9 on the server, 7 on the client) with <a href="http://vertx.io/">Vert.x</a> (<a href="http://vertx.io/docs/vertx-core/java/">Core</a> and <a href="http://vertx.io/docs/vertx-rx/java2/">Rx</a>), <a href="https://github.com/ReactiveX/RxJava">RxJava 2</a>, <a href="https://github.com/square/okhttp">OkHttp 3</a>, <a href="https://www.android.com/">Android</a> and <a href="https://github.com/ReactiveX/RxAndroid/">RxAndroid</a>. Presentation was targeted mainly to the university students with no experience with reactive programming, but it was an open event and anyone could attend it. Below, we can see a very simple code snippet showing how to create a reactive HTTP server with Vert.x. We can create a stream of requests, make <code>Flowable</code> out of it, apply any kind of RxJava 2 operator including backpressure handling and subscribe the stream. Moreover, we can also reactively start the server with <code>rxListen(int port)</code> method. This is just a basic example, where will be sending request to the only one endpoint. In the case, when we want to handle more endpoints, we can use <a href="http://vertx.io/docs/vertx-web/java/">vertx-web</a> library and design REST API.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">final</span> HttpServer server <span style="color:#f92672">=</span> Vertx
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">vertx</span><span style="color:#f92672">()</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">createHttpServer</span><span style="color:#f92672">();</span>
+
+server
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">requestStream</span><span style="color:#f92672">()</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">toFlowable</span><span style="color:#f92672">()</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">onBackpressureDrop</span><span style="color:#f92672">()</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span>request <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+      logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{} {}&#34;</span><span style="color:#f92672">,</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">rawMethod</span><span style="color:#f92672">(),</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">absoluteURI</span><span style="color:#f92672">());</span>
+      request<span style="color:#f92672">.</span><span style="color:#a6e22e">response</span><span style="color:#f92672">().</span><span style="color:#a6e22e">end</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;request received&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">});</span>
+
+server
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">rxListen</span><span style="color:#f92672">(</span>8080<span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span>httpServer <span style="color:#f92672">-&gt;</span> logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;server is running at port 8080...&#34;</span><span style="color:#f92672">));</span>
+</code></pre></div><p>We can build this server with Gradle as follows:</p>
+<pre><code>./gradlew shadowJar
+</code></pre><p>and then, we can run it:</p>
+<pre><code>java -jar build/libs/server-fat.jar
+</code></pre><p>Our client will be an Android application, which will read data from the accelerometer sensor, send it to the server and display it in the <code>TextView</code> on a mobile device. We will use <a href="https://github.com/pwittchen/ReactiveSensors">ReactiveSensors</a> library (which was recently migrated to RxJava 2) for getting sensor readings as a <code>Flowable</code> data stream. Next, we will apply backpressure <code>DROP</code> strategy, filter only events of changing sensors (we neglect changing of the accuracy), read only one event per one second with <code>throttleLast(int, TimeUnit)</code> operator and map event to a String with device coordinates. Next, we are ready to send data with <code>Completable performRequest(String)</code>, which we created earlier. Sensors readings are acquired in the <code>computation()</code> scheduler, send to the server with <code>io()</code> scheduler and passed to the UI thread on Android with <code>AndroidSchedulers.mainThread()</code>. Distributing operations to the different schedulers is made with <code>subscribeOn(Scheduler)</code> and <code>observeOn(Scheduler)</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">reactiveSensors
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeSensor</span><span style="color:#f92672">(</span>Sensor<span style="color:#f92672">.</span><span style="color:#a6e22e">TYPE_ACCELEROMETER</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">onBackpressureDrop</span><span style="color:#f92672">()</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>ReactiveSensorFilter<span style="color:#f92672">.</span><span style="color:#a6e22e">filterSensorChanged</span><span style="color:#f92672">())</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">throttleLast</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">::</span>getSensorReading<span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">doOnNext</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> performRequest<span style="color:#f92672">(</span>event<span style="color:#f92672">)</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">())</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">computation</span><span style="color:#f92672">())</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-&gt;</span> tvReadings<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>event<span style="color:#f92672">));</span>
+</code></pre></div><p>It&rsquo;s worth noticing that <code>Completable performRequest(String)</code> is using OkHttp 3 under the hood as a HTTP client, because it&rsquo;s very simple example with one endpoint. In the case, we want to handle more endpoints on the client-side, it&rsquo;s better to use <a href="https://github.com/square/retrofit">Retrofit</a> library. It&rsquo;s also interesting that in our case, we can simulate behavior of the accelerometer and other sensors with the latest Android device emulator available in the Android SDK. It works surprisingly smooth.</p>
+<p><img src="/posts/2017/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/virtual_sensors.png" alt="" /></p>
+<p><strong>Complete working example can be found at</strong>: <a href="https://github.com/pwittchen/reactive-client-server">https://github.com/pwittchen/reactive-client-server</a>. Later, I&rsquo;ve also shown, how to use RxJava to distribute computational operations to a different threads of the CPU cores, but I&rsquo;ll probably publish a separate article about that on this blog. It was the same example I shown during my JDD presentation this year.</p>
+<p>Slides from my part of the presentation are available below.</p>
+<p>{% raw %}</p>
+<!-- raw HTML omitted -->
+<p>{% endraw %}</p>
+<p><a href="https://speakerdeck.com/pwittchen/reactive-programming-efficient-server-applications">View slides on SpeakerDeck</a></p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

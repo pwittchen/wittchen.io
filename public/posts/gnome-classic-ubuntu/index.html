@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
+New desktop environment #  I decided to choose Gnome classic.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Gnome Classic desktop environment on Ubuntu" />
+<meta property="og:description" content="Introduction #  I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
+New desktop environment #  I decided to choose Gnome classic." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/gnome-classic-ubuntu/" />
+<meta property="article:published_time" content="2015-08-23T01:02:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Gnome Classic desktop environment on Ubuntu | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Gnome Classic desktop environment on Ubuntu</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#new-desktop-environment">New desktop environment</a></li>
+    <li><a href="#installation-of-gnome-classic-and-numix-theme">Installation of Gnome Classic and Numix Theme</a></li>
+    <li><a href="#detailed-information-about-configuration">Detailed information about configuration</a></li>
+    <li><a href="#wallpaper">Wallpaper</a></li>
+    <li><a href="#alternatives--resources">Alternatives &amp; Resources</a></li>
+    <li><a href="#recap">Recap</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/gnome-classic-ubuntu/">Gnome Classic desktop environment on Ubuntu</a>
+  </h1>
+  
+  <h5>Aug 23, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/linux/">linux</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to <a href="http://blog.wittchen.biz.pl/making-ubuntu-and-unity-faster/">make Unity faster</a>, but still I wasn&rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.</p>
+<h2 id="new-desktop-environment">
+  New desktop environment
+  <a class="anchor" href="#new-desktop-environment">#</a>
+</h2>
+<p>I decided to choose <a href="https://www.gnome.org/">Gnome</a> classic. It&rsquo;s fast, clean, minimal, works easily with Ubuntu, has top panel and is configurable. My current desktop looks like this:</p>
+<p><img src="/posts/2015/gnome-classic-ubuntu/screenfetch-2015-08-18-11_00_51-1024x576.png" alt="screenfetch-2015-08-18-11_00_51" /></p>
+<p>Unfortunately, I don&rsquo;t have HUD like in Unity, but after a few days I got used to that. I also turned off all animations and visual effects. Everything works smoothly and looks much better than Unity. In the current configuration I have: <a href="https://en.wikipedia.org/wiki/Z_shell">Z Shell</a>, <a href="http://ohmyz.sh/">Oh-my-zsh</a>, <a href="http://tools.suckless.org/dmenu/">dmenu</a>, <a href="https://numixproject.org/">Numix</a> Theme and <a href="https://numixproject.org/">Numix</a> Circle Icons. In addition, I have the same <a href="http://blog.wittchen.biz.pl/indicators-for-ubuntu/">indicators</a>, which I had earlier on Unity and they work fine. I just needed to <a href="https://github.com/pwittchen/dotfiles/tree/master/install/icons/spotify">adjust look of Spotify icon</a> in top panel. Moreover, <a href="http://simmesimme.github.io/gnome-pie.html">Gnome Pie</a> was installed later as additional launcher and media controller.</p>
+<h2 id="installation-of-gnome-classic-and-numix-theme">
+  Installation of Gnome Classic and Numix Theme
+  <a class="anchor" href="#installation-of-gnome-classic-and-numix-theme">#</a>
+</h2>
+<p>I&rsquo;ve installed Gnome Classic as follows:</p>
+<p>sudo apt-get install gnome-session-fallback</p>
+<p>Then, I installed Gnome Tweak Tool and Unity Tweak Tool:</p>
+<p>sudo apt-get install gnome-tweak-tool unity-tweak-tool</p>
+<p>and Compiz Config Manager with plugins:</p>
+<p>sudo apt-get install compizconfig-settings-manager compiz-plugins-extra</p>
+<p><strong>Please note</strong>: to enable alt+tab in gnome classic fallback, open the manager and navigate to window management and check application switcher (previously disabled). After that I could install Numix icons and theme:</p>
+<p>sudo add-apt-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle</p>
+<p>I&rsquo;ve set appropriate theme and icons via Gnome Tweak Tool. After reboot of the computer changes should be successfully applied.</p>
+<h2 id="detailed-information-about-configuration">
+  Detailed information about configuration
+  <a class="anchor" href="#detailed-information-about-configuration">#</a>
+</h2>
+<p>If you&rsquo;re interested in detailed configuration information, you can check out my <em>dotfiles</em> at: <a href="https://github.com/pwittchen/dotfiles">https://github.com/pwittchen/dotfiles</a> and system configuration at: <a href="https://github.com/pwittchen/ubuntu-config">https://github.com/pwittchen/ubuntu-config</a>. To generate system information for the screenshot I used <a href="https://github.com/KittyKatt/screenFetch">screenfetch</a> script. I didn&rsquo;t worked correctly for <code>gnome-session-fallback</code>, but I&rsquo;ve made <a href="https://github.com/KittyKatt/screenFetch/commit/1c5a2c798e82e810d8e962a1540f5428f77540d6">small contribution on GitHub</a> and now it&rsquo;s fine.</p>
+<h2 id="wallpaper">
+  Wallpaper
+  <a class="anchor" href="#wallpaper">#</a>
+</h2>
+<p>You can find wallpaper from the screenshot at <a href="http://papers.co/ac08-wallpaper-triangle-art-blue-rainbow-illust-graphic/">papers.co</a> website.</p>
+<h2 id="alternatives--resources">
+  Alternatives &amp; Resources
+  <a class="anchor" href="#alternatives--resources">#</a>
+</h2>
+<p>I&rsquo;ve spent some time on analyzing alternative desktop environments and Linux based operating systems, which looks good. Below, you can find my collection of information and resources. Maybe some of them will be better for your specific needs. <strong>Interesting Reddit channels</strong>:</p>
+<ul>
+<li><a href="https://www.reddit.com/r/unixporn">https://www.reddit.com/r/unixporn</a></li>
+<li><a href="https://www.reddit.com/r/linuxmasterrace">https://www.reddit.com/r/linuxmasterrace</a></li>
+<li><a href="https://www.reddit.com/r/linux">https://www.reddit.com/r/linux</a></li>
+</ul>
+<p><strong>Selected Linux based systems with interesting user interface</strong>:</p>
+<ul>
+<li><a href="https://solus-project.com">Solus Project</a> (formely Evolve OS)</li>
+<li><a href="http://ozonos.github.io/">Ozon OS</a></li>
+<li><a href="https://elementary.io/">Elementary OS Freya</a></li>
+</ul>
+<p><strong>Selected Linux window managers</strong>:</p>
+<ul>
+<li><a href="https://unity.ubuntu.com/">Unity</a></li>
+<li><a href="https://www.kde.org/">KDE</a></li>
+<li><a href="https://www.gnome.org/">Gnome</a></li>
+<li><a href="http://www.xfce.org/">Xfce</a></li>
+<li><a href="https://solus-project.com/budgie/">Budgie</a> (from Solus Project)</li>
+<li><a href="https://elementary.io/">Elementary OS</a></li>
+<li><a href="https://i3wm.org/">i3</a></li>
+</ul>
+<h2 id="recap">
+  Recap
+  <a class="anchor" href="#recap">#</a>
+</h2>
+<p>After switching from Unity to Gnome my desktop is much more better, faster and cleaner. After mastering popular shortcuts for managing programs, windows, workspaces, etc. we can work very efficiently. Gnome Classic is fine for me right now, but maybe other WM will be better for you. It depends on your personal preferences. I&rsquo;m gonna use Gnome Classic for some time and maybe I&rsquo;ll try other environments in the future. For sure I won&rsquo;t go back to Unity if it don&rsquo;t evolve.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/gnome-classic-ubuntu.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#new-desktop-environment">New desktop environment</a></li>
+    <li><a href="#installation-of-gnome-classic-and-numix-theme">Installation of Gnome Classic and Numix Theme</a></li>
+    <li><a href="#detailed-information-about-configuration">Detailed information about configuration</a></li>
+    <li><a href="#wallpaper">Wallpaper</a></li>
+    <li><a href="#alternatives--resources">Alternatives &amp; Resources</a></li>
+    <li><a href="#recap">Recap</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="During maintenance of the legacy projects, I sometimes see constructions like:
+void appendFooter(Report report); or
+void populate(Data data); I even saw something like this:
+void populate(Source source, Target target); What is wrong with these statements?
+They&rsquo;re using so called output argument. In the examples above, we&rsquo;re passing a report or data variable, which usually are going to be global variables available in the scope of the whole class. These methods takes them as an argument and modify them.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Modifying mehtod&#39;s input parameters" />
+<meta property="og:description" content="During maintenance of the legacy projects, I sometimes see constructions like:
+void appendFooter(Report report); or
+void populate(Data data); I even saw something like this:
+void populate(Source source, Target target); What is wrong with these statements?
+They&rsquo;re using so called output argument. In the examples above, we&rsquo;re passing a report or data variable, which usually are going to be global variables available in the scope of the whole class. These methods takes them as an argument and modify them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/modifying-methods-input-parameters/" />
+<meta property="article:published_time" content="2019-08-05T18:27:30+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Modifying mehtod&#39;s input parameters | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Modifying mehtod&#39;s input parameters</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/modifying-methods-input-parameters/">Modifying mehtod&#39;s input parameters</a>
+  </h1>
+  
+  <h5>Aug 5, 2019</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>
+  </div>
+  
+
+
+  <p><p>During maintenance of the legacy projects, I sometimes see constructions like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">appendFooter</span><span style="color:#f92672">(</span>Report report<span style="color:#f92672">);</span>
+</code></pre></div><p>or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">populate</span><span style="color:#f92672">(</span>Data data<span style="color:#f92672">);</span>
+</code></pre></div><p>I even saw something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">populate</span><span style="color:#f92672">(</span>Source source<span style="color:#f92672">,</span> Target target<span style="color:#f92672">);</span>
+</code></pre></div><p>What is wrong with these statements?</p>
+<p>They&rsquo;re using so called <em>output argument</em>. In the examples above, we&rsquo;re passing a <code>report</code> or <code>data</code> variable, which usually are going to be global variables available in the scope of the whole class. These methods takes them as an argument and modify them. This idea comes from pre-OOP times and could be applied in programs written in C. Nevertheless, in Java, this technique should be avoided and is considered as a <strong>bad practice</strong>.</p>
+<p>In Robert C. Martin&rsquo;s &ldquo;Clean Code&rdquo; book, it&rsquo;s written:</p>
+<p><em>Output arguments should be avoided.</em></p>
+<p>Writing code in such way can implicate many problems. Often we don&rsquo;t know, by looking at the method name, how the method is going to modify the input object. Even when we&rsquo;ll write unit tests for each method, the final behavior may be different because in a concrete data flow, one method can modify input object, then another method can modify the same object in a concrete order what will change the final outcome. In this approach data cannot be immutable and body of the method is tightly coupled to the class and it&rsquo;s attributes, which is bad. The more methods like these, the more unpredictable and harder to test code will become. Moreover, when multiple threads will call these methods, then we can encounter errors related to concurrency or data inconsistency.</p>
+<p><strong>How to fix this problem?</strong></p>
+<p>First of all, we should never use input arguments. Variables used in the methods should be available only in the scode of these methods.</p>
+<p>We can rewrite bad examples listed above in the following way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">report<span style="color:#f92672">.</span><span style="color:#a6e22e">appendFooter</span><span style="color:#f92672">(</span>footer<span style="color:#f92672">);</span>
+</code></pre></div><p>and</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">final</span> Object value <span style="color:#f92672">=</span> createValue<span style="color:#f92672">();</span>
+data<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span>value<span style="color:#f92672">);</span>
+</code></pre></div><p>and</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Source source <span style="color:#f92672">=</span> createSource<span style="color:#f92672">();</span>
+target<span style="color:#f92672">.</span><span style="color:#a6e22e">setValue</span><span style="color:#f92672">(</span>source<span style="color:#f92672">);</span>
+</code></pre></div><p>Now, we clearly see where objects are created, data is immutable, input parameters are not modified inside the methods, we don&rsquo;t rely on the global state inside particular methods and all method&rsquo;s variables are available only in the scope of the method.</p>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://softwareengineering.stackexchange.com/a/245809/189814">https://softwareengineering.stackexchange.com/a/245809/189814</a></li>
+<li><a href="https://softwareengineering.stackexchange.com/questions/322490/what-is-an-output-argument-as-refered-to-in-martins-clean-code/322495">https://softwareengineering.stackexchange.com/questions/322490/what-is-an-output-argument-as-refered-to-in-martins-clean-code/322495</a></li>
+<li><a href="https://github.com/denizozger/clean-code#methods">https://github.com/denizozger/clean-code#methods</a></li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/modifying-methods-input-parameters.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

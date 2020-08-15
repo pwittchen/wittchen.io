@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="rxjava" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wittchen.io/tags/rxjava/" />
+<meta property="og:updated_time" content="2020-08-15T18:09:42+02:00" />
+<title>rxjava | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/rxjava/index.xml" title="Piotr Wittchen" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>rxjava</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav>
+  <ul>
+  
+    
+    <li class="book-section-flat">
+      <strong>Tags</strong>
+      <ul>
+      
+        <li class="flex justify-between">
+          <a href="/tags/i3/">i3</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/linux/">linux</a>
+          <span>31</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/python/">python</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/arch/">arch</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/java/">java</a>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/gradle/">gradle</a>
+          <span>13</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/kotlin/">kotlin</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/bci/">bci</a>
+          <span>6</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/conferences/">conferences</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/android/">android</a>
+          <span>70</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/testing/">testing</a>
+          <span>7</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/git/">git</a>
+          <span>13</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/open-source/">open-source</a>
+          <span>23</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/rxjava/">rxjava</a>
+          <span>14</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/ubuntu/">ubuntu</a>
+          <span>7</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/introducing-reactive-bus/">Introducing ReactiveBus</a>
+    </h2>
+    
+  <h5>Mar 11, 2018</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>, 
+      <a href="/tags/android/">android</a>
+  </div>
+  
+
+
+    <p>Today, I&rsquo;ve released my another tiny project. It&rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.
+You can use it as follows:
+Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(new Consumer&lt;Event&gt;() { @Override public void accept(Event event) { // handle event here  } }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:
+        <a href="/posts/introducing-reactive-bus/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/droidcon-poland-2017-is-your-app-really-connected/">DroidCon Poland 2017 - Is your app really connected?</a>
+    </h2>
+    
+  <h5>Dec 2, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>, 
+      <a href="/tags/conferences/">conferences</a>, 
+      <a href="/tags/open-source/">open-source</a>
+  </div>
+  
+
+
+    <p>Yesterday, I gave a presentation about connectivity in the Android apps during the DroidCon Poland 2017 Conference in Kraków.
+Below, you can see slides from this presentation.
+ View slides on SpeakerDeck
+There&rsquo;s also tweet related to this presentation from DroidCon Kraków:
+Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; or Internet connectivity changes in our app &#x1f4f1;&#x1f198;&#x1f642; pic.twitter.com/7YGGzNJeb2
+&mdash; droidcon Kraków (@droidconkr) December 2, 2017  I hope, you enjoyed it.
+        <a href="/posts/droidcon-poland-2017-is-your-app-really-connected/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/">Simple reactive HTTP client and server with RxJava, Vert.x and Android</a>
+    </h2>
+    
+  <h5>Nov 9, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>
+  </div>
+  
+
+
+    <p>During Hack Your Career event at the Silesian University of Technology, I&rsquo;ve prepared a presentation titled Reactive Programming - Efficient Server Applications with a colleague from work. Arek told about theory of Reactive Programming, shown basic concepts, data types and a few examples in the code. During my part of the presentation, I&rsquo;ve wrote a very simple server and client in Java (9 on the server, 7 on the client) with Vert.
+        <a href="/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/jdd-2017-juc-flow-presentation-summary/">JDD 2017 - Get ready for java.util.concurrent.Flow! - summary</a>
+    </h2>
+    
+  <h5>Oct 5, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>, 
+      <a href="/tags/conferences/">conferences</a>
+  </div>
+  
+
+
+    <p>Recently on the JDD 2017 conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.
+ View presentation on SpeakerDeck
+Code snippets shown during this presentation are available at https://github.com/pwittchen/java-flow-experiments. I have done a tiny live coding session during this talk.
+        <a href="/posts/jdd-2017-juc-flow-presentation-summary/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/introducing-reactive-airplane-mode/">Introducing ReactiveAirplaneMode</a>
+    </h2>
+    
+  <h5>Aug 15, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>, 
+      <a href="/tags/open-source/">open-source</a>
+  </div>
+  
+
+
+    <p>I&rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
+ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&gt; textView.setText(String.format(&#34;Airplane mode on: %s&#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.
+        <a href="/posts/introducing-reactive-airplane-mode/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/releasing-reactivenetwork-v-0100/">Releasing ReactiveNetwork v. 0.10.0</a>
+    </h2>
+    
+  <h5>Jul 20, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>, 
+      <a href="/tags/open-source/">open-source</a>
+  </div>
+  
+
+
+    <p>I&rsquo;ve recently released ReactiveNetwork library v. 0.10.0 for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&rsquo;m developing for approximately 2 years now. In this version, I&rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: Release for RxJava1.x
+ bumped RxJava1 version to 1.3.0 bumped test dependencies created Code of Conduct updated Kotlin version in sample apps added retrolambda to the sample Java app - issue #163 fixed behavior of network observing in disconnected state - issue #159  Release for RxJava2.
+        <a href="/posts/releasing-reactivenetwork-v-0100/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/release-of-prefser-210-with-rxjava2/">Release of prefser v. 2.1.0 with RxJava2 support</a>
+    </h2>
+    
+  <h5>Jun 19, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/open-source/">open-source</a>, 
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>
+  </div>
+  
+
+
+    <p>I&rsquo;ve recently released new version of prefser library for Android. In case you don&rsquo;t know, it&rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. This version has the new artifact, which has codebase migrated to RxJava2.x. As usual, I kept backward compatibility with RxJava1.x. You can find more details about the project at https://github.com/pwittchen/prefser. If you want to use it in your mobile project, you need the following dependencies in the build.
+        <a href="/posts/release-of-prefser-210-with-rxjava2/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/new-reactive-data-types-in-rxjava2/">New reactive data types in RxJava2</a>
+    </h2>
+    
+  <h5>May 31, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>
+  </div>
+  
+
+
+    <p>Introduction #  I&rsquo;m still exploring reactive programming world and RxJava library. Recently, I&rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&rsquo;m still learning this library and its concept. It&rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp; Completable.
+        <a href="/posts/new-reactive-data-types-in-rxjava2/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/introducing-yaas-java-sdk/">Introducing YaaS Java SDK</a>
+    </h2>
+    
+  <h5>May 28, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>
+  </div>
+  
+
+
+    <p>Introduction #  In my company, there&rsquo;s a concept of so-called &ldquo;innovation day&rdquo;. I have the possibility to &ldquo;use&rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&rsquo;ve decided to create YaaS Java SDK. If you don&rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.
+        <a href="/posts/introducing-yaas-java-sdk/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/joining-lists-of-rxjava-observables/">Joining lists of RxJava Observables</a>
+    </h2>
+    
+  <h5>May 15, 2017</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>, 
+      <a href="/tags/rxjava/">rxjava</a>
+  </div>
+  
+
+
+    <p>In RxJava we have a few operators for joining Observables. The most common are:
+ concat merge zip  Take a look at the documentation in these links. It has interactive marble diagrams showing how the operators work on the streams. You can move marbles along the lines and see how the output stream changes. It really helps to understand how it works. Code snippets in this article are based on RxJava 2.
+        <a href="/posts/joining-lists-of-rxjava-observables/">...</a>
+      
+    </p>
+  </article>
+  
+
+  
+<ul class="pagination">
+  <li class="page-item">
+    <a href="/tags/rxjava/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+  <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="/tags/rxjava/">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/tags/rxjava/page/2/">2</a>
+  </li>
+  <li class="page-item">
+    <a href="/tags/rxjava/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+  </li>
+  <li class="page-item">
+    <a href="/tags/rxjava/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
+</ul>
+
+
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav>
+  <ul>
+  
+    
+    <li class="book-section-flat">
+      <strong>Tags</strong>
+      <ul>
+      
+        <li class="flex justify-between">
+          <a href="/tags/i3/">i3</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/linux/">linux</a>
+          <span>31</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/python/">python</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/arch/">arch</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/java/">java</a>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/gradle/">gradle</a>
+          <span>13</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/kotlin/">kotlin</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/bci/">bci</a>
+          <span>6</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/conferences/">conferences</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/android/">android</a>
+          <span>70</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/testing/">testing</a>
+          <span>7</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/git/">git</a>
+          <span>13</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/open-source/">open-source</a>
+          <span>23</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/rxjava/">rxjava</a>
+          <span>14</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/ubuntu/">ubuntu</a>
+          <span>7</span>
+        </li>
+      
+      </ul>
+    </li>
+    
+  
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

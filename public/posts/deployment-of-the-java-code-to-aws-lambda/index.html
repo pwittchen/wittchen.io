@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction #  In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &ldquo;Serverless&rdquo;. It doesn&rsquo;t mean that we don&rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS).">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Deployment of the Java code to AWS Lambda" />
+<meta property="og:description" content="Introduction #  In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &ldquo;Serverless&rdquo;. It doesn&rsquo;t mean that we don&rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/" />
+<meta property="article:published_time" content="2018-03-18T16:50:02+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Deployment of the Java code to AWS Lambda | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Deployment of the Java code to AWS Lambda</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#aws-console">AWS Console</a></li>
+    <li><a href="#serverless-framework">Serverless Framework</a></li>
+    <li><a href="#creating-lambda">Creating Lambda</a></li>
+    <li><a href="#deployment-to-the-cloud">Deployment to the Cloud</a></li>
+    <li><a href="#exposing-lambda-via-api-gateway">Exposing Lambda via API Gateway</a></li>
+    <li><a href="#monitoring">Monitoring</a></li>
+    <li><a href="#update">Update</a></li>
+    <li><a href="#function-removal">Function Removal</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/deployment-of-the-java-code-to-aws-lambda/">Deployment of the Java code to AWS Lambda</a>
+  </h1>
+  
+  <h5>Mar 18, 2018</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/java/">java</a>
+  </div>
+  
+
+
+  <p><h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &ldquo;Serverless&rdquo;. It doesn&rsquo;t mean that we don&rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS). In BaaS we can configure whole backend infrastructure using third-party cloud services. In this case, we can have database, REST API and other services, which we need depending on our use case. In FaaS, we have just a tiny piece of code responsible for a single job, which we can take and deploy into the cloud. AWS Lambda is an example of FaaS and we&rsquo;ll focus on it in this article.</p>
+<h2 id="aws-console">
+  AWS Console
+  <a class="anchor" href="#aws-console">#</a>
+</h2>
+<p>First of all, we need to create our AWS account to have an access to AWS console. You can find the console at: <a href="https://aws.amazon.com/console/">https://aws.amazon.com/console/</a>. I had a few problems regarding registration, but finally I created my account. People in support are quite helpful. Please, keep in mind the fact, that you need to provide your debit card details during the registration and they&rsquo;ll charge you about 3 USD or something like that, which is a verification procedure. In AWS Lambda we&rsquo;ll get 1 million of free requests per month per cloud function, which is enough for tests or even not so demanding commercial services.</p>
+<h2 id="serverless-framework">
+  Serverless Framework
+  <a class="anchor" href="#serverless-framework">#</a>
+</h2>
+<p><a href="https://serverless.com/">Serverless Framework</a> is very convenient way of deploying Lambdas to AWS. You can install it as follows:</p>
+<pre><code>npm install serverless -g
+</code></pre><p>Next, you can type:</p>
+<pre><code>serverless login
+</code></pre><p>in order to log into Serverless. We can use <code>serverless</code> or <code>sls</code> alias for this tool.</p>
+<p>We also need to <strong>authorize</strong> Serverless to be able to deploy our Lambdas to AWS. We need to go to AWS Console, in the upper right corner click our name of the user and choose &ldquo;My Security Credentials&rdquo;. Then, we need to expand &ldquo;Access Keys&rdquo; and create new <code>key</code> and <code>secret</code> values. Once we got them, we can authorize Serverless:</p>
+<pre><code>sls config credentials --provider aws --key YOUR_KEY --secret YOUR_SECRET
+</code></pre><p>Serverless will store these credentials in <code>~./aws/credentials</code> file. Of course, this is very simple configruation. If we need more users, groups or more sophisticated authorization mechanisms, we should apply them later via IAM (Identity and Access Management) service.</p>
+<h2 id="creating-lambda">
+  Creating Lambda
+  <a class="anchor" href="#creating-lambda">#</a>
+</h2>
+<p>Next, we can create our AWS Lambda template. When, we type:</p>
+<pre><code>sls create --template
+</code></pre><p>We will see the list of available templates:</p>
+<pre><code>Serverless: Generating boilerplate...
+
+  Serverless Error ---------------------------------------
+
+  Template &quot;true&quot; is not supported. Supported templates are: &quot;aws-nodejs&quot;,
+  &quot;aws-nodejs-typescript&quot;, &quot;aws-nodejs-ecma-script&quot;, &quot;aws-python&quot;,
+  &quot;aws-python3&quot;, &quot;aws-groovy-gradle&quot;, &quot;aws-java-maven&quot;,
+  &quot;aws-java-gradle&quot;, &quot;aws-kotlin-jvm-maven&quot;, &quot;aws-kotlin-jvm-gradle&quot;,
+  &quot;aws-kotlin-nodejs-gradle&quot;, &quot;aws-scala-sbt&quot;, &quot;aws-csharp&quot;, &quot;aws-fsharp&quot;,
+  &quot;aws-go&quot;, &quot;aws-go-dep&quot;, &quot;azure-nodejs&quot;, &quot;google-nodejs&quot;, &quot;kubeless-python&quot;,
+  &quot;kubeless-nodejs&quot;, &quot;openwhisk-nodejs&quot;, &quot;openwhisk-php&quot;, &quot;openwhisk-python&quot;,
+  &quot;openwhisk-swift&quot;, &quot;spotinst-nodejs&quot;, &quot;spotinst-python&quot;, &quot;spotinst-ruby&quot;,
+  &quot;spotinst-java8&quot;, &quot;webtasks-nodejs&quot;, &quot;plugin&quot; and &quot;hello-world&quot;.
+
+  Get Support --------------------------------------------
+     Docs:          docs.serverless.com
+     Bugs:          github.com/serverless/serverless/issues
+     Forums:        forum.serverless.com
+     Chat:          gitter.im/serverless/serverless
+
+  Your Environment Information -----------------------------
+     OS:                     linux
+     Node Version:           7.10.1
+     Serverless Version:     1.26.0
+
+</code></pre><p>We will use <code>aws-java-gradle</code> template:</p>
+<pre><code>sls create --template aws-java-gradle
+</code></pre><p>After that, we&rsquo;ll get the following project structure:</p>
+<pre><code>├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── serverless.yml
+└── src
+    └── main
+        ├── java
+        │   └── com
+        │       └── serverless
+        │           ├── ApiGatewayResponse.java
+        │           ├── Handler.java
+        │           └── Response.java
+        └── resources
+            └── log4j.properties
+</code></pre><p>If you want to browse source of such template, you can visit my <a href="https://github.com/pwittchen/serverless-lambda-playground">serverless-lambda-playground</a> repo.
+We can add our configurations in <code>serverless.yml</code> file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">service</span>: aws-java-gradle
+
+<span style="color:#66d9ef">provider</span>:
+  <span style="color:#66d9ef">name</span>: aws
+  <span style="color:#66d9ef">runtime</span>: java8
+
+<span style="color:#66d9ef">package</span>:
+  <span style="color:#66d9ef">artifact</span>: build/distributions/hello.zip
+
+<span style="color:#66d9ef">functions</span>:
+  <span style="color:#66d9ef">hello</span>:
+    <span style="color:#66d9ef">handler</span>: com.serverless.Handler
+</code></pre></div><p>Main class is the <code>Handler</code> class:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Handler</span> <span style="color:#66d9ef">implements</span> RequestHandler<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;,</span> ApiGatewayResponse<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger LOG <span style="color:#f92672">=</span> Logger<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>Handler<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> ApiGatewayResponse <span style="color:#a6e22e">handleRequest</span><span style="color:#f92672">(</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> input<span style="color:#f92672">,</span> Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+LOG<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;received: &#34;</span> <span style="color:#f92672">+</span> input<span style="color:#f92672">);</span>
+Response responseBody <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Response<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Go Serverless v1.x!
+</span><span style="color:#e6db74">Your function executed successfully!&#34;</span><span style="color:#f92672">,</span> input<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">return</span> ApiGatewayResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
+<span style="color:#f92672">.</span><span style="color:#a6e22e">setStatusCode</span><span style="color:#f92672">(</span>200<span style="color:#f92672">)</span>
+<span style="color:#f92672">.</span><span style="color:#a6e22e">setObjectBody</span><span style="color:#f92672">(</span>responseBody<span style="color:#f92672">)</span>
+<span style="color:#f92672">.</span><span style="color:#a6e22e">setHeaders</span><span style="color:#f92672">(</span>Collections<span style="color:#f92672">.</span><span style="color:#a6e22e">singletonMap</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;X-Powered-By&#34;</span><span style="color:#f92672">,</span>
+<span style="color:#e6db74">&#34;AWS Lambda &amp; serverless&#34;</span><span style="color:#f92672">))</span>
+<span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>We can modify <code>handleRequest(Map&lt;String, Object&gt; input, Context context)</code> in order to perform any operation we want. It will be invoked after calling the Lambda.
+In case of JVM projects, we need to build them first:</p>
+<pre><code>./gradlew build
+</code></pre><h2 id="deployment-to-the-cloud">
+  Deployment to the Cloud
+  <a class="anchor" href="#deployment-to-the-cloud">#</a>
+</h2>
+<p>Next, we can deploy our Lambda to the AWS Cloud!</p>
+<pre><code>sls deploy
+</code></pre><p>It may take more time in the beginning, but updates should be faster.</p>
+<p>We should see something like that:</p>
+<pre><code>Serverless: Packaging service...
+Serverless: Creating Stack...
+Serverless: Checking Stack create progress...
+.....
+Serverless: Stack create finished...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+...............
+Serverless: Stack update finished...
+Service Information
+service: aws-java-gradle
+stage: dev
+region: us-east-1
+stack: aws-java-gradle-dev
+api keys:
+  None
+endpoints:
+  None
+functions:
+  hello: aws-java-gradle-dev-hello
+Serverless: Publish service to Serverless Platform...
+Service successfully published! Your service details are available at:
+https://platform.serverless.com/services/pwittchen/aws-java-gradle
+</code></pre><p>Since that moment, our Lambda is deployed!</p>
+<p>Be aware of the regions! I&rsquo;m beginner with AWS, so I haven&rsquo;t noticed that my Lambda was deployed to <code>us-east-1</code> and I was checking it on the AWS console, while being switched to another region and I didn&rsquo;t know why I cannot see my function.</p>
+<p>Now, we can log into AWS Console and Navigate to Lambda and then to Functions. We should see our function:</p>
+<p><img src="/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-console.png" alt="" /></p>
+<p>When, we type:</p>
+<pre><code>sls info
+</code></pre><p>We should see information about the Lambda:</p>
+<pre><code>Service Information
+service: aws-java-gradle
+stage: dev
+region: us-east-1
+stack: aws-java-gradle-dev
+api keys:
+  None
+endpoints:
+  None
+functions:
+  hello: aws-java-gradle-dev-hello
+</code></pre><p>We can view details of our Lambda in AWS Console.</p>
+<p><img src="/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-details.png" alt="" /></p>
+<h2 id="exposing-lambda-via-api-gateway">
+  Exposing Lambda via API Gateway
+  <a class="anchor" href="#exposing-lambda-via-api-gateway">#</a>
+</h2>
+<p>We can also apply API Gateway to expose our Lambda to the external world.</p>
+<p><img src="/posts/2018/deployment-of-the-java-code-to-aws-lambda/api-gateway.png" alt="" /></p>
+<p>We can make our endpoint open or secured.</p>
+<p>Next, we can expand Gateway details and we should find &ldquo;Invoke URL&rdquo;.</p>
+<p>We can call it:</p>
+<pre><code>curl https://ipj76pb5yl.execute-api.us-east-1.amazonaws.com/prod/aws-java-gradle-dev-hello
+</code></pre><p>Of course, url will be different in your setup.</p>
+<p>After that, we should receive response:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Go Serverless v1.x! Your function executed successfully!&#34;</span>,
+  <span style="color:#f92672">&#34;input&#34;</span>: {
+    <span style="color:#f92672">&#34;resource&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
+    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
+    <span style="color:#f92672">&#34;httpMethod&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+    <span style="color:#f92672">&#34;headers&#34;</span>: {
+      <span style="color:#f92672">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#34;</span>,
+      <span style="color:#f92672">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate, br&#34;</span>,
+      <span style="color:#f92672">&#34;Accept-Language&#34;</span>: <span style="color:#e6db74">&#34;en-US,en;q=0.5&#34;</span>,
+      <span style="color:#f92672">&#34;CloudFront-Forwarded-Proto&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>,
+      <span style="color:#f92672">&#34;CloudFront-Is-Desktop-Viewer&#34;</span>: <span style="color:#e6db74">&#34;true&#34;</span>,
+      <span style="color:#f92672">&#34;CloudFront-Is-Mobile-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+      <span style="color:#f92672">&#34;CloudFront-Is-SmartTV-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+      <span style="color:#f92672">&#34;CloudFront-Is-Tablet-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+      <span style="color:#f92672">&#34;CloudFront-Viewer-Country&#34;</span>: <span style="color:#e6db74">&#34;PL&#34;</span>,
+      <span style="color:#f92672">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;ipj76pb5yl.execute-api.us-east-1.amazonaws.com&#34;</span>,
+      <span style="color:#f92672">&#34;upgrade-insecure-requests&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>,
+      <span style="color:#f92672">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0&#34;</span>,
+      <span style="color:#f92672">&#34;Via&#34;</span>: <span style="color:#e6db74">&#34;2.0 a9e1c5fff6a2739d3f7026c216819292.cloudfront.net (CloudFront)&#34;</span>,
+      <span style="color:#f92672">&#34;X-Amz-Cf-Id&#34;</span>: <span style="color:#e6db74">&#34;mU9mJ_nnAMYSbqz_Iu2otYdSAG7wgW32HeVLGV388duttalquBZAHA==&#34;</span>,
+      <span style="color:#f92672">&#34;X-Amzn-Trace-Id&#34;</span>: <span style="color:#e6db74">&#34;Root=1-5aae6481-c429ef02c5f6dd6f25c4526a&#34;</span>,
+      <span style="color:#f92672">&#34;X-Forwarded-For&#34;</span>: <span style="color:#e6db74">&#34;85.14.99.231, 54.182.243.105&#34;</span>,
+      <span style="color:#f92672">&#34;X-Forwarded-Port&#34;</span>: <span style="color:#e6db74">&#34;443&#34;</span>,
+      <span style="color:#f92672">&#34;X-Forwarded-Proto&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>
+    },
+    <span style="color:#f92672">&#34;queryStringParameters&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;pathParameters&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;stageVariables&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;requestContext&#34;</span>: {
+      <span style="color:#f92672">&#34;requestTime&#34;</span>: <span style="color:#e6db74">&#34;18/Mar/2018:13:07:13 +0000&#34;</span>,
+      <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/prod/aws-java-gradle-dev-hello&#34;</span>,
+      <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#e6db74">&#34;782268757726&#34;</span>,
+      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;HTTP/1.1&#34;</span>,
+      <span style="color:#f92672">&#34;resourceId&#34;</span>: <span style="color:#e6db74">&#34;t56p8t&#34;</span>,
+      <span style="color:#f92672">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;prod&#34;</span>,
+      <span style="color:#f92672">&#34;requestTimeEpoch&#34;</span>: <span style="color:#ae81ff">1521378433902</span>,
+      <span style="color:#f92672">&#34;requestId&#34;</span>: <span style="color:#e6db74">&#34;46b8b8fb-2aad-11e8-8a1b-0b0a282c605c&#34;</span>,
+      <span style="color:#f92672">&#34;identity&#34;</span>: {
+        <span style="color:#f92672">&#34;cognitoIdentityPoolId&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;cognitoIdentityId&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;caller&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;sourceIp&#34;</span>: <span style="color:#e6db74">&#34;85.14.99.231&#34;</span>,
+        <span style="color:#f92672">&#34;accessKey&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;cognitoAuthenticationType&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;cognitoAuthenticationProvider&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;userArn&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;userAgent&#34;</span>: <span style="color:#e6db74">&#34;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0&#34;</span>,
+        <span style="color:#f92672">&#34;user&#34;</span>: <span style="color:#66d9ef">null</span>
+      },
+      <span style="color:#f92672">&#34;resourcePath&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
+      <span style="color:#f92672">&#34;httpMethod&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+      <span style="color:#f92672">&#34;apiId&#34;</span>: <span style="color:#e6db74">&#34;ipj76pb5yl&#34;</span>
+    },
+    <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;isBase64Encoded&#34;</span>: <span style="color:#66d9ef">false</span>
+  }
+}
+</code></pre></div><p>Hooray! Our Lambda is working on-line now!</p>
+<h2 id="monitoring">
+  Monitoring
+  <a class="anchor" href="#monitoring">#</a>
+</h2>
+<p>In the &ldquo;Monitoring&rdquo; section of the AWS Lambda Functions Console, we can monitor usage of our service.</p>
+<p><img src="/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-monitoring.png" alt="" /></p>
+<h2 id="update">
+  Update
+  <a class="anchor" href="#update">#</a>
+</h2>
+<p>If we want to update our function, we can simply modify it, rebuild code with <code>./gradlew build</code> and deploy it again with <code>sls deploy</code>. Once we have it configured it&rsquo;s really easy.</p>
+<h2 id="function-removal">
+  Function Removal
+  <a class="anchor" href="#function-removal">#</a>
+</h2>
+<p>If we want to remove our Function, we can just type:</p>
+<pre><code>sls remove
+</code></pre><p>and we&rsquo;ll see the following messages:</p>
+<pre><code>Serverless: Getting all objects in S3 bucket...
+Serverless: Removing objects in S3 bucket...
+Serverless: Removing Stack...
+Serverless: Checking Stack removal progress...
+.........
+Serverless: Stack removal finished...
+Serverless: Successfully archived your service on the Serverless Platform
+</code></pre><h2 id="summary">
+  Summary
+  <a class="anchor" href="#summary">#</a>
+</h2>
+<p>To wrap up, AWS Lambda is a really convenient way to solve single tasks without worrying about infrastructure, deployment and scalability. If we need one job to be done - e.g. exposing endpoint, transforming images, sending notifications, tiny app running on the server or whatever is required, AWS Lambda is good choice for that. Moreover, thanks to Serverless Framework deployment becomes really easy. In addition, we can develop Lambdas in other languages like Kotlin, Groovy, Scala, Go, Python, Node.js, C# and F#, so we&rsquo;re not limited just to one language. We also should remember that AWS is powerfull platform with about 100 different services and Lambda is just one of them. It&rsquo;s good to familiarize with AWS and other cloud computing platforms like Azure, GCP and so on because more companies start to invest in that and such solutions are becoming standard in certain areas.</p>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://martinfowler.com/articles/serverless.html">Serverless Architecture by Martin Fowler</a></li>
+<li><a href="https://www.youtube.com/watch?v=71cd5XerKss">AWS + Serverless - video tutorial</a></li>
+<li><a href="https://console.aws.amazon.com">AWS Console</a></li>
+<li><a href="https://serverless.com/">Serverless Framework</a></li>
+<li><a href="https://github.com/pwittchen/serverless-lambda-playground">Serverless Lambda Playground repository</a></li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/deployment-of-the-java-code-to-aws-lambda.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#aws-console">AWS Console</a></li>
+    <li><a href="#serverless-framework">Serverless Framework</a></li>
+    <li><a href="#creating-lambda">Creating Lambda</a></li>
+    <li><a href="#deployment-to-the-cloud">Deployment to the Cloud</a></li>
+    <li><a href="#exposing-lambda-via-api-gateway">Exposing Lambda via API Gateway</a></li>
+    <li><a href="#monitoring">Monitoring</a></li>
+    <li><a href="#update">Update</a></li>
+    <li><a href="#function-removal">Function Removal</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

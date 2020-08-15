@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview #  I&rsquo;ve recently read great article telling how to improve quality and syntax of your Android code by Vincent Brison. It presents how to use tools like Checkstyle, Findbugs, PMD, and Android Lint for Static Code Analysis in Android project. Static Code Analysis allows us to keep consistency of the source code style and helps us to find errors, warnings, possible bugs, bottlenecks and ways to improve the projects.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Static code analysis in Android project" />
+<meta property="og:description" content="Overview #  I&rsquo;ve recently read great article telling how to improve quality and syntax of your Android code by Vincent Brison. It presents how to use tools like Checkstyle, Findbugs, PMD, and Android Lint for Static Code Analysis in Android project. Static Code Analysis allows us to keep consistency of the source code style and helps us to find errors, warnings, possible bugs, bottlenecks and ways to improve the projects." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wittchen.io/posts/static-code-analysis-in-android-project/" />
+<meta property="article:published_time" content="2015-03-26T00:23:00+00:00" />
+<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+<title>Static code analysis in Android project | Piotr Wittchen</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
+<script defer src="/en.search.min.b1c223d7983d8c4c68cff28f7fce2c0b39eaba0021f54704627f7589027d39b0.js" integrity="sha256-scIj15g9jExoz/KPf84sCznqugAh9UcEYn91iQJ9ObA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
+  <a href="/">
+    <span>Piotr Wittchen</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">About</a>
+<ul>
+<li><a href="/gh/">GitHub</a></li>
+<li><a href="/so/">StackOverflow</a></li>
+<li><a href="/in/">LinkedIn</a></li>
+<li><a href="/gp/">Google Play</a></li>
+<li><a href="/setup/">Setup</a></li>
+</ul>
+</li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/talks/">Talks</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Static code analysis in Android project</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#sensitivity-of-the-build">Sensitivity of the build</a></li>
+    <li><a href="#static-code-analysis-on-ci-server">Static Code Analysis on CI server</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/static-code-analysis-in-android-project/">Static code analysis in Android project</a>
+  </h1>
+  
+  <h5>Mar 26, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/tags/android/">android</a>, 
+      <a href="/tags/gradle/">gradle</a>
+  </div>
+  
+
+
+  <p><h2 id="overview">
+  Overview
+  <a class="anchor" href="#overview">#</a>
+</h2>
+<p>I&rsquo;ve recently read great article telling <a href="http://vincentbrison.com/2014/07/19/how-to-improve-quality-and-syntax-of-your-android-code/">how to improve quality and syntax of your Android code</a> by <a href="http://vincentbrison.com/">Vincent Brison</a>. It presents how to use tools like <a href="http://checkstyle.sourceforge.net/">Checkstyle</a>, <a href="http://findbugs.sourceforge.net/">Findbugs</a>, <a href="http://pmd.sourceforge.net/">PMD</a>, and <a href="http://tools.android.com/tips/lint">Android Lint</a> for <a href="http://en.wikipedia.org/wiki/Static_program_analysis">Static Code Analysis</a> in Android project. Static Code Analysis allows us to keep consistency of the source code style and helps us to find errors, warnings, possible bugs, bottlenecks and ways to improve the projects. I highly recommend to use tools like those mentioned.</p>
+<h2 id="example">
+  Example
+  <a class="anchor" href="#example">#</a>
+</h2>
+<p>Visit repository at: <a href="https://github.com/vincentbrison/vb-android-app-quality">https://github.com/vincentbrison/vb-android-app-quality</a>. The most important files are:</p>
+<ul>
+<li><a href="https://github.com/vincentbrison/vb-android-app-quality/blob/master/app/build.gradle">app/build.gradle</a></li>
+<li><a href="https://github.com/vincentbrison/vb-android-app-quality/blob/master/config/quality.gradle">config/quality.gradle</a></li>
+</ul>
+<p>We can run analysis by executing the following command: <code>./gradlew check</code> Besides that, we can run each command like <code>checkstyle</code>, <code>findbugs</code>, <code>pmd</code> or <code>lint</code> separately if we want to. In addition, when we build the project with command:</p>
+<p><code>./gradlew build</code></p>
+<p><code>check</code> command will be executed as well, because of the following line in <code>quality.gradle</code> file: <code>check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'lint'</code> After that, we can find output with our reports in directory: <code>app/build/reports/</code>. Of course, we can customize output directory and names of the report files. In default configuration, <code>check</code> command with generate reports in HTML format. Only output from the <code>checkstyle</code> operation will be generated in XML format. We can customize <code>findbugs</code>, <code>pmd</code> and <code>lint</code>, to generate XML reports instead of HTML reports in <code>quality.gradle</code> file.</p>
+<h2 id="sensitivity-of-the-build">
+  Sensitivity of the build
+  <a class="anchor" href="#sensitivity-of-the-build">#</a>
+</h2>
+<p>We can customize rules of the Static Code Analysis tools in restrictive and non-restrictive way. In <code>findbugs</code> and <code>pmd</code> task, we can set <code>ignoreFailures</code> attribute as follows: <code>ignoreFailures = false</code> When it&rsquo;s set to <code>false</code>, tasks will only generate reports, but when we set it to <code>true</code>, build will fail, when at least one error will be found. In <code>lint</code> task, we can customize attribute <code>abortOnError</code> as follows: <code>abortOnError true</code> It will literally abort the build, when any lint error occur. Warnings will be ignored. When we want to ignore errors, we can set this attribute to <code>false</code>.</p>
+<h2 id="static-code-analysis-on-ci-server">
+  Static Code Analysis on CI server
+  <a class="anchor" href="#static-code-analysis-on-ci-server">#</a>
+</h2>
+<p>When we want to perform Static Code Analysis on CI server, we can do it easily from the command line interface. If we want to automatically collect and analyze reports generated by mentioned tools, we should generate them in XML format instead of HTML, so they can be parsed by appropriate plugins. Mentioned tools can be easily integrated with <a href="https://jenkins-ci.org/">Jenkins CI server</a>. We need the following plugins:</p>
+<ul>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Checkstyle&#43;Plugin">Checkstyle</a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/FindBugs&#43;Plugin">FindBugs</a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/PMD&#43;Plugin">PMD</a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Android&#43;Lint&#43;Plugin">Android Lint</a></li>
+</ul>
+<p>After installing those plugins, we can define post-build actions in our Jenkins Job, provide paths to the appropriate XML reports and then we can view results of the reports and trend graphs directly from web panel of our Jenkins server. Exemplary trend graphs looks as follows:</p>
+<p><img src="/posts/2015/sca-android/lint_checkstyle_findbugs_pmd_trends.png" alt="lint_checkstyle_findbugs_pmd_trends" /></p>
+<p>If we have unit tests in our project, we can also generate test reports and monitor test trend. In the chart below, failed build don&rsquo;t have generated test reports that&rsquo;s why chart may look strange. In addition, number of tests was decreased, because they were migrated from JUnit3 to JUnit4. In JUnit3 for some reason each test case is treated as an additional unit test. JUnit4 report shows real number of tests.</p>
+<p><img src="/posts/2015/sca-android/test_trend.png" alt="test_trend" /></p>
+<p>In every build, we can browse generated reports and their details.</p>
+<p><img src="/posts/2015/sca-android/android_build_report.png" alt="android_build_report" /></p>
+<p>I really recommend to use Static Code Analysis tools and reporting plugins on CI in the projects, because they will increase quality of the code really fast and will allow to eliminate many errors before shipping the application.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Aug 15, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master//posts/static-code-analysis-in-android-project.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#sensitivity-of-the-build">Sensitivity of the build</a></li>
+    <li><a href="#static-code-analysis-on-ci-server">Static Code Analysis on CI server</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kotlin on Piotr Wittchen</title>
+    <link>https://wittchen.io/tags/kotlin/</link>
+    <description>Recent content in kotlin on Piotr Wittchen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Dec 2018 14:34:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://wittchen.io/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kyma meets CCV2 hackathon summary</title>
+      <link>https://wittchen.io/posts/kyma-meets-ccv2-hackathon-summary/</link>
+      <pubDate>Fri, 14 Dec 2018 14:34:01 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/kyma-meets-ccv2-hackathon-summary/</guid>
+      <description>Introduction #  I recently I had an opportunity to join &amp;ldquo;Kyma meets CCV2 Hackathon&amp;rdquo; in the SAP Labs Poland office in Gliwice. The goal of the hackathon was to create a simple project, which will use Kyma to integrate external services with the SAP Hybris Commerce Platform. CCV2 stands for &amp;ldquo;Commerce Cloud Version 2&amp;rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&amp;rsquo;s a long story described in a short way).</description>
+    </item>
+    
+    <item>
+      <title>Writing my first library in Kotlin</title>
+      <link>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</link>
+      <pubDate>Sun, 19 Aug 2018 10:24:19 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</guid>
+      <description>Introduction #  Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
+Build System #  I used Gradle to build the project.</description>
+    </item>
+    
+    <item>
+      <title>Hello Kotlin!</title>
+      <link>https://wittchen.io/posts/hello-kotlin/</link>
+      <pubDate>Sat, 07 Feb 2015 18:59:00 +0000</pubDate>
+      
+      <guid>https://wittchen.io/posts/hello-kotlin/</guid>
+      <description>I&amp;rsquo;ve recently played with Kotlin in order to create simple &amp;ldquo;Hello World&amp;rdquo; Android app using this new, fancy language from JetBrains. Kotlin is another programming language based on JVM, which can work with Java. It&amp;rsquo;s aim is to reduce code boilerplate and create projects faster. In my simple Android project, I&amp;rsquo;ve also used KotterKnife for injecting views. I&amp;rsquo;ve also added one simple ActivityUnitTestCase. Unfortunately, I couldn&amp;rsquo;t convert it into Kotlin, because I wasn&amp;rsquo;t allowed to call constructor of inherited class using super() method.</description>
+    </item>
+    
+  </channel>
+</rss>
