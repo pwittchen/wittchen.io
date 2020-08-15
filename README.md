@@ -7,9 +7,18 @@ this is source of [wittchen.io](http://wittchen.io), which is my personal websit
 
 contents
 --------
+- [writing](#writing)
 - [running](#running)
 - [deployment](#deployment)
-- [writing](#writing)
+
+writing
+-------
+
+to create a new post, type
+
+```
+hugo new content/posts/my-new-post.md
+```
 
 running
 -------
@@ -30,12 +39,3 @@ hugo -D
 then commit and push your changes
 
 deployment will be triggered automatically with github actions
-
-writing
--------
-
-to create a new post, type
-
-```
-hugo new content/posts/my-new-post.md
-```
