@@ -2,7 +2,7 @@ baseURL = "https://wittchen.io/"
 languageCode = "en-us"
 title = "Piotr Wittchen"
 theme = "book"
-#enableGitInfo = true
+enableGitInfo = true
 
 [taxonomies]
   tags = "tags"
