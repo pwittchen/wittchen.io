@@ -3,10 +3,13 @@ languageCode = "en-us"
 title = "Piotr Wittchen"
 theme = "book"
 enableGitInfo = true
+googleAnalytics = "UA-2194664-7"
 
 [taxonomies]
   tags = "tags"
+
 [params]
+  BookToc = true
   BookMenuBundle = '/menu'
   BookLogo = 'avatar.png'
   BookRepo = 'https://github.com/pwittchen/wittchen.io'
