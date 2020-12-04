@@ -6,11 +6,10 @@ draft: true
 
 Here's the list of equipment and software I use personally and professionally:
 
-Servers
--------
+Server
+------
 
 - W1GB hosting server by [linuxpl.com/cyberfolks](https://linuxpl.com)
-- [mikr.us](https://mikr.us) VPS
 
 Software
 --------
