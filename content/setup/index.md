@@ -9,7 +9,7 @@ Here's the list of equipment and software I use personally and professionally:
 Server
 ------
 
-- W1GB hosting server by [linuxpl.com/cyberfolks](https://linuxpl.com)
+- W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
 
 Software
 --------
