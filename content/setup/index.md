@@ -45,7 +45,7 @@ Configuration
 
 Hardware
 --------
-- [ThinkPad T470S](https://allegro.pl/kategoria/laptopy-ibm-lenovo-77920?string=Thinkpad%20T470S&bmatch=baseline-al-product-cl-eyesa2-engag-dict43-ele-1-1-0326) laptop (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
+- [ThinkPad T470S](https://allegro.pl/kategoria/laptopy-ibm-lenovo-77920?string=Thinkpad%20T470S&bmatch=baseline-al-product-cl-eyesa2-engag-dict43-ele-1-1-0326) (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
 - [Samsung C34H890WJUX Curved monitor](https://www.x-kom.pl/p/384162-monitor-led-32-i-wiekszy-samsung-c34h890wjux-curved.html?partnerid=100489039&sm12=Mjk=&ts=1583966834&token=f2fa124dd475113a22d84580304b145d&86)
 - [Logitech Bluetooth Keyboard K380](https://www.x-kom.pl/p/267644-klawiatura-bezprzewodowa-logitech-bluetooth-keyboard-k380-szara.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&98)
 - [Logitech MX Master Mouse](https://www.x-kom.pl/p/370388-myszka-bezprzewodowa-logitech-mx-master-2s-wireless-mouse-graphite.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&101)
