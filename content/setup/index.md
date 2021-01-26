@@ -31,7 +31,7 @@ Software
 - Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org)
 - torrent client: [Transmission](https://transmissionbt.com)
 - to do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
-- notes: [Evernote](evernote.com)
+- notes: [Keep](https://keep.google.com) + [Git](https://git-scm.com) + Physical notebook
 - password manager: [Pass](https://www.passwordstore.org)
 - presentations: [Google Slides](http://slides.google.com)
 - calendar: [Google Calendar](https://calendar.google.com)
