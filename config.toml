@@ -15,3 +15,4 @@ enableGitInfo = true
   BookEditPath = 'edit/master/content'
   BookDateFormat = 'Jan 2, 2006'
   BookSearch = true
+  BookTheme = 'light'

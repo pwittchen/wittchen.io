@@ -1,8 +1,8 @@
-{{- with .Site.Params.BookLogo -}}
-<img src="{{ . | relURL }}" alt="Logo" /><br/></br>
-{{- end -}}
 <h2 class="book-brand">
-  <a href="{{ .Site.BaseURL | relLangURL }}">
+  <a class="flex align-center" href="{{ cond (not .Site.Home.File) .Sites.First.Home.RelPermalink .Site.Home.RelPermalink }}">
+    {{- with .Site.Params.BookLogo -}}
+    <img src="{{ . | relURL }}" alt="Logo" />
+    {{- end -}}
     <span>{{ .Site.Title }}</span>
   </a>
 </h2>
