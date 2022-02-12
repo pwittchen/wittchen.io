@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="rxjava" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="rxjava" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/rxjava/" />
@@ -13,27 +13,26 @@
 <title>rxjava | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/rxjava/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -221,6 +222,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Today, I&rsquo;ve released my another tiny project. It&rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.
 You can use it as follows:
 Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(new Consumer&lt;Event&gt;() { @Override public void accept(Event event) { // handle event here  } }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:
@@ -248,6 +251,8 @@ Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(ne
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>Yesterday, I gave a presentation about connectivity in the Android apps during the DroidCon Poland 2017 Conference in Kraków.
@@ -280,6 +285,8 @@ Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; 
   
 
 
+
+
     <p>During Hack Your Career event at the Silesian University of Technology, I&rsquo;ve prepared a presentation titled Reactive Programming - Efficient Server Applications with a colleague from work. Arek told about theory of Reactive Programming, shown basic concepts, data types and a few examples in the code. During my part of the presentation, I&rsquo;ve wrote a very simple server and client in Java (9 on the server, 7 on the client) with Vert.
         <a href="/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/">...</a>
       
@@ -303,6 +310,8 @@ Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; 
       <a href="/tags/conferences/">conferences</a>
   </div>
   
+
+
 
 
     <p>Recently on the JDD 2017 conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.
@@ -333,6 +342,8 @@ Code snippets shown during this presentation are available at https://github.com
   
 
 
+
+
     <p>I&rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
 ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&gt; textView.setText(String.format(&#34;Airplane mode on: %s&#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.
         <a href="/posts/introducing-reactive-airplane-mode/">...</a>
@@ -358,6 +369,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released ReactiveNetwork library v. 0.10.0 for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&rsquo;m developing for approximately 2 years now. In this version, I&rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: Release for RxJava1.x
@@ -387,6 +400,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
   
 
 
+
+
     <p>I&rsquo;ve recently released new version of prefser library for Android. In case you don&rsquo;t know, it&rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. This version has the new artifact, which has codebase migrated to RxJava2.x. As usual, I kept backward compatibility with RxJava1.x. You can find more details about the project at https://github.com/pwittchen/prefser. If you want to use it in your mobile project, you need the following dependencies in the build.
         <a href="/posts/release-of-prefser-210-with-rxjava2/">...</a>
       
@@ -409,6 +424,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
       <a href="/tags/rxjava/">rxjava</a>
   </div>
   
+
+
 
 
     <p>Introduction #  I&rsquo;m still exploring reactive programming world and RxJava library. Recently, I&rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&rsquo;m still learning this library and its concept. It&rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp; Completable.
@@ -435,6 +452,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
   
 
 
+
+
     <p>Introduction #  In my company, there&rsquo;s a concept of so-called &ldquo;innovation day&rdquo;. I have the possibility to &ldquo;use&rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&rsquo;ve decided to create YaaS Java SDK. If you don&rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.
         <a href="/posts/introducing-yaas-java-sdk/">...</a>
       
@@ -457,6 +476,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
       <a href="/tags/rxjava/">rxjava</a>
   </div>
   
+
+
 
 
     <p>In RxJava we have a few operators for joining Observables. The most common are:
@@ -503,6 +524,12 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -516,7 +543,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -608,13 +636,13 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

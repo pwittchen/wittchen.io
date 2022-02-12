@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Posts" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
@@ -13,27 +13,26 @@
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -220,6 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Overview #  I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. Geary seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message.
         <a href="/posts/geary-email-client-for-linux/">...</a>
       
@@ -242,6 +245,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released NetworkEvents library v. 2.0.0. It&rsquo;s an Android library listening network connection state and change of the Wifi signal strength. It has a few significant changes in the API and new features, which people were requesting on GitHub. Moreover, codebase was slightly refactored and updated. I&rsquo;m going to keep major.minor.patch convention AKA semantic versioning now:
@@ -268,6 +273,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Problem overview #  Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&rsquo;s quite slow.
         <a href="/posts/routing-internet-via-ssh-tunnel-on-raspberry-pi/">...</a>
       
@@ -289,6 +296,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/java/">java</a>
   </div>
   
+
+
 
 
     <p>Sometimes it&rsquo;s good to revise some algorithms and try to implement them in order to get to know, how the built-in functions of high level programming languages actually works. One of the popular problems is string searching. We have many approaches to solve this problem. For example:
@@ -316,6 +325,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Today I released Weather Icon View library v. 1.0.0 It&rsquo;s very simple and easy to use Android library, which allows you to use Weather Icons created by Erik Flowers in your mobile applications. This library was already available on GitHub as I wrote in one of my previous posts, but today it was released to Maven Central Repository and you can use it as Maven or Gradle dependency. I was encouraged to make this project more available by the open-source community and people who find it useful as I could read in the issue reported on the repository website.
         <a href="/posts/releasing-weather-icon-view-1-for-android/">...</a>
       
@@ -340,6 +351,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Dr. Venkat Subramaniam presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C++. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements.
         <a href="/posts/get-past-the-syntax/">...</a>
       
@@ -362,6 +375,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>I am happy to announce that I released version 1.0.5 of Prefser Android library. Prefser is a wrapper for Android SharedPreferences with object serialization and RxJava Observables. What has been done in this version:
@@ -389,6 +404,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Update: see newer article about Unit test coverage report with Travis CI for Robolectric on Android. For a long time, I wasn&rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&rsquo;t use. Other developers also stopped using it for the new projects.
         <a href="/posts/test-coverage-in-android-applications/">...</a>
       
@@ -413,6 +430,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Recently I&rsquo;ve created a simple Python script, which checks whether &lsquo;development&rsquo; branch has all changes from &lsquo;master&rsquo; branch in a Git repository. It&rsquo;s important when we work in a Git Flow. Branch inconsistency may occur when change with hot-fix will be committed to &lsquo;master&rsquo; branch and we forget to merge &lsquo;master&rsquo; branch back to &lsquo;development&rsquo; branch to have our hot-fix in a &lsquo;development&rsquo; version of the project as well. We should keep branch consistency to avoid merge conflicts and problems with release of the project in the future.
         <a href="/posts/checking-consistency-of-git-branches/">...</a>
       
@@ -435,6 +454,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>Overview #  Some time ago, I published post about Synapse indicator, which is an alternative to MAC&rsquo;s Spotlight for Ubuntu. Recently, I&rsquo;ve found another software, which is in my opinion even better than Synapse. It&rsquo;s called Mutate. I like it, because it works quite smooth, looks simple and clean. In addition, it&rsquo;s open-source.
@@ -503,6 +524,12 @@ sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install 
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -516,7 +543,8 @@ sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install 
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -608,13 +636,13 @@ sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install 
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

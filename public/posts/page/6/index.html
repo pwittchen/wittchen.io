@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Posts" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
@@ -13,27 +13,26 @@
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -220,6 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>In RxJava we have a few operators for joining Observables. The most common are:
  concat merge zip  Take a look at the documentation in these links. It has interactive marble diagrams showing how the operators work on the streams. You can move marbles along the lines and see how the output stream changes. It really helps to understand how it works. Code snippets in this article are based on RxJava 2.
         <a href="/posts/joining-lists-of-rxjava-observables/">...</a>
@@ -245,6 +248,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Sometimes, we may need to emit different RxJava Observables depending on the specific condition dynamically. Moreover, it&rsquo;s good to do it right without breaking a chain (stream of Observables). We want to combine different Observables together and do not want to nest one subscription inside another subscription because this will lead us to &ldquo;subscription hell&rdquo; similar to &ldquo;callback hell&rdquo;. Luckily RxJava has mechanisms to deal with such problems. In this article, I&rsquo;m basing my examples on RxJava 2.
         <a href="/posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/">...</a>
       
@@ -261,6 +266,8 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+
+
 
 
     <p>Introduction #  I&rsquo;ve recently read a book about Test Driven Development by Kent Beck. It&rsquo;s really good, presents the importance of the TDD and shows how to make a life of the software developer easier. In the TDD we follow red-green-refactor process in which we create a failing unit test, then we fix it and refactor it to make code-base better. There&rsquo;s no golden rule when to refactor or how to refactor code and each project is different, but there are a few principles we may follow when we want to improve our projects through refactoring.
@@ -286,6 +293,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>While developing open-source projects it&rsquo;s important to monitor usage of them. Having that information we know on which projects we should concentrate the most and which are becoming more popular. In this short article, I&rsquo;ll present you two tools, which can help you with that.
 GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking on it, we can see how many visitors and unique visitors we have, we can also check how many project clones and unique clones were performed (including CI servers).
         <a href="/posts/monitoring-usage-of-oss/">...</a>
@@ -303,6 +312,8 @@ GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking 
 
 
   
+
+
 
 
     <p>Introduction #  The company, where I currently work - SAP Hybris is developing a project called YaaS, which is an abbreviation of Hybris as a Service. Unfortunately, this article is not sponsored yet :). What a pity :(. I just like to understand many things &amp; how they work to see the bigger picture. Moreover, company strategy is to leverage YaaS and search for the new possibilities and use cases of this project.
@@ -328,6 +339,8 @@ GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking 
   
 
 
+
+
     <p>During F8 Facebook Developers Conference 2017, Facebook revealed its plans for the nearest years. Among different stuff, keynote from the day 2 was especially interesting for me. Speakers talked about connectivity projects increasing access to the Internet across the globe, different methods of human-computer interaction, virtual reality, and last, but not least Brain-Computer Interface.
 It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis about Brain-Computer Interface for Mobile Devices at my university &amp; published a few short articles about Brain-Computer Interface on this blog.
         <a href="/posts/facebook-is-making-bci/">...</a>
@@ -345,6 +358,8 @@ It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis a
 
 
   
+
+
 
 
     <p>Introduction #  I&rsquo;ve been using Evernote for some time for taking longer notes, but it started to annoy me a little bit. The main drawback is lack of the Linux desktop app. I&rsquo;m using this app on Android phone, Macbook (at work) and on Linux (at home). There are community apps like NixNote2, which is nice, but in my opinion it&rsquo;s not good enough. Moreover, Evernote seems to have too many features, which distract me and I don&rsquo;t really use most of them.
@@ -368,6 +383,8 @@ It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis a
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim.
@@ -395,6 +412,8 @@ It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis a
   
 
 
+
+
     <p>This time, I upgraded my another reactive Android open-source project called ReactiveNetwork to RxJava2.x. Many thanks goes to @tushar-acharya who performed initial migration to the newer version of RxJava. During migration, I&rsquo;ve also created new package rx2 to avoid potential import conflicts during migration inside Android apps. Besides migration, I&rsquo;ve updated sample apps, documentation &amp; JavaDocs on Github pages. You can still use RxJava1.x version and it&rsquo;s available on the branch with that name.
         <a href="/posts/reactivenetwork-090-rxjava2/">...</a>
       
@@ -416,6 +435,8 @@ It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis a
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>I just released tmux-auto-pane. It&rsquo;s a tiny shell script for creating pre-defined tile layouts in Tmux on Linux with xdotool. In our workflow, we often have some pre-defined pane configurations in a terminal. The project called tmux-auto-pane helps to automate that process. It can save us some time and make us a bit more productive. We can call tmux-auto-pane with one of the following parameters:
@@ -483,6 +504,12 @@ It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis a
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -496,7 +523,8 @@ It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis a
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -588,13 +616,13 @@ It&rsquo;s super-interesting for me, because 4 years ago I wrote Master Thesis a
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

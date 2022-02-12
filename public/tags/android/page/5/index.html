@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="android" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="android" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/android/" />
@@ -13,27 +13,26 @@
 <title>android | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/android/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -221,6 +222,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Overview #  Recently I&rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well.
         <a href="/posts/kirai-flavored-android-string-formatting-library/">...</a>
       
@@ -242,6 +245,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/android/">android</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Update: Swipe Detector project is now called swipe.
@@ -269,6 +274,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
   
 
 
+
+
     <p>Introduction #  During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.
         <a href="/posts/installing-release-and-debug-version-of-app-on-a-single-device/">...</a>
       
@@ -292,6 +299,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
   
 
 
+
+
     <p>Recently, Square engineers confirmed my doubts I always had about fragments. I definitely knew that something was wrong with them, but Google introduced fragments into Android API, so I thought it must be okay for some reason and I tried to live with them feeling pain. Finally, concrete company have written an article criticizing Android Fragments and I totally agree with them. Read the article at: http://corner.squareup.com/2014/10/advocating-against-android-fragments.html.
     </p>
   </article>
@@ -312,6 +321,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>Sometimes we may want to set different address of the back-end web service for debuggable and release version of our Android app. E.g. predefined static host and port for release version of the application and our local IP address and predefined port for debuggable version of the application. In second case, we can deploy back-end webservice on our local machine for testing purposes. We can customize all of that in build.
@@ -337,6 +348,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
   
 
 
+
+
     <p>Some time ago I found Weather Icons project by Erik Flowers. It&rsquo;s customized font with appropriate CSS, which allows you to use weather icons on the website. In addition, those icons can be customized. They can have different size or color. Moreover, they are compatible with the Bootstrap. I thought, that it would be nice, if I had something like that for Android applications. That&rsquo;s why I created simple open-source project called Weather Icon View.
         <a href="/posts/weather-icons-for-android-applications/">...</a>
       
@@ -359,6 +372,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
       <a href="/tags/java/">java</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&rsquo;s possible to create micro-location for Android mobile devices.
@@ -386,6 +401,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
   
 
 
+
+
     <p>When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed.
         <a href="/posts/versioning-android-applications/">...</a>
       
@@ -411,6 +428,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
   
 
 
+
+
     <p>Problem #  In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?
         <a href="/posts/updating-android-xml-resources-before-compilation-via-gradle/">...</a>
@@ -434,6 +453,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
       <a href="/tags/bci/">bci</a>
   </div>
   
+
+
 
 
     <p>I recently published my side project connected with BCI and EEG technology in Google Play Store.  EEG Analyzer reads electrical activity of the brain with EEG technology and blink strength with EMG sensor from NeuroSky MindWave Mobile device connected via Bluetooth to Android device. In order to use this application, you need to have NeuroSky MindWave Mobile device, which can be ordered from http://neurosky.com/ website. Direct link to the mentioned product: http://store.
@@ -494,6 +515,12 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -507,7 +534,8 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -599,13 +627,13 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

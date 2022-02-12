@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Posts" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
@@ -13,27 +13,26 @@
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -214,6 +215,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Introduction #  Recently, I attended a training related to ZK framework. One part of that training was quite interesting for me and was related to measuring and monitoring the performance of the web applications. In Chrome Browser, we have Chrome Dev Tools, which can be opened with Ctrl+Shift+I shortcut or ⌘+Shift+I shortcut on Mac. Inside these tools, we have &ldquo;Performance&rdquo; tab. We can hit red &ldquo;record&rdquo; icon in the upper left corner of the Tools window and start recording performance of the website while loading it, clicking around or whatever situation we want to monitor.
         <a href="/posts/analyzing-performance-of-web-app-with-chrome-dev-tools/">...</a>
       
@@ -230,6 +233,8 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+
+
 
 
     <p>Introduction #  For most of the time, I was MS Windows user. I was using this OS since Windows 95 up to Windows 10 ( the last version really occasionally). About ~3 years ago, I switched to Linux (Ubuntu) on my private computer. I used it before on virtual machine or sometimes in dual boot with Windows. About one year ago, I changed my job and decided to switch to Macbook Pro at work.
@@ -256,6 +261,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.
         <a href="/posts/automate-boring-stuff/">...</a>
       
@@ -280,6 +287,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Introduction #  In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp; downloading phase can be done from the terminal in a semi-automated way.
         <a href="/posts/lifting-quality-of-a-shell-script/">...</a>
       
@@ -296,6 +305,8 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+
+
 
 
     <p>Introduction #  A few months ago, I started work at Hybris, which was acquired by SAP, so our &ldquo;division&rdquo; is officially called SAP Hybris. I work in a team developing an extension for Hybris platform with assisting extensions and internal framework. There are many teams around the world developing their own extensions, which are finally integrated and packed into Commerce Suite provided to the clients and partners. We have our own development environment, but sometimes there&rsquo;s need to build and run whole Commerce Suite in the case of system tests, bug reproduction, verification, etc.
@@ -323,6 +334,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I&rsquo;ve recently released new version of ReactiveNetwork library for Android. Here are the fresh release notes for version 0.2.0:
  added possibility to observe WiFi signal level with observeWifiSignalLevel(context, numLevels) and observeWifiSignalLevel(context) method created WifiSignalLevel enum added internet check to parameters of getConnectivityStatus(context, checkInternet) method made getConnectivityStatus(context, checkInternet) method public changed String variable status in ConnectivityStatus enum to description and made it public changed output of the toString() method in ConnectivityStatus to keep consistency with another enum made ReactiveNetwork class non-final bumped Kotlin version in sample app to 1.
         <a href="/posts/reactive-network-2/">...</a>
@@ -345,6 +358,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>Not all songs are available on Spotify and sometimes we need to rip music from audio CDs in order to listen it on our computer or mobile device. There are several approaches to do that. Here is mine: Get RipperX:
@@ -371,6 +386,8 @@ Put audio CD into your computer. Open RipperX, select All Tracks and check Rip t
       <a href="/tags/python/">python</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Can you answer the following questions about your Git repository?
@@ -401,6 +418,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
   
 
 
+
+
     <p>I was asked to be a speaker during GDG DevFest 2015 conference in Warsaw, Poland. Of course, I accepted this invitation and prepared presentation titled &ldquo;Reactive Live Coding&rdquo;. Presentation covered basics of Reactive Programming, RxJava and RxAndroid. Besides my talk I&rsquo;ve done live coding to show how to use mentioned libraries and basics principles of Reactive Programming in real life. I had only 20 minutes for all of that, so my time-box was very limited.
         <a href="/posts/reactive-live-coding-gdg-devfest-pl-2015/">...</a>
       
@@ -424,6 +443,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released version 1.4.0 of Kirai library. Kirai means phrase in Swahili language. It&rsquo;s string formatting library written in Java. It originally started as an Android library, but it evolved to pure Java library. It&rsquo;s first possibilities were basic string formatting and text formatting for Android TextViews. Now, it allows to format strings for Java, Web, Android and even Unix Terminal! Have you ever wanted to have colorful and styled text in your mobile app, website or terminal app?
@@ -490,6 +511,12 @@ Does development branch has all changes from master branch? #  git-branch-compar
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -503,7 +530,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -595,13 +623,13 @@ Does development branch has all changes from master branch? #  git-branch-compar
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

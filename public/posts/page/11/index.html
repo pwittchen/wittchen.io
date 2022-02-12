@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Posts" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
@@ -13,27 +13,26 @@
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -220,6 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Unity desktop environment consumes lot of computer&rsquo;s memory. I&rsquo;ve recently found good article about 4 simple tweaks to improve Unity performance on Ubuntu. Here is the short summary of that tweaks:
 Remove Unwanted Lenses #  It will speed up loading data under &ldquo;Super&rdquo; button.
 sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber unity-lens-shopping unity-lens-video Install Compiz Config Settings Manager #  sudo apt-get install compizconfig-settings-manager In Compiz Config Settings Manager perform the following operations:
@@ -246,6 +249,8 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
   
 
 
+
+
     <p>Overview #  I&rsquo;ve recently read great article telling how to improve quality and syntax of your Android code by Vincent Brison. It presents how to use tools like Checkstyle, Findbugs, PMD, and Android Lint for Static Code Analysis in Android project. Static Code Analysis allows us to keep consistency of the source code style and helps us to find errors, warnings, possible bugs, bottlenecks and ways to improve the projects.
         <a href="/posts/static-code-analysis-in-android-project/">...</a>
       
@@ -262,6 +267,8 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
 
 
   
+
+
 
 
     <p>Recently, I&rsquo;ve seen an unusual talk about The One Hacker Way - a rational alternative to Agile by Erik Meijer. It&rsquo;s really interesting point of view. I recommend to see it.
@@ -285,6 +292,8 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
       <a href="/tags/testing/">testing</a>
   </div>
   
+
+
 
 
     <p>Overview #  When we write unit tests for an Android application, sometimes there&rsquo;s a necessity to mock some classes or interfaces. Instead of writing implementations dedicated for unit tests by hand, we can use Mockito library. We can read article about Mockito on Android on Square&rsquo;s blog. Mockito can make our tests cleaner and better. It can be used both in classic Java projects and Android projects. It&rsquo;s one of the most popular mocking framework in Java and if you&rsquo;re a Java developer who writes unit tests and tries to apply TDD approach, you should be familiar with it.
@@ -312,6 +321,8 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
   
 
 
+
+
     <p>I&rsquo;ve recently released Prefser, which is a wrapper for Android SharedPreferences with object serialization and RxJava Observables. Prefser wraps SharedPreferences and thanks to Java Generics provides you simpler API than classic SharedPreferences with only two methods:
 void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, T defaultValue); Classic SharedPreferences allows you to store only primitive data types and set of strings. Thanks to Gson serialization, Prefser allows you to store:
         <a href="/posts/introducing-prefser/">...</a>
@@ -334,6 +345,8 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
       <a href="/tags/android/">android</a>
   </div>
   
+
+
 
 
     <p>As official Android website says:
@@ -362,6 +375,8 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
   
 
 
+
+
     <p>I&rsquo;ve recently released NetworkEvents v. 1.0.2. In case, you don&rsquo;t know it, it&rsquo;s an Android library listening network connection state and change of the Wifi signal strength. This version has small improvements:
  Updated ping method in NetworkHelper class. Detection of Internet access in WiFi network works faster and is more reliable. Added example of usage of NetworkEvents with Dagger in example-dagger directory in the repository of the project.  Right now, we check Internet connection in a different way.
         <a href="/posts/network-events-v102/">...</a>
@@ -385,6 +400,8 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
       <a href="/tags/kotlin/">kotlin</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently played with Kotlin in order to create simple &ldquo;Hello World&rdquo; Android app using this new, fancy language from JetBrains. Kotlin is another programming language based on JVM, which can work with Java. It&rsquo;s aim is to reduce code boilerplate and create projects faster. In my simple Android project, I&rsquo;ve also used KotterKnife for injecting views. I&rsquo;ve also added one simple ActivityUnitTestCase. Unfortunately, I couldn&rsquo;t convert it into Kotlin, because I wasn&rsquo;t allowed to call constructor of inherited class using super() method.
@@ -412,6 +429,8 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
   
 
 
+
+
     <p>I have released NetworkEvents library for Android. It&rsquo;s a wrapper for system Broadcast Receivers built with Otto library. It allows you to listen change of connectivity status (connected to WiFi network with or without Internet access, mobile network, off-line) and change of the WiFi signal strength very easily with @Subscribe annotation. The only thing you need to do, is to create Bus and NetworkEvents objects, register them in onResume() method and unregister them in onPause() method in your activity.
         <a href="/posts/introducing-network-events/">...</a>
       
@@ -435,6 +454,8 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>In international projects sometimes there&rsquo;s a need to send resource files to the client in order to have translated strings. Client doesn&rsquo;t have to understand XML notation and editing two or more files at the same time is inconvenient. It&rsquo;s easier to send file which can be edited in MS Excel or Libre Office Calc. I&rsquo;ve created Python scripts, which are able to convert Android xml resources with translations to a single *.
@@ -501,6 +522,12 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -514,7 +541,8 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -606,13 +634,13 @@ void put(String key, Object value); &lt;T&gt; T get(String key, Class classOfT, 
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

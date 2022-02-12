@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="linux" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="linux" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/linux/" />
@@ -13,27 +13,26 @@
 <title>linux | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/linux/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -219,6 +220,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Dropbox abandons Linux users #  Recently, I&rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&rsquo;ll stop syncing my files in November. I couldn&rsquo;t understand why. I&rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&rsquo;ll need to access them from another computer or mobile device.
         <a href="/posts/poor-mans-dropbox/">...</a>
       
@@ -240,6 +243,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>From some time, I wanted to create my own app, which will display some data in top panel in macOS or Gnome environment on Linux. I collected some resources about that and I knew that for macOS I need to write an app in Obj-C and for Gnome I need to write a plugin in JavaScript. In both cases it requires some ceremony and preparation. Recently I&rsquo;ve found a great app for macOS called BitBar (by the way it&rsquo;s open-source).
@@ -265,6 +270,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Recently, I decided to organize my Unix dotfiles in a better way. I had a few custom scripts I used in my Tmux bottom bar. I kept these scripts in .scripts directory and during installation or upgrade of my personal configuration, install.sh script was copying them from .scripts directory to /usr/local/bin/ directory. I wanted to make this configuration more solid and consistent, so I decided to transform these scripts into tmux plugins managed by tpm.
         <a href="/posts/using-tmux-with-tpm/">...</a>
       
@@ -288,6 +295,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Introduction #  Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim.
         <a href="/posts/transform-vim-into-efficient-ide/">...</a>
       
@@ -309,6 +318,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>I just released tmux-auto-pane. It&rsquo;s a tiny shell script for creating pre-defined tile layouts in Tmux on Linux with xdotool. In our workflow, we often have some pre-defined pane configurations in a terminal. The project called tmux-auto-pane helps to automate that process. It can save us some time and make us a bit more productive. We can call tmux-auto-pane with one of the following parameters:
@@ -335,6 +346,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I&rsquo;m still learning Vim every day. At first, it looks quite hard and most of the people want to learn how to quit it and never use again. Nevertheless, when you learn some basics, you can be really productive. This editor has much more cool functionalities than just :q shortcut ;-). Recently I discovered, you can use Vim not only for editing files but you can use it for browsing directories as well!
         <a href="/posts/browsing-dirs-with-vim/">...</a>
       
@@ -357,6 +370,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/python/">python</a>
   </div>
   
+
+
 
 
     <p>Recently, I created a tiny script called spotify-cli, which allows you to control Spotify on Linux from terminal. It&rsquo;s inspired by shpotify, which is a shell script doing similar things, but on macOS. My script is written in Python and uses dbus under the hood, which allows to communicate with bus daemon to pass messages between applications. I used pactl for controlling the system sound.
@@ -384,6 +399,8 @@ You can install spotify-cli as follows via wget:
   
 
 
+
+
     <p>Introduction #  In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp; downloading phase can be done from the terminal in a semi-automated way.
         <a href="/posts/lifting-quality-of-a-shell-script/">...</a>
       
@@ -405,6 +422,8 @@ You can install spotify-cli as follows via wget:
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>Not all songs are available on Spotify and sometimes we need to rip music from audio CDs in order to listen it on our computer or mobile device. There are several approaches to do that. Here is mine: Get RipperX:
@@ -430,6 +449,8 @@ Put audio CD into your computer. Open RipperX, select All Tracks and check Rip t
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>What is a terminal multiplexer? It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.
@@ -484,6 +505,12 @@ How to use tiling? #  First, we need to install tmux:
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -497,7 +524,8 @@ How to use tiling? #  First, we need to install tmux:
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -589,13 +617,13 @@ How to use tiling? #  First, we need to install tmux:
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

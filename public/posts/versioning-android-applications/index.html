@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Versioning Android applications" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Versioning Android applications" />
 <meta property="og:description" content="When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/versioning-android-applications/" />
@@ -14,26 +14,25 @@
 <title>Versioning Android applications | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -132,7 +135,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">Boy Scout Rule</a> and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed. In addition, <a href="http://en.wikipedia.org/wiki/Quality_assurance">QA</a> Engineer needs to know, which version of the project he or she should check. That&rsquo;s why we should introduce versioning system to our project. In Android Manifest we have <code>versionCode</code> and <code>versionName</code>. The <code>versionCode</code> is used for updates on Google Play Store and it has to be integer value. We should increment <code>versionCode</code> before releasing new version of the application for the users. The <code>versionName</code> available in Android Manifest is a string value and we can use it to store information, which we need in a current project. When we use Git as a Version Control System, we can put SHA value of a specific commit into our version name. In addition, we can add date and time of compilation to this variable. After that, our <code>versionName</code> contains very detailed information about current version of our application. Exemplary <code>versionName</code> will look in as follows: <code>f935ea7-20140913144001</code>. We can obtain that with proper configuration of <code>build.gradle</code> file containing <code>buildTime()</code> method and <code>gitSha()</code> method. Please, take a look at creation of <code>versionName</code> in 35th line of the <code>build.gradle</code> file presented below.</p>
+
+<p>When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">Boy Scout Rule</a> and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed. In addition, <a href="http://en.wikipedia.org/wiki/Quality_assurance">QA</a> Engineer needs to know, which version of the project he or she should check. That&rsquo;s why we should introduce versioning system to our project. In Android Manifest we have <code>versionCode</code> and <code>versionName</code>. The <code>versionCode</code> is used for updates on Google Play Store and it has to be integer value. We should increment <code>versionCode</code> before releasing new version of the application for the users. The <code>versionName</code> available in Android Manifest is a string value and we can use it to store information, which we need in a current project. When we use Git as a Version Control System, we can put SHA value of a specific commit into our version name. In addition, we can add date and time of compilation to this variable. After that, our <code>versionName</code> contains very detailed information about current version of our application. Exemplary <code>versionName</code> will look in as follows: <code>f935ea7-20140913144001</code>. We can obtain that with proper configuration of <code>build.gradle</code> file containing <code>buildTime()</code> method and <code>gitSha()</code> method. Please, take a look at creation of <code>versionName</code> in 35th line of the <code>build.gradle</code> file presented below.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#f92672">import</span> java.text.SimpleDateFormat
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">buildTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
@@ -175,15 +179,13 @@ android <span style="color:#f92672">{</span>
         targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div></p>
-</article>
+</code></pre></div></article>
  
       
 
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -195,13 +197,20 @@ android <span style="color:#f92672">{</span>
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/versioning-android-applications.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/versioning-android-applications.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -220,17 +229,20 @@ android <span style="color:#f92672">{</span>
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

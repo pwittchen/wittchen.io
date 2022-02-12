@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="I recently wrote a new library called NeuroSky Android SDK. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a *.jar file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this *.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Creating a fat AAR" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Creating a fat AAR" />
 <meta property="og:description" content="I recently wrote a new library called NeuroSky Android SDK. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a *.jar file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this *." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/creating-fat-aar/" />
@@ -14,26 +14,25 @@
 <title>Creating a fat AAR | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -132,7 +135,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>I recently wrote a new library called <a href="https://github.com/pwittchen/neurosky-android-sdk">NeuroSky Android SDK</a>. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a <code>*.jar</code> file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this <code>*.jar</code> file into the <code>lib</code> directory and link it in the <code>build.gradle</code> file. Moreover, I wanted to create a library, which can be added to the project as a single Gradle dependency without messing around with additional <code>*.jar</code> files or custom configuration. Due to this fact, I decided to create a fat <code>*.aar</code> file and deploy it to the Maven Central repository. For those who are not familar with Android, <code>*.aar</code> is an Android version or <code>*.jar</code> file, which can be used as library in the project. I didn&rsquo;t want to reinvent the wheel, so I searched for the different solutions. Unfortunatey, a few of them didn&rsquo;t work, but luckilly I&rsquo;ve found what I wanted. It&rsquo;s <a href="https://github.com/Mobbeel/fataar-gradle-plugin">fat AAR Gradle Plugin</a> developed by <a href="https://github.com/Mobbeel">Mobbeel</a> company.</p>
+
+<p>I recently wrote a new library called <a href="https://github.com/pwittchen/neurosky-android-sdk">NeuroSky Android SDK</a>. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a <code>*.jar</code> file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this <code>*.jar</code> file into the <code>lib</code> directory and link it in the <code>build.gradle</code> file. Moreover, I wanted to create a library, which can be added to the project as a single Gradle dependency without messing around with additional <code>*.jar</code> files or custom configuration. Due to this fact, I decided to create a fat <code>*.aar</code> file and deploy it to the Maven Central repository. For those who are not familar with Android, <code>*.aar</code> is an Android version or <code>*.jar</code> file, which can be used as library in the project. I didn&rsquo;t want to reinvent the wheel, so I searched for the different solutions. Unfortunatey, a few of them didn&rsquo;t work, but luckilly I&rsquo;ve found what I wanted. It&rsquo;s <a href="https://github.com/Mobbeel/fataar-gradle-plugin">fat AAR Gradle Plugin</a> developed by <a href="https://github.com/Mobbeel">Mobbeel</a> company.</p>
 <p>Here&rsquo;s how I configured everything:</p>
 <p>In my top-level <code>build.gradle</code> file I defined dependency to my custom <code>*.jar</code> file and other dependencies.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">ext<span style="color:#f92672">.</span><span style="color:#a6e22e">deps</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span> <span style="color:#75715e">// other dependencies goes here...
@@ -180,7 +184,6 @@ https://github.com/alex-shpak/hugo-book
   implementation <span style="color:#e6db74">&#39;com.github.pwittchen:neurosky-android-sdk:0.0.2&#39;</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p><code>*.jar</code> library shipped inside <code>*.aar</code> file will be included in the project and everything will just work.</p>
-</p>
 </article>
  
       
@@ -188,7 +191,6 @@ https://github.com/alex-shpak/hugo-book
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -200,13 +202,20 @@ https://github.com/alex-shpak/hugo-book
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/creating-fat-aar.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/creating-fat-aar.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -225,17 +234,20 @@ https://github.com/alex-shpak/hugo-book
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

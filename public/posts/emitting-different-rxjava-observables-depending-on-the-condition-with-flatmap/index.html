@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Sometimes, we may need to emit different RxJava Observables depending on the specific condition dynamically. Moreover, it&rsquo;s good to do it right without breaking a chain (stream of Observables). We want to combine different Observables together and do not want to nest one subscription inside another subscription because this will lead us to &ldquo;subscription hell&rdquo; similar to &ldquo;callback hell&rdquo;. Luckily RxJava has mechanisms to deal with such problems. In this article, I&rsquo;m basing my examples on RxJava 2.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Emitting different observables conditionally" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Emitting different observables conditionally" />
 <meta property="og:description" content="Sometimes, we may need to emit different RxJava Observables depending on the specific condition dynamically. Moreover, it&rsquo;s good to do it right without breaking a chain (stream of Observables). We want to combine different Observables together and do not want to nest one subscription inside another subscription because this will lead us to &ldquo;subscription hell&rdquo; similar to &ldquo;callback hell&rdquo;. Luckily RxJava has mechanisms to deal with such problems. In this article, I&rsquo;m basing my examples on RxJava 2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/" />
@@ -14,26 +14,25 @@
 <title>Emitting different observables conditionally | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -131,7 +134,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>Sometimes, we may need to emit different RxJava Observables depending on the specific condition dynamically. Moreover, it&rsquo;s good to do it right without breaking a chain (stream of Observables). We want to combine different Observables together and do not want to nest one subscription inside another subscription because this will lead us to &ldquo;subscription hell&rdquo; similar to &ldquo;callback hell&rdquo;. Luckily RxJava has mechanisms to deal with such problems. In this article, I&rsquo;m basing my examples on RxJava 2.1.0. Let&rsquo;s say we have two Observables:</p>
+
+<p>Sometimes, we may need to emit different RxJava Observables depending on the specific condition dynamically. Moreover, it&rsquo;s good to do it right without breaking a chain (stream of Observables). We want to combine different Observables together and do not want to nest one subscription inside another subscription because this will lead us to &ldquo;subscription hell&rdquo; similar to &ldquo;callback hell&rdquo;. Luckily RxJava has mechanisms to deal with such problems. In this article, I&rsquo;m basing my examples on RxJava 2.1.0. Let&rsquo;s say we have two Observables:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> Observable<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">trueObservable</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
   <span style="color:#66d9ef">return</span> Observable<span style="color:#f92672">.</span><span style="color:#a6e22e">fromCallable</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;trueObservable&#34;</span><span style="color:#f92672">);</span>
 <span style="color:#f92672">}</span>
@@ -158,7 +162,6 @@ https://github.com/alex-shpak/hugo-book
 </code></pre></div><p>In such case, this method will emit <code>trueObservable()</code>. When we change parameter of the <code>createCondition(boolean)</code> method to false, Observable will emit <code>falseObservable()</code>. When we replace <code>createCondition(boolean)</code> method with <code>Observable.empty()</code>, method will return <code>falseObservable()</code> by default. As we can see, it&rsquo;s easily solved with <a href="http://reactivex.io/documentation/operators/flatmap.html">flatMap</a> and <a href="http://reactivex.io/documentation/operators/defaultifempty.html">defaultIfEmpty</a> operators. This is quite useful technique, which we can apply to reactive applications to control our flow without breaking the chain. Please note, it&rsquo;s just an example you can create more complicated constructions and handle more complicated types than just boolean and more than two use cases.</p>
 <hr>
 <p>Reference thread for this article on StackOverflow: <a href="http://stackoverflow.com/questions/34195218/rxjava-exequte-observable-only-if-first-was-empty">http://stackoverflow.com/questions/34195218/rxjava-exequte-observable-only-if-first-was-empty</a>.</p>
-</p>
 </article>
  
       
@@ -166,7 +169,6 @@ https://github.com/alex-shpak/hugo-book
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -178,13 +180,20 @@ https://github.com/alex-shpak/hugo-book
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -203,17 +212,20 @@ https://github.com/alex-shpak/hugo-book
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

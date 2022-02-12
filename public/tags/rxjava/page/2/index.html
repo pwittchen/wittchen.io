@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="rxjava" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="rxjava" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/rxjava/" />
@@ -13,27 +13,26 @@
 <title>rxjava | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/rxjava/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -220,6 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Sometimes, we may need to emit different RxJava Observables depending on the specific condition dynamically. Moreover, it&rsquo;s good to do it right without breaking a chain (stream of Observables). We want to combine different Observables together and do not want to nest one subscription inside another subscription because this will lead us to &ldquo;subscription hell&rdquo; similar to &ldquo;callback hell&rdquo;. Luckily RxJava has mechanisms to deal with such problems. In this article, I&rsquo;m basing my examples on RxJava 2.
         <a href="/posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/">...</a>
       
@@ -243,6 +246,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/rxjava/">rxjava</a>
   </div>
   
+
+
 
 
     <p>This time, I upgraded my another reactive Android open-source project called ReactiveNetwork to RxJava2.x. Many thanks goes to @tushar-acharya who performed initial migration to the newer version of RxJava. During migration, I&rsquo;ve also created new package rx2 to avoid potential import conflicts during migration inside Android apps. Besides migration, I&rsquo;ve updated sample apps, documentation &amp; JavaDocs on Github pages. You can still use RxJava1.x version and it&rsquo;s available on the branch with that name.
@@ -271,6 +276,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I was asked to be a speaker during GDG DevFest 2015 conference in Warsaw, Poland. Of course, I accepted this invitation and prepared presentation titled &ldquo;Reactive Live Coding&rdquo;. Presentation covered basics of Reactive Programming, RxJava and RxAndroid. Besides my talk I&rsquo;ve done live coding to show how to use mentioned libraries and basics principles of Reactive Programming in real life. I had only 20 minutes for all of that, so my time-box was very limited.
         <a href="/posts/reactive-live-coding-gdg-devfest-pl-2015/">...</a>
       
@@ -294,6 +301,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/rxjava/">rxjava</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
@@ -341,6 +350,12 @@ This library is much simpler and easier to use than NetworkEvents.
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -354,7 +369,8 @@ This library is much simpler and easier to use than NetworkEvents.
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -446,13 +462,13 @@ This library is much simpler and easier to use than NetworkEvents.
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

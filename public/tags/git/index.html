@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="git" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="git" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/git/" />
@@ -13,27 +13,26 @@
 <title>git | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/git/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -219,6 +220,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>While creating a Pull Requests it&rsquo;s good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary.
 Solution #1 #  Some time ago I&rsquo;ve found project http://rebaseandsqua.sh/ made by Jake Wharton. It&rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.
 We can just call:
@@ -243,6 +246,8 @@ curl rebaseandsqua.sh | sh then edit our commit messages and push the changes.
       <a href="/tags/git/">git</a>
   </div>
   
+
+
 
 
     <p>Problem #  If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
@@ -271,6 +276,8 @@ Such situation happens when you performed changes locally and at the same time s
   
 
 
+
+
     <p>Recently, during Meet &amp; Code event organized by Media 3.0 and SAP Hybris, I&rsquo;ve gave a talk for university and high-school students about basics of Git. Presentation was titled Git - tips &amp; tricks and was organized at the Silesian Univeristy of Technology in the AEI Department where I was studying a few years ago. Presentation covered quite essential usage of Git, which could be helpful for people who are planning to learn it from the scratch.
         <a href="/posts/git-tips-and-tricks-meet-and-code-gliwice/">...</a>
       
@@ -292,6 +299,8 @@ Such situation happens when you performed changes locally and at the same time s
       <a href="/tags/git/">git</a>
   </div>
   
+
+
 
 
     <p>Most of the people use git as follows.
@@ -318,6 +327,8 @@ Such situation happens when you performed changes locally and at the same time s
   
 
 
+
+
     <p>While we are working with Version Control Systems like Git, it&rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your .gitconfig file, which is usually located in your home directory and place a few aliases in the [alias] section. For example:
 [alias] ls = log --pretty=format:&quot;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&quot; --decorate Then you can type: git ls in your Git repository to see pretty Git log.
         <a href="/posts/my-approach-to-git-aliases/">...</a>
@@ -340,6 +351,8 @@ Such situation happens when you performed changes locally and at the same time s
       <a href="/tags/git/">git</a>
   </div>
   
+
+
 
 
     <p>Short introduction #  Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
@@ -367,6 +380,8 @@ Different configs for different Operating Systems #  On my private computer, I u
   
 
 
+
+
     <p>Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.
         <a href="/posts/automate-boring-stuff/">...</a>
       
@@ -389,6 +404,8 @@ Different configs for different Operating Systems #  On my private computer, I u
       <a href="/tags/python/">python</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Can you answer the following questions about your Git repository?
@@ -417,6 +434,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
   
 
 
+
+
     <p>Recently I&rsquo;ve created a simple Python script, which checks whether &lsquo;development&rsquo; branch has all changes from &lsquo;master&rsquo; branch in a Git repository. It&rsquo;s important when we work in a Git Flow. Branch inconsistency may occur when change with hot-fix will be committed to &lsquo;master&rsquo; branch and we forget to merge &lsquo;master&rsquo; branch back to &lsquo;development&rsquo; branch to have our hot-fix in a &lsquo;development&rsquo; version of the project as well. We should keep branch consistency to avoid merge conflicts and problems with release of the project in the future.
         <a href="/posts/checking-consistency-of-git-branches/">...</a>
       
@@ -438,6 +457,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
       <a href="/tags/git/">git</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Git is very popular Version Control System used in many software projects today. In my opinion, it&rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository.
@@ -483,6 +504,12 @@ Does development branch has all changes from master branch? #  git-branch-compar
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -496,7 +523,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -588,13 +616,13 @@ Does development branch has all changes from master branch? #  git-branch-compar
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

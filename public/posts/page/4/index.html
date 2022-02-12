@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Posts" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
@@ -13,27 +13,26 @@
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -214,6 +215,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I&rsquo;ve just finished migrating my personal website and blog from Wordpress to Hexo. I&rsquo;ve been using Wordpress for more than 5 years and decided to check out something new. Hexo amazed me with its simplicity and ease of use. Probably this tool is more recognized around JavaScript developers, because it&rsquo;s written in that language. I discovered it in the last month.
 Features of Hexo #  Static website generator #  For a simple blog with static content I don&rsquo;t really need dynamic website like Wordpress.
         <a href="/posts/new-blog/">...</a>
@@ -236,6 +239,8 @@ Features of Hexo #  Static website generator #  For a simple blog with static co
       <a href="/tags/java/">java</a>
   </div>
   
+
+
 
 
     <p>Introduction #  In one of my open-source projects - ReactiveNetwork I have a documentation in README.md file and I have JavaDocs as well. This project is an Android library written in Java and built with Gradle. Moreover, I develop this project on two separate Git branches - one for RxJava1.x and another one for RxJava2.x. Similar convention is in the RxJava repository, so I followed it. After each release I publish documentation and JavaDocs on GitHub pages for both versions.
@@ -262,6 +267,8 @@ Features of Hexo #  Static website generator #  For a simple blog with static co
   
 
 
+
+
     <p>On the 8th of February 2018, during Quality Meetup #15, I gave a presentation titled &ldquo;Fixing a billion dollar mistake&rdquo;. Tony Hoare introduced Null Reference w in ALGOL language in 1965. He calls this decision a &ldquo;billion dollar mistake&rdquo;. It was so easy to implement and probably it caused a loss of millions of dollars due to the mistakes done in the software over the 40 years. During the time, people came up with different ideas of solving that problem with software libraries, good programming practices, static code analysis and compile time code analysis.
         <a href="/posts/quality-meetup-15-fixing-a-billion-dollar-mistake/">...</a>
       
@@ -285,6 +292,8 @@ Features of Hexo #  Static website generator #  For a simple blog with static co
   
 
 
+
+
     <p>From some time, I wanted to create my own app, which will display some data in top panel in macOS or Gnome environment on Linux. I collected some resources about that and I knew that for macOS I need to write an app in Obj-C and for Gnome I need to write a plugin in JavaScript. In both cases it requires some ceremony and preparation. Recently I&rsquo;ve found a great app for macOS called BitBar (by the way it&rsquo;s open-source).
         <a href="/posts/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/">...</a>
       
@@ -306,6 +315,8 @@ Features of Hexo #  Static website generator #  For a simple blog with static co
       <a href="/tags/java/">java</a>
   </div>
   
+
+
 
 
     <p>Recently, I&rsquo;ve decided to refresh my knowledge regarding Docker and created an image with Alpine Linux and Java 9, which can be a useful base for the future projects. I used Alpine as a base image because it became quite popular in the Docker world due to its simplicity and the fact that it&rsquo;s pretty lightweight when we compare it to containers based on other Linux distributions. Pure Alpine Docker container has about 4.
@@ -333,6 +344,8 @@ Features of Hexo #  Static website generator #  For a simple blog with static co
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>Yesterday, I gave a presentation about connectivity in the Android apps during the DroidCon Poland 2017 Conference in Kraków.
@@ -365,6 +378,8 @@ Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; 
   
 
 
+
+
     <p>During Hack Your Career event at the Silesian University of Technology, I&rsquo;ve prepared a presentation titled Reactive Programming - Efficient Server Applications with a colleague from work. Arek told about theory of Reactive Programming, shown basic concepts, data types and a few examples in the code. During my part of the presentation, I&rsquo;ve wrote a very simple server and client in Java (9 on the server, 7 on the client) with Vert.
         <a href="/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/">...</a>
       
@@ -386,6 +401,8 @@ Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; 
       <a href="/tags/conferences/">conferences</a>
   </div>
   
+
+
 
 
     <p>Introduction #  In the past months, I&rsquo;ve attended a few conferences and meetups related to IT. I also plan to attend a few more in the last quarter of the year as a speaker. I&rsquo;d like to show you a few tips, which can encourage you to attend such events, be more involved in them and spend some time away from your desk ;-). If you are working in a software company, in the most cases you could treat going for a conference as a non-customer facing business trip, so your regular days off will be safe and can be used for your personal plans and holidays :-).
@@ -412,6 +429,8 @@ Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; 
   
 
 
+
+
     <p>Recently, during Meet &amp; Code event organized by Media 3.0 and SAP Hybris, I&rsquo;ve gave a talk for university and high-school students about basics of Git. Presentation was titled Git - tips &amp; tricks and was organized at the Silesian Univeristy of Technology in the AEI Department where I was studying a few years ago. Presentation covered quite essential usage of Git, which could be helpful for people who are planning to learn it from the scratch.
         <a href="/posts/git-tips-and-tricks-meet-and-code-gliwice/">...</a>
       
@@ -435,6 +454,8 @@ Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; 
       <a href="/tags/conferences/">conferences</a>
   </div>
   
+
+
 
 
     <p>Recently on the JDD 2017 conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.
@@ -497,6 +518,12 @@ Code snippets shown during this presentation are available at https://github.com
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -510,7 +537,8 @@ Code snippets shown during this presentation are available at https://github.com
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -602,13 +630,13 @@ Code snippets shown during this presentation are available at https://github.com
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

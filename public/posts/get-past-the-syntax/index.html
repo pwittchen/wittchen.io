@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Dr. Venkat Subramaniam presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C&#43;&#43;. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Get past the syntax - the real scare is in the semantics" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Get past the syntax - the real scare is in the semantics" />
 <meta property="og:description" content="Dr. Venkat Subramaniam presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C&#43;&#43;. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/get-past-the-syntax/" />
@@ -14,26 +14,25 @@
 <title>Get past the syntax - the real scare is in the semantics | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -131,7 +134,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>Dr. <a href="http://agiledeveloper.com/">Venkat Subramaniam</a> presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C++. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements. Perception of the world is based on experience and things we get used to. The same rule applies to programming languages. Most software developers are familiar with imperative programming paradigm. They often focus on describing computation in terms of statements and changing program state. This approach leads us to necessity of creating a lot of temporary variables and boilerplate code. Let’s have a look at the following code snippet:</p>
+
+<p>Dr. <a href="http://agiledeveloper.com/">Venkat Subramaniam</a> presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C++. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements. Perception of the world is based on experience and things we get used to. The same rule applies to programming languages. Most software developers are familiar with imperative programming paradigm. They often focus on describing computation in terms of statements and changing program state. This approach leads us to necessity of creating a lot of temporary variables and boilerplate code. Let’s have a look at the following code snippet:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> start <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
 <span style="color:#66d9ef">int</span> limit <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
 <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> start<span style="color:#f92672">;</span>
@@ -168,7 +172,6 @@ view raw
 System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>sum<span style="color:#f92672">);</span>
 </code></pre></div><p>As we can see, the code is simpler, cleaner and easier to analyze. The only difference is the fact that we changed approach from imperative to the functional one and applied different semantics. In this case, instead of focusing on how to do the task, we focused on the result we want to obtain. Instead of learning only syntax, we should spend more time on learning semantics to understand its purpose. This will allow us to create better and robust solutions in less time.</p>
 <p><em>This article was also published as a part of summary of Devoxx 2015 Conference in Kraków, Poland on technical blog of Future Processing:</em> <a href="http://www.future-processing.pl/blog/devoxx-conference-summary/">http://www.future-processing.pl/blog/devoxx-conference-summary/</a></p>
-</p>
 </article>
  
       
@@ -176,7 +179,6 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -188,13 +190,20 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/get-past-the-syntax.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/get-past-the-syntax.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -213,17 +222,20 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

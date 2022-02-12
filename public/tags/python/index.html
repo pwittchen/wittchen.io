@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="python" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="python" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/python/" />
@@ -13,27 +13,26 @@
 <title>python | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/python/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -221,6 +222,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>While customizing my i3 status bar, I wanted to have currently played Spotify song in it. Some time ago, I created an open source script in Python called spotify-cli-linux and I wanted to use it. When we want to put something custom into the i3 status bar, the easiest way to do it, is to save data into the file and then read the file.
 I created the following config inside ~/.
         <a href="/posts/spotify-song-in-i3-status-bar/">...</a>
@@ -245,6 +248,8 @@ I created the following config inside ~/.
   
 
 
+
+
     <p>Introduction #  I have my own tiny Python project called spotify-cli-linux, which is (surprise!) command line interface for Spotify desktop app on Linux. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I&rsquo;ve provided instructions how to install my Python script in the system via curl and wget, which is fine, but it&rsquo;s not recommended and official way to do it.
         <a href="/posts/publishing-python-package-to-pypi/">...</a>
       
@@ -267,6 +272,8 @@ I created the following config inside ~/.
       <a href="/tags/python/">python</a>
   </div>
   
+
+
 
 
     <p>Recently, I created a tiny script called spotify-cli, which allows you to control Spotify on Linux from terminal. It&rsquo;s inspired by shpotify, which is a shell script doing similar things, but on macOS. My script is written in Python and uses dbus under the hood, which allows to communicate with bus daemon to pass messages between applications. I used pactl for controlling the system sound.
@@ -294,6 +301,8 @@ You can install spotify-cli as follows via wget:
   
 
 
+
+
     <p>Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.
         <a href="/posts/automate-boring-stuff/">...</a>
       
@@ -316,6 +325,8 @@ You can install spotify-cli as follows via wget:
       <a href="/tags/python/">python</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Can you answer the following questions about your Git repository?
@@ -343,6 +354,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
   
 
 
+
+
     <p>Some time ago, I&rsquo;ve decided to learn Python programming language. I thought it may be useful during performing some basic tasks in the system and Linux or Windows scripting. Moreover, it&rsquo;s good language for developing web applications with frameworks like Django, Flask or Bottle. I&rsquo;ve decided to go through all of the tasks in the Learn Python - The Hard Way course. Basic tasks weren&rsquo;t surprising. They were similar to other object oriented languages.
         <a href="/posts/learning-python/">...</a>
       
@@ -365,6 +378,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
       <a href="/tags/python/">python</a>
   </div>
   
+
+
 
 
     <p>Recently I&rsquo;ve created a simple Python script, which checks whether &lsquo;development&rsquo; branch has all changes from &lsquo;master&rsquo; branch in a Git repository. It&rsquo;s important when we work in a Git Flow. Branch inconsistency may occur when change with hot-fix will be committed to &lsquo;master&rsquo; branch and we forget to merge &lsquo;master&rsquo; branch back to &lsquo;development&rsquo; branch to have our hot-fix in a &lsquo;development&rsquo; version of the project as well. We should keep branch consistency to avoid merge conflicts and problems with release of the project in the future.
@@ -392,6 +407,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
   
 
 
+
+
     <p>In international projects sometimes there&rsquo;s a need to send resource files to the client in order to have translated strings. Client doesn&rsquo;t have to understand XML notation and editing two or more files at the same time is inconvenient. It&rsquo;s easier to send file which can be edited in MS Excel or Libre Office Calc. I&rsquo;ve created Python scripts, which are able to convert Android xml resources with translations to a single *.
         <a href="/posts/android-resource-converter/">...</a>
       
@@ -415,6 +432,12 @@ Does development branch has all changes from master branch? #  git-branch-compar
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -428,7 +451,8 @@ Does development branch has all changes from master branch? #  git-branch-compar
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -520,13 +544,13 @@ Does development branch has all changes from master branch? #  git-branch-compar
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

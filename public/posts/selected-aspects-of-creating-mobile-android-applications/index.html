@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="During the development of mobile applications, we should adjust our point of view to the specific projects we are working with. Applications for mobile devices are different than desktop or web applications. They have their own lifecycle, work on various devices with different screen resolutions. They have to work on devices with limited memory, clock rate of the CPU and battery life. In addition, these applications often have to be able to work without an Internet connection and their user interface has to be simple and well-designed due to smaller screen of a typical smartphone.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Selected aspects of creating mobile Android applications" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Selected aspects of creating mobile Android applications" />
 <meta property="og:description" content="During the development of mobile applications, we should adjust our point of view to the specific projects we are working with. Applications for mobile devices are different than desktop or web applications. They have their own lifecycle, work on various devices with different screen resolutions. They have to work on devices with limited memory, clock rate of the CPU and battery life. In addition, these applications often have to be able to work without an Internet connection and their user interface has to be simple and well-designed due to smaller screen of a typical smartphone." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/selected-aspects-of-creating-mobile-android-applications/" />
@@ -14,26 +14,25 @@
 <title>Selected aspects of creating mobile Android applications | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,8 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents">
+  
+<nav id="TableOfContents">
   <ul>
     <li><a href="#dealing-with-activity-lifecycle">Dealing with activity lifecycle</a></li>
     <li><a href="#context-of-the-activity-and-application">Context of the activity and application</a></li>
@@ -114,6 +116,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
+
 
 
   </aside>
@@ -140,7 +143,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>During the development of mobile applications, we should adjust our point of view to the specific projects we are working with. Applications for mobile devices are different than desktop or web applications. They have their own lifecycle, work on various devices with different screen resolutions. They have to work on devices with limited memory, clock rate of the CPU and battery life. In addition, these applications often have to be able to work without an Internet connection and their user interface has to be simple and well-designed due to smaller screen of a typical smartphone.</p>
+
+<p>During the development of mobile applications, we should adjust our point of view to the specific projects we are working with. Applications for mobile devices are different than desktop or web applications. They have their own lifecycle, work on various devices with different screen resolutions. They have to work on devices with limited memory, clock rate of the CPU and battery life. In addition, these applications often have to be able to work without an Internet connection and their user interface has to be simple and well-designed due to smaller screen of a typical smartphone.</p>
 <p>As we can see, there is a lot of limitations, but there are also plenty of new possibilities. We can use GPS and create location-aware applications. We can access Bluetooth and establish a connection with external devices. The interaction between the user and our application can be performed with a touch screen. We can even use accelerometer, built-in most of devices, as an alternative UI controller or we can use it for monitoring the activity of the user. New Android API have a feature called Activity Recognition, which allows to detect whether the user is walking, cycling, driving a car, etc. This function uses both GPS and accelerometer.
 As we can see, the development of mobile applications has a lot of limitations, but it also brings a lot of new possibilities and uncovered areas, which have not been accessible before through traditional applications. Creating such projects can be a great challenge for every software developer. This article describes a few aspects of creating mobile applications, which can help to develop better projects and extend knowledge. Of course, it does not cover all the topics, but it is a good starting point for further research and development.</p>
 <h2 id="dealing-with-activity-lifecycle">
@@ -262,7 +266,6 @@ First of all, we need to create an interface for our activity.</p>
 <p>Mobile Android applications are very specific projects, which are different than regular desktop or web applications. They have different lifecycle and different UI, but still some approaches are similar to traditional software solutions. Mobile applications and mobile devices have a lot of limitations. On the other hand, they have a lot of new features, functions and user interaction methods, which have not been available before, what brings new possibilities and fresh ideas. Regardless of the fact that they run on small devices, they are a great challenge for software developers and the future of today’s technology.</p>
 <p><strong>Note</strong>: This article was also published on the Technical Blog of Future Processing company at:
 <a href="https://www.future-processing.pl/blog/selected-aspects-of-creating-mobile-android-applications/">https://www.future-processing.pl/blog/selected-aspects-of-creating-mobile-android-applications/</a></p>
-</p>
 </article>
  
       
@@ -270,7 +273,6 @@ First of all, we need to create an interface for our activity.</p>
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -282,13 +284,20 @@ First of all, we need to create an interface for our activity.</p>
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/selected-aspects-of-creating-mobile-android-applications.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/selected-aspects-of-creating-mobile-android-applications.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -307,8 +316,10 @@ First of all, we need to create an interface for our activity.</p>
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
   <ul>
     <li><a href="#dealing-with-activity-lifecycle">Dealing with activity lifecycle</a></li>
     <li><a href="#context-of-the-activity-and-application">Context of the activity and application</a></li>
@@ -320,14 +331,15 @@ First of all, we need to create an interface for our activity.</p>
   </ul>
 </nav>
 
+
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

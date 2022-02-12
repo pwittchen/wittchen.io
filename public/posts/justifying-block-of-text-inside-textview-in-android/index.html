@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Justifying text inside TextView in Android is not that simple as we may expect it to be. Unfortunately, Android does not have attribute for TextView, which supports justifying text. We can set alignment to the right or to the left, but we cannot simply justify text with generic attributes. In order to do that, we need to perform a few tricks. First of all, we need to create file named justified_textview.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Justifying block of text inside TextView in Android" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Justifying block of text inside TextView in Android" />
 <meta property="og:description" content="Justifying text inside TextView in Android is not that simple as we may expect it to be. Unfortunately, Android does not have attribute for TextView, which supports justifying text. We can set alignment to the right or to the left, but we cannot simply justify text with generic attributes. In order to do that, we need to perform a few tricks. First of all, we need to create file named justified_textview." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/justifying-block-of-text-inside-textview-in-android/" />
@@ -14,26 +14,25 @@
 <title>Justifying block of text inside TextView in Android | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -130,7 +133,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>Justifying text inside <code>TextView</code> in Android is not that simple as we may expect it to be. Unfortunately, Android does not have attribute for <code>TextView</code>, which supports justifying text. We can set alignment to the right or to the left, but we cannot simply justify text with generic attributes. In order to do that, we need to perform a few tricks. First of all, we need to create file named <code>justified_textview.css</code> and we need to put it into the <code>assets/</code> directory of our project. We will use it later in our custom view. Source code of this CSS stylesheet is presented below:</p>
+
+<p>Justifying text inside <code>TextView</code> in Android is not that simple as we may expect it to be. Unfortunately, Android does not have attribute for <code>TextView</code>, which supports justifying text. We can set alignment to the right or to the left, but we cannot simply justify text with generic attributes. In order to do that, we need to perform a few tricks. First of all, we need to create file named <code>justified_textview.css</code> and we need to put it into the <code>assets/</code> directory of our project. We will use it later in our custom view. Source code of this CSS stylesheet is presented below:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
     <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.0</span><span style="color:#66d9ef">em</span>;
     <span style="color:#66d9ef">color</span>: rgb(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);
@@ -255,7 +259,6 @@ https://github.com/alex-shpak/hugo-book
     <span style="color:#a6e22e">android:configChanges=</span><span style="color:#e6db74">&#34;orientation|keyboardHidden&#34;</span>
     <span style="color:#a6e22e">android:hardwareAccelerated=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">/&gt;</span>
 </code></pre></div><p>That&rsquo;s it. It&rsquo;s not perfect solution and it&rsquo;s kind of workaround, but I haven&rsquo;t found any better idea how to deal with this problem. I tested a few solutions and this one is, in my opinion, the best available and most elegant option for now. <strong>Please note: There may be a problem with proper execution of this solution on Android OS version lower than 3.0 (API 11).</strong></p>
-</p>
 </article>
  
       
@@ -263,7 +266,6 @@ https://github.com/alex-shpak/hugo-book
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -275,13 +277,20 @@ https://github.com/alex-shpak/hugo-book
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/justifying-block-of-text-inside-textview-in-android.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/justifying-block-of-text-inside-textview-in-android.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -300,17 +309,20 @@ https://github.com/alex-shpak/hugo-book
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

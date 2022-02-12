@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Short introduction #  Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
 Different configs for different Operating Systems #  On my private computer, I use Linux. I use Git for my private projects and I use my private e-mail address there. At the same time, I use Git at work on macOS with exactly the same Git configuration, but with a different e-mail address.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Working with different Git configs" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Working with different Git configs" />
 <meta property="og:description" content="Short introduction #  Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
 Different configs for different Operating Systems #  On my private computer, I use Linux. I use Git for my private projects and I use my private e-mail address there. At the same time, I use Git at work on macOS with exactly the same Git configuration, but with a different e-mail address." />
 <meta property="og:type" content="article" />
@@ -16,26 +16,25 @@ Different configs for different Operating Systems #  On my private computer, I u
 <title>Working with different Git configs | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -45,6 +44,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -78,10 +78,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -105,7 +106,8 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents">
+  
+<nav id="TableOfContents">
   <ul>
     <li><a href="#short-introduction">Short introduction</a></li>
     <li><a href="#different-configs-for-different-operating-systems">Different configs for different Operating Systems</a></li>
@@ -114,6 +116,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
+
 
 
   </aside>
@@ -140,7 +143,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><h2 id="short-introduction">
+
+<h2 id="short-introduction">
   Short introduction
   <a class="anchor" href="#short-introduction">#</a>
 </h2>
@@ -183,7 +187,6 @@ alias setupGitForWork<span style="color:#f92672">=</span><span style="color:#e6d
   <a class="anchor" href="#summary">#</a>
 </h2>
 <p>As we can see, keeping different configs for different machines or operating systems and changing them depending on our needs is not so hard. I hope these ideas will help you to manage your configs.</p>
-</p>
 </article>
  
       
@@ -191,7 +194,6 @@ alias setupGitForWork<span style="color:#f92672">=</span><span style="color:#e6d
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -203,13 +205,20 @@ alias setupGitForWork<span style="color:#f92672">=</span><span style="color:#e6d
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/working-with-different-git-configs.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/working-with-different-git-configs.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -228,8 +237,10 @@ alias setupGitForWork<span style="color:#f92672">=</span><span style="color:#e6d
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
   <ul>
     <li><a href="#short-introduction">Short introduction</a></li>
     <li><a href="#different-configs-for-different-operating-systems">Different configs for different Operating Systems</a></li>
@@ -239,14 +250,15 @@ alias setupGitForWork<span style="color:#f92672">=</span><span style="color:#e6d
   </ul>
 </nav>
 
+
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

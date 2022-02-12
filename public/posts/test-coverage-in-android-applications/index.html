@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Update: see newer article about Unit test coverage report with Travis CI for Robolectric on Android. For a long time, I wasn&rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&rsquo;t use. Other developers also stopped using it for the new projects.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Test coverage report for Android application" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Test coverage report for Android application" />
 <meta property="og:description" content="Update: see newer article about Unit test coverage report with Travis CI for Robolectric on Android. For a long time, I wasn&rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&rsquo;t use. Other developers also stopped using it for the new projects." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/test-coverage-in-android-applications/" />
@@ -14,26 +14,25 @@
 <title>Test coverage report for Android application | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -131,7 +134,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p><strong>Update:</strong> see newer article about <a href="/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/"><strong>Unit test coverage report with Travis CI for Robolectric on Android</strong></a>. For a long time, I wasn&rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&rsquo;t use. Other developers also stopped using it for the new projects. E.g. <a href="https://github.com/square/sqlbrite">Sqlbrite</a> from Square is using AndroidJUnit4 runner as my projects do. Recently, I&rsquo;ve found <a href="http://www.reddit.com/r/androiddev/comments/2v1n2u/code_coverage_in_android_studio/">an interesting discussion on Reddit</a>, where we can find information about enabling test coverage very easily without additional plugins, scripts and many lines of configuration. Moreover, Android SDK currently has built-in support for <a href="http://emma.sourceforge.net/">Emma Test Coverage</a>, what we can read in <a href="http://developer.android.com/reference/android/test/InstrumentationTestRunner.html">official documentation</a>. Basically, the only thing we need to do, is to apply <code>jacoco-android</code> plugin in <code>build.gradle</code> file:</p>
+
+<p><strong>Update:</strong> see newer article about <a href="/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/"><strong>Unit test coverage report with Travis CI for Robolectric on Android</strong></a>. For a long time, I wasn&rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&rsquo;t use. Other developers also stopped using it for the new projects. E.g. <a href="https://github.com/square/sqlbrite">Sqlbrite</a> from Square is using AndroidJUnit4 runner as my projects do. Recently, I&rsquo;ve found <a href="http://www.reddit.com/r/androiddev/comments/2v1n2u/code_coverage_in_android_studio/">an interesting discussion on Reddit</a>, where we can find information about enabling test coverage very easily without additional plugins, scripts and many lines of configuration. Moreover, Android SDK currently has built-in support for <a href="http://emma.sourceforge.net/">Emma Test Coverage</a>, what we can read in <a href="http://developer.android.com/reference/android/test/InstrumentationTestRunner.html">official documentation</a>. Basically, the only thing we need to do, is to apply <code>jacoco-android</code> plugin in <code>build.gradle</code> file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">apply plugin: <span style="color:#e6db74">&#39;jacoco-android&#39;</span>
 </code></pre></div><p>and then set <code>testCoverageEnabled</code> parameter to <code>true</code> as follows:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">android <span style="color:#f92672">{</span>
@@ -153,7 +157,6 @@ https://github.com/alex-shpak/hugo-book
 <p><img src="/posts/2015/test-coverage/prefser_test_coverage_04.06.2015.png" alt="prefser_test_coverage_04.06.2015" /></p>
 <p>In order to publish our report on Jenkins CI, we can use test coverage plugins, but I am not sure about their stability. Another solution is <a href="https://wiki.jenkins-ci.org/display/JENKINS/HTML&#43;Publisher&#43;Plugin">HTML Publisher plugin</a>. We can add post-build action and publish our test coverage report generated by default as HTML website inside Jenkins job. In my opinion, it&rsquo;s quite convenient solution, because it is easy to set up and allows us to navigate to the code, browse uncovered lines, methods and branches. Finally, with this clean and fast solution we can easily monitor test coverage of our Android projects, find bottlenecks and increase overall quality of the applications and libraries.</p>
 <p><strong>Link to the old blog post archive with comments of the users</strong>: <a href="https://web.archive.org/web/20171210224809/http://blog.wittchen.biz.pl/test-coverage-report-for-android-application">https://web.archive.org/web/20171210224809/http://blog.wittchen.biz.pl/test-coverage-report-for-android-application</a></p>
-</p>
 </article>
  
       
@@ -161,7 +164,6 @@ https://github.com/alex-shpak/hugo-book
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -173,13 +175,20 @@ https://github.com/alex-shpak/hugo-book
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/test-coverage-in-android-applications.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/test-coverage-in-android-applications.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -198,17 +207,20 @@ https://github.com/alex-shpak/hugo-book
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

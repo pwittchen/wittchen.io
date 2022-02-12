@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="gradle" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="gradle" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/gradle/" />
@@ -13,27 +13,26 @@
 <title>gradle | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/gradle/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -220,6 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>In my previous article I published information about publishing JAR/AAR library to the Maven Central Repository. A few steps of that process were automated, but a few of them were still manual. I mean closing and release process which had to be done by manual clicking on the Sonatype website. Fortunately, it&rsquo;s possible to automate it. In order to do that, I used gradle-nexus-staging-plugin developed by Codearte. Thanks to this plugin I could get rid of the remaining manual steps left in the release process.
         <a href="/posts/zen-of-java-library-release-process/">...</a>
       
@@ -242,6 +245,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>Introduction #  As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a *.jar or *.aar file with others. Drawback of such solution is the fact that source of distribution may not be trusted.
@@ -269,6 +274,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I recently wrote a new library called NeuroSky Android SDK. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a *.jar file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this *.
         <a href="/posts/creating-fat-aar/">...</a>
       
@@ -294,6 +301,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>During development process, we often write unit and integration tests. While unit tests verify corectness of the small pieces of code, integration tests verify software as a whole project and sometimes can treat it as a black box where concrete results are expected. During development of the REST API, we can write integration tests for such API with REST Assured. Integration tests are usually slower, because they need to start the server and sometimes do other stuff.
         <a href="/posts/separate-execution-of-unit-and-integration-tests-in-gradle/">...</a>
       
@@ -317,6 +326,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
@@ -348,6 +359,8 @@ plugins { id &#39;jacoco&#39; } jacocoTestReport { reports { xml.enabled = true 
   
 
 
+
+
     <p>Introduction #  Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &ldquo;Hello World&rdquo; app. Here are my observations.
 Build System #  I used Gradle to build the project.
         <a href="/posts/writing-my-first-library-in-kotlin/">...</a>
@@ -370,6 +383,8 @@ Build System #  I used Gradle to build the project.
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>Introduction #  I really like Gradle build system for JVM apps. It has flexibility like Ant and great dependency management capabilities like Maven. It addition, it doesn&rsquo;t use XML notation, but Groovy programming language, so builds configurations are simple, concise, easier to read and easier to create. In my opinion, Gradle is truly modern build system for JVM apps. Nevertheless, there are projects, which are pretty old and use older systems like Ant.
@@ -396,6 +411,8 @@ Build System #  I used Gradle to build the project.
   
 
 
+
+
     <p>Overview #  I&rsquo;ve recently read great article telling how to improve quality and syntax of your Android code by Vincent Brison. It presents how to use tools like Checkstyle, Findbugs, PMD, and Android Lint for Static Code Analysis in Android project. Static Code Analysis allows us to keep consistency of the source code style and helps us to find errors, warnings, possible bugs, bottlenecks and ways to improve the projects.
         <a href="/posts/static-code-analysis-in-android-project/">...</a>
       
@@ -420,6 +437,8 @@ Build System #  I used Gradle to build the project.
   
 
 
+
+
     <p>Introduction #  During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.
         <a href="/posts/installing-release-and-debug-version-of-app-on-a-single-device/">...</a>
       
@@ -442,6 +461,8 @@ Build System #  I used Gradle to build the project.
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>Some time ago, I had some troubles with configuring Java project with Gradle in IntelliJ IDEA CE. There is possibility to create new Gradle project in mentioned IDE, but for some reason it didn&rsquo;t worked out-of-the box in my case on Ubuntu. I wanted to have pure, clean Java project with Gradle build system ready to open in IntelliJ IDEA. I found well configured simple project at: https://github.com/quinnliu/SampleGradleProject. Basing on that project, I created my simple template.
@@ -487,6 +508,12 @@ Build System #  I used Gradle to build the project.
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -500,7 +527,8 @@ Build System #  I used Gradle to build the project.
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -592,13 +620,13 @@ Build System #  I used Gradle to build the project.
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

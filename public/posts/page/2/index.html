@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Posts" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
@@ -13,27 +13,26 @@
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -220,6 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Introduction #  In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
 Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of the Linux graphical environments for desktop:
  Window Managers Desktop Environments  Window Managers are much simpler, require a lot of configuration, learning how to use them and you see all windows at once.
@@ -246,6 +249,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
   
 
 
+
+
     <p>Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.
         <a href="/posts/arch-install-notes/">...</a>
       
@@ -268,6 +273,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>In my previous article I published information about publishing JAR/AAR library to the Maven Central Repository. A few steps of that process were automated, but a few of them were still manual. I mean closing and release process which had to be done by manual clicking on the Sonatype website. Fortunately, it&rsquo;s possible to automate it. In order to do that, I used gradle-nexus-staging-plugin developed by Codearte. Thanks to this plugin I could get rid of the remaining manual steps left in the release process.
@@ -294,6 +301,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
   
 
 
+
+
     <p>Introduction #  As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a *.jar or *.aar file with others. Drawback of such solution is the fact that source of distribution may not be trusted.
         <a href="/posts/publishing-jar-aar-to-maven-central/">...</a>
       
@@ -315,6 +324,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <a href="/tags/kotlin/">kotlin</a>
   </div>
   
+
+
 
 
     <p>Introduction #  I recently I had an opportunity to join &ldquo;Kyma meets CCV2 Hackathon&rdquo; in the SAP Labs Poland office in Gliwice. The goal of the hackathon was to create a simple project, which will use Kyma to integrate external services with the SAP Hybris Commerce Platform. CCV2 stands for &ldquo;Commerce Cloud Version 2&rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&rsquo;s a long story described in a short way).
@@ -339,6 +350,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <a href="/tags/conferences/">conferences</a>
   </div>
   
+
+
 
 
     <p>Recently, I had an opportunity to speak at the software development conference abroad for the first time. I visited Malmö in Sweden and gave a talk during the Øredev 2018 conference. The main theme of the conference was Deus Ex Machina, so I decided to adapt to this topic and prepared presentation about Brain-Computer Interfaces, which is my interest since the end of my studies at the Silesian University of Technology where I wrote a Master Thesis about similar topic.
@@ -366,6 +379,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
   
 
 
+
+
     <p>I recently wrote a new library called NeuroSky Android SDK. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a *.jar file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this *.
         <a href="/posts/creating-fat-aar/">...</a>
       
@@ -389,6 +404,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <a href="/tags/testing/">testing</a>
   </div>
   
+
+
 
 
     <p>During development process, we often write unit and integration tests. While unit tests verify corectness of the small pieces of code, integration tests verify software as a whole project and sometimes can treat it as a black box where concrete results are expected. During development of the REST API, we can write integration tests for such API with REST Assured. Integration tests are usually slower, because they need to start the server and sometimes do other stuff.
@@ -416,6 +433,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
   
 
 
+
+
     <p>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
 In my build.gradle file I configured JaCoCo as follows:
 plugins { id &#39;jacoco&#39; } jacocoTestReport { reports { xml.enabled = true html.enabled = true } } Now, I could type:
@@ -441,6 +460,8 @@ plugins { id &#39;jacoco&#39; } jacocoTestReport { reports { xml.enabled = true 
       <a href="/tags/testing/">testing</a>
   </div>
   
+
+
 
 
     <p>In Java, we can test exceptions via unit tests in a few different ways. In this article, I&rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
@@ -497,6 +518,12 @@ First method is basically wrapping a method call with try-catch block, assigning
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -510,7 +537,8 @@ First method is basically wrapping a method call with try-catch block, assigning
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -602,13 +630,13 @@ First method is basically wrapping a method call with try-catch block, assigning
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

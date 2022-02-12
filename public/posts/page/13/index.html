@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Posts" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
@@ -13,27 +13,26 @@
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -214,6 +215,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I highly recommend you to watch a short lecture presented by Bret Victor at Dropbox&rsquo;s DBX conference on July 9, 2013. It really broadens the mind.
  Bret Victor - The Future of Programming from Bret Victor on Vimeo. References: http://worrydream.com/dbx/
     </p>
@@ -235,6 +238,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>Sometimes we may want to set different address of the back-end web service for debuggable and release version of our Android app. E.g. predefined static host and port for release version of the application and our local IP address and predefined port for debuggable version of the application. In second case, we can deploy back-end webservice on our local machine for testing purposes. We can customize all of that in build.
@@ -260,6 +265,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Some time ago I found Weather Icons project by Erik Flowers. It&rsquo;s customized font with appropriate CSS, which allows you to use weather icons on the website. In addition, those icons can be customized. They can have different size or color. Moreover, they are compatible with the Bootstrap. I thought, that it would be nice, if I had something like that for Android applications. That&rsquo;s why I created simple open-source project called Weather Icon View.
         <a href="/posts/weather-icons-for-android-applications/">...</a>
       
@@ -282,6 +289,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/java/">java</a>
   </div>
   
+
+
 
 
     <p>Introduction #  Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&rsquo;s possible to create micro-location for Android mobile devices.
@@ -309,6 +318,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed.
         <a href="/posts/versioning-android-applications/">...</a>
       
@@ -332,6 +343,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/git/">git</a>
   </div>
   
+
+
 
 
     <p>Problem #  In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:
@@ -359,6 +372,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I recently found an article about Best Useful Indicators Collection for Ubuntu. Indicators are very useful feature of the Ubuntu and Unity. Ubuntu has some default indicators, but we can add new indicators if we want to. Mentioned article contains list of many indicators, but personally I prefer and use only a few of them. Here are my favorites:
 Multi Load indicator #  Nice thing. This indicator monitors system resources.
         <a href="/posts/indicators-for-ubuntu/">...</a>
@@ -384,6 +399,8 @@ Multi Load indicator #  Nice thing. This indicator monitors system resources.
   
 
 
+
+
     <p>I recently published my side project connected with BCI and EEG technology in Google Play Store.  EEG Analyzer reads electrical activity of the brain with EEG technology and blink strength with EMG sensor from NeuroSky MindWave Mobile device connected via Bluetooth to Android device. In order to use this application, you need to have NeuroSky MindWave Mobile device, which can be ordered from http://neurosky.com/ website. Direct link to the mentioned product: http://store.
         <a href="/posts/eeg-analyzer-android-app/">...</a>
       
@@ -405,6 +422,8 @@ Multi Load indicator #  Nice thing. This indicator monitors system resources.
       <a href="/tags/android/">android</a>
   </div>
   
+
+
 
 
     <p>Introduction #  When you want to publish your Android application in Google Play Store, first you need to go to https://play.google.com/apps/publish/ website and create a Developer account. Its cost is $25. You can read more about that at: https://support.google.com/googleplay/android-developer/answer/113468?hl=en.
@@ -429,6 +448,8 @@ Problems with payments during registration #  Remember that you need to have app
       <a href="/tags/android/">android</a>
   </div>
   
+
+
 
 
     <p>Today I had talk at Future Processing about Android. It was part of company&rsquo;s Java show &amp; tell series. I wanted to make it interesting both for people without any experience with Android development and for people who already know something about this platform. Presentation was divided into three main parts:
@@ -498,6 +519,12 @@ Of course, slides does not show everything I prepared, but they are good summary
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -511,7 +538,8 @@ Of course, slides does not show everything I prepared, but they are good summary
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -603,13 +631,13 @@ Of course, slides does not show everything I prepared, but they are good summary
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

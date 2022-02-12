@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Size of the root partition / on my system is 25 GB. I recently had a situation where I received notification from the system that there&rsquo;s too little free space on that partition, which was around 1 GB. My first attempt was to clean pacman cache with sudo pacman -Sc. It helped for a moment, but I kept receiving this notification. I searched for the solutions regarding extending the root partition and noticed that it wouldn&rsquo;t be that easy and probably require making backup and reinstalling the system.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Cleaning root partition on Linux" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Cleaning root partition on Linux" />
 <meta property="og:description" content="Size of the root partition / on my system is 25 GB. I recently had a situation where I received notification from the system that there&rsquo;s too little free space on that partition, which was around 1 GB. My first attempt was to clean pacman cache with sudo pacman -Sc. It helped for a moment, but I kept receiving this notification. I searched for the solutions regarding extending the root partition and noticed that it wouldn&rsquo;t be that easy and probably require making backup and reinstalling the system." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/cleaning-root-partition-on-linux/" />
@@ -14,26 +14,25 @@
 <title>Cleaning root partition on Linux | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -130,7 +133,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>Size of the root partition <code>/</code> on my system is 25 GB. I recently had a situation where I received notification from the system that there&rsquo;s too little free space on that partition, which was around 1 GB. My first attempt was to clean pacman cache with <code>sudo pacman -Sc</code>. It helped for a moment, but I kept receiving this notification. I searched for the solutions regarding extending the root partition and noticed that it wouldn&rsquo;t be that easy and probably require making backup and reinstalling the system. Although installing Arch is not scary for me anymore, I didn&rsquo;t want to do that again, because it takes some time and after that I will have to configure all my stuff, install apps, etc. which is a lot of work. Due to this fact I started search for the solutions about cleaning root partition. I found nice program called <code>ncdu</code>, which is abbreviation for NCurses Disk Usage according to the man page. You can install it with pacman: <code>sudo pacman -S ncdu</code>. This program shows usage of the directories and shows directories, which take the biggest amount of space on the disk. Once you have that program, you can go to the root partition and run it:</p>
+
+<p>Size of the root partition <code>/</code> on my system is 25 GB. I recently had a situation where I received notification from the system that there&rsquo;s too little free space on that partition, which was around 1 GB. My first attempt was to clean pacman cache with <code>sudo pacman -Sc</code>. It helped for a moment, but I kept receiving this notification. I searched for the solutions regarding extending the root partition and noticed that it wouldn&rsquo;t be that easy and probably require making backup and reinstalling the system. Although installing Arch is not scary for me anymore, I didn&rsquo;t want to do that again, because it takes some time and after that I will have to configure all my stuff, install apps, etc. which is a lot of work. Due to this fact I started search for the solutions about cleaning root partition. I found nice program called <code>ncdu</code>, which is abbreviation for NCurses Disk Usage according to the man page. You can install it with pacman: <code>sudo pacman -S ncdu</code>. This program shows usage of the directories and shows directories, which take the biggest amount of space on the disk. Once you have that program, you can go to the root partition and run it:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /
 ncdu
 </code></pre></div><p>It will do the analysis and return an interactive output with directories, size and visualisation of the size:</p>
@@ -171,7 +175,6 @@ e   4,0 KiB [          ] /mnt
 @   0,0   B [          ]  lib64
 </code></pre><p>I&rsquo;ve noticed that there were logs in <code>/var/log/journal/</code>, which have significant size. I also had a lot of downloaded packages in <code>/var/cache/pacman/</code>. As I noticed <code>pacman -Sc</code> command doesn&rsquo;t clean all the cache and keeps the newest packages, so if we want to remove everything or almost everything, we can configure pacman appropriately or remove packages manually. These data could be cleaned and saved me a few GB of space, so I stopped seeing system notification. During cleanup, we can also have a look at other cache data, logs and <code>/tmp/</code> directory. To verify disk sizes and used space, we can use <code>df -H</code> command.</p>
 <p>I hope, you&rsquo;ll find this tips useful and avoid resizing root partition or system re-installation.</p>
-</p>
 </article>
  
       
@@ -179,7 +182,6 @@ e   4,0 KiB [          ] /mnt
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -191,13 +193,20 @@ e   4,0 KiB [          ] /mnt
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/cleaning-root-partition-on-linux.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/cleaning-root-partition-on-linux.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -216,17 +225,20 @@ e   4,0 KiB [          ] /mnt
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

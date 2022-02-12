@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="android" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="android" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/android/" />
@@ -13,27 +13,26 @@
 <title>android | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/android/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -222,6 +223,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>I was asked to be a speaker during GDG DevFest 2015 conference in Warsaw, Poland. Of course, I accepted this invitation and prepared presentation titled &ldquo;Reactive Live Coding&rdquo;. Presentation covered basics of Reactive Programming, RxJava and RxAndroid. Besides my talk I&rsquo;ve done live coding to show how to use mentioned libraries and basics principles of Reactive Programming in real life. I had only 20 minutes for all of that, so my time-box was very limited.
         <a href="/posts/reactive-live-coding-gdg-devfest-pl-2015/">...</a>
       
@@ -245,6 +248,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released version 1.4.0 of Kirai library. Kirai means phrase in Swahili language. It&rsquo;s string formatting library written in Java. It originally started as an Android library, but it evolved to pure Java library. It&rsquo;s first possibilities were basic string formatting and text formatting for Android TextViews. Now, it allows to format strings for Java, Web, Android and even Unix Terminal! Have you ever wanted to have colorful and styled text in your mobile app, website or terminal app?
@@ -271,6 +276,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Introduction #  In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with Kotlin language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it&rsquo;s still in beta version.
         <a href="/posts/bunch-of-updates-in-my-android-oss/">...</a>
       
@@ -294,6 +301,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Recently, I&rsquo;ve created yet another reactive library for Android. It&rsquo;s called ReactiveBeacons and it&rsquo;s responsible for observing BLE (Bluetooth Low Energy) beacons. Beacons are small devices, which became quite popular in the last years. They can be utilized in creating Contextual Awareness, Contextual Computing and Internet of Things. Beacons have lithium battery, are constantly turned on and emit signals via Bluetooth all the time. ReactiveBeacons library allows to transform these signals into Observable stream compatible with RxJava.
         <a href="/posts/introducing-reactive-beacons/">...</a>
       
@@ -315,6 +324,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/android/">android</a>
   </div>
   
+
+
 
 
     <p>Another month, another library. Recently, I&rsquo;ve released yet another reactive library called ReactiveSensors. It&rsquo;s an open-source Android library monitoring hardware sensors with RxJava Observables. Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood.
@@ -342,6 +353,8 @@ In my opinion, hardware sensors are perfect case for applying RxJava, because in
   
 
 
+
+
     <p>Recently a few people asked me, what are my methods for gathering knowledge and being up to date with all news connected with Android. I didn&rsquo;t really think about that. I just grabbed all knowledge from a various places and then tried to use it in practice. I decided to sum everything up and create a collection of my knowledge resources. Of course, we are not able to use all of that every day, because it&rsquo;s too much, but it&rsquo;s good to know where we can find something interesting.
         <a href="/posts/learning-android/">...</a>
       
@@ -365,6 +378,8 @@ In my opinion, hardware sensors are perfect case for applying RxJava, because in
       <a href="/tags/rxjava/">rxjava</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
@@ -393,6 +408,8 @@ This library is much simpler and easier to use than NetworkEvents.
   
 
 
+
+
     <p>I&rsquo;ve recently released Prefser library v. 2.0.0. Prefser is a wrapper for Android SharedPreferences with object serialization and RxJava Observables. This update couldn&rsquo;t be done without help of awesome open-source community and people who reported new issues and created pull requests. Thanks for that! A lot of issues related to RxJava was fixed. Moreover, now we can store and retrieve lists of objects of any type with Prefser. Examples of library usage can be found in README.
         <a href="/posts/releasing-prefser-2/">...</a>
       
@@ -415,6 +432,8 @@ This library is much simpler and easier to use than NetworkEvents.
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released NetworkEvents library v. 2.0.0. It&rsquo;s an Android library listening network connection state and change of the Wifi signal strength. It has a few significant changes in the API and new features, which people were requesting on GitHub. Moreover, codebase was slightly refactored and updated. I&rsquo;m going to keep major.minor.patch convention AKA semantic versioning now:
@@ -440,6 +459,8 @@ This library is much simpler and easier to use than NetworkEvents.
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>Today I released Weather Icon View library v. 1.0.0 It&rsquo;s very simple and easy to use Android library, which allows you to use Weather Icons created by Erik Flowers in your mobile applications. This library was already available on GitHub as I wrote in one of my previous posts, but today it was released to Maven Central Repository and you can use it as Maven or Gradle dependency. I was encouraged to make this project more available by the open-source community and people who find it useful as I could read in the issue reported on the repository website.
@@ -497,6 +518,12 @@ This library is much simpler and easier to use than NetworkEvents.
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -510,7 +537,8 @@ This library is much simpler and easier to use than NetworkEvents.
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -602,13 +630,13 @@ This library is much simpler and easier to use than NetworkEvents.
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

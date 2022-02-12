@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="I&rsquo;ve recently released ReactiveNetwork library v. 0.10.0 for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&rsquo;m developing for approximately 2 years now. In this version, I&rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: Release for RxJava1.x
  bumped RxJava1 version to 1.3.0 bumped test dependencies created Code of Conduct updated Kotlin version in sample apps added retrolambda to the sample Java app - issue #163 fixed behavior of network observing in disconnected state - issue #159  Release for RxJava2.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Releasing ReactiveNetwork v. 0.10.0" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Releasing ReactiveNetwork v. 0.10.0" />
 <meta property="og:description" content="I&rsquo;ve recently released ReactiveNetwork library v. 0.10.0 for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&rsquo;m developing for approximately 2 years now. In this version, I&rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: Release for RxJava1.x
  bumped RxJava1 version to 1.3.0 bumped test dependencies created Code of Conduct updated Kotlin version in sample apps added retrolambda to the sample Java app - issue #163 fixed behavior of network observing in disconnected state - issue #159  Release for RxJava2." />
 <meta property="og:type" content="article" />
@@ -16,26 +16,25 @@
 <title>Releasing ReactiveNetwork v. 0.10.0 | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -45,6 +44,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -78,10 +78,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -105,7 +106,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -135,7 +138,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>I&rsquo;ve recently released <a href="https://github.com/pwittchen/ReactiveNetwork"><strong>ReactiveNetwork</strong></a> library v. <strong>0.10.0</strong> for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&rsquo;m developing for approximately 2 years now. In this version, I&rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: <a href="https://github.com/pwittchen/ReactiveNetwork/releases/tag/v0.10.0"><strong>Release for RxJava1.x</strong></a></p>
+
+<p>I&rsquo;ve recently released <a href="https://github.com/pwittchen/ReactiveNetwork"><strong>ReactiveNetwork</strong></a> library v. <strong>0.10.0</strong> for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&rsquo;m developing for approximately 2 years now. In this version, I&rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: <a href="https://github.com/pwittchen/ReactiveNetwork/releases/tag/v0.10.0"><strong>Release for RxJava1.x</strong></a></p>
 <ul>
 <li>bumped RxJava1 version to 1.3.0</li>
 <li>bumped test dependencies</li>
@@ -172,7 +176,6 @@ https://github.com/alex-shpak/hugo-book
   compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivenetwork-rx2:0.10.0&#39;</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Now, in RxJava2.x version, we have the possibility to check Internet connectivity once without any pooling with new <code>Single</code> type. It may be helpful in the specific use-cases when we&rsquo;re focusing on smaller battery usage, a smaller amount of data being sent over the network and lower number of network connections. I&rsquo;m planning to publish more real life usage examples of this library in the future articles on this blog. I have plans for a few updates in the next version. If you&rsquo;re interested in this project or you&rsquo;re using it, please stay tuned and keep an eye on it at GitHub.</p>
-</p>
 </article>
  
       
@@ -180,7 +183,6 @@ https://github.com/alex-shpak/hugo-book
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -192,13 +194,20 @@ https://github.com/alex-shpak/hugo-book
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/releasing-reactivenetwork-v-0100.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/releasing-reactivenetwork-v-0100.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -217,17 +226,20 @@ https://github.com/alex-shpak/hugo-book
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

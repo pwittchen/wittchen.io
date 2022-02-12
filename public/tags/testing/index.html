@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="testing" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="testing" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/testing/" />
@@ -13,27 +13,26 @@
 <title>testing | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/testing/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -221,6 +222,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>During development process, we often write unit and integration tests. While unit tests verify corectness of the small pieces of code, integration tests verify software as a whole project and sometimes can treat it as a black box where concrete results are expected. During development of the REST API, we can write integration tests for such API with REST Assured. Integration tests are usually slower, because they need to start the server and sometimes do other stuff.
         <a href="/posts/separate-execution-of-unit-and-integration-tests-in-gradle/">...</a>
       
@@ -244,6 +247,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/gradle/">gradle</a>
   </div>
   
+
+
 
 
     <p>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
@@ -273,6 +278,8 @@ plugins { id &#39;jacoco&#39; } jacocoTestReport { reports { xml.enabled = true 
   
 
 
+
+
     <p>In Java, we can test exceptions via unit tests in a few different ways. In this article, I&rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&rsquo;m using JUnit for unit tests and Truth for assertions.
 @Test public void shouldTestExceptionWithTryCatch() { Exception caughtException = null; try { throw new RuntimeExcetpion(&#34;message&#34;); } catch (final Exception e) { caughtException = e; } assertThat(caughtException).
@@ -299,6 +306,8 @@ First method is basically wrapping a method call with try-catch block, assigning
   
 
 
+
+
     <p>Introduction #  Some time ago, I&rsquo;ve written an article about Test coverage report for Android application. It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I&rsquo;ve written instrumentation unit tests, which needed to be executed on a real device or an emulator. It&rsquo;s a good approach when you want to test functionalities strongly connected with the device.
         <a href="/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/">...</a>
       
@@ -321,6 +330,8 @@ First method is basically wrapping a method call with try-catch block, assigning
       <a href="/tags/linux/">linux</a>
   </div>
   
+
+
 
 
     <p>Introduction #  In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp; downloading phase can be done from the terminal in a semi-automated way.
@@ -347,6 +358,8 @@ First method is basically wrapping a method call with try-catch block, assigning
   
 
 
+
+
     <p>Update: see newer article about Unit test coverage report with Travis CI for Robolectric on Android. For a long time, I wasn&rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&rsquo;t use. Other developers also stopped using it for the new projects.
         <a href="/posts/test-coverage-in-android-applications/">...</a>
       
@@ -369,6 +382,8 @@ First method is basically wrapping a method call with try-catch block, assigning
       <a href="/tags/testing/">testing</a>
   </div>
   
+
+
 
 
     <p>Overview #  When we write unit tests for an Android application, sometimes there&rsquo;s a necessity to mock some classes or interfaces. Instead of writing implementations dedicated for unit tests by hand, we can use Mockito library. We can read article about Mockito on Android on Square&rsquo;s blog. Mockito can make our tests cleaner and better. It can be used both in classic Java projects and Android projects. It&rsquo;s one of the most popular mocking framework in Java and if you&rsquo;re a Java developer who writes unit tests and tries to apply TDD approach, you should be familiar with it.
@@ -394,6 +409,12 @@ First method is basically wrapping a method call with try-catch block, assigning
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -407,7 +428,8 @@ First method is basically wrapping a method call with try-catch block, assigning
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -499,13 +521,13 @@ First method is basically wrapping a method call with try-catch block, assigning
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

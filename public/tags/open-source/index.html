@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="open-source" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="open-source" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/tags/open-source/" />
@@ -13,27 +13,26 @@
 <title>open-source | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/tags/open-source/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -221,6 +222,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
+
+
     <p>Today, I&rsquo;ve released next version of my most popular open-source project - ReactiveNetwork. I&rsquo;ve released version 0.12.4 for RxJava1.x and version 1.0.0 for RxJava2.x. Please note, RxJava1.x is no longer officially supported and I&rsquo;m going to follow the same approach in my RxJava-based projects. It&rsquo;s not the first release of this project, but I&rsquo;m breaking the API and removing existing methods, so I decided to stick to proper versioning standard. I didn&rsquo;t always do it properly in the past, but it&rsquo;s never too late.
         <a href="/posts/releasing-reactive-network-1/">...</a>
       
@@ -246,6 +249,8 @@ https://github.com/alex-shpak/hugo-book
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>Yesterday, I gave a presentation about connectivity in the Android apps during the DroidCon Poland 2017 Conference in Kraków.
@@ -279,6 +284,8 @@ Piotr Wittchen tells us about how we can we keep the track of network &#x1f30e; 
   
 
 
+
+
     <p>I&rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
 ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&gt; textView.setText(String.format(&#34;Airplane mode on: %s&#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.
         <a href="/posts/introducing-reactive-airplane-mode/">...</a>
@@ -305,6 +312,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
   
 
 
+
+
     <p>In the latest release of ReactiveNetwork library, I focused on Walled Garden AKA Great Firewall support during checking Internet connectivity. There are countries with limited Internet access like China and in such cases, pinging commonly known host like www.google.com may have different results than in other countries because it may be blocked. We may get false positive results because users will generally have an access to the Internet, but they don&rsquo;t have access only to several websites.
         <a href="/posts/reactivenetwork-v-0110-walled-garden/">...</a>
       
@@ -329,6 +338,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>I&rsquo;ve recently released ReactiveNetwork library v. 0.10.0 for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&rsquo;m developing for approximately 2 years now. In this version, I&rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: Release for RxJava1.x
@@ -358,6 +369,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
   
 
 
+
+
     <p>I&rsquo;ve recently released new version of prefser library for Android. In case you don&rsquo;t know, it&rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. This version has the new artifact, which has codebase migrated to RxJava2.x. As usual, I kept backward compatibility with RxJava1.x. You can find more details about the project at https://github.com/pwittchen/prefser. If you want to use it in your mobile project, you need the following dependencies in the build.
         <a href="/posts/release-of-prefser-210-with-rxjava2/">...</a>
       
@@ -383,6 +396,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
   
 
 
+
+
     <p>I&rsquo;ve recently released new version of Prefser. It&rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. The new version number is 2.0.7. In this release, I performed mostly internal work not related to the external library API. Nevertheless, it&rsquo;s important for the library development in the future. The following things were done:
  updated dependencies updated Gradle configuration migrated unit tests to Robolectric started executing unit tests on Travis CI added integration with codecov.
         <a href="/posts/prefser-207/">...</a>
@@ -405,6 +420,8 @@ ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .o
       <a href="/tags/open-source/">open-source</a>
   </div>
   
+
+
 
 
     <p>While developing open-source projects it&rsquo;s important to monitor usage of them. Having that information we know on which projects we should concentrate the most and which are becoming more popular. In this short article, I&rsquo;ll present you two tools, which can help you with that.
@@ -433,6 +450,8 @@ GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking 
   
 
 
+
+
     <p>This time, I upgraded my another reactive Android open-source project called ReactiveNetwork to RxJava2.x. Many thanks goes to @tushar-acharya who performed initial migration to the newer version of RxJava. During migration, I&rsquo;ve also created new package rx2 to avoid potential import conflicts during migration inside Android apps. Besides migration, I&rsquo;ve updated sample apps, documentation &amp; JavaDocs on Github pages. You can still use RxJava1.x version and it&rsquo;s available on the branch with that name.
         <a href="/posts/reactivenetwork-090-rxjava2/">...</a>
       
@@ -455,6 +474,8 @@ GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking 
       <a href="/tags/conferences/">conferences</a>
   </div>
   
+
+
 
 
     <p>Today at Kariera IT conference in Katowice, Poland, I presented talk explaining how to make open-source projects, which people want to use from my perspective. Below, you can find slides from my presentation. Thank you all for the attendance, interesting questions and organizers for inviting me. I hope you learned something new. Of course, any constructive feedback for this talk will be appreciated :).
@@ -502,6 +523,12 @@ GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking 
 
 </div>
 
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
  
         
       </footer>
@@ -515,7 +542,8 @@ GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking 
 
     
     <aside class="book-toc">
-      
+      <div class="book-toc-content">
+        
   <nav>
   <ul>
   
@@ -607,13 +635,13 @@ GitHub #  On GitHub, each project has &ldquo;Traffic&rdquo; tab. After clicking 
 </nav>
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

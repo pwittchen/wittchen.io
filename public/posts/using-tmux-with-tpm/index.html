@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Recently, I decided to organize my Unix dotfiles in a better way. I had a few custom scripts I used in my Tmux bottom bar. I kept these scripts in .scripts directory and during installation or upgrade of my personal configuration, install.sh script was copying them from .scripts directory to /usr/local/bin/ directory. I wanted to make this configuration more solid and consistent, so I decided to transform these scripts into tmux plugins managed by tpm.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Using Tmux plugins with Tpm" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Using Tmux plugins with Tpm" />
 <meta property="og:description" content="Recently, I decided to organize my Unix dotfiles in a better way. I had a few custom scripts I used in my Tmux bottom bar. I kept these scripts in .scripts directory and during installation or upgrade of my personal configuration, install.sh script was copying them from .scripts directory to /usr/local/bin/ directory. I wanted to make this configuration more solid and consistent, so I decided to transform these scripts into tmux plugins managed by tpm." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wittchen.io/posts/using-tmux-with-tpm/" />
@@ -14,26 +14,25 @@
 <title>Using Tmux plugins with Tpm | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -43,6 +42,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -76,10 +76,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -103,7 +104,9 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  
+<nav id="TableOfContents"></nav>
+
 
 
   </aside>
@@ -130,7 +133,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><p>Recently, I decided to organize my Unix <a href="https://github.com/pwittchen/dotfiles">dotfiles</a> in a better way. I had a few custom scripts I used in my Tmux bottom bar. I kept these scripts in <code>.scripts</code> directory and during installation or upgrade of my personal configuration, <a href="https://github.com/pwittchen/dotfiles/blob/master/install.sh"><code>install.sh</code></a> script was copying them from <code>.scripts</code> directory to <code>/usr/local/bin/</code> directory. I wanted to make this configuration more solid and consistent, so I decided to transform these scripts into tmux plugins managed by <a href="https://github.com/tmux-plugins/tpm">tpm</a>. I was already using a few plugins like:</p>
+
+<p>Recently, I decided to organize my Unix <a href="https://github.com/pwittchen/dotfiles">dotfiles</a> in a better way. I had a few custom scripts I used in my Tmux bottom bar. I kept these scripts in <code>.scripts</code> directory and during installation or upgrade of my personal configuration, <a href="https://github.com/pwittchen/dotfiles/blob/master/install.sh"><code>install.sh</code></a> script was copying them from <code>.scripts</code> directory to <code>/usr/local/bin/</code> directory. I wanted to make this configuration more solid and consistent, so I decided to transform these scripts into tmux plugins managed by <a href="https://github.com/tmux-plugins/tpm">tpm</a>. I was already using a few plugins like:</p>
 <ul>
 <li><a href="https://github.com/tmux-plugins/tmux-sidebar">tmux-sidebar</a></li>
 <li><a href="https://github.com/tmux-plugins/tmux-copycat">tmux-copycat</a></li>
@@ -168,7 +172,6 @@ set -g @plugin 'pwittchen/tmux-plugin-spotify'
 </code></pre><p>After this operation, I could remove custom scripts from my dotfiles and desired functionality is delivered via plugins. Moreover, anyone can install these plugins via tpm without messing with custom scripts!</p>
 <p><img src="/posts/2017/using-tmux-with-tpm/tmux-screenshot-07.08.2017.png" alt="screenshot from tmux after configuration" /></p>
 <p>Right now, my plugins are in kind of messy state and they don&rsquo;t work perfectly across all operating systems (e.g. there are problems on macOS), but they&rsquo;re usable under Linux Ubuntu 16.04 LTS and it&rsquo;s a good beginning for organizing mess created by the custom scripts. That&rsquo;s it! I have plans to publish another article describing how to write your custom Tmux plugin, which can be managed via tpm.</p>
-</p>
 </article>
  
       
@@ -176,7 +179,6 @@ set -g @plugin 'pwittchen/tmux-plugin-spotify'
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -188,13 +190,20 @@ set -g @plugin 'pwittchen/tmux-plugin-spotify'
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/using-tmux-with-tpm.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/using-tmux-with-tpm.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -213,17 +222,20 @@ set -g @plugin 'pwittchen/tmux-plugin-spotify'
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents"></nav>
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
 
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 

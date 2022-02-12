@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir=>
-
+<html lang="en-us" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Introduction #  I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
 New desktop environment #  I decided to choose Gnome classic.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Gnome Classic desktop environment on Ubuntu" />
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Gnome Classic desktop environment on Ubuntu" />
 <meta property="og:description" content="Introduction #  I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
 New desktop environment #  I decided to choose Gnome classic." />
 <meta property="og:type" content="article" />
@@ -16,26 +16,25 @@ New desktop environment #  I decided to choose Gnome classic." />
 <title>Gnome Classic desktop environment on Ubuntu | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e73275672768f8ec9dfd4879a6b9b8306720036c6f3c5c131e874371c3092b52.css" integrity="sha256-5zJ1Zydo&#43;Oyd/Uh5prm4MGcgA2xvPFwTHodDccMJK1I=">
-<script defer src="/en.search.min.cf5b8a643d2bb89137598c48259cf8db79aeb28f91554c01552ec1fff1ce7b2b.js" integrity="sha256-z1uKZD0ruJE3WYxIJZz423muso&#43;RVUwBVS7B//HOeys="></script>
+<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-
   
 </head>
-
-<body dir=>
+<body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+      <div class="book-menu-content">
+        
   <nav>
-<img src="/avatar.png" alt="Logo" /><br/></br><h2 class="book-brand">
-  <a href="/">
-    <span>Piotr Wittchen</span>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/avatar.png" alt="Logo" /><span>Piotr Wittchen</span>
   </a>
 </h2>
 
@@ -45,6 +44,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+
 
 
 
@@ -78,10 +78,11 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
+      </div>
     </aside>
 
     <div class="book-page">
@@ -105,7 +106,8 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents">
+  
+<nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#new-desktop-environment">New desktop environment</a></li>
@@ -116,6 +118,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#recap">Recap</a></li>
   </ul>
 </nav>
+
 
 
   </aside>
@@ -142,7 +145,8 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  <p><h2 id="introduction">
+
+<h2 id="introduction">
   Introduction
   <a class="anchor" href="#introduction">#</a>
 </h2>
@@ -210,7 +214,6 @@ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle</p
   <a class="anchor" href="#recap">#</a>
 </h2>
 <p>After switching from Unity to Gnome my desktop is much more better, faster and cleaner. After mastering popular shortcuts for managing programs, windows, workspaces, etc. we can work very efficiently. Gnome Classic is fine for me right now, but maybe other WM will be better for you. It depends on your personal preferences. I&rsquo;m gonna use Gnome Classic for some time and maybe I&rsquo;ll try other environments in the future. For sure I won&rsquo;t go back to Unity if it don&rsquo;t evolve.</p>
-</p>
 </article>
  
       
@@ -218,7 +221,6 @@ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle</p
       <footer class="book-footer">
         
   <div class="flex flex-wrap justify-between">
-
 
 
   <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
@@ -230,13 +232,20 @@ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle</p
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content//posts/gnome-classic-ubuntu.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/gnome-classic-ubuntu.md" target="_blank" rel="noopener">
       <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
 
+
 </div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
 
  
         
@@ -255,8 +264,10 @@ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle</p
 
     
     <aside class="book-toc">
-      
-  <nav id="TableOfContents">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#new-desktop-environment">New desktop environment</a></li>
@@ -268,14 +279,15 @@ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle</p
   </ul>
 </nav>
 
+
  
+      </div>
     </aside>
     
   </main>
 
   
 </body>
-
 </html>
 
 
