@@ -10,7 +10,6 @@ enableGitInfo = true
 [params]
   BookToc = true
   BookMenuBundle = '/menu'
-  BookLogo = 'avatar.png'
   BookRepo = 'https://github.com/pwittchen/wittchen.io'
   BookEditPath = 'edit/master/content'
   BookDateFormat = 'Jan 2, 2006'
