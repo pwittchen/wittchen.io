@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Deployment of the Java code to AWS Lambda" />
 <meta property="og:description" content="Introduction #  In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &ldquo;Serverless&rdquo;. It doesn&rsquo;t mean that we don&rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/" />
+<meta property="og:url" content="https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-03-18T16:50:02+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Deployment of the Java code to AWS Lambda | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -163,33 +164,33 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#serverless-framework">#</a>
 </h2>
 <p><a href="https://serverless.com/">Serverless Framework</a> is very convenient way of deploying Lambdas to AWS. You can install it as follows:</p>
-<pre><code>npm install serverless -g
+<pre tabindex="0"><code>npm install serverless -g
 </code></pre><p>Next, you can type:</p>
-<pre><code>serverless login
+<pre tabindex="0"><code>serverless login
 </code></pre><p>in order to log into Serverless. We can use <code>serverless</code> or <code>sls</code> alias for this tool.</p>
 <p>We also need to <strong>authorize</strong> Serverless to be able to deploy our Lambdas to AWS. We need to go to AWS Console, in the upper right corner click our name of the user and choose &ldquo;My Security Credentials&rdquo;. Then, we need to expand &ldquo;Access Keys&rdquo; and create new <code>key</code> and <code>secret</code> values. Once we got them, we can authorize Serverless:</p>
-<pre><code>sls config credentials --provider aws --key YOUR_KEY --secret YOUR_SECRET
+<pre tabindex="0"><code>sls config credentials --provider aws --key YOUR_KEY --secret YOUR_SECRET
 </code></pre><p>Serverless will store these credentials in <code>~./aws/credentials</code> file. Of course, this is very simple configruation. If we need more users, groups or more sophisticated authorization mechanisms, we should apply them later via IAM (Identity and Access Management) service.</p>
 <h2 id="creating-lambda">
   Creating Lambda
   <a class="anchor" href="#creating-lambda">#</a>
 </h2>
 <p>Next, we can create our AWS Lambda template. When, we type:</p>
-<pre><code>sls create --template
+<pre tabindex="0"><code>sls create --template
 </code></pre><p>We will see the list of available templates:</p>
-<pre><code>Serverless: Generating boilerplate...
+<pre tabindex="0"><code>Serverless: Generating boilerplate...
 
   Serverless Error ---------------------------------------
 
-  Template &quot;true&quot; is not supported. Supported templates are: &quot;aws-nodejs&quot;,
-  &quot;aws-nodejs-typescript&quot;, &quot;aws-nodejs-ecma-script&quot;, &quot;aws-python&quot;,
-  &quot;aws-python3&quot;, &quot;aws-groovy-gradle&quot;, &quot;aws-java-maven&quot;,
-  &quot;aws-java-gradle&quot;, &quot;aws-kotlin-jvm-maven&quot;, &quot;aws-kotlin-jvm-gradle&quot;,
-  &quot;aws-kotlin-nodejs-gradle&quot;, &quot;aws-scala-sbt&quot;, &quot;aws-csharp&quot;, &quot;aws-fsharp&quot;,
-  &quot;aws-go&quot;, &quot;aws-go-dep&quot;, &quot;azure-nodejs&quot;, &quot;google-nodejs&quot;, &quot;kubeless-python&quot;,
-  &quot;kubeless-nodejs&quot;, &quot;openwhisk-nodejs&quot;, &quot;openwhisk-php&quot;, &quot;openwhisk-python&quot;,
-  &quot;openwhisk-swift&quot;, &quot;spotinst-nodejs&quot;, &quot;spotinst-python&quot;, &quot;spotinst-ruby&quot;,
-  &quot;spotinst-java8&quot;, &quot;webtasks-nodejs&quot;, &quot;plugin&quot; and &quot;hello-world&quot;.
+  Template &#34;true&#34; is not supported. Supported templates are: &#34;aws-nodejs&#34;,
+  &#34;aws-nodejs-typescript&#34;, &#34;aws-nodejs-ecma-script&#34;, &#34;aws-python&#34;,
+  &#34;aws-python3&#34;, &#34;aws-groovy-gradle&#34;, &#34;aws-java-maven&#34;,
+  &#34;aws-java-gradle&#34;, &#34;aws-kotlin-jvm-maven&#34;, &#34;aws-kotlin-jvm-gradle&#34;,
+  &#34;aws-kotlin-nodejs-gradle&#34;, &#34;aws-scala-sbt&#34;, &#34;aws-csharp&#34;, &#34;aws-fsharp&#34;,
+  &#34;aws-go&#34;, &#34;aws-go-dep&#34;, &#34;azure-nodejs&#34;, &#34;google-nodejs&#34;, &#34;kubeless-python&#34;,
+  &#34;kubeless-nodejs&#34;, &#34;openwhisk-nodejs&#34;, &#34;openwhisk-php&#34;, &#34;openwhisk-python&#34;,
+  &#34;openwhisk-swift&#34;, &#34;spotinst-nodejs&#34;, &#34;spotinst-python&#34;, &#34;spotinst-ruby&#34;,
+  &#34;spotinst-java8&#34;, &#34;webtasks-nodejs&#34;, &#34;plugin&#34; and &#34;hello-world&#34;.
 
   Get Support --------------------------------------------
      Docs:          docs.serverless.com
@@ -201,11 +202,10 @@ https://github.com/alex-shpak/hugo-book
      OS:                     linux
      Node Version:           7.10.1
      Serverless Version:     1.26.0
-
 </code></pre><p>We will use <code>aws-java-gradle</code> template:</p>
-<pre><code>sls create --template aws-java-gradle
+<pre tabindex="0"><code>sls create --template aws-java-gradle
 </code></pre><p>After that, we&rsquo;ll get the following project structure:</p>
-<pre><code>├── build.gradle
+<pre tabindex="0"><code>├── build.gradle
 ├── gradle
 │   └── wrapper
 │       ├── gradle-wrapper.jar
@@ -225,48 +225,48 @@ https://github.com/alex-shpak/hugo-book
             └── log4j.properties
 </code></pre><p>If you want to browse source of such template, you can visit my <a href="https://github.com/pwittchen/serverless-lambda-playground">serverless-lambda-playground</a> repo.
 We can add our configurations in <code>serverless.yml</code> file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">service</span>: aws-java-gradle
-
-<span style="color:#66d9ef">provider</span>:
-  <span style="color:#66d9ef">name</span>: aws
-  <span style="color:#66d9ef">runtime</span>: java8
-
-<span style="color:#66d9ef">package</span>:
-  <span style="color:#66d9ef">artifact</span>: build/distributions/hello.zip
-
-<span style="color:#66d9ef">functions</span>:
-  <span style="color:#66d9ef">hello</span>:
-    <span style="color:#66d9ef">handler</span>: com.serverless.Handler
-</code></pre></div><p>Main class is the <code>Handler</code> class:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Handler</span> <span style="color:#66d9ef">implements</span> RequestHandler<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;,</span> ApiGatewayResponse<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger LOG <span style="color:#f92672">=</span> Logger<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>Handler<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-
-  <span style="color:#a6e22e">@Override</span>
-  <span style="color:#66d9ef">public</span> ApiGatewayResponse <span style="color:#a6e22e">handleRequest</span><span style="color:#f92672">(</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> input<span style="color:#f92672">,</span> Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-LOG<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;received: &#34;</span> <span style="color:#f92672">+</span> input<span style="color:#f92672">);</span>
-Response responseBody <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Response<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Go Serverless v1.x!
-</span><span style="color:#e6db74">Your function executed successfully!&#34;</span><span style="color:#f92672">,</span> input<span style="color:#f92672">);</span>
-<span style="color:#66d9ef">return</span> ApiGatewayResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
-<span style="color:#f92672">.</span><span style="color:#a6e22e">setStatusCode</span><span style="color:#f92672">(</span>200<span style="color:#f92672">)</span>
-<span style="color:#f92672">.</span><span style="color:#a6e22e">setObjectBody</span><span style="color:#f92672">(</span>responseBody<span style="color:#f92672">)</span>
-<span style="color:#f92672">.</span><span style="color:#a6e22e">setHeaders</span><span style="color:#f92672">(</span>Collections<span style="color:#f92672">.</span><span style="color:#a6e22e">singletonMap</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;X-Powered-By&#34;</span><span style="color:#f92672">,</span>
-<span style="color:#e6db74">&#34;AWS Lambda &amp; serverless&#34;</span><span style="color:#f92672">))</span>
-<span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>We can modify <code>handleRequest(Map&lt;String, Object&gt; input, Context context)</code> in order to perform any operation we want. It will be invoked after calling the Lambda.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">service</span>: <span style="color:#ae81ff">aws-java-gradle</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">provider</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">aws</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">runtime</span>: <span style="color:#ae81ff">java8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">artifact</span>: <span style="color:#ae81ff">build/distributions/hello.zip</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">functions</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hello</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">handler</span>: <span style="color:#ae81ff">com.serverless.Handler</span>
+</span></span></code></pre></div><p>Main class is the <code>Handler</code> class:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Handler</span> <span style="color:#66d9ef">implements</span> RequestHandler<span style="color:#f92672">&lt;</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;,</span> ApiGatewayResponse<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger LOG <span style="color:#f92672">=</span> Logger<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>Handler<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> ApiGatewayResponse <span style="color:#a6e22e">handleRequest</span><span style="color:#f92672">(</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> input<span style="color:#f92672">,</span> Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>LOG<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;received: &#34;</span> <span style="color:#f92672">+</span> input<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Response responseBody <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Response<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Go Serverless v1.x!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Your function executed successfully!&#34;</span><span style="color:#f92672">,</span> input<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> ApiGatewayResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span><span style="color:#a6e22e">setStatusCode</span><span style="color:#f92672">(</span>200<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span><span style="color:#a6e22e">setObjectBody</span><span style="color:#f92672">(</span>responseBody<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span><span style="color:#a6e22e">setHeaders</span><span style="color:#f92672">(</span>Collections<span style="color:#f92672">.</span><span style="color:#a6e22e">singletonMap</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;X-Powered-By&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;AWS Lambda &amp; serverless&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>We can modify <code>handleRequest(Map&lt;String, Object&gt; input, Context context)</code> in order to perform any operation we want. It will be invoked after calling the Lambda.
 In case of JVM projects, we need to build them first:</p>
-<pre><code>./gradlew build
+<pre tabindex="0"><code>./gradlew build
 </code></pre><h2 id="deployment-to-the-cloud">
   Deployment to the Cloud
   <a class="anchor" href="#deployment-to-the-cloud">#</a>
 </h2>
 <p>Next, we can deploy our Lambda to the AWS Cloud!</p>
-<pre><code>sls deploy
+<pre tabindex="0"><code>sls deploy
 </code></pre><p>It may take more time in the beginning, but updates should be faster.</p>
 <p>We should see something like that:</p>
-<pre><code>Serverless: Packaging service...
+<pre tabindex="0"><code>Serverless: Packaging service...
 Serverless: Creating Stack...
 Serverless: Checking Stack create progress...
 .....
@@ -297,9 +297,9 @@ https://platform.serverless.com/services/pwittchen/aws-java-gradle
 <p>Now, we can log into AWS Console and Navigate to Lambda and then to Functions. We should see our function:</p>
 <p><img src="/posts/2018/deployment-of-the-java-code-to-aws-lambda/lambda-console.png" alt="" /></p>
 <p>When, we type:</p>
-<pre><code>sls info
+<pre tabindex="0"><code>sls info
 </code></pre><p>We should see information about the Lambda:</p>
-<pre><code>Service Information
+<pre tabindex="0"><code>Service Information
 service: aws-java-gradle
 stage: dev
 region: us-east-1
@@ -321,69 +321,69 @@ functions:
 <p>We can make our endpoint open or secured.</p>
 <p>Next, we can expand Gateway details and we should find &ldquo;Invoke URL&rdquo;.</p>
 <p>We can call it:</p>
-<pre><code>curl https://ipj76pb5yl.execute-api.us-east-1.amazonaws.com/prod/aws-java-gradle-dev-hello
+<pre tabindex="0"><code>curl https://ipj76pb5yl.execute-api.us-east-1.amazonaws.com/prod/aws-java-gradle-dev-hello
 </code></pre><p>Of course, url will be different in your setup.</p>
 <p>After that, we should receive response:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Go Serverless v1.x! Your function executed successfully!&#34;</span>,
-  <span style="color:#f92672">&#34;input&#34;</span>: {
-    <span style="color:#f92672">&#34;resource&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
-    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
-    <span style="color:#f92672">&#34;httpMethod&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
-    <span style="color:#f92672">&#34;headers&#34;</span>: {
-      <span style="color:#f92672">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#34;</span>,
-      <span style="color:#f92672">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate, br&#34;</span>,
-      <span style="color:#f92672">&#34;Accept-Language&#34;</span>: <span style="color:#e6db74">&#34;en-US,en;q=0.5&#34;</span>,
-      <span style="color:#f92672">&#34;CloudFront-Forwarded-Proto&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>,
-      <span style="color:#f92672">&#34;CloudFront-Is-Desktop-Viewer&#34;</span>: <span style="color:#e6db74">&#34;true&#34;</span>,
-      <span style="color:#f92672">&#34;CloudFront-Is-Mobile-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
-      <span style="color:#f92672">&#34;CloudFront-Is-SmartTV-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
-      <span style="color:#f92672">&#34;CloudFront-Is-Tablet-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
-      <span style="color:#f92672">&#34;CloudFront-Viewer-Country&#34;</span>: <span style="color:#e6db74">&#34;PL&#34;</span>,
-      <span style="color:#f92672">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;ipj76pb5yl.execute-api.us-east-1.amazonaws.com&#34;</span>,
-      <span style="color:#f92672">&#34;upgrade-insecure-requests&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>,
-      <span style="color:#f92672">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0&#34;</span>,
-      <span style="color:#f92672">&#34;Via&#34;</span>: <span style="color:#e6db74">&#34;2.0 a9e1c5fff6a2739d3f7026c216819292.cloudfront.net (CloudFront)&#34;</span>,
-      <span style="color:#f92672">&#34;X-Amz-Cf-Id&#34;</span>: <span style="color:#e6db74">&#34;mU9mJ_nnAMYSbqz_Iu2otYdSAG7wgW32HeVLGV388duttalquBZAHA==&#34;</span>,
-      <span style="color:#f92672">&#34;X-Amzn-Trace-Id&#34;</span>: <span style="color:#e6db74">&#34;Root=1-5aae6481-c429ef02c5f6dd6f25c4526a&#34;</span>,
-      <span style="color:#f92672">&#34;X-Forwarded-For&#34;</span>: <span style="color:#e6db74">&#34;85.14.99.231, 54.182.243.105&#34;</span>,
-      <span style="color:#f92672">&#34;X-Forwarded-Port&#34;</span>: <span style="color:#e6db74">&#34;443&#34;</span>,
-      <span style="color:#f92672">&#34;X-Forwarded-Proto&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>
-    },
-    <span style="color:#f92672">&#34;queryStringParameters&#34;</span>: <span style="color:#66d9ef">null</span>,
-    <span style="color:#f92672">&#34;pathParameters&#34;</span>: <span style="color:#66d9ef">null</span>,
-    <span style="color:#f92672">&#34;stageVariables&#34;</span>: <span style="color:#66d9ef">null</span>,
-    <span style="color:#f92672">&#34;requestContext&#34;</span>: {
-      <span style="color:#f92672">&#34;requestTime&#34;</span>: <span style="color:#e6db74">&#34;18/Mar/2018:13:07:13 +0000&#34;</span>,
-      <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/prod/aws-java-gradle-dev-hello&#34;</span>,
-      <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#e6db74">&#34;782268757726&#34;</span>,
-      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;HTTP/1.1&#34;</span>,
-      <span style="color:#f92672">&#34;resourceId&#34;</span>: <span style="color:#e6db74">&#34;t56p8t&#34;</span>,
-      <span style="color:#f92672">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;prod&#34;</span>,
-      <span style="color:#f92672">&#34;requestTimeEpoch&#34;</span>: <span style="color:#ae81ff">1521378433902</span>,
-      <span style="color:#f92672">&#34;requestId&#34;</span>: <span style="color:#e6db74">&#34;46b8b8fb-2aad-11e8-8a1b-0b0a282c605c&#34;</span>,
-      <span style="color:#f92672">&#34;identity&#34;</span>: {
-        <span style="color:#f92672">&#34;cognitoIdentityPoolId&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;cognitoIdentityId&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;caller&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;sourceIp&#34;</span>: <span style="color:#e6db74">&#34;85.14.99.231&#34;</span>,
-        <span style="color:#f92672">&#34;accessKey&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;cognitoAuthenticationType&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;cognitoAuthenticationProvider&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;userArn&#34;</span>: <span style="color:#66d9ef">null</span>,
-        <span style="color:#f92672">&#34;userAgent&#34;</span>: <span style="color:#e6db74">&#34;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0&#34;</span>,
-        <span style="color:#f92672">&#34;user&#34;</span>: <span style="color:#66d9ef">null</span>
-      },
-      <span style="color:#f92672">&#34;resourcePath&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
-      <span style="color:#f92672">&#34;httpMethod&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
-      <span style="color:#f92672">&#34;apiId&#34;</span>: <span style="color:#e6db74">&#34;ipj76pb5yl&#34;</span>
-    },
-    <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#66d9ef">null</span>,
-    <span style="color:#f92672">&#34;isBase64Encoded&#34;</span>: <span style="color:#66d9ef">false</span>
-  }
-}
-</code></pre></div><p>Hooray! Our Lambda is working on-line now!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Go Serverless v1.x! Your function executed successfully!&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;input&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;resource&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;httpMethod&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;headers&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate, br&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Accept-Language&#34;</span>: <span style="color:#e6db74">&#34;en-US,en;q=0.5&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;CloudFront-Forwarded-Proto&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;CloudFront-Is-Desktop-Viewer&#34;</span>: <span style="color:#e6db74">&#34;true&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;CloudFront-Is-Mobile-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;CloudFront-Is-SmartTV-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;CloudFront-Is-Tablet-Viewer&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;CloudFront-Viewer-Country&#34;</span>: <span style="color:#e6db74">&#34;PL&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;ipj76pb5yl.execute-api.us-east-1.amazonaws.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;upgrade-insecure-requests&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Via&#34;</span>: <span style="color:#e6db74">&#34;2.0 a9e1c5fff6a2739d3f7026c216819292.cloudfront.net (CloudFront)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;X-Amz-Cf-Id&#34;</span>: <span style="color:#e6db74">&#34;mU9mJ_nnAMYSbqz_Iu2otYdSAG7wgW32HeVLGV388duttalquBZAHA==&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;X-Amzn-Trace-Id&#34;</span>: <span style="color:#e6db74">&#34;Root=1-5aae6481-c429ef02c5f6dd6f25c4526a&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;X-Forwarded-For&#34;</span>: <span style="color:#e6db74">&#34;85.14.99.231, 54.182.243.105&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;X-Forwarded-Port&#34;</span>: <span style="color:#e6db74">&#34;443&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;X-Forwarded-Proto&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;queryStringParameters&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;pathParameters&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;stageVariables&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;requestContext&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;requestTime&#34;</span>: <span style="color:#e6db74">&#34;18/Mar/2018:13:07:13 +0000&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/prod/aws-java-gradle-dev-hello&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#e6db74">&#34;782268757726&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;HTTP/1.1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;resourceId&#34;</span>: <span style="color:#e6db74">&#34;t56p8t&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;prod&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;requestTimeEpoch&#34;</span>: <span style="color:#ae81ff">1521378433902</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;requestId&#34;</span>: <span style="color:#e6db74">&#34;46b8b8fb-2aad-11e8-8a1b-0b0a282c605c&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;identity&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cognitoIdentityPoolId&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cognitoIdentityId&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;caller&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;sourceIp&#34;</span>: <span style="color:#e6db74">&#34;85.14.99.231&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;accessKey&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cognitoAuthenticationType&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cognitoAuthenticationProvider&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;userArn&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;userAgent&#34;</span>: <span style="color:#e6db74">&#34;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;user&#34;</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;resourcePath&#34;</span>: <span style="color:#e6db74">&#34;/aws-java-gradle-dev-hello&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;httpMethod&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;apiId&#34;</span>: <span style="color:#e6db74">&#34;ipj76pb5yl&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;isBase64Encoded&#34;</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Hooray! Our Lambda is working on-line now!</p>
 <h2 id="monitoring">
   Monitoring
   <a class="anchor" href="#monitoring">#</a>
@@ -400,9 +400,9 @@ functions:
   <a class="anchor" href="#function-removal">#</a>
 </h2>
 <p>If we want to remove our Function, we can just type:</p>
-<pre><code>sls remove
+<pre tabindex="0"><code>sls remove
 </code></pre><p>and we&rsquo;ll see the following messages:</p>
-<pre><code>Serverless: Getting all objects in S3 bucket...
+<pre tabindex="0"><code>Serverless: Getting all objects in S3 bucket...
 Serverless: Removing objects in S3 bucket...
 Serverless: Removing Stack...
 Serverless: Checking Stack removal progress...
@@ -454,8 +454,7 @@ Serverless: Successfully archived your service on the Serverless Platform
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Kirai - flavored Android string formatting library" />
 <meta property="og:description" content="Overview #  Recently I&rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/" />
+<meta property="og:url" content="https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-01-13T19:12:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Kirai - flavored Android string formatting library | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -153,39 +154,38 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#usage">#</a>
 </h2>
 <p>Usage of the library is quite simple:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Basic Usage
-</span><span style="color:#75715e"></span>
-CharSequence formatted <span style="color:#f92672">=</span> Kirai
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hi {first_name}, your are {age} years old.&#34;</span><span style="color:#f92672">)</span>
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;first_name&#34;</span><span style="color:#f92672">,</span> firstName<span style="color:#f92672">)</span>
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span> age<span style="color:#f92672">)</span>
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">();</span>
-
-<span style="color:#75715e">// Flavored Usage
-</span><span style="color:#75715e"></span>
-CharSequence formatted <span style="color:#f92672">=</span> Kirai
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hi {first_name}, your are {age} years old.&#34;</span><span style="color:#f92672">)</span>
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Piece<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;first_name&#34;</span><span style="color:#f92672">,</span> firstName<span style="color:#f92672">).</span><span style="color:#a6e22e">bold</span><span style="color:#f92672">().</span><span style="color:#a6e22e">italic</span><span style="color:#f92672">().</span><span style="color:#a6e22e">big</span><span style="color:#f92672">())</span>
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Piece<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span> age<span style="color:#f92672">).</span><span style="color:#a6e22e">underline</span><span style="color:#f92672">().</span><span style="color:#a6e22e">color</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#FF0000&#34;</span><span style="color:#f92672">))</span>
-   <span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">();</span>
-
-textView<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>formatted<span style="color:#f92672">);</span>
-
-</code></pre></div><h2 id="download">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Basic Usage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>CharSequence formatted <span style="color:#f92672">=</span> Kirai
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hi {first_name}, your are {age} years old.&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;first_name&#34;</span><span style="color:#f92672">,</span> firstName<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span> age<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Flavored Usage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>CharSequence formatted <span style="color:#f92672">=</span> Kirai
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hi {first_name}, your are {age} years old.&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Piece<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;first_name&#34;</span><span style="color:#f92672">,</span> firstName<span style="color:#f92672">).</span><span style="color:#a6e22e">bold</span><span style="color:#f92672">().</span><span style="color:#a6e22e">italic</span><span style="color:#f92672">().</span><span style="color:#a6e22e">big</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Piece<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span> age<span style="color:#f92672">).</span><span style="color:#a6e22e">underline</span><span style="color:#f92672">().</span><span style="color:#a6e22e">color</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#FF0000&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>textView<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>formatted<span style="color:#f92672">);</span>
+</span></span></code></pre></div><h2 id="download">
   Download
   <a class="anchor" href="#download">#</a>
 </h2>
 <p>You can depend on this library through Maven:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
-    <span style="color:#f92672">&lt;groupId&gt;</span>com.github.pwittchen.kirai<span style="color:#f92672">&lt;/groupId&gt;</span>
-    <span style="color:#f92672">&lt;artifactId&gt;</span>library<span style="color:#f92672">&lt;/artifactId&gt;</span>
-    <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
-<span style="color:#f92672">&lt;/dependency&gt;</span>
-</code></pre></div><p>or through Gradle:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
-  compile <span style="color:#e6db74">&#39;com.github.pwittchen.kirai:library:1.0.0&#39;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h2 id="open-source">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.github.pwittchen.kirai<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>library<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>or through Gradle:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  compile <span style="color:#e6db74">&#39;com.github.pwittchen.kirai:library:1.0.0&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="open-source">
   Open-source
   <a class="anchor" href="#open-source">#</a>
 </h2>
@@ -219,8 +219,7 @@ textView<span style="color:#f92672">.</span><span style="color:#a6e22e">setText<
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

@@ -14,15 +14,16 @@ Solution #1 #  Some time ago I&rsquo;ve found project http://rebaseandsqua.sh/ m
 We can just call:
 curl rebaseandsqua.sh | sh then edit our commit messages and push the changes." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/squashing-commits/" />
+<meta property="og:url" content="https://wittchen.io/posts/squashing-commits/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-07-21T11:21:54+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Different ways of squashing commits | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -82,7 +83,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -155,7 +156,7 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>Some time ago I&rsquo;ve found project <a href="http://rebaseandsqua.sh/">http://rebaseandsqua.sh/</a> made by Jake Wharton. It&rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.</p>
 <p>We can just call:</p>
-<pre><code>curl rebaseandsqua.sh | sh
+<pre tabindex="0"><code>curl rebaseandsqua.sh | sh
 </code></pre><p>then edit our commit messages and push the changes.</p>
 <h2 id="solution-2">
   Solution #2
@@ -163,38 +164,38 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>If we want to understand this process and do it manually instead of delegating it to the script from the web, we should perform the following steps:</p>
 <p>First, we need to decide how many commits, we want to squash. Let&rsquo;s say 3:</p>
-<pre><code>git rebase -i HEAD~3
+<pre tabindex="0"><code>git rebase -i HEAD~3
 </code></pre><p>We should see something like this in our editor of choice:</p>
-<pre><code>pick 48d7c25 adding link to vim-jdb plugin in README.md
+<pre tabindex="0"><code>pick 48d7c25 adding link to vim-jdb plugin in README.md
 pick 97376b4 Update README.md
 pick a92b5bf adding squash alias to .gitconfig
 </code></pre><p>Next, we can decide, which commits we want to squash:</p>
-<pre><code>pick 48d7c25 adding link to vim-jdb plugin in README.md
+<pre tabindex="0"><code>pick 48d7c25 adding link to vim-jdb plugin in README.md
 squash 97376b4 Update README.md
 squash a92b5bf adding squash alias to .gitconfig
 </code></pre><p>When, we save it, all of our commits will be squashed into one containing all commit messages.
 We can now edit this message with command:</p>
-<pre><code>git commit --amend
+<pre tabindex="0"><code>git commit --amend
 </code></pre><p>You can read more about it in the <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">official Git documentation</a>.</p>
 <h2 id="solution-3">
   Solution #3
   <a class="anchor" href="#solution-3">#</a>
 </h2>
 <p>Some time ago I created a git alias for myself for merging last commits in <code>.gitconfig</code>:</p>
-<pre><code>merge-local-commits = !sh -c 'git reset --soft HEAD~$1' -
+<pre tabindex="0"><code>merge-local-commits = !sh -c &#39;git reset --soft HEAD~$1&#39; -
 </code></pre><p>We can invoke it with e.g.:</p>
-<pre><code>git merge-local-commits 3
+<pre tabindex="0"><code>git merge-local-commits 3
 </code></pre><p>It works pretty fine, but we need to remember how many commits we want to merge, type a commit message and perform commit again.</p>
 <h2 id="solution-4">
   Solution #4
   <a class="anchor" href="#solution-4">#</a>
 </h2>
 <p>Recently I&rsquo;ve found another solution to this problem represented with the following alias:</p>
-<pre><code>squash = &quot;!f(){ git reset --soft HEAD~${1} &amp;&amp; git commit --edit -m\&quot;$(git log --format=%B --reverse HEAD..HEAD@{1})\&quot;;   };f&quot;
+<pre tabindex="0"><code>squash = &#34;!f(){ git reset --soft HEAD~${1} &amp;&amp; git commit --edit -m\&#34;$(git log --format=%B --reverse HEAD..HEAD@{1})\&#34;;   };f&#34;
 </code></pre><p>It&rsquo;s doing the same thing as previous alias, but it preserves all the commit messages. Thanks to that, we can keep all of our commit messages or delete them and leave just one, which is the most relevant for the given change. When we want to &ldquo;squash&rdquo; 3 commits, we can just type:</p>
-<pre><code>git squash 3
+<pre tabindex="0"><code>git squash 3
 </code></pre><p>and we are ready to override all the intermediate commits with the single commit for the Pull Request:</p>
-<pre><code>git push -f
+<pre tabindex="0"><code>git push -f
 </code></pre><h2 id="summary">
   Summary
   <a class="anchor" href="#summary">#</a>
@@ -229,8 +230,7 @@ We can now edit this message with command:</p>
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

@@ -6,11 +6,7 @@
     <description>Recent content in i3 on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/i3/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/i3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic wallpaper for i3</title>
       <link>https://wittchen.io/posts/dynamic-wallpaper-for-i3/</link>

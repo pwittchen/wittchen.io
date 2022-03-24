@@ -6,11 +6,7 @@
     <description>Recent content in testing on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Sep 2018 16:51:47 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 22 Sep 2018 16:51:47 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Separate execution of unit and integration tests in Gradle</title>
       <link>https://wittchen.io/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</link>
@@ -28,8 +24,7 @@
       <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
       <description>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
 In my build.gradle file I configured JaCoCo as follows:
-plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled = true html.enabled = true } } Now, I could type:
-./gradlew test jacocoTestReport Report was generated in build/reports/jacoco/ directory.</description>
+plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.enabled = true  html.enabled = true  } } Now, I could type:</description>
     </item>
     
     <item>
@@ -40,7 +35,7 @@ plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled
       <guid>https://wittchen.io/posts/testing-exceptions/</guid>
       <description>In Java, we can test exceptions via unit tests in a few different ways. In this article, I&amp;rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&amp;rsquo;m using JUnit for unit tests and Truth for assertions.
-@Test public void shouldTestExceptionWithTryCatch() { Exception caughtException = null; try { throw new RuntimeExcetpion(&amp;#34;message&amp;#34;); } catch (final Exception e) { caughtException = e; } assertThat(caughtException).</description>
+@Test public void shouldTestExceptionWithTryCatch() {  Exception caughtException = null;   try {  throw new RuntimeExcetpion(&amp;#34;message&amp;#34;);  } catch (final Exception e) {  caughtException = e;  }   assertThat(caughtException).</description>
     </item>
     
     <item>

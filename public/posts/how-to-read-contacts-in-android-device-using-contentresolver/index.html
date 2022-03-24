@@ -10,15 +10,16 @@ In this example, we will access contact list.">
 <meta property="og:description" content="With Content Providers we can access data stored by Android system applications. Popular example of using Content Provider is retrieving contact list from the smartphone. We can also access Calendar or create our own Content Provider. More information about that can be found in documentation of Android. If we want to access Content Provider, we can use Content Resolver in our application&rsquo;s context.
 In this example, we will access contact list." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/how-to-read-contacts-in-android-device-using-contentresolver/" />
+<meta property="og:url" content="https://wittchen.io/posts/how-to-read-contacts-in-android-device-using-contentresolver/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-03-02T22:23:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>How to read contacts in Android device using ContentResolver? | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -78,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -139,113 +140,113 @@ https://github.com/alex-shpak/hugo-book
 
 <p>With <a href="http://developer.android.com/guide/topics/providers/content-providers.html">Content Providers</a> we can access data stored by Android system applications. Popular example of using Content Provider is retrieving contact list from the smartphone. We can also access Calendar or create our own Content Provider. More information about that can be found in documentation of Android. If we want to access Content Provider, we can use <a href="http://developer.android.com/reference/android/content/ContentResolver.html">Content Resolver</a> in our application&rsquo;s context.</p>
 <p>In this example, we will access contact list. First of all, it’s good to create Contact entity class, which will be model of our data.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Contact</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">public</span> String name<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">public</span> String phone<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">public</span> String email<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">public</span> String uriString<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>We can access application’s context through GenericApplication class extending Application class.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericApplication</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Application instance<span style="color:#f92672">;</span>
-
-    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">();</span>
-        instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Context <span style="color:#a6e22e">getContext</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">.</span><span style="color:#a6e22e">getApplicationContext</span><span style="color:#f92672">();</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>We can use static application’s context in many situations. Nevertheless, we should avoid this practice when we work with UI and Views, because we may have problems with styles, look &amp; feel of the application and other issues.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Contact</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String phone<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String uriString<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>We can access application’s context through GenericApplication class extending Application class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericApplication</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Application instance<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Context <span style="color:#a6e22e">getContext</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">.</span><span style="color:#a6e22e">getApplicationContext</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>We can use static application’s context in many situations. Nevertheless, we should avoid this practice when we work with UI and Views, because we may have problems with styles, look &amp; feel of the application and other issues.</p>
 <p>Now, we can create ContactsProvider class (we can call it as we want).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContactsProvider</span> <span style="color:#f92672">{</span>
-
-    <span style="color:#66d9ef">private</span> Uri QUERY_URI <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_URI</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String CONTACT_ID <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">_ID</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String DISPLAY_NAME <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">DISPLAY_NAME</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> Uri EMAIL_CONTENT_URI <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Email</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_URI</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String EMAIL_CONTACT_ID <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Email</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTACT_ID</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String EMAIL_DATA <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Email</span><span style="color:#f92672">.</span><span style="color:#a6e22e">DATA</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String HAS_PHONE_NUMBER <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">HAS_PHONE_NUMBER</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String PHONE_NUMBER <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Phone</span><span style="color:#f92672">.</span><span style="color:#a6e22e">NUMBER</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> Uri PHONE_CONTENT_URI <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Phone</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_URI</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String PHONE_CONTACT_ID <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Phone</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTACT_ID</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> String STARRED_CONTACT <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STARRED</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">private</span> ContentResolver contentResolver<span style="color:#f92672">;</span>
-
-    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ContactsProvider</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-        contentResolver <span style="color:#f92672">=</span> GenericApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">getContext</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getContentResolver</span><span style="color:#f92672">();</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getContacts</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-        List<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;</span> contactList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;();</span>
-        String<span style="color:#f92672">[]</span> projection <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span>CONTACT_ID<span style="color:#f92672">,</span> DISPLAY_NAME<span style="color:#f92672">,</span> HAS_PHONE_NUMBER<span style="color:#f92672">,</span> STARRED_CONTACT<span style="color:#f92672">};</span>
-        String selection <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-        Cursor cursor <span style="color:#f92672">=</span> contentResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>QUERY_URI<span style="color:#f92672">,</span> projection<span style="color:#f92672">,</span> selection<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
-
-        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">moveToNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-            Contact contact <span style="color:#f92672">=</span> getContact<span style="color:#f92672">(</span>cursor<span style="color:#f92672">);</span>
-            contactList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>contact<span style="color:#f92672">);</span>
-        <span style="color:#f92672">}</span>
-
-        cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-        <span style="color:#66d9ef">return</span> contactList<span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">private</span> Contact <span style="color:#a6e22e">getContact</span><span style="color:#f92672">(</span>Cursor cursor<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        String contactId <span style="color:#f92672">=</span> cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>CONTACT_ID<span style="color:#f92672">));</span>
-        String name <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>DISPLAY_NAME<span style="color:#f92672">)));</span>
-        Uri uri <span style="color:#f92672">=</span> Uri<span style="color:#f92672">.</span><span style="color:#a6e22e">withAppendedPath</span><span style="color:#f92672">(</span>QUERY_URI<span style="color:#f92672">,</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>contactId<span style="color:#f92672">));</span>
-
-        Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">(</span>Intent<span style="color:#f92672">.</span><span style="color:#a6e22e">ACTION_VIEW</span><span style="color:#f92672">);</span>
-        intent<span style="color:#f92672">.</span><span style="color:#a6e22e">setData</span><span style="color:#f92672">(</span>uri<span style="color:#f92672">);</span>
-        String intentUriString <span style="color:#f92672">=</span> intent<span style="color:#f92672">.</span><span style="color:#a6e22e">toUri</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
-
-        Contact contact <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Contact<span style="color:#f92672">();</span>
-        contact<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>contactId<span style="color:#f92672">);</span>
-        contact<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-        contact<span style="color:#f92672">.</span><span style="color:#a6e22e">uriString</span> <span style="color:#f92672">=</span> intentUriString<span style="color:#f92672">;</span>
-
-        getPhone<span style="color:#f92672">(</span>cursor<span style="color:#f92672">,</span> contactId<span style="color:#f92672">,</span> contact<span style="color:#f92672">);</span>
-        getEmail<span style="color:#f92672">(</span>contactId<span style="color:#f92672">,</span> contact<span style="color:#f92672">);</span>
-        <span style="color:#66d9ef">return</span> contact<span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getEmail</span><span style="color:#f92672">(</span>String contactId<span style="color:#f92672">,</span> Contact contact<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        Cursor emailCursor <span style="color:#f92672">=</span> contentResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>EMAIL_CONTENT_URI<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> EMAIL_CONTACT_ID <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; = ?&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span>contactId<span style="color:#f92672">},</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
-        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">moveToNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-            String email <span style="color:#f92672">=</span> emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>EMAIL_DATA<span style="color:#f92672">));</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>TextUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">(</span>email<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
-                contact<span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-        emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getPhone</span><span style="color:#f92672">(</span>Cursor cursor<span style="color:#f92672">,</span> String contactId<span style="color:#f92672">,</span> Contact contact<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">int</span> hasPhoneNumber <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>HAS_PHONE_NUMBER<span style="color:#f92672">)));</span>
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>hasPhoneNumber <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            Cursor phoneCursor <span style="color:#f92672">=</span> contentResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>PHONE_CONTENT_URI<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> PHONE_CONTACT_ID <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; = ?&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span>contactId<span style="color:#f92672">},</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
-            <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">moveToNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-                String phoneNumber <span style="color:#f92672">=</span> phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>PHONE_NUMBER<span style="color:#f92672">));</span>
-                contact<span style="color:#f92672">.</span><span style="color:#a6e22e">phone</span> <span style="color:#f92672">=</span> phoneNumber<span style="color:#f92672">;</span>
-            <span style="color:#f92672">}</span>
-            phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>We can filter our data, by manipulating selection parameter. E.g. if we want to retrieve only starred contacts, we can change “selection” parameter in the following way:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String selection <span style="color:#f92672">=</span> STARRED_CONTACT <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#39;1&#39;&#34;</span><span style="color:#f92672">;</span>
-</code></pre></div><p>If we want to retrieve more or less data, we can manipulate “projection” parameter. ContentResolver is just kind of proxy for SQLite databases available in Android applications, which allows us to access this data in a safe way. We can use SQL language in order to select proper data. Check Android documentation for more details.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContactsProvider</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Uri QUERY_URI <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_URI</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String CONTACT_ID <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">_ID</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String DISPLAY_NAME <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">DISPLAY_NAME</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Uri EMAIL_CONTENT_URI <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Email</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_URI</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String EMAIL_CONTACT_ID <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Email</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTACT_ID</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String EMAIL_DATA <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Email</span><span style="color:#f92672">.</span><span style="color:#a6e22e">DATA</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String HAS_PHONE_NUMBER <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">HAS_PHONE_NUMBER</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String PHONE_NUMBER <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Phone</span><span style="color:#f92672">.</span><span style="color:#a6e22e">NUMBER</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Uri PHONE_CONTENT_URI <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Phone</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTENT_URI</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String PHONE_CONTACT_ID <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">CommonDataKinds</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Phone</span><span style="color:#f92672">.</span><span style="color:#a6e22e">CONTACT_ID</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String STARRED_CONTACT <span style="color:#f92672">=</span> ContactsContract<span style="color:#f92672">.</span><span style="color:#a6e22e">Contacts</span><span style="color:#f92672">.</span><span style="color:#a6e22e">STARRED</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> ContentResolver contentResolver<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ContactsProvider</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        contentResolver <span style="color:#f92672">=</span> GenericApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">getContext</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getContentResolver</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getContacts</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;</span> contactList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Contact<span style="color:#f92672">&gt;();</span>
+</span></span><span style="display:flex;"><span>        String<span style="color:#f92672">[]</span> projection <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span>CONTACT_ID<span style="color:#f92672">,</span> DISPLAY_NAME<span style="color:#f92672">,</span> HAS_PHONE_NUMBER<span style="color:#f92672">,</span> STARRED_CONTACT<span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span>        String selection <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        Cursor cursor <span style="color:#f92672">=</span> contentResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>QUERY_URI<span style="color:#f92672">,</span> projection<span style="color:#f92672">,</span> selection<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">moveToNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            Contact contact <span style="color:#f92672">=</span> getContact<span style="color:#f92672">(</span>cursor<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            contactList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>contact<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> contactList<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Contact <span style="color:#a6e22e">getContact</span><span style="color:#f92672">(</span>Cursor cursor<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        String contactId <span style="color:#f92672">=</span> cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>CONTACT_ID<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>        String name <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>DISPLAY_NAME<span style="color:#f92672">)));</span>
+</span></span><span style="display:flex;"><span>        Uri uri <span style="color:#f92672">=</span> Uri<span style="color:#f92672">.</span><span style="color:#a6e22e">withAppendedPath</span><span style="color:#f92672">(</span>QUERY_URI<span style="color:#f92672">,</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>contactId<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">(</span>Intent<span style="color:#f92672">.</span><span style="color:#a6e22e">ACTION_VIEW</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        intent<span style="color:#f92672">.</span><span style="color:#a6e22e">setData</span><span style="color:#f92672">(</span>uri<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        String intentUriString <span style="color:#f92672">=</span> intent<span style="color:#f92672">.</span><span style="color:#a6e22e">toUri</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Contact contact <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Contact<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        contact<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>contactId<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        contact<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        contact<span style="color:#f92672">.</span><span style="color:#a6e22e">uriString</span> <span style="color:#f92672">=</span> intentUriString<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        getPhone<span style="color:#f92672">(</span>cursor<span style="color:#f92672">,</span> contactId<span style="color:#f92672">,</span> contact<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        getEmail<span style="color:#f92672">(</span>contactId<span style="color:#f92672">,</span> contact<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> contact<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getEmail</span><span style="color:#f92672">(</span>String contactId<span style="color:#f92672">,</span> Contact contact<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Cursor emailCursor <span style="color:#f92672">=</span> contentResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>EMAIL_CONTENT_URI<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> EMAIL_CONTACT_ID <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; = ?&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span>contactId<span style="color:#f92672">},</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">moveToNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            String email <span style="color:#f92672">=</span> emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>EMAIL_DATA<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>TextUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">(</span>email<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                contact<span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        emailCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getPhone</span><span style="color:#f92672">(</span>Cursor cursor<span style="color:#f92672">,</span> String contactId<span style="color:#f92672">,</span> Contact contact<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> hasPhoneNumber <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>cursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>HAS_PHONE_NUMBER<span style="color:#f92672">)));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>hasPhoneNumber <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            Cursor phoneCursor <span style="color:#f92672">=</span> contentResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>PHONE_CONTENT_URI<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> PHONE_CONTACT_ID <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; = ?&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span>contactId<span style="color:#f92672">},</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">moveToNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                String phoneNumber <span style="color:#f92672">=</span> phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumnIndex</span><span style="color:#f92672">(</span>PHONE_NUMBER<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>                contact<span style="color:#f92672">.</span><span style="color:#a6e22e">phone</span> <span style="color:#f92672">=</span> phoneNumber<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            phoneCursor<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>We can filter our data, by manipulating selection parameter. E.g. if we want to retrieve only starred contacts, we can change “selection” parameter in the following way:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String selection <span style="color:#f92672">=</span> STARRED_CONTACT <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#39;1&#39;&#34;</span><span style="color:#f92672">;</span>
+</span></span></code></pre></div><p>If we want to retrieve more or less data, we can manipulate “projection” parameter. ContentResolver is just kind of proxy for SQLite databases available in Android applications, which allows us to access this data in a safe way. We can use SQL language in order to select proper data. Check Android documentation for more details.</p>
 <p>We also need to remember to add proper parameter to our <code>AndroidManifest.xml</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.READ_CONTACTS&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div><p>If we want to use GenericApplication class, we should also add proper attribute to <code>application</code> tag in <code>AndroidManifest.xml</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;application</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;com.pwittchen.example.generics.GenericApplication&#34;</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><p>That&rsquo;s it!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.READ_CONTACTS&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div><p>If we want to use GenericApplication class, we should also add proper attribute to <code>application</code> tag in <code>AndroidManifest.xml</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;application</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;com.pwittchen.example.generics.GenericApplication&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>That&rsquo;s it!</p>
 <p>Now, we can use our class to read contacts very easily. We can even create an <a href="http://developer.android.com/reference/android/widget/Adapter.html">adapter</a> and display contacts on the list or do whatever we want to.</p>
 </article>
  
@@ -276,8 +277,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

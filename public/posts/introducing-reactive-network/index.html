@@ -12,15 +12,16 @@ This library is much simpler and easier to use than NetworkEvents.">
 Library is compatible with RxJava 1.0.&#43; and RxAndroid 1.0.&#43; and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.
 This library is much simpler and easier to use than NetworkEvents." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/introducing-reactive-network/" />
+<meta property="og:url" content="https://wittchen.io/posts/introducing-reactive-network/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-08-10T21:52:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Introducing ReactiveNetwork | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -80,7 +81,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -146,30 +147,30 @@ JavaDoc can be found at: <a href="http://pwittchen.github.io/ReactiveNetwork">ht
 Repository is available at: <a href="https://github.com/pwittchen/ReactiveNetwork">https://github.com/pwittchen/ReactiveNetwork</a>.</p>
 <p>This library is much simpler and easier to use than NetworkEvents. Even code-base is much smaller, but we have to remember that it utilizes powerful RxJava and RxAndroid. RxJava hase huge API and gives a lot of possibilities. That&rsquo;s why I was able to obtain desired result with fewer lines of code.</p>
 <p>Basic library usage is quite simple. E.g if we want to monitor <code>ConnectivityStatus</code> (<code>WIFI_CONNECTED</code>, <code>MOBILE_CONNECTED</code> or <code>OFFLINE</code>), we can create the following subscription, which is quite familiar for software developers who already know RxJava:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> ReactiveNetwork<span style="color:#f92672">().</span><span style="color:#a6e22e">observeConnectivity</span><span style="color:#f92672">(</span>context<span style="color:#f92672">)</span>
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
-    <span style="color:#f92672">...</span> <span style="color:#75715e">// anything else what you can do with RxJava
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Action1<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-      <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>ConnectivityStatus connectivityStatus<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#75715e">// do something with connectivityStatus
-</span><span style="color:#75715e"></span>      <span style="color:#f92672">}</span>
-<span style="color:#f92672">});</span>
-</code></pre></div><p>When we want to monitor available WiFi Access Points and we want to get fresh list of them whenever strength of the WiFi Access Points signal changes (e.g. when we are moving with a mobile device around), we can use the following code snippet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> ReactiveNetwork<span style="color:#f92672">().</span><span style="color:#a6e22e">observeWifiAccessPoints</span><span style="color:#f92672">(</span>context<span style="color:#f92672">)</span>
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
-    <span style="color:#f92672">...</span> <span style="color:#75715e">// anything else what you can do with RxJava
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Action1<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;&gt;()</span> <span style="color:#f92672">{</span>
-      <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;</span> scanResults<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#75715e">// do something with scanResults
-</span><span style="color:#75715e"></span>      <span style="color:#f92672">}</span>
-<span style="color:#f92672">});</span>
-</code></pre></div><p>If you want to use ReactiveNetwork in your project, add the following dependency to your <code>build.gradle</code> file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
-  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivenetwork:0.0.2&#39;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Find more in the GitHub repository of the project at: <a href="https://github.com/pwittchen/ReactiveNetwork">https://github.com/pwittchen/ReactiveNetwork</a>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> ReactiveNetwork<span style="color:#f92672">().</span><span style="color:#a6e22e">observeConnectivity</span><span style="color:#f92672">(</span>context<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span> <span style="color:#75715e">// anything else what you can do with RxJava
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Action1<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>ConnectivityStatus connectivityStatus<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something with connectivityStatus
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
+</span></span></code></pre></div><p>When we want to monitor available WiFi Access Points and we want to get fresh list of them whenever strength of the WiFi Access Points signal changes (e.g. when we are moving with a mobile device around), we can use the following code snippet:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> ReactiveNetwork<span style="color:#f92672">().</span><span style="color:#a6e22e">observeWifiAccessPoints</span><span style="color:#f92672">(</span>context<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span> <span style="color:#75715e">// anything else what you can do with RxJava
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Action1<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;&gt;()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;</span> scanResults<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something with scanResults
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
+</span></span></code></pre></div><p>If you want to use ReactiveNetwork in your project, add the following dependency to your <code>build.gradle</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivenetwork:0.0.2&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Find more in the GitHub repository of the project at: <a href="https://github.com/pwittchen/ReactiveNetwork">https://github.com/pwittchen/ReactiveNetwork</a>.
 It&rsquo;s worth mentioning that this library was featured on <a href="https://android-arsenal.com/details/1/2290">Android Arsenal</a>, <a href="http://androidweekly.net/issues/issue-166">Android Weekly</a> and <a href="http://androidweekly.cn/android-dev-weekly-issue44/">Android Weekly China</a> websites.
 I hope you will find it useful and you will make your apps more reactive! Feel free to fork the library.
 Any feedback is welcome as usual.</p>
@@ -202,8 +203,7 @@ Any feedback is welcome as usual.</p>
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

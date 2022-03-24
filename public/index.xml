@@ -6,11 +6,7 @@
     <description>Recent content in About on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Aug 2020 16:49:54 +0200</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 14 Aug 2020 16:49:54 +0200</lastBuildDate><atom:link href="https://wittchen.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup</title>
       <link>https://wittchen.io/setup/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://wittchen.io/setup/</guid>
       <description>Here&amp;rsquo;s the list of equipment and software I use personally and professionally:
-Server #   W1GB hosting server by cyberfolks.pl  Software #   OS: Arch Linux WM: i3 shell: Zsh + Oh my zsh + Tmux terminal: Gnome Terminal text editor: Vim IDE: IntelliJ IDEA + Android Studio + PyCharm (JetBrains stuff in general) VCS: Git web browser: Brave file manager: Ranger + mc PDF viewer: Zathura image viewer: Sxiv image editing: Gthumb + Pixeluvo music and podcasts: Spotify + spotify-cli-linux videos: VLC RSS reader: Newsboat Excel-like spreadsheets: Libre Office torrent client: Transmission to do list: Nozbe notes: Keep + Git + Physical notebook password manager: Pass presentations: Google Slides calendar: Google Calendar email: Gmail invoices and accounting: InFakt  Configuration #   dotfiles wallpapers  Hardware #   ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB) Samsung C34H890WJUX Curved monitor Logitech Bluetooth Keyboard K380 + Keychron K3 Logitech MX Master Mouse Logitech Webcam C925e 1080p JBL Charge 3 speaker Sennheiser Momentum True Wireless headphones + Sennheiser HD 400S Rhode SmartLav microphone + Tracer Digital USB Pro LaCie Rugged Mini 1TB USB 3.</description>
+Server #   W1GB hosting server by cyberfolks.pl  Software #   OS: Arch Linux WM: i3 shell: Zsh + Oh my zsh + Tmux terminal: Gnome Terminal text editor: Vim IDE: IntelliJ IDEA + Android Studio + PyCharm (JetBrains stuff in general) VCS: Git web browser: Brave file manager: Ranger + mc PDF viewer: Zathura image viewer: Sxiv image editing: Gthumb + Pixeluvo music and podcasts: Spotify + spotify-cli-linux videos: VLC RSS reader: Newsboat Excel-like spreadsheets: Libre Office torrent client: Transmission to do list: Nozbe notes: Keep + Git + Physical notebook password manager: Pass presentations: Google Slides calendar: Google Calendar email: Gmail invoices and accounting: InFakt  Configuration #   dotfiles wallpapers  Hardware #   ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB) Macbook Air M1 (CPU: Apple M1 ARM64, RAM: 8 GB, SSD: 256 GB) Samsung C34H890WJUX Curved monitor Logitech Bluetooth Keyboard K380 + Keychron K3 Logitech MX Master Mouse Logitech Webcam C925e 1080p JBL Charge 3 speaker Sennheiser Momentum True Wireless headphones + Sennheiser HD 400S Rhode SmartLav microphone + Tracer Digital USB Pro LaCie Rugged Mini 1TB USB 3.</description>
     </item>
     
     <item>
@@ -130,7 +126,7 @@ I figured out that I can go to the Firefox Settings and in the &amp;ldquo;Fonts 
       
       <guid>https://wittchen.io/posts/fixing-gnome-boot-problem/</guid>
       <description>I recently had an issue with Gnome on Arch Linux during the system boot. After turning my computer on, I saw gray screen with message like:
-Oh no! Something has gone wrong. A problem has occurred and the system can&#39;t recover... and I couldn&amp;rsquo;t log in or do anything and started searching solutions for this problem via my phone. First, I switched to terminal mode with Alt+F2(you can switch back to GUI with Alt+F1), logged in and updated system via pacman: sudo pacman -Syu.</description>
+Oh no! Something has gone wrong. A problem has occurred and the system can&amp;#39;t recover... and I couldn&amp;rsquo;t log in or do anything and started searching solutions for this problem via my phone. First, I switched to terminal mode with Alt+F2(you can switch back to GUI with Alt+F1), logged in and updated system via pacman: sudo pacman -Syu.</description>
     </item>
     
     <item>
@@ -255,8 +251,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
       <description>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
 In my build.gradle file I configured JaCoCo as follows:
-plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled = true html.enabled = true } } Now, I could type:
-./gradlew test jacocoTestReport Report was generated in build/reports/jacoco/ directory.</description>
+plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.enabled = true  html.enabled = true  } } Now, I could type:</description>
     </item>
     
     <item>
@@ -267,7 +262,7 @@ plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled
       <guid>https://wittchen.io/posts/testing-exceptions/</guid>
       <description>In Java, we can test exceptions via unit tests in a few different ways. In this article, I&amp;rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&amp;rsquo;m using JUnit for unit tests and Truth for assertions.
-@Test public void shouldTestExceptionWithTryCatch() { Exception caughtException = null; try { throw new RuntimeExcetpion(&amp;#34;message&amp;#34;); } catch (final Exception e) { caughtException = e; } assertThat(caughtException).</description>
+@Test public void shouldTestExceptionWithTryCatch() {  Exception caughtException = null;   try {  throw new RuntimeExcetpion(&amp;#34;message&amp;#34;);  } catch (final Exception e) {  caughtException = e;  }   assertThat(caughtException).</description>
     </item>
     
     <item>
@@ -346,7 +341,7 @@ Once I connected the phone, to my laptop and typed adb devices, I&amp;rsquo;ve s
       
       <guid>https://wittchen.io/posts/avoiding-merging-master-to-master/</guid>
       <description>Problem #  If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
-Merge branch &#39;master&#39; to &#39;master&#39; or something similar. You might have even pushed such commits! Don&amp;rsquo;t worry, so did I ;-). In this article I&amp;rsquo;m going to explain why is it happenning and how to avoid it.
+Merge branch &amp;#39;master&amp;#39; to &amp;#39;master&amp;#39; or something similar. You might have even pushed such commits! Don&amp;rsquo;t worry, so did I ;-). In this article I&amp;rsquo;m going to explain why is it happenning and how to avoid it.
 Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository.</description>
     </item>
     
@@ -367,7 +362,7 @@ Such situation happens when you performed changes locally and at the same time s
       <guid>https://wittchen.io/posts/introducing-reactive-bus/</guid>
       <description>Today, I&amp;rsquo;ve released my another tiny project. It&amp;rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&amp;rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.
 You can use it as follows:
-Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() { @Override public void accept(Event event) { // handle event here  } }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
+Bus bus = ReactiveBus.create();  Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() {  @Override public void accept(Event event) {  // handle event here  }  }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
     </item>
     
     <item>
@@ -476,7 +471,7 @@ Code snippets shown during this presentation are available at https://github.com
       <guid>https://wittchen.io/posts/integrating-nullaway-with-an-android-project/</guid>
       <description>Recently, with the remote help of guys from Uber in California, I integrated NullAway and ErrorProne with the one of my open-source Android projects.
 What is NullAway? #  Basically, it&amp;rsquo;s a tool to help eliminate NullPointerExceptions (NPEs) in your Java code. It detects situations where NPE could occur at the compile time. Let&amp;rsquo;s have a look at the following code:
-static void log(Object x) { System.out.println(x.toString()); } static void foo() { log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
+static void log(Object x) {  System.out.println(x.toString()); } static void foo() {  log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
     </item>
     
     <item>
@@ -495,7 +490,7 @@ static void log(Object x) { System.out.println(x.toString()); } static void foo(
       
       <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
       <description>I&amp;rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
-ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.</description>
+ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io())  .observeOn(AndroidSchedulers.mainThread())  .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.</description>
     </item>
     
     <item>
@@ -729,7 +724,7 @@ It&amp;rsquo;s super-interesting for me, because 4 years ago I wrote Master Thes
       
       <guid>https://wittchen.io/posts/my-approach-to-git-aliases/</guid>
       <description>While we are working with Version Control Systems like Git, it&amp;rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your .gitconfig file, which is usually located in your home directory and place a few aliases in the [alias] section. For example:
-[alias] ls = log --pretty=format:&amp;quot;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&amp;quot; --decorate Then you can type: git ls in your Git repository to see pretty Git log.</description>
+[alias] ls = log --pretty=format:&amp;#34;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&amp;#34; --decorate Then you can type: git ls in your Git repository to see pretty Git log.</description>
     </item>
     
     <item>
@@ -1451,7 +1446,7 @@ In this example, we will access contact list.</description>
       
       <guid>https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/</guid>
       <description>We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
-package com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
+package com.github.volley.example.toolbox;  import com.android.volley.toolbox.ImageLoader.ImageCache;  import android.graphics.Bitmap; import android.support.v4.util.LruCache;  public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache {  public BitmapLruCache(int maxSize) {  super(maxSize);  }  // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
     </item>
     
     <item>
@@ -1506,7 +1501,7 @@ package com.github.volley.example.toolbox; import com.android.volley.toolbox.Ima
       
       <guid>https://wittchen.io/posts/improper-data-type-in-android-textview/</guid>
       <description>Identifying the problem #  One of the common mistakes done by Android programmers is using improper data type in TextView. Let&amp;rsquo;s have a look on a simple code snippet:
-int area; TextView sampleTextView = (TextView) findViewById(R.id.myTextViewInXml); sampleTextView.setText(area + &amp;#34; km&amp;#34;); Here, we simply set a value of the text in an exemplary TextView and append string value &amp;quot; km&amp;rdquo; at the end. It can be used with SeekBar. For example, when we change value of the SeekBar, we can also update value of the text inside the TextView.</description>
+int area; TextView sampleTextView = (TextView) findViewById(R.id.myTextViewInXml); sampleTextView.setText(area + &amp;#34; km&amp;#34;); Here, we simply set a value of the text in an exemplary TextView and append string value &amp;quot; km&amp;quot; at the end. It can be used with SeekBar. For example, when we change value of the SeekBar, we can also update value of the text inside the TextView.</description>
     </item>
     
     <item>
@@ -1525,7 +1520,7 @@ int area; TextView sampleTextView = (TextView) findViewById(R.id.myTextViewInXml
       
       <guid>https://wittchen.io/posts/endless-listview-in-android/</guid>
       <description>Some time ago, I had to implement Endless ListView in Android application. I checked different solutions, but some of them were overprogrammed or did not work well. Fortunately, I found simple solution, which solves the problem. Code snippet presenting mentioned approach, is placed below.
-public class EndlessScrollListener implements OnScrollListener { private int visibleThreshold = 20; private int currentPage = 0; @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { } @Override public void onScrollStateChanged(AbsListView view, int scrollState) { if (scrollState == SCROLL_STATE_IDLE) { if (listView.</description>
+public class EndlessScrollListener implements OnScrollListener {   private int visibleThreshold = 20;  private int currentPage = 0;   @Override  public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {  }   @Override  public void onScrollStateChanged(AbsListView view, int scrollState) {  if (scrollState == SCROLL_STATE_IDLE) {  if (listView.</description>
     </item>
     
     <item>
@@ -1535,7 +1530,7 @@ public class EndlessScrollListener implements OnScrollListener { private int vis
       
       <guid>https://wittchen.io/posts/custom-background-for-actionbar-and-sherlockactionbar/</guid>
       <description>When you want to set custom background for Android ActionBar or SherlockActionBar instead of playing with your styles or views, you can use the following simple code snippet.
-@InjectResource(R.drawable.actionbar_custom_background) private Drawable actionBarCustomBackground; public void onCreate() { getSupportActionBar().setBackgroundDrawable(actionBarCustomBackground); } In this case, Drawable object is injected using RoboGuice library and set as a background for the ActionBar. In particular cases, you can use also getActionBar() method. In Drawable object you can store an image of 1 px width and it will be stretched for 100% of width of the ActionBar.</description>
+@InjectResource(R.drawable.actionbar_custom_background) private Drawable actionBarCustomBackground;  public void onCreate() {  getSupportActionBar().setBackgroundDrawable(actionBarCustomBackground); } In this case, Drawable object is injected using RoboGuice library and set as a background for the ActionBar. In particular cases, you can use also getActionBar() method. In Drawable object you can store an image of 1 px width and it will be stretched for 100% of width of the ActionBar.</description>
     </item>
     
     <item>
@@ -1545,7 +1540,7 @@ public class EndlessScrollListener implements OnScrollListener { private int vis
       
       <guid>https://wittchen.io/posts/custom-fonts-in-android/</guid>
       <description>Using custom fonts in Android is quite simple, but requires to do some things programmatically and cannot be done using only XML file defining the view. Let&amp;rsquo;s have a look on an example. Here we have a simple Android view file:
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; android:orientation=&amp;#34;vertical&amp;#34; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;fill_parent&amp;#34; &amp;gt; &amp;lt;TextView android:id=&amp;#34;@+id/custom_font&amp;#34; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;This is our custom font&amp;#34; /&amp;gt; &amp;lt;/LinearLayout&amp;gt; We want to use custom font for the TextView element with id: custom_font.</description>
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;  android:orientation=&amp;#34;vertical&amp;#34;  android:layout_width=&amp;#34;fill_parent&amp;#34;  android:layout_height=&amp;#34;fill_parent&amp;#34; &amp;gt;  &amp;lt;TextView  android:id=&amp;#34;@+id/custom_font&amp;#34;  android:layout_width=&amp;#34;fill_parent&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;  android:text=&amp;#34;This is our custom font&amp;#34; /&amp;gt; &amp;lt;/LinearLayout&amp;gt; We want to use custom font for the TextView element with id: custom_font.</description>
     </item>
     
     <item>
@@ -1555,7 +1550,7 @@ public class EndlessScrollListener implements OnScrollListener { private int vis
       
       <guid>https://wittchen.io/posts/easy-conversion-from-binary-to-decimal-numbers-in-c/</guid>
       <description>Below, you can see simple and useful code snippet presenting conversion from binary to decimal number in C language without any sophisticated operations using only strtol function.
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; int main(void) { const char binary[] = &amp;#34;11001&amp;#34;; int decimal = strtol(binary, NULL, 2); printf(&amp;#34;binary = \&amp;#34;%s\&amp;#34;, decimal = %d = 0x%02X\n&amp;#34;, binary, decimal, decimal); return 0; } /* my output binary = &amp;#34;11001&amp;#34;, decimal = 25 = 0x19 */ </description>
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; int main(void) {  const char binary[] = &amp;#34;11001&amp;#34;;  int decimal = strtol(binary, NULL, 2);  printf(&amp;#34;binary = \&amp;#34;%s\&amp;#34;, decimal = %d = 0x%02X\n&amp;#34;,  binary, decimal, decimal);  return 0; }  /* my output binary = &amp;#34;11001&amp;#34;, decimal = 25 = 0x19 */ </description>
     </item>
     
     <item>

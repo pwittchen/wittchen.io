@@ -6,11 +6,7 @@
     <description>Recent content in gradle on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Jun 2019 10:58:10 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 08 Jun 2019 10:58:10 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zen of the Java library release process</title>
       <link>https://wittchen.io/posts/zen-of-java-library-release-process/</link>
@@ -55,8 +51,7 @@
       <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
       <description>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
 In my build.gradle file I configured JaCoCo as follows:
-plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled = true html.enabled = true } } Now, I could type:
-./gradlew test jacocoTestReport Report was generated in build/reports/jacoco/ directory.</description>
+plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.enabled = true  html.enabled = true  } } Now, I could type:</description>
     </item>
     
     <item>

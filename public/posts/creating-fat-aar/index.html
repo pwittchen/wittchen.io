@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Creating a fat AAR" />
 <meta property="og:description" content="I recently wrote a new library called NeuroSky Android SDK. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a *.jar file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this *." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/creating-fat-aar/" />
+<meta property="og:url" content="https://wittchen.io/posts/creating-fat-aar/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-10-02T00:01:31+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Creating a fat AAR | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -139,40 +140,40 @@ https://github.com/alex-shpak/hugo-book
 <p>I recently wrote a new library called <a href="https://github.com/pwittchen/neurosky-android-sdk">NeuroSky Android SDK</a>. It&rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&rsquo;ll write a separate article about it because it&rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a <code>*.jar</code> file, so I couldn&rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this <code>*.jar</code> file into the <code>lib</code> directory and link it in the <code>build.gradle</code> file. Moreover, I wanted to create a library, which can be added to the project as a single Gradle dependency without messing around with additional <code>*.jar</code> files or custom configuration. Due to this fact, I decided to create a fat <code>*.aar</code> file and deploy it to the Maven Central repository. For those who are not familar with Android, <code>*.aar</code> is an Android version or <code>*.jar</code> file, which can be used as library in the project. I didn&rsquo;t want to reinvent the wheel, so I searched for the different solutions. Unfortunatey, a few of them didn&rsquo;t work, but luckilly I&rsquo;ve found what I wanted. It&rsquo;s <a href="https://github.com/Mobbeel/fataar-gradle-plugin">fat AAR Gradle Plugin</a> developed by <a href="https://github.com/Mobbeel">Mobbeel</a> company.</p>
 <p>Here&rsquo;s how I configured everything:</p>
 <p>In my top-level <code>build.gradle</code> file I defined dependency to my custom <code>*.jar</code> file and other dependencies.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">ext<span style="color:#f92672">.</span><span style="color:#a6e22e">deps</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span> <span style="color:#75715e">// other dependencies goes here...
-</span><span style="color:#75715e"></span>             thinkgear <span style="color:#f92672">:</span> files<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;library/libs/ThinkGear.jar&#39;</span><span style="color:#f92672">)</span>
-           <span style="color:#f92672">]</span>
-</code></pre></div><p>Next, I added dependency to the plugin within a <code>buildscript</code> section.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">buildscript <span style="color:#f92672">{</span>
-  repositories <span style="color:#f92672">{</span>
-    google<span style="color:#f92672">()</span>
-    jcenter<span style="color:#f92672">()</span>
-    mavenCentral<span style="color:#f92672">()</span>
-    maven <span style="color:#f92672">{</span>
-      url <span style="color:#e6db74">&#39;https://plugins.gradle.org/m2/&#39;</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
-  dependencies <span style="color:#f92672">{</span>
-   <span style="color:#75715e">// other plugin dependencies goes here...
-</span><span style="color:#75715e"></span>   classpath <span style="color:#e6db74">&#39;gradle.plugin.com.mobbeel.plugin:mobbeel-fataar:1.2.0&#39;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>After that, in the <code>library/build.gradle</code> file, I could add dependency to the <code>*.jar</code> file.</p>
-<pre><code>dependencies {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>ext<span style="color:#f92672">.</span><span style="color:#a6e22e">deps</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span> <span style="color:#75715e">// other dependencies goes here...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>             thinkgear <span style="color:#f92672">:</span> files<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;library/libs/ThinkGear.jar&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>Next, I added dependency to the plugin within a <code>buildscript</code> section.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>buildscript <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  repositories <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    google<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    jcenter<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    mavenCentral<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    maven <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      url <span style="color:#e6db74">&#39;https://plugins.gradle.org/m2/&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// other plugin dependencies goes here...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   classpath <span style="color:#e6db74">&#39;gradle.plugin.com.mobbeel.plugin:mobbeel-fataar:1.2.0&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>After that, in the <code>library/build.gradle</code> file, I could add dependency to the <code>*.jar</code> file.</p>
+<pre tabindex="0"><code>dependencies {
   api deps.thinkgear
   // other dependencies goes here...
 }
 </code></pre><p>Then plugin could be applied.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">apply plugin: <span style="color:#e6db74">&#39;com.mobbeel.plugin&#39;</span>
-</code></pre></div><p>And I could configure it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">fatAARConfig <span style="color:#f92672">{</span>
-  includeAllInnerDependencies <span style="color:#66d9ef">false</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>When we set <code>includeAllInnerDependencies</code> parameter to <code>true</code>, then all transitive dependencies will be included in the fat <code>*.aar</code>. Default value is <code>false</code> and it&rsquo;s OK for now. I could even skip this step, but sometimes I prefer to define things explicitly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;com.mobbeel.plugin&#39;</span>
+</span></span></code></pre></div><p>And I could configure it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>fatAARConfig <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  includeAllInnerDependencies <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>When we set <code>includeAllInnerDependencies</code> parameter to <code>true</code>, then all transitive dependencies will be included in the fat <code>*.aar</code>. Default value is <code>false</code> and it&rsquo;s OK for now. I could even skip this step, but sometimes I prefer to define things explicitly.</p>
 <p>Now, we can build our library.</p>
-<pre><code>./gradlew build
+<pre tabindex="0"><code>./gradlew build
 </code></pre><p>and fat <code>*.aar</code> will be generated in the <code>library/builds/output/</code> directory as a <code>library-release.aar</code> file. There should be also <code>library-debug.aar</code>. We can unzip this file and notice that it has the following structure:</p>
-<pre><code>.
+<pre tabindex="0"><code>.
 ├── AndroidManifest.xml
 ├── classes.jar
 └── libs
@@ -180,10 +181,10 @@ https://github.com/alex-shpak/hugo-book
     ├── rxjava-2.2.2.jar
     └── ThinkGear.jar
 </code></pre><p>so we can clearly see that all project dependencies are included in the <code>*.aar</code> file. Library deployed to the Maven Central Repository looks the same and now, users can add library as a single dependency to the project in the <code>build.gradle</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
-  implementation <span style="color:#e6db74">&#39;com.github.pwittchen:neurosky-android-sdk:0.0.2&#39;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><code>*.jar</code> library shipped inside <code>*.aar</code> file will be included in the project and everything will just work.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  implementation <span style="color:#e6db74">&#39;com.github.pwittchen:neurosky-android-sdk:0.0.2&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><code>*.jar</code> library shipped inside <code>*.aar</code> file will be included in the project and everything will just work.</p>
 </article>
  
       
@@ -213,8 +214,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

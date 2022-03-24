@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Zen of the Java library release process" />
 <meta property="og:description" content="In my previous article I published information about publishing JAR/AAR library to the Maven Central Repository. A few steps of that process were automated, but a few of them were still manual. I mean closing and release process which had to be done by manual clicking on the Sonatype website. Fortunately, it&rsquo;s possible to automate it. In order to do that, I used gradle-nexus-staging-plugin developed by Codearte. Thanks to this plugin I could get rid of the remaining manual steps left in the release process." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/zen-of-java-library-release-process/" />
+<meta property="og:url" content="https://wittchen.io/posts/zen-of-java-library-release-process/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-06-08T10:58:10+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Zen of the Java library release process | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -138,50 +139,50 @@ https://github.com/alex-shpak/hugo-book
 <p>In my <a href="/publishing-jar-aar-to-maven-central/">previous article</a> I published information about publishing JAR/AAR library to the Maven Central Repository. A few steps of that process were automated, but a few of them were still manual. I mean closing and release process which had to be done by manual clicking on the Sonatype website. Fortunately, it&rsquo;s possible to automate it. In order to do that, I used <a href="https://github.com/Codearte/gradle-nexus-staging-plugin">gradle-nexus-staging-plugin</a> developed by <a href="https://github.com/Codearte">Codearte</a>. Thanks to this plugin I could get rid of the remaining manual steps left in the release process.</p>
 <p><strong>Please note</strong>, if you want to apply configuration described in this article to your project, you need to perform the steps described in the article about <a href="/publishing-jar-aar-to-maven-central/">Publishing JAR/AAR to the Maven Central</a>.</p>
 <p>In my project, in the top-level <a href="https://github.com/pwittchen/ReactiveNetwork/blob/RxJava2.x/build.gradle">build.gradle</a> file I had to do the following setup:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">apply plugin: <span style="color:#e6db74">&#39;io.codearte.nexus-staging&#39;</span>
-
-<span style="color:#f92672">...</span>
-
-buildscript <span style="color:#f92672">{</span>
-  repositories <span style="color:#f92672">{</span>
-    google<span style="color:#f92672">()</span>
-    jcenter<span style="color:#f92672">()</span>
-    mavenCentral<span style="color:#f92672">()</span>
-    maven <span style="color:#f92672">{</span>
-      url <span style="color:#e6db74">&#39;https://plugins.gradle.org/m2/&#39;</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
-  dependencies <span style="color:#f92672">{</span>
-    <span style="color:#f92672">...</span>
-    classpath <span style="color:#e6db74">&#34;io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.12.0&#34;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#f92672">...</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getRepositoryUsername</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">hasProperty</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;NEXUS_USERNAME&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> NEXUS_USERNAME <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getRepositoryPassword</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">hasProperty</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;NEXUS_PASSWORD&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> NEXUS_PASSWORD <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
-<span style="color:#f92672">}</span>
-
-nexusStaging <span style="color:#f92672">{</span>
-  packageGroup <span style="color:#f92672">=</span> GROUP <span style="color:#75715e">//optional if packageGroup == project.getGroup()
-</span><span style="color:#75715e"></span>  stagingProfileId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_STAGING_PROFILE&#34;</span> <span style="color:#75715e">//when not defined will be got from server using &#34;packageGroup&#34;
-</span><span style="color:#75715e"></span>  username <span style="color:#f92672">=</span> getRepositoryUsername<span style="color:#f92672">()</span>
-  password <span style="color:#f92672">=</span> getRepositoryPassword<span style="color:#f92672">()</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>In order to get <code>YOUR_STAGING_PROFILE</code>, we need to call the following command available in the plugin:</p>
-<pre><code>./gradlew getStagingProfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;io.codearte.nexus-staging&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>buildscript <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  repositories <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    google<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    jcenter<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    mavenCentral<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    maven <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      url <span style="color:#e6db74">&#39;https://plugins.gradle.org/m2/&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    classpath <span style="color:#e6db74">&#34;io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.12.0&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getRepositoryUsername</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">hasProperty</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;NEXUS_USERNAME&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> NEXUS_USERNAME <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getRepositoryPassword</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">hasProperty</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;NEXUS_PASSWORD&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> NEXUS_PASSWORD <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nexusStaging <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  packageGroup <span style="color:#f92672">=</span> GROUP <span style="color:#75715e">//optional if packageGroup == project.getGroup()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  stagingProfileId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_STAGING_PROFILE&#34;</span> <span style="color:#75715e">//when not defined will be got from server using &#34;packageGroup&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  username <span style="color:#f92672">=</span> getRepositoryUsername<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  password <span style="color:#f92672">=</span> getRepositoryPassword<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>In order to get <code>YOUR_STAGING_PROFILE</code>, we need to call the following command available in the plugin:</p>
+<pre tabindex="0"><code>./gradlew getStagingProfile
 </code></pre><p>When we are done, we can simply call:</p>
-<pre><code>./gradlew uploadArchives closeAndReleaseRepository
+<pre tabindex="0"><code>./gradlew uploadArchives closeAndReleaseRepository
 </code></pre><p>These two gradle tasks will upload our artifact, close and release it, so we won&rsquo;t have to perform any manual steps in that process. After that, we just need to wait for the Maven sync as usual.</p>
 <p>My complete <code>release.sh</code> script looks like that:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
-</span><span style="color:#75715e"></span>./gradlew clean build test check uploadArchives closeAndReleaseRepository
-</code></pre></div><p>Before upload and release, I also clean everything, build an artifact, run tests and static code analysis. It&rsquo;s not required, but it&rsquo;s good to do that.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>./gradlew clean build test check uploadArchives closeAndReleaseRepository
+</span></span></code></pre></div><p>Before upload and release, I also clean everything, build an artifact, run tests and static code analysis. It&rsquo;s not required, but it&rsquo;s good to do that.</p>
 <p>If you are interested in complete project configuration, you can have a look at the <a href="https://github.com/pwittchen/ReactiveNetwork">https://github.com/pwittchen/ReactiveNetwork</a> repository. It&rsquo;s an Android library, but the same configuration can be applied to any JVM project built with Gradle. I have performed library release with this plugin a few times and it seems to work well.</p>
 </article>
  
@@ -212,8 +213,7 @@ nexusStaging <span style="color:#f92672">{</span>
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

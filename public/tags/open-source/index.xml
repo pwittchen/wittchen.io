@@ -6,11 +6,7 @@
     <description>Recent content in open-source on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jun 2018 23:39:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Jun 2018 23:39:18 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Releasing ReactiveNetwork v. 1.0.0 (paying the technical debt)</title>
       <link>https://wittchen.io/posts/releasing-reactive-network-1/</link>
@@ -41,7 +37,7 @@ Piotr Wittchen tells us about how we can we keep the track of network &amp;#x1f3
       
       <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
       <description>I&amp;rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
-ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.</description>
+ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io())  .observeOn(AndroidSchedulers.mainThread())  .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.</description>
     </item>
     
     <item>

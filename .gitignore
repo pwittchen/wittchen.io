@@ -6,3 +6,4 @@ node_modules/
 .deploy*/
 config.json
 package-lock.json
+.hugo_build.lock

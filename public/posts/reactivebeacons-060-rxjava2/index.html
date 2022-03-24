@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="ReactiveBeacons - release of v. 0.6.0 with support for RxJava2" />
 <meta property="og:description" content="Thanks to @BugsBunnyBR I released new version of ReactiveBeacons library with the RxJava2.x support. It&rsquo;s an Android library scanning BLE (Bluetooth Low Energy) beacons nearby with RxJava Observables. I also kept backward compatibility with RxJava1.x. Different versions of the libraries are located on the separate git branches. It&rsquo;s a similar approach to original RxJava project. I have separate builds on Travis CI, separate artifacts and JavaDocs. Such approach generates more overhead, but in such case, RxJava1." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/reactivebeacons-060-rxjava2/" />
+<meta property="og:url" content="https://wittchen.io/posts/reactivebeacons-060-rxjava2/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-04-03T18:20:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>ReactiveBeacons - release of v. 0.6.0 with support for RxJava2 | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -147,14 +148,14 @@ https://github.com/alex-shpak/hugo-book
 <li>created separate JavaDoc for RxJava1.x and RxJava2.x</li>
 </ul>
 <p>If you want to add RxJava2.x version to your Android project, add the following dependency to <code>build.gradle</code> file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
-  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivebeacons-rx2:0.6.0&#39;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>For RxJava1.x you can use old artifact id:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
-  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivebeacons:0.6.0&#39;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>This library was one of the first experiments with my migrations to RxJava2.x. I have plans to migrate rest of my libraries soon. Thanks to the awesome open-source community on GitHub, this process goes faster and I don&rsquo;t have to do everything by myself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivebeacons-rx2:0.6.0&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>For RxJava1.x you can use old artifact id:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivebeacons:0.6.0&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>This library was one of the first experiments with my migrations to RxJava2.x. I have plans to migrate rest of my libraries soon. Thanks to the awesome open-source community on GitHub, this process goes faster and I don&rsquo;t have to do everything by myself.</p>
 </article>
  
       
@@ -184,8 +185,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

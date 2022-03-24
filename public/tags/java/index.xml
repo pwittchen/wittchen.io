@@ -6,11 +6,7 @@
     <description>Recent content in java on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Aug 2019 18:27:30 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 05 Aug 2019 18:27:30 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modifying mehtod&#39;s input parameters</title>
       <link>https://wittchen.io/posts/modifying-methods-input-parameters/</link>
@@ -77,8 +73,7 @@ They&amp;rsquo;re using so called output argument. In the examples above, we&amp
       <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
       <description>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
 In my build.gradle file I configured JaCoCo as follows:
-plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled = true html.enabled = true } } Now, I could type:
-./gradlew test jacocoTestReport Report was generated in build/reports/jacoco/ directory.</description>
+plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.enabled = true  html.enabled = true  } } Now, I could type:</description>
     </item>
     
     <item>
@@ -89,7 +84,7 @@ plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled
       <guid>https://wittchen.io/posts/testing-exceptions/</guid>
       <description>In Java, we can test exceptions via unit tests in a few different ways. In this article, I&amp;rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&amp;rsquo;m using JUnit for unit tests and Truth for assertions.
-@Test public void shouldTestExceptionWithTryCatch() { Exception caughtException = null; try { throw new RuntimeExcetpion(&amp;#34;message&amp;#34;); } catch (final Exception e) { caughtException = e; } assertThat(caughtException).</description>
+@Test public void shouldTestExceptionWithTryCatch() {  Exception caughtException = null;   try {  throw new RuntimeExcetpion(&amp;#34;message&amp;#34;);  } catch (final Exception e) {  caughtException = e;  }   assertThat(caughtException).</description>
     </item>
     
     <item>
@@ -128,7 +123,7 @@ Build System #  I used Gradle to build the project.</description>
       <guid>https://wittchen.io/posts/introducing-reactive-bus/</guid>
       <description>Today, I&amp;rsquo;ve released my another tiny project. It&amp;rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&amp;rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.
 You can use it as follows:
-Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() { @Override public void accept(Event event) { // handle event here  } }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
+Bus bus = ReactiveBus.create();  Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() {  @Override public void accept(Event event) {  // handle event here  }  }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
     </item>
     
     <item>
@@ -200,7 +195,7 @@ Code snippets shown during this presentation are available at https://github.com
       <guid>https://wittchen.io/posts/integrating-nullaway-with-an-android-project/</guid>
       <description>Recently, with the remote help of guys from Uber in California, I integrated NullAway and ErrorProne with the one of my open-source Android projects.
 What is NullAway? #  Basically, it&amp;rsquo;s a tool to help eliminate NullPointerExceptions (NPEs) in your Java code. It detects situations where NPE could occur at the compile time. Let&amp;rsquo;s have a look at the following code:
-static void log(Object x) { System.out.println(x.toString()); } static void foo() { log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
+static void log(Object x) {  System.out.println(x.toString()); } static void foo() {  log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
     </item>
     
     <item>
@@ -210,7 +205,7 @@ static void log(Object x) { System.out.println(x.toString()); } static void foo(
       
       <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
       <description>I&amp;rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
-ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.</description>
+ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io())  .observeOn(AndroidSchedulers.mainThread())  .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.</description>
     </item>
     
     <item>
@@ -444,7 +439,7 @@ In this example, we will access contact list.</description>
       
       <guid>https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/</guid>
       <description>We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
-package com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
+package com.github.volley.example.toolbox;  import com.android.volley.toolbox.ImageLoader.ImageCache;  import android.graphics.Bitmap; import android.support.v4.util.LruCache;  public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache {  public BitmapLruCache(int maxSize) {  super(maxSize);  }  // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
     </item>
     
     <item>

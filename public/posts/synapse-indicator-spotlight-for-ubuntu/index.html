@@ -10,15 +10,16 @@ Synapse #  Synapse is searching really fast and we don&rsquo;t have to wait a fe
 <meta property="og:description" content="Introduction #  If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.
 Synapse #  Synapse is searching really fast and we don&rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/synapse-indicator-spotlight-for-ubuntu/" />
+<meta property="og:url" content="https://wittchen.io/posts/synapse-indicator-spotlight-for-ubuntu/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-12-25T17:06:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Synapse Indicator - Spotlight for Ubuntu | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -78,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -161,7 +162,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#synapse">#</a>
 </h2>
 <p>Synapse is searching really fast and we don&rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options. <img src="/posts/2014/synapse-indicator-spotlight-for-ubuntu/synapse.jpg" alt="synapse" /> Synapse can be installed with the following commands:</p>
-<pre><code>sudo add-apt-repository ppa:synapse-core/ppa
+<pre tabindex="0"><code>sudo add-apt-repository ppa:synapse-core/ppa
 sudo apt-get update
 sudo apt-get install synapse
 </code></pre><p>After installing it, in Synapse Preferences we can set appropriate shortcut for opening Synapse.</p>
@@ -170,7 +171,7 @@ sudo apt-get install synapse
   <a class="anchor" href="#synapse-indicator">#</a>
 </h2>
 <p>If we want to have &ldquo;Mac OS-like&rdquo; experience, we can use Synapse Indicator which is similar to Spotlight from OS provided by Apple. <img src="/posts/2014/synapse-indicator-spotlight-for-ubuntu/spotlightsynapse.jpg" alt="spotlightsynapse" /> Synapse Indicator (AKA indicator-synapse) can be installed with the following commands:</p>
-<pre><code>sudo add-apt-repository ppa:noobslab/apps
+<pre tabindex="0"><code>sudo add-apt-repository ppa:noobslab/apps
 sudo apt-get update
 sudo apt-get install indicator-synapse
 </code></pre><p>Drawback of Synapse Indicator is the fact that it does not have shortcut for search. We can set it by doing some &ldquo;hack&rdquo; described at <a href="http://nerdanswer.com/answer.php?q=395661">Nerd Answer</a> page.</p>
@@ -195,7 +196,7 @@ sudo apt-get install indicator-synapse
   <a class="anchor" href="#step-3-add-keyboard-shortcut-for-indicator">#</a>
 </h3>
 <p>Go to <code>System Settings -&gt; Keyboard -&gt; Shortcuts -&gt; Custom Shortcuts</code>. Click add and for the command type (replace x and y with the ones from the previous command):</p>
-<pre><code>xdotool mousemove &lt;x&gt; &lt;y&gt; click 1 mousemove restore
+<pre tabindex="0"><code>xdotool mousemove &lt;x&gt; &lt;y&gt; click 1 mousemove restore
 </code></pre><p>Then add the shortcut you want. It&rsquo;s not pretty and elegant way, but I don&rsquo;t know any other solution. If you know, how to do it better, leave a comment, below this article.</p>
 <h3 id="additional-note">
   Additional note
@@ -231,8 +232,7 @@ sudo apt-get install indicator-synapse
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Arch Linux - installation notes" />
 <meta property="og:description" content="Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/arch-install-notes/" />
+<meta property="og:url" content="https://wittchen.io/posts/arch-install-notes/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-07-24T23:59:20+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Arch Linux - installation notes | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -196,8 +197,8 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#creating-bootable-usb">#</a>
 </h3>
 <p>In order to create bootable USB, we need to download <code>*.iso</code> file with Arch from <a href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a>. We also need to have <code>dd</code> (disk dump) program installed. We need to invoke <code>lsblk</code> before inserting USB drive to see our drives and invoke <code>lsblk</code> again after inserting the USB drive to see, which one it is. We can also have a look at disk sizes, what helps in recognizing our disk. Next, we can call <code>dd</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/path/to/arch.iso of<span style="color:#f92672">=</span>/dev/sdb status<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;progress&#34;</span>
-</code></pre></div><p><code>status=&quot;progress&quot;</code> parameter will allow us to monitor progress of the whole process.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/path/to/arch.iso of<span style="color:#f92672">=</span>/dev/sdb status<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;progress&#34;</span>
+</span></span></code></pre></div><p><code>status=&quot;progress&quot;</code> parameter will allow us to monitor progress of the whole process.</p>
 <p><strong>Note</strong>: please, be sure that you are writing on the correct disk! In the example above, we&rsquo;re writing to <code>/dev/sdb</code>. It may be the same in your case, but it may be different too! It&rsquo;s just an example!</p>
 <h3 id="bios-configuration">
   BIOS configuration
@@ -213,14 +214,14 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#uefi-check">#</a>
 </h3>
 <p>Once we have booted installer from USB stick, we need to perform <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface">UEFI</a> check as follows.</p>
-<pre><code>ls /sys/firmware/efivars
+<pre tabindex="0"><code>ls /sys/firmware/efivars
 </code></pre><p>If it outputs an error or nothing, that&rsquo;s ok and we can proceed with installation. If you see bunch of files, then installation procedure may be different or may require additional steps.</p>
 <h3 id="internet-check">
   Internet check
   <a class="anchor" href="#internet-check">#</a>
 </h3>
 <p>We need to check an internet connection because we will need it to download packages. We can do it just by simple ping:</p>
-<pre><code>ping wittchen.io
+<pre tabindex="0"><code>ping wittchen.io
 </code></pre><p>When we see response, that&rsquo;s ok.</p>
 <p>It&rsquo;s worth to mention, that it&rsquo;s good to have ethernet cable connection for the installation process. Optionally, you can use <code>wifi-menu</code> to connect wirelessly, but it&rsquo;s not recommended for the installation.</p>
 <h2 id="system-time-and-date-initial-setup">
@@ -228,28 +229,28 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#system-time-and-date-initial-setup">#</a>
 </h2>
 <p>To perform system time and date initial setup, we need to run the following command:</p>
-<pre><code>timedatectl set-ntp true
+<pre tabindex="0"><code>timedatectl set-ntp true
 </code></pre><h2 id="partitions">
   Partitions
   <a class="anchor" href="#partitions">#</a>
 </h2>
 <p>Let&rsquo;s see what partitions do we have on our system. We can view them with <code>lsblk</code> program.</p>
-<pre><code>lsblk
+<pre tabindex="0"><code>lsblk
 </code></pre><p>Before we start doing anything, we should remove existing partitions. We can do it with <code>fdisk</code> tool by running it with our main disk as a parameter. Usually it will be <code>/dev/sda</code>, but in my case it was <code>/dev/nvme0n1</code>. We can get this name from <code>lsblk</code> output.</p>
-<pre><code>fdisk /dev/nvme0n1
+<pre tabindex="0"><code>fdisk /dev/nvme0n1
 </code></pre><h3 id="removing-existing-partitions">
   Removing existing partitions
   <a class="anchor" href="#removing-existing-partitions">#</a>
 </h3>
 <p>Next, we can choose different options. In our case, we need to choose <code>:d</code> to delete partitions. We need to call this option for each partition.</p>
 <p>Sometimes, we may have problems with installation or removing old partitions. In that case, we can use alternative method of cleaning disk:</p>
-<pre><code>sgdisk --zap-all /dev/nvme0n1p1
+<pre tabindex="0"><code>sgdisk --zap-all /dev/nvme0n1p1
 </code></pre><h3 id="creating-new-partitions">
   Creating new partitions
   <a class="anchor" href="#creating-new-partitions">#</a>
 </h3>
 <p>Now, we have to prepare our disk for the future system installation. Our goal is to have the following configuration of the partitions</p>
-<pre><code>nvme0n1     259:0    0   477G  0 disk
+<pre tabindex="0"><code>nvme0n1     259:0    0   477G  0 disk
 ├─nvme0n1p1 259:1    0   200M  0 part /boot
 ├─nvme0n1p2 259:2    0    24G  0 part [SWAP]
 ├─nvme0n1p3 259:3    0    25G  0 part /
@@ -263,33 +264,33 @@ Let&rsquo;s create boot partition. Type <code>:c</code> for create. We leave fir
 </h3>
 <p>Next, we can to create file systems on our partitions. In general, we can use <code>ext4</code>, which is Linux file system. Some devices may have boot problems or may have specific BIOS setup. In that case, it&rsquo;s recommended to use <code>FAT32</code> file system. Let&rsquo;s use <code>mkfs</code> program to create file systems.</p>
 <p>We will create <code>FAT32</code> file system on our boot partition:</p>
-<pre><code>mkfs.vfat -F32 /dev/nvme0n1p1
+<pre tabindex="0"><code>mkfs.vfat -F32 /dev/nvme0n1p1
 </code></pre><p>Then, we will create <code>ext4</code> file systems on root and home partitions:</p>
-<pre><code>mkfs.ext4 /dev/nvme0n1p3
+<pre tabindex="0"><code>mkfs.ext4 /dev/nvme0n1p3
 mkfs.ext4 /dev/nvme0n1p4
 </code></pre><h3 id="creating-swap">
   Creating SWAP
   <a class="anchor" href="#creating-swap">#</a>
 </h3>
 <p>Now, we can create SWAP on the <code>nvme0n1p2</code> partition:</p>
-<pre><code>mkswap /dev/nvme0n1p2
+<pre tabindex="0"><code>mkswap /dev/nvme0n1p2
 </code></pre><p>Next, we can turn the SWAP on:</p>
-<pre><code>swapon /dev/nvme0n1p2
+<pre tabindex="0"><code>swapon /dev/nvme0n1p2
 </code></pre><h3 id="mounting-partitions">
   Mounting partitions
   <a class="anchor" href="#mounting-partitions">#</a>
 </h3>
 <p>Right now, we are ready to mount our partitions.</p>
 <p>We can mount the root partition as follows:</p>
-<pre><code>mount /dev/nvme0n1p3 /mnt
+<pre tabindex="0"><code>mount /dev/nvme0n1p3 /mnt
 </code></pre><p>When we list this partition:</p>
-<pre><code>ls /mnt
+<pre tabindex="0"><code>ls /mnt
 </code></pre><p>we should see <code>lost+found</code> file, which is a generic system file.</p>
 <p>Now on the root partition we can create home and boot directories.</p>
-<pre><code>mkdir /mnt/home
+<pre tabindex="0"><code>mkdir /mnt/home
 mkdir /mnt/boot
 </code></pre><p>and mount our previously created partitions into these dirs:</p>
-<pre><code>mount /dev/nvme0n1p1 /mnt/boot
+<pre tabindex="0"><code>mount /dev/nvme0n1p1 /mnt/boot
 mount /dev/nvme0n1p4 /mnt/home
 </code></pre><p>and then we can type <code>lsblk</code> to see that everything is created properly.</p>
 <h2 id="arch-installation">
@@ -298,18 +299,18 @@ mount /dev/nvme0n1p4 /mnt/home
 </h2>
 <p>Now, there is an easy part. We have everything prepared and we&rsquo;re ready to install the operating system.</p>
 <p>Arch can be installed with literally <strong>one command</strong>:</p>
-<pre><code>pacstrap /mnt base
+<pre tabindex="0"><code>pacstrap /mnt base
 </code></pre><p>It&rsquo;s recommended to install <code>base-devel</code> package, which contains additional software, which may be required to run everything. We can also install <code>vim</code>, to have an editor to edit our configs and other stuff. The final command can look like this:</p>
-<pre><code>pacstrap /mnt base base-devel vim
+<pre tabindex="0"><code>pacstrap /mnt base base-devel vim
 </code></pre><h2 id="creating-fstab">
   Creating fstab
   <a class="anchor" href="#creating-fstab">#</a>
 </h2>
 <p>We should also create <code>fstab</code> file, which contains information about system drives and mounted partitions and file systems.
 We can do it as follows:</p>
-<pre><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+<pre tabindex="0"><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
 </code></pre><p>My <code>/etc/fstab</code> file looks like that:</p>
-<pre><code># Static information about the filesystems.
+<pre tabindex="0"><code># Static information about the filesystems.
 # See fstab(5) for details.
 
 # &lt;file system&gt; &lt;dir&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt;
@@ -333,7 +334,7 @@ UUID=2788826f-9abf-44c7-b2d5-15323be8ba4enone      swap      defaults  0 0
   <a class="anchor" href="#changing-root">#</a>
 </h3>
 <p>Now, we can change the root:</p>
-<pre><code>arch-chroot /mnt
+<pre tabindex="0"><code>arch-chroot /mnt
 </code></pre><p>After typing command above, we jumped from the bootable USB drive into the operating system installed on the disk of our computer.</p>
 <p>Now, we&rsquo;re able to perform operations inside the system.</p>
 <h3 id="installing-network-manager">
@@ -341,48 +342,48 @@ UUID=2788826f-9abf-44c7-b2d5-15323be8ba4enone      swap      defaults  0 0
   <a class="anchor" href="#installing-network-manager">#</a>
 </h3>
 <p>First of all, we should install network manger via <code>pacman</code> to have network and Internet connectivity:</p>
-<pre><code>pacman -S networkmanager
+<pre tabindex="0"><code>pacman -S networkmanager
 </code></pre><p>to enable network manager, we can type:</p>
-<pre><code>systemctl enable NetworkManager
+<pre tabindex="0"><code>systemctl enable NetworkManager
 </code></pre><h3 id="installing-grub">
   Installing GRUB
   <a class="anchor" href="#installing-grub">#</a>
 </h3>
 <p>We also have to install GRUB, which will be responsible for booting our operating system:</p>
-<pre><code>pacman -S grub
+<pre tabindex="0"><code>pacman -S grub
 </code></pre><p>Next, we have to configure it:</p>
-<pre><code>grub-install --target=i386-pc /dev/nvme0n1
+<pre tabindex="0"><code>grub-install --target=i386-pc /dev/nvme0n1
 </code></pre><p>Please note, we provided path to the disk (drive) - not the partition.</p>
 <p>Next, we should create <code>/boot/grub/grub.cfg</code> configuration file:</p>
-<pre><code>grub-mkconfig -o /boot/grub/grub.cfg
+<pre tabindex="0"><code>grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre><h3 id="setting-password">
   Setting password
   <a class="anchor" href="#setting-password">#</a>
 </h3>
 <p>to set the password, we can just type:</p>
-<pre><code>passwd
+<pre tabindex="0"><code>passwd
 </code></pre><h3 id="setting-locale">
   Setting locale
   <a class="anchor" href="#setting-locale">#</a>
 </h3>
 <p>To set locale, we need to edit <code>/etc/locale.gen</code> (e.g. via vim) and uncomment desired locales (one or more).</p>
 <p>In my case I uncommented:</p>
-<pre><code>pl_PL.UTF-8
+<pre tabindex="0"><code>pl_PL.UTF-8
 pl_PL ISO-8859-2
 en_US.UTF-8
 en_US ISO-88591
 </code></pre><p>becasue I wanted to use both Polish and English language.</p>
 <p>Now, we can type:</p>
-<pre><code>locale-gen
+<pre tabindex="0"><code>locale-gen
 </code></pre><p>To set default locale, we have to edit <code>/etc/locale.conf</code> and set <code>LANG</code> variable as follows:</p>
-<pre><code>LANG=en_US.UTF-8
+<pre tabindex="0"><code>LANG=en_US.UTF-8
 </code></pre><p>Of course, we can set <code>pl_PL.UTF-8</code> too or any other language we want to use as default system language. I personally use English as a OS language, bacause it&rsquo;s easier to diagnose possible issues, when you have English messages in terminal. Nevertheles, I use Polish as an input language, to be able to use Polish letters, european metric system, Polish currency, etc. It should be adjusted to our needs.</p>
 <h3 id="setting-timezone">
   Setting timezone
   <a class="anchor" href="#setting-timezone">#</a>
 </h3>
 <p>You can browse time zones in <code>/usr/share/zoneinfo</code> directory. To set our time zone, we need to create a symbolic lin between desired time zone and <code>/etc/localtime</code> file. Once we change our time zone, we can create a symbolic link again.</p>
-<pre><code>ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+<pre tabindex="0"><code>ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 </code></pre><p>My time zone is Warsaw in Europe, but you can set your own time zone here.</p>
 <h3 id="setting-hostname">
   Setting hostname
@@ -399,13 +400,13 @@ en_US ISO-88591
   <a class="anchor" href="#unmounting-file-systems">#</a>
 </h3>
 <p>Before we reboot our computer, we should unmount partitions:</p>
-<pre><code>umount -R /mnt
+<pre tabindex="0"><code>umount -R /mnt
 </code></pre><h3 id="rebooting">
   Rebooting
   <a class="anchor" href="#rebooting">#</a>
 </h3>
 <p>To reboot computer, we can just type:</p>
-<pre><code>reboot
+<pre tabindex="0"><code>reboot
 </code></pre><h2 id="whats-next">
   What&rsquo;s next?
   <a class="anchor" href="#whats-next">#</a>
@@ -445,8 +446,7 @@ en_US ISO-88591
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

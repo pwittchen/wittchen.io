@@ -10,15 +10,16 @@ Build System #  I used Gradle to build the project.">
 <meta property="og:description" content="Introduction #  Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &ldquo;Hello World&rdquo; app. Here are my observations.
 Build System #  I used Gradle to build the project." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/writing-my-first-library-in-kotlin/" />
+<meta property="og:url" content="https://wittchen.io/posts/writing-my-first-library-in-kotlin/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-08-19T10:24:19+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Writing my first library in Kotlin | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -78,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -161,82 +162,82 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#build-system">#</a>
 </h2>
 <p>I used <a href="https://gradle.org/">Gradle</a> to build the project. It&rsquo;s popular for JVM and Android apps nowadays and works fine with Kotlin. I just needed to add Kotlin Gradle Plugin and Kotlin STD Lib to the <code>/library/build.gradle</code> file to the <code>classpath</code> dependencies in <code>buildscript</code> section. I also needed to define <code>sourceSets</code> to allow IntelliJ and Android Studio recognize directories with sources.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">android <span style="color:#f92672">{</span>
-  sourceSets <span style="color:#f92672">{</span>
-    androidTest<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">.</span><span style="color:#a6e22e">srcDirs</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;src/androidTest/kotlin&#34;</span>
-    main<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">.</span><span style="color:#a6e22e">srcDirs</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;src/main/kotlin&#34;</span>
-    test<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">.</span><span style="color:#a6e22e">srcDirs</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;src/test/kotlin&#34;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>To keep the project clean, I defined all dependencies and version numbers in top-level <code>build.gradle</code> file, so I could reuse them in all modules.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">ext <span style="color:#f92672">{</span>
-  minSdkVersion <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>
-  compileSdkVersion <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>
-  buildToolsVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;28&#39;</span>
-  gradleVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;4.4.1&#39;</span>
-  kotlinVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1.2.60&#39;</span>
-  detektVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1.0.0.RC6-1&#39;</span>
-<span style="color:#f92672">}</span>
-
-ext<span style="color:#f92672">.</span><span style="color:#a6e22e">deps</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span> rxjava2              <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;io.reactivex.rxjava2:rxjava:2.2.0&#39;</span><span style="color:#f92672">,</span>
-             rxandroid2           <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;io.reactivex.rxjava2:rxandroid:2.0.2&#39;</span><span style="color:#f92672">,</span>
-             rxkotlin2            <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;io.reactivex.rxjava2:rxkotlin:2.3.0&#39;</span><span style="color:#f92672">,</span>
-             supportannotations   <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.android.support:support-annotations:28.0.0-rc01&#39;</span><span style="color:#f92672">,</span>
-             appcompatv7          <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.android.support:appcompat-v7:28.0.0-rc01&#39;</span><span style="color:#f92672">,</span>
-             constraintlayout     <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.android.support.constraint:constraint-layout:1.1.2&#39;</span><span style="color:#f92672">,</span>
-             junit                <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;junit:junit:4.12&#39;</span><span style="color:#f92672">,</span>
-             truth                <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.google.truth:truth:0.42&#39;</span><span style="color:#f92672">,</span>
-             robolectric          <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;org.robolectric:robolectric:4.0-alpha-3&#39;</span><span style="color:#f92672">,</span>
-             mockitocore          <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;org.mockito:mockito-core:2.21.0&#39;</span><span style="color:#f92672">,</span>
-             mockitokotlin        <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1&#39;</span><span style="color:#f92672">,</span>
-             dokka                <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;org.jetbrains.dokka:dokka-gradle-plugin:0.9.17&#39;</span><span style="color:#f92672">,</span>
-             detekt               <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;gradle.plugin.io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion&#34;</span><span style="color:#f92672">,</span>
-             ktlintgradle         <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:4.1.0&#34;</span><span style="color:#f92672">,</span>
-             kotlinstdlib         <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion&#34;</span><span style="color:#f92672">,</span>
-             kotlingradleplugin   <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion&#34;</span> <span style="color:#f92672">]</span>
-</code></pre></div><h2 id="static-code-analysis">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>android <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  sourceSets <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    androidTest<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">.</span><span style="color:#a6e22e">srcDirs</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;src/androidTest/kotlin&#34;</span>
+</span></span><span style="display:flex;"><span>    main<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">.</span><span style="color:#a6e22e">srcDirs</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;src/main/kotlin&#34;</span>
+</span></span><span style="display:flex;"><span>    test<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">.</span><span style="color:#a6e22e">srcDirs</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;src/test/kotlin&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>To keep the project clean, I defined all dependencies and version numbers in top-level <code>build.gradle</code> file, so I could reuse them in all modules.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>ext <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  minSdkVersion <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>
+</span></span><span style="display:flex;"><span>  compileSdkVersion <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>
+</span></span><span style="display:flex;"><span>  buildToolsVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;28&#39;</span>
+</span></span><span style="display:flex;"><span>  gradleVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;4.4.1&#39;</span>
+</span></span><span style="display:flex;"><span>  kotlinVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1.2.60&#39;</span>
+</span></span><span style="display:flex;"><span>  detektVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1.0.0.RC6-1&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ext<span style="color:#f92672">.</span><span style="color:#a6e22e">deps</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span> rxjava2              <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;io.reactivex.rxjava2:rxjava:2.2.0&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             rxandroid2           <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;io.reactivex.rxjava2:rxandroid:2.0.2&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             rxkotlin2            <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;io.reactivex.rxjava2:rxkotlin:2.3.0&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             supportannotations   <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.android.support:support-annotations:28.0.0-rc01&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             appcompatv7          <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.android.support:appcompat-v7:28.0.0-rc01&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             constraintlayout     <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.android.support.constraint:constraint-layout:1.1.2&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             junit                <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;junit:junit:4.12&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             truth                <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.google.truth:truth:0.42&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             robolectric          <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;org.robolectric:robolectric:4.0-alpha-3&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             mockitocore          <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;org.mockito:mockito-core:2.21.0&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             mockitokotlin        <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             dokka                <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;org.jetbrains.dokka:dokka-gradle-plugin:0.9.17&#39;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             detekt               <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;gradle.plugin.io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             ktlintgradle         <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:4.1.0&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             kotlinstdlib         <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>             kotlingradleplugin   <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion&#34;</span> <span style="color:#f92672">]</span>
+</span></span></code></pre></div><h2 id="static-code-analysis">
   Static Code Analysis
   <a class="anchor" href="#static-code-analysis">#</a>
 </h2>
 <p>For static code analysis, I used CheckStyle, FindBugs, PMD and Android Lint as usual. Moreover, I used <a href="https://github.com/shyiko/ktlint">ktlint</a> via <a href="https://github.com/JLLeitschuh/ktlint-gradle">ktlint-gradle plugin</a> and <a href="https://github.com/arturbosch/detekt">detekt</a>. I&rsquo;ve added these dependencies to <code>classpath</code> in <code>buildscript</code> section in <code>library/build.gradle</code> file as previosuly</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">buildscript <span style="color:#f92672">{</span>
-  repositories <span style="color:#f92672">{</span>
-    mavenCentral<span style="color:#f92672">()</span>
-    jcenter<span style="color:#f92672">()</span>
-    google<span style="color:#f92672">()</span>
-    maven <span style="color:#f92672">{</span>
-      url <span style="color:#e6db74">&#39;https://plugins.gradle.org/m2/&#39;</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
-
-  dependencies <span style="color:#f92672">{</span>
-    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">kotlingradleplugin</span>
-    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">detekt</span>
-    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">ktlintgradle</span>
-    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">dokka</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>I also applied minimal configuration for these plugins.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">detekt <span style="color:#f92672">{</span>
-  version <span style="color:#f92672">=</span> rootProject<span style="color:#f92672">.</span><span style="color:#a6e22e">ext</span><span style="color:#f92672">.</span><span style="color:#a6e22e">detektVersion</span>
-  profile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$projectDir&#34;</span>
-    config <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$projectDir/detekt.yml&#34;</span>
-    filters <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.*test.*,.*/resources/.*,.*/tmp/.*&#34;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-
-ktlint <span style="color:#f92672">{</span>
-  verbose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-  reporters <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;CHECKSTYLE&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;PLAIN&#34;</span><span style="color:#f92672">]</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>I also tried to generate <strong>code coverage report</strong>, to be able to verify what amount of code is covered by unit tests, but unfortunately Jacoco wasn&rsquo;t able to analyze Kotlin code. I saw on the web that people struggled with the same problem and a few of them could have solved that issue. Maybe I missed something and I could update it in the future.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>buildscript <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  repositories <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    mavenCentral<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    jcenter<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    google<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    maven <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      url <span style="color:#e6db74">&#39;https://plugins.gradle.org/m2/&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">kotlingradleplugin</span>
+</span></span><span style="display:flex;"><span>    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">detekt</span>
+</span></span><span style="display:flex;"><span>    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">ktlintgradle</span>
+</span></span><span style="display:flex;"><span>    classpath deps<span style="color:#f92672">.</span><span style="color:#a6e22e">dokka</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>I also applied minimal configuration for these plugins.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>detekt <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  version <span style="color:#f92672">=</span> rootProject<span style="color:#f92672">.</span><span style="color:#a6e22e">ext</span><span style="color:#f92672">.</span><span style="color:#a6e22e">detektVersion</span>
+</span></span><span style="display:flex;"><span>  profile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$projectDir&#34;</span>
+</span></span><span style="display:flex;"><span>    config <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$projectDir/detekt.yml&#34;</span>
+</span></span><span style="display:flex;"><span>    filters <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.*test.*,.*/resources/.*,.*/tmp/.*&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ktlint <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  verbose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  reporters <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;CHECKSTYLE&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;PLAIN&#34;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>I also tried to generate <strong>code coverage report</strong>, to be able to verify what amount of code is covered by unit tests, but unfortunately Jacoco wasn&rsquo;t able to analyze Kotlin code. I saw on the web that people struggled with the same problem and a few of them could have solved that issue. Maybe I missed something and I could update it in the future.</p>
 <h2 id="continuous-integration">
   Continuous Integration
   <a class="anchor" href="#continuous-integration">#</a>
 </h2>
 <p>In my open-source projects, I use <a href="https://travis-ci.org/">Travis</a> for CI. Everything can be configured in <code>.travis.yml</code> file and setup looks exactly the same as for Android libraries written in Java.</p>
-<pre><code>language: android
+<pre tabindex="0"><code>language: android
 
 android:
   components:
@@ -249,14 +250,14 @@ android:
   licenses:
     - android-sdk-license-5be876d5
     - android-sdk-license-c81a61d9
-    - 'android-sdk-preview-license-.+'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
+    - &#39;android-sdk-preview-license-.+&#39;
+    - &#39;android-sdk-license-.+&#39;
+    - &#39;google-gdk-license-.+&#39;
 
 jdk: oraclejdk8
 
 before_install:
-  - yes | sdkmanager &quot;platforms;android-27&quot;
+  - yes | sdkmanager &#34;platforms;android-27&#34;
 
 install:
   - true
@@ -268,11 +269,11 @@ cache:
   directories:
 - $HOME/.m2
 </code></pre><p>I suppose that in case of writing pure Kotlin (non-Android), library configuration would be the same as in regular Java project because everything is built via Gradle. Configuration, which works fine for one of my pure Java libraries looks like that:</p>
-<pre><code>language: java
+<pre tabindex="0"><code>language: java
 
 install:
   # Check install section: http://docs.travis-ci.com/user/build-configuration/#install
-  # If you'd like to skip the install stage entirely, set it to true and nothing will be run.
+  # If you&#39;d like to skip the install stage entirely, set it to true and nothing will be run.
   - true
 
 after_success:
@@ -287,108 +288,108 @@ script:
   <a class="anchor" href="#kotlin-vs-java">#</a>
 </h2>
 <p>I&rsquo;ve decided to use Kotlin instead of Java to learn a bit more about this language and try something new. Google promotes this language during Google I/O events and recommends to use it for Android development. Moreover, it&rsquo;s regular JVM language, so we can use it anywhere we want - on Android (mobile), on servers and even on desktop apps. I haven&rsquo;t discovered all the features of this language during writing this tiny project, but I have a few observations. Writing code is a bit strange because I got used to programming in Java. In Kotlin, we define the function or variable name first, then we put colon and we define the type next. It&rsquo;s opposite to Java, where types are defined first.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createBroadcastReceiver</span>(emitter: FlowableEmitter&lt;BatteryState&gt;): BroadcastReceiver {
-  ...
-  <span style="color:#66d9ef">val</span> status: Int = intent.getIntExtra(BatteryManager.EXTRA_STATUS, UNKNOWN)
-  ...
-}
-</code></pre></div><p>Moreover, there&rsquo;s type inference in Kotlin and sometimes compiler is able to guess our type, so we don&rsquo;t have to provide it. See the following example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> emitter = mock(FlowableEmitter<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)
-</code></pre></div><p>In addition, we don&rsquo;t have to put semicolon in the end of the statement as you can see on the code snippets above, what is really convenient. The thing, I really like about Kotlin is <strong>null safety</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">if</span> (intent != <span style="color:#66d9ef">null</span>) {
-  <span style="color:#66d9ef">val</span> status: Int = intent.getIntExtra(BatteryManager.EXTRA_STATUS, UNKNOWN)
-}
-</code></pre></div><p>If we don&rsquo;t do that, code won&rsquo;t compile. We can avoid such null-checks, by using <code>!!.</code> operator like here:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> status: Int = intent<span style="color:#f92672">!!</span>.getIntExtra(BatteryManager.EXTRA_STATUS, UNKNOWN)
-</code></pre></div><p>but by looking at the code, we can see that there are two exclamation marks, so clearly something must be wrong here and we should think about improvement. Moreover, when NPE occurs, it&rsquo;ll be easier to find.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createBroadcastReceiver</span>(emitter: FlowableEmitter&lt;BatteryState&gt;): BroadcastReceiver {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> status: Int = intent.getIntExtra(BatteryManager.EXTRA_STATUS, UNKNOWN)
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Moreover, there&rsquo;s type inference in Kotlin and sometimes compiler is able to guess our type, so we don&rsquo;t have to provide it. See the following example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> emitter = mock(FlowableEmitter<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)
+</span></span></code></pre></div><p>In addition, we don&rsquo;t have to put semicolon in the end of the statement as you can see on the code snippets above, what is really convenient. The thing, I really like about Kotlin is <strong>null safety</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (intent <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> status: Int = intent.getIntExtra(BatteryManager.EXTRA_STATUS, UNKNOWN)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we don&rsquo;t do that, code won&rsquo;t compile. We can avoid such null-checks, by using <code>!!.</code> operator like here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> status: Int = intent<span style="color:#f92672">!!</span>.getIntExtra(BatteryManager.EXTRA_STATUS, UNKNOWN)
+</span></span></code></pre></div><p>but by looking at the code, we can see that there are two exclamation marks, so clearly something must be wrong here and we should think about improvement. Moreover, when NPE occurs, it&rsquo;ll be easier to find.</p>
 <p>Kotlin is also <strong>more concise</strong> than Java. It&rsquo;s hard to say if it&rsquo;s an advantage or drawback. In Java we have more code, but we clearly know what&rsquo;s going on when the code is clean. In Kotlin a lot of stuff is <strong>implicit</strong>.</p>
 <p>E.g. inheritance looks as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : AppCompatActivity()
-</code></pre></div><p>and sometimes we don&rsquo;t have variable provided in the lambda, when there&rsquo;s only one value and we can invoke this value by calling <code>it</code> object</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">batteryDisposable = RxBattery
-  .observe(<span style="color:#66d9ef">this</span>)
-  .subscribeOn(Schedulers.io())
-  .observeOn(AndroidSchedulers.mainThread())
-  .subscribe { textView.text = it.toString() }
-</code></pre></div><p>The thing I like about implicit Kotlin code is <strong>data classes</strong>. We can create something like that:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BatteryState</span>(
-  <span style="color:#66d9ef">val</span> status: Int,
-  <span style="color:#66d9ef">val</span> plugged: Int,
-  <span style="color:#66d9ef">val</span> health: Int,
-  <span style="color:#66d9ef">val</span> level: Int,
-  <span style="color:#66d9ef">val</span> temperature: Int,
-  <span style="color:#66d9ef">val</span> voltage: Int
-)
-</code></pre></div><p>and it will generate constructor with all these values, getters and <code>toString()</code> method. In Java, we would need to write it by hand, use code generators in the IDE or code generation libraries like Lombok.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : AppCompatActivity()
+</span></span></code></pre></div><p>and sometimes we don&rsquo;t have variable provided in the lambda, when there&rsquo;s only one value and we can invoke this value by calling <code>it</code> object</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>batteryDisposable = RxBattery
+</span></span><span style="display:flex;"><span>  .observe(<span style="color:#66d9ef">this</span>)
+</span></span><span style="display:flex;"><span>  .subscribeOn(Schedulers.io())
+</span></span><span style="display:flex;"><span>  .observeOn(AndroidSchedulers.mainThread())
+</span></span><span style="display:flex;"><span>  .subscribe { textView.text = <span style="color:#66d9ef">it</span>.toString() }
+</span></span></code></pre></div><p>The thing I like about implicit Kotlin code is <strong>data classes</strong>. We can create something like that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BatteryState</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> status: Int,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> plugged: Int,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> health: Int,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> level: Int,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> temperature: Int,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> voltage: Int
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>and it will generate constructor with all these values, getters and <code>toString()</code> method. In Java, we would need to write it by hand, use code generators in the IDE or code generation libraries like Lombok.</p>
 <p>When we take a look at the <strong>control flow</strong> in Kotlin, except for <code>if</code> expression, <code>for</code> and <code>while</code> loops, we also have <code>when</code> expression, which can be kind of neat equivalent to <code>switch</code> instruction in Java. It looks like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">plugged</span>(): Plugged {
-   <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">when</span> (pluggedCode) {
-     BatteryManager.BATTERY_PLUGGED_AC -&gt; Plugged.AC
-     BatteryManager.BATTERY_PLUGGED_USB -&gt; Plugged.USB
-     BatteryManager.BATTERY_PLUGGED_WIRELESS -&gt; Plugged.WIRELESS
-     <span style="color:#66d9ef">else</span> -&gt; Plugged.UNKNOWN
-   }
-}
-</code></pre></div><p>It&rsquo;s worth to say that there&rsquo;s good <strong>inter-operability</strong> between Java and Kotlin. We can use Kotlin modules and libraries in Java projects and vice-versa because everything compiles to the same byte-code. We can even create pure Java code in the Kotlin module. For example, I wanted to have static method called from the Kotlin library. In order to achieve that, I needed to wrap whole class in a Companion Object.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RxBattery</span> {
-  <span style="color:#66d9ef">companion</span> <span style="color:#66d9ef">object</span> {
-    ...
-  }
-}
-</code></pre></div><p>Next, in the Kotlin module, I could call it like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">RxBattery.observe(<span style="color:#66d9ef">this</span>)
-</code></pre></div><p>but in Java module it wasn&rsquo;t possible and I needed to write something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">RxBattery<span style="color:#f92672">.</span><span style="color:#a6e22e">Companion</span><span style="color:#f92672">.</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
-</code></pre></div><p>I didn&rsquo;t want library users to call this <code>Companion</code> value explicitely in Java projects, so I created additional Java class.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RxBatteryFactory</span> <span style="color:#f92672">{</span>
-
-  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">RxBatteryFactory</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Flowable<span style="color:#f92672">&lt;</span>BatteryState<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span>Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> RxBattery<span style="color:#f92672">.</span><span style="color:#a6e22e">Companion</span><span style="color:#f92672">.</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>and put it next to the Kotlin classes. Now In Java module, people could call method like that:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">RxBatteryFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">)</span>
-</code></pre></div><p>It&rsquo;s good to know that it&rsquo;s possible because when we got stuck with implicit Kotlin syntaxt, we can always use Java in one particular scenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">plugged</span>(): Plugged {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">when</span> (pluggedCode) {
+</span></span><span style="display:flex;"><span>     BatteryManager.BATTERY_PLUGGED_AC <span style="color:#f92672">-&gt;</span> Plugged.AC
+</span></span><span style="display:flex;"><span>     BatteryManager.BATTERY_PLUGGED_USB <span style="color:#f92672">-&gt;</span> Plugged.USB
+</span></span><span style="display:flex;"><span>     BatteryManager.BATTERY_PLUGGED_WIRELESS <span style="color:#f92672">-&gt;</span> Plugged.WIRELESS
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">else</span> <span style="color:#f92672">-&gt;</span> Plugged.UNKNOWN
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It&rsquo;s worth to say that there&rsquo;s good <strong>inter-operability</strong> between Java and Kotlin. We can use Kotlin modules and libraries in Java projects and vice-versa because everything compiles to the same byte-code. We can even create pure Java code in the Kotlin module. For example, I wanted to have static method called from the Kotlin library. In order to achieve that, I needed to wrap whole class in a Companion Object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RxBattery</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">companion</span> <span style="color:#66d9ef">object</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Next, in the Kotlin module, I could call it like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>RxBattery.observe(<span style="color:#66d9ef">this</span>)
+</span></span></code></pre></div><p>but in Java module it wasn&rsquo;t possible and I needed to write something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>RxBattery<span style="color:#f92672">.</span><span style="color:#a6e22e">Companion</span><span style="color:#f92672">.</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>I didn&rsquo;t want library users to call this <code>Companion</code> value explicitely in Java projects, so I created additional Java class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RxBatteryFactory</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">RxBatteryFactory</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Flowable<span style="color:#f92672">&lt;</span>BatteryState<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span>Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> RxBattery<span style="color:#f92672">.</span><span style="color:#a6e22e">Companion</span><span style="color:#f92672">.</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>and put it next to the Kotlin classes. Now In Java module, people could call method like that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>RxBatteryFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">observe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>It&rsquo;s good to know that it&rsquo;s possible because when we got stuck with implicit Kotlin syntaxt, we can always use Java in one particular scenario.</p>
 <p>Later, I figured out, we can simply add <code>@JvmStatic</code> annotation before the method signature and since now, method method will be visible as <code>static</code> in the Java modules as well and we no longer need additional Java code.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">@JvmStatic
-<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">observe</span>(context: Context): Flowable&lt;BatteryState&gt; {
-  ...
-}
-</code></pre></div><p>Moreover, all classes created in Kotlin are <strong>final by default</strong>. It can cause a problems during writing unit tests and creating mocks. If we want to have non-final class (e.g. in order to mock it), we need to mark it explicitly as <code>open</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">open</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>
-</code></pre></div><p>Of course, things mentioned above are not all features of Kotlin. There&rsquo;s much more to discover - e.g. <a href="https://kotlinlang.org/docs/reference/coroutines.html">couroutines</a>. To learn more, check <a href="https://kotlinlang.org/docs/reference/">Kotlin Language Reference</a>, open-source projects in this language, books, and other articles on the web.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#a6e22e">@JvmStatic</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">observe</span>(context: Context): Flowable&lt;BatteryState&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Moreover, all classes created in Kotlin are <strong>final by default</strong>. It can cause a problems during writing unit tests and creating mocks. If we want to have non-final class (e.g. in order to mock it), we need to mark it explicitly as <code>open</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">open</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>
+</span></span></code></pre></div><p>Of course, things mentioned above are not all features of Kotlin. There&rsquo;s much more to discover - e.g. <a href="https://kotlinlang.org/docs/reference/coroutines.html">couroutines</a>. To learn more, check <a href="https://kotlinlang.org/docs/reference/">Kotlin Language Reference</a>, open-source projects in this language, books, and other articles on the web.</p>
 <p>It&rsquo;s hard to say if in more complex project Kotlin would be a better choice. Right now, I&rsquo;m more familar and comfortable with Java, but on the other hand, Kotlin has a few interesting features, which makes development better. Maybe I&rsquo;ll give this language more chances in the future to learn it better.</p>
 <h2 id="unit-tests">
   Unit Tests
   <a class="anchor" href="#unit-tests">#</a>
 </h2>
 <p>Unit tests in Kotlin are pretty similar to Java.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">@Test <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">shouldCreateBroadcastReceiver</span>() {
-  <span style="color:#75715e">// given
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> emitter = mock(FlowableEmitter<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)
-
-  <span style="color:#75715e">// when
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> broadcastReceiver: BroadcastReceiver = RxBattery.createBroadcastReceiver(
-    emitter <span style="color:#66d9ef">as</span> FlowableEmitter&lt;BatteryState&gt;
-  )
-
-  <span style="color:#75715e">// then
-</span><span style="color:#75715e"></span>  assertThat(broadcastReceiver).isNotNull()
-}
-</code></pre></div><p>We can use JUnit and Java assertion libraries like Google Truth and mocking libraries like Mockito. There&rsquo;s also <a href="https://github.com/nhaarman/mockito-kotlin">mockit-kotlin</a> library, but in my case, I used <a href="https://github.com/mockito/mockito">mockito-core</a>. There are also other mocking libraries like <a href="https://github.com/mockk/mockk">Mockk</a> and libraries for BDD like <a href="https://github.com/spekframework/spek">Spek</a>. Moreover, we can achieve more concise syntax for unit tests using various kotlin libraries like <a href="https://github.com/kotlintest/kotlintest">kotlintest</a>. I haven&rsquo;t used it in this project yet, but I may update it in the future.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">shouldCreateBroadcastReceiver</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// given
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> emitter = mock(FlowableEmitter<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// when
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> broadcastReceiver: BroadcastReceiver = RxBattery.createBroadcastReceiver(
+</span></span><span style="display:flex;"><span>    emitter <span style="color:#66d9ef">as</span> FlowableEmitter&lt;BatteryState&gt;
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// then
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  assertThat(broadcastReceiver).isNotNull()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can use JUnit and Java assertion libraries like Google Truth and mocking libraries like Mockito. There&rsquo;s also <a href="https://github.com/nhaarman/mockito-kotlin">mockit-kotlin</a> library, but in my case, I used <a href="https://github.com/mockito/mockito">mockito-core</a>. There are also other mocking libraries like <a href="https://github.com/mockk/mockk">Mockk</a> and libraries for BDD like <a href="https://github.com/spekframework/spek">Spek</a>. Moreover, we can achieve more concise syntax for unit tests using various kotlin libraries like <a href="https://github.com/kotlintest/kotlintest">kotlintest</a>. I haven&rsquo;t used it in this project yet, but I may update it in the future.</p>
 <h2 id="javadoc">
   JavaDoc
   <a class="anchor" href="#javadoc">#</a>
 </h2>
 <p>Generating JavaDoc (or KotlinDoc?) in Kotlin projects is not straightforward. In order to generate documentation, I used <a href="https://github.com/Kotlin/dokka">dokka</a> gradle plugin. It&rsquo;s pretty easy to use, we just need to add appropriate dependency, apply the plugin and create configuration in <code>build.gradle</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dokka <span style="color:#f92672">{</span>
-  outputFormat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;html&#39;</span>
-  outputDirectory <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$buildDir/javadoc&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Next, we just call: <code>./gradlew dokka</code> and our JavaDoc is generated in defined <code>outputDirectory</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>dokka <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  outputFormat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;html&#39;</span>
+</span></span><span style="display:flex;"><span>  outputDirectory <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$buildDir/javadoc&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Next, we just call: <code>./gradlew dokka</code> and our JavaDoc is generated in defined <code>outputDirectory</code>.</p>
 <h2 id="library-deployment">
   Library Deployment
   <a class="anchor" href="#library-deployment">#</a>
@@ -428,8 +429,7 @@ script:
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

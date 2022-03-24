@@ -6,11 +6,7 @@
     <description>Recent content in arch on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Feb 2020 13:16:49 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 16 Feb 2020 13:16:49 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I switched to i3 WM</title>
       <link>https://wittchen.io/posts/i-switched-to-i3wm/</link>

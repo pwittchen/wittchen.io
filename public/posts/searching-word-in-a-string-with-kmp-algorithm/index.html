@@ -10,15 +10,16 @@
 <meta property="og:description" content="Sometimes it&rsquo;s good to revise some algorithms and try to implement them in order to get to know, how the built-in functions of high level programming languages actually works. One of the popular problems is string searching. We have many approaches to solve this problem. For example:
  Naive string search algorithm Rabin-Karp string search algorithm Finite-state automaton based search Knuth-Morris-Pratt algorithm Boyer-Moore string search algorithm Bitap algorithm  This time, I&rsquo;ve decided to focus on Knuth-Morris-Pratt (KMP) algorithm." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/searching-word-in-a-string-with-kmp-algorithm/" />
+<meta property="og:url" content="https://wittchen.io/posts/searching-word-in-a-string-with-kmp-algorithm/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-07-22T13:03:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Searching word in a string with KMP algorithm | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -78,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -146,39 +147,39 @@ https://github.com/alex-shpak/hugo-book
 <li>Bitap algorithm</li>
 </ul>
 <p>This time, I&rsquo;ve decided to focus on <a href="http://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Knuth-Morris-Pratt (KMP) algorithm</a>. It&rsquo;s quite easy to implement, when you understand it. In addition, its time complexity is quite good and can be defined as <em>O(n)</em>. In this algorithm, we simply go through all letters in a given string and compare them with searched string. When position of searched string reaches length of searched string, we can assume, that our string was found. If two compared letters are different, we set position of searched string to zero and start new search from the next position after which we started searching process before. It&rsquo;s quite good described on <a href="http://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Wikipedia</a> with some pseudo-code. You can also take a look at my code in Java available below, which I&rsquo;ve written just for practice.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String args<span style="color:#f92672">[])</span> <span style="color:#f92672">{</span>
-        String givenString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABC ABCDAB ABCDABCDABDE&#34;</span><span style="color:#f92672">;</span>
-        String searchedString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABCDABD&#34;</span><span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">int</span> givenStringLetterPosition <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">int</span> searchedStringLetterPosition <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">int</span> foundAt <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
-
-        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>givenStringLetterPosition <span style="color:#f92672">&lt;</span> givenString<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>givenString<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>givenStringLetterPosition<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> searchedString<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>searchedStringLetterPosition<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
-                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>searchedStringLetterPosition <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                    foundAt <span style="color:#f92672">=</span> givenStringLetterPosition<span style="color:#f92672">;</span>
-                <span style="color:#f92672">}</span>
-                searchedStringLetterPosition<span style="color:#f92672">++;</span>
-                givenStringLetterPosition<span style="color:#f92672">++;</span>
-                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>searchedStringLetterPosition <span style="color:#f92672">==</span> searchedString<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-                    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;String found at &#34;</span> <span style="color:#f92672">+</span> foundAt <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; position.&#34;</span><span style="color:#f92672">);</span>
-                    <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-                <span style="color:#f92672">}</span>
-            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-                searchedStringLetterPosition <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-                foundAt<span style="color:#f92672">++;</span>
-                givenStringLetterPosition <span style="color:#f92672">=</span> foundAt<span style="color:#f92672">;</span>
-                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>givenString<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> givenStringLetterPosition<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;String was not found.&#34;</span><span style="color:#f92672">);</span>
-                    <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-                <span style="color:#f92672">}</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Result of the execution of this program should be as follows:</p>
-<pre><code>String found at 15 position.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String args<span style="color:#f92672">[])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        String givenString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABC ABCDAB ABCDABCDABDE&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        String searchedString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABCDABD&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> givenStringLetterPosition <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> searchedStringLetterPosition <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> foundAt <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>givenStringLetterPosition <span style="color:#f92672">&lt;</span> givenString<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>givenString<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>givenStringLetterPosition<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> searchedString<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>searchedStringLetterPosition<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>searchedStringLetterPosition <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    foundAt <span style="color:#f92672">=</span> givenStringLetterPosition<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                searchedStringLetterPosition<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                givenStringLetterPosition<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>searchedStringLetterPosition <span style="color:#f92672">==</span> searchedString<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;String found at &#34;</span> <span style="color:#f92672">+</span> foundAt <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; position.&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                searchedStringLetterPosition <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                foundAt<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                givenStringLetterPosition <span style="color:#f92672">=</span> foundAt<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>givenString<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> givenStringLetterPosition<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;String was not found.&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Result of the execution of this program should be as follows:</p>
+<pre tabindex="0"><code>String found at 15 position.
 </code></pre><p>Please note, that we count position of the letter from zero like in the most cases in Computer Science.</p>
 </article>
  
@@ -209,8 +210,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

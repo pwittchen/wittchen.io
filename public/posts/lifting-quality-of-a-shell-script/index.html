@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Lifting quality of a shell script" />
 <meta property="og:description" content="Introduction #  In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp; downloading phase can be done from the terminal in a semi-automated way." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/lifting-quality-of-a-shell-script/" />
+<meta property="og:url" content="https://wittchen.io/posts/lifting-quality-of-a-shell-script/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2016-11-30T23:29:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Lifting quality of a shell script | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -151,36 +152,36 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#writing-a-script-with-unit-tests-and-continuous-integration">#</a>
 </h2>
 <p>I&rsquo;m not an expert in shell scripting, so I also wanted to learn more about it. In addition, I wanted to apply best software development practices in that script. Someone can say that in the case of a simple shell script proper engineering may be a superfluity, but in my opinion, the simplicity of the project is not an excuse for doing it the right way. Especially, if we want to use it in the future. That&rsquo;s why I divided this script into smaller functions, added command line arguments handling and help for the users. Moreover, I added <a href="https://github.com/pwittchen/ydownloader/blob/master/test.sh">unit tests</a> with <a href="https://github.com/kward/shunit2">shunit2</a> (yes, we can write unit tests for the shell scripts) and <a href="https://travis-ci.org/pwittchen/ydownloader">continuous integration with Travis CI</a> server. In the &ldquo;Clean Code&rdquo; book, we can read that code without unit tests is not clean by definition. After dividing script into smaller functions, it was much easier to test it. My script is accepting command line arguments, so I needed to do the following trick to make it testable and include it in the testing script:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TEST_MODE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>
-<span style="color:#66d9ef">then</span>
-  TEST_MODE<span style="color:#f92672">=</span>false
-<span style="color:#66d9ef">fi</span>
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TEST_MODE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> false <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
-  <span style="color:#75715e"># parse command line arguments here...</span>
-<span style="color:#66d9ef">else</span>
-  echo <span style="color:#e6db74">&#34;TEST_MODE enabled&#34;</span>
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><p>Then, I could write unit tests:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">TEST_MODE<span style="color:#f92672">=</span>true
-. ./ydownloader <span style="color:#75715e"># load script to be tested</span>
-echo <span style="color:#e6db74">&#34;RUNNING UNIT TESTS...&#34;</span>
-
-testCutLastChars<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-  <span style="color:#75715e"># given</span>
-  valueToCut<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;testString&#39;</span>
-  expectedValue<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;testStri&#39;</span>
-
-  <span style="color:#75715e"># when</span>
-  actualValue<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $valueToCut | cutLastChars 3<span style="color:#66d9ef">)</span>
-
-  <span style="color:#75715e"># then</span>
-  assertEquals $expectedValue $actualValue
-<span style="color:#f92672">}</span>
-
-<span style="color:#75715e"># more tests goes here...</span>
-. ./shunit2/shunit2 <span style="color:#75715e"># load shunit2</span>
-</code></pre></div><p>There are also other solutions for unit testing like <a href="https://github.com/sstephenson/bats">bats</a>, <a href="https://github.com/lehmannro/assert.sh">assert.sh</a> and others. We can choose what we like. We can also use additional tools like <a href="https://github.com/joelpurra/shunit2-colorize">shunit2-colorize</a> to make our console output of shunit2 tests look like a rainbow if we are not fans of monochromatic terminal. Moreover, we can use static code analysis tools for shell scripts like <a href="https://github.com/koalaman/shellcheck">shellcheck</a>. In addition, I prepared simple <a href="https://github.com/pwittchen/ydownloader/blob/master/install.sh">install script</a>, which allows to install script locally via <code>curl</code> or <code>wget</code>. Of course, project has sufficient documentation in <code>README.md</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TEST_MODE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  TEST_MODE<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TEST_MODE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> false <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># parse command line arguments here...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;TEST_MODE enabled&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>Then, I could write unit tests:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>TEST_MODE<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>. ./ydownloader <span style="color:#75715e"># load script to be tested</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;RUNNING UNIT TESTS...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>testCutLastChars<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># given</span>
+</span></span><span style="display:flex;"><span>  valueToCut<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;testString&#39;</span>
+</span></span><span style="display:flex;"><span>  expectedValue<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;testStri&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># when</span>
+</span></span><span style="display:flex;"><span>  actualValue<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $valueToCut | cutLastChars 3<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># then</span>
+</span></span><span style="display:flex;"><span>  assertEquals $expectedValue $actualValue
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># more tests goes here...</span>
+</span></span><span style="display:flex;"><span>. ./shunit2/shunit2 <span style="color:#75715e"># load shunit2</span>
+</span></span></code></pre></div><p>There are also other solutions for unit testing like <a href="https://github.com/sstephenson/bats">bats</a>, <a href="https://github.com/lehmannro/assert.sh">assert.sh</a> and others. We can choose what we like. We can also use additional tools like <a href="https://github.com/joelpurra/shunit2-colorize">shunit2-colorize</a> to make our console output of shunit2 tests look like a rainbow if we are not fans of monochromatic terminal. Moreover, we can use static code analysis tools for shell scripts like <a href="https://github.com/koalaman/shellcheck">shellcheck</a>. In addition, I prepared simple <a href="https://github.com/pwittchen/ydownloader/blob/master/install.sh">install script</a>, which allows to install script locally via <code>curl</code> or <code>wget</code>. Of course, project has sufficient documentation in <code>README.md</code> file.</p>
 <h2 id="short-recap">
   Short recap
   <a class="anchor" href="#short-recap">#</a>
@@ -215,8 +216,7 @@ testCutLastChars<span style="color:#f92672">()</span> <span style="color:#f92672
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

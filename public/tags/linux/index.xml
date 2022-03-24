@@ -6,11 +6,7 @@
     <description>Recent content in linux on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic wallpaper for i3</title>
       <link>https://wittchen.io/posts/dynamic-wallpaper-for-i3/</link>
@@ -56,7 +52,7 @@ I figured out that I can go to the Firefox Settings and in the &amp;ldquo;Fonts 
       
       <guid>https://wittchen.io/posts/fixing-gnome-boot-problem/</guid>
       <description>I recently had an issue with Gnome on Arch Linux during the system boot. After turning my computer on, I saw gray screen with message like:
-Oh no! Something has gone wrong. A problem has occurred and the system can&#39;t recover... and I couldn&amp;rsquo;t log in or do anything and started searching solutions for this problem via my phone. First, I switched to terminal mode with Alt+F2(you can switch back to GUI with Alt+F1), logged in and updated system via pacman: sudo pacman -Syu.</description>
+Oh no! Something has gone wrong. A problem has occurred and the system can&amp;#39;t recover... and I couldn&amp;rsquo;t log in or do anything and started searching solutions for this problem via my phone. First, I switched to terminal mode with Alt+F2(you can switch back to GUI with Alt+F1), logged in and updated system via pacman: sudo pacman -Syu.</description>
     </item>
     
     <item>

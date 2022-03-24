@@ -6,11 +6,7 @@
     <description>Recent content in git on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Jul 2018 11:21:54 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 21 Jul 2018 11:21:54 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Different ways of squashing commits</title>
       <link>https://wittchen.io/posts/squashing-commits/</link>
@@ -30,7 +26,7 @@ curl rebaseandsqua.sh | sh then edit our commit messages and push the changes.</
       
       <guid>https://wittchen.io/posts/avoiding-merging-master-to-master/</guid>
       <description>Problem #  If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
-Merge branch &#39;master&#39; to &#39;master&#39; or something similar. You might have even pushed such commits! Don&amp;rsquo;t worry, so did I ;-). In this article I&amp;rsquo;m going to explain why is it happenning and how to avoid it.
+Merge branch &amp;#39;master&amp;#39; to &amp;#39;master&amp;#39; or something similar. You might have even pushed such commits! Don&amp;rsquo;t worry, so did I ;-). In this article I&amp;rsquo;m going to explain why is it happenning and how to avoid it.
 Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository.</description>
     </item>
     
@@ -60,7 +56,7 @@ Such situation happens when you performed changes locally and at the same time s
       
       <guid>https://wittchen.io/posts/my-approach-to-git-aliases/</guid>
       <description>While we are working with Version Control Systems like Git, it&amp;rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your .gitconfig file, which is usually located in your home directory and place a few aliases in the [alias] section. For example:
-[alias] ls = log --pretty=format:&amp;quot;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&amp;quot; --decorate Then you can type: git ls in your Git repository to see pretty Git log.</description>
+[alias] ls = log --pretty=format:&amp;#34;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&amp;#34; --decorate Then you can type: git ls in your Git repository to see pretty Git log.</description>
     </item>
     
     <item>

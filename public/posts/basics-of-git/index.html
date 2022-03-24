@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Basics of Git" />
 <meta property="og:description" content="Introduction #  Git is very popular Version Control System used in many software projects today. In my opinion, it&rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/basics-of-git/" />
+<meta property="og:url" content="https://wittchen.io/posts/basics-of-git/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-11-27T21:49:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Basics of Git | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -153,31 +154,31 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#basic-commands">#</a>
 </h2>
 <p>In my opinion, list presented below contains commands, which are used on daily basis and you should start journey with them.</p>
-<pre><code>git help                      # shows git commands
+<pre tabindex="0"><code>git help                      # shows git commands
 git init                      # creates git repository in current directory
 git add -A                    # adds all files in current directory to repository
-git commit -m &quot;message&quot;       # commits changes with specific message
+git commit -m &#34;message&#34;       # commits changes with specific message
 git push                      # pushes committed changes to remote repository on server
 git status                    # checks current status of the local repository
 git pull                      # pulls updates from remote repository
 git fetch                     # fetches changes from remote repository
-git fetch -p                  # fetches changes with &quot;prune&quot; option removes local copies of deleted &quot;remote&quot; branches
-git checkout my_branch        # switches to branch named &quot;my_branch&quot;
-git checkout -b my_branch     # creates local branch named &quot;my_branch&quot;
-git branch --delete my_branch # removes local branch named &quot;my_branch&quot;
-git push origin --delete      # removes remote branch named &quot;my_branch&quot;
+git fetch -p                  # fetches changes with &#34;prune&#34; option removes local copies of deleted &#34;remote&#34; branches
+git checkout my_branch        # switches to branch named &#34;my_branch&#34;
+git checkout -b my_branch     # creates local branch named &#34;my_branch&#34;
+git branch --delete my_branch # removes local branch named &#34;my_branch&#34;
+git push origin --delete      # removes remote branch named &#34;my_branch&#34;
 git branch                    # displays local branches
 git branch -a                 # displays all branches (local and remote)
-git merge my_branch           # merges branch named &quot;my_branch&quot; into branch on which we are checked out
+git merge my_branch           # merges branch named &#34;my_branch&#34; into branch on which we are checked out
 git stash                     # creates stash with currently saved changes on current branch
 git stash list                # displays list of stashes
 git stash apply               # applies stash with previously saved changes
 git reset --hard              # discards all uncommitted local changes
-git reset &lt;file&gt;              # removes &lt;file&gt; added to repository from current index (&quot;about to be committed&quot; area)
+git reset &lt;file&gt;              # removes &lt;file&gt; added to repository from current index (&#34;about to be committed&#34; area)
 git revert commit_name        # creates new commit, which undoes all changes introduced in commit named commit_name
-git revert HEAD               # reverts commit we just created with additional &quot;revert commit&quot;
-git reset --hard HEAD^        # reverts last commit without additional &quot;revert commit&quot;
-git rebase my_branch          # pulls changes from &quot;my_branch&quot; to branch on which we are checked out without making commit
+git revert HEAD               # reverts commit we just created with additional &#34;revert commit&#34;
+git reset --hard HEAD^        # reverts last commit without additional &#34;revert commit&#34;
+git rebase my_branch          # pulls changes from &#34;my_branch&#34; to branch on which we are checked out without making commit
 git log                       # displays log of the commits in repository
 git remote -v # gets address of the remote repository
 </code></pre><h2 id="git-hist">
@@ -185,7 +186,7 @@ git remote -v # gets address of the remote repository
   <a class="anchor" href="#git-hist">#</a>
 </h2>
 <p>There is one more fancy feature, which allows you to display colorful and graphical representation of branches and commits.</p>
-<pre><code>log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+<pre tabindex="0"><code>log --graph --abbrev-commit --decorate --date=relative --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all
 </code></pre><p>You can assign this command to <code>hist</code> alias in your <code>.gitconfig</code> file. After that, you can type: <code>git hist</code> and this command will be executed. More advanced commands and features can be mastered after some work with basic Git stuff.</p>
 <h2 id="resolving-conflicts">
   Resolving conflicts
@@ -241,8 +242,7 @@ git remote -v # gets address of the remote repository
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

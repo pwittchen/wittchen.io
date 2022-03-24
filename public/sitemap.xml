@@ -1,920 +1,554 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://wittchen.io/setup/</loc>
     <lastmod>2021-11-06T12:35:21+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/</loc>
     <lastmod>2021-01-04T11:56:51+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/contact/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/gh/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/gp/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/in/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/so/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/talks/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/dynamic-wallpaper-for-i3/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/i3/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/</loc>
     <lastmod>2021-01-05T12:31:47+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/</loc>
     <lastmod>2021-01-05T12:31:47+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/python/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/spotify-song-in-i3-status-bar/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/arch/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/i-switched-to-i3wm/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/github-actions-in-action/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/fixing-font-rendering-on-firefox-and-arch-linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/fixing-gnome-boot-problem/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/cleaning-root-partition-on-linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/formatting-usb-disk-on-linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/java/</loc>
     <lastmod>2021-01-05T12:31:47+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/modifying-methods-input-parameters/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/get-rid-of-the-list-null-checks/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/arch-install-notes/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/gradle/</loc>
     <lastmod>2021-01-05T12:31:47+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/zen-of-java-library-release-process/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/publishing-jar-aar-to-maven-central/</loc>
     <lastmod>2021-01-05T12:31:47+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/kotlin/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/kyma-meets-ccv2-hackathon-summary/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/bci/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/bci-sci-fi-or-reality-oredev-2018/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/conferences/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/creating-fat-aar/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/testing/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/testing-exceptions/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/solving-problems-with-avd-and-kvm-on-linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/poor-mans-dropbox/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/squashing-commits/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/git/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/open-source/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/releasing-reactive-network-1/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/debugging-pixel2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/publishing-python-package-to-pypi/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/avoiding-merging-master-to-master/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-reactive-bus/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/rxjava/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/new-blog/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/automating-generation-of-the-on-line-documentation-for-java-library/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/quality-meetup-15-fixing-a-billion-dollar-mistake/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/creating-a-docker-container-with-alpine-linux-including-java-8-and-9/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/droidcon-poland-2017-is-your-app-really-connected/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/5-ways-to-attend-expansive-it-conferences-for-almost-free/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/git-tips-and-tricks-meet-and-code-gliwice/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/jdd-2017-juc-flow-presentation-summary/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/integrating-nullaway-with-an-android-project/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/building-sap-hybris-commerce-suite-via-gradle/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-reactive-airplane-mode/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/using-tmux-with-tpm/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/reactivenetwork-v-0110-walled-garden/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/releasing-reactivenetwork-v-0100/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/release-of-prefser-210-with-rxjava2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/new-reactive-data-types-in-rxjava2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-yaas-java-sdk/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/prefser-207/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/joining-lists-of-rxjava-observables/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/basic-code-refactoring-principles/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/monitoring-usage-of-oss/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/yaas-as-a-proxy-for-microservice/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/facebook-is-making-bci/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/3-alternatives-to-evernote/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/transform-vim-into-efficient-ide/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/reactivenetwork-090-rxjava2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/tmux-auto-pane/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/reactivebeacons-060-rxjava2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/browsing-dirs-with-vim/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/how-to-make-open-source-projects-which-people-want-to-use/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/handling-different-android-versions-with-strategy-pattern/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/review-your-changes-before-the-commit/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/android-design-inspirations/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/my-approach-to-git-aliases/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/working-with-different-git-configs/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/control-spotify-on-linux-like-a-hacker/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/analyzing-performance-of-web-app-with-chrome-dev-tools/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/one-year-of-using-macbook-pro-as-a-software-developer/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/automate-boring-stuff/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/lifting-quality-of-a-shell-script/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/dockerizing-hybris/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/reactive-network-2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/converting-cd-to-mp3-on-linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/3-questions-about-your-git-repo/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/reactive-live-coding-gdg-devfest-pl-2015/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/new-release-of-kirai-140/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/bunch-of-updates-in-my-android-oss/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/an-opinionated-guide-to-modern-java-by-parallel-universe/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-reactive-beacons/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/using-tmux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-reactive-sensors/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/learning-python/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/gnome-classic-ubuntu/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/learning-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-reactive-network/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/releasing-prefser-2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/geary-email-client-for-linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/tags/ubuntu/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/releasing-network-events-2/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/routing-internet-via-ssh-tunnel-on-raspberry-pi/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/searching-word-in-a-string-with-kmp-algorithm/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/releasing-weather-icon-view-1-for-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/get-past-the-syntax/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/releasing-prefser-v-105/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/test-coverage-in-android-applications/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/checking-consistency-of-git-branches/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/mutate-yet-another-spotlight-for-ubuntu/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/making-ubuntu-faster/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/static-code-analysis-in-android-project/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/the-one-hacker-way/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/mockito-on-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-prefser/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/unit-testing-support-for-android-studio-11/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/network-events-v102/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/hello-kotlin/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/introducing-network-events/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/android-resource-converter/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/interpreting-data-in-csv-files-generated-by-eeg-analyzer/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/synapse-indicator-spotlight-for-ubuntu/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/detecting-swipe-gesture-in-mobile-application/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/installing-release-and-debug-version-of-app-on-a-single-device/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/basics-of-git/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/how-to-update-forked-github-repository/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/how-to-switch-java-version-on-linux/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/java-gradle-template/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/square-is-advocating-against-fragments/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/the-future-of-programming/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/different-build-config-for-debug-and-release-version-of-the-android-app/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/weather-icons-for-android-applications/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/micro-location-based-on-wifi-access-points/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/versioning-android-applications/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/updating-android-xml-resources-before-compilation-via-gradle/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/indicators-for-ubuntu/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/eeg-analyzer-android-app/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/publishing-android-application-in-google-play-store/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/stuff-you-should-know-about-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/network-events-android-library/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/software-for-common-users-on-ubuntu/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/ubuntu-system-boot-problem/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/bci-for-mobile-devices-master-thesis-presentation/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/selected-aspects-of-creating-mobile-android-applications/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/how-to-read-contacts-in-android-device-using-contentresolver/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/avoiding-outofmemory-error-while-loading-large-bitmaps-in-android-ui/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/issue-workflow-in-agile-projects/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/how-to-connect-to-android-device-via-tcp-ip/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/justifying-block-of-text-inside-textview-in-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/how-to-change-fragment-layout-on-orientation-change/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/first-google-glass-hackathon-in-poland/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/bci-for-mobile-devices-intro/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/5-essential-tools-for-serious-software-development-in-a-team-projects/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/displaying-image-from-the-internet-resource-inside-the-textview-in-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/improper-data-type-in-android-textview/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/distributed-inter-process-communication/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/endless-listview-in-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/custom-background-for-actionbar-and-sherlockactionbar/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/custom-fonts-in-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/easy-conversion-from-binary-to-decimal-numbers-in-c/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/android-and-maven/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/fixing-bug-with-dissappearing-map-overlay-after-zoom-in-android/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/adding-reversed-numbers/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wittchen.io/posts/launching-brand-new-blog/</loc>
     <lastmod>2020-08-15T18:09:42+02:00</lastmod>
   </url>
-  
 </urlset>

@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Unit test coverage report with Travis CI for Robolectric on Android" />
 <meta property="og:description" content="Introduction #  Some time ago, I&rsquo;ve written an article about Test coverage report for Android application. It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I&rsquo;ve written instrumentation unit tests, which needed to be executed on a real device or an emulator. It&rsquo;s a good approach when you want to test functionalities strongly connected with the device." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/" />
+<meta property="og:url" content="https://wittchen.io/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-03-19T19:32:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Unit test coverage report with Travis CI for Robolectric on Android | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -153,49 +154,49 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#gradle-configuration">#</a>
 </h2>
 <p>First, we have to add appropriate dependency to <code>jacoco-android</code> plugin in our top-level <code>build.gradle</code> file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">buildscript <span style="color:#f92672">{</span>
-  repositories <span style="color:#f92672">{</span>
-    jcenter<span style="color:#f92672">()</span>
-  <span style="color:#f92672">}</span>
-  dependencies <span style="color:#f92672">{</span>
-    classpath <span style="color:#e6db74">&#39;com.android.tools.build:gradle:2.3.0&#39;</span>
-    classpath <span style="color:#e6db74">&#39;com.dicedmelon.gradle:jacoco-android:0.1.1&#39;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Next, we need to add appropriate test dependencies in another <code>build.gradle</code> file for our app or library.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">dependencies <span style="color:#f92672">{</span>
-  testCompile <span style="color:#e6db74">&#39;junit:junit:4.12&#39;</span>
-  testCompile <span style="color:#e6db74">&#39;com.google.truth:truth:0.32&#39;</span>
-  testCompile <span style="color:#e6db74">&#39;org.robolectric:robolectric:3.1.2&#39;</span>
-  testCompile <span style="color:#e6db74">&#39;org.mockito:mockito-core:2.7.17&#39;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>I&rsquo;ve added also dependencies to JUnit, Truth and Mockito library, which are used in my tests. We also need to add appropriate plugins:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">apply plugin: <span style="color:#e6db74">&#39;jacoco&#39;</span>
-apply plugin: <span style="color:#e6db74">&#39;jacoco-android&#39;</span>
-
-To avoid ignoring our tests by the coverage report<span style="color:#f92672">,</span> we need to configure the following settings:
-
-android <span style="color:#f92672">{</span>
-  testOptions <span style="color:#f92672">{</span>
-    unitTests<span style="color:#f92672">.</span><span style="color:#a6e22e">all</span> <span style="color:#f92672">{</span>
-      jacoco <span style="color:#f92672">{</span>
-        includeNoLocationClasses <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-      <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Next, we need to configure report output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">jacocoAndroidUnitTestReport <span style="color:#f92672">{</span>
-  csv<span style="color:#f92672">.</span><span style="color:#a6e22e">enabled</span> <span style="color:#66d9ef">false</span>
-  html<span style="color:#f92672">.</span><span style="color:#a6e22e">enabled</span> <span style="color:#66d9ef">true</span>
-  xml<span style="color:#f92672">.</span><span style="color:#a6e22e">enabled</span> <span style="color:#66d9ef">true</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h2 id="travis-ci-configuration">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>buildscript <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  repositories <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    jcenter<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    classpath <span style="color:#e6db74">&#39;com.android.tools.build:gradle:2.3.0&#39;</span>
+</span></span><span style="display:flex;"><span>    classpath <span style="color:#e6db74">&#39;com.dicedmelon.gradle:jacoco-android:0.1.1&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Next, we need to add appropriate test dependencies in another <code>build.gradle</code> file for our app or library.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  testCompile <span style="color:#e6db74">&#39;junit:junit:4.12&#39;</span>
+</span></span><span style="display:flex;"><span>  testCompile <span style="color:#e6db74">&#39;com.google.truth:truth:0.32&#39;</span>
+</span></span><span style="display:flex;"><span>  testCompile <span style="color:#e6db74">&#39;org.robolectric:robolectric:3.1.2&#39;</span>
+</span></span><span style="display:flex;"><span>  testCompile <span style="color:#e6db74">&#39;org.mockito:mockito-core:2.7.17&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>I&rsquo;ve added also dependencies to JUnit, Truth and Mockito library, which are used in my tests. We also need to add appropriate plugins:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;jacoco&#39;</span>
+</span></span><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;jacoco-android&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To avoid ignoring our tests by the coverage report<span style="color:#f92672">,</span> we need to configure the following settings:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>android <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  testOptions <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    unitTests<span style="color:#f92672">.</span><span style="color:#a6e22e">all</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      jacoco <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        includeNoLocationClasses <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Next, we need to configure report output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>jacocoAndroidUnitTestReport <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  csv<span style="color:#f92672">.</span><span style="color:#a6e22e">enabled</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  html<span style="color:#f92672">.</span><span style="color:#a6e22e">enabled</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  xml<span style="color:#f92672">.</span><span style="color:#a6e22e">enabled</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="travis-ci-configuration">
   Travis CI configuration
   <a class="anchor" href="#travis-ci-configuration">#</a>
 </h2>
 <p>We are done with Gradle configuration. I&rsquo;m assuming we have Travis CI build configured. If you don&rsquo;t know, how to do this, visit <a href="http://travis-ci.org">travis-ci.org</a> and enable builds for your project. It&rsquo; pretty easy. Now, we should visit <a href="http://codecov.io">codecov.io</a> website, register there (e.g. with GitHub account) and add our project. After that, we need to add the following items to our <code>.travis.yml</code> file:</p>
-<pre><code>after_success:
+<pre tabindex="0"><code>after_success:
   - bash &lt;(curl -s https://codecov.io/bash)
 
 script:
@@ -207,15 +208,15 @@ script:
 </h2>
 <p>Next we can place our tests in <code>src/test/</code> directory.</p>
 <p>Sample unit test can look as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>RobolectricTestRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#a6e22e">@Config</span><span style="color:#f92672">(</span>constants <span style="color:#f92672">=</span> BuildConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyUnitTests</span> <span style="color:#f92672">{</span>
-    <span style="color:#a6e22e">@Test</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myValueShouldBeTrue</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">boolean</span> myValue <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-      assertThat<span style="color:#f92672">(</span>myValue<span style="color:#f92672">).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>In my case, I also needed to create <code>src/test/resources/robolectric.properties</code> file with the following content:</p>
-<pre><code>sdk=23
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>RobolectricTestRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#a6e22e">@Config</span><span style="color:#f92672">(</span>constants <span style="color:#f92672">=</span> BuildConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyUnitTests</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myValueShouldBeTrue</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">boolean</span> myValue <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>      assertThat<span style="color:#f92672">(</span>myValue<span style="color:#f92672">).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>In my case, I also needed to create <code>src/test/resources/robolectric.properties</code> file with the following content:</p>
+<pre tabindex="0"><code>sdk=23
 </code></pre><p>because Robolectric didn&rsquo;t work with the Android SDK newer than 23. Moreover, I also needed to use Robolectric v. <code>3.1.2</code>, because I had problems with running tests and generating coverage report with the latest version of the Robolectric.</p>
 <h2 id="summary">
   Summary
@@ -258,8 +259,7 @@ script:
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

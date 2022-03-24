@@ -12,15 +12,16 @@ Such situation happens when you performed changes locally and at the same time s
 Merge branch &#39;master&#39; to &#39;master&#39; or something similar. You might have even pushed such commits! Don&rsquo;t worry, so did I ;-). In this article I&rsquo;m going to explain why is it happenning and how to avoid it.
 Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/avoiding-merging-master-to-master/" />
+<meta property="og:url" content="https://wittchen.io/posts/avoiding-merging-master-to-master/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-03-25T13:35:06+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Avoiding merging master to master branch in Git | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -80,7 +81,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -158,18 +159,18 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#problem">#</a>
 </h2>
 <p>If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:</p>
-<pre><code>Merge branch 'master' to 'master'
+<pre tabindex="0"><code>Merge branch &#39;master&#39; to &#39;master&#39;
 </code></pre><p>or something similar. You might have even pushed such commits! Don&rsquo;t worry, so did I ;-).
 In this article I&rsquo;m going to explain why is it happenning and how to avoid it.</p>
 <p>Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository. When you are done with your changes, you committed everything and want to push changes. If there are no conflicts, Git wants you to synchronize local repository with the remote repository. That&rsquo;s why you need to merge changes from the remote master branch into your local master branch. After that you can finally push your changes.</p>
 <p>It&rsquo;s shown on the diagram below.</p>
-<pre><code>another developer ------o---(commit)---o------------------------------------------
+<pre tabindex="0"><code>another developer ------o---(commit)---o------------------------------------------
                        /|\             |
                         |              |
                        pull          push
                         |              |
                         |             \|/
-remote 'master' ----o---o--------------o------x-----------------o-------------o---
+remote &#39;master&#39; ----o---o--------------o------x-----------------o-------------o---
                     |                        /|\                |            /|\
                     |                         |                 |             |
                    pull                      push (rejected)   pull          push
@@ -187,44 +188,44 @@ I think there may be various strategies to deal with that. I&rsquo;m going to sh
   1. Move your last commit into staging area
   <a class="anchor" href="#1-move-your-last-commit-into-staging-area">#</a>
 </h3>
-<pre><code>git reset --soft HEAD~1
+<pre tabindex="0"><code>git reset --soft HEAD~1
 </code></pre><p>Now, you removed your last commit, but you have your changes uncommited in staging area.</p>
 <h3 id="2-move-your-changes-from-staging-to-unstaged-area">
   2. Move your changes from staging to unstaged area
   <a class="anchor" href="#2-move-your-changes-from-staging-to-unstaged-area">#</a>
 </h3>
-<pre><code>git reset HEAD -- .
+<pre tabindex="0"><code>git reset HEAD -- .
 </code></pre><p>Now, you have your changes uncommited and unstaged.</p>
 <h3 id="3-stash-your-changes">
   3. Stash your changes
   <a class="anchor" href="#3-stash-your-changes">#</a>
 </h3>
-<pre><code>git stash
+<pre tabindex="0"><code>git stash
 </code></pre><p>Now, our changes are stashed. We can list them as follows:</p>
-<pre><code>git stash list
+<pre tabindex="0"><code>git stash list
 </code></pre><p>To show what&rsquo;s in the most recent stash, we can type:</p>
-<pre><code>git stash show -p
+<pre tabindex="0"><code>git stash show -p
 </code></pre><p>To view an arbitrary stash, we can type something like:</p>
-<pre><code>git stash show -p stash@{1}
+<pre tabindex="0"><code>git stash show -p stash@{1}
 </code></pre><h3 id="4-pull-changes-from-the-remote-repository">
   4. Pull changes from the remote repository
   <a class="anchor" href="#4-pull-changes-from-the-remote-repository">#</a>
 </h3>
-<pre><code>git pull
+<pre tabindex="0"><code>git pull
 </code></pre><h3 id="5-apply-stashed-changes">
   5. Apply stashed changes
   <a class="anchor" href="#5-apply-stashed-changes">#</a>
 </h3>
-<pre><code>git stash apply
+<pre tabindex="0"><code>git stash apply
 </code></pre><p>or</p>
-<pre><code>git stash pop
+<pre tabindex="0"><code>git stash pop
 </code></pre><p>if we want to delete our applied stash from the list of stashes</p>
 <h3 id="6-commit-and-push-your-changes">
   6. Commit and push your changes
   <a class="anchor" href="#6-commit-and-push-your-changes">#</a>
 </h3>
-<pre><code>git add -A
-git commit -m &quot;my elegant change&quot;
+<pre tabindex="0"><code>git add -A
+git commit -m &#34;my elegant change&#34;
 git push
 </code></pre><p>Now, we have our local repository synchronized with the remote one. We pushed our local changes and we didn&rsquo;t polluted git log with <code>merge 'master' to 'master'</code> commits. If you are not very comfortable with Git, try to practice this in a &ldquo;test&rdquo; repo before applying this approach in your production repo.</p>
 <h2 id="solution-2">
@@ -233,13 +234,13 @@ git push
 </h2>
 <p>I&rsquo;ve got a feedback about this article from one of the readers (Thanks Cyprian! ;-) and there&rsquo;s a simpler way to solve that problem.</p>
 <p>We can use <code>rebase</code> functionality as follows:</p>
-<pre><code>git fetch origin
+<pre tabindex="0"><code>git fetch origin
 </code></pre><p>Now we have fetched changes from the <code>origin</code> (remote repo) without applying (merging) them in the local repo.
 Next, we can rebase our changes:</p>
-<pre><code>git rebase origin/master
+<pre tabindex="0"><code>git rebase origin/master
 </code></pre><p>During this operation, we have put changes from the remote repository into our local repository without merge operations. Moreover, we preserved our local (not pushed) commits.
 Now, we can push our changes to the remote repository:</p>
-<pre><code>git push
+<pre tabindex="0"><code>git push
 </code></pre><p>and we&rsquo;re done!</p>
 <p>I hope, this article will help to keep your git log clean.</p>
 <p>As you see, I&rsquo;m open for any kind of constructive feedback about these articles, so you can send me e-mails. Probably, I&rsquo;ll add commenting functionality back to this blog, so feedback will be easier.</p>
@@ -272,8 +273,7 @@ Now, we can push our changes to the remote repository:</p>
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

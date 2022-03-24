@@ -9,13 +9,13 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wittchen.io/posts/" />
-<meta property="og:updated_time" content="2021-01-05T12:31:47+01:00" />
+
 <title>Posts | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wittchen.io/posts/index.xml" title="Piotr Wittchen" />
 <!--
 Made with Book Theme
@@ -76,7 +76,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -223,7 +223,7 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>Some time ago, I had to implement Endless ListView in Android application. I checked different solutions, but some of them were overprogrammed or did not work well. Fortunately, I found simple solution, which solves the problem. Code snippet presenting mentioned approach, is placed below.
-public class EndlessScrollListener implements OnScrollListener { private int visibleThreshold = 20; private int currentPage = 0; @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { } @Override public void onScrollStateChanged(AbsListView view, int scrollState) { if (scrollState == SCROLL_STATE_IDLE) { if (listView.
+public class EndlessScrollListener implements OnScrollListener {   private int visibleThreshold = 20;  private int currentPage = 0;   @Override  public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {  }   @Override  public void onScrollStateChanged(AbsListView view, int scrollState) {  if (scrollState == SCROLL_STATE_IDLE) {  if (listView.
         <a href="/posts/endless-listview-in-android/">...</a>
       
     </p>
@@ -249,7 +249,7 @@ public class EndlessScrollListener implements OnScrollListener { private int vis
 
 
     <p>When you want to set custom background for Android ActionBar or SherlockActionBar instead of playing with your styles or views, you can use the following simple code snippet.
-@InjectResource(R.drawable.actionbar_custom_background) private Drawable actionBarCustomBackground; public void onCreate() { getSupportActionBar().setBackgroundDrawable(actionBarCustomBackground); } In this case, Drawable object is injected using RoboGuice library and set as a background for the ActionBar. In particular cases, you can use also getActionBar() method. In Drawable object you can store an image of 1 px width and it will be stretched for 100% of width of the ActionBar.
+@InjectResource(R.drawable.actionbar_custom_background) private Drawable actionBarCustomBackground;  public void onCreate() {  getSupportActionBar().setBackgroundDrawable(actionBarCustomBackground); } In this case, Drawable object is injected using RoboGuice library and set as a background for the ActionBar. In particular cases, you can use also getActionBar() method. In Drawable object you can store an image of 1 px width and it will be stretched for 100% of width of the ActionBar.
         <a href="/posts/custom-background-for-actionbar-and-sherlockactionbar/">...</a>
       
     </p>
@@ -275,7 +275,7 @@ public class EndlessScrollListener implements OnScrollListener { private int vis
 
 
     <p>Using custom fonts in Android is quite simple, but requires to do some things programmatically and cannot be done using only XML file defining the view. Let&rsquo;s have a look on an example. Here we have a simple Android view file:
-&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;LinearLayout xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; android:orientation=&#34;vertical&#34; android:layout_width=&#34;fill_parent&#34; android:layout_height=&#34;fill_parent&#34; &gt; &lt;TextView android:id=&#34;@+id/custom_font&#34; android:layout_width=&#34;fill_parent&#34; android:layout_height=&#34;wrap_content&#34; android:text=&#34;This is our custom font&#34; /&gt; &lt;/LinearLayout&gt; We want to use custom font for the TextView element with id: custom_font.
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;LinearLayout xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;  android:orientation=&#34;vertical&#34;  android:layout_width=&#34;fill_parent&#34;  android:layout_height=&#34;fill_parent&#34; &gt;  &lt;TextView  android:id=&#34;@+id/custom_font&#34;  android:layout_width=&#34;fill_parent&#34;  android:layout_height=&#34;wrap_content&#34;  android:text=&#34;This is our custom font&#34; /&gt; &lt;/LinearLayout&gt; We want to use custom font for the TextView element with id: custom_font.
         <a href="/posts/custom-fonts-in-android/">...</a>
       
     </p>
@@ -296,7 +296,7 @@ public class EndlessScrollListener implements OnScrollListener { private int vis
 
 
     <p>Below, you can see simple and useful code snippet presenting conversion from binary to decimal number in C language without any sophisticated operations using only strtol function.
-#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main(void) { const char binary[] = &#34;11001&#34;; int decimal = strtol(binary, NULL, 2); printf(&#34;binary = \&#34;%s\&#34;, decimal = %d = 0x%02X\n&#34;, binary, decimal, decimal); return 0; } /* my output binary = &#34;11001&#34;, decimal = 25 = 0x19 */ 
+#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main(void) {  const char binary[] = &#34;11001&#34;;  int decimal = strtol(binary, NULL, 2);  printf(&#34;binary = \&#34;%s\&#34;, decimal = %d = 0x%02X\n&#34;,  binary, decimal, decimal);  return 0; }  /* my output binary = &#34;11001&#34;, decimal = 25 = 0x19 */ 
     </p>
   </article>
   
@@ -394,40 +394,35 @@ General description of the problem #  Input #  The input consists of N cases (eq
   
 
   
-<ul class="pagination">
-  <li class="page-item">
-    <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/posts/page/15/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/posts/">1</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/posts/page/2/">2</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/posts/page/3/">3</a>
-  </li>
-  <li class="page-item disabled">
-    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/posts/page/15/">15</a>
-  </li>
-  <li class="page-item active">
-    <a class="page-link" href="/posts/page/16/">16</a>
-  </li>
-  <li class="page-item disabled">
-    <a  class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/posts/page/16/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-</ul>
-
-
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/posts/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/15/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/12/" aria-label="Page 12" class="page-link" role="button">12</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/13/" aria-label="Page 13" class="page-link" role="button">13</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/14/" aria-label="Page 14" class="page-link" role="button">14</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/15/" aria-label="Page 15" class="page-link" role="button">15</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 16" class="page-link" role="button">16</a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
  
       
 
@@ -443,8 +438,7 @@ General description of the problem #  Input #  The input consists of N cases (eq
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

@@ -8,15 +8,16 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Versioning Android applications" />
 <meta property="og:description" content="When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the Boy Scout Rule and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/versioning-android-applications/" />
+<meta property="og:url" content="https://wittchen.io/posts/versioning-android-applications/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-09-13T12:49:00+00:00" />
 <meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
+
 <title>Versioning Android applications | Piotr Wittchen</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.da110f27d6a4d632dc8e162876b7216c5c1f82164fbdac7ff33021633767f034.css" integrity="sha256-2hEPJ9ak1jLcjhYodrchbFwfghZPvax/8zAhYzdn8DQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cbbcced094aebe7c0100d06aa2ad2da2ece4c77cdcbaee3fc55113271cc5126e.js" integrity="sha256-y7zO0JSuvnwBANBqoq0touzkx3zcuu4/xVETJxzFEm4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4e258ca2a1d96c29889d3a803f8ddf3f3ac6d93b3a7fd1940d9752b7e810484f.js" integrity="sha256-TiWMoqHZbCmInTqAP43fPzrG2Ts6f9GUDZdSt&#43;gQSE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -76,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -137,49 +138,49 @@ https://github.com/alex-shpak/hugo-book
 
 
 <p>When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">Boy Scout Rule</a> and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed. In addition, <a href="http://en.wikipedia.org/wiki/Quality_assurance">QA</a> Engineer needs to know, which version of the project he or she should check. That&rsquo;s why we should introduce versioning system to our project. In Android Manifest we have <code>versionCode</code> and <code>versionName</code>. The <code>versionCode</code> is used for updates on Google Play Store and it has to be integer value. We should increment <code>versionCode</code> before releasing new version of the application for the users. The <code>versionName</code> available in Android Manifest is a string value and we can use it to store information, which we need in a current project. When we use Git as a Version Control System, we can put SHA value of a specific commit into our version name. In addition, we can add date and time of compilation to this variable. After that, our <code>versionName</code> contains very detailed information about current version of our application. Exemplary <code>versionName</code> will look in as follows: <code>f935ea7-20140913144001</code>. We can obtain that with proper configuration of <code>build.gradle</code> file containing <code>buildTime()</code> method and <code>gitSha()</code> method. Please, take a look at creation of <code>versionName</code> in 35th line of the <code>build.gradle</code> file presented below.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#f92672">import</span> java.text.SimpleDateFormat
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">buildTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">def</span> df <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyyMMddHHmmss&#34;</span><span style="color:#f92672">)</span>
-    df<span style="color:#f92672">.</span><span style="color:#a6e22e">setTimeZone</span><span style="color:#f92672">(</span>TimeZone<span style="color:#f92672">.</span><span style="color:#a6e22e">getTimeZone</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Europe/Warsaw&#34;</span><span style="color:#f92672">))</span>
-    <span style="color:#66d9ef">return</span> df<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">())</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;git rev-parse --short HEAD&#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">().</span><span style="color:#a6e22e">text</span><span style="color:#f92672">.</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">()</span>
-<span style="color:#f92672">}</span>
-
-apply plugin: <span style="color:#e6db74">&#39;android&#39;</span>
-apply plugin: <span style="color:#e6db74">&#39;android-test&#39;</span>
-
-android <span style="color:#f92672">{</span>
-    packagingOptions <span style="color:#f92672">{</span>
-        exclude <span style="color:#e6db74">&#39;LICENSE.txt&#39;</span>
-        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE&#39;</span>
-        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE.txt&#39;</span>
-        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE&#39;</span>
-        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE.txt&#39;</span>
-        exclude <span style="color:#e6db74">&#39;values/attrs.xml&#39;</span>
-        exclude <span style="color:#e6db74">&#39;values/dimens.xml&#39;</span>
-        exclude <span style="color:#e6db74">&#39;values/colors.xml&#39;</span>
-    <span style="color:#f92672">}</span>
-
-    compileSdkVersion <span style="color:#ae81ff">19</span>
-    buildToolsVersion <span style="color:#e6db74">&#34;19.0.3&#34;</span>
-
-    defaultConfig <span style="color:#f92672">{</span>
-        minSdkVersion <span style="color:#ae81ff">14</span>
-        targetSdkVersion <span style="color:#ae81ff">19</span>
-        versionCode <span style="color:#ae81ff">1</span>
-        versionName <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> buildTime<span style="color:#f92672">()</span>
-    <span style="color:#f92672">}</span>
-
-    compileOptions <span style="color:#f92672">{</span>
-        sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
-        targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.text.SimpleDateFormat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">buildTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> df <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyyMMddHHmmss&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span><span style="color:#a6e22e">setTimeZone</span><span style="color:#f92672">(</span>TimeZone<span style="color:#f92672">.</span><span style="color:#a6e22e">getTimeZone</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Europe/Warsaw&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> df<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;git rev-parse --short HEAD&#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">().</span><span style="color:#a6e22e">text</span><span style="color:#f92672">.</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;android&#39;</span>
+</span></span><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;android-test&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>android <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    packagingOptions <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;LICENSE.txt&#39;</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE&#39;</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;META-INF/LICENSE.txt&#39;</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE&#39;</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;META-INF/NOTICE.txt&#39;</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;values/attrs.xml&#39;</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;values/dimens.xml&#39;</span>
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#e6db74">&#39;values/colors.xml&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    compileSdkVersion <span style="color:#ae81ff">19</span>
+</span></span><span style="display:flex;"><span>    buildToolsVersion <span style="color:#e6db74">&#34;19.0.3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    defaultConfig <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        minSdkVersion <span style="color:#ae81ff">14</span>
+</span></span><span style="display:flex;"><span>        targetSdkVersion <span style="color:#ae81ff">19</span>
+</span></span><span style="display:flex;"><span>        versionCode <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        versionName <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> buildTime<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    compileOptions <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
+</span></span><span style="display:flex;"><span>        targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></article>
  
       
 
@@ -208,8 +209,7 @@ android <span style="color:#f92672">{</span>
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

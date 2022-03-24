@@ -6,11 +6,7 @@
     <description>Recent content in conferences on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Nov 2018 21:59:06 +0000</lastBuildDate>
-    
-	<atom:link href="https://wittchen.io/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 21 Nov 2018 21:59:06 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brain-Computer Interfaces - Science Fiction or Reality?</title>
       <link>https://wittchen.io/posts/bci-sci-fi-or-reality-oredev-2018/</link>
