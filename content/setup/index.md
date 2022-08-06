@@ -13,7 +13,7 @@ Server
 
 Software
 --------
-- OS: [Arch Linux](https://www.archlinux.org)
+- OS: [Arch Linux](https://www.archlinux.org) / [macOS](https://www.apple.com/pl/macos/)
 - WM: [i3](https://i3wm.org)
 - shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
 - terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable)
@@ -32,7 +32,7 @@ Software
 - Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org)
 - torrent client: [Transmission](https://transmissionbt.com)
 - to do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
-- notes: [Keep](https://keep.google.com) + [Simplenote](https://simplenote.com) + Physical notebook
+- notes: [Simplenote](https://simplenote.com) + Physical notebook
 - password manager: [Pass](https://www.passwordstore.org)
 - presentations: [Google Slides](http://slides.google.com)
 - calendar: [Google Calendar](https://calendar.google.com)
