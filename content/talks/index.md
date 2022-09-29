@@ -6,6 +6,7 @@ draft: true
 
 If you would like to invite me for the conference or a meetup to give a talk, feel free to [contact](/contact) me!
 
+*   2021-12-29 [Git - mini-szkolenie [PL]](https://speakerdeck.com/pwittchen/git-mini-szkolenie-pl) Digital Fingerprints, internal training (Katowice, Poland / online)
 *   2019-01-10 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Toast Meetup (Wrocław, Poland)
 *   2018-11-19 [Brain-Computer Interfaces - Science Fiction or Reality?](https://speakerdeck.com/pwittchen/brain-computer-interfaces-science-fiction-or-reality) Øredev (Malmö, Sweden)
 *   2018-10-20 [Is your app really connected?](https://speakerdeck.com/pwittchen/is-your-app-really-connected-1) Mobilization (Łódź, Poland) [watch video [EN]](https://www.youtube.com/watch?v=LDZjQ1dXgU4)
