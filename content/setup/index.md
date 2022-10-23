@@ -50,7 +50,7 @@ Hardware
 - [ThinkPad T470S](https://allegro.pl/kategoria/laptopy-ibm-lenovo-77920?string=Thinkpad%20T470S&bmatch=baseline-al-product-cl-eyesa2-engag-dict43-ele-1-1-0326) (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
 - [Macbook Air M1](https://www.euro.com.pl/laptopy-i-netbooki/apple-laptop-macbook-air-13-m1-8gb-256ssd.bhtml) (CPU: Apple M1 ARM64, RAM: 8 GB, SSD: 256 GB)
 - [Samsung C34H890WJUX Curved monitor](https://www.x-kom.pl/p/384162-monitor-led-32-i-wiekszy-samsung-c34h890wjux-curved.html?partnerid=100489039&sm12=Mjk=&ts=1583966834&token=f2fa124dd475113a22d84580304b145d&86)
-- [Logitech Bluetooth Keyboard K380](https://www.x-kom.pl/p/267644-klawiatura-bezprzewodowa-logitech-bluetooth-keyboard-k380-szara.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&98) + [Keychron K3](https://www.keychron.com/pages/keychron-k3-wireless-mechanical-keyboard)
+- [Logitech Bluetooth Keyboard K380](https://www.x-kom.pl/p/267644-klawiatura-bezprzewodowa-logitech-bluetooth-keyboard-k380-szara.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&98)
 - [Logitech MX Master Mouse](https://www.x-kom.pl/p/370388-myszka-bezprzewodowa-logitech-mx-master-2s-wireless-mouse-graphite.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&101)
 - [Logitech Webcam C925e 1080p](https://www.x-kom.pl/p/345863-kamera-internetowa-logitech-webcam-c925e-1080p.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&81)
 - [JBL Charge 3 speaker](https://www.x-kom.pl/p/500958-glosnik-przenosny-jbl-charge-3-stealth-edition-czarny.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&88)
