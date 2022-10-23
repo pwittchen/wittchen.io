@@ -2,6 +2,6 @@
 title: "Search"
 layout: "search"
 summary: "search"
-placeholder: "placeholder text in search input box"
+placeholder: "type here what you want to search..."
 ---
 
