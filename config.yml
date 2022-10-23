@@ -46,8 +46,10 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: My name is **Piotr Wittchen**. I am the [**software developer**](/in) from Poland. **I create software** for mobile devices, servers, web and Linux. I graduated with MS in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups. I contribute to [open-source](/gh) projects and from time to time give [talks](/talks) related to software development at the conferences and meetups. Moreover, I publish technical [articles](/posts) (also available on [rss](/posts/index.xml) feed). If you would like to contact me, ask me about something, start cooperation or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
+    Content: My name is **Piotr Wittchen**. I am the [**software developer**](/in) from Poland. **I create software** for mobile devices, servers, web and Linux. I graduated with MS in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups. I contribute to [open-source](/gh) projects and from time to time give [talks](/talks) related to software development at the conferences and meetups. Moreover, I publish technical [articles](/posts) (also available on [rss](/posts/index.xml) feed). To check my tools and work environment, visit my [setup](/setup) page. If you would like to contact me, ask me about something, start cooperation or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
   socialIcons:
+    - name: email
+      url: "mailto:piotr@wittchen.io"
     - name: linkedin
       url: "https://www.linkedin.com/in/piotrwittchen/"
     - name: stackoverflow
@@ -89,22 +91,14 @@ menu:
       name: talks
       url: /talks/
       weight: 30
-    - identifier: code
-      name: code
-      url: https://github.com/pwittchen
-      weight: 40
-    - identifier: setup
-      name: setup
-      url: /setup/
-      weight: 50
     - identifier: search
       name: search
       url: /search/
-      weight: 60
+      weight: 50
     - identifier: contact
       name: contact
       url: /contact/
-      weight: 70
+      weight: 60
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
