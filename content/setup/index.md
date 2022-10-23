@@ -57,7 +57,7 @@ Hardware
 - [Sennheiser Momentum True Wireless headphones](https://www.x-kom.pl/p/471041-sluchawki-bezprzewodowe-sennheiser-momentum-true-wireless-czarny.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&99) + [Sennheiser HD 400S](https://sennheiser.pl/o/hd-400s)
 - [Samson Go Mic](https://allegro.pl/kategoria/mikrofony-i-sluchawki-mikrofony-259425?string=Mikrofon%20Samson%20Technologies%20Go%20Mic)
 - [LaCie Rugged Mini 1TB USB 3.0 external hard drive](https://www.x-kom.pl/p/298286-dysk-zewnetrzny-przenosny-lacie-rugged-mini-1tb-usb-30.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&89)
-- [Google Pixel 2 phone](https://www.x-kom.pl/p/500321-smartfon-telefon-google-pixel-3a-64gb-white.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&78)
+- [Google Pixel 6 phone](https://www.x-kom.pl/p/500321-smartfon-telefon-google-pixel-3a-64gb-white.html?partnerid=100489039&sm12=NDk=&ts=1583966911&token=5ee850ae833192790b4c4bf26002e574&78)
 
 Desk
 ----
