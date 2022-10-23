@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>git on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/git/</link>
     <description>Recent content in git on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sat, 21 Jul 2018 11:21:54 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Different ways of squashing commits</title>
@@ -14,7 +13,7 @@
       
       <guid>https://wittchen.io/posts/squashing-commits/</guid>
       <description>While creating a Pull Requests it&amp;rsquo;s good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary.
-Solution #1 #  Some time ago I&amp;rsquo;ve found project http://rebaseandsqua.sh/ made by Jake Wharton. It&amp;rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.
+Solution #1 Some time ago I&amp;rsquo;ve found project http://rebaseandsqua.sh/ made by Jake Wharton. It&amp;rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.
 We can just call:
 curl rebaseandsqua.sh | sh then edit our commit messages and push the changes.</description>
     </item>
@@ -25,7 +24,7 @@ curl rebaseandsqua.sh | sh then edit our commit messages and push the changes.</
       <pubDate>Sun, 25 Mar 2018 13:35:06 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/avoiding-merging-master-to-master/</guid>
-      <description>Problem #  If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
+      <description>Problem If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
 Merge branch &amp;#39;master&amp;#39; to &amp;#39;master&amp;#39; or something similar. You might have even pushed such commits! Don&amp;rsquo;t worry, so did I ;-). In this article I&amp;rsquo;m going to explain why is it happenning and how to avoid it.
 Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository.</description>
     </item>
@@ -65,8 +64,8 @@ Such situation happens when you performed changes locally and at the same time s
       <pubDate>Fri, 10 Mar 2017 19:30:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/working-with-different-git-configs/</guid>
-      <description>Short introduction #  Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
-Different configs for different Operating Systems #  On my private computer, I use Linux. I use Git for my private projects and I use my private e-mail address there. At the same time, I use Git at work on macOS with exactly the same Git configuration, but with a different e-mail address.</description>
+      <description>Short introduction Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
+Different configs for different Operating Systems On my private computer, I use Linux. I use Git for my private projects and I use my private e-mail address there. At the same time, I use Git at work on macOS with exactly the same Git configuration, but with a different e-mail address.</description>
     </item>
     
     <item>
@@ -75,7 +74,8 @@ Different configs for different Operating Systems #  On my private computer, I u
       <pubDate>Sun, 01 Jan 2017 11:10:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/automate-boring-stuff/</guid>
-      <description>Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.</description>
+      <description>Introduction In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.
+How the report looks in practice?</description>
     </item>
     
     <item>
@@ -84,9 +84,9 @@ Different configs for different Operating Systems #  On my private computer, I u
       <pubDate>Mon, 28 Dec 2015 21:37:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/3-questions-about-your-git-repo/</guid>
-      <description>Introduction #  Can you answer the following questions about your Git repository?
+      <description>Introduction Can you answer the following questions about your Git repository?
  Does development branch has all changes from master branch? Is your gitlog a crap? How old are your branches?  If not, but you want to know answers, you&amp;rsquo;re lucky, because I prepared 3 simple scripts for you, which can help to find it out.
-Does development branch has all changes from master branch? #  git-branch-comparator is a python script, which checks if development branch has all changes from master branch in Git repository.</description>
+Does development branch has all changes from master branch? git-branch-comparator is a python script, which checks if development branch has all changes from master branch in Git repository.</description>
     </item>
     
     <item>
@@ -104,7 +104,7 @@ Does development branch has all changes from master branch? #  git-branch-compar
       <pubDate>Thu, 27 Nov 2014 21:49:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/basics-of-git/</guid>
-      <description>Introduction #  Git is very popular Version Control System used in many software projects today. In my opinion, it&amp;rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository.</description>
+      <description>Introduction Git is very popular Version Control System used in many software projects today. In my opinion, it&amp;rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository.</description>
     </item>
     
     <item>
@@ -134,8 +134,8 @@ git fetch upstream Make sure that you&amp;rsquo;re on your master branch:</descr
       <pubDate>Wed, 10 Sep 2014 21:22:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/updating-android-xml-resources-before-compilation-via-gradle/</guid>
-      <description>Problem #  In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&amp;rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?</description>
+      <description>Problem In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&amp;rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;string name=&amp;#34;backend_url&amp;#34;&amp;gt;192.</description>
     </item>
     
   </channel>

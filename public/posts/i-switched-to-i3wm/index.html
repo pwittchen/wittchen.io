@@ -1,778 +1,410 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Introduction #  From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="I switched to i3 WM" />
-<meta property="og:description" content="Introduction #  From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/i-switched-to-i3wm/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-02-16T13:16:49+00:00" />
-<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
-
-<title>I switched to i3 WM | Piotr Wittchen</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6c1374b0bf767d788b4184715f6ad2830bc9c363694b0bc830291b785510b4ae.js" integrity="sha256-bBN0sL92fXiLQYRxX2rSgwvJw2NpSwvIMCkbeFUQtK4=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
-</head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Piotr Wittchen</span>
-  </a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <ul>
-<li><a href="/">About</a></li>
-<li><a href="/posts/">Posts</a></li>
-<li><a href="/gh/">Code</a></li>
-<li><a href="/talks/">Talks</a></li>
-<li><a href="/contact/">Contact</a></li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>I switched to i3 WM</strong>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#concept">Concept</a></li>
-    <li><a href="#system-configuration-as-a-code">System configuration as a code</a></li>
-    <li><a href="#moving-around-the-system">Moving around the system</a></li>
-    <li><a href="#status-bar-configuration-as-a-code">Status bar configuration as a code</a></li>
-    <li><a href="#notifications">Notifications</a></li>
-    <li><a href="#working-with-multiple-screens">Working with multiple screens</a></li>
-    <li><a href="#wifi-and-bluetooth">WiFi and Bluetooth</a>
-      <ul>
-        <li><a href="#wifi">WiFi</a></li>
-        <li><a href="#bluetooth">Bluetooth</a></li>
-      </ul>
-    </li>
-    <li><a href="#final-thoughts">Final thoughts</a></li>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-<article class="markdown">
-  <h1>
-    <a href="/posts/i-switched-to-i3wm/">I switched to i3 WM</a>
-  </h1>
-  
-  <h5>Feb 16, 2020</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/tags/linux/">linux</a>, 
-      <a href="/tags/arch/">arch</a>, 
-      <a href="/tags/i3/">i3</a>
-  </div>
-  
-
-
-
-<h2 id="introduction">
-  Introduction
-  <a class="anchor" href="#introduction">#</a>
-</h2>
-<p>From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it. I also read some part of <a href="https://i3wm.org/docs/">docs</a> and <a href="https://i3wm.org/docs/userguide.html">user&rsquo;s guide</a> to customize my configuration. Official docs of i3 are really good.</p>
-<h2 id="concept">
-  Concept
-  <a class="anchor" href="#concept">#</a>
-</h2>
-<p>The original concept of i3 and tiling windows managers in general is the fact, that windows are not layered one on top of another like in all typical GUIs for popular operating systems we know today. It makes sense, because when one window is behind another, you cannot see its content anyway. It&rsquo;s possible to do that in i3 by detaching a windows and moving them around, but it&rsquo;s not usual case and default behavior. Today we can see that operating systems like Windows or macOS are trying to mimic behavior of tiling window managers with window splitting, etc. This functionality is available in Unity for Ubuntu and can be achieved with additional plugins for Gnome environment. We also have applications like iTerm for macOS or Tilix for Linux, which mimics the same thing, but just for terminals. In i3, we have this functioality out of the box for <strong>all</strong> programs we use in the system. Not just terminals. We can also use the same key bindings and shortcuts across whole system, which is very convenient, because you don&rsquo;t have to memorize shortcuts and keybindings for each program separately.</p>
-<h2 id="system-configuration-as-a-code">
-  System configuration as a code
-  <a class="anchor" href="#system-configuration-as-a-code">#</a>
-</h2>
-<p>What is very convenient in i3 is the fact, that you can keep and maintain your configuration as a code in the single file located in <code>~/.config/i3/config</code>. This file can contain your wallpaper definition, key bindings, configuration for moving and resizing windows, look and feel of the status bar (its colors, location, height, font, etc.) and windows (e.g. I removed title bars, because I don&rsquo;t need them now)</p>
-<p>Below, you can see my current i3 config. I keep it up to date in my <a href="https://github.com/pwittchen/dotfiles/blob/master/.config/i3/config">dotfiles repo</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># This file has been auto-generated by i3-config-wizard(1).</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># It will not be overwritten, so edit it as you like.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Should you change your keyboard layout some time, delete</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># this file and re-run i3-config-wizard(1).</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># i3 config file (v4)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Please see https://i3wm.org/docs/userguide.html for a complete reference!</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>set $mod Mod4
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Font for window titles. Will also be used by the bar unless a different font</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># is used in the bar {} block below.</span>
-</span></span><span style="display:flex;"><span>font pango:monospace <span style="color:#ae81ff">8</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># setting bg color</span>
-</span></span><span style="display:flex;"><span>exec --no-startup-id xsetroot -solid <span style="color:#e6db74">&#34;#17212b&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># setting wallpaper</span>
-</span></span><span style="display:flex;"><span>exec --no-startup-id feh --bg-scale ~/Pictures/config/wallpaper/wallpaper.jpg
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># This font is widely installed, provides lots of unicode glyphs, right-to-left</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># text rendering and scalability on retina/hidpi displays (thanks to pango).</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#font pango:DejaVu Sans Mono 8</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># The combination of xss-lock, nm-applet and pactl is a popular choice, so</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># they are included here as an example. Modify as you see fit.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># screen before suspend. Use loginctl lock-session to lock your screen.</span>
-</span></span><span style="display:flex;"><span>exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># NetworkManager is the most popular way to manage wireless networks on Linux,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># and nm-applet is a desktop environment-independent system tray GUI for it.</span>
-</span></span><span style="display:flex;"><span>exec --no-startup-id nm-applet
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use pactl to adjust volume in PulseAudio.</span>
-</span></span><span style="display:flex;"><span>set $refresh_i3status killall -SIGUSR1 i3status
-</span></span><span style="display:flex;"><span>bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% <span style="color:#f92672">&amp;&amp;</span> $refresh_i3status
-</span></span><span style="display:flex;"><span>bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% <span style="color:#f92672">&amp;&amp;</span> $refresh_i3status
-</span></span><span style="display:flex;"><span>bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle <span style="color:#f92672">&amp;&amp;</span> $refresh_i3status
-</span></span><span style="display:flex;"><span>bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle <span style="color:#f92672">&amp;&amp;</span> $refresh_i3status
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use Mouse+$mod to drag floating windows to their wanted position</span>
-</span></span><span style="display:flex;"><span>floating_modifier $mod
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># start a terminal</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Return exec gnome-terminal
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># kill focused window</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+q kill
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># start dmenu (a program launcher)</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+d exec dmenu_run
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># There also is the (new) i3-dmenu-desktop which only displays applications</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># shipping a .desktop file. It is a wrapper around dmenu, so you need that</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># installed.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># bindsym $mod+d exec --no-startup-id i3-dmenu-desktop</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># change focus</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+j focus left
-</span></span><span style="display:flex;"><span>bindsym $mod+k focus down
-</span></span><span style="display:flex;"><span>bindsym $mod+l focus up
-</span></span><span style="display:flex;"><span>bindsym $mod+semicolon focus right
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># alternatively, you can use the cursor keys:</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Left focus left
-</span></span><span style="display:flex;"><span>bindsym $mod+Down focus down
-</span></span><span style="display:flex;"><span>bindsym $mod+Up focus up
-</span></span><span style="display:flex;"><span>bindsym $mod+Right focus right
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># move focused window</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+j move left
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+k move down
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+l move up
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+semicolon move right
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># alternatively, you can use the cursor keys:</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+Left move left
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+Down move down
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+Up move up
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+Right move right
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># split in horizontal orientation</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+h split h
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># split in vertical orientation</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+v split v
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># enter fullscreen mode for the focused container</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+f fullscreen toggle
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># change container layout (stacked, tabbed, toggle split)</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+s layout stacking
-</span></span><span style="display:flex;"><span>bindsym $mod+w layout tabbed
-</span></span><span style="display:flex;"><span>bindsym $mod+e layout toggle split
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># toggle tiling / floating</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+space floating toggle
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># change focus between tiling / floating windows</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+space focus mode_toggle
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># focus the parent container</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+a focus parent
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># focus the child container</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#bindsym $mod+d focus child</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define names for default workspaces for which we configure key bindings later on.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># We use variables to avoid repeating the names in multiple places.</span>
-</span></span><span style="display:flex;"><span>set $ws1 <span style="color:#e6db74">&#34;1&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws2 <span style="color:#e6db74">&#34;2&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws3 <span style="color:#e6db74">&#34;3&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws4 <span style="color:#e6db74">&#34;4&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws5 <span style="color:#e6db74">&#34;5&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws6 <span style="color:#e6db74">&#34;6&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws7 <span style="color:#e6db74">&#34;7&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws8 <span style="color:#e6db74">&#34;8&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws9 <span style="color:#e6db74">&#34;9&#34;</span>
-</span></span><span style="display:flex;"><span>set $ws10 <span style="color:#e6db74">&#34;10&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># switch to workspace</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+1 workspace number $ws1
-</span></span><span style="display:flex;"><span>bindsym $mod+2 workspace number $ws2
-</span></span><span style="display:flex;"><span>bindsym $mod+3 workspace number $ws3
-</span></span><span style="display:flex;"><span>bindsym $mod+4 workspace number $ws4
-</span></span><span style="display:flex;"><span>bindsym $mod+5 workspace number $ws5
-</span></span><span style="display:flex;"><span>bindsym $mod+6 workspace number $ws6
-</span></span><span style="display:flex;"><span>bindsym $mod+7 workspace number $ws7
-</span></span><span style="display:flex;"><span>bindsym $mod+8 workspace number $ws8
-</span></span><span style="display:flex;"><span>bindsym $mod+9 workspace number $ws9
-</span></span><span style="display:flex;"><span>bindsym $mod+0 workspace number $ws10
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># move focused container to workspace</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+1 move container to workspace number $ws1
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+2 move container to workspace number $ws2
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+3 move container to workspace number $ws3
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+4 move container to workspace number $ws4
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+5 move container to workspace number $ws5
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+6 move container to workspace number $ws6
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+7 move container to workspace number $ws7
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+8 move container to workspace number $ws8
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+9 move container to workspace number $ws9
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+0 move container to workspace number $ws10
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># reload the configuration file</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+c reload
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># restart i3 inplace (preserves your layout/session, can be used to upgrade i3)</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+r restart
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># exit i3 (logs you out of your X session)</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+Shift+e exec <span style="color:#e6db74">&#34;i3-nagbar -t warning -m &#39;You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.&#39; -B &#39;Yes, exit i3&#39; &#39;i3-msg exit&#39;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># set key binding for screen lock</span>
-</span></span><span style="display:flex;"><span>bindsym $mod+b exec <span style="color:#e6db74">&#34;i3lock -c 17212b&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># resize window (you can also use the mouse for that)</span>
-</span></span><span style="display:flex;"><span>mode <span style="color:#e6db74">&#34;resize&#34;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># These bindings trigger as soon as you enter the resize mode</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Pressing left will shrink the window’s width.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Pressing right will grow the window’s width.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Pressing up will shrink the window’s height.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Pressing down will grow the window’s height.</span>
-</span></span><span style="display:flex;"><span>        bindsym j resize shrink width <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>        bindsym k resize grow height <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>        bindsym l resize shrink height <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>        bindsym semicolon resize grow width <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># same bindings, but for the arrow keys</span>
-</span></span><span style="display:flex;"><span>        bindsym Left resize shrink width <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>        bindsym Down resize grow height <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>        bindsym Up resize shrink height <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>        bindsym Right resize grow width <span style="color:#ae81ff">10</span> px or <span style="color:#ae81ff">10</span> ppt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># back to normal: Enter or Escape or $mod+r</span>
-</span></span><span style="display:flex;"><span>        bindsym Return mode <span style="color:#e6db74">&#34;default&#34;</span>
-</span></span><span style="display:flex;"><span>        bindsym Escape mode <span style="color:#e6db74">&#34;default&#34;</span>
-</span></span><span style="display:flex;"><span>        bindsym $mod+r mode <span style="color:#e6db74">&#34;default&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bindsym $mod+r mode <span style="color:#e6db74">&#34;resize&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># move window (you can also use mouse for that)</span>
-</span></span><span style="display:flex;"><span>mode <span style="color:#e6db74">&#34;moveit&#34;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    bindsym Up move up 20px
-</span></span><span style="display:flex;"><span>    bindsym Left move left 20px
-</span></span><span style="display:flex;"><span>    bindsym Down move down 20px
-</span></span><span style="display:flex;"><span>    bindsym Right move right 20px
-</span></span><span style="display:flex;"><span>    bindsym Mod4+m mode <span style="color:#e6db74">&#34;default&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bindsym $mod+m focus floating; mode <span style="color:#e6db74">&#34;moveit&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># brightness control (works for thinkpad, requires &#39;light&#39; program)</span>
-</span></span><span style="display:flex;"><span>bindsym XF86MonBrightnessUp exec <span style="color:#e6db74">&#34;sudo light -A 20; notify-send &#39;Brightness (Up)&#39; </span><span style="color:#66d9ef">$(</span>light<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;%&#39; &amp;&amp; light &gt; /var/log/scripts/screen_brightness.log &amp;&amp; killall -SIGUSR1 i3status&#34;</span>
-</span></span><span style="display:flex;"><span>bindsym XF86MonBrightnessDown exec <span style="color:#e6db74">&#34;sudo light -U 20; notify-send &#39;Brightness (Down)&#39; </span><span style="color:#66d9ef">$(</span>light<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;%&#39; &amp;&amp; light &gt; /var/log/scripts/screen_brightness.log &amp;&amp; killall -SIGUSR1 i3status&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># spotify play control (requires &#39;spotify-cli-linux&#39; program and media keys on keyboard)</span>
-</span></span><span style="display:flex;"><span>bindsym XF86AudioPlay exec <span style="color:#e6db74">&#34;spotifycli --playpause&#34;</span>
-</span></span><span style="display:flex;"><span>bindsym XF86AudioNext exec <span style="color:#e6db74">&#34;spotifycli --next&#34;</span>
-</span></span><span style="display:flex;"><span>bindsym XF86AudioPrev exec <span style="color:#e6db74">&#34;spotifycli --prev&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Start i3bar to display a workspace bar (plus the system information i3status</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># finds out, if available)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bar <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>workspace_buttons yes
-</span></span><span style="display:flex;"><span>    position top
-</span></span><span style="display:flex;"><span>    status_command i3status
-</span></span><span style="display:flex;"><span>font pango:Roboto <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>height <span style="color:#ae81ff">25</span>
-</span></span><span style="display:flex;"><span>tray_output none
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>colors <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>background <span style="color:#75715e">#17212b</span>
-</span></span><span style="display:flex;"><span>        statusline <span style="color:#75715e">#ffffff</span>
-</span></span><span style="display:flex;"><span>        separator  <span style="color:#75715e">#666666</span>
-</span></span><span style="display:flex;"><span>        active_workspace   <span style="color:#75715e">#2c3e50 #2c3e50 #1abc9c</span>
-</span></span><span style="display:flex;"><span>        focused_workspace  <span style="color:#75715e">#2c3e50 #2c3e50 #1abc9c</span>
-</span></span><span style="display:flex;"><span>        inactive_workspace <span style="color:#75715e">#2c3e50 #2c3e50 #ecf0f1</span>
-</span></span><span style="display:flex;"><span>        urgent_workspace   <span style="color:#75715e">#e74c3c #e74c3c #ecf0f1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># hide windows title bar</span>
-</span></span><span style="display:flex;"><span>for_window <span style="color:#f92672">[</span>class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^.*&#34;</span><span style="color:#f92672">]</span> border pixel <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>new_window 1pixel
-</span></span></code></pre></div><p>I copied colors of the status bar from a place in the web (I don&rsquo;t remember where) and I liked them, so I decided to keep them in my config.</p>
-<p>You can see a lot of keywords <code>$mod</code> in this config. It&rsquo;s just <code>Win</code> key on your keyboard. This config contains a few customizations I made. Probably, I&rsquo;ll describe them in details in separate articles.</p>
-<p>One of the useful customizations is key binding for locking the screen. I needed to install additional program called <code>i3lock</code> and add the following key binding for it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bindsym $mod+b exec <span style="color:#e6db74">&#34;i3lock -c 17212b&#34;</span>
-</span></span></code></pre></div><p>Value in the end of this config is the background color of the locked screen.</p>
-<h2 id="moving-around-the-system">
-  Moving around the system
-  <a class="anchor" href="#moving-around-the-system">#</a>
-</h2>
-<p>We don&rsquo;t need to know a lot of keybinding to move aroud the system and use it.</p>
-<p>Here are a few default shortcuts I use daily:</p>
-<ul>
-<li><code>$mod+Enter</code> - opens terminal window</li>
-<li><code>$mod+d</code> - opens <code>dmenu</code> with available programs (start typing your program name and Hit enter; hit <code>Esc</code> to close it)</li>
-<li><code>$mod+arrow</code> - switches between windows (arrows: left, right, top, bottom)</li>
-<li><code>$mod+Shift+arrow</code> - moves windows (arrows: left, right, top, bottom)</li>
-<li><code>$mod+number</code> - switches between workspaces (1, 2, 3, etc.)</li>
-<li><code>$mod+Shift+number</code> - moves window to another workspace (1, 2, 3, etc.)</li>
-<li><code>$mod+Shit+space</code> - detaches/attaches window (in case you want to have floating window or you don&rsquo;t want to use it in full screen mode)</li>
-<li><code>$mod+Shift+q</code> - closes window</li>
-<li><code>$mod+Shift+e</code> - opens dialog for closing i3</li>
-</ul>
-<p>That&rsquo;s it.</p>
-<p>I also use customized/non-default key bindings, which are not default, but they&rsquo;re defined in my config:</p>
-<ul>
-<li><code>$mod+b</code> - locks screen</li>
-<li><code>$mod+m</code> - allows to move floating (detached) window (we need to use shortcut, move window around and then use shortcut again to finish the process)</li>
-<li><code>$mod+r</code> - allows to resize floating (detached) window in the same manner like moving it</li>
-<li>media keys (mute/volume+/volume-/play/pause/next/prev) - they work in the same way like on any other system, but we need to configure this explicitly for i3</li>
-<li>brightness keys (brightness+/-) - same story like media keys</li>
-</ul>
-<p>It&rsquo;s powerful thing and we can configure and customize our own key bindings for the stuff we need.</p>
-<h2 id="status-bar-configuration-as-a-code">
-  Status bar configuration as a code
-  <a class="anchor" href="#status-bar-configuration-as-a-code">#</a>
-</h2>
-<p>Besides system configuration described above, we can keep status bar configuration as a code too! Configuration of the i3bar is well described in the <a href="https://i3wm.org/docs/userguide.html#_configuring_i3bar">official documentation</a>. As you could see in my <code>~/.config/i3/config</code> file above <code>bar</code> section looks as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bar <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>workspace_buttons yes
-</span></span><span style="display:flex;"><span>    position top
-</span></span><span style="display:flex;"><span>    status_command i3status
-</span></span><span style="display:flex;"><span>font pango:Roboto <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>height <span style="color:#ae81ff">25</span>
-</span></span><span style="display:flex;"><span>tray_output none
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>colors <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>background <span style="color:#75715e">#17212b</span>
-</span></span><span style="display:flex;"><span>        statusline <span style="color:#75715e">#ffffff</span>
-</span></span><span style="display:flex;"><span>        separator  <span style="color:#75715e">#666666</span>
-</span></span><span style="display:flex;"><span>        active_workspace   <span style="color:#75715e">#2c3e50 #2c3e50 #1abc9c</span>
-</span></span><span style="display:flex;"><span>        focused_workspace  <span style="color:#75715e">#2c3e50 #2c3e50 #1abc9c</span>
-</span></span><span style="display:flex;"><span>        inactive_workspace <span style="color:#75715e">#2c3e50 #2c3e50 #ecf0f1</span>
-</span></span><span style="display:flex;"><span>        urgent_workspace   <span style="color:#75715e">#e74c3c #e74c3c #ecf0f1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>Command called <code>status_command</code> invokes <code>i3status</code> program, which is default setup, but there are at least a few programs, which can be used instead of this to customize and enhance status bar. For now, I decided to use default option because it&rsquo;s good enough for me. You can also see that I customized colors, font, height, removed tray icons and moved status bar to the top (default position is bottom).</p>
-<p>When we are using <code>i3status</code>, then detailed configuration of status bar is located in <code>~/.config/i3status/config</code> file. You can check my current config below and in my <a href="https://github.com/pwittchen/dotfiles/blob/master/.config/i3status/config">dotfiles repository</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># i3status configuration file.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># see &#34;man i3status&#34; for documentation.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># It is important that this file is edited as UTF-8.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># The following line should contain a sharp s:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ß</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If the above line is not correctly displayed, fix your editor first!</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>general <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        colors <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>        interval<span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>    color_good      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;#88b090&#39;</span>
-</span></span><span style="display:flex;"><span>    color_degraded  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;#ccdc90&#39;</span>
-</span></span><span style="display:flex;"><span>    color_bad       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;#e89393&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;wireless _first_&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;ethernet _first_&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;battery 0&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;battery 1&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;disk /&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;disk /home&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;load&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;cpu_usage&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;memory&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;volume master&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;read_file spotify&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;read_file screen_brightness&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;read_file pacman_new_packages&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;read_file rss&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;read_file aqi&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;read_file weather&#34;</span>
-</span></span><span style="display:flex;"><span>order <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;tztime local&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>wireless _first_ <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format_up <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; %quality %essid %ip&#34;</span>
-</span></span><span style="display:flex;"><span>        format_down <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ethernet _first_ <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format_up <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%ip (%speed)&#34;</span>
-</span></span><span style="display:flex;"><span>        format_down <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>battery <span style="color:#ae81ff">0</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%status %percentage %remaining → 0&#34;</span>
-</span></span><span style="display:flex;"><span>    format_down <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    last_full_capacity <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>    integer_battery_capacity <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>    low_threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>
-</span></span><span style="display:flex;"><span>    threshold_type <span style="color:#f92672">=</span> percentage
-</span></span><span style="display:flex;"><span>    hide_seconds <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>    status_chr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span>    status_bat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span>    status_unk <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span>    status_full <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>battery <span style="color:#ae81ff">1</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%status %percentage %remaining → 1&#34;</span>
-</span></span><span style="display:flex;"><span>    format_down <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    last_full_capacity <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>    integer_battery_capacity <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>    low_threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>
-</span></span><span style="display:flex;"><span>    threshold_type <span style="color:#f92672">=</span> percentage
-</span></span><span style="display:flex;"><span>    hide_seconds <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>    status_chr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span>    status_bat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span>    status_unk <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span>    status_full <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>disk <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; %avail&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>disk <span style="color:#e6db74">&#34;/home&#34;</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;⌂ %avail&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>load <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; %1min&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cpu_usage <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;💻 %usage&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>memory <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;⛁ %used&#34;</span>
-</span></span><span style="display:flex;"><span>        threshold_degraded <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1G&#34;</span>
-</span></span><span style="display:flex;"><span>        format_degraded <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MEMORY &lt; %available&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>volume master <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;🔉 %volume&#34;</span>
-</span></span><span style="display:flex;"><span>        format_muted <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;🔇 %volume&#34;</span>
-</span></span><span style="display:flex;"><span>        device <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>read_file spotify <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;♪ %content&#34;</span>
-</span></span><span style="display:flex;"><span>        path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/log/scripts/spotify.log&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>read_file screen_brightness <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;🔆 %content%&#34;</span>
-</span></span><span style="display:flex;"><span>        path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/log/scripts/screen_brightness.log&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>read_file pacman_new_packages <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;📦 %content&#34;</span>
-</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/log/scripts/pacman_new_packages.log&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>read_file rss <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;📶 %content&#34;</span>
-</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/log/scripts/newsboat.log&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>read_file aqi <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%content&#34;</span>
-</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/log/scripts/aqi.log&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>read_file weather <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%content&#34;</span>
-</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/log/scripts/weather.log&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tztime local <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; %a %Y-%m-%d ⌚ %H:%M %Z %z  &#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>We can setup refresh interval of our status bar, which is 10 s in my case, but we can increase or decrease it if we want.</p>
-<p>As you can see, I configured multiple things. Going from the left:</p>
-<ul>
-<li>network connectivity (WiFi + strength or wired connection + IP address)</li>
-<li>usage of battery 0</li>
-<li>usage of battery 1 (I have 2 batteries in my Thinkpad)</li>
-<li>free space on the root directory</li>
-<li>free space in the home directory</li>
-<li>load (number of processes waiting to be executed)</li>
-<li>usage of CPU</li>
-<li>usage of RAM</li>
-<li>sound</li>
-<li>currently played Spotify song</li>
-<li>screen brightness</li>
-<li>number of new pacman packages to be updated</li>
-<li>number of new RSS news from newsboat</li>
-<li>air quality in my city monitored via Airly</li>
-<li>weather in my city</li>
-<li>date, time and time zone</li>
-</ul>
-<p>To make it all work, I needed to write a few additional scripts in Python and Bash, create log files to be read in the status bar, configure dunst notifications to monitor changing Spotify songs, etc. Maybe I&rsquo;ll put details of these configs in the separate articles.</p>
-<h2 id="notifications">
-  Notifications
-  <a class="anchor" href="#notifications">#</a>
-</h2>
-<p>By default i3 doesn&rsquo;t have any notifications. If we want to have them, we need to install notification daemon. We have a few choices. I decided to go with <a href="https://dunst-project.org/">dunst</a>, which is nice and minimalistic notification daemon. It&rsquo;s also configurable and we can put its configuration into <code>~/.config/dunst/dunstrc</code> file. You can check my configuration for this daemon in my <a href="https://github.com/pwittchen/dotfiles/blob/master/.config/dunst/dunstrc">dotfiles repo</a> as well as previous configs. I&rsquo;ve done a few adjustments in this file to make notifications be consistent with colors of the system and my personal preferences. I also moved notification window a little bit down because it was covering status bar. You can test notification with <code>notify-send</code> command. Remember to kill <code>dunst</code> after applying changes in the config to see them. Moreover, after installing <code>dunst</code>, we need to start it to invoke the daemon and then after future system start-ups it will start automatically.</p>
-<h2 id="working-with-multiple-screens">
-  Working with multiple screens
-  <a class="anchor" href="#working-with-multiple-screens">#</a>
-</h2>
-<p>In my current setup, I have laptop screen and external monitor. By default, i3 utilizes all available screens and first workspace is located in my primary (laptop) monitor. When I would like to use this workspace on my external screen, when laptop lid is closed, then I need to disable laptop screen. It&rsquo;s not neccessary, when you are using both laptop and external monitor. To do that, I&rsquo;m using <a href="https://wiki.archlinux.org/index.php/Xrandr">xrandr</a> program. I created wrapper for this program called <code>monitor.sh</code>, which you can find in <code>.scripts</code> directory in my dotfiles repository.</p>
-<p>Key functionalities of this script looks as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> list <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  xrandr --listmonitors
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> laptopoff <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  xrandr --output eDP-1 --off
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> laptopmirror <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  xrandr --output eDP-1 --mode 1920x1080 --output HDMI-2 --mode 1920x1080 --same-as eDP-1
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> reset <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  xrandr --auto
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> wallreload <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  feh --bg-scale ~/Pictures/config/wallpaper/wallpaper.jpg
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>When I start the system, log in and close the laptop lid, I need to execute <code>monitor.sh laptopoff</code> to disable laptop screen, and then <code>monitor.sh wallreload</code> to reload wallpaper and adjust it into the higher resolution for the workspace 1. <code>eDP-1</code> is name of my laptop monitor and it may be different in your case. In order, to reset settings, I can use <code>reset</code> command. It&rsquo;s more convenient than remembering all <code>xrandr</code> commands.</p>
-<h2 id="wifi-and-bluetooth">
-  WiFi and Bluetooth
-  <a class="anchor" href="#wifi-and-bluetooth">#</a>
-</h2>
-<h3 id="wifi">
-  WiFi
-  <a class="anchor" href="#wifi">#</a>
-</h3>
-<p>i3 doesn&rsquo;t have any control panel window known from desktop environments like Gnome. If we want to use WiFi and Bluetooth, we need command line tools (or GUI if we prefer) installed additionally in the system. For WiFi, I&rsquo;m using <a href="https://wiki.archlinux.org/index.php/NetworkManager#Usage">nmcli</a>. To list WiFi networks, we can type:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmcli dev wifi
-</span></span></code></pre></div><p>To connect to the given network, we can type:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmcli --ask device wifi connect hot_spot_name
-</span></span></code></pre></div><p>I also created wrapper for this, which you can find in <code>network.sh</code> file inside <code>.scripts</code> directory in my dotfiles repository.</p>
-<h3 id="bluetooth">
-  Bluetooth
-  <a class="anchor" href="#bluetooth">#</a>
-</h3>
-<p>We have the same story with Bluetooth. In order to connect to bluetooth devices, I&rsquo;m using <code>bluetoothctl</code> program.</p>
-<p>To display devices, we can type:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bluetoothctl devices
-</span></span></code></pre></div><p>In order to connect to the device, we can type:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bluetoothctl connect mac_address
-</span></span></code></pre></div><p>I also created wrapper for this stuff, which allows me to connect to different devices, enable/disable bluetooth, start scanning, show paired devices, etc. You can find it in <code>bluetooth.sh</code> in my dotfiles repository in the same place where previous scripts are located.</p>
-<h2 id="final-thoughts">
-  Final thoughts
-  <a class="anchor" href="#final-thoughts">#</a>
-</h2>
-<p>i3 WM is definitely great Window Manager. Probably the best I have been using so far. Initial configuration and setup can be overwhelming, but once we get into it, it will become clear and simple. Whole system is very fast, highly configurable, we can store complete configuration in the files and easily reproduce it on other machines or in our own machine in case when something will go wrong or we just want to reinstall the system. Using shortcuts and tiling windows all the time may be odd in the beginning, but once we get used to it, usage of this system is very efficient and conveninent. I have been using MS Windows, macOS, Unity desktop environment and Gnome in the past. i3wm is my favorite environment so far. Once we perform all the configuration in the beginning, we don&rsquo;t have to touch it later until we want to change or add something. I wouldn&rsquo;t recommend this WM to someone who doesn&rsquo;t like computers, configurations, solving problems, etc. If you want something working out of the box, which you can trade for speed, high customization, control over your system, etc., then you should choose macOS, Windows or maybe Gnome if you prefer Linux.</p>
-<p><img src="/posts/2020/i-switched-to-i3wm/screen_i3wm_2020_01.png" alt="" /></p>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
-<ul>
-<li><a href="https://i3wm.org/">i3wm.org - official website</a></li>
-<li><a href="https://i3wm.org/docs/">i3wm.org/docs - official docs (very informative)</a></li>
-<li><a href="https://www.youtube.com/watch?v=uD3qSgsQPRg">i3 Arch Linux config (video)</a></li>
-<li><a href="https://www.youtube.com/watch?v=GKviflL9XeI">Tiling Window Management and i3wm config additions (video)</a></li>
-<li><a href="https://www.youtube.com/watch?v=BWZQMWm4_v8">Co to jest Tiling? [PL] (video)</a></li>
-</ul>
-</article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Aug 15, 2020</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/i-switched-to-i3wm.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
-
-</div>
-
-
-
-  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#concept">Concept</a></li>
-    <li><a href="#system-configuration-as-a-code">System configuration as a code</a></li>
-    <li><a href="#moving-around-the-system">Moving around the system</a></li>
-    <li><a href="#status-bar-configuration-as-a-code">Status bar configuration as a code</a></li>
-    <li><a href="#notifications">Notifications</a></li>
-    <li><a href="#working-with-multiple-screens">Working with multiple screens</a></li>
-    <li><a href="#wifi-and-bluetooth">WiFi and Bluetooth</a>
-      <ul>
-        <li><a href="#wifi">WiFi</a></li>
-        <li><a href="#bluetooth">Bluetooth</a></li>
-      </ul>
-    </li>
-    <li><a href="#final-thoughts">Final thoughts</a></li>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-
-
- 
-      </div>
-    </aside>
-    
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>I switched to i3 WM | Piotr Wittchen</title><meta name=keywords content="linux,arch,i3"><meta name=description content="Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it."><meta name=author content="Piotr Wittchen"><link rel=canonical href=https://wittchen.io/posts/i-switched-to-i3wm/><link crossorigin=anonymous href=/assets/css/stylesheet.cdcf872f971c70fddc7fd480e8457cd308ed0cf287b498bcdc6183fc6d147858.css integrity="sha256-zc+HL5cccP3cf9SA6EV80wjtDPKHtJi83GGD/G0UeFg=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://wittchen.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wittchen.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://wittchen.io/favicon-32x32.png><link rel=apple-touch-icon href=https://wittchen.io/apple-touch-icon.png><link rel=mask-icon href=https://wittchen.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="I switched to i3 WM"><meta property="og:description" content="Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it."><meta property="og:type" content="article"><meta property="og:url" content="https://wittchen.io/posts/i-switched-to-i3wm/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-02-16T13:16:49+00:00"><meta property="article:modified_time" content="2020-02-16T13:16:49+00:00"><meta property="og:site_name" content="Piotr Wittchen"><meta name=twitter:card content="summary"><meta name=twitter:title content="I switched to i3 WM"><meta name=twitter:description content="Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://wittchen.io/posts/"},{"@type":"ListItem","position":2,"name":"I switched to i3 WM","item":"https://wittchen.io/posts/i-switched-to-i3wm/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"I switched to i3 WM","name":"I switched to i3 WM","description":"Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.","keywords":["linux","arch","i3"],"articleBody":"Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it. I also read some part of docs and user’s guide to customize my configuration. Official docs of i3 are really good.\nConcept The original concept of i3 and tiling windows managers in general is the fact, that windows are not layered one on top of another like in all typical GUIs for popular operating systems we know today. It makes sense, because when one window is behind another, you cannot see its content anyway. It’s possible to do that in i3 by detaching a windows and moving them around, but it’s not usual case and default behavior. Today we can see that operating systems like Windows or macOS are trying to mimic behavior of tiling window managers with window splitting, etc. This functionality is available in Unity for Ubuntu and can be achieved with additional plugins for Gnome environment. We also have applications like iTerm for macOS or Tilix for Linux, which mimics the same thing, but just for terminals. In i3, we have this functioality out of the box for all programs we use in the system. Not just terminals. We can also use the same key bindings and shortcuts across whole system, which is very convenient, because you don’t have to memorize shortcuts and keybindings for each program separately.\nSystem configuration as a code What is very convenient in i3 is the fact, that you can keep and maintain your configuration as a code in the single file located in ~/.config/i3/config. This file can contain your wallpaper definition, key bindings, configuration for moving and resizing windows, look and feel of the status bar (its colors, location, height, font, etc.) and windows (e.g. I removed title bars, because I don’t need them now)\nBelow, you can see my current i3 config. I keep it up to date in my dotfiles repo.\n# This file has been auto-generated by i3-config-wizard(1). # It will not be overwritten, so edit it as you like. # # Should you change your keyboard layout some time, delete # this file and re-run i3-config-wizard(1). # # i3 config file (v4) # # Please see https://i3wm.org/docs/userguide.html for a complete reference! set $mod Mod4 # Font for window titles. Will also be used by the bar unless a different font # is used in the bar {} block below. font pango:monospace 8 # setting bg color exec --no-startup-id xsetroot -solid \"#17212b\" # setting wallpaper exec --no-startup-id feh --bg-scale ~/Pictures/config/wallpaper/wallpaper.jpg # This font is widely installed, provides lots of unicode glyphs, right-to-left # text rendering and scalability on retina/hidpi displays (thanks to pango). #font pango:DejaVu Sans Mono 8 # The combination of xss-lock, nm-applet and pactl is a popular choice, so # they are included here as an example. Modify as you see fit. # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the # screen before suspend. Use loginctl lock-session to lock your screen. exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork # NetworkManager is the most popular way to manage wireless networks on Linux, # and nm-applet is a desktop environment-independent system tray GUI for it. exec --no-startup-id nm-applet # Use pactl to adjust volume in PulseAudio. set $refresh_i3status killall -SIGUSR1 i3status bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% \u0026\u0026 $refresh_i3status bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% \u0026\u0026 $refresh_i3status bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle \u0026\u0026 $refresh_i3status bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle \u0026\u0026 $refresh_i3status # Use Mouse+$mod to drag floating windows to their wanted position floating_modifier $mod # start a terminal bindsym $mod+Return exec gnome-terminal # kill focused window bindsym $mod+Shift+q kill # start dmenu (a program launcher) bindsym $mod+d exec dmenu_run # There also is the (new) i3-dmenu-desktop which only displays applications # shipping a .desktop file. It is a wrapper around dmenu, so you need that # installed. # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop # change focus bindsym $mod+j focus left bindsym $mod+k focus down bindsym $mod+l focus up bindsym $mod+semicolon focus right # alternatively, you can use the cursor keys: bindsym $mod+Left focus left bindsym $mod+Down focus down bindsym $mod+Up focus up bindsym $mod+Right focus right # move focused window bindsym $mod+Shift+j move left bindsym $mod+Shift+k move down bindsym $mod+Shift+l move up bindsym $mod+Shift+semicolon move right # alternatively, you can use the cursor keys: bindsym $mod+Shift+Left move left bindsym $mod+Shift+Down move down bindsym $mod+Shift+Up move up bindsym $mod+Shift+Right move right # split in horizontal orientation bindsym $mod+h split h # split in vertical orientation bindsym $mod+v split v # enter fullscreen mode for the focused container bindsym $mod+f fullscreen toggle # change container layout (stacked, tabbed, toggle split) bindsym $mod+s layout stacking bindsym $mod+w layout tabbed bindsym $mod+e layout toggle split # toggle tiling / floating bindsym $mod+Shift+space floating toggle # change focus between tiling / floating windows bindsym $mod+space focus mode_toggle # focus the parent container bindsym $mod+a focus parent # focus the child container #bindsym $mod+d focus child # Define names for default workspaces for which we configure key bindings later on. # We use variables to avoid repeating the names in multiple places. set $ws1 \"1\" set $ws2 \"2\" set $ws3 \"3\" set $ws4 \"4\" set $ws5 \"5\" set $ws6 \"6\" set $ws7 \"7\" set $ws8 \"8\" set $ws9 \"9\" set $ws10 \"10\" # switch to workspace bindsym $mod+1 workspace number $ws1 bindsym $mod+2 workspace number $ws2 bindsym $mod+3 workspace number $ws3 bindsym $mod+4 workspace number $ws4 bindsym $mod+5 workspace number $ws5 bindsym $mod+6 workspace number $ws6 bindsym $mod+7 workspace number $ws7 bindsym $mod+8 workspace number $ws8 bindsym $mod+9 workspace number $ws9 bindsym $mod+0 workspace number $ws10 # move focused container to workspace bindsym $mod+Shift+1 move container to workspace number $ws1 bindsym $mod+Shift+2 move container to workspace number $ws2 bindsym $mod+Shift+3 move container to workspace number $ws3 bindsym $mod+Shift+4 move container to workspace number $ws4 bindsym $mod+Shift+5 move container to workspace number $ws5 bindsym $mod+Shift+6 move container to workspace number $ws6 bindsym $mod+Shift+7 move container to workspace number $ws7 bindsym $mod+Shift+8 move container to workspace number $ws8 bindsym $mod+Shift+9 move container to workspace number $ws9 bindsym $mod+Shift+0 move container to workspace number $ws10 # reload the configuration file bindsym $mod+Shift+c reload # restart i3 inplace (preserves your layout/session, can be used to upgrade i3) bindsym $mod+Shift+r restart # exit i3 (logs you out of your X session) bindsym $mod+Shift+e exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'\" # set key binding for screen lock bindsym $mod+b exec \"i3lock -c 17212b\" # resize window (you can also use the mouse for that) mode \"resize\" { # These bindings trigger as soon as you enter the resize mode # Pressing left will shrink the window’s width. # Pressing right will grow the window’s width. # Pressing up will shrink the window’s height. # Pressing down will grow the window’s height. bindsym j resize shrink width 10 px or 10 ppt bindsym k resize grow height 10 px or 10 ppt bindsym l resize shrink height 10 px or 10 ppt bindsym semicolon resize grow width 10 px or 10 ppt # same bindings, but for the arrow keys bindsym Left resize shrink width 10 px or 10 ppt bindsym Down resize grow height 10 px or 10 ppt bindsym Up resize shrink height 10 px or 10 ppt bindsym Right resize grow width 10 px or 10 ppt # back to normal: Enter or Escape or $mod+r bindsym Return mode \"default\" bindsym Escape mode \"default\" bindsym $mod+r mode \"default\" } bindsym $mod+r mode \"resize\" # move window (you can also use mouse for that) mode \"moveit\" { bindsym Up move up 20px bindsym Left move left 20px bindsym Down move down 20px bindsym Right move right 20px bindsym Mod4+m mode \"default\" } bindsym $mod+m focus floating; mode \"moveit\" # brightness control (works for thinkpad, requires 'light' program) bindsym XF86MonBrightnessUp exec \"sudo light -A 20; notify-send 'Brightness (Up)' $(light)'%' \u0026\u0026 light  /var/log/scripts/screen_brightness.log \u0026\u0026 killall -SIGUSR1 i3status\" bindsym XF86MonBrightnessDown exec \"sudo light -U 20; notify-send 'Brightness (Down)' $(light)'%' \u0026\u0026 light  /var/log/scripts/screen_brightness.log \u0026\u0026 killall -SIGUSR1 i3status\" # spotify play control (requires 'spotify-cli-linux' program and media keys on keyboard) bindsym XF86AudioPlay exec \"spotifycli --playpause\" bindsym XF86AudioNext exec \"spotifycli --next\" bindsym XF86AudioPrev exec \"spotifycli --prev\" # Start i3bar to display a workspace bar (plus the system information i3status # finds out, if available) bar { workspace_buttons yes position top status_command i3status font pango:Roboto 10 height 25 tray_output none colors { background #17212b statusline #ffffff separator #666666 active_workspace #2c3e50 #2c3e50 #1abc9c focused_workspace #2c3e50 #2c3e50 #1abc9c inactive_workspace #2c3e50 #2c3e50 #ecf0f1 urgent_workspace #e74c3c #e74c3c #ecf0f1 } } # hide windows title bar for_window [class=\"^.*\"] border pixel 1 new_window 1pixel I copied colors of the status bar from a place in the web (I don’t remember where) and I liked them, so I decided to keep them in my config.\nYou can see a lot of keywords $mod in this config. It’s just Win key on your keyboard. This config contains a few customizations I made. Probably, I’ll describe them in details in separate articles.\nOne of the useful customizations is key binding for locking the screen. I needed to install additional program called i3lock and add the following key binding for it:\nbindsym $mod+b exec \"i3lock -c 17212b\" Value in the end of this config is the background color of the locked screen.\nMoving around the system We don’t need to know a lot of keybinding to move aroud the system and use it.\nHere are a few default shortcuts I use daily:\n $mod+Enter - opens terminal window $mod+d - opens dmenu with available programs (start typing your program name and Hit enter; hit Esc to close it) $mod+arrow - switches between windows (arrows: left, right, top, bottom) $mod+Shift+arrow - moves windows (arrows: left, right, top, bottom) $mod+number - switches between workspaces (1, 2, 3, etc.) $mod+Shift+number - moves window to another workspace (1, 2, 3, etc.) $mod+Shit+space - detaches/attaches window (in case you want to have floating window or you don’t want to use it in full screen mode) $mod+Shift+q - closes window $mod+Shift+e - opens dialog for closing i3  That’s it.\nI also use customized/non-default key bindings, which are not default, but they’re defined in my config:\n $mod+b - locks screen $mod+m - allows to move floating (detached) window (we need to use shortcut, move window around and then use shortcut again to finish the process) $mod+r - allows to resize floating (detached) window in the same manner like moving it media keys (mute/volume+/volume-/play/pause/next/prev) - they work in the same way like on any other system, but we need to configure this explicitly for i3 brightness keys (brightness+/-) - same story like media keys  It’s powerful thing and we can configure and customize our own key bindings for the stuff we need.\nStatus bar configuration as a code Besides system configuration described above, we can keep status bar configuration as a code too! Configuration of the i3bar is well described in the official documentation. As you could see in my ~/.config/i3/config file above bar section looks as follows:\nbar { workspace_buttons yes position top status_command i3status font pango:Roboto 10 height 25 tray_output none colors { background #17212b statusline #ffffff separator #666666 active_workspace #2c3e50 #2c3e50 #1abc9c focused_workspace #2c3e50 #2c3e50 #1abc9c inactive_workspace #2c3e50 #2c3e50 #ecf0f1 urgent_workspace #e74c3c #e74c3c #ecf0f1 } } Command called status_command invokes i3status program, which is default setup, but there are at least a few programs, which can be used instead of this to customize and enhance status bar. For now, I decided to use default option because it’s good enough for me. You can also see that I customized colors, font, height, removed tray icons and moved status bar to the top (default position is bottom).\nWhen we are using i3status, then detailed configuration of status bar is located in ~/.config/i3status/config file. You can check my current config below and in my dotfiles repository\n# i3status configuration file. # see \"man i3status\" for documentation. # It is important that this file is edited as UTF-8. # The following line should contain a sharp s: # ß # If the above line is not correctly displayed, fix your editor first! general { colors = true interval= 10 color_good = '#88b090' color_degraded = '#ccdc90' color_bad = '#e89393' } order += \"wireless _first_\" order += \"ethernet _first_\" order += \"battery 0\" order += \"battery 1\" order += \"disk /\" order += \"disk /home\" order += \"load\" order += \"cpu_usage\" order += \"memory\" order += \"volume master\" order += \"read_file spotify\" order += \"read_file screen_brightness\" order += \"read_file pacman_new_packages\" order += \"read_file rss\" order += \"read_file aqi\" order += \"read_file weather\" order += \"tztime local\" wireless _first_ { format_up = \" %quality %essid %ip\" format_down = \"\" } ethernet _first_ { format_up = \"%ip (%speed)\" format_down = \"\" } battery 0 { format = \"%status %percentage %remaining → 0\" format_down = \"\" last_full_capacity = true integer_battery_capacity = true low_threshold = 11 threshold_type = percentage hide_seconds = true status_chr = \" \" status_bat = \" \" status_unk = \" \" status_full = \" \" } battery 1 { format = \"%status %percentage %remaining → 1\" format_down = \"\" last_full_capacity = true integer_battery_capacity = true low_threshold = 11 threshold_type = percentage hide_seconds = true status_chr = \" \" status_bat = \" \" status_unk = \" \" status_full = \" \" } disk \"/\" { format = \" %avail\" } disk \"/home\" { format = \"⌂ %avail\" } load { format = \" %1min\" } cpu_usage { format = \"💻 %usage\" } memory { format = \"⛁ %used\" threshold_degraded = \"1G\" format_degraded = \"MEMORY } volume master { format = \"🔉 %volume\" format_muted = \"🔇 %volume\" device = \"default\" } read_file spotify { format = \"♪ %content\" path = \"/var/log/scripts/spotify.log\" } read_file screen_brightness { format = \"🔆 %content%\" path = \"/var/log/scripts/screen_brightness.log\" } read_file pacman_new_packages { format = \"📦 %content\" path = \"/var/log/scripts/pacman_new_packages.log\" } read_file rss { format = \"📶 %content\" path = \"/var/log/scripts/newsboat.log\" } read_file aqi { format = \"%content\" path = \"/var/log/scripts/aqi.log\" } read_file weather { format = \"%content\" path = \"/var/log/scripts/weather.log\" } tztime local { format = \" %a %Y-%m-%d ⌚ %H:%M %Z %z \" } We can setup refresh interval of our status bar, which is 10 s in my case, but we can increase or decrease it if we want.\nAs you can see, I configured multiple things. Going from the left:\n network connectivity (WiFi + strength or wired connection + IP address) usage of battery 0 usage of battery 1 (I have 2 batteries in my Thinkpad) free space on the root directory free space in the home directory load (number of processes waiting to be executed) usage of CPU usage of RAM sound currently played Spotify song screen brightness number of new pacman packages to be updated number of new RSS news from newsboat air quality in my city monitored via Airly weather in my city date, time and time zone  To make it all work, I needed to write a few additional scripts in Python and Bash, create log files to be read in the status bar, configure dunst notifications to monitor changing Spotify songs, etc. Maybe I’ll put details of these configs in the separate articles.\nNotifications By default i3 doesn’t have any notifications. If we want to have them, we need to install notification daemon. We have a few choices. I decided to go with dunst, which is nice and minimalistic notification daemon. It’s also configurable and we can put its configuration into ~/.config/dunst/dunstrc file. You can check my configuration for this daemon in my dotfiles repo as well as previous configs. I’ve done a few adjustments in this file to make notifications be consistent with colors of the system and my personal preferences. I also moved notification window a little bit down because it was covering status bar. You can test notification with notify-send command. Remember to kill dunst after applying changes in the config to see them. Moreover, after installing dunst, we need to start it to invoke the daemon and then after future system start-ups it will start automatically.\nWorking with multiple screens In my current setup, I have laptop screen and external monitor. By default, i3 utilizes all available screens and first workspace is located in my primary (laptop) monitor. When I would like to use this workspace on my external screen, when laptop lid is closed, then I need to disable laptop screen. It’s not neccessary, when you are using both laptop and external monitor. To do that, I’m using xrandr program. I created wrapper for this program called monitor.sh, which you can find in .scripts directory in my dotfiles repository.\nKey functionalities of this script looks as follows:\nfunction list { xrandr --listmonitors } function laptopoff { xrandr --output eDP-1 --off } function laptopmirror { xrandr --output eDP-1 --mode 1920x1080 --output HDMI-2 --mode 1920x1080 --same-as eDP-1 } function reset { xrandr --auto } function wallreload { feh --bg-scale ~/Pictures/config/wallpaper/wallpaper.jpg } When I start the system, log in and close the laptop lid, I need to execute monitor.sh laptopoff to disable laptop screen, and then monitor.sh wallreload to reload wallpaper and adjust it into the higher resolution for the workspace 1. eDP-1 is name of my laptop monitor and it may be different in your case. In order, to reset settings, I can use reset command. It’s more convenient than remembering all xrandr commands.\nWiFi and Bluetooth WiFi i3 doesn’t have any control panel window known from desktop environments like Gnome. If we want to use WiFi and Bluetooth, we need command line tools (or GUI if we prefer) installed additionally in the system. For WiFi, I’m using nmcli. To list WiFi networks, we can type:\nnmcli dev wifi To connect to the given network, we can type:\nnmcli --ask device wifi connect hot_spot_name I also created wrapper for this, which you can find in network.sh file inside .scripts directory in my dotfiles repository.\nBluetooth We have the same story with Bluetooth. In order to connect to bluetooth devices, I’m using bluetoothctl program.\nTo display devices, we can type:\nbluetoothctl devices In order to connect to the device, we can type:\nbluetoothctl connect mac_address I also created wrapper for this stuff, which allows me to connect to different devices, enable/disable bluetooth, start scanning, show paired devices, etc. You can find it in bluetooth.sh in my dotfiles repository in the same place where previous scripts are located.\nFinal thoughts i3 WM is definitely great Window Manager. Probably the best I have been using so far. Initial configuration and setup can be overwhelming, but once we get into it, it will become clear and simple. Whole system is very fast, highly configurable, we can store complete configuration in the files and easily reproduce it on other machines or in our own machine in case when something will go wrong or we just want to reinstall the system. Using shortcuts and tiling windows all the time may be odd in the beginning, but once we get used to it, usage of this system is very efficient and conveninent. I have been using MS Windows, macOS, Unity desktop environment and Gnome in the past. i3wm is my favorite environment so far. Once we perform all the configuration in the beginning, we don’t have to touch it later until we want to change or add something. I wouldn’t recommend this WM to someone who doesn’t like computers, configurations, solving problems, etc. If you want something working out of the box, which you can trade for speed, high customization, control over your system, etc., then you should choose macOS, Windows or maybe Gnome if you prefer Linux.\nReferences  i3wm.org - official website i3wm.org/docs - official docs (very informative) i3 Arch Linux config (video) Tiling Window Management and i3wm config additions (video) Co to jest Tiling? [PL] (video)  ","wordCount":"3390","inLanguage":"en","datePublished":"2020-02-16T13:16:49Z","dateModified":"2020-02-16T13:16:49Z","author":{"@type":"Person","name":"Piotr Wittchen"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://wittchen.io/posts/i-switched-to-i3wm/"},"publisher":{"@type":"Organization","name":"Piotr Wittchen","logo":{"@type":"ImageObject","url":"https://wittchen.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://wittchen.io/ accesskey=h title="Piotr Wittchen (Alt + H)"><img src=https://wittchen.io/apple-touch-icon.png alt aria-label=logo height=35>Piotr Wittchen</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://wittchen.io/posts/ title=posts><span>posts</span></a></li><li><a href=https://wittchen.io/tags/ title=tags><span>tags</span></a></li><li><a href=https://wittchen.io/talks/ title=talks><span>talks</span></a></li><li><a href=https://github.com/pwittchen title=code><span>code</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://wittchen.io/setup/ title=setup><span>setup</span></a></li><li><a href=https://wittchen.io/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=https://wittchen.io/contact/ title=contact><span>contact</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://wittchen.io/>Home</a>&nbsp;»&nbsp;<a href=https://wittchen.io/posts/>Posts</a></div><h1 class=post-title>I switched to i3 WM</h1><div class=post-meta><span title="2020-02-16 13:16:49 +0000 UTC">February 16, 2020</span>&nbsp;·&nbsp;16 min&nbsp;·&nbsp;3390 words&nbsp;·&nbsp;Piotr Wittchen&nbsp;|&nbsp;<a href=https://github.com/pwittchen/wittchen.io/blob/master/content/posts/i-switched-to-i3wm.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><h2 id=introduction>Introduction<a hidden class=anchor aria-hidden=true href=#introduction>#</a></h2><p>From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it. I also read some part of <a href=https://i3wm.org/docs/>docs</a> and <a href=https://i3wm.org/docs/userguide.html>user&rsquo;s guide</a> to customize my configuration. Official docs of i3 are really good.</p><h2 id=concept>Concept<a hidden class=anchor aria-hidden=true href=#concept>#</a></h2><p>The original concept of i3 and tiling windows managers in general is the fact, that windows are not layered one on top of another like in all typical GUIs for popular operating systems we know today. It makes sense, because when one window is behind another, you cannot see its content anyway. It&rsquo;s possible to do that in i3 by detaching a windows and moving them around, but it&rsquo;s not usual case and default behavior. Today we can see that operating systems like Windows or macOS are trying to mimic behavior of tiling window managers with window splitting, etc. This functionality is available in Unity for Ubuntu and can be achieved with additional plugins for Gnome environment. We also have applications like iTerm for macOS or Tilix for Linux, which mimics the same thing, but just for terminals. In i3, we have this functioality out of the box for <strong>all</strong> programs we use in the system. Not just terminals. We can also use the same key bindings and shortcuts across whole system, which is very convenient, because you don&rsquo;t have to memorize shortcuts and keybindings for each program separately.</p><h2 id=system-configuration-as-a-code>System configuration as a code<a hidden class=anchor aria-hidden=true href=#system-configuration-as-a-code>#</a></h2><p>What is very convenient in i3 is the fact, that you can keep and maintain your configuration as a code in the single file located in <code>~/.config/i3/config</code>. This file can contain your wallpaper definition, key bindings, configuration for moving and resizing windows, look and feel of the status bar (its colors, location, height, font, etc.) and windows (e.g. I removed title bars, because I don&rsquo;t need them now)</p><p>Below, you can see my current i3 config. I keep it up to date in my <a href=https://github.com/pwittchen/dotfiles/blob/master/.config/i3/config>dotfiles repo</a>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># This file has been auto-generated by i3-config-wizard(1).</span>
+</span></span><span class=line><span class=cl><span class=c1># It will not be overwritten, so edit it as you like.</span>
+</span></span><span class=line><span class=cl><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=c1># Should you change your keyboard layout some time, delete</span>
+</span></span><span class=line><span class=cl><span class=c1># this file and re-run i3-config-wizard(1).</span>
+</span></span><span class=line><span class=cl><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=c1># i3 config file (v4)</span>
+</span></span><span class=line><span class=cl><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=c1># Please see https://i3wm.org/docs/userguide.html for a complete reference!</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$mod</span> Mod4
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Font for window titles. Will also be used by the bar unless a different font</span>
+</span></span><span class=line><span class=cl><span class=c1># is used in the bar {} block below.</span>
+</span></span><span class=line><span class=cl>font pango:monospace <span class=m>8</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># setting bg color</span>
+</span></span><span class=line><span class=cl><span class=nb>exec</span> --no-startup-id xsetroot -solid <span class=s2>&#34;#17212b&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># setting wallpaper</span>
+</span></span><span class=line><span class=cl><span class=nb>exec</span> --no-startup-id feh --bg-scale ~/Pictures/config/wallpaper/wallpaper.jpg
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># This font is widely installed, provides lots of unicode glyphs, right-to-left</span>
+</span></span><span class=line><span class=cl><span class=c1># text rendering and scalability on retina/hidpi displays (thanks to pango).</span>
+</span></span><span class=line><span class=cl><span class=c1>#font pango:DejaVu Sans Mono 8</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># The combination of xss-lock, nm-applet and pactl is a popular choice, so</span>
+</span></span><span class=line><span class=cl><span class=c1># they are included here as an example. Modify as you see fit.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the</span>
+</span></span><span class=line><span class=cl><span class=c1># screen before suspend. Use loginctl lock-session to lock your screen.</span>
+</span></span><span class=line><span class=cl><span class=nb>exec</span> --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># NetworkManager is the most popular way to manage wireless networks on Linux,</span>
+</span></span><span class=line><span class=cl><span class=c1># and nm-applet is a desktop environment-independent system tray GUI for it.</span>
+</span></span><span class=line><span class=cl><span class=nb>exec</span> --no-startup-id nm-applet
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Use pactl to adjust volume in PulseAudio.</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$refresh_i3status</span> killall -SIGUSR1 i3status
+</span></span><span class=line><span class=cl>bindsym XF86AudioRaiseVolume <span class=nb>exec</span> --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% <span class=o>&amp;&amp;</span> <span class=nv>$refresh_i3status</span>
+</span></span><span class=line><span class=cl>bindsym XF86AudioLowerVolume <span class=nb>exec</span> --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% <span class=o>&amp;&amp;</span> <span class=nv>$refresh_i3status</span>
+</span></span><span class=line><span class=cl>bindsym XF86AudioMute <span class=nb>exec</span> --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle <span class=o>&amp;&amp;</span> <span class=nv>$refresh_i3status</span>
+</span></span><span class=line><span class=cl>bindsym XF86AudioMicMute <span class=nb>exec</span> --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle <span class=o>&amp;&amp;</span> <span class=nv>$refresh_i3status</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Use Mouse+$mod to drag floating windows to their wanted position</span>
+</span></span><span class=line><span class=cl>floating_modifier <span class=nv>$mod</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># start a terminal</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Return <span class=nb>exec</span> gnome-terminal
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># kill focused window</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+q <span class=nb>kill</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># start dmenu (a program launcher)</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+d <span class=nb>exec</span> dmenu_run
+</span></span><span class=line><span class=cl><span class=c1># There also is the (new) i3-dmenu-desktop which only displays applications</span>
+</span></span><span class=line><span class=cl><span class=c1># shipping a .desktop file. It is a wrapper around dmenu, so you need that</span>
+</span></span><span class=line><span class=cl><span class=c1># installed.</span>
+</span></span><span class=line><span class=cl><span class=c1># bindsym $mod+d exec --no-startup-id i3-dmenu-desktop</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># change focus</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+j focus left
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+k focus down
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+l focus up
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+semicolon focus right
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># alternatively, you can use the cursor keys:</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Left focus left
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Down focus down
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Up focus up
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Right focus right
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># move focused window</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+j move left
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+k move down
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+l move up
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+semicolon move right
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># alternatively, you can use the cursor keys:</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+Left move left
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+Down move down
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+Up move up
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+Right move right
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># split in horizontal orientation</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+h split h
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># split in vertical orientation</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+v split v
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># enter fullscreen mode for the focused container</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+f fullscreen toggle
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># change container layout (stacked, tabbed, toggle split)</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+s layout stacking
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+w layout tabbed
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+e layout toggle split
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># toggle tiling / floating</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+space floating toggle
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># change focus between tiling / floating windows</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+space focus mode_toggle
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># focus the parent container</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+a focus parent
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># focus the child container</span>
+</span></span><span class=line><span class=cl><span class=c1>#bindsym $mod+d focus child</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Define names for default workspaces for which we configure key bindings later on.</span>
+</span></span><span class=line><span class=cl><span class=c1># We use variables to avoid repeating the names in multiple places.</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws1</span> <span class=s2>&#34;1&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws2</span> <span class=s2>&#34;2&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws3</span> <span class=s2>&#34;3&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws4</span> <span class=s2>&#34;4&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws5</span> <span class=s2>&#34;5&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws6</span> <span class=s2>&#34;6&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws7</span> <span class=s2>&#34;7&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws8</span> <span class=s2>&#34;8&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws9</span> <span class=s2>&#34;9&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> <span class=nv>$ws10</span> <span class=s2>&#34;10&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># switch to workspace</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+1 workspace number <span class=nv>$ws1</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+2 workspace number <span class=nv>$ws2</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+3 workspace number <span class=nv>$ws3</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+4 workspace number <span class=nv>$ws4</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+5 workspace number <span class=nv>$ws5</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+6 workspace number <span class=nv>$ws6</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+7 workspace number <span class=nv>$ws7</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+8 workspace number <span class=nv>$ws8</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+9 workspace number <span class=nv>$ws9</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+0 workspace number <span class=nv>$ws10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># move focused container to workspace</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+1 move container to workspace number <span class=nv>$ws1</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+2 move container to workspace number <span class=nv>$ws2</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+3 move container to workspace number <span class=nv>$ws3</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+4 move container to workspace number <span class=nv>$ws4</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+5 move container to workspace number <span class=nv>$ws5</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+6 move container to workspace number <span class=nv>$ws6</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+7 move container to workspace number <span class=nv>$ws7</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+8 move container to workspace number <span class=nv>$ws8</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+9 move container to workspace number <span class=nv>$ws9</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+0 move container to workspace number <span class=nv>$ws10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># reload the configuration file</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+c reload
+</span></span><span class=line><span class=cl><span class=c1># restart i3 inplace (preserves your layout/session, can be used to upgrade i3)</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+r restart
+</span></span><span class=line><span class=cl><span class=c1># exit i3 (logs you out of your X session)</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+Shift+e <span class=nb>exec</span> <span class=s2>&#34;i3-nagbar -t warning -m &#39;You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.&#39; -B &#39;Yes, exit i3&#39; &#39;i3-msg exit&#39;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># set key binding for screen lock</span>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+b <span class=nb>exec</span> <span class=s2>&#34;i3lock -c 17212b&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># resize window (you can also use the mouse for that)</span>
+</span></span><span class=line><span class=cl>mode <span class=s2>&#34;resize&#34;</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1># These bindings trigger as soon as you enter the resize mode</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1># Pressing left will shrink the window’s width.</span>
+</span></span><span class=line><span class=cl>        <span class=c1># Pressing right will grow the window’s width.</span>
+</span></span><span class=line><span class=cl>        <span class=c1># Pressing up will shrink the window’s height.</span>
+</span></span><span class=line><span class=cl>        <span class=c1># Pressing down will grow the window’s height.</span>
+</span></span><span class=line><span class=cl>        bindsym j resize shrink width <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>        bindsym k resize grow height <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>        bindsym l resize shrink height <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>        bindsym semicolon resize grow width <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1># same bindings, but for the arrow keys</span>
+</span></span><span class=line><span class=cl>        bindsym Left resize shrink width <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>        bindsym Down resize grow height <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>        bindsym Up resize shrink height <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>        bindsym Right resize grow width <span class=m>10</span> px or <span class=m>10</span> ppt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1># back to normal: Enter or Escape or $mod+r</span>
+</span></span><span class=line><span class=cl>        bindsym Return mode <span class=s2>&#34;default&#34;</span>
+</span></span><span class=line><span class=cl>        bindsym Escape mode <span class=s2>&#34;default&#34;</span>
+</span></span><span class=line><span class=cl>        bindsym <span class=nv>$mod</span>+r mode <span class=s2>&#34;default&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+r mode <span class=s2>&#34;resize&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># move window (you can also use mouse for that)</span>
+</span></span><span class=line><span class=cl>mode <span class=s2>&#34;moveit&#34;</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    bindsym Up move up 20px
+</span></span><span class=line><span class=cl>    bindsym Left move left 20px
+</span></span><span class=line><span class=cl>    bindsym Down move down 20px
+</span></span><span class=line><span class=cl>    bindsym Right move right 20px
+</span></span><span class=line><span class=cl>    bindsym Mod4+m mode <span class=s2>&#34;default&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+m focus floating<span class=p>;</span> mode <span class=s2>&#34;moveit&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># brightness control (works for thinkpad, requires &#39;light&#39; program)</span>
+</span></span><span class=line><span class=cl>bindsym XF86MonBrightnessUp <span class=nb>exec</span> <span class=s2>&#34;sudo light -A 20; notify-send &#39;Brightness (Up)&#39; </span><span class=k>$(</span>light<span class=k>)</span><span class=s2>&#39;%&#39; &amp;&amp; light &gt; /var/log/scripts/screen_brightness.log &amp;&amp; killall -SIGUSR1 i3status&#34;</span>
+</span></span><span class=line><span class=cl>bindsym XF86MonBrightnessDown <span class=nb>exec</span> <span class=s2>&#34;sudo light -U 20; notify-send &#39;Brightness (Down)&#39; </span><span class=k>$(</span>light<span class=k>)</span><span class=s2>&#39;%&#39; &amp;&amp; light &gt; /var/log/scripts/screen_brightness.log &amp;&amp; killall -SIGUSR1 i3status&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># spotify play control (requires &#39;spotify-cli-linux&#39; program and media keys on keyboard)</span>
+</span></span><span class=line><span class=cl>bindsym XF86AudioPlay <span class=nb>exec</span> <span class=s2>&#34;spotifycli --playpause&#34;</span>
+</span></span><span class=line><span class=cl>bindsym XF86AudioNext <span class=nb>exec</span> <span class=s2>&#34;spotifycli --next&#34;</span>
+</span></span><span class=line><span class=cl>bindsym XF86AudioPrev <span class=nb>exec</span> <span class=s2>&#34;spotifycli --prev&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Start i3bar to display a workspace bar (plus the system information i3status</span>
+</span></span><span class=line><span class=cl><span class=c1># finds out, if available)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>bar <span class=o>{</span>
+</span></span><span class=line><span class=cl>workspace_buttons yes
+</span></span><span class=line><span class=cl>    position top
+</span></span><span class=line><span class=cl>    status_command i3status
+</span></span><span class=line><span class=cl>font pango:Roboto <span class=m>10</span>
+</span></span><span class=line><span class=cl>height <span class=m>25</span>
+</span></span><span class=line><span class=cl>tray_output none
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>colors <span class=o>{</span>
+</span></span><span class=line><span class=cl>background <span class=c1>#17212b</span>
+</span></span><span class=line><span class=cl>        statusline <span class=c1>#ffffff</span>
+</span></span><span class=line><span class=cl>        separator  <span class=c1>#666666</span>
+</span></span><span class=line><span class=cl>        active_workspace   <span class=c1>#2c3e50 #2c3e50 #1abc9c</span>
+</span></span><span class=line><span class=cl>        focused_workspace  <span class=c1>#2c3e50 #2c3e50 #1abc9c</span>
+</span></span><span class=line><span class=cl>        inactive_workspace <span class=c1>#2c3e50 #2c3e50 #ecf0f1</span>
+</span></span><span class=line><span class=cl>        urgent_workspace   <span class=c1>#e74c3c #e74c3c #ecf0f1</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># hide windows title bar</span>
+</span></span><span class=line><span class=cl>for_window <span class=o>[</span><span class=nv>class</span><span class=o>=</span><span class=s2>&#34;^.*&#34;</span><span class=o>]</span> border pixel <span class=m>1</span>
+</span></span><span class=line><span class=cl>new_window 1pixel
+</span></span></code></pre></div><p>I copied colors of the status bar from a place in the web (I don&rsquo;t remember where) and I liked them, so I decided to keep them in my config.</p><p>You can see a lot of keywords <code>$mod</code> in this config. It&rsquo;s just <code>Win</code> key on your keyboard. This config contains a few customizations I made. Probably, I&rsquo;ll describe them in details in separate articles.</p><p>One of the useful customizations is key binding for locking the screen. I needed to install additional program called <code>i3lock</code> and add the following key binding for it:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>bindsym <span class=nv>$mod</span>+b <span class=nb>exec</span> <span class=s2>&#34;i3lock -c 17212b&#34;</span>
+</span></span></code></pre></div><p>Value in the end of this config is the background color of the locked screen.</p><h2 id=moving-around-the-system>Moving around the system<a hidden class=anchor aria-hidden=true href=#moving-around-the-system>#</a></h2><p>We don&rsquo;t need to know a lot of keybinding to move aroud the system and use it.</p><p>Here are a few default shortcuts I use daily:</p><ul><li><code>$mod+Enter</code> - opens terminal window</li><li><code>$mod+d</code> - opens <code>dmenu</code> with available programs (start typing your program name and Hit enter; hit <code>Esc</code> to close it)</li><li><code>$mod+arrow</code> - switches between windows (arrows: left, right, top, bottom)</li><li><code>$mod+Shift+arrow</code> - moves windows (arrows: left, right, top, bottom)</li><li><code>$mod+number</code> - switches between workspaces (1, 2, 3, etc.)</li><li><code>$mod+Shift+number</code> - moves window to another workspace (1, 2, 3, etc.)</li><li><code>$mod+Shit+space</code> - detaches/attaches window (in case you want to have floating window or you don&rsquo;t want to use it in full screen mode)</li><li><code>$mod+Shift+q</code> - closes window</li><li><code>$mod+Shift+e</code> - opens dialog for closing i3</li></ul><p>That&rsquo;s it.</p><p>I also use customized/non-default key bindings, which are not default, but they&rsquo;re defined in my config:</p><ul><li><code>$mod+b</code> - locks screen</li><li><code>$mod+m</code> - allows to move floating (detached) window (we need to use shortcut, move window around and then use shortcut again to finish the process)</li><li><code>$mod+r</code> - allows to resize floating (detached) window in the same manner like moving it</li><li>media keys (mute/volume+/volume-/play/pause/next/prev) - they work in the same way like on any other system, but we need to configure this explicitly for i3</li><li>brightness keys (brightness+/-) - same story like media keys</li></ul><p>It&rsquo;s powerful thing and we can configure and customize our own key bindings for the stuff we need.</p><h2 id=status-bar-configuration-as-a-code>Status bar configuration as a code<a hidden class=anchor aria-hidden=true href=#status-bar-configuration-as-a-code>#</a></h2><p>Besides system configuration described above, we can keep status bar configuration as a code too! Configuration of the i3bar is well described in the <a href=https://i3wm.org/docs/userguide.html#_configuring_i3bar>official documentation</a>. As you could see in my <code>~/.config/i3/config</code> file above <code>bar</code> section looks as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>bar <span class=o>{</span>
+</span></span><span class=line><span class=cl>workspace_buttons yes
+</span></span><span class=line><span class=cl>    position top
+</span></span><span class=line><span class=cl>    status_command i3status
+</span></span><span class=line><span class=cl>font pango:Roboto <span class=m>10</span>
+</span></span><span class=line><span class=cl>height <span class=m>25</span>
+</span></span><span class=line><span class=cl>tray_output none
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>colors <span class=o>{</span>
+</span></span><span class=line><span class=cl>background <span class=c1>#17212b</span>
+</span></span><span class=line><span class=cl>        statusline <span class=c1>#ffffff</span>
+</span></span><span class=line><span class=cl>        separator  <span class=c1>#666666</span>
+</span></span><span class=line><span class=cl>        active_workspace   <span class=c1>#2c3e50 #2c3e50 #1abc9c</span>
+</span></span><span class=line><span class=cl>        focused_workspace  <span class=c1>#2c3e50 #2c3e50 #1abc9c</span>
+</span></span><span class=line><span class=cl>        inactive_workspace <span class=c1>#2c3e50 #2c3e50 #ecf0f1</span>
+</span></span><span class=line><span class=cl>        urgent_workspace   <span class=c1>#e74c3c #e74c3c #ecf0f1</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>Command called <code>status_command</code> invokes <code>i3status</code> program, which is default setup, but there are at least a few programs, which can be used instead of this to customize and enhance status bar. For now, I decided to use default option because it&rsquo;s good enough for me. You can also see that I customized colors, font, height, removed tray icons and moved status bar to the top (default position is bottom).</p><p>When we are using <code>i3status</code>, then detailed configuration of status bar is located in <code>~/.config/i3status/config</code> file. You can check my current config below and in my <a href=https://github.com/pwittchen/dotfiles/blob/master/.config/i3status/config>dotfiles repository</a></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># i3status configuration file.</span>
+</span></span><span class=line><span class=cl><span class=c1># see &#34;man i3status&#34; for documentation.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># It is important that this file is edited as UTF-8.</span>
+</span></span><span class=line><span class=cl><span class=c1># The following line should contain a sharp s:</span>
+</span></span><span class=line><span class=cl><span class=c1># ß</span>
+</span></span><span class=line><span class=cl><span class=c1># If the above line is not correctly displayed, fix your editor first!</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>general <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>colors</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>        <span class=nv>interval</span><span class=o>=</span> <span class=m>10</span>
+</span></span><span class=line><span class=cl>    <span class=nv>color_good</span>      <span class=o>=</span> <span class=s1>&#39;#88b090&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>color_degraded</span>  <span class=o>=</span> <span class=s1>&#39;#ccdc90&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>color_bad</span>       <span class=o>=</span> <span class=s1>&#39;#e89393&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;wireless _first_&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;ethernet _first_&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;battery 0&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;battery 1&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;disk /&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;disk /home&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;load&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;cpu_usage&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;memory&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;volume master&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;read_file spotify&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;read_file screen_brightness&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;read_file pacman_new_packages&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;read_file rss&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;read_file aqi&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;read_file weather&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>order</span> <span class=o>+=</span> <span class=s2>&#34;tztime local&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wireless _first_ <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format_up</span> <span class=o>=</span> <span class=s2>&#34; %quality %essid %ip&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format_down</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ethernet _first_ <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format_up</span> <span class=o>=</span> <span class=s2>&#34;%ip (%speed)&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format_down</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>battery <span class=m>0</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;%status %percentage %remaining → 0&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>format_down</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>last_full_capacity</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>integer_battery_capacity</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>low_threshold</span> <span class=o>=</span> <span class=m>11</span>
+</span></span><span class=line><span class=cl>    <span class=nv>threshold_type</span> <span class=o>=</span> percentage
+</span></span><span class=line><span class=cl>    <span class=nv>hide_seconds</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_chr</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_bat</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_unk</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_full</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>battery <span class=m>1</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;%status %percentage %remaining → 1&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>format_down</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>last_full_capacity</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>integer_battery_capacity</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>low_threshold</span> <span class=o>=</span> <span class=m>11</span>
+</span></span><span class=line><span class=cl>    <span class=nv>threshold_type</span> <span class=o>=</span> percentage
+</span></span><span class=line><span class=cl>    <span class=nv>hide_seconds</span> <span class=o>=</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_chr</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_bat</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_unk</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nv>status_full</span> <span class=o>=</span> <span class=s2>&#34; &#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>disk <span class=s2>&#34;/&#34;</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl><span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34; %avail&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>disk <span class=s2>&#34;/home&#34;</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;⌂ %avail&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>load <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34; %1min&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>cpu_usage <span class=o>{</span>
+</span></span><span class=line><span class=cl><span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;💻 %usage&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>memory <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;⛁ %used&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>threshold_degraded</span> <span class=o>=</span> <span class=s2>&#34;1G&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format_degraded</span> <span class=o>=</span> <span class=s2>&#34;MEMORY &lt; %available&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>volume master <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;🔉 %volume&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format_muted</span> <span class=o>=</span> <span class=s2>&#34;🔇 %volume&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>device</span> <span class=o>=</span> <span class=s2>&#34;default&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>read_file spotify <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;♪ %content&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>path</span> <span class=o>=</span> <span class=s2>&#34;/var/log/scripts/spotify.log&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>read_file screen_brightness <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;🔆 %content%&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nv>path</span> <span class=o>=</span> <span class=s2>&#34;/var/log/scripts/screen_brightness.log&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>read_file pacman_new_packages <span class=o>{</span>
+</span></span><span class=line><span class=cl><span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;📦 %content&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>path</span> <span class=o>=</span> <span class=s2>&#34;/var/log/scripts/pacman_new_packages.log&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>read_file rss <span class=o>{</span>
+</span></span><span class=line><span class=cl><span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;📶 %content&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>path</span> <span class=o>=</span> <span class=s2>&#34;/var/log/scripts/newsboat.log&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>read_file aqi <span class=o>{</span>
+</span></span><span class=line><span class=cl><span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;%content&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>path</span> <span class=o>=</span> <span class=s2>&#34;/var/log/scripts/aqi.log&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>read_file weather <span class=o>{</span>
+</span></span><span class=line><span class=cl><span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34;%content&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>path</span> <span class=o>=</span> <span class=s2>&#34;/var/log/scripts/weather.log&#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>tztime <span class=nb>local</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>format</span> <span class=o>=</span> <span class=s2>&#34; %a %Y-%m-%d ⌚ %H:%M %Z %z  &#34;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>We can setup refresh interval of our status bar, which is 10 s in my case, but we can increase or decrease it if we want.</p><p>As you can see, I configured multiple things. Going from the left:</p><ul><li>network connectivity (WiFi + strength or wired connection + IP address)</li><li>usage of battery 0</li><li>usage of battery 1 (I have 2 batteries in my Thinkpad)</li><li>free space on the root directory</li><li>free space in the home directory</li><li>load (number of processes waiting to be executed)</li><li>usage of CPU</li><li>usage of RAM</li><li>sound</li><li>currently played Spotify song</li><li>screen brightness</li><li>number of new pacman packages to be updated</li><li>number of new RSS news from newsboat</li><li>air quality in my city monitored via Airly</li><li>weather in my city</li><li>date, time and time zone</li></ul><p>To make it all work, I needed to write a few additional scripts in Python and Bash, create log files to be read in the status bar, configure dunst notifications to monitor changing Spotify songs, etc. Maybe I&rsquo;ll put details of these configs in the separate articles.</p><h2 id=notifications>Notifications<a hidden class=anchor aria-hidden=true href=#notifications>#</a></h2><p>By default i3 doesn&rsquo;t have any notifications. If we want to have them, we need to install notification daemon. We have a few choices. I decided to go with <a href=https://dunst-project.org/>dunst</a>, which is nice and minimalistic notification daemon. It&rsquo;s also configurable and we can put its configuration into <code>~/.config/dunst/dunstrc</code> file. You can check my configuration for this daemon in my <a href=https://github.com/pwittchen/dotfiles/blob/master/.config/dunst/dunstrc>dotfiles repo</a> as well as previous configs. I&rsquo;ve done a few adjustments in this file to make notifications be consistent with colors of the system and my personal preferences. I also moved notification window a little bit down because it was covering status bar. You can test notification with <code>notify-send</code> command. Remember to kill <code>dunst</code> after applying changes in the config to see them. Moreover, after installing <code>dunst</code>, we need to start it to invoke the daemon and then after future system start-ups it will start automatically.</p><h2 id=working-with-multiple-screens>Working with multiple screens<a hidden class=anchor aria-hidden=true href=#working-with-multiple-screens>#</a></h2><p>In my current setup, I have laptop screen and external monitor. By default, i3 utilizes all available screens and first workspace is located in my primary (laptop) monitor. When I would like to use this workspace on my external screen, when laptop lid is closed, then I need to disable laptop screen. It&rsquo;s not neccessary, when you are using both laptop and external monitor. To do that, I&rsquo;m using <a href=https://wiki.archlinux.org/index.php/Xrandr>xrandr</a> program. I created wrapper for this program called <code>monitor.sh</code>, which you can find in <code>.scripts</code> directory in my dotfiles repository.</p><p>Key functionalities of this script looks as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=k>function</span> list <span class=o>{</span>
+</span></span><span class=line><span class=cl>  xrandr --listmonitors
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>function</span> laptopoff <span class=o>{</span>
+</span></span><span class=line><span class=cl>  xrandr --output eDP-1 --off
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>function</span> laptopmirror <span class=o>{</span>
+</span></span><span class=line><span class=cl>  xrandr --output eDP-1 --mode 1920x1080 --output HDMI-2 --mode 1920x1080 --same-as eDP-1
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>function</span> reset <span class=o>{</span>
+</span></span><span class=line><span class=cl>  xrandr --auto
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>function</span> wallreload <span class=o>{</span>
+</span></span><span class=line><span class=cl>  feh --bg-scale ~/Pictures/config/wallpaper/wallpaper.jpg
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>When I start the system, log in and close the laptop lid, I need to execute <code>monitor.sh laptopoff</code> to disable laptop screen, and then <code>monitor.sh wallreload</code> to reload wallpaper and adjust it into the higher resolution for the workspace 1. <code>eDP-1</code> is name of my laptop monitor and it may be different in your case. In order, to reset settings, I can use <code>reset</code> command. It&rsquo;s more convenient than remembering all <code>xrandr</code> commands.</p><h2 id=wifi-and-bluetooth>WiFi and Bluetooth<a hidden class=anchor aria-hidden=true href=#wifi-and-bluetooth>#</a></h2><h3 id=wifi>WiFi<a hidden class=anchor aria-hidden=true href=#wifi>#</a></h3><p>i3 doesn&rsquo;t have any control panel window known from desktop environments like Gnome. If we want to use WiFi and Bluetooth, we need command line tools (or GUI if we prefer) installed additionally in the system. For WiFi, I&rsquo;m using <a href=https://wiki.archlinux.org/index.php/NetworkManager#Usage>nmcli</a>. To list WiFi networks, we can type:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nmcli dev wifi
+</span></span></code></pre></div><p>To connect to the given network, we can type:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nmcli --ask device wifi connect hot_spot_name
+</span></span></code></pre></div><p>I also created wrapper for this, which you can find in <code>network.sh</code> file inside <code>.scripts</code> directory in my dotfiles repository.</p><h3 id=bluetooth>Bluetooth<a hidden class=anchor aria-hidden=true href=#bluetooth>#</a></h3><p>We have the same story with Bluetooth. In order to connect to bluetooth devices, I&rsquo;m using <code>bluetoothctl</code> program.</p><p>To display devices, we can type:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>bluetoothctl devices
+</span></span></code></pre></div><p>In order to connect to the device, we can type:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>bluetoothctl connect mac_address
+</span></span></code></pre></div><p>I also created wrapper for this stuff, which allows me to connect to different devices, enable/disable bluetooth, start scanning, show paired devices, etc. You can find it in <code>bluetooth.sh</code> in my dotfiles repository in the same place where previous scripts are located.</p><h2 id=final-thoughts>Final thoughts<a hidden class=anchor aria-hidden=true href=#final-thoughts>#</a></h2><p>i3 WM is definitely great Window Manager. Probably the best I have been using so far. Initial configuration and setup can be overwhelming, but once we get into it, it will become clear and simple. Whole system is very fast, highly configurable, we can store complete configuration in the files and easily reproduce it on other machines or in our own machine in case when something will go wrong or we just want to reinstall the system. Using shortcuts and tiling windows all the time may be odd in the beginning, but once we get used to it, usage of this system is very efficient and conveninent. I have been using MS Windows, macOS, Unity desktop environment and Gnome in the past. i3wm is my favorite environment so far. Once we perform all the configuration in the beginning, we don&rsquo;t have to touch it later until we want to change or add something. I wouldn&rsquo;t recommend this WM to someone who doesn&rsquo;t like computers, configurations, solving problems, etc. If you want something working out of the box, which you can trade for speed, high customization, control over your system, etc., then you should choose macOS, Windows or maybe Gnome if you prefer Linux.</p><p><img loading=lazy src=/posts/2020/i-switched-to-i3wm/screen_i3wm_2020_01.png alt></p><h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2><ul><li><a href=https://i3wm.org/>i3wm.org - official website</a></li><li><a href=https://i3wm.org/docs/>i3wm.org/docs - official docs (very informative)</a></li><li><a href="https://www.youtube.com/watch?v=uD3qSgsQPRg">i3 Arch Linux config (video)</a></li><li><a href="https://www.youtube.com/watch?v=GKviflL9XeI">Tiling Window Management and i3wm config additions (video)</a></li><li><a href="https://www.youtube.com/watch?v=BWZQMWm4_v8">Co to jest Tiling? [PL] (video)</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://wittchen.io/tags/linux/>linux</a></li><li><a href=https://wittchen.io/tags/arch/>arch</a></li><li><a href=https://wittchen.io/tags/i3/>i3</a></li></ul><nav class=paginav><a class=prev href=https://wittchen.io/posts/spotify-song-in-i3-status-bar/><span class=title>« Prev</span><br><span>Spotify song in i3 status bar</span></a>
+<a class=next href=https://wittchen.io/posts/github-actions-in-action/><span class=title>Next »</span><br><span>GitHub Actions in action!</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://wittchen.io/>Piotr Wittchen</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(t=>{const n=t.parentNode.parentNode,e=document.createElement("button");e.classList.add("copy-code"),e.innerHTML="copy";function s(){e.innerHTML="copied!",setTimeout(()=>{e.innerHTML="copy"},2e3)}e.addEventListener("click",o=>{if("clipboard"in navigator){navigator.clipboard.writeText(t.textContent),s();return}const e=document.createRange();e.selectNodeContents(t);const n=window.getSelection();n.removeAllRanges(),n.addRange(e);try{document.execCommand("copy"),s()}catch(e){}n.removeRange(e)}),n.classList.contains("highlight")?n.appendChild(e):n.parentNode.firstChild==n||(t.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?t.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(e):t.parentNode.appendChild(e))})</script></body></html>

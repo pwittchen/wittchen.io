@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>kotlin on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/kotlin/</link>
     <description>Recent content in kotlin on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Fri, 14 Dec 2018 14:34:01 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kyma meets CCV2 hackathon summary</title>
@@ -13,7 +12,7 @@
       <pubDate>Fri, 14 Dec 2018 14:34:01 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/kyma-meets-ccv2-hackathon-summary/</guid>
-      <description>Introduction #  I recently I had an opportunity to join &amp;ldquo;Kyma meets CCV2 Hackathon&amp;rdquo; in the SAP Labs Poland office in Gliwice. The goal of the hackathon was to create a simple project, which will use Kyma to integrate external services with the SAP Hybris Commerce Platform. CCV2 stands for &amp;ldquo;Commerce Cloud Version 2&amp;rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&amp;rsquo;s a long story described in a short way).</description>
+      <description>Introduction I recently I had an opportunity to join &amp;ldquo;Kyma meets CCV2 Hackathon&amp;rdquo; in the SAP Labs Poland office in Gliwice. The goal of the hackathon was to create a simple project, which will use Kyma to integrate external services with the SAP Hybris Commerce Platform. CCV2 stands for &amp;ldquo;Commerce Cloud Version 2&amp;rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&amp;rsquo;s a long story described in a short way).</description>
     </item>
     
     <item>
@@ -22,8 +21,8 @@
       <pubDate>Sun, 19 Aug 2018 10:24:19 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</guid>
-      <description>Introduction #  Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
-Build System #  I used Gradle to build the project.</description>
+      <description>Introduction Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
+Build System I used Gradle to build the project.</description>
     </item>
     
     <item>

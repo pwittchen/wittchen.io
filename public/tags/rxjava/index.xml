@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>rxjava on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/rxjava/</link>
     <description>Recent content in rxjava on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 11 Mar 2018 20:02:45 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/rxjava/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introducing ReactiveBus</title>
@@ -15,7 +14,7 @@
       <guid>https://wittchen.io/posts/introducing-reactive-bus/</guid>
       <description>Today, I&amp;rsquo;ve released my another tiny project. It&amp;rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&amp;rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.
 You can use it as follows:
-Bus bus = ReactiveBus.create();  Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() {  @Override public void accept(Event event) {  // handle event here  }  }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
+Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() { @Override public void accept(Event event) { // handle event here  } }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
     </item>
     
     <item>
@@ -59,7 +58,7 @@ Code snippets shown during this presentation are available at https://github.com
       
       <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
       <description>I&amp;rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
-ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io())  .observeOn(AndroidSchedulers.mainThread())  .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.</description>
+ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.</description>
     </item>
     
     <item>
@@ -87,7 +86,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Wed, 31 May 2017 17:49:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/new-reactive-data-types-in-rxjava2/</guid>
-      <description>Introduction #  I&amp;rsquo;m still exploring reactive programming world and RxJava library. Recently, I&amp;rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&amp;rsquo;m still learning this library and its concept. It&amp;rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp;amp; Completable.</description>
+      <description>Introduction I&amp;rsquo;m still exploring reactive programming world and RxJava library. Recently, I&amp;rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&amp;rsquo;m still learning this library and its concept. It&amp;rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp;amp; Completable.</description>
     </item>
     
     <item>
@@ -96,7 +95,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Sun, 28 May 2017 21:24:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/introducing-yaas-java-sdk/</guid>
-      <description>Introduction #  In my company, there&amp;rsquo;s a concept of so-called &amp;ldquo;innovation day&amp;rdquo;. I have the possibility to &amp;ldquo;use&amp;rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&amp;rsquo;ve decided to create YaaS Java SDK. If you don&amp;rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.</description>
+      <description>Introduction In my company, there&amp;rsquo;s a concept of so-called &amp;ldquo;innovation day&amp;rdquo;. I have the possibility to &amp;ldquo;use&amp;rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&amp;rsquo;ve decided to create YaaS Java SDK. If you don&amp;rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.</description>
     </item>
     
     <item>

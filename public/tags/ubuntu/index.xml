@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ubuntu on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/ubuntu/</link>
     <description>Recent content in ubuntu on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sat, 01 Aug 2015 13:41:00 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Geary - neat e-mail client for Linux</title>
@@ -13,7 +12,7 @@
       <pubDate>Sat, 01 Aug 2015 13:41:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/geary-email-client-for-linux/</guid>
-      <description>Overview #  I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. Geary seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message.</description>
+      <description>Overview I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. Geary seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message.</description>
     </item>
     
     <item>
@@ -22,9 +21,9 @@
       <pubDate>Mon, 06 Apr 2015 12:26:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/mutate-yet-another-spotlight-for-ubuntu/</guid>
-      <description>Overview #  Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called Mutate. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.
-Installation #  We can install it with the following commands:
-sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install mutate Configuration #  After installation, we can run Mutate from Ubuntu dashboard or via default hot-key CTRL+D and type preference.</description>
+      <description>Overview Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called Mutate. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.
+Installation We can install it with the following commands:
+sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install mutate Configuration After installation, we can run Mutate from Ubuntu dashboard or via default hot-key CTRL+D and type preference.</description>
     </item>
     
     <item>
@@ -34,8 +33,9 @@ sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install 
       
       <guid>https://wittchen.io/posts/making-ubuntu-faster/</guid>
       <description>Unity desktop environment consumes lot of computer&amp;rsquo;s memory. I&amp;rsquo;ve recently found good article about 4 simple tweaks to improve Unity performance on Ubuntu. Here is the short summary of that tweaks:
-Remove Unwanted Lenses #  It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.
-sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber unity-lens-shopping unity-lens-video Install Compiz Config Settings Manager #  sudo apt-get install compizconfig-settings-manager In Compiz Config Settings Manager perform the following operations:</description>
+Remove Unwanted Lenses It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.
+sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber unity-lens-shopping unity-lens-video Install Compiz Config Settings Manager sudo apt-get install compizconfig-settings-manager In Compiz Config Settings Manager perform the following operations:
+ Disable Animations and Fading windows Set the Texture Filter to &amp;ldquo;Fast&amp;rdquo;  After that OS won&amp;rsquo;t use additional resources for performing animations.</description>
     </item>
     
     <item>
@@ -44,8 +44,8 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
       <pubDate>Thu, 25 Dec 2014 17:06:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/synapse-indicator-spotlight-for-ubuntu/</guid>
-      <description>Introduction #  If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.
-Synapse #  Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options.</description>
+      <description>Introduction If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.
+Synapse Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options.</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@ Synapse #  Synapse is searching really fast and we don&amp;rsquo;t have to wait 
       
       <guid>https://wittchen.io/posts/indicators-for-ubuntu/</guid>
       <description>I recently found an article about Best Useful Indicators Collection for Ubuntu. Indicators are very useful feature of the Ubuntu and Unity. Ubuntu has some default indicators, but we can add new indicators if we want to. Mentioned article contains list of many indicators, but personally I prefer and use only a few of them. Here are my favorites:
-Multi Load indicator #  Nice thing. This indicator monitors system resources.</description>
+Multi Load indicator Nice thing. This indicator monitors system resources. E.g. usage of the processor, RAM, disk and network.</description>
     </item>
     
     <item>
@@ -65,8 +65,8 @@ Multi Load indicator #  Nice thing. This indicator monitors system resources.</d
       
       <guid>https://wittchen.io/posts/software-for-common-users-on-ubuntu/</guid>
       <description>In this article, I&amp;rsquo;ll describe Ubuntu software for common users, which I personally use and which could be helpful on daily basis. Ubuntu software dedicated to programmers AKA developers will be described in separate article.
-Chrome #  In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:
-sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.google.com/linux/direct/google-chrome-stable\_current\_amd64.deb sudo dpkg -i google-chrome*.deb Skype #  Maybe it&amp;rsquo;s not the best, but one of the most known messengers and lot of people use it.</description>
+Chrome In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:
+sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.google.com/linux/direct/google-chrome-stable\_current\_amd64.deb sudo dpkg -i google-chrome*.deb Skype Maybe it&amp;rsquo;s not the best, but one of the most known messengers and lot of people use it.</description>
     </item>
     
     <item>
@@ -75,8 +75,8 @@ sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.goog
       <pubDate>Sun, 17 Aug 2014 20:05:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/ubuntu-system-boot-problem/</guid>
-      <description>Description of the problem #  Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: exit and system started normally, but this error occurred every time after reboot, so I decided to fix it.
-Fixing the problem #  Attempt #1 #  First, I tried to change rootdelay as error message said.</description>
+      <description>Description of the problem Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: exit and system started normally, but this error occurred every time after reboot, so I decided to fix it.
+Fixing the problem Attempt #1 First, I tried to change rootdelay as error message said. I opened file /etc/default/grub I found there the following line:</description>
     </item>
     
   </channel>

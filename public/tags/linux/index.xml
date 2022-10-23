@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>linux on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/linux/</link>
     <description>Recent content in linux on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic wallpaper for i3</title>
@@ -32,7 +31,7 @@ I created the following config inside ~/.</description>
       <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/i-switched-to-i3wm/</guid>
-      <description>Introduction #  From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.</description>
+      <description>Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.</description>
     </item>
     
     <item>
@@ -79,8 +78,8 @@ Oh no! Something has gone wrong. A problem has occurred and the system can&amp;#
       <pubDate>Sat, 27 Jul 2019 09:31:30 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</guid>
-      <description>Introduction #  In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
-Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of the Linux graphical environments for desktop:
+      <description>Introduction In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
+Desktop Environment (DE) / Windows Manager (WM) There are two main types of the Linux graphical environments for desktop:
  Window Managers Desktop Environments  Window Managers are much simpler, require a lot of configuration, learning how to use them and you see all windows at once.</description>
     </item>
     
@@ -90,7 +89,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <pubDate>Wed, 24 Jul 2019 23:59:20 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/arch-install-notes/</guid>
-      <description>Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.</description>
+      <description>Introduction For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.</description>
     </item>
     
     <item>
@@ -100,7 +99,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       
       <guid>https://wittchen.io/posts/solving-problems-with-avd-and-kvm-on-linux/</guid>
       <description>I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message&amp;hellip;
-/dev/kvm is not found #  KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V).</description>
+/dev/kvm is not found KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V).</description>
     </item>
     
     <item>
@@ -109,7 +108,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <pubDate>Sun, 12 Aug 2018 23:10:42 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/poor-mans-dropbox/</guid>
-      <description>Dropbox abandons Linux users #  Recently, I&amp;rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&amp;rsquo;ll stop syncing my files in November. I couldn&amp;rsquo;t understand why. I&amp;rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&amp;rsquo;ll need to access them from another computer or mobile device.</description>
+      <description>Dropbox abandons Linux users Recently, I&amp;rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&amp;rsquo;ll stop syncing my files in November. I couldn&amp;rsquo;t understand why. I&amp;rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&amp;rsquo;ll need to access them from another computer or mobile device.</description>
     </item>
     
     <item>
@@ -136,7 +135,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <pubDate>Sun, 16 Apr 2017 19:32:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/transform-vim-into-efficient-ide/</guid>
-      <description>Introduction #  Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&amp;rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&amp;rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim.</description>
+      <description>Introduction Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&amp;rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&amp;rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim. Moreover, Vim is default editor for a few Unix tools like Git, so it&amp;rsquo;s good to know how to use it when we accidentally open it.</description>
     </item>
     
     <item>
@@ -174,7 +173,7 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Wed, 30 Nov 2016 23:29:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/lifting-quality-of-a-shell-script/</guid>
-      <description>Introduction #  In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&amp;rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp;amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp;amp; downloading phase can be done from the terminal in a semi-automated way.</description>
+      <description>Introduction In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&amp;rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp;amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp;amp; downloading phase can be done from the terminal in a semi-automated way.</description>
     </item>
     
     <item>
@@ -197,7 +196,7 @@ Put audio CD into your computer. Open RipperX, select All Tracks and check Rip t
       <description>What is a terminal multiplexer? It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.
  - tmux.github.io
 Tmux feature, which I find very useful is tiling terminal window. We can have several tiles with different terminals within a single terminal window.
-How to use tiling? #  First, we need to install tmux:</description>
+How to use tiling? First, we need to install tmux:</description>
     </item>
     
     <item>
@@ -206,8 +205,8 @@ How to use tiling? #  First, we need to install tmux:</description>
       <pubDate>Sun, 23 Aug 2015 01:02:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/gnome-classic-ubuntu/</guid>
-      <description>Introduction #  I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&amp;rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
-New desktop environment #  I decided to choose Gnome classic.</description>
+      <description>Introduction I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&amp;rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
+New desktop environment I decided to choose Gnome classic.</description>
     </item>
     
     <item>
@@ -216,7 +215,7 @@ New desktop environment #  I decided to choose Gnome classic.</description>
       <pubDate>Sat, 01 Aug 2015 13:41:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/geary-email-client-for-linux/</guid>
-      <description>Overview #  I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. Geary seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message.</description>
+      <description>Overview I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. Geary seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message.</description>
     </item>
     
     <item>
@@ -225,7 +224,7 @@ New desktop environment #  I decided to choose Gnome classic.</description>
       <pubDate>Sat, 25 Jul 2015 01:38:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/routing-internet-via-ssh-tunnel-on-raspberry-pi/</guid>
-      <description>Problem overview #  Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&amp;rsquo;s quite slow.</description>
+      <description>Problem overview Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&amp;rsquo;s quite slow.</description>
     </item>
     
     <item>
@@ -234,9 +233,9 @@ New desktop environment #  I decided to choose Gnome classic.</description>
       <pubDate>Mon, 06 Apr 2015 12:26:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/mutate-yet-another-spotlight-for-ubuntu/</guid>
-      <description>Overview #  Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called Mutate. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.
-Installation #  We can install it with the following commands:
-sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install mutate Configuration #  After installation, we can run Mutate from Ubuntu dashboard or via default hot-key CTRL+D and type preference.</description>
+      <description>Overview Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called Mutate. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.
+Installation We can install it with the following commands:
+sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install mutate Configuration After installation, we can run Mutate from Ubuntu dashboard or via default hot-key CTRL+D and type preference.</description>
     </item>
     
     <item>
@@ -246,8 +245,9 @@ sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install 
       
       <guid>https://wittchen.io/posts/making-ubuntu-faster/</guid>
       <description>Unity desktop environment consumes lot of computer&amp;rsquo;s memory. I&amp;rsquo;ve recently found good article about 4 simple tweaks to improve Unity performance on Ubuntu. Here is the short summary of that tweaks:
-Remove Unwanted Lenses #  It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.
-sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber unity-lens-shopping unity-lens-video Install Compiz Config Settings Manager #  sudo apt-get install compizconfig-settings-manager In Compiz Config Settings Manager perform the following operations:</description>
+Remove Unwanted Lenses It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.
+sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber unity-lens-shopping unity-lens-video Install Compiz Config Settings Manager sudo apt-get install compizconfig-settings-manager In Compiz Config Settings Manager perform the following operations:
+ Disable Animations and Fading windows Set the Texture Filter to &amp;ldquo;Fast&amp;rdquo;  After that OS won&amp;rsquo;t use additional resources for performing animations.</description>
     </item>
     
     <item>
@@ -256,8 +256,8 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
       <pubDate>Thu, 25 Dec 2014 17:06:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/synapse-indicator-spotlight-for-ubuntu/</guid>
-      <description>Introduction #  If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.
-Synapse #  Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options.</description>
+      <description>Introduction If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.
+Synapse Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options.</description>
     </item>
     
     <item>
@@ -276,7 +276,7 @@ Synapse #  Synapse is searching really fast and we don&amp;rsquo;t have to wait 
       
       <guid>https://wittchen.io/posts/indicators-for-ubuntu/</guid>
       <description>I recently found an article about Best Useful Indicators Collection for Ubuntu. Indicators are very useful feature of the Ubuntu and Unity. Ubuntu has some default indicators, but we can add new indicators if we want to. Mentioned article contains list of many indicators, but personally I prefer and use only a few of them. Here are my favorites:
-Multi Load indicator #  Nice thing. This indicator monitors system resources.</description>
+Multi Load indicator Nice thing. This indicator monitors system resources. E.g. usage of the processor, RAM, disk and network.</description>
     </item>
     
     <item>
@@ -286,8 +286,8 @@ Multi Load indicator #  Nice thing. This indicator monitors system resources.</d
       
       <guid>https://wittchen.io/posts/software-for-common-users-on-ubuntu/</guid>
       <description>In this article, I&amp;rsquo;ll describe Ubuntu software for common users, which I personally use and which could be helpful on daily basis. Ubuntu software dedicated to programmers AKA developers will be described in separate article.
-Chrome #  In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:
-sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.google.com/linux/direct/google-chrome-stable\_current\_amd64.deb sudo dpkg -i google-chrome*.deb Skype #  Maybe it&amp;rsquo;s not the best, but one of the most known messengers and lot of people use it.</description>
+Chrome In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:
+sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.google.com/linux/direct/google-chrome-stable\_current\_amd64.deb sudo dpkg -i google-chrome*.deb Skype Maybe it&amp;rsquo;s not the best, but one of the most known messengers and lot of people use it.</description>
     </item>
     
     <item>
@@ -296,8 +296,8 @@ sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.goog
       <pubDate>Sun, 17 Aug 2014 20:05:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/ubuntu-system-boot-problem/</guid>
-      <description>Description of the problem #  Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: exit and system started normally, but this error occurred every time after reboot, so I decided to fix it.
-Fixing the problem #  Attempt #1 #  First, I tried to change rootdelay as error message said.</description>
+      <description>Description of the problem Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: exit and system started normally, but this error occurred every time after reboot, so I decided to fix it.
+Fixing the problem Attempt #1 First, I tried to change rootdelay as error message said. I opened file /etc/default/grub I found there the following line:</description>
     </item>
     
     <item>
@@ -306,7 +306,7 @@ Fixing the problem #  Attempt #1 #  First, I tried to change rootdelay as error 
       <pubDate>Fri, 15 Feb 2013 19:17:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/distributed-inter-process-communication/</guid>
-      <description>Project overview #  Some time ago, I created presentation for my university connected with Distributed Inter-Process Communication. It is a piece of software dedicated for Linux OS, created by Kamran Karimi, which allows to distribute software operations inside computer cluster. In addition, we can test it on a single machine during development process and run on a several machines in the production phase. I tested this solution on Ubuntu Linux.</description>
+      <description>Project overview Some time ago, I created presentation for my university connected with Distributed Inter-Process Communication. It is a piece of software dedicated for Linux OS, created by Kamran Karimi, which allows to distribute software operations inside computer cluster. In addition, we can test it on a single machine during development process and run on a several machines in the production phase. I tested this solution on Ubuntu Linux. Short description of this system is presented below.</description>
     </item>
     
   </channel>

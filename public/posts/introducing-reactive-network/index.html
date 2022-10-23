@@ -1,252 +1,38 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="I&rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
-Library is compatible with RxJava 1.0.&#43; and RxAndroid 1.0.&#43; and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.
-This library is much simpler and easier to use than NetworkEvents.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Introducing ReactiveNetwork" />
-<meta property="og:description" content="I&rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
-Library is compatible with RxJava 1.0.&#43; and RxAndroid 1.0.&#43; and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.
-This library is much simpler and easier to use than NetworkEvents." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/introducing-reactive-network/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2015-08-10T21:52:00+00:00" />
-<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
-
-<title>Introducing ReactiveNetwork | Piotr Wittchen</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6c1374b0bf767d788b4184715f6ad2830bc9c363694b0bc830291b785510b4ae.js" integrity="sha256-bBN0sL92fXiLQYRxX2rSgwvJw2NpSwvIMCkbeFUQtK4=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
-</head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Piotr Wittchen</span>
-  </a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <ul>
-<li><a href="/">About</a></li>
-<li><a href="/posts/">Posts</a></li>
-<li><a href="/gh/">Code</a></li>
-<li><a href="/talks/">Talks</a></li>
-<li><a href="/contact/">Contact</a></li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Introducing ReactiveNetwork</strong>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents"></nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-<article class="markdown">
-  <h1>
-    <a href="/posts/introducing-reactive-network/">Introducing ReactiveNetwork</a>
-  </h1>
-  
-  <h5>Aug 10, 2015</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/tags/android/">android</a>, 
-      <a href="/tags/open-source/">open-source</a>, 
-      <a href="/tags/rxjava/">rxjava</a>
-  </div>
-  
-
-
-
-<p>I&rsquo;ve recently released <a href="https://github.com/pwittchen/ReactiveNetwork">ReactiveNetwork</a>. It is an open-source Android library listening network connection state and change of the WiFi signal strength with <a href="https://github.com/ReactiveX/RxJava">RxJava</a> Observables. It&rsquo;s a successor of <a href="https://github.com/pwittchen/NetworkEvents">Network Events</a> library rewritten with Reactive Programming approach.</p>
-<p>Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9.
-JavaDoc can be found at: <a href="http://pwittchen.github.io/ReactiveNetwork">http://pwittchen.github.io/ReactiveNetwork</a>.
-Repository is available at: <a href="https://github.com/pwittchen/ReactiveNetwork">https://github.com/pwittchen/ReactiveNetwork</a>.</p>
-<p>This library is much simpler and easier to use than NetworkEvents. Even code-base is much smaller, but we have to remember that it utilizes powerful RxJava and RxAndroid. RxJava hase huge API and gives a lot of possibilities. That&rsquo;s why I was able to obtain desired result with fewer lines of code.</p>
-<p>Basic library usage is quite simple. E.g if we want to monitor <code>ConnectivityStatus</code> (<code>WIFI_CONNECTED</code>, <code>MOBILE_CONNECTED</code> or <code>OFFLINE</code>), we can create the following subscription, which is quite familiar for software developers who already know RxJava:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> ReactiveNetwork<span style="color:#f92672">().</span><span style="color:#a6e22e">observeConnectivity</span><span style="color:#f92672">(</span>context<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span> <span style="color:#75715e">// anything else what you can do with RxJava
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Action1<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>ConnectivityStatus connectivityStatus<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something with connectivityStatus
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
-</span></span></code></pre></div><p>When we want to monitor available WiFi Access Points and we want to get fresh list of them whenever strength of the WiFi Access Points signal changes (e.g. when we are moving with a mobile device around), we can use the following code snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> ReactiveNetwork<span style="color:#f92672">().</span><span style="color:#a6e22e">observeWifiAccessPoints</span><span style="color:#f92672">(</span>context<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribeOn</span><span style="color:#f92672">(</span>Schedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">io</span><span style="color:#f92672">())</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span> <span style="color:#75715e">// anything else what you can do with RxJava
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">observeOn</span><span style="color:#f92672">(</span>AndroidSchedulers<span style="color:#f92672">.</span><span style="color:#a6e22e">mainThread</span><span style="color:#f92672">())</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Action1<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;&gt;()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>ScanResult<span style="color:#f92672">&gt;</span> scanResults<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// do something with scanResults
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
-</span></span></code></pre></div><p>If you want to use ReactiveNetwork in your project, add the following dependency to your <code>build.gradle</code> file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  compile <span style="color:#e6db74">&#39;com.github.pwittchen:reactivenetwork:0.0.2&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>Find more in the GitHub repository of the project at: <a href="https://github.com/pwittchen/ReactiveNetwork">https://github.com/pwittchen/ReactiveNetwork</a>.
-It&rsquo;s worth mentioning that this library was featured on <a href="https://android-arsenal.com/details/1/2290">Android Arsenal</a>, <a href="http://androidweekly.net/issues/issue-166">Android Weekly</a> and <a href="http://androidweekly.cn/android-dev-weekly-issue44/">Android Weekly China</a> websites.
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Introducing ReactiveNetwork | Piotr Wittchen</title><meta name=keywords content="android,open-source,rxjava"><meta name=description content="I&rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
+Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.
+This library is much simpler and easier to use than NetworkEvents."><meta name=author content="Piotr Wittchen"><link rel=canonical href=https://wittchen.io/posts/introducing-reactive-network/><link crossorigin=anonymous href=/assets/css/stylesheet.cdcf872f971c70fddc7fd480e8457cd308ed0cf287b498bcdc6183fc6d147858.css integrity="sha256-zc+HL5cccP3cf9SA6EV80wjtDPKHtJi83GGD/G0UeFg=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://wittchen.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wittchen.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://wittchen.io/favicon-32x32.png><link rel=apple-touch-icon href=https://wittchen.io/apple-touch-icon.png><link rel=mask-icon href=https://wittchen.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Introducing ReactiveNetwork"><meta property="og:description" content="I&rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
+Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.
+This library is much simpler and easier to use than NetworkEvents."><meta property="og:type" content="article"><meta property="og:url" content="https://wittchen.io/posts/introducing-reactive-network/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-08-10T21:52:00+00:00"><meta property="article:modified_time" content="2015-08-10T21:52:00+00:00"><meta property="og:site_name" content="Piotr Wittchen"><meta name=twitter:card content="summary"><meta name=twitter:title content="Introducing ReactiveNetwork"><meta name=twitter:description content="I&rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It&rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.
+Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.
+This library is much simpler and easier to use than NetworkEvents."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://wittchen.io/posts/"},{"@type":"ListItem","position":2,"name":"Introducing ReactiveNetwork","item":"https://wittchen.io/posts/introducing-reactive-network/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Introducing ReactiveNetwork","name":"Introducing ReactiveNetwork","description":"I\u0026rsquo;ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It\u0026rsquo;s a successor of Network Events library rewritten with Reactive Programming approach.\nLibrary is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.\nThis library is much simpler and easier to use than NetworkEvents.","keywords":["android","open-source","rxjava"],"articleBody":"I’ve recently released ReactiveNetwork. It is an open-source Android library listening network connection state and change of the WiFi signal strength with RxJava Observables. It’s a successor of Network Events library rewritten with Reactive Programming approach.\nLibrary is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9. JavaDoc can be found at: http://pwittchen.github.io/ReactiveNetwork. Repository is available at: https://github.com/pwittchen/ReactiveNetwork.\nThis library is much simpler and easier to use than NetworkEvents. Even code-base is much smaller, but we have to remember that it utilizes powerful RxJava and RxAndroid. RxJava hase huge API and gives a lot of possibilities. That’s why I was able to obtain desired result with fewer lines of code.\nBasic library usage is quite simple. E.g if we want to monitor ConnectivityStatus (WIFI_CONNECTED, MOBILE_CONNECTED or OFFLINE), we can create the following subscription, which is quite familiar for software developers who already know RxJava:\nnew ReactiveNetwork().observeConnectivity(context) .subscribeOn(Schedulers.io()) ... // anything else what you can do with RxJava  .observeOn(AndroidSchedulers.mainThread()) .subscribe(new Action1() { @Override public void call(ConnectivityStatus connectivityStatus) { // do something with connectivityStatus  } }); When we want to monitor available WiFi Access Points and we want to get fresh list of them whenever strength of the WiFi Access Points signal changes (e.g. when we are moving with a mobile device around), we can use the following code snippet:\nnew ReactiveNetwork().observeWifiAccessPoints(context) .subscribeOn(Schedulers.io()) ... // anything else what you can do with RxJava  .observeOn(AndroidSchedulers.mainThread()) .subscribe(new Action1ListScanResult() { @Override public void call(ListScanResult scanResults) { // do something with scanResults  } }); If you want to use ReactiveNetwork in your project, add the following dependency to your build.gradle file:\ndependencies { compile 'com.github.pwittchen:reactivenetwork:0.0.2' } Find more in the GitHub repository of the project at: https://github.com/pwittchen/ReactiveNetwork. It’s worth mentioning that this library was featured on Android Arsenal, Android Weekly and Android Weekly China websites. I hope you will find it useful and you will make your apps more reactive! Feel free to fork the library. Any feedback is welcome as usual.\n","wordCount":"336","inLanguage":"en","datePublished":"2015-08-10T21:52:00Z","dateModified":"2015-08-10T21:52:00Z","author":{"@type":"Person","name":"Piotr Wittchen"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://wittchen.io/posts/introducing-reactive-network/"},"publisher":{"@type":"Organization","name":"Piotr Wittchen","logo":{"@type":"ImageObject","url":"https://wittchen.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://wittchen.io/ accesskey=h title="Piotr Wittchen (Alt + H)"><img src=https://wittchen.io/apple-touch-icon.png alt aria-label=logo height=35>Piotr Wittchen</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://wittchen.io/posts/ title=posts><span>posts</span></a></li><li><a href=https://wittchen.io/tags/ title=tags><span>tags</span></a></li><li><a href=https://wittchen.io/talks/ title=talks><span>talks</span></a></li><li><a href=https://github.com/pwittchen title=code><span>code</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://wittchen.io/setup/ title=setup><span>setup</span></a></li><li><a href=https://wittchen.io/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=https://wittchen.io/contact/ title=contact><span>contact</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://wittchen.io/>Home</a>&nbsp;»&nbsp;<a href=https://wittchen.io/posts/>Posts</a></div><h1 class=post-title>Introducing ReactiveNetwork</h1><div class=post-meta><span title="2015-08-10 21:52:00 +0000 UTC">August 10, 2015</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;336 words&nbsp;·&nbsp;Piotr Wittchen&nbsp;|&nbsp;<a href=https://github.com/pwittchen/wittchen.io/blob/master/content/posts/introducing-reactive-network.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>I&rsquo;ve recently released <a href=https://github.com/pwittchen/ReactiveNetwork>ReactiveNetwork</a>. It is an open-source Android library listening network connection state and change of the WiFi signal strength with <a href=https://github.com/ReactiveX/RxJava>RxJava</a> Observables. It&rsquo;s a successor of <a href=https://github.com/pwittchen/NetworkEvents>Network Events</a> library rewritten with Reactive Programming approach.</p><p>Library is compatible with RxJava 1.0.+ and RxAndroid 1.0.+ and uses them under the hood. Min Android SDK version is 9.
+JavaDoc can be found at: <a href=http://pwittchen.github.io/ReactiveNetwork>http://pwittchen.github.io/ReactiveNetwork</a>.
+Repository is available at: <a href=https://github.com/pwittchen/ReactiveNetwork>https://github.com/pwittchen/ReactiveNetwork</a>.</p><p>This library is much simpler and easier to use than NetworkEvents. Even code-base is much smaller, but we have to remember that it utilizes powerful RxJava and RxAndroid. RxJava hase huge API and gives a lot of possibilities. That&rsquo;s why I was able to obtain desired result with fewer lines of code.</p><p>Basic library usage is quite simple. E.g if we want to monitor <code>ConnectivityStatus</code> (<code>WIFI_CONNECTED</code>, <code>MOBILE_CONNECTED</code> or <code>OFFLINE</code>), we can create the following subscription, which is quite familiar for software developers who already know RxJava:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=k>new</span> <span class=n>ReactiveNetwork</span><span class=o>().</span><span class=na>observeConnectivity</span><span class=o>(</span><span class=n>context</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>.</span><span class=na>subscribeOn</span><span class=o>(</span><span class=n>Schedulers</span><span class=o>.</span><span class=na>io</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>    <span class=o>...</span> <span class=c1>// anything else what you can do with RxJava
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>.</span><span class=na>observeOn</span><span class=o>(</span><span class=n>AndroidSchedulers</span><span class=o>.</span><span class=na>mainThread</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>    <span class=o>.</span><span class=na>subscribe</span><span class=o>(</span><span class=k>new</span> <span class=n>Action1</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=nd>@Override</span> <span class=kd>public</span> <span class=kt>void</span> <span class=nf>call</span><span class=o>(</span><span class=n>ConnectivityStatus</span> <span class=n>connectivityStatus</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// do something with connectivityStatus
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>});</span>
+</span></span></code></pre></div><p>When we want to monitor available WiFi Access Points and we want to get fresh list of them whenever strength of the WiFi Access Points signal changes (e.g. when we are moving with a mobile device around), we can use the following code snippet:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=k>new</span> <span class=n>ReactiveNetwork</span><span class=o>().</span><span class=na>observeWifiAccessPoints</span><span class=o>(</span><span class=n>context</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>.</span><span class=na>subscribeOn</span><span class=o>(</span><span class=n>Schedulers</span><span class=o>.</span><span class=na>io</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>    <span class=o>...</span> <span class=c1>// anything else what you can do with RxJava
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>.</span><span class=na>observeOn</span><span class=o>(</span><span class=n>AndroidSchedulers</span><span class=o>.</span><span class=na>mainThread</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>    <span class=o>.</span><span class=na>subscribe</span><span class=o>(</span><span class=k>new</span> <span class=n>Action1</span><span class=o>&lt;</span><span class=n>List</span><span class=o>&lt;</span><span class=n>ScanResult</span><span class=o>&gt;&gt;()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=nd>@Override</span> <span class=kd>public</span> <span class=kt>void</span> <span class=nf>call</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=n>ScanResult</span><span class=o>&gt;</span> <span class=n>scanResults</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// do something with scanResults
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>});</span>
+</span></span></code></pre></div><p>If you want to use ReactiveNetwork in your project, add the following dependency to your <code>build.gradle</code> file:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-gradle data-lang=gradle><span class=line><span class=cl><span class=n>dependencies</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>  <span class=n>compile</span> <span class=s1>&#39;com.github.pwittchen:reactivenetwork:0.0.2&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>Find more in the GitHub repository of the project at: <a href=https://github.com/pwittchen/ReactiveNetwork>https://github.com/pwittchen/ReactiveNetwork</a>.
+It&rsquo;s worth mentioning that this library was featured on <a href=https://android-arsenal.com/details/1/2290>Android Arsenal</a>, <a href=http://androidweekly.net/issues/issue-166>Android Weekly</a> and <a href=http://androidweekly.cn/android-dev-weekly-issue44/>Android Weekly China</a> websites.
 I hope you will find it useful and you will make your apps more reactive! Feel free to fork the library.
-Any feedback is welcome as usual.</p>
-</article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Aug 15, 2020</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/introducing-reactive-network.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
-
-</div>
-
-
-
-  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents"></nav>
-
-
- 
-      </div>
-    </aside>
-    
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+Any feedback is welcome as usual.</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://wittchen.io/tags/android/>android</a></li><li><a href=https://wittchen.io/tags/open-source/>open-source</a></li><li><a href=https://wittchen.io/tags/rxjava/>rxjava</a></li></ul><nav class=paginav><a class=prev href=https://wittchen.io/posts/learning-android/><span class=title>« Prev</span><br><span>Learning Android and being up to date</span></a>
+<a class=next href=https://wittchen.io/posts/releasing-prefser-2/><span class=title>Next »</span><br><span>Releasing prefser 2.0.0</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://wittchen.io/>Piotr Wittchen</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(t=>{const n=t.parentNode.parentNode,e=document.createElement("button");e.classList.add("copy-code"),e.innerHTML="copy";function s(){e.innerHTML="copied!",setTimeout(()=>{e.innerHTML="copy"},2e3)}e.addEventListener("click",o=>{if("clipboard"in navigator){navigator.clipboard.writeText(t.textContent),s();return}const e=document.createRange();e.selectNodeContents(t);const n=window.getSelection();n.removeAllRanges(),n.addRange(e);try{document.execCommand("copy"),s()}catch(e){}n.removeRange(e)}),n.classList.contains("highlight")?n.appendChild(e):n.parentNode.firstChild==n||(t.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?t.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(e):t.parentNode.appendChild(e))})</script></body></html>

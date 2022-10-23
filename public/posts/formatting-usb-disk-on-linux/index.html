@@ -1,149 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Formatting USB disk on Linux" />
-<meta property="og:description" content="Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/formatting-usb-disk-on-linux/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-09-01T09:16:07+00:00" />
-<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
-
-<title>Formatting USB disk on Linux | Piotr Wittchen</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6c1374b0bf767d788b4184715f6ad2830bc9c363694b0bc830291b785510b4ae.js" integrity="sha256-bBN0sL92fXiLQYRxX2rSgwvJw2NpSwvIMCkbeFUQtK4=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
-</head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Piotr Wittchen</span>
-  </a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <ul>
-<li><a href="/">About</a></li>
-<li><a href="/posts/">Posts</a></li>
-<li><a href="/gh/">Code</a></li>
-<li><a href="/talks/">Talks</a></li>
-<li><a href="/contact/">Contact</a></li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Formatting USB disk on Linux</strong>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-<article class="markdown">
-  <h1>
-    <a href="/posts/formatting-usb-disk-on-linux/">Formatting USB disk on Linux</a>
-  </h1>
-  
-  <h5>Sep 1, 2019</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/tags/linux/">linux</a>
-  </div>
-  
-
-
-
-<p>Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.</p>
-<p>When we insert disk and type:</p>
-<pre tabindex="0"><code>lsblk
-</code></pre><p>we can see the output:</p>
-<pre tabindex="0"><code>NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Formatting USB disk on Linux | Piotr Wittchen</title><meta name=keywords content="linux"><meta name=description content="Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs."><meta name=author content="Piotr Wittchen"><link rel=canonical href=https://wittchen.io/posts/formatting-usb-disk-on-linux/><link crossorigin=anonymous href=/assets/css/stylesheet.cdcf872f971c70fddc7fd480e8457cd308ed0cf287b498bcdc6183fc6d147858.css integrity="sha256-zc+HL5cccP3cf9SA6EV80wjtDPKHtJi83GGD/G0UeFg=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://wittchen.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wittchen.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://wittchen.io/favicon-32x32.png><link rel=apple-touch-icon href=https://wittchen.io/apple-touch-icon.png><link rel=mask-icon href=https://wittchen.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Formatting USB disk on Linux"><meta property="og:description" content="Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs."><meta property="og:type" content="article"><meta property="og:url" content="https://wittchen.io/posts/formatting-usb-disk-on-linux/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-09-01T09:16:07+00:00"><meta property="article:modified_time" content="2019-09-01T09:16:07+00:00"><meta property="og:site_name" content="Piotr Wittchen"><meta name=twitter:card content="summary"><meta name=twitter:title content="Formatting USB disk on Linux"><meta name=twitter:description content="Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://wittchen.io/posts/"},{"@type":"ListItem","position":2,"name":"Formatting USB disk on Linux","item":"https://wittchen.io/posts/formatting-usb-disk-on-linux/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Formatting USB disk on Linux","name":"Formatting USB disk on Linux","description":"Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn\u0026rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it\u0026rsquo;s not possible. In case you don\u0026rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.","keywords":["linux"],"articleBody":"Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn’t format this disk with GUI tools for some reason and I kept getting errors or information that it’s not possible. In case you don’t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.\nWhen we insert disk and type:\nlsblk we can see the output:\nNAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT loop0 7:0 0 181,1M 1 loop /var/lib/snapd/snap/spotify/36 loop1 7:1 0 147,3M 1 loop /var/lib/snapd/snap/skype/66 loop2 7:2 0 88,5M 1 loop /var/lib/snapd/snap/core/7270 loop3 7:3 0 236M 1 loop /var/lib/snapd/snap/kde-frameworks-5/27 loop4 7:4 0 180,2M 1 loop /var/lib/snapd/snap/spotify/35 loop5 7:5 0 149,6M 1 loop /var/lib/snapd/snap/slack/16 sdb 8:16 1 7,5G 0 disk └─sdb1 8:17 1 7,5G 0 part /run/media/pw/DISK3 nvme0n1 259:0 0 477G 0 disk ├─nvme0n1p1 259:1 0 200M 0 part /boot ├─nvme0n1p2 259:2 0 24G 0 part [SWAP] ├─nvme0n1p3 259:3 0 25G 0 part / └─nvme0n1p4 259:4 0 427,8G 0 part /home When we type:\nsudo fdisk -l we’ll see:\n... Disk /dev/sdb: 7,51 GiB, 8053063680 bytes, 15728640 sectors Disk model: USB DISK Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disklabel type: dos Disk identifier: 0x40a863e7 Device Boot Start End Sectors Size Id Type /dev/sdb1 2048 15728639 15726592 7,5G 83 Linux Now, we have basic information about our USB drive. It’s located in /dev/sdb and has 7,5 GB of space. Sometimes, we can have mulitple partitions on our drive. In such case, we may want to delete them and create new partition.\nTo do that, we can type:\nfdisk /dev/sdb next, we can use d for deleting partition:\nWelcome to fdisk (util-linux 2.34). Changes will remain in memory only, until you decide to write them. Be careful before using the write command. Command (m for help): d Selected partition 1 Partition 1 has been deleted. and n for creating a new one:\nCommand (m for help): n Partition type p primary (0 primary, 0 extended, 4 free) e extended (container for logical partitions) Select (default p): p Partition number (1-4, default 1): First sector (2048-15728639, default 2048): Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-15728639, default 15728639): Created a new partition 1 of type 'Linux' and of size 7,5 GiB. Partition #1 contains a vfat signature. Do you want to remove the signature? [Y]es/[N]o: Y The signature will be removed by a write command. after that, we can confirm the process with w command:\nCommand (m for help): w The partition table has been altered. Syncing disks. next, we can umount drive:\nsudo umount /dev/sdb and create a file system - in our case, we’ll use FAT32 file system in order to make USB drive accessible across all operating systems\nsudo mkfs.vfat /dev/sdb1 after that, we can create a label for our disk with name disk3 (it can be anything):\nsudo mlabel - /dev/sdb1 ::disk3 Please note, when we create file system of a different type, we need to use different commands for creating disk labels. For more information about that, read article about renaming USB devices on Linux.\nThat’s it! Maybe it’s not that easy as clicking on the GUI, but we can see whole process and format any disk even when something seems to be messed up.\nReferences  https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux https://www.cyberciti.biz/faq/linux-disk-format/  ","wordCount":"594","inLanguage":"en","datePublished":"2019-09-01T09:16:07Z","dateModified":"2019-09-01T09:16:07Z","author":{"@type":"Person","name":"Piotr Wittchen"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://wittchen.io/posts/formatting-usb-disk-on-linux/"},"publisher":{"@type":"Organization","name":"Piotr Wittchen","logo":{"@type":"ImageObject","url":"https://wittchen.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://wittchen.io/ accesskey=h title="Piotr Wittchen (Alt + H)"><img src=https://wittchen.io/apple-touch-icon.png alt aria-label=logo height=35>Piotr Wittchen</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://wittchen.io/posts/ title=posts><span>posts</span></a></li><li><a href=https://wittchen.io/tags/ title=tags><span>tags</span></a></li><li><a href=https://wittchen.io/talks/ title=talks><span>talks</span></a></li><li><a href=https://github.com/pwittchen title=code><span>code</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://wittchen.io/setup/ title=setup><span>setup</span></a></li><li><a href=https://wittchen.io/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=https://wittchen.io/contact/ title=contact><span>contact</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://wittchen.io/>Home</a>&nbsp;»&nbsp;<a href=https://wittchen.io/posts/>Posts</a></div><h1 class=post-title>Formatting USB disk on Linux</h1><div class=post-meta><span title="2019-09-01 09:16:07 +0000 UTC">September 1, 2019</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;594 words&nbsp;·&nbsp;Piotr Wittchen&nbsp;|&nbsp;<a href=https://github.com/pwittchen/wittchen.io/blob/master/content/posts/formatting-usb-disk-on-linux.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&rsquo;s not possible. In case you don&rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.</p><p>When we insert disk and type:</p><pre tabindex=0><code>lsblk
+</code></pre><p>we can see the output:</p><pre tabindex=0><code>NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 loop0         7:0    0 181,1M  1 loop /var/lib/snapd/snap/spotify/36
 loop1         7:1    0 147,3M  1 loop /var/lib/snapd/snap/skype/66
 loop2         7:2    0  88,5M  1 loop /var/lib/snapd/snap/core/7270
@@ -157,10 +14,8 @@ nvme0n1     259:0    0   477G  0 disk
 ├─nvme0n1p2 259:2    0    24G  0 part [SWAP]
 ├─nvme0n1p3 259:3    0    25G  0 part /
 └─nvme0n1p4 259:4    0 427,8G  0 part /home
-</code></pre><p>When we type:</p>
-<pre tabindex="0"><code>sudo fdisk -l
-</code></pre><p>we&rsquo;ll see:</p>
-<pre tabindex="0"><code>...
+</code></pre><p>When we type:</p><pre tabindex=0><code>sudo fdisk -l
+</code></pre><p>we&rsquo;ll see:</p><pre tabindex=0><code>...
 
 Disk /dev/sdb: 7,51 GiB, 8053063680 bytes, 15728640 sectors
 Disk model: USB DISK
@@ -173,19 +28,15 @@ Disk identifier: 0x40a863e7
 Device     Boot Start      End  Sectors  Size Id Type
 /dev/sdb1        2048 15728639 15726592  7,5G 83 Linux
 </code></pre><p>Now, we have basic information about our USB drive. It&rsquo;s located in <code>/dev/sdb</code> and has <code>7,5 GB</code> of space.
-Sometimes, we can have mulitple partitions on our drive. In such case, we may want to delete them and create new partition.</p>
-<p>To do that, we can type:</p>
-<pre tabindex="0"><code>fdisk /dev/sdb
-</code></pre><p>next, we can use <code>d</code> for deleting partition:</p>
-<pre tabindex="0"><code>Welcome to fdisk (util-linux 2.34).
+Sometimes, we can have mulitple partitions on our drive. In such case, we may want to delete them and create new partition.</p><p>To do that, we can type:</p><pre tabindex=0><code>fdisk /dev/sdb
+</code></pre><p>next, we can use <code>d</code> for deleting partition:</p><pre tabindex=0><code>Welcome to fdisk (util-linux 2.34).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
 
 Command (m for help): d
 Selected partition 1
 Partition 1 has been deleted.
-</code></pre><p>and <code>n</code> for creating a new one:</p>
-<pre tabindex="0"><code>Command (m for help): n
+</code></pre><p>and <code>n</code> for creating a new one:</p><pre tabindex=0><code>Command (m for help): n
 Partition type
 p   primary (0 primary, 0 extended, 4 free)
 e   extended (container for logical partitions)
@@ -200,103 +51,14 @@ Partition #1 contains a vfat signature.
 Do you want to remove the signature? [Y]es/[N]o: Y
 
 The signature will be removed by a write command.
-</code></pre><p>after that, we can confirm the process with <code>w</code> command:</p>
-<pre tabindex="0"><code>Command (m for help): w
+</code></pre><p>after that, we can confirm the process with <code>w</code> command:</p><pre tabindex=0><code>Command (m for help): w
 The partition table has been altered.
 Syncing disks.
-</code></pre><p>next, we can umount drive:</p>
-<pre tabindex="0"><code>sudo umount /dev/sdb
-</code></pre><p>and create a file system - in our case, we&rsquo;ll use FAT32 file system in order to make USB drive accessible across all operating systems</p>
-<pre tabindex="0"><code>sudo mkfs.vfat /dev/sdb1
-</code></pre><p>after that, we can create a label for our disk with name <code>disk3</code> (it can be anything):</p>
-<pre tabindex="0"><code>sudo mlabel - /dev/sdb1 ::disk3
-</code></pre><p>Please note, when we create file system of a different type, we need to use different commands for creating disk labels. For more information about that, read article about <a href="https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux">renaming USB devices on Linux</a>.</p>
-<p>That&rsquo;s it! Maybe it&rsquo;s not that easy as clicking on the GUI, but we can see whole process and format any disk even when something seems to be messed up.</p>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
-<ul>
-<li><a href="https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux">https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux</a></li>
-<li><a href="https://www.cyberciti.biz/faq/linux-disk-format/">https://www.cyberciti.biz/faq/linux-disk-format/</a></li>
-</ul>
-</article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Aug 15, 2020</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/formatting-usb-disk-on-linux.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
-
-</div>
-
-
-
-  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-
-
- 
-      </div>
-    </aside>
-    
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+</code></pre><p>next, we can umount drive:</p><pre tabindex=0><code>sudo umount /dev/sdb
+</code></pre><p>and create a file system - in our case, we&rsquo;ll use FAT32 file system in order to make USB drive accessible across all operating systems</p><pre tabindex=0><code>sudo mkfs.vfat /dev/sdb1
+</code></pre><p>after that, we can create a label for our disk with name <code>disk3</code> (it can be anything):</p><pre tabindex=0><code>sudo mlabel - /dev/sdb1 ::disk3
+</code></pre><p>Please note, when we create file system of a different type, we need to use different commands for creating disk labels. For more information about that, read article about <a href=https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux>renaming USB devices on Linux</a>.</p><p>That&rsquo;s it! Maybe it&rsquo;s not that easy as clicking on the GUI, but we can see whole process and format any disk even when something seems to be messed up.</p><h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2><ul><li><a href=https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux>https://www.sinisterstuf.org/blog/345/renaming-usb-devices-in-linux</a></li><li><a href=https://www.cyberciti.biz/faq/linux-disk-format/>https://www.cyberciti.biz/faq/linux-disk-format/</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://wittchen.io/tags/linux/>linux</a></li></ul><nav class=paginav><a class=prev href=https://wittchen.io/posts/cleaning-root-partition-on-linux/><span class=title>« Prev</span><br><span>Cleaning root partition on Linux</span></a>
+<a class=next href=https://wittchen.io/posts/modifying-methods-input-parameters/><span class=title>Next »</span><br><span>Modifying mehtod's input parameters</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://wittchen.io/>Piotr Wittchen</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(t=>{const n=t.parentNode.parentNode,e=document.createElement("button");e.classList.add("copy-code"),e.innerHTML="copy";function s(){e.innerHTML="copied!",setTimeout(()=>{e.innerHTML="copy"},2e3)}e.addEventListener("click",o=>{if("clipboard"in navigator){navigator.clipboard.writeText(t.textContent),s();return}const e=document.createRange();e.selectNodeContents(t);const n=window.getSelection();n.removeAllRanges(),n.addRange(e);try{document.execCommand("copy"),s()}catch(e){}n.removeRange(e)}),n.classList.contains("highlight")?n.appendChild(e):n.parentNode.firstChild==n||(t.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?t.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(e):t.parentNode.appendChild(e))})</script></body></html>

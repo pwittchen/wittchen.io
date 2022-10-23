@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>java on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/java/</link>
     <description>Recent content in java on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Mon, 05 Aug 2019 18:27:30 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modifying mehtod&#39;s input parameters</title>
@@ -44,7 +43,7 @@ They&amp;rsquo;re using so called output argument. In the examples above, we&amp
       <pubDate>Fri, 24 May 2019 19:18:27 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/publishing-jar-aar-to-maven-central/</guid>
-      <description>Introduction #  As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a *.jar or *.aar file with others. Drawback of such solution is the fact that source of distribution may not be trusted.</description>
+      <description>Introduction As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a *.jar or *.aar file with others. Drawback of such solution is the fact that source of distribution may not be trusted.</description>
     </item>
     
     <item>
@@ -73,7 +72,8 @@ They&amp;rsquo;re using so called output argument. In the examples above, we&amp
       <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
       <description>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
 In my build.gradle file I configured JaCoCo as follows:
-plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.enabled = true  html.enabled = true  } } Now, I could type:</description>
+plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled = true html.enabled = true } } Now, I could type:
+./gradlew test jacocoTestReport Report was generated in build/reports/jacoco/ directory.</description>
     </item>
     
     <item>
@@ -84,7 +84,7 @@ plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.ena
       <guid>https://wittchen.io/posts/testing-exceptions/</guid>
       <description>In Java, we can test exceptions via unit tests in a few different ways. In this article, I&amp;rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&amp;rsquo;m using JUnit for unit tests and Truth for assertions.
-@Test public void shouldTestExceptionWithTryCatch() {  Exception caughtException = null;   try {  throw new RuntimeExcetpion(&amp;#34;message&amp;#34;);  } catch (final Exception e) {  caughtException = e;  }   assertThat(caughtException).</description>
+@Test public void shouldTestExceptionWithTryCatch() { Exception caughtException = null; try { throw new RuntimeExcetpion(&amp;#34;message&amp;#34;); } catch (final Exception e) { caughtException = e; } assertThat(caughtException).</description>
     </item>
     
     <item>
@@ -93,8 +93,8 @@ First method is basically wrapping a method call with try-catch block, assigning
       <pubDate>Sun, 19 Aug 2018 10:24:19 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</guid>
-      <description>Introduction #  Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
-Build System #  I used Gradle to build the project.</description>
+      <description>Introduction Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
+Build System I used Gradle to build the project.</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@ Build System #  I used Gradle to build the project.</description>
       <pubDate>Sun, 18 Mar 2018 16:50:02 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/</guid>
-      <description>Introduction #  In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &amp;ldquo;Serverless&amp;rdquo;. It doesn&amp;rsquo;t mean that we don&amp;rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&amp;rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS).</description>
+      <description>Introduction In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &amp;ldquo;Serverless&amp;rdquo;. It doesn&amp;rsquo;t mean that we don&amp;rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&amp;rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS).</description>
     </item>
     
     <item>
@@ -123,7 +123,7 @@ Build System #  I used Gradle to build the project.</description>
       <guid>https://wittchen.io/posts/introducing-reactive-bus/</guid>
       <description>Today, I&amp;rsquo;ve released my another tiny project. It&amp;rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&amp;rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.
 You can use it as follows:
-Bus bus = ReactiveBus.create();  Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() {  @Override public void accept(Event event) {  // handle event here  }  }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
+Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() { @Override public void accept(Event event) { // handle event here  } }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
     </item>
     
     <item>
@@ -132,7 +132,7 @@ Bus bus = ReactiveBus.create();  Disposable observer = bus.receive().subscribe(n
       <pubDate>Sun, 11 Feb 2018 10:22:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/automating-generation-of-the-on-line-documentation-for-java-library/</guid>
-      <description>Introduction #  In one of my open-source projects - ReactiveNetwork I have a documentation in README.md file and I have JavaDocs as well. This project is an Android library written in Java and built with Gradle. Moreover, I develop this project on two separate Git branches - one for RxJava1.x and another one for RxJava2.x. Similar convention is in the RxJava repository, so I followed it. After each release I publish documentation and JavaDocs on GitHub pages for both versions.</description>
+      <description>Introduction In one of my open-source projects - ReactiveNetwork I have a documentation in README.md file and I have JavaDocs as well. This project is an Android library written in Java and built with Gradle. Moreover, I develop this project on two separate Git branches - one for RxJava1.x and another one for RxJava2.x. Similar convention is in the RxJava repository, so I followed it. After each release I publish documentation and JavaDocs on GitHub pages for both versions.</description>
     </item>
     
     <item>
@@ -194,8 +194,8 @@ Code snippets shown during this presentation are available at https://github.com
       
       <guid>https://wittchen.io/posts/integrating-nullaway-with-an-android-project/</guid>
       <description>Recently, with the remote help of guys from Uber in California, I integrated NullAway and ErrorProne with the one of my open-source Android projects.
-What is NullAway? #  Basically, it&amp;rsquo;s a tool to help eliminate NullPointerExceptions (NPEs) in your Java code. It detects situations where NPE could occur at the compile time. Let&amp;rsquo;s have a look at the following code:
-static void log(Object x) {  System.out.println(x.toString()); } static void foo() {  log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
+What is NullAway? Basically, it&amp;rsquo;s a tool to help eliminate NullPointerExceptions (NPEs) in your Java code. It detects situations where NPE could occur at the compile time. Let&amp;rsquo;s have a look at the following code:
+static void log(Object x) { System.out.println(x.toString()); } static void foo() { log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
     </item>
     
     <item>
@@ -205,7 +205,7 @@ static void log(Object x) {  System.out.println(x.toString()); } static void foo
       
       <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
       <description>I&amp;rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
-ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io())  .observeOn(AndroidSchedulers.mainThread())  .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.</description>
+ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.</description>
     </item>
     
     <item>
@@ -242,7 +242,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Wed, 31 May 2017 17:49:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/new-reactive-data-types-in-rxjava2/</guid>
-      <description>Introduction #  I&amp;rsquo;m still exploring reactive programming world and RxJava library. Recently, I&amp;rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&amp;rsquo;m still learning this library and its concept. It&amp;rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp;amp; Completable.</description>
+      <description>Introduction I&amp;rsquo;m still exploring reactive programming world and RxJava library. Recently, I&amp;rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&amp;rsquo;m still learning this library and its concept. It&amp;rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp;amp; Completable.</description>
     </item>
     
     <item>
@@ -251,7 +251,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Sun, 28 May 2017 21:24:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/introducing-yaas-java-sdk/</guid>
-      <description>Introduction #  In my company, there&amp;rsquo;s a concept of so-called &amp;ldquo;innovation day&amp;rdquo;. I have the possibility to &amp;ldquo;use&amp;rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&amp;rsquo;ve decided to create YaaS Java SDK. If you don&amp;rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.</description>
+      <description>Introduction In my company, there&amp;rsquo;s a concept of so-called &amp;ldquo;innovation day&amp;rdquo;. I have the possibility to &amp;ldquo;use&amp;rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&amp;rsquo;ve decided to create YaaS Java SDK. If you don&amp;rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.</description>
     </item>
     
     <item>
@@ -317,7 +317,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Thu, 05 Nov 2015 08:27:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/an-opinionated-guide-to-modern-java-by-parallel-universe/</guid>
-      <description>Introduction #  I recently read series of three articles titled An Opinionated Guide to Modern Java by Parallel Universe. It presents really interesting point of view and can be read even by non-Java developers due to its form. Non-Java developers can learn that Java can be fast, elegant and lightweight as much as other hipster technologies like Ruby, Go or Node.js. The main difference is the fact that Java is quite old and widely used technology what means it&amp;rsquo;s well tested, stable, solid, has great development and monitoring tools.</description>
+      <description>Introduction I recently read series of three articles titled An Opinionated Guide to Modern Java by Parallel Universe. It presents really interesting point of view and can be read even by non-Java developers due to its form. Non-Java developers can learn that Java can be fast, elegant and lightweight as much as other hipster technologies like Ruby, Go or Node.js. The main difference is the fact that Java is quite old and widely used technology what means it&amp;rsquo;s well tested, stable, solid, has great development and monitoring tools.</description>
     </item>
     
     <item>
@@ -364,7 +364,7 @@ void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class cl
       <pubDate>Tue, 13 Jan 2015 19:12:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/</guid>
-      <description>Overview #  Recently I&amp;rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well.</description>
+      <description>Overview Recently I&amp;rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well.</description>
     </item>
     
     <item>
@@ -391,7 +391,8 @@ void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class cl
       <pubDate>Sun, 21 Sep 2014 13:16:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/micro-location-based-on-wifi-access-points/</guid>
-      <description>Introduction #  Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&amp;rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&amp;rsquo;s possible to create micro-location for Android mobile devices.</description>
+      <description>Introduction Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&amp;rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&amp;rsquo;s possible to create micro-location for Android mobile devices.
+Overview On the image below, you can see approximate location of WiFi Access Points in the F3 building of Future Processing company.</description>
     </item>
     
     <item>
@@ -400,7 +401,7 @@ void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class cl
       <pubDate>Wed, 27 Aug 2014 21:19:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</guid>
-      <description>Overview #  Recently, I have written small set of methods for a FileHelper using Jackson library in Android application, which allows to save generic Java objects and list of generic objects in JSON format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was LinkedHashMap, which wasn&amp;rsquo;t the list of desired generic objects.</description>
+      <description>Overview Recently, I have written small set of methods for a FileHelper using Jackson library in Android application, which allows to save generic Java objects and list of generic objects in JSON format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was LinkedHashMap, which wasn&amp;rsquo;t the list of desired generic objects.</description>
     </item>
     
     <item>
@@ -410,7 +411,8 @@ void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class cl
       
       <guid>https://wittchen.io/posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</guid>
       <description>There are many approaches concerning selecting items on Android&amp;rsquo;s ListView. Unfortunately most of them don&amp;rsquo;t work. I was struggling with this problem for some time and decided to publish my solution, which is actually quite easy.
-The problem #  I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen). I also want to click on item of the ListView programmatically.</description>
+The problem I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen). I also want to click on item of the ListView programmatically.
+Solution We have to create our own adapter.</description>
     </item>
     
     <item>
@@ -439,7 +441,7 @@ In this example, we will access contact list.</description>
       
       <guid>https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/</guid>
       <description>We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
-package com.github.volley.example.toolbox;  import com.android.volley.toolbox.ImageLoader.ImageCache;  import android.graphics.Bitmap; import android.support.v4.util.LruCache;  public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache {  public BitmapLruCache(int maxSize) {  super(maxSize);  }  // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
+package com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
     </item>
     
     <item>

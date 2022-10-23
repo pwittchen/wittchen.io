@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>arch on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/arch/</link>
     <description>Recent content in arch on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 16 Feb 2020 13:16:49 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I switched to i3 WM</title>
@@ -13,7 +12,7 @@
       <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/i-switched-to-i3wm/</guid>
-      <description>Introduction #  From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.</description>
+      <description>Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.</description>
     </item>
     
     <item>
@@ -32,8 +31,8 @@ I figured out that I can go to the Firefox Settings and in the &amp;ldquo;Fonts 
       <pubDate>Sat, 27 Jul 2019 09:31:30 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</guid>
-      <description>Introduction #  In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
-Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of the Linux graphical environments for desktop:
+      <description>Introduction In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
+Desktop Environment (DE) / Windows Manager (WM) There are two main types of the Linux graphical environments for desktop:
  Window Managers Desktop Environments  Window Managers are much simpler, require a lot of configuration, learning how to use them and you see all windows at once.</description>
     </item>
     
@@ -43,7 +42,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <pubDate>Wed, 24 Jul 2019 23:59:20 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/arch-install-notes/</guid>
-      <description>Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.</description>
+      <description>Introduction For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.</description>
     </item>
     
   </channel>

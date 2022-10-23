@@ -1,321 +1,87 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Introduction #  During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Installing release and debug version of app on a single device" />
-<meta property="og:description" content="Introduction #  During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/installing-release-and-debug-version-of-app-on-a-single-device/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2014-12-25T15:15:00+00:00" />
-<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
-
-<title>Installing release and debug version of app on a single device | Piotr Wittchen</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6c1374b0bf767d788b4184715f6ad2830bc9c363694b0bc830291b785510b4ae.js" integrity="sha256-bBN0sL92fXiLQYRxX2rSgwvJw2NpSwvIMCkbeFUQtK4=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
-</head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Piotr Wittchen</span>
-  </a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <ul>
-<li><a href="/">About</a></li>
-<li><a href="/posts/">Posts</a></li>
-<li><a href="/gh/">Code</a></li>
-<li><a href="/talks/">Talks</a></li>
-<li><a href="/contact/">Contact</a></li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Installing release and debug version of app on a single device</strong>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#exemplary-repository">Exemplary repository</a></li>
-  </ul>
-</nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-<article class="markdown">
-  <h1>
-    <a href="/posts/installing-release-and-debug-version-of-app-on-a-single-device/">Installing release and debug version of app on a single device</a>
-  </h1>
-  
-  <h5>Dec 25, 2014</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/tags/android/">android</a>, 
-      <a href="/tags/gradle/">gradle</a>
-  </div>
-  
-
-
-
-<h2 id="introduction">
-  Introduction
-  <a class="anchor" href="#introduction">#</a>
-</h2>
-<p>During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.g. address of the webservice). Some time ago, I&rsquo;ve created <a href="http://blog.wittchen.biz.pl/different-back-end-urls-for-debug-and-release-version-of-the-android-app/">similar template</a>, but it was using older version of Build Tools, Android SDK and Android Studio. I&rsquo;ve created new template, with the newest version of Android Studio (1.0.2) and newest version of Build Tools (1.0.0), so in that case, build.gradle file is smaller and simpler, but does its work correctly.</p>
-<h2 id="exemplary-repository">
-  Exemplary repository
-  <a class="anchor" href="#exemplary-repository">#</a>
-</h2>
-<p>You can find exemplary project template at: <a href="https://github.com/FutureProcessing/android-debug-release-template">https://github.com/FutureProcessing/android-debug-release-template</a>. All important information are included in <a href="https://github.com/FutureProcessing/android-debug-release-template/blob/master/README.md">README.md</a> file and <a href="https://github.com/FutureProcessing/android-debug-release-template/blob/master/app/build.gradle">build.gradle</a> file with project configuration. <strong>Important files</strong>:</p>
-<ul>
-<li><a href="https://github.com/FutureProcessing/android-debug-release-template/blob/master/README.md">README.md</a></li>
-<li><a href="https://github.com/FutureProcessing/android-debug-release-template/blob/master/build.gradle">build.gradle</a></li>
-<li><a href="https://github.com/FutureProcessing/android-debug-release-template/blob/master/app/build.gradle">app/build.gradle</a></li>
-</ul>
-<p>Source of essential <strong><a href="https://github.com/FutureProcessing/android-debug-release-template/blob/master/app/build.gradle">build.gradle</a></strong> file presenting main idea is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.text.SimpleDateFormat
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;com.android.application&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>android <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    compileSdkVersion <span style="color:#ae81ff">21</span>
-</span></span><span style="display:flex;"><span>    buildToolsVersion <span style="color:#e6db74">&#34;21.1.1&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> appNameRelease <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My app&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> appNameDebug <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My app debug&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> launcherIconRelease <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;@drawable/ic_launcher&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> launcherIconDebug <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;@drawable/ic_launcher_debug&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    signingConfigs <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        releaseConfig <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            storeFile <span style="color:#a6e22e">file</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;../key/android-debug-release-template.jks&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>            storePassword <span style="color:#e6db74">&#34;SamplePassword1234&#34;</span>
-</span></span><span style="display:flex;"><span>            keyAlias <span style="color:#e6db74">&#34;android-debug-release-template&#34;</span>
-</span></span><span style="display:flex;"><span>            keyPassword <span style="color:#e6db74">&#34;SamplePassword1234&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    defaultConfig <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        applicationId <span style="color:#e6db74">&#34;fp.com.debugreleasetemplate&#34;</span>
-</span></span><span style="display:flex;"><span>        minSdkVersion <span style="color:#ae81ff">14</span>
-</span></span><span style="display:flex;"><span>        targetSdkVersion <span style="color:#ae81ff">21</span>
-</span></span><span style="display:flex;"><span>        versionCode <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        versionName <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> buildTime<span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    compileOptions <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
-</span></span><span style="display:flex;"><span>        targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_7</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    buildTypes <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        debug <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            applicationIdSuffix <span style="color:#e6db74">&#39;.debug&#39;</span>
-</span></span><span style="display:flex;"><span>            versionNameSuffix <span style="color:#e6db74">&#39;-DEBUG&#39;</span>
-</span></span><span style="display:flex;"><span>            resValue <span style="color:#e6db74">&#34;string&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;app_name&#34;</span><span style="color:#f92672">,</span> appNameDebug
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        release <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            resValue <span style="color:#e6db74">&#34;string&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;app_name&#34;</span><span style="color:#f92672">,</span> appNameRelease
-</span></span><span style="display:flex;"><span>            minifyEnabled <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>            proguardFiles <span style="color:#a6e22e">getDefaultProguardFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;proguard-android.txt&#39;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#39;proguard-rules.pro&#39;</span>
-</span></span><span style="display:flex;"><span>            signingConfig signingConfigs<span style="color:#f92672">.</span><span style="color:#a6e22e">releaseConfig</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    android<span style="color:#f92672">.</span><span style="color:#a6e22e">applicationVariants</span><span style="color:#f92672">.</span><span style="color:#a6e22e">all</span> <span style="color:#f92672">{</span> variant <span style="color:#f92672">-&gt;</span>
-</span></span><span style="display:flex;"><span>        variant<span style="color:#f92672">.</span><span style="color:#a6e22e">outputs</span><span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span> output <span style="color:#f92672">-&gt;</span>
-</span></span><span style="display:flex;"><span>            output<span style="color:#f92672">.</span><span style="color:#a6e22e">processManifest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">doLast</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>variant<span style="color:#f92672">.</span><span style="color:#a6e22e">buildType</span><span style="color:#f92672">.</span><span style="color:#a6e22e">isDebuggable</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">def</span> manifestOutFile <span style="color:#f92672">=</span> output<span style="color:#f92672">.</span><span style="color:#a6e22e">processManifest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">manifestOutputFile</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">def</span> newFileContents <span style="color:#f92672">=</span> manifestOutFile<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;UTF-8&#39;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span>launcherIconRelease<span style="color:#f92672">,</span> launcherIconDebug<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>                    manifestOutFile<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>newFileContents<span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;UTF-8&#39;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    compile <span style="color:#a6e22e">fileTree</span><span style="color:#f92672">(</span>dir: <span style="color:#e6db74">&#39;libs&#39;</span><span style="color:#f92672">,</span> include: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;*.jar&#39;</span><span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>    compile <span style="color:#e6db74">&#39;com.android.support:appcompat-v7:21.0.2&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">buildTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> df <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyyMMddHHmmss&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span><span style="color:#a6e22e">setTimeZone</span><span style="color:#f92672">(</span>TimeZone<span style="color:#f92672">.</span><span style="color:#a6e22e">getTimeZone</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Europe/Warsaw&#34;</span><span style="color:#f92672">))</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> df<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">())</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gitSha</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;git rev-parse --short HEAD&#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">().</span><span style="color:#a6e22e">text</span><span style="color:#f92672">.</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">()</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>task <span style="color:#a6e22e">wrapper</span><span style="color:#f92672">(</span>type: Wrapper<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    gradleVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2.2.1&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Aug 15, 2020</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/installing-release-and-debug-version-of-app-on-a-single-device.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
-
-</div>
-
-
-
-  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#exemplary-repository">Exemplary repository</a></li>
-  </ul>
-</nav>
-
-
- 
-      </div>
-    </aside>
-    
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Installing release and debug version of app on a single device | Piotr Wittchen</title><meta name=keywords content="android,gradle"><meta name=description content="Introduction During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e."><meta name=author content="Piotr Wittchen"><link rel=canonical href=https://wittchen.io/posts/installing-release-and-debug-version-of-app-on-a-single-device/><link crossorigin=anonymous href=/assets/css/stylesheet.cdcf872f971c70fddc7fd480e8457cd308ed0cf287b498bcdc6183fc6d147858.css integrity="sha256-zc+HL5cccP3cf9SA6EV80wjtDPKHtJi83GGD/G0UeFg=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://wittchen.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wittchen.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://wittchen.io/favicon-32x32.png><link rel=apple-touch-icon href=https://wittchen.io/apple-touch-icon.png><link rel=mask-icon href=https://wittchen.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Installing release and debug version of app on a single device"><meta property="og:description" content="Introduction During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e."><meta property="og:type" content="article"><meta property="og:url" content="https://wittchen.io/posts/installing-release-and-debug-version-of-app-on-a-single-device/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2014-12-25T15:15:00+00:00"><meta property="article:modified_time" content="2014-12-25T15:15:00+00:00"><meta property="og:site_name" content="Piotr Wittchen"><meta name=twitter:card content="summary"><meta name=twitter:title content="Installing release and debug version of app on a single device"><meta name=twitter:description content="Introduction During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://wittchen.io/posts/"},{"@type":"ListItem","position":2,"name":"Installing release and debug version of app on a single device","item":"https://wittchen.io/posts/installing-release-and-debug-version-of-app-on-a-single-device/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Installing release and debug version of app on a single device","name":"Installing release and debug version of app on a single device","description":"Introduction During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.","keywords":["android","gradle"],"articleBody":"Introduction During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.g. address of the webservice). Some time ago, I’ve created similar template, but it was using older version of Build Tools, Android SDK and Android Studio. I’ve created new template, with the newest version of Android Studio (1.0.2) and newest version of Build Tools (1.0.0), so in that case, build.gradle file is smaller and simpler, but does its work correctly.\nExemplary repository You can find exemplary project template at: https://github.com/FutureProcessing/android-debug-release-template. All important information are included in README.md file and build.gradle file with project configuration. Important files:\n README.md build.gradle app/build.gradle  Source of essential build.gradle file presenting main idea is as follows:\nimport java.text.SimpleDateFormat apply plugin: 'com.android.application' android { compileSdkVersion 21 buildToolsVersion \"21.1.1\" def appNameRelease = \"My app\" def appNameDebug = \"My app debug\" def launcherIconRelease = \"@drawable/ic_launcher\" def launcherIconDebug = \"@drawable/ic_launcher_debug\" signingConfigs { releaseConfig { storeFile file(\"../key/android-debug-release-template.jks\") storePassword \"SamplePassword1234\" keyAlias \"android-debug-release-template\" keyPassword \"SamplePassword1234\" } } defaultConfig { applicationId \"fp.com.debugreleasetemplate\" minSdkVersion 14 targetSdkVersion 21 versionCode 1 versionName gitSha() + '-' + buildTime() } compileOptions { sourceCompatibility JavaVersion.VERSION_1_7 targetCompatibility JavaVersion.VERSION_1_7 } buildTypes { debug { applicationIdSuffix '.debug' versionNameSuffix '-DEBUG' resValue \"string\", \"app_name\", appNameDebug } release { resValue \"string\", \"app_name\", appNameRelease minifyEnabled false proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' signingConfig signingConfigs.releaseConfig } } android.applicationVariants.all { variant - variant.outputs.each { output - output.processManifest.doLast { if (variant.buildType.isDebuggable()) { def manifestOutFile = output.processManifest.manifestOutputFile def newFileContents = manifestOutFile.getText('UTF-8').replace(launcherIconRelease, launcherIconDebug) manifestOutFile.write(newFileContents, 'UTF-8') } } } } } dependencies { compile fileTree(dir: 'libs', include: ['*.jar']) compile 'com.android.support:appcompat-v7:21.0.2' } def buildTime() { def df = new SimpleDateFormat(\"yyyyMMddHHmmss\") df.setTimeZone(TimeZone.getTimeZone(\"Europe/Warsaw\")) return df.format(new Date()) } def gitSha() { return 'git rev-parse --short HEAD'.execute().text.trim() } task wrapper(type: Wrapper) { gradleVersion = '2.2.1' } ","wordCount":"355","inLanguage":"en","datePublished":"2014-12-25T15:15:00Z","dateModified":"2014-12-25T15:15:00Z","author":{"@type":"Person","name":"Piotr Wittchen"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://wittchen.io/posts/installing-release-and-debug-version-of-app-on-a-single-device/"},"publisher":{"@type":"Organization","name":"Piotr Wittchen","logo":{"@type":"ImageObject","url":"https://wittchen.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://wittchen.io/ accesskey=h title="Piotr Wittchen (Alt + H)"><img src=https://wittchen.io/apple-touch-icon.png alt aria-label=logo height=35>Piotr Wittchen</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://wittchen.io/posts/ title=posts><span>posts</span></a></li><li><a href=https://wittchen.io/tags/ title=tags><span>tags</span></a></li><li><a href=https://wittchen.io/talks/ title=talks><span>talks</span></a></li><li><a href=https://github.com/pwittchen title=code><span>code</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://wittchen.io/setup/ title=setup><span>setup</span></a></li><li><a href=https://wittchen.io/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=https://wittchen.io/contact/ title=contact><span>contact</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://wittchen.io/>Home</a>&nbsp;»&nbsp;<a href=https://wittchen.io/posts/>Posts</a></div><h1 class=post-title>Installing release and debug version of app on a single device</h1><div class=post-meta><span title="2014-12-25 15:15:00 +0000 UTC">December 25, 2014</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;355 words&nbsp;·&nbsp;Piotr Wittchen&nbsp;|&nbsp;<a href=https://github.com/pwittchen/wittchen.io/blob/master/content/posts/installing-release-and-debug-version-of-app-on-a-single-device.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><h2 id=introduction>Introduction<a hidden class=anchor aria-hidden=true href=#introduction>#</a></h2><p>During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.g. address of the webservice). Some time ago, I&rsquo;ve created <a href=http://blog.wittchen.biz.pl/different-back-end-urls-for-debug-and-release-version-of-the-android-app/>similar template</a>, but it was using older version of Build Tools, Android SDK and Android Studio. I&rsquo;ve created new template, with the newest version of Android Studio (1.0.2) and newest version of Build Tools (1.0.0), so in that case, build.gradle file is smaller and simpler, but does its work correctly.</p><h2 id=exemplary-repository>Exemplary repository<a hidden class=anchor aria-hidden=true href=#exemplary-repository>#</a></h2><p>You can find exemplary project template at: <a href=https://github.com/FutureProcessing/android-debug-release-template>https://github.com/FutureProcessing/android-debug-release-template</a>. All important information are included in <a href=https://github.com/FutureProcessing/android-debug-release-template/blob/master/README.md>README.md</a> file and <a href=https://github.com/FutureProcessing/android-debug-release-template/blob/master/app/build.gradle>build.gradle</a> file with project configuration. <strong>Important files</strong>:</p><ul><li><a href=https://github.com/FutureProcessing/android-debug-release-template/blob/master/README.md>README.md</a></li><li><a href=https://github.com/FutureProcessing/android-debug-release-template/blob/master/build.gradle>build.gradle</a></li><li><a href=https://github.com/FutureProcessing/android-debug-release-template/blob/master/app/build.gradle>app/build.gradle</a></li></ul><p>Source of essential <strong><a href=https://github.com/FutureProcessing/android-debug-release-template/blob/master/app/build.gradle>build.gradle</a></strong> file presenting main idea is as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-gradle data-lang=gradle><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.text.SimpleDateFormat</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>apply</span> <span class=nl>plugin:</span> <span class=s1>&#39;com.android.application&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>android</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>compileSdkVersion</span> <span class=mi>21</span>
+</span></span><span class=line><span class=cl>    <span class=n>buildToolsVersion</span> <span class=s2>&#34;21.1.1&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>def</span> <span class=n>appNameRelease</span> <span class=o>=</span> <span class=s2>&#34;My app&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>def</span> <span class=n>appNameDebug</span> <span class=o>=</span> <span class=s2>&#34;My app debug&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>def</span> <span class=n>launcherIconRelease</span> <span class=o>=</span> <span class=s2>&#34;@drawable/ic_launcher&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>def</span> <span class=n>launcherIconDebug</span> <span class=o>=</span> <span class=s2>&#34;@drawable/ic_launcher_debug&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>signingConfigs</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>releaseConfig</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>storeFile</span> <span class=nf>file</span><span class=o>(</span><span class=s2>&#34;../key/android-debug-release-template.jks&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>storePassword</span> <span class=s2>&#34;SamplePassword1234&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=n>keyAlias</span> <span class=s2>&#34;android-debug-release-template&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=n>keyPassword</span> <span class=s2>&#34;SamplePassword1234&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>defaultConfig</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>applicationId</span> <span class=s2>&#34;fp.com.debugreleasetemplate&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=n>minSdkVersion</span> <span class=mi>14</span>
+</span></span><span class=line><span class=cl>        <span class=n>targetSdkVersion</span> <span class=mi>21</span>
+</span></span><span class=line><span class=cl>        <span class=n>versionCode</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>        <span class=n>versionName</span> <span class=nf>gitSha</span><span class=o>()</span> <span class=o>+</span> <span class=s1>&#39;-&#39;</span> <span class=o>+</span> <span class=n>buildTime</span><span class=o>()</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>compileOptions</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>sourceCompatibility</span> <span class=n>JavaVersion</span><span class=o>.</span><span class=na>VERSION_1_7</span>
+</span></span><span class=line><span class=cl>        <span class=n>targetCompatibility</span> <span class=n>JavaVersion</span><span class=o>.</span><span class=na>VERSION_1_7</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>buildTypes</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>debug</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>applicationIdSuffix</span> <span class=s1>&#39;.debug&#39;</span>
+</span></span><span class=line><span class=cl>            <span class=n>versionNameSuffix</span> <span class=s1>&#39;-DEBUG&#39;</span>
+</span></span><span class=line><span class=cl>            <span class=n>resValue</span> <span class=s2>&#34;string&#34;</span><span class=o>,</span> <span class=s2>&#34;app_name&#34;</span><span class=o>,</span> <span class=n>appNameDebug</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>release</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>resValue</span> <span class=s2>&#34;string&#34;</span><span class=o>,</span> <span class=s2>&#34;app_name&#34;</span><span class=o>,</span> <span class=n>appNameRelease</span>
+</span></span><span class=line><span class=cl>            <span class=n>minifyEnabled</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>            <span class=n>proguardFiles</span> <span class=nf>getDefaultProguardFile</span><span class=o>(</span><span class=s1>&#39;proguard-android.txt&#39;</span><span class=o>),</span> <span class=s1>&#39;proguard-rules.pro&#39;</span>
+</span></span><span class=line><span class=cl>            <span class=n>signingConfig</span> <span class=n>signingConfigs</span><span class=o>.</span><span class=na>releaseConfig</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>android</span><span class=o>.</span><span class=na>applicationVariants</span><span class=o>.</span><span class=na>all</span> <span class=o>{</span> <span class=n>variant</span> <span class=o>-&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=n>variant</span><span class=o>.</span><span class=na>outputs</span><span class=o>.</span><span class=na>each</span> <span class=o>{</span> <span class=n>output</span> <span class=o>-&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=n>output</span><span class=o>.</span><span class=na>processManifest</span><span class=o>.</span><span class=na>doLast</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>variant</span><span class=o>.</span><span class=na>buildType</span><span class=o>.</span><span class=na>isDebuggable</span><span class=o>())</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=kt>def</span> <span class=n>manifestOutFile</span> <span class=o>=</span> <span class=n>output</span><span class=o>.</span><span class=na>processManifest</span><span class=o>.</span><span class=na>manifestOutputFile</span>
+</span></span><span class=line><span class=cl>                    <span class=kt>def</span> <span class=n>newFileContents</span> <span class=o>=</span> <span class=n>manifestOutFile</span><span class=o>.</span><span class=na>getText</span><span class=o>(</span><span class=s1>&#39;UTF-8&#39;</span><span class=o>).</span><span class=na>replace</span><span class=o>(</span><span class=n>launcherIconRelease</span><span class=o>,</span> <span class=n>launcherIconDebug</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>                    <span class=n>manifestOutFile</span><span class=o>.</span><span class=na>write</span><span class=o>(</span><span class=n>newFileContents</span><span class=o>,</span> <span class=s1>&#39;UTF-8&#39;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>dependencies</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>compile</span> <span class=nf>fileTree</span><span class=o>(</span><span class=nl>dir:</span> <span class=s1>&#39;libs&#39;</span><span class=o>,</span> <span class=nl>include:</span> <span class=o>[</span><span class=s1>&#39;*.jar&#39;</span><span class=o>])</span>
+</span></span><span class=line><span class=cl>    <span class=n>compile</span> <span class=s1>&#39;com.android.support:appcompat-v7:21.0.2&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>def</span> <span class=nf>buildTime</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>def</span> <span class=n>df</span> <span class=o>=</span> <span class=k>new</span> <span class=n>SimpleDateFormat</span><span class=o>(</span><span class=s2>&#34;yyyyMMddHHmmss&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>df</span><span class=o>.</span><span class=na>setTimeZone</span><span class=o>(</span><span class=n>TimeZone</span><span class=o>.</span><span class=na>getTimeZone</span><span class=o>(</span><span class=s2>&#34;Europe/Warsaw&#34;</span><span class=o>))</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>df</span><span class=o>.</span><span class=na>format</span><span class=o>(</span><span class=k>new</span> <span class=n>Date</span><span class=o>())</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>def</span> <span class=nf>gitSha</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=s1>&#39;git rev-parse --short HEAD&#39;</span><span class=o>.</span><span class=na>execute</span><span class=o>().</span><span class=na>text</span><span class=o>.</span><span class=na>trim</span><span class=o>()</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>task</span> <span class=nf>wrapper</span><span class=o>(</span><span class=nl>type:</span> <span class=n>Wrapper</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>gradleVersion</span> <span class=o>=</span> <span class=s1>&#39;2.2.1&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://wittchen.io/tags/android/>android</a></li><li><a href=https://wittchen.io/tags/gradle/>gradle</a></li></ul><nav class=paginav><a class=prev href=https://wittchen.io/posts/detecting-swipe-gesture-in-mobile-application/><span class=title>« Prev</span><br><span>Detecting swipe gesture in mobile application</span></a>
+<a class=next href=https://wittchen.io/posts/basics-of-git/><span class=title>Next »</span><br><span>Basics of Git</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://wittchen.io/>Piotr Wittchen</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(t=>{const n=t.parentNode.parentNode,e=document.createElement("button");e.classList.add("copy-code"),e.innerHTML="copy";function s(){e.innerHTML="copied!",setTimeout(()=>{e.innerHTML="copy"},2e3)}e.addEventListener("click",o=>{if("clipboard"in navigator){navigator.clipboard.writeText(t.textContent),s();return}const e=document.createRange();e.selectNodeContents(t);const n=window.getSelection();n.removeAllRanges(),n.addRange(e);try{document.execCommand("copy"),s()}catch(e){}n.removeRange(e)}),n.classList.contains("highlight")?n.appendChild(e):n.parentNode.firstChild==n||(t.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?t.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(e):t.parentNode.appendChild(e))})</script></body></html>

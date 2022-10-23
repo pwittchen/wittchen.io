@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Piotr Wittchen</title>
     <link>https://wittchen.io/posts/</link>
     <description>Recent content in Posts on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate><atom:link href="https://wittchen.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic wallpaper for i3</title>
@@ -32,7 +31,7 @@ I created the following config inside ~/.</description>
       <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/i-switched-to-i3wm/</guid>
-      <description>Introduction #  From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.</description>
+      <description>Introduction From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it.</description>
     </item>
     
     <item>
@@ -110,8 +109,8 @@ They&amp;rsquo;re using so called output argument. In the examples above, we&amp
       <pubDate>Sat, 27 Jul 2019 09:31:30 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</guid>
-      <description>Introduction #  In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
-Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of the Linux graphical environments for desktop:
+      <description>Introduction In my previous article I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.
+Desktop Environment (DE) / Windows Manager (WM) There are two main types of the Linux graphical environments for desktop:
  Window Managers Desktop Environments  Window Managers are much simpler, require a lot of configuration, learning how to use them and you see all windows at once.</description>
     </item>
     
@@ -121,7 +120,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <pubDate>Wed, 24 Jul 2019 23:59:20 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/arch-install-notes/</guid>
-      <description>Introduction #  For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.</description>
+      <description>Introduction For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own.</description>
     </item>
     
     <item>
@@ -139,7 +138,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <pubDate>Fri, 24 May 2019 19:18:27 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/publishing-jar-aar-to-maven-central/</guid>
-      <description>Introduction #  As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a *.jar or *.aar file with others. Drawback of such solution is the fact that source of distribution may not be trusted.</description>
+      <description>Introduction As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a *.jar or *.aar file with others. Drawback of such solution is the fact that source of distribution may not be trusted.</description>
     </item>
     
     <item>
@@ -148,7 +147,7 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <pubDate>Fri, 14 Dec 2018 14:34:01 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/kyma-meets-ccv2-hackathon-summary/</guid>
-      <description>Introduction #  I recently I had an opportunity to join &amp;ldquo;Kyma meets CCV2 Hackathon&amp;rdquo; in the SAP Labs Poland office in Gliwice. The goal of the hackathon was to create a simple project, which will use Kyma to integrate external services with the SAP Hybris Commerce Platform. CCV2 stands for &amp;ldquo;Commerce Cloud Version 2&amp;rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&amp;rsquo;s a long story described in a short way).</description>
+      <description>Introduction I recently I had an opportunity to join &amp;ldquo;Kyma meets CCV2 Hackathon&amp;rdquo; in the SAP Labs Poland office in Gliwice. The goal of the hackathon was to create a simple project, which will use Kyma to integrate external services with the SAP Hybris Commerce Platform. CCV2 stands for &amp;ldquo;Commerce Cloud Version 2&amp;rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&amp;rsquo;s a long story described in a short way).</description>
     </item>
     
     <item>
@@ -186,7 +185,8 @@ Desktop Environment (DE) / Windows Manager (WM) #  There are two main types of t
       <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
       <description>I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.
 In my build.gradle file I configured JaCoCo as follows:
-plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.enabled = true  html.enabled = true  } } Now, I could type:</description>
+plugins { id &amp;#39;jacoco&amp;#39; } jacocoTestReport { reports { xml.enabled = true html.enabled = true } } Now, I could type:
+./gradlew test jacocoTestReport Report was generated in build/reports/jacoco/ directory.</description>
     </item>
     
     <item>
@@ -197,7 +197,7 @@ plugins {  id &amp;#39;jacoco&amp;#39; }  jacocoTestReport {  reports {  xml.ena
       <guid>https://wittchen.io/posts/testing-exceptions/</guid>
       <description>In Java, we can test exceptions via unit tests in a few different ways. In this article, I&amp;rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.
 First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&amp;rsquo;m using JUnit for unit tests and Truth for assertions.
-@Test public void shouldTestExceptionWithTryCatch() {  Exception caughtException = null;   try {  throw new RuntimeExcetpion(&amp;#34;message&amp;#34;);  } catch (final Exception e) {  caughtException = e;  }   assertThat(caughtException).</description>
+@Test public void shouldTestExceptionWithTryCatch() { Exception caughtException = null; try { throw new RuntimeExcetpion(&amp;#34;message&amp;#34;); } catch (final Exception e) { caughtException = e; } assertThat(caughtException).</description>
     </item>
     
     <item>
@@ -206,8 +206,8 @@ First method is basically wrapping a method call with try-catch block, assigning
       <pubDate>Sun, 19 Aug 2018 10:24:19 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</guid>
-      <description>Introduction #  Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
-Build System #  I used Gradle to build the project.</description>
+      <description>Introduction Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
+Build System I used Gradle to build the project.</description>
     </item>
     
     <item>
@@ -217,7 +217,7 @@ Build System #  I used Gradle to build the project.</description>
       
       <guid>https://wittchen.io/posts/solving-problems-with-avd-and-kvm-on-linux/</guid>
       <description>I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message&amp;hellip;
-/dev/kvm is not found #  KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V).</description>
+/dev/kvm is not found KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V).</description>
     </item>
     
     <item>
@@ -226,7 +226,7 @@ Build System #  I used Gradle to build the project.</description>
       <pubDate>Sun, 12 Aug 2018 23:10:42 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/poor-mans-dropbox/</guid>
-      <description>Dropbox abandons Linux users #  Recently, I&amp;rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&amp;rsquo;ll stop syncing my files in November. I couldn&amp;rsquo;t understand why. I&amp;rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&amp;rsquo;ll need to access them from another computer or mobile device.</description>
+      <description>Dropbox abandons Linux users Recently, I&amp;rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&amp;rsquo;ll stop syncing my files in November. I couldn&amp;rsquo;t understand why. I&amp;rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&amp;rsquo;ll need to access them from another computer or mobile device.</description>
     </item>
     
     <item>
@@ -236,7 +236,7 @@ Build System #  I used Gradle to build the project.</description>
       
       <guid>https://wittchen.io/posts/squashing-commits/</guid>
       <description>While creating a Pull Requests it&amp;rsquo;s good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary.
-Solution #1 #  Some time ago I&amp;rsquo;ve found project http://rebaseandsqua.sh/ made by Jake Wharton. It&amp;rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.
+Solution #1 Some time ago I&amp;rsquo;ve found project http://rebaseandsqua.sh/ made by Jake Wharton. It&amp;rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.
 We can just call:
 curl rebaseandsqua.sh | sh then edit our commit messages and push the changes.</description>
     </item>
@@ -266,7 +266,7 @@ Once I connected the phone, to my laptop and typed adb devices, I&amp;rsquo;ve s
       <pubDate>Sun, 08 Apr 2018 11:47:49 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/publishing-python-package-to-pypi/</guid>
-      <description>Introduction #  I have my own tiny Python project called spotify-cli-linux, which is (surprise!) command line interface for Spotify desktop app on Linux. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I&amp;rsquo;ve provided instructions how to install my Python script in the system via curl and wget, which is fine, but it&amp;rsquo;s not recommended and official way to do it.</description>
+      <description>Introduction I have my own tiny Python project called spotify-cli-linux, which is (surprise!) command line interface for Spotify desktop app on Linux. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I&amp;rsquo;ve provided instructions how to install my Python script in the system via curl and wget, which is fine, but it&amp;rsquo;s not recommended and official way to do it.</description>
     </item>
     
     <item>
@@ -275,7 +275,7 @@ Once I connected the phone, to my laptop and typed adb devices, I&amp;rsquo;ve s
       <pubDate>Sun, 25 Mar 2018 13:35:06 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/avoiding-merging-master-to-master/</guid>
-      <description>Problem #  If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
+      <description>Problem If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:
 Merge branch &amp;#39;master&amp;#39; to &amp;#39;master&amp;#39; or something similar. You might have even pushed such commits! Don&amp;rsquo;t worry, so did I ;-). In this article I&amp;rsquo;m going to explain why is it happenning and how to avoid it.
 Such situation happens when you performed changes locally and at the same time someone else performed changes on the same branch as well, commited and pushed them to the remote repository.</description>
     </item>
@@ -286,7 +286,7 @@ Such situation happens when you performed changes locally and at the same time s
       <pubDate>Sun, 18 Mar 2018 16:50:02 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/</guid>
-      <description>Introduction #  In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &amp;ldquo;Serverless&amp;rdquo;. It doesn&amp;rsquo;t mean that we don&amp;rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&amp;rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS).</description>
+      <description>Introduction In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &amp;ldquo;Serverless&amp;rdquo;. It doesn&amp;rsquo;t mean that we don&amp;rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&amp;rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS).</description>
     </item>
     
     <item>
@@ -297,7 +297,7 @@ Such situation happens when you performed changes locally and at the same time s
       <guid>https://wittchen.io/posts/introducing-reactive-bus/</guid>
       <description>Today, I&amp;rsquo;ve released my another tiny project. It&amp;rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&amp;rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.
 You can use it as follows:
-Bus bus = ReactiveBus.create();  Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() {  @Override public void accept(Event event) {  // handle event here  }  }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
+Bus bus = ReactiveBus.create(); Disposable observer = bus.receive().subscribe(new Consumer&amp;lt;Event&amp;gt;() { @Override public void accept(Event event) { // handle event here  } }); Once, we created Event Bus object and our observer (or more precisely: disposable subscriber), we can start sending events:</description>
     </item>
     
     <item>
@@ -307,7 +307,7 @@ Bus bus = ReactiveBus.create();  Disposable observer = bus.receive().subscribe(n
       
       <guid>https://wittchen.io/posts/new-blog/</guid>
       <description>I&amp;rsquo;ve just finished migrating my personal website and blog from Wordpress to Hexo. I&amp;rsquo;ve been using Wordpress for more than 5 years and decided to check out something new. Hexo amazed me with its simplicity and ease of use. Probably this tool is more recognized around JavaScript developers, because it&amp;rsquo;s written in that language. I discovered it in the last month.
-Features of Hexo #  Static website generator #  For a simple blog with static content I don&amp;rsquo;t really need dynamic website like Wordpress.</description>
+Features of Hexo Static website generator For a simple blog with static content I don&amp;rsquo;t really need dynamic website like Wordpress.</description>
     </item>
     
     <item>
@@ -316,7 +316,7 @@ Features of Hexo #  Static website generator #  For a simple blog with static co
       <pubDate>Sun, 11 Feb 2018 10:22:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/automating-generation-of-the-on-line-documentation-for-java-library/</guid>
-      <description>Introduction #  In one of my open-source projects - ReactiveNetwork I have a documentation in README.md file and I have JavaDocs as well. This project is an Android library written in Java and built with Gradle. Moreover, I develop this project on two separate Git branches - one for RxJava1.x and another one for RxJava2.x. Similar convention is in the RxJava repository, so I followed it. After each release I publish documentation and JavaDocs on GitHub pages for both versions.</description>
+      <description>Introduction In one of my open-source projects - ReactiveNetwork I have a documentation in README.md file and I have JavaDocs as well. This project is an Android library written in Java and built with Gradle. Moreover, I develop this project on two separate Git branches - one for RxJava1.x and another one for RxJava2.x. Similar convention is in the RxJava repository, so I followed it. After each release I publish documentation and JavaDocs on GitHub pages for both versions.</description>
     </item>
     
     <item>
@@ -375,7 +375,7 @@ Piotr Wittchen tells us about how we can we keep the track of network &amp;#x1f3
       <pubDate>Thu, 02 Nov 2017 20:02:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/5-ways-to-attend-expansive-it-conferences-for-almost-free/</guid>
-      <description>Introduction #  In the past months, I&amp;rsquo;ve attended a few conferences and meetups related to IT. I also plan to attend a few more in the last quarter of the year as a speaker. I&amp;rsquo;d like to show you a few tips, which can encourage you to attend such events, be more involved in them and spend some time away from your desk ;-). If you are working in a software company, in the most cases you could treat going for a conference as a non-customer facing business trip, so your regular days off will be safe and can be used for your personal plans and holidays :-).</description>
+      <description>Introduction In the past months, I&amp;rsquo;ve attended a few conferences and meetups related to IT. I also plan to attend a few more in the last quarter of the year as a speaker. I&amp;rsquo;d like to show you a few tips, which can encourage you to attend such events, be more involved in them and spend some time away from your desk ;-). If you are working in a software company, in the most cases you could treat going for a conference as a non-customer facing business trip, so your regular days off will be safe and can be used for your personal plans and holidays :-).</description>
     </item>
     
     <item>
@@ -405,8 +405,8 @@ Code snippets shown during this presentation are available at https://github.com
       
       <guid>https://wittchen.io/posts/integrating-nullaway-with-an-android-project/</guid>
       <description>Recently, with the remote help of guys from Uber in California, I integrated NullAway and ErrorProne with the one of my open-source Android projects.
-What is NullAway? #  Basically, it&amp;rsquo;s a tool to help eliminate NullPointerExceptions (NPEs) in your Java code. It detects situations where NPE could occur at the compile time. Let&amp;rsquo;s have a look at the following code:
-static void log(Object x) {  System.out.println(x.toString()); } static void foo() {  log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
+What is NullAway? Basically, it&amp;rsquo;s a tool to help eliminate NullPointerExceptions (NPEs) in your Java code. It detects situations where NPE could occur at the compile time. Let&amp;rsquo;s have a look at the following code:
+static void log(Object x) { System.out.println(x.toString()); } static void foo() { log(null); } NullAway will find out that we&amp;rsquo;re passing null and we&amp;rsquo;ll get appropriate error message:</description>
     </item>
     
     <item>
@@ -415,7 +415,7 @@ static void log(Object x) {  System.out.println(x.toString()); } static void foo
       <pubDate>Fri, 01 Sep 2017 18:25:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/building-sap-hybris-commerce-suite-via-gradle/</guid>
-      <description>Introduction #  I really like Gradle build system for JVM apps. It has flexibility like Ant and great dependency management capabilities like Maven. It addition, it doesn&amp;rsquo;t use XML notation, but Groovy programming language, so builds configurations are simple, concise, easier to read and easier to create. In my opinion, Gradle is truly modern build system for JVM apps. Nevertheless, there are projects, which are pretty old and use older systems like Ant.</description>
+      <description>Introduction I really like Gradle build system for JVM apps. It has flexibility like Ant and great dependency management capabilities like Maven. It addition, it doesn&amp;rsquo;t use XML notation, but Groovy programming language, so builds configurations are simple, concise, easier to read and easier to create. In my opinion, Gradle is truly modern build system for JVM apps. Nevertheless, there are projects, which are pretty old and use older systems like Ant.</description>
     </item>
     
     <item>
@@ -425,7 +425,7 @@ static void log(Object x) {  System.out.println(x.toString()); } static void foo
       
       <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
       <description>I&amp;rsquo;m continuing Rxfication of the Android. Recently I released brand new library called ReactiveAirplaneMode. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:
-ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io())  .observeOn(AndroidSchedulers.mainThread())  .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.</description>
+ReactiveAirplaneMode.create() .observe(context) .subscribeOn(Schedulers.io()) .observeOn(AndroidSchedulers.mainThread()) .subscribe(isOn -&amp;gt; textView.setText(String.format(&amp;#34;Airplane mode on: %s&amp;#34;, isOn.toString()))); In the code above subscriber will be notified only when airplane mode changes.</description>
     </item>
     
     <item>
@@ -471,7 +471,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Wed, 31 May 2017 17:49:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/new-reactive-data-types-in-rxjava2/</guid>
-      <description>Introduction #  I&amp;rsquo;m still exploring reactive programming world and RxJava library. Recently, I&amp;rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&amp;rsquo;m still learning this library and its concept. It&amp;rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp;amp; Completable.</description>
+      <description>Introduction I&amp;rsquo;m still exploring reactive programming world and RxJava library. Recently, I&amp;rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&amp;rsquo;m still learning this library and its concept. It&amp;rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called Observable. In RxJava2, we have more data types like Observable, Flowable, Single, Maybe &amp;amp; Completable.</description>
     </item>
     
     <item>
@@ -480,7 +480,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Sun, 28 May 2017 21:24:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/introducing-yaas-java-sdk/</guid>
-      <description>Introduction #  In my company, there&amp;rsquo;s a concept of so-called &amp;ldquo;innovation day&amp;rdquo;. I have the possibility to &amp;ldquo;use&amp;rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&amp;rsquo;ve decided to create YaaS Java SDK. If you don&amp;rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.</description>
+      <description>Introduction In my company, there&amp;rsquo;s a concept of so-called &amp;ldquo;innovation day&amp;rdquo;. I have the possibility to &amp;ldquo;use&amp;rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&amp;rsquo;ve decided to create YaaS Java SDK. If you don&amp;rsquo;t know what the YaaS is, check out my previous article about basic usage of YaaS proxy for the microservice.</description>
     </item>
     
     <item>
@@ -518,7 +518,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       <pubDate>Fri, 05 May 2017 23:29:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/basic-code-refactoring-principles/</guid>
-      <description>Introduction #  I&amp;rsquo;ve recently read a book about Test Driven Development by Kent Beck. It&amp;rsquo;s really good, presents the importance of the TDD and shows how to make a life of the software developer easier. In the TDD we follow red-green-refactor process in which we create a failing unit test, then we fix it and refactor it to make code-base better. There&amp;rsquo;s no golden rule when to refactor or how to refactor code and each project is different, but there are a few principles we may follow when we want to improve our projects through refactoring.</description>
+      <description>Introduction I&amp;rsquo;ve recently read a book about Test Driven Development by Kent Beck. It&amp;rsquo;s really good, presents the importance of the TDD and shows how to make a life of the software developer easier. In the TDD we follow red-green-refactor process in which we create a failing unit test, then we fix it and refactor it to make code-base better. There&amp;rsquo;s no golden rule when to refactor or how to refactor code and each project is different, but there are a few principles we may follow when we want to improve our projects through refactoring.</description>
     </item>
     
     <item>
@@ -528,7 +528,7 @@ ReactiveAirplaneMode.create()  .observe(context)  .subscribeOn(Schedulers.io()) 
       
       <guid>https://wittchen.io/posts/monitoring-usage-of-oss/</guid>
       <description>While developing open-source projects it&amp;rsquo;s important to monitor usage of them. Having that information we know on which projects we should concentrate the most and which are becoming more popular. In this short article, I&amp;rsquo;ll present you two tools, which can help you with that.
-GitHub #  On GitHub, each project has &amp;ldquo;Traffic&amp;rdquo; tab. After clicking on it, we can see how many visitors and unique visitors we have, we can also check how many project clones and unique clones were performed (including CI servers).</description>
+GitHub On GitHub, each project has &amp;ldquo;Traffic&amp;rdquo; tab. After clicking on it, we can see how many visitors and unique visitors we have, we can also check how many project clones and unique clones were performed (including CI servers).</description>
     </item>
     
     <item>
@@ -537,7 +537,7 @@ GitHub #  On GitHub, each project has &amp;ldquo;Traffic&amp;rdquo; tab. After c
       <pubDate>Sun, 30 Apr 2017 22:45:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/yaas-as-a-proxy-for-microservice/</guid>
-      <description>Introduction #  The company, where I currently work - SAP Hybris is developing a project called YaaS, which is an abbreviation of Hybris as a Service. Unfortunately, this article is not sponsored yet :). What a pity :(. I just like to understand many things &amp;amp; how they work to see the bigger picture. Moreover, company strategy is to leverage YaaS and search for the new possibilities and use cases of this project.</description>
+      <description>Introduction The company, where I currently work - SAP Hybris is developing a project called YaaS, which is an abbreviation of Hybris as a Service. Unfortunately, this article is not sponsored yet :). What a pity :(. I just like to understand many things &amp;amp; how they work to see the bigger picture. Moreover, company strategy is to leverage YaaS and search for the new possibilities and use cases of this project.</description>
     </item>
     
     <item>
@@ -556,7 +556,7 @@ It&amp;rsquo;s super-interesting for me, because 4 years ago I wrote Master Thes
       <pubDate>Sun, 23 Apr 2017 17:47:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/3-alternatives-to-evernote/</guid>
-      <description>Introduction #  I&amp;rsquo;ve been using Evernote for some time for taking longer notes, but it started to annoy me a little bit. The main drawback is lack of the Linux desktop app. I&amp;rsquo;m using this app on Android phone, Macbook (at work) and on Linux (at home). There are community apps like NixNote2, which is nice, but in my opinion it&amp;rsquo;s not good enough. Moreover, Evernote seems to have too many features, which distract me and I don&amp;rsquo;t really use most of them.</description>
+      <description>Introduction I&amp;rsquo;ve been using Evernote for some time for taking longer notes, but it started to annoy me a little bit. The main drawback is lack of the Linux desktop app. I&amp;rsquo;m using this app on Android phone, Macbook (at work) and on Linux (at home). There are community apps like NixNote2, which is nice, but in my opinion it&amp;rsquo;s not good enough. Moreover, Evernote seems to have too many features, which distract me and I don&amp;rsquo;t really use most of them.</description>
     </item>
     
     <item>
@@ -565,7 +565,7 @@ It&amp;rsquo;s super-interesting for me, because 4 years ago I wrote Master Thes
       <pubDate>Sun, 16 Apr 2017 19:32:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/transform-vim-into-efficient-ide/</guid>
-      <description>Introduction #  Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&amp;rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&amp;rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim.</description>
+      <description>Introduction Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&amp;rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&amp;rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim. Moreover, Vim is default editor for a few Unix tools like Git, so it&amp;rsquo;s good to know how to use it when we accidentally open it.</description>
     </item>
     
     <item>
@@ -649,7 +649,7 @@ It&amp;rsquo;s super-interesting for me, because 4 years ago I wrote Master Thes
       <pubDate>Sun, 19 Mar 2017 19:32:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/</guid>
-      <description>Introduction #  Some time ago, I&amp;rsquo;ve written an article about Test coverage report for Android application. It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I&amp;rsquo;ve written instrumentation unit tests, which needed to be executed on a real device or an emulator. It&amp;rsquo;s a good approach when you want to test functionalities strongly connected with the device.</description>
+      <description>Introduction Some time ago, I&amp;rsquo;ve written an article about Test coverage report for Android application. It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I&amp;rsquo;ve written instrumentation unit tests, which needed to be executed on a real device or an emulator. It&amp;rsquo;s a good approach when you want to test functionalities strongly connected with the device. E.</description>
     </item>
     
     <item>
@@ -668,8 +668,8 @@ It&amp;rsquo;s super-interesting for me, because 4 years ago I wrote Master Thes
       <pubDate>Fri, 10 Mar 2017 19:30:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/working-with-different-git-configs/</guid>
-      <description>Short introduction #  Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
-Different configs for different Operating Systems #  On my private computer, I use Linux. I use Git for my private projects and I use my private e-mail address there. At the same time, I use Git at work on macOS with exactly the same Git configuration, but with a different e-mail address.</description>
+      <description>Short introduction Sometimes people need to specify multiple values for single .gitconfig file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.
+Different configs for different Operating Systems On my private computer, I use Linux. I use Git for my private projects and I use my private e-mail address there. At the same time, I use Git at work on macOS with exactly the same Git configuration, but with a different e-mail address.</description>
     </item>
     
     <item>
@@ -688,7 +688,7 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Thu, 02 Mar 2017 20:26:40 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/analyzing-performance-of-web-app-with-chrome-dev-tools/</guid>
-      <description>Introduction #  Recently, I attended a training related to ZK framework. One part of that training was quite interesting for me and was related to measuring and monitoring the performance of the web applications. In Chrome Browser, we have Chrome Dev Tools, which can be opened with Ctrl+Shift+I shortcut or ⌘+Shift+I shortcut on Mac. Inside these tools, we have &amp;ldquo;Performance&amp;rdquo; tab. We can hit red &amp;ldquo;record&amp;rdquo; icon in the upper left corner of the Tools window and start recording performance of the website while loading it, clicking around or whatever situation we want to monitor.</description>
+      <description>Introduction Recently, I attended a training related to ZK framework. One part of that training was quite interesting for me and was related to measuring and monitoring the performance of the web applications. In Chrome Browser, we have Chrome Dev Tools, which can be opened with Ctrl+Shift+I shortcut or ⌘+Shift+I shortcut on Mac. Inside these tools, we have &amp;ldquo;Performance&amp;rdquo; tab. We can hit red &amp;ldquo;record&amp;rdquo; icon in the upper left corner of the Tools window and start recording performance of the website while loading it, clicking around or whatever situation we want to monitor.</description>
     </item>
     
     <item>
@@ -697,7 +697,7 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Sun, 29 Jan 2017 13:48:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/one-year-of-using-macbook-pro-as-a-software-developer/</guid>
-      <description>Introduction #  For most of the time, I was MS Windows user. I was using this OS since Windows 95 up to Windows 10 ( the last version really occasionally). About ~3 years ago, I switched to Linux (Ubuntu) on my private computer. I used it before on virtual machine or sometimes in dual boot with Windows. About one year ago, I changed my job and decided to switch to Macbook Pro at work.</description>
+      <description>Introduction For most of the time, I was MS Windows user. I was using this OS since Windows 95 up to Windows 10 ( the last version really occasionally). About ~3 years ago, I switched to Linux (Ubuntu) on my private computer. I used it before on virtual machine or sometimes in dual boot with Windows. About one year ago, I changed my job and decided to switch to Macbook Pro at work.</description>
     </item>
     
     <item>
@@ -706,7 +706,8 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Sun, 01 Jan 2017 11:10:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/automate-boring-stuff/</guid>
-      <description>Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.</description>
+      <description>Introduction In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.
+How the report looks in practice?</description>
     </item>
     
     <item>
@@ -715,7 +716,7 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Wed, 30 Nov 2016 23:29:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/lifting-quality-of-a-shell-script/</guid>
-      <description>Introduction #  In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&amp;rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp;amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp;amp; downloading phase can be done from the terminal in a semi-automated way.</description>
+      <description>Introduction In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&amp;rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp;amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp;amp; downloading phase can be done from the terminal in a semi-automated way.</description>
     </item>
     
     <item>
@@ -724,7 +725,7 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Wed, 27 Jul 2016 21:52:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/dockerizing-hybris/</guid>
-      <description>Introduction #  A few months ago, I started work at Hybris, which was acquired by SAP, so our &amp;ldquo;division&amp;rdquo; is officially called SAP Hybris. I work in a team developing an extension for Hybris platform with assisting extensions and internal framework. There are many teams around the world developing their own extensions, which are finally integrated and packed into Commerce Suite provided to the clients and partners. We have our own development environment, but sometimes there&amp;rsquo;s need to build and run whole Commerce Suite in the case of system tests, bug reproduction, verification, etc.</description>
+      <description>Introduction A few months ago, I started work at Hybris, which was acquired by SAP, so our &amp;ldquo;division&amp;rdquo; is officially called SAP Hybris. I work in a team developing an extension for Hybris platform with assisting extensions and internal framework. There are many teams around the world developing their own extensions, which are finally integrated and packed into Commerce Suite provided to the clients and partners. We have our own development environment, but sometimes there&amp;rsquo;s need to build and run whole Commerce Suite in the case of system tests, bug reproduction, verification, etc.</description>
     </item>
     
     <item>
@@ -754,9 +755,9 @@ Put audio CD into your computer. Open RipperX, select All Tracks and check Rip t
       <pubDate>Mon, 28 Dec 2015 21:37:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/3-questions-about-your-git-repo/</guid>
-      <description>Introduction #  Can you answer the following questions about your Git repository?
+      <description>Introduction Can you answer the following questions about your Git repository?
  Does development branch has all changes from master branch? Is your gitlog a crap? How old are your branches?  If not, but you want to know answers, you&amp;rsquo;re lucky, because I prepared 3 simple scripts for you, which can help to find it out.
-Does development branch has all changes from master branch? #  git-branch-comparator is a python script, which checks if development branch has all changes from master branch in Git repository.</description>
+Does development branch has all changes from master branch? git-branch-comparator is a python script, which checks if development branch has all changes from master branch in Git repository.</description>
     </item>
     
     <item>
@@ -783,7 +784,7 @@ Does development branch has all changes from master branch? #  git-branch-compar
       <pubDate>Sun, 08 Nov 2015 16:53:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/bunch-of-updates-in-my-android-oss/</guid>
-      <description>Introduction #  In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with Kotlin language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it&amp;rsquo;s still in beta version.</description>
+      <description>Introduction In the last days I prepared a bunch of updates in my open-source software for Android. Most of them are bug fixes and are related to increasing robustness of the projects as well as their overall quality. I also decided to play a little with Kotlin language from JetBrains, which seems to be reasonable choice for mobile applications running on Android. Nevertheless, writing an app in Kotlin requires some additional configuration and we should remember, it&amp;rsquo;s still in beta version.</description>
     </item>
     
     <item>
@@ -792,7 +793,7 @@ Does development branch has all changes from master branch? #  git-branch-compar
       <pubDate>Thu, 05 Nov 2015 08:27:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/an-opinionated-guide-to-modern-java-by-parallel-universe/</guid>
-      <description>Introduction #  I recently read series of three articles titled An Opinionated Guide to Modern Java by Parallel Universe. It presents really interesting point of view and can be read even by non-Java developers due to its form. Non-Java developers can learn that Java can be fast, elegant and lightweight as much as other hipster technologies like Ruby, Go or Node.js. The main difference is the fact that Java is quite old and widely used technology what means it&amp;rsquo;s well tested, stable, solid, has great development and monitoring tools.</description>
+      <description>Introduction I recently read series of three articles titled An Opinionated Guide to Modern Java by Parallel Universe. It presents really interesting point of view and can be read even by non-Java developers due to its form. Non-Java developers can learn that Java can be fast, elegant and lightweight as much as other hipster technologies like Ruby, Go or Node.js. The main difference is the fact that Java is quite old and widely used technology what means it&amp;rsquo;s well tested, stable, solid, has great development and monitoring tools.</description>
     </item>
     
     <item>
@@ -813,7 +814,7 @@ Does development branch has all changes from master branch? #  git-branch-compar
       <description>What is a terminal multiplexer? It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.
  - tmux.github.io
 Tmux feature, which I find very useful is tiling terminal window. We can have several tiles with different terminals within a single terminal window.
-How to use tiling? #  First, we need to install tmux:</description>
+How to use tiling? First, we need to install tmux:</description>
     </item>
     
     <item>
@@ -842,8 +843,8 @@ In my opinion, hardware sensors are perfect case for applying RxJava, because in
       <pubDate>Sun, 23 Aug 2015 01:02:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/gnome-classic-ubuntu/</guid>
-      <description>Introduction #  I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&amp;rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
-New desktop environment #  I decided to choose Gnome classic.</description>
+      <description>Introduction I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to make Unity faster, but still I wasn&amp;rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.
+New desktop environment I decided to choose Gnome classic.</description>
     </item>
     
     <item>
@@ -881,7 +882,7 @@ This library is much simpler and easier to use than NetworkEvents.</description>
       <pubDate>Sat, 01 Aug 2015 13:41:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/geary-email-client-for-linux/</guid>
-      <description>Overview #  I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. Geary seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message.</description>
+      <description>Overview I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. Geary seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message.</description>
     </item>
     
     <item>
@@ -900,7 +901,7 @@ This library is much simpler and easier to use than NetworkEvents.</description>
       <pubDate>Sat, 25 Jul 2015 01:38:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/routing-internet-via-ssh-tunnel-on-raspberry-pi/</guid>
-      <description>Problem overview #  Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&amp;rsquo;s quite slow.</description>
+      <description>Problem overview Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&amp;rsquo;s quite slow.</description>
     </item>
     
     <item>
@@ -965,9 +966,9 @@ This library is much simpler and easier to use than NetworkEvents.</description>
       <pubDate>Mon, 06 Apr 2015 12:26:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/mutate-yet-another-spotlight-for-ubuntu/</guid>
-      <description>Overview #  Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called Mutate. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.
-Installation #  We can install it with the following commands:
-sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install mutate Configuration #  After installation, we can run Mutate from Ubuntu dashboard or via default hot-key CTRL+D and type preference.</description>
+      <description>Overview Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called Mutate. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.
+Installation We can install it with the following commands:
+sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install mutate Configuration After installation, we can run Mutate from Ubuntu dashboard or via default hot-key CTRL+D and type preference.</description>
     </item>
     
     <item>
@@ -977,8 +978,9 @@ sudo add-apt-repository ppa:mutate/ppa sudo apt-get update sudo apt-get install 
       
       <guid>https://wittchen.io/posts/making-ubuntu-faster/</guid>
       <description>Unity desktop environment consumes lot of computer&amp;rsquo;s memory. I&amp;rsquo;ve recently found good article about 4 simple tweaks to improve Unity performance on Ubuntu. Here is the short summary of that tweaks:
-Remove Unwanted Lenses #  It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.
-sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber unity-lens-shopping unity-lens-video Install Compiz Config Settings Manager #  sudo apt-get install compizconfig-settings-manager In Compiz Config Settings Manager perform the following operations:</description>
+Remove Unwanted Lenses It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.
+sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber unity-lens-shopping unity-lens-video Install Compiz Config Settings Manager sudo apt-get install compizconfig-settings-manager In Compiz Config Settings Manager perform the following operations:
+ Disable Animations and Fading windows Set the Texture Filter to &amp;ldquo;Fast&amp;rdquo;  After that OS won&amp;rsquo;t use additional resources for performing animations.</description>
     </item>
     
     <item>
@@ -987,7 +989,7 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
       <pubDate>Thu, 26 Mar 2015 00:23:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/static-code-analysis-in-android-project/</guid>
-      <description>Overview #  I&amp;rsquo;ve recently read great article telling how to improve quality and syntax of your Android code by Vincent Brison. It presents how to use tools like Checkstyle, Findbugs, PMD, and Android Lint for Static Code Analysis in Android project. Static Code Analysis allows us to keep consistency of the source code style and helps us to find errors, warnings, possible bugs, bottlenecks and ways to improve the projects.</description>
+      <description>Overview I&amp;rsquo;ve recently read great article telling how to improve quality and syntax of your Android code by Vincent Brison. It presents how to use tools like Checkstyle, Findbugs, PMD, and Android Lint for Static Code Analysis in Android project. Static Code Analysis allows us to keep consistency of the source code style and helps us to find errors, warnings, possible bugs, bottlenecks and ways to improve the projects. I highly recommend to use tools like those mentioned.</description>
     </item>
     
     <item>
@@ -1006,7 +1008,7 @@ sudo apt-get autoremove unity-lens-music unity-lens-photos unity-lens-gwibber un
       <pubDate>Sun, 15 Mar 2015 15:44:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/mockito-on-android/</guid>
-      <description>Overview #  When we write unit tests for an Android application, sometimes there&amp;rsquo;s a necessity to mock some classes or interfaces. Instead of writing implementations dedicated for unit tests by hand, we can use Mockito library. We can read article about Mockito on Android on Square&amp;rsquo;s blog. Mockito can make our tests cleaner and better. It can be used both in classic Java projects and Android projects. It&amp;rsquo;s one of the most popular mocking framework in Java and if you&amp;rsquo;re a Java developer who writes unit tests and tries to apply TDD approach, you should be familiar with it.</description>
+      <description>Overview When we write unit tests for an Android application, sometimes there&amp;rsquo;s a necessity to mock some classes or interfaces. Instead of writing implementations dedicated for unit tests by hand, we can use Mockito library. We can read article about Mockito on Android on Square&amp;rsquo;s blog. Mockito can make our tests cleaner and better. It can be used both in classic Java projects and Android projects. It&amp;rsquo;s one of the most popular mocking framework in Java and if you&amp;rsquo;re a Java developer who writes unit tests and tries to apply TDD approach, you should be familiar with it.</description>
     </item>
     
     <item>
@@ -1073,7 +1075,7 @@ void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class cl
       <pubDate>Tue, 13 Jan 2015 19:12:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/</guid>
-      <description>Overview #  Recently I&amp;rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well.</description>
+      <description>Overview Recently I&amp;rsquo;ve developed and realased to Maven Central Repository Kirai, which is flavored Android string formatting library. Kirai means phrase in Swahili language. Project is inspired by phrase, TaggerString and BabushkaText. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well.</description>
     </item>
     
     <item>
@@ -1082,7 +1084,7 @@ void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class cl
       <pubDate>Tue, 06 Jan 2015 19:11:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/interpreting-data-in-csv-files-generated-by-eeg-analyzer/</guid>
-      <description>Introduction #  Sometimes people send me e-mails concerning EEG Analyzer app. Usually they are not sure how to interpret or analyze results generated by the app and uploaded to Dropbox server. My app is quite &amp;ldquo;raw&amp;rdquo; and simple, because it is additional project created during writing my Master Thesis, which helped me to perform some experiments and analysis of EEG data. That&amp;rsquo;s why I didn&amp;rsquo;t focused on generating reports from gathered data.</description>
+      <description>Introduction Sometimes people send me e-mails concerning EEG Analyzer app. Usually they are not sure how to interpret or analyze results generated by the app and uploaded to Dropbox server. My app is quite &amp;ldquo;raw&amp;rdquo; and simple, because it is additional project created during writing my Master Thesis, which helped me to perform some experiments and analysis of EEG data. That&amp;rsquo;s why I didn&amp;rsquo;t focused on generating reports from gathered data.</description>
     </item>
     
     <item>
@@ -1091,8 +1093,8 @@ void put(String key, Object value); &amp;lt;T&amp;gt; T get(String key, Class cl
       <pubDate>Thu, 25 Dec 2014 17:06:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/synapse-indicator-spotlight-for-ubuntu/</guid>
-      <description>Introduction #  If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.
-Synapse #  Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options.</description>
+      <description>Introduction If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.
+Synapse Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options.</description>
     </item>
     
     <item>
@@ -1101,7 +1103,7 @@ Synapse #  Synapse is searching really fast and we don&amp;rsquo;t have to wait 
       <pubDate>Thu, 25 Dec 2014 15:59:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/detecting-swipe-gesture-in-mobile-application/</guid>
-      <description>Introduction #  Update: Swipe Detector project is now called swipe.
+      <description>Introduction Update: Swipe Detector project is now called swipe.
 Some time ago, I needed to detect moment when user is swiping finger on the screen horizontally (from left to right or opposite) or when user swiped horizontally. I&amp;rsquo;ve decided to spend some time for analyzing [onTouch(MotionEvent event)](http://developer.android.com/reference/android/view/View.OnTouchListener.html#onTouch(android.view.View, android.view.MotionEvent)) and dispatchTouchEvent(MotionEvent event) method. We can read more about differences between triggering onTouch eventes on StackOverflow thread. Method like onTouch(MotionEvent event) allows to trigger any touch event, but it doesn&amp;rsquo;t allow to detect type of that event.</description>
     </item>
     
@@ -1111,7 +1113,7 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
       <pubDate>Thu, 25 Dec 2014 15:15:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/installing-release-and-debug-version-of-app-on-a-single-device/</guid>
-      <description>Introduction #  During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.</description>
+      <description>Introduction During software development process developers and QAs may want to have installed release and debug version of the app on a single device, what can be very helpful when they want to develop and use application at the same time. Another advantage is the fact that debug and release version of the app may need different configuration. It this post I will show you an example in which we are changing application name and launcher icon, but we can also change different values during compilation in the same way (e.</description>
     </item>
     
     <item>
@@ -1120,7 +1122,7 @@ Some time ago, I needed to detect moment when user is swiping finger on the scre
       <pubDate>Thu, 27 Nov 2014 21:49:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/basics-of-git/</guid>
-      <description>Introduction #  Git is very popular Version Control System used in many software projects today. In my opinion, it&amp;rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository.</description>
+      <description>Introduction Git is very popular Version Control System used in many software projects today. In my opinion, it&amp;rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository.</description>
     </item>
     
     <item>
@@ -1196,7 +1198,8 @@ git fetch upstream Make sure that you&amp;rsquo;re on your master branch:</descr
       <pubDate>Sun, 21 Sep 2014 13:16:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/micro-location-based-on-wifi-access-points/</guid>
-      <description>Introduction #  Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&amp;rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&amp;rsquo;s possible to create micro-location for Android mobile devices.</description>
+      <description>Introduction Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&amp;rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and MAC addresses (or more precisely: BSSID) it&amp;rsquo;s possible to create micro-location for Android mobile devices.
+Overview On the image below, you can see approximate location of WiFi Access Points in the F3 building of Future Processing company.</description>
     </item>
     
     <item>
@@ -1214,8 +1217,8 @@ git fetch upstream Make sure that you&amp;rsquo;re on your master branch:</descr
       <pubDate>Wed, 10 Sep 2014 21:22:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/updating-android-xml-resources-before-compilation-via-gradle/</guid>
-      <description>Problem #  In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&amp;rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?</description>
+      <description>Problem In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&amp;rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;string name=&amp;#34;backend_url&amp;#34;&amp;gt;192.</description>
     </item>
     
     <item>
@@ -1225,7 +1228,7 @@ git fetch upstream Make sure that you&amp;rsquo;re on your master branch:</descr
       
       <guid>https://wittchen.io/posts/indicators-for-ubuntu/</guid>
       <description>I recently found an article about Best Useful Indicators Collection for Ubuntu. Indicators are very useful feature of the Ubuntu and Unity. Ubuntu has some default indicators, but we can add new indicators if we want to. Mentioned article contains list of many indicators, but personally I prefer and use only a few of them. Here are my favorites:
-Multi Load indicator #  Nice thing. This indicator monitors system resources.</description>
+Multi Load indicator Nice thing. This indicator monitors system resources. E.g. usage of the processor, RAM, disk and network.</description>
     </item>
     
     <item>
@@ -1243,8 +1246,8 @@ Multi Load indicator #  Nice thing. This indicator monitors system resources.</d
       <pubDate>Sun, 31 Aug 2014 14:44:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/publishing-android-application-in-google-play-store/</guid>
-      <description>Introduction #  When you want to publish your Android application in Google Play Store, first you need to go to https://play.google.com/apps/publish/ website and create a Developer account. Its cost is $25. You can read more about that at: https://support.google.com/googleplay/android-developer/answer/113468?hl=en.
-Problems with payments during registration #  Remember that you need to have appropriate debit card in order to proceed with payments. E.g. I have debit card in PKO BP (Polish bank), which has two-stage authorization.</description>
+      <description>Introduction When you want to publish your Android application in Google Play Store, first you need to go to https://play.google.com/apps/publish/ website and create a Developer account. Its cost is $25. You can read more about that at: https://support.google.com/googleplay/android-developer/answer/113468?hl=en.
+Problems with payments during registration Remember that you need to have appropriate debit card in order to proceed with payments. E.g. I have debit card in PKO BP (Polish bank), which has two-stage authorization.</description>
     </item>
     
     <item>
@@ -1265,7 +1268,7 @@ Of course, slides does not show everything I prepared, but they are good summary
       <pubDate>Wed, 27 Aug 2014 21:19:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</guid>
-      <description>Overview #  Recently, I have written small set of methods for a FileHelper using Jackson library in Android application, which allows to save generic Java objects and list of generic objects in JSON format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was LinkedHashMap, which wasn&amp;rsquo;t the list of desired generic objects.</description>
+      <description>Overview Recently, I have written small set of methods for a FileHelper using Jackson library in Android application, which allows to save generic Java objects and list of generic objects in JSON format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was LinkedHashMap, which wasn&amp;rsquo;t the list of desired generic objects.</description>
     </item>
     
     <item>
@@ -1275,7 +1278,7 @@ Of course, slides does not show everything I prepared, but they are good summary
       
       <guid>https://wittchen.io/posts/network-events-android-library/</guid>
       <description>Please note: This post is outdated. Check newest API on the GitHub.
-Introduction #  NetworkEvents is an Android library, which I&amp;rsquo;ve created recently for one of the projects. It uses Otto Event Bus to support event driven programming. We can use appropriate annotations and perform any action, when connectivity status changes. E.g. when device will go offline, connects to the mobile network, connects to the WiFi network, connects to the WiFi network with Internet access or connects to WiFi network without Internet access.</description>
+Introduction NetworkEvents is an Android library, which I&amp;rsquo;ve created recently for one of the projects. It uses Otto Event Bus to support event driven programming. We can use appropriate annotations and perform any action, when connectivity status changes. E.g. when device will go offline, connects to the mobile network, connects to the WiFi network, connects to the WiFi network with Internet access or connects to WiFi network without Internet access.</description>
     </item>
     
     <item>
@@ -1285,8 +1288,8 @@ Introduction #  NetworkEvents is an Android library, which I&amp;rsquo;ve create
       
       <guid>https://wittchen.io/posts/software-for-common-users-on-ubuntu/</guid>
       <description>In this article, I&amp;rsquo;ll describe Ubuntu software for common users, which I personally use and which could be helpful on daily basis. Ubuntu software dedicated to programmers AKA developers will be described in separate article.
-Chrome #  In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:
-sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.google.com/linux/direct/google-chrome-stable\_current\_amd64.deb sudo dpkg -i google-chrome*.deb Skype #  Maybe it&amp;rsquo;s not the best, but one of the most known messengers and lot of people use it.</description>
+Chrome In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:
+sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.google.com/linux/direct/google-chrome-stable\_current\_amd64.deb sudo dpkg -i google-chrome*.deb Skype Maybe it&amp;rsquo;s not the best, but one of the most known messengers and lot of people use it.</description>
     </item>
     
     <item>
@@ -1295,8 +1298,8 @@ sudo apt-get install libxss1 libappindicator1 libindicator7 wget https://dl.goog
       <pubDate>Sun, 17 Aug 2014 20:05:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/ubuntu-system-boot-problem/</guid>
-      <description>Description of the problem #  Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: exit and system started normally, but this error occurred every time after reboot, so I decided to fix it.
-Fixing the problem #  Attempt #1 #  First, I tried to change rootdelay as error message said.</description>
+      <description>Description of the problem Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: exit and system started normally, but this error occurred every time after reboot, so I decided to fix it.
+Fixing the problem Attempt #1 First, I tried to change rootdelay as error message said. I opened file /etc/default/grub I found there the following line:</description>
     </item>
     
     <item>
@@ -1324,7 +1327,8 @@ Fixing the problem #  Attempt #1 #  First, I tried to change rootdelay as error 
       
       <guid>https://wittchen.io/posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</guid>
       <description>There are many approaches concerning selecting items on Android&amp;rsquo;s ListView. Unfortunately most of them don&amp;rsquo;t work. I was struggling with this problem for some time and decided to publish my solution, which is actually quite easy.
-The problem #  I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen). I also want to click on item of the ListView programmatically.</description>
+The problem I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen). I also want to click on item of the ListView programmatically.
+Solution We have to create our own adapter.</description>
     </item>
     
     <item>
@@ -1381,7 +1385,7 @@ In this example, we will access contact list.</description>
       
       <guid>https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/</guid>
       <description>We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
-package com.github.volley.example.toolbox;  import com.android.volley.toolbox.ImageLoader.ImageCache;  import android.graphics.Bitmap; import android.support.v4.util.LruCache;  public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache {  public BitmapLruCache(int maxSize) {  super(maxSize);  }  // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
+package com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache&amp;lt;String, Bitmap&amp;gt; implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven&amp;#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.</description>
     </item>
     
     <item>
@@ -1417,7 +1421,7 @@ package com.github.volley.example.toolbox;  import com.android.volley.toolbox.Im
       <pubDate>Wed, 27 Mar 2013 23:33:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/5-essential-tools-for-serious-software-development-in-a-team-projects/</guid>
-      <description>Introduction #  Daily usage of tools mentioned in this post is quite obvious for me right now, but using them wasn&amp;rsquo;t obvious while I was working alone or when I was involved only in freelance or private projects. Whilst we don&amp;rsquo;t work in a group, we don&amp;rsquo;t have to care about lot of things, but when we work in a team (even small), we have to organize and optimize our work very well in order to obtain its high quality, work efficiently and make life of future developers of our code and co-workers easier.</description>
+      <description>Introduction Daily usage of tools mentioned in this post is quite obvious for me right now, but using them wasn&amp;rsquo;t obvious while I was working alone or when I was involved only in freelance or private projects. Whilst we don&amp;rsquo;t work in a group, we don&amp;rsquo;t have to care about lot of things, but when we work in a team (even small), we have to organize and optimize our work very well in order to obtain its high quality, work efficiently and make life of future developers of our code and co-workers easier.</description>
     </item>
     
     <item>
@@ -1435,7 +1439,7 @@ package com.github.volley.example.toolbox;  import com.android.volley.toolbox.Im
       <pubDate>Sun, 17 Mar 2013 18:57:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/improper-data-type-in-android-textview/</guid>
-      <description>Identifying the problem #  One of the common mistakes done by Android programmers is using improper data type in TextView. Let&amp;rsquo;s have a look on a simple code snippet:
+      <description>Identifying the problem One of the common mistakes done by Android programmers is using improper data type in TextView. Let&amp;rsquo;s have a look on a simple code snippet:
 int area; TextView sampleTextView = (TextView) findViewById(R.id.myTextViewInXml); sampleTextView.setText(area + &amp;#34; km&amp;#34;); Here, we simply set a value of the text in an exemplary TextView and append string value &amp;quot; km&amp;quot; at the end. It can be used with SeekBar. For example, when we change value of the SeekBar, we can also update value of the text inside the TextView.</description>
     </item>
     
@@ -1445,7 +1449,7 @@ int area; TextView sampleTextView = (TextView) findViewById(R.id.myTextViewInXml
       <pubDate>Fri, 15 Feb 2013 19:17:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/distributed-inter-process-communication/</guid>
-      <description>Project overview #  Some time ago, I created presentation for my university connected with Distributed Inter-Process Communication. It is a piece of software dedicated for Linux OS, created by Kamran Karimi, which allows to distribute software operations inside computer cluster. In addition, we can test it on a single machine during development process and run on a several machines in the production phase. I tested this solution on Ubuntu Linux.</description>
+      <description>Project overview Some time ago, I created presentation for my university connected with Distributed Inter-Process Communication. It is a piece of software dedicated for Linux OS, created by Kamran Karimi, which allows to distribute software operations inside computer cluster. In addition, we can test it on a single machine during development process and run on a several machines in the production phase. I tested this solution on Ubuntu Linux. Short description of this system is presented below.</description>
     </item>
     
     <item>
@@ -1455,7 +1459,7 @@ int area; TextView sampleTextView = (TextView) findViewById(R.id.myTextViewInXml
       
       <guid>https://wittchen.io/posts/endless-listview-in-android/</guid>
       <description>Some time ago, I had to implement Endless ListView in Android application. I checked different solutions, but some of them were overprogrammed or did not work well. Fortunately, I found simple solution, which solves the problem. Code snippet presenting mentioned approach, is placed below.
-public class EndlessScrollListener implements OnScrollListener {   private int visibleThreshold = 20;  private int currentPage = 0;   @Override  public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {  }   @Override  public void onScrollStateChanged(AbsListView view, int scrollState) {  if (scrollState == SCROLL_STATE_IDLE) {  if (listView.</description>
+public class EndlessScrollListener implements OnScrollListener { private int visibleThreshold = 20; private int currentPage = 0; @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { } @Override public void onScrollStateChanged(AbsListView view, int scrollState) { if (scrollState == SCROLL_STATE_IDLE) { if (listView.</description>
     </item>
     
     <item>
@@ -1465,7 +1469,7 @@ public class EndlessScrollListener implements OnScrollListener {   private int v
       
       <guid>https://wittchen.io/posts/custom-background-for-actionbar-and-sherlockactionbar/</guid>
       <description>When you want to set custom background for Android ActionBar or SherlockActionBar instead of playing with your styles or views, you can use the following simple code snippet.
-@InjectResource(R.drawable.actionbar_custom_background) private Drawable actionBarCustomBackground;  public void onCreate() {  getSupportActionBar().setBackgroundDrawable(actionBarCustomBackground); } In this case, Drawable object is injected using RoboGuice library and set as a background for the ActionBar. In particular cases, you can use also getActionBar() method. In Drawable object you can store an image of 1 px width and it will be stretched for 100% of width of the ActionBar.</description>
+@InjectResource(R.drawable.actionbar_custom_background) private Drawable actionBarCustomBackground; public void onCreate() { getSupportActionBar().setBackgroundDrawable(actionBarCustomBackground); } In this case, Drawable object is injected using RoboGuice library and set as a background for the ActionBar. In particular cases, you can use also getActionBar() method. In Drawable object you can store an image of 1 px width and it will be stretched for 100% of width of the ActionBar.</description>
     </item>
     
     <item>
@@ -1475,7 +1479,7 @@ public class EndlessScrollListener implements OnScrollListener {   private int v
       
       <guid>https://wittchen.io/posts/custom-fonts-in-android/</guid>
       <description>Using custom fonts in Android is quite simple, but requires to do some things programmatically and cannot be done using only XML file defining the view. Let&amp;rsquo;s have a look on an example. Here we have a simple Android view file:
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;  android:orientation=&amp;#34;vertical&amp;#34;  android:layout_width=&amp;#34;fill_parent&amp;#34;  android:layout_height=&amp;#34;fill_parent&amp;#34; &amp;gt;  &amp;lt;TextView  android:id=&amp;#34;@+id/custom_font&amp;#34;  android:layout_width=&amp;#34;fill_parent&amp;#34;  android:layout_height=&amp;#34;wrap_content&amp;#34;  android:text=&amp;#34;This is our custom font&amp;#34; /&amp;gt; &amp;lt;/LinearLayout&amp;gt; We want to use custom font for the TextView element with id: custom_font.</description>
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; android:orientation=&amp;#34;vertical&amp;#34; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;fill_parent&amp;#34; &amp;gt; &amp;lt;TextView android:id=&amp;#34;@+id/custom_font&amp;#34; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:text=&amp;#34;This is our custom font&amp;#34; /&amp;gt; &amp;lt;/LinearLayout&amp;gt; We want to use custom font for the TextView element with id: custom_font.</description>
     </item>
     
     <item>
@@ -1485,7 +1489,7 @@ public class EndlessScrollListener implements OnScrollListener {   private int v
       
       <guid>https://wittchen.io/posts/easy-conversion-from-binary-to-decimal-numbers-in-c/</guid>
       <description>Below, you can see simple and useful code snippet presenting conversion from binary to decimal number in C language without any sophisticated operations using only strtol function.
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; int main(void) {  const char binary[] = &amp;#34;11001&amp;#34;;  int decimal = strtol(binary, NULL, 2);  printf(&amp;#34;binary = \&amp;#34;%s\&amp;#34;, decimal = %d = 0x%02X\n&amp;#34;,  binary, decimal, decimal);  return 0; }  /* my output binary = &amp;#34;11001&amp;#34;, decimal = 25 = 0x19 */ </description>
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; int main(void) { const char binary[] = &amp;#34;11001&amp;#34;; int decimal = strtol(binary, NULL, 2); printf(&amp;#34;binary = \&amp;#34;%s\&amp;#34;, decimal = %d = 0x%02X\n&amp;#34;, binary, decimal, decimal); return 0; } /* my output binary = &amp;#34;11001&amp;#34;, decimal = 25 = 0x19 */ </description>
     </item>
     
     <item>
@@ -1494,9 +1498,9 @@ public class EndlessScrollListener implements OnScrollListener {   private int v
       <pubDate>Thu, 24 Jan 2013 23:50:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/android-and-maven/</guid>
-      <description>Overview #  Etymology #  Maven, a Yiddish word meaning accumulator of knowledge.
-What is Maven? #  Maven is a tool that can be used for building and managing any Java-based project with all its dependencies (libraries).
-Maven&amp;rsquo;s objectives #   Making build process easy Providing uniform build system (Project Object Model) Providing quality project information Providing guidelines for best practices development Allowing transparent migration to new features  Setting up Maven Android projects on MS Windows #  Configuring environment #    You need Eclipse Indigo or Juno installed</description>
+      <description>Overview Etymology Maven, a Yiddish word meaning accumulator of knowledge.
+What is Maven? Maven is a tool that can be used for building and managing any Java-based project with all its dependencies (libraries).
+Maven&amp;rsquo;s objectives  Making build process easy Providing uniform build system (Project Object Model) Providing quality project information Providing guidelines for best practices development Allowing transparent migration to new features  Setting up Maven Android projects on MS Windows Configuring environment   You need Eclipse Indigo or Juno installed</description>
     </item>
     
     <item>
@@ -1515,7 +1519,7 @@ Maven&amp;rsquo;s objectives #   Making build process easy Providing uniform bui
       
       <guid>https://wittchen.io/posts/adding-reversed-numbers/</guid>
       <description>In this post I will show you my approach to adding reversed numbers. This problem occurred during the ACM Central European Programming Contest, in Prague in 1998.
-General description of the problem #  Input #  The input consists of N cases (equal to about 10000). The first line of the input contains only positive integer N. Then follow the cases. Each case consists of exactly one line with two positive integers separated by space.</description>
+General description of the problem Input The input consists of N cases (equal to about 10000). The first line of the input contains only positive integer N. Then follow the cases. Each case consists of exactly one line with two positive integers separated by space.</description>
     </item>
     
     <item>

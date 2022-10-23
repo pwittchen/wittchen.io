@@ -1,308 +1,97 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
-package com.github.volley.example.toolbox;  import com.android.volley.toolbox.ImageLoader.ImageCache;  import android.graphics.Bitmap; import android.support.v4.util.LruCache;  public class BitmapLruCache extends LruCache&lt;String, Bitmap&gt; implements ImageCache {  public BitmapLruCache(int maxSize) {  super(maxSize);  }  // Fix thanks to Steven&#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Asynchronous loading and caching bitmaps with Volley" />
-<meta property="og:description" content="We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
-package com.github.volley.example.toolbox;  import com.android.volley.toolbox.ImageLoader.ImageCache;  import android.graphics.Bitmap; import android.support.v4.util.LruCache;  public class BitmapLruCache extends LruCache&lt;String, Bitmap&gt; implements ImageCache {  public BitmapLruCache(int maxSize) {  super(maxSize);  }  // Fix thanks to Steven&#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2013-08-26T23:37:00+00:00" />
-<meta property="article:modified_time" content="2020-08-15T18:09:42+02:00" />
-
-<title>Asynchronous loading and caching bitmaps with Volley | Piotr Wittchen</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6c1374b0bf767d788b4184715f6ad2830bc9c363694b0bc830291b785510b4ae.js" integrity="sha256-bBN0sL92fXiLQYRxX2rSgwvJw2NpSwvIMCkbeFUQtK4=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
-</head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Piotr Wittchen</span>
-  </a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <ul>
-<li><a href="/">About</a></li>
-<li><a href="/posts/">Posts</a></li>
-<li><a href="/gh/">Code</a></li>
-<li><a href="/talks/">Talks</a></li>
-<li><a href="/contact/">Contact</a></li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Asynchronous loading and caching bitmaps with Volley</strong>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents"></nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-<article class="markdown">
-  <h1>
-    <a href="/posts/asynchronous-loading-and-caching-bitmaps-with-volley/">Asynchronous loading and caching bitmaps with Volley</a>
-  </h1>
-  
-  <h5>Aug 26, 2013</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/tags/android/">android</a>, 
-      <a href="/tags/java/">java</a>
-  </div>
-  
-
-
-
-<p>We can use <a href="https://android.googlesource.com/platform/frameworks/volley/">Volley</a> library from Google for very clean, simple and easy loading of the images from Internet. Volley uses <a href="http://developer.android.com/reference/android/util/LruCache.html">LRU cache</a>, so first of all, we need to create BitmapLruCache class extending LruCache class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.github.volley.example.toolbox<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.toolbox.ImageLoader.ImageCache<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.graphics.Bitmap<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.support.v4.util.LruCache<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BitmapLruCache</span> <span style="color:#66d9ef">extends</span> LruCache<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Bitmap<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> ImageCache <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">BitmapLruCache</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> maxSize<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>maxSize<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//    Fix thanks to Steven&#39;s comment: sizeOf method should not be overriden, 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//    when we are passing max image cache entries in another place of the code
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//    @Override
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//    protected int sizeOf(String key, Bitmap value) {
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        return value.getRowBytes() * value.getHeight();
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//    }
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Bitmap <span style="color:#a6e22e">getBitmap</span><span style="color:#f92672">(</span>String url<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> get<span style="color:#f92672">(</span>url<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">putBitmap</span><span style="color:#f92672">(</span>String url<span style="color:#f92672">,</span> Bitmap bitmap<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        put<span style="color:#f92672">(</span>url<span style="color:#f92672">,</span> bitmap<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>Next, we need to create VolleyHelper class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.github.volley.example.toolbox<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> android.content.Context<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.RequestQueue<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.toolbox.ImageLoader<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.android.volley.toolbox.Volley<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.volley.example.toolbox.BitmapLruCache<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Helper class that is used to provide references to initialized RequestQueue(s) and ImageLoader(s)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VolleyHelper</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MAX_IMAGE_CACHE_ENTIRES  <span style="color:#f92672">=</span> 100<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> RequestQueue mRequestQueue<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> ImageLoader mImageLoader<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">VolleyHelper</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span><span style="color:#f92672">(</span>Context context<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        mRequestQueue <span style="color:#f92672">=</span> Volley<span style="color:#f92672">.</span><span style="color:#a6e22e">newRequestQueue</span><span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        mImageLoader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ImageLoader<span style="color:#f92672">(</span>mRequestQueue<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> BitmapLruCache<span style="color:#f92672">(</span>MAX_IMAGE_CACHE_ENTIRES<span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> RequestQueue <span style="color:#a6e22e">getRequestQueue</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mRequestQueue <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> mRequestQueue<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;RequestQueue not initialized&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Returns instance of ImageLoader initialized with {@see FakeImageCache} which effectively means
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * that no memory caching is used. This is useful for images that you know that will be show
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * only once.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ImageLoader <span style="color:#a6e22e">getImageLoader</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>mImageLoader <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> mImageLoader<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ImageLoader not initialized&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>Then, somewhere in our activity, we can use the following code snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>imageView <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ImageView<span style="color:#f92672">)</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">iv_image</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>String imageUrl <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://www.example.com/image.jpg&#34;</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>VolleyHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">init</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span> <span style="color:#75715e">// we can call this method in other place - e.g. in class extending Application class
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                         <span style="color:#75715e">// and refer to application context insted of activity context
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>ImageLoader imageLoader <span style="color:#f92672">=</span> VolleyHelper<span style="color:#f92672">.</span><span style="color:#a6e22e">getImageLoader</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>imageLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>imageUrl<span style="color:#f92672">,</span>ImageLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">getImageListener</span><span style="color:#f92672">(</span>mImageView<span style="color:#f92672">,</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">drawable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">no_image</span><span style="color:#f92672">,</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">drawable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">error_image</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
-</span></span></span></code></pre></div><p>As we can see, we can define image in case of error or no image. What is nice and important, Volley will take care of asynchronous downloading of the bitmaps, so we don&rsquo;t have to create additional AsyncTasks. It will also create cache in temporary memory and on disk with using LRU cache. As we could easily notice, Volley is really good and small, but powerful library, which can make our life easier. It was also created and tested by Google, what assures its stability and quality.</p>
-</article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-  <div><a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/commit/d00fe6d9b20b9e5911002fc6f5b17542dafb3520" title='Last modified by Piotr Wittchen | Aug 15, 2020' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Aug 15, 2020</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/pwittchen/wittchen.io/edit/master/content/content/posts/asynchronous-loading-and-caching-bitmaps-with-volley.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
-
-</div>
-
-
-
-  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents"></nav>
-
-
- 
-      </div>
-    </aside>
-    
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Asynchronous loading and caching bitmaps with Volley | Piotr Wittchen</title><meta name=keywords content="android,java"><meta name=description content="We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
+package com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache<String, Bitmap> implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven's comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value."><meta name=author content="Piotr Wittchen"><link rel=canonical href=https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/><link crossorigin=anonymous href=/assets/css/stylesheet.cdcf872f971c70fddc7fd480e8457cd308ed0cf287b498bcdc6183fc6d147858.css integrity="sha256-zc+HL5cccP3cf9SA6EV80wjtDPKHtJi83GGD/G0UeFg=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://wittchen.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wittchen.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://wittchen.io/favicon-32x32.png><link rel=apple-touch-icon href=https://wittchen.io/apple-touch-icon.png><link rel=mask-icon href=https://wittchen.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Asynchronous loading and caching bitmaps with Volley"><meta property="og:description" content="We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
+package com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache<String, Bitmap> implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven's comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value."><meta property="og:type" content="article"><meta property="og:url" content="https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2013-08-26T23:37:00+00:00"><meta property="article:modified_time" content="2013-08-26T23:37:00+00:00"><meta property="og:site_name" content="Piotr Wittchen"><meta name=twitter:card content="summary"><meta name=twitter:title content="Asynchronous loading and caching bitmaps with Volley"><meta name=twitter:description content="We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.
+package com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache<String, Bitmap> implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven's comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://wittchen.io/posts/"},{"@type":"ListItem","position":2,"name":"Asynchronous loading and caching bitmaps with Volley","item":"https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Asynchronous loading and caching bitmaps with Volley","name":"Asynchronous loading and caching bitmaps with Volley","description":"We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.\npackage com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCache\u0026lt;String, Bitmap\u0026gt; implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven\u0026#39;s comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.","keywords":["android","java"],"articleBody":"We can use Volley library from Google for very clean, simple and easy loading of the images from Internet. Volley uses LRU cache, so first of all, we need to create BitmapLruCache class extending LruCache class.\npackage com.github.volley.example.toolbox; import com.android.volley.toolbox.ImageLoader.ImageCache; import android.graphics.Bitmap; import android.support.v4.util.LruCache; public class BitmapLruCache extends LruCacheString, Bitmap implements ImageCache { public BitmapLruCache(int maxSize) { super(maxSize); } // Fix thanks to Steven's comment: sizeOf method should not be overriden, // when we are passing max image cache entries in another place of the code // @Override // protected int sizeOf(String key, Bitmap value) { // return value.getRowBytes() * value.getHeight(); // }  @Override public Bitmap getBitmap(String url) { return get(url); } @Override public void putBitmap(String url, Bitmap bitmap) { put(url, bitmap); } } Next, we need to create VolleyHelper class.\npackage com.github.volley.example.toolbox; import android.content.Context; import com.android.volley.RequestQueue; import com.android.volley.toolbox.ImageLoader; import com.android.volley.toolbox.Volley; import com.github.volley.example.toolbox.BitmapLruCache; /** * Helper class that is used to provide references to initialized RequestQueue(s) and ImageLoader(s) */ public class VolleyHelper { private static final int MAX_IMAGE_CACHE_ENTIRES = 100; private static RequestQueue mRequestQueue; private static ImageLoader mImageLoader; private VolleyHelper() { } static void init(Context context) { mRequestQueue = Volley.newRequestQueue(context); mImageLoader = new ImageLoader(mRequestQueue, new BitmapLruCache(MAX_IMAGE_CACHE_ENTIRES)); } public static RequestQueue getRequestQueue() { if (mRequestQueue != null) { return mRequestQueue; } else { throw new IllegalStateException(\"RequestQueue not initialized\"); } } /** * Returns instance of ImageLoader initialized with {@see FakeImageCache} which effectively means * that no memory caching is used. This is useful for images that you know that will be show * only once. */ public static ImageLoader getImageLoader() { if (mImageLoader != null) { return mImageLoader; } else { throw new IllegalStateException(\"ImageLoader not initialized\"); } } } Then, somewhere in our activity, we can use the following code snippet:\nimageView = (ImageView) findViewById(R.id.iv_image); // ...  String imageUrl = \"http://www.example.com/image.jpg\"; VolleyHelper.init(this); // we can call this method in other place - e.g. in class extending Application class  // and refer to application context insted of activity context  ImageLoader imageLoader = VolleyHelper.getImageLoader(); imageLoader.get(imageUrl,ImageLoader.getImageListener(mImageView,R.drawable.no_image, R.drawable.error_image)); // ... As we can see, we can define image in case of error or no image. What is nice and important, Volley will take care of asynchronous downloading of the bitmaps, so we don’t have to create additional AsyncTasks. It will also create cache in temporary memory and on disk with using LRU cache. As we could easily notice, Volley is really good and small, but powerful library, which can make our life easier. It was also created and tested by Google, what assures its stability and quality.\n","wordCount":"422","inLanguage":"en","datePublished":"2013-08-26T23:37:00Z","dateModified":"2013-08-26T23:37:00Z","author":{"@type":"Person","name":"Piotr Wittchen"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/"},"publisher":{"@type":"Organization","name":"Piotr Wittchen","logo":{"@type":"ImageObject","url":"https://wittchen.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://wittchen.io/ accesskey=h title="Piotr Wittchen (Alt + H)"><img src=https://wittchen.io/apple-touch-icon.png alt aria-label=logo height=35>Piotr Wittchen</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://wittchen.io/posts/ title=posts><span>posts</span></a></li><li><a href=https://wittchen.io/tags/ title=tags><span>tags</span></a></li><li><a href=https://wittchen.io/talks/ title=talks><span>talks</span></a></li><li><a href=https://github.com/pwittchen title=code><span>code</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://wittchen.io/setup/ title=setup><span>setup</span></a></li><li><a href=https://wittchen.io/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=https://wittchen.io/contact/ title=contact><span>contact</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://wittchen.io/>Home</a>&nbsp;»&nbsp;<a href=https://wittchen.io/posts/>Posts</a></div><h1 class=post-title>Asynchronous loading and caching bitmaps with Volley</h1><div class=post-meta><span title="2013-08-26 23:37:00 +0000 UTC">August 26, 2013</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;422 words&nbsp;·&nbsp;Piotr Wittchen&nbsp;|&nbsp;<a href=https://github.com/pwittchen/wittchen.io/blob/master/content/posts/asynchronous-loading-and-caching-bitmaps-with-volley.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>We can use <a href=https://android.googlesource.com/platform/frameworks/volley/>Volley</a> library from Google for very clean, simple and easy loading of the images from Internet. Volley uses <a href=http://developer.android.com/reference/android/util/LruCache.html>LRU cache</a>, so first of all, we need to create BitmapLruCache class extending LruCache class.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>com.github.volley.example.toolbox</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.android.volley.toolbox.ImageLoader.ImageCache</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>android.graphics.Bitmap</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>android.support.v4.util.LruCache</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>BitmapLruCache</span> <span class=kd>extends</span> <span class=n>LruCache</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Bitmap</span><span class=o>&gt;</span> <span class=kd>implements</span> <span class=n>ImageCache</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>BitmapLruCache</span><span class=o>(</span><span class=kt>int</span> <span class=n>maxSize</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>super</span><span class=o>(</span><span class=n>maxSize</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//    Fix thanks to Steven&#39;s comment: sizeOf method should not be overriden, 
+</span></span></span><span class=line><span class=cl><span class=c1>//    when we are passing max image cache entries in another place of the code
+</span></span></span><span class=line><span class=cl><span class=c1>//    @Override
+</span></span></span><span class=line><span class=cl><span class=c1>//    protected int sizeOf(String key, Bitmap value) {
+</span></span></span><span class=line><span class=cl><span class=c1>//        return value.getRowBytes() * value.getHeight();
+</span></span></span><span class=line><span class=cl><span class=c1>//    }
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Bitmap</span> <span class=nf>getBitmap</span><span class=o>(</span><span class=n>String</span> <span class=n>url</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>url</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>putBitmap</span><span class=o>(</span><span class=n>String</span> <span class=n>url</span><span class=o>,</span> <span class=n>Bitmap</span> <span class=n>bitmap</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>put</span><span class=o>(</span><span class=n>url</span><span class=o>,</span> <span class=n>bitmap</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>Next, we need to create VolleyHelper class.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>com.github.volley.example.toolbox</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>android.content.Context</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.android.volley.RequestQueue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.android.volley.toolbox.ImageLoader</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.android.volley.toolbox.Volley</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>com.github.volley.example.toolbox.BitmapLruCache</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * Helper class that is used to provide references to initialized RequestQueue(s) and ImageLoader(s)
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>VolleyHelper</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=kt>int</span> <span class=n>MAX_IMAGE_CACHE_ENTIRES</span>  <span class=o>=</span> <span class=n>100</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=n>RequestQueue</span> <span class=n>mRequestQueue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=n>ImageLoader</span> <span class=n>mImageLoader</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=nf>VolleyHelper</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>static</span> <span class=kt>void</span> <span class=nf>init</span><span class=o>(</span><span class=n>Context</span> <span class=n>context</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>mRequestQueue</span> <span class=o>=</span> <span class=n>Volley</span><span class=o>.</span><span class=na>newRequestQueue</span><span class=o>(</span><span class=n>context</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>mImageLoader</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ImageLoader</span><span class=o>(</span><span class=n>mRequestQueue</span><span class=o>,</span> <span class=k>new</span> <span class=n>BitmapLruCache</span><span class=o>(</span><span class=n>MAX_IMAGE_CACHE_ENTIRES</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=n>RequestQueue</span> <span class=nf>getRequestQueue</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>mRequestQueue</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>mRequestQueue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalStateException</span><span class=o>(</span><span class=s>&#34;RequestQueue not initialized&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>     * Returns instance of ImageLoader initialized with {@see FakeImageCache} which effectively means
+</span></span></span><span class=line><span class=cl><span class=cm>     * that no memory caching is used. This is useful for images that you know that will be show
+</span></span></span><span class=line><span class=cl><span class=cm>     * only once.
+</span></span></span><span class=line><span class=cl><span class=cm>     */</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=n>ImageLoader</span> <span class=nf>getImageLoader</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>mImageLoader</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>mImageLoader</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalStateException</span><span class=o>(</span><span class=s>&#34;ImageLoader not initialized&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>Then, somewhere in our activity, we can use the following code snippet:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>imageView</span> <span class=o>=</span> <span class=o>(</span><span class=n>ImageView</span><span class=o>)</span> <span class=n>findViewById</span><span class=o>(</span><span class=n>R</span><span class=o>.</span><span class=na>id</span><span class=o>.</span><span class=na>iv_image</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ...
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>String</span> <span class=n>imageUrl</span> <span class=o>=</span> <span class=s>&#34;http://www.example.com/image.jpg&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>VolleyHelper</span><span class=o>.</span><span class=na>init</span><span class=o>(</span><span class=k>this</span><span class=o>);</span> <span class=c1>// we can call this method in other place - e.g. in class extending Application class
+</span></span></span><span class=line><span class=cl><span class=c1></span>                         <span class=c1>// and refer to application context insted of activity context
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>ImageLoader</span> <span class=n>imageLoader</span> <span class=o>=</span> <span class=n>VolleyHelper</span><span class=o>.</span><span class=na>getImageLoader</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=n>imageLoader</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>imageUrl</span><span class=o>,</span><span class=n>ImageLoader</span><span class=o>.</span><span class=na>getImageListener</span><span class=o>(</span><span class=n>mImageView</span><span class=o>,</span><span class=n>R</span><span class=o>.</span><span class=na>drawable</span><span class=o>.</span><span class=na>no_image</span><span class=o>,</span> <span class=n>R</span><span class=o>.</span><span class=na>drawable</span><span class=o>.</span><span class=na>error_image</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ...
+</span></span></span></code></pre></div><p>As we can see, we can define image in case of error or no image. What is nice and important, Volley will take care of asynchronous downloading of the bitmaps, so we don&rsquo;t have to create additional AsyncTasks. It will also create cache in temporary memory and on disk with using LRU cache. As we could easily notice, Volley is really good and small, but powerful library, which can make our life easier. It was also created and tested by Google, what assures its stability and quality.</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://wittchen.io/tags/android/>android</a></li><li><a href=https://wittchen.io/tags/java/>java</a></li></ul><nav class=paginav><a class=prev href=https://wittchen.io/posts/justifying-block-of-text-inside-textview-in-android/><span class=title>« Prev</span><br><span>Justifying block of text inside TextView in Android</span></a>
+<a class=next href=https://wittchen.io/posts/how-to-change-fragment-layout-on-orientation-change/><span class=title>Next »</span><br><span>How to change Fragment layout on orientation change?</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://wittchen.io/>Piotr Wittchen</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(t=>{const n=t.parentNode.parentNode,e=document.createElement("button");e.classList.add("copy-code"),e.innerHTML="copy";function s(){e.innerHTML="copied!",setTimeout(()=>{e.innerHTML="copy"},2e3)}e.addEventListener("click",o=>{if("clipboard"in navigator){navigator.clipboard.writeText(t.textContent),s();return}const e=document.createRange();e.selectNodeContents(t);const n=window.getSelection();n.removeAllRanges(),n.addRange(e);try{document.execCommand("copy"),s()}catch(e){}n.removeRange(e)}),n.classList.contains("highlight")?n.appendChild(e):n.parentNode.firstChild==n||(t.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?t.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(e):t.parentNode.appendChild(e))})</script></body></html>

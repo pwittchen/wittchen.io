@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>conferences on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/conferences/</link>
     <description>Recent content in conferences on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Wed, 21 Nov 2018 21:59:06 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brain-Computer Interfaces - Science Fiction or Reality?</title>
@@ -45,7 +44,7 @@ Piotr Wittchen tells us about how we can we keep the track of network &amp;#x1f3
       <pubDate>Thu, 02 Nov 2017 20:02:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/5-ways-to-attend-expansive-it-conferences-for-almost-free/</guid>
-      <description>Introduction #  In the past months, I&amp;rsquo;ve attended a few conferences and meetups related to IT. I also plan to attend a few more in the last quarter of the year as a speaker. I&amp;rsquo;d like to show you a few tips, which can encourage you to attend such events, be more involved in them and spend some time away from your desk ;-). If you are working in a software company, in the most cases you could treat going for a conference as a non-customer facing business trip, so your regular days off will be safe and can be used for your personal plans and holidays :-).</description>
+      <description>Introduction In the past months, I&amp;rsquo;ve attended a few conferences and meetups related to IT. I also plan to attend a few more in the last quarter of the year as a speaker. I&amp;rsquo;d like to show you a few tips, which can encourage you to attend such events, be more involved in them and spend some time away from your desk ;-). If you are working in a software company, in the most cases you could treat going for a conference as a non-customer facing business trip, so your regular days off will be safe and can be used for your personal plans and holidays :-).</description>
     </item>
     
     <item>

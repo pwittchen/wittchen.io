@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>python on Piotr Wittchen</title>
     <link>https://wittchen.io/tags/python/</link>
     <description>Recent content in python on Piotr Wittchen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Thu, 20 Feb 2020 11:29:13 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spotify song in i3 status bar</title>
@@ -23,7 +22,7 @@ I created the following config inside ~/.</description>
       <pubDate>Sun, 08 Apr 2018 11:47:49 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/publishing-python-package-to-pypi/</guid>
-      <description>Introduction #  I have my own tiny Python project called spotify-cli-linux, which is (surprise!) command line interface for Spotify desktop app on Linux. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I&amp;rsquo;ve provided instructions how to install my Python script in the system via curl and wget, which is fine, but it&amp;rsquo;s not recommended and official way to do it.</description>
+      <description>Introduction I have my own tiny Python project called spotify-cli-linux, which is (surprise!) command line interface for Spotify desktop app on Linux. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I&amp;rsquo;ve provided instructions how to install my Python script in the system via curl and wget, which is fine, but it&amp;rsquo;s not recommended and official way to do it.</description>
     </item>
     
     <item>
@@ -42,7 +41,8 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Sun, 01 Jan 2017 11:10:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/automate-boring-stuff/</guid>
-      <description>Introduction #  In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.</description>
+      <description>Introduction In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for Podwyższone Koszty Uzyskania Przychodu in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.
+How the report looks in practice?</description>
     </item>
     
     <item>
@@ -51,9 +51,9 @@ You can install spotify-cli as follows via wget:</description>
       <pubDate>Mon, 28 Dec 2015 21:37:00 +0000</pubDate>
       
       <guid>https://wittchen.io/posts/3-questions-about-your-git-repo/</guid>
-      <description>Introduction #  Can you answer the following questions about your Git repository?
+      <description>Introduction Can you answer the following questions about your Git repository?
  Does development branch has all changes from master branch? Is your gitlog a crap? How old are your branches?  If not, but you want to know answers, you&amp;rsquo;re lucky, because I prepared 3 simple scripts for you, which can help to find it out.
-Does development branch has all changes from master branch? #  git-branch-comparator is a python script, which checks if development branch has all changes from master branch in Git repository.</description>
+Does development branch has all changes from master branch? git-branch-comparator is a python script, which checks if development branch has all changes from master branch in Git repository.</description>
     </item>
     
     <item>
