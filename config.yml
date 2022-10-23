@@ -52,10 +52,10 @@ params:
       url: "mailto:piotr@wittchen.io"
     - name: linkedin
       url: "https://www.linkedin.com/in/piotrwittchen/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
     - name: github
       url: "https://github.com/pwittchen"
+    - name: stackoverflow
+      url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
 
   cover:
     hidden: true # hide everywhere but not in structured data
