@@ -1,0 +1,123 @@
+baseURL: "https://wittchen.io/"
+title: Piotr Wittchen
+paginate: 5
+theme: papermod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Piotr Wittchen
+  description: "Personal website and blog of Piotr Wittchen"
+  keywords: [blog, personal, website]
+  author: Piotr Wittchen
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  label:
+    text: "Piotr Wittchen"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: My name is **Piotr Wittchen**. I am the [**software developer**](/in) from Poland. **I create software** for mobile devices, servers, web and Linux. I graduated with MS in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups. I contribute to [open-source](/gh) projects and from time to time give [talks](/talks) related to software development at the conferences and meetups. Moreover, I publish technical [articles](/posts) (also available on [rss](/posts/index.xml) feed). If you would like to contact me, ask me about something, start cooperation or just say hello, send me an [e-mail](mailto:piotr@wittchen.io)!
+  socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/piotrwittchen/"
+    - name: stackoverflow
+      url: "https://stackoverflow.com"
+    - name: github
+      url: "https://github.com/pwittchen"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: "https://github.com/pwittchen/wittchen.io/blob/master/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: posts
+      name: posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: talks
+      name: talks
+      url: /talks/
+      weight: 30
+    - identifier: code
+      name: code
+      url: https://github.com/pwittchen
+      weight: 40
+    - identifier: setup
+      name: setup
+      url: /setup/
+      weight: 50
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 60
+    - identifier: contact
+      name: contact
+      url: /contact/
+      weight: 70
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    style: monokai
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
