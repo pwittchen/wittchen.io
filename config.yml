@@ -40,8 +40,8 @@ params:
 
   label:
     text: "Piotr Wittchen"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
+    # icon: /apple-touch-icon.png
+    # iconHeight: 35
 
   # home-info mode
   homeInfoParams:

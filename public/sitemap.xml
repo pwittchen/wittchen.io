@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wittchen.io/setup/</loc>
+    <lastmod>2020-08-14T17:01:24+02:00</lastmod>
+  </url><url>
+    <loc>https://wittchen.io/contact/</loc>
+    <lastmod>2020-08-14T16:31:02+02:00</lastmod>
+  </url><url>
     <loc>https://wittchen.io/gh/</loc>
     <lastmod>2020-08-14T16:31:02+02:00</lastmod>
   </url><url>
@@ -16,6 +22,9 @@
   </url><url>
     <loc>https://wittchen.io/so/</loc>
     <lastmod>2020-08-14T16:31:02+02:00</lastmod>
+  </url><url>
+    <loc>https://wittchen.io/talks/</loc>
+    <lastmod>2020-08-14T16:30:57+02:00</lastmod>
   </url><url>
     <loc>https://wittchen.io/posts/dynamic-wallpaper-for-i3/</loc>
     <lastmod>2020-03-29T20:29:36+00:00</lastmod>
