@@ -51,7 +51,7 @@ params:
     - name: email
       url: "mailto:piotr@wittchen.io"
     - name: linkedin
-      url: "https://www.linkedin.com/in/piotrwittchen/"
+      url: "https://www.linkedin.com/in/pwittchen/"
     - name: github
       url: "https://github.com/pwittchen"
     - name: stackoverflow
