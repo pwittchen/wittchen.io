@@ -18,7 +18,7 @@ Software
 - shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
 - terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable) + [iTerm2](https://iterm2.com/)
 - text editor: [Vim](https://vim.org)
-- non-terminal text editor: [VS Code](https://code.visualstudio.com)
+- non-terminal text editor: [VS Code](https://code.visualstudio.com) + [Sublime Text](https://www.sublimetext.com/)
 - IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) + [Xcode](https://developer.apple.com/xcode/)
 - VCS: [Git](https://git-scm.com)
 - web browser: [Brave](https://brave.com) + [Safari](https://www.apple.com/safari/)
