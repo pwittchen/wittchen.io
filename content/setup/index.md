@@ -16,7 +16,7 @@ Software
 - OS: [Arch Linux](https://www.archlinux.org) / [macOS](https://www.apple.com/pl/macos/)
 - WM: [i3](https://i3wm.org)
 - shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
-- terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable)
+- terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable) + [iTerm2](https://iterm2.com/)
 - text editor: [Vim](https://vim.org)
 - non-terminal text editor: [VS Code](https://code.visualstudio.com)
 - IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) + [Xcode](https://developer.apple.com/xcode/)
