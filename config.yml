@@ -46,17 +46,18 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: My name is **Piotr Wittchen**. I am the [**software developer**](/in) from Poland. **I create software** for mobile devices, servers, web and Linux. I graduated with MS and Engineering degree in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups. I contribute to [open-source](/gh) projects and from time to time give [talks](/talks) related to software development at the conferences and meetups. Moreover, I publish technical [articles](/posts) (also available on [rss](/posts/index.xml) feed). To check my tools and work environment, visit my [setup](/setup) page and check my [dotfiles](https://github.com/pwittchen/dotfiles). If you're interested in my professional experience, download my [CV/resume](/cv) (also available as a [LaTeX](https://github.com/pwittchen/cv) code). If you would like to contact me, ask me about something, start cooperation or just say hello, send me an email to [piotr@wittchen.io](mailto:piotr@wittchen.io)!
+    Content: My name is **Piotr Wittchen**. I am the [**software developer**](/in) from Poland. **I create software** for mobile devices, servers, web and Linux. I graduated with MS and Engineering degree in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups. I contribute to [open-source](/gh) projects and from time to time give [talks](/talks) related to software development at the conferences and meetups. Moreover, I publish technical [articles](/posts) (also available on [rss](/posts/index.xml) feed). To check my tools and work environment, visit my [setup](/setup) page. If you would like to contact me, ask me about something, start cooperation or just say hello, send me an email to [piotr@wittchen.io](mailto:piotr@wittchen.io)!
   socialIcons:
     - name: email
       url: "mailto:piotr@wittchen.io"
+    - name: cv
+      url: "https://wittchen.io/cv"
     - name: linkedin
       url: "https://www.linkedin.com/in/pwittchen/"
     - name: github
       url: "https://github.com/pwittchen"
     - name: stackoverflow
       url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
-
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
