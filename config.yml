@@ -58,6 +58,8 @@ params:
       url: "https://github.com/pwittchen"
     - name: stackoverflow
       url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
+    - name: youtube
+      url: "https://www.youtube.com/@pwittchen"
     - name: rss
       url: "/posts/index.xml"
   cover:
