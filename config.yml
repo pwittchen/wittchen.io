@@ -60,6 +60,8 @@ params:
       url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
     - name: youtube
       url: "https://www.youtube.com/@pwittchen"
+    - name: strava
+      url: "https://www.strava.com/athletes/848445"
     - name: rss
       url: "/posts/index.xml"
   cover:
