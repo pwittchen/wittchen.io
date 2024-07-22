@@ -48,7 +48,7 @@ Configuration
 Hardware
 --------
 - ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
-- Macbook Air M1 (CPU: Apple M1 ARM64, RAM: 8 GB, SSD: 256 GB)
+- Macbook Air M1 (CPU: Apple M1 ARM64, GPU: 7-core integrated, RAM: 8 GB, SSD: 256 GB)
 - Samsung C34H890WJUX Curved monitor
 - Logitech MX Keys Mini Keyboard
 - Logitech MX Master Mouse
@@ -56,7 +56,8 @@ Hardware
 - JBL Charge 3 speaker / JBL Go 3 speaker
 - Sennheiser HD 599 cable headphones
 - Sennheiser Momentum True Wireless headphones
-- Samson Go Mic
+- Blue Yeti Microphone
+- Samson Go Microphone
 - LaCie Rugged Mini 1TB USB 3.0 external hard drive
 - Google Pixel 8 phone
 - Samsung Galaxy Watch 5
