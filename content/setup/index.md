@@ -53,15 +53,13 @@ Hardware
 - Logitech MX Keys Mini Keyboard
 - Logitech MX Master Mouse
 - Logitech Webcam C925e 1080p
-- JBL Charge 3 speaker
 - JBL Go 3 speaker
 - Sennheiser HD 599 cable headphones
 - Sennheiser Momentum True Wireless headphones
 - Blue Yeti Microphone
-- Samson Go Microphone
 - LaCie Rugged Mini 1TB USB 3.0 external hard drive
 - Google Pixel 8 phone
-- Samsung Galaxy Watch 5
+- Samsung Galaxy Watch Ultra
 
 Desk
 ----
