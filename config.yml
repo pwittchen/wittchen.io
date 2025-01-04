@@ -1,6 +1,7 @@
 baseURL: "https://wittchen.io/"
 title: Piotr Wittchen
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: papermod
 
 enableRobotsTXT: true

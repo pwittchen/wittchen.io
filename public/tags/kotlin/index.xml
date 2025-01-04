@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>kotlin on Piotr Wittchen</title>
-    <link>https://wittchen.io/tags/kotlin/</link>
-    <description>Recent content in kotlin on Piotr Wittchen</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 14 Dec 2018 14:34:01 +0000</lastBuildDate><atom:link href="https://wittchen.io/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    <title>Kotlin on Piotr Wittchen</title>
+    <link>http://localhost:1313/tags/kotlin/</link>
+    <description>Recent content in Kotlin on Piotr Wittchen</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 14 Dec 2018 14:34:01 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kyma meets CCV2 hackathon summary</title>
-      <link>https://wittchen.io/posts/kyma-meets-ccv2-hackathon-summary/</link>
+      <link>http://localhost:1313/posts/kyma-meets-ccv2-hackathon-summary/</link>
       <pubDate>Fri, 14 Dec 2018 14:34:01 +0000</pubDate>
-      
-      <guid>https://wittchen.io/posts/kyma-meets-ccv2-hackathon-summary/</guid>
-      <description>Introduction I recently I had an opportunity to join &amp;ldquo;Kyma meets CCV2 Hackathon&amp;rdquo; in the SAP Labs Poland office in Gliwice. The goal of the hackathon was to create a simple project, which will use Kyma to integrate external services with the SAP Hybris Commerce Platform. CCV2 stands for &amp;ldquo;Commerce Cloud Version 2&amp;rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&amp;rsquo;s a long story described in a short way).</description>
+      <guid>http://localhost:1313/posts/kyma-meets-ccv2-hackathon-summary/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I recently I had an opportunity to join &amp;ldquo;Kyma meets CCV2 Hackathon&amp;rdquo; in the &lt;a href=&#34;https://www.sap.com/poland/index.html&#34;&gt;SAP Labs Poland&lt;/a&gt; office in Gliwice. The goal of the hackathon was to create a simple project, which will use &lt;a href=&#34;https://github.com/kyma-project/kyma&#34;&gt;Kyma&lt;/a&gt; to integrate external services with the &lt;a href=&#34;https://cx.sap.com/en/products/commerce&#34;&gt;SAP Hybris Commerce Platform&lt;/a&gt;. CCV2 stands for &amp;ldquo;Commerce Cloud Version 2&amp;rdquo;, which are basically SAP Hybris Commerce solutions deployed on the MS Azure Cloud (that&amp;rsquo;s a long story described in a short way). I joined a team consisting of people from a few different departments in the office, so we didn&amp;rsquo;t actually know each other before the event. We decided to create a simple application consisting of a few microservices, which will send an e-mail with a promotional link to the user once he or she add something to the cart in the on-line shop. After clicking on the link sent via the e-mail, user will be redirected to the front-end application, where he or she has to click on the button as many times as possible in a given period of time.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Writing my first library in Kotlin</title>
-      <link>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</link>
+      <link>http://localhost:1313/posts/writing-my-first-library-in-kotlin/</link>
       <pubDate>Sun, 19 Aug 2018 10:24:19 +0000</pubDate>
-      
-      <guid>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</guid>
-      <description>Introduction Recently, I decided to create a tiny Android library called RxBattery, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use Kotlin programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.
-Build System I used Gradle to build the project.</description>
+      <guid>http://localhost:1313/posts/writing-my-first-library-in-kotlin/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Recently, I decided to create a tiny Android library called &lt;a href=&#34;https://github.com/pwittchen/RxBattery&#34;&gt;RxBattery&lt;/a&gt;, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use &lt;a href=&#34;https://kotlinlang.org/&#34;&gt;Kotlin&lt;/a&gt; programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.&lt;/p&gt;
+&lt;h2 id=&#34;build-system&#34;&gt;Build System&lt;/h2&gt;
+&lt;p&gt;I used &lt;a href=&#34;https://gradle.org/&#34;&gt;Gradle&lt;/a&gt; to build the project. It&amp;rsquo;s popular for JVM and Android apps nowadays and works fine with Kotlin. I just needed to add Kotlin Gradle Plugin and Kotlin STD Lib to the &lt;code&gt;/library/build.gradle&lt;/code&gt; file to the &lt;code&gt;classpath&lt;/code&gt; dependencies in &lt;code&gt;buildscript&lt;/code&gt; section. I also needed to define &lt;code&gt;sourceSets&lt;/code&gt; to allow IntelliJ and Android Studio recognize directories with sources.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hello Kotlin!</title>
-      <link>https://wittchen.io/posts/hello-kotlin/</link>
+      <link>http://localhost:1313/posts/hello-kotlin/</link>
       <pubDate>Sat, 07 Feb 2015 18:59:00 +0000</pubDate>
-      
-      <guid>https://wittchen.io/posts/hello-kotlin/</guid>
-      <description>I&amp;rsquo;ve recently played with Kotlin in order to create simple &amp;ldquo;Hello World&amp;rdquo; Android app using this new, fancy language from JetBrains. Kotlin is another programming language based on JVM, which can work with Java. It&amp;rsquo;s aim is to reduce code boilerplate and create projects faster. In my simple Android project, I&amp;rsquo;ve also used KotterKnife for injecting views. I&amp;rsquo;ve also added one simple ActivityUnitTestCase. Unfortunately, I couldn&amp;rsquo;t convert it into Kotlin, because I wasn&amp;rsquo;t allowed to call constructor of inherited class using super() method.</description>
+      <guid>http://localhost:1313/posts/hello-kotlin/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently played with &lt;a href=&#34;http://kotlinlang.org/&#34;&gt;Kotlin&lt;/a&gt; in order to create simple &amp;ldquo;Hello World&amp;rdquo; Android app using this new, fancy language from JetBrains. Kotlin is another programming language based on JVM, which can work with Java. It&amp;rsquo;s aim is to reduce code boilerplate and create projects faster. In my simple Android project, I&amp;rsquo;ve also used &lt;a href=&#34;https://github.com/JakeWharton/kotterknife&#34;&gt;KotterKnife&lt;/a&gt; for injecting views. I&amp;rsquo;ve also added one simple &lt;code&gt;ActivityUnitTestCase&lt;/code&gt;. Unfortunately, I couldn&amp;rsquo;t convert it into Kotlin, because I wasn&amp;rsquo;t allowed to call constructor of inherited class using &lt;code&gt;super()&lt;/code&gt; method. You can read &lt;a href=&#34;http://stackoverflow.com/questions/27699184/in-kotlin-how-do-i-extend-a-class-that-has-multiple-constructors&#34;&gt;related StackOverflow thread&lt;/a&gt; in order to view more details. In order to use Kotlin, I followed instructions from &lt;a href=&#34;http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/&#34;&gt;article on JetBrains blog&lt;/a&gt;. I&amp;rsquo;ve also needed &lt;a href=&#34;https://plugins.jetbrains.com/plugin/6954?pr=idea&#34;&gt;Kotlin plugin&lt;/a&gt; for Android Studio.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
