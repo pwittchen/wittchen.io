@@ -1,3 +1,8 @@
+.header {
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: auto;
+}
+
 .nav {
     display: flex;
     flex-wrap: wrap;

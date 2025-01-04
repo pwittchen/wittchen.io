@@ -23,6 +23,7 @@
     margin: 14px 0;
     font-size: 16px;
     -webkit-line-clamp: 3;
+    text-align: justify;
 }
 
 .first-entry .entry-footer {
