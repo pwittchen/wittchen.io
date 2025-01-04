@@ -47,8 +47,11 @@ Configuration
 
 Hardware
 --------
-- ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
-- Macbook Air M1 (CPU: Apple M1 ARM64, GPU: 7-core integrated, RAM: 8 GB, SSD: 256 GB)
+- Currenly used laptop
+  - Macbook Pro M4 Max (CPU: Apple M4 Max 14 core, GPU: 32-core integrated, RAM: 36 GB, SSD: 1 TB)
+- Currently unused laptops:
+  - ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
+  - Macbook Air M1 (CPU: Apple M1 ARM64, GPU: 7-core integrated, RAM: 8 GB, SSD: 256 GB)
 - Samsung C34H890WJUX Curved monitor
 - Logitech MX Keys Mini Keyboard
 - Logitech MX Master Mouse
@@ -57,7 +60,9 @@ Hardware
 - Sennheiser HD 599 cable headphones
 - Sennheiser Momentum True Wireless headphones
 - Blue Yeti Microphone
-- LaCie Rugged Mini 1TB USB 3.0 external hard drive
+- DJI Mic Mini wireless Microphone - 2 TX, 1 RX
+- LaCie Rugged Mini 1TB USB 3.0 external HDD
+- Samsung T5 Evo 2TB external SSD
 - Google Pixel 8 phone
 - Samsung Galaxy Watch Ultra
 

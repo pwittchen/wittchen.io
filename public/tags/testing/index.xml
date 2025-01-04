@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Testing on Piotr Wittchen</title>
-    <link>http://localhost:1313/tags/testing/</link>
+    <link>https://wittchen.io/tags/testing/</link>
     <description>Recent content in Testing on Piotr Wittchen</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en</language>
     <lastBuildDate>Sat, 22 Sep 2018 16:51:47 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wittchen.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Separate execution of unit and integration tests in Gradle</title>
-      <link>http://localhost:1313/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</link>
+      <link>https://wittchen.io/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</link>
       <pubDate>Sat, 22 Sep 2018 16:51:47 +0000</pubDate>
-      <guid>http://localhost:1313/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</guid>
+      <guid>https://wittchen.io/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</guid>
       <description>&lt;p&gt;During development process, we often write unit and integration tests. While unit tests verify corectness of the small pieces of code, integration tests verify software as a whole project and sometimes can treat it as a black box where concrete results are expected. During development of the REST API, we can write integration tests for such API with &lt;a href=&#34;https://github.com/rest-assured/rest-assured&#34;&gt;REST Assured&lt;/a&gt;. Integration tests are usually slower, because they need to start the server and sometimes do other stuff. That&amp;rsquo;s why it&amp;rsquo;s good to separate their execution from regular unit tests. On the CI server we can even have separate job for them.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Excluding generated code from JaCoCo report</title>
-      <link>http://localhost:1313/posts/excluding-generated-code-from-jacoco-report/</link>
+      <link>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</link>
       <pubDate>Tue, 18 Sep 2018 20:07:30 +0000</pubDate>
-      <guid>http://localhost:1313/posts/excluding-generated-code-from-jacoco-report/</guid>
+      <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
       <description>&lt;p&gt;I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.&lt;/p&gt;
 &lt;p&gt;In my &lt;code&gt;build.gradle&lt;/code&gt; file I configured JaCoCo as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gradle&#34; data-lang=&#34;gradle&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;plugins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
@@ -38,9 +38,9 @@
     </item>
     <item>
       <title>Testing exceptions</title>
-      <link>http://localhost:1313/posts/testing-exceptions/</link>
+      <link>https://wittchen.io/posts/testing-exceptions/</link>
       <pubDate>Tue, 04 Sep 2018 19:49:26 +0000</pubDate>
-      <guid>http://localhost:1313/posts/testing-exceptions/</guid>
+      <guid>https://wittchen.io/posts/testing-exceptions/</guid>
       <description>&lt;p&gt;In Java, we can test exceptions via unit tests in a few different ways. In this article, I&amp;rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.&lt;/p&gt;
 &lt;p&gt;First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&amp;rsquo;m using &lt;a href=&#34;https://junit.org&#34;&gt;JUnit&lt;/a&gt; for unit tests and &lt;a href=&#34;https://google.github.io/truth/&#34;&gt;Truth&lt;/a&gt; for assertions.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -59,32 +59,32 @@
     </item>
     <item>
       <title>Unit test coverage report with Travis CI for Robolectric on Android</title>
-      <link>http://localhost:1313/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/</link>
+      <link>https://wittchen.io/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/</link>
       <pubDate>Sun, 19 Mar 2017 19:32:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/</guid>
+      <guid>https://wittchen.io/posts/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Some time ago, I&amp;rsquo;ve written an article about &lt;a href=&#34;http://localhost:1313/test-coverage-in-android-applications/&#34;&gt;Test coverage report for Android application&lt;/a&gt;. It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I&amp;rsquo;ve written instrumentation unit tests, which needed to be executed on a real device or an emulator. It&amp;rsquo;s a good approach when you want to test functionalities strongly connected with the device. E.g. when you want to test operations on a real SQLite database or something like that. Nevertheless, this approach has huge disadvantages. It&amp;rsquo;s hard to run tests on the Continous Integration server because we need to have the emulator or device up &amp;amp; connected all the time and also tests need to interact properly with the device to get passed what is not so easy. In most cases, mocking part of the application&amp;rsquo;s behavior is enough. In that case, we can easily run tests on a CI server and have deterministic test results. In order to do that, we can use &lt;a href=&#34;http://robolectric.org/&#34;&gt;&lt;strong&gt;Robolectric&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;Some time ago, I&amp;rsquo;ve written an article about &lt;a href=&#34;https://wittchen.io/test-coverage-in-android-applications/&#34;&gt;Test coverage report for Android application&lt;/a&gt;. It got some interest (many comments below article and many visits according to Google Analytics), so I decided to refresh this topic. Previously, I&amp;rsquo;ve written instrumentation unit tests, which needed to be executed on a real device or an emulator. It&amp;rsquo;s a good approach when you want to test functionalities strongly connected with the device. E.g. when you want to test operations on a real SQLite database or something like that. Nevertheless, this approach has huge disadvantages. It&amp;rsquo;s hard to run tests on the Continous Integration server because we need to have the emulator or device up &amp;amp; connected all the time and also tests need to interact properly with the device to get passed what is not so easy. In most cases, mocking part of the application&amp;rsquo;s behavior is enough. In that case, we can easily run tests on a CI server and have deterministic test results. In order to do that, we can use &lt;a href=&#34;http://robolectric.org/&#34;&gt;&lt;strong&gt;Robolectric&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lifting quality of a shell script</title>
-      <link>http://localhost:1313/posts/lifting-quality-of-a-shell-script/</link>
+      <link>https://wittchen.io/posts/lifting-quality-of-a-shell-script/</link>
       <pubDate>Wed, 30 Nov 2016 23:29:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lifting-quality-of-a-shell-script/</guid>
+      <guid>https://wittchen.io/posts/lifting-quality-of-a-shell-script/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&amp;rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp;amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp;amp; downloading phase can be done from the terminal in a semi-automated way. That&amp;rsquo;s why I created &lt;a href=&#34;https://github.com/pwittchen/ydownloader&#34;&gt;&lt;strong&gt;ydownloader&lt;/strong&gt;&lt;/a&gt; shell script.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Test coverage report for Android application</title>
-      <link>http://localhost:1313/posts/test-coverage-in-android-applications/</link>
+      <link>https://wittchen.io/posts/test-coverage-in-android-applications/</link>
       <pubDate>Wed, 03 Jun 2015 18:22:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/test-coverage-in-android-applications/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; see newer article about &lt;a href=&#34;http://localhost:1313/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/&#34;&gt;&lt;strong&gt;Unit test coverage report with Travis CI for Robolectric on Android&lt;/strong&gt;&lt;/a&gt;. For a long time, I wasn&amp;rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&amp;rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&amp;rsquo;t use. Other developers also stopped using it for the new projects. E.g. &lt;a href=&#34;https://github.com/square/sqlbrite&#34;&gt;Sqlbrite&lt;/a&gt; from Square is using AndroidJUnit4 runner as my projects do. Recently, I&amp;rsquo;ve found &lt;a href=&#34;http://www.reddit.com/r/androiddev/comments/2v1n2u/code_coverage_in_android_studio/&#34;&gt;an interesting discussion on Reddit&lt;/a&gt;, where we can find information about enabling test coverage very easily without additional plugins, scripts and many lines of configuration. Moreover, Android SDK currently has built-in support for &lt;a href=&#34;http://emma.sourceforge.net/&#34;&gt;Emma Test Coverage&lt;/a&gt;, what we can read in &lt;a href=&#34;http://developer.android.com/reference/android/test/InstrumentationTestRunner.html&#34;&gt;official documentation&lt;/a&gt;. Basically, the only thing we need to do, is to apply &lt;code&gt;jacoco-android&lt;/code&gt; plugin in &lt;code&gt;build.gradle&lt;/code&gt; file:&lt;/p&gt;</description>
+      <guid>https://wittchen.io/posts/test-coverage-in-android-applications/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; see newer article about &lt;a href=&#34;https://wittchen.io/unit-test-coverage-report-with-travis-ci-for-robolectric-on-android/&#34;&gt;&lt;strong&gt;Unit test coverage report with Travis CI for Robolectric on Android&lt;/strong&gt;&lt;/a&gt;. For a long time, I wasn&amp;rsquo;t able to find the right way to generate test coverage reports for Android instrumentation unit tests created with AndroidJUnit4 runner. In the past I&amp;rsquo;ve found many solutions, but none of them was working or they were compatible only with Robolectric, which I currently don&amp;rsquo;t use. Other developers also stopped using it for the new projects. E.g. &lt;a href=&#34;https://github.com/square/sqlbrite&#34;&gt;Sqlbrite&lt;/a&gt; from Square is using AndroidJUnit4 runner as my projects do. Recently, I&amp;rsquo;ve found &lt;a href=&#34;http://www.reddit.com/r/androiddev/comments/2v1n2u/code_coverage_in_android_studio/&#34;&gt;an interesting discussion on Reddit&lt;/a&gt;, where we can find information about enabling test coverage very easily without additional plugins, scripts and many lines of configuration. Moreover, Android SDK currently has built-in support for &lt;a href=&#34;http://emma.sourceforge.net/&#34;&gt;Emma Test Coverage&lt;/a&gt;, what we can read in &lt;a href=&#34;http://developer.android.com/reference/android/test/InstrumentationTestRunner.html&#34;&gt;official documentation&lt;/a&gt;. Basically, the only thing we need to do, is to apply &lt;code&gt;jacoco-android&lt;/code&gt; plugin in &lt;code&gt;build.gradle&lt;/code&gt; file:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mockito on Android</title>
-      <link>http://localhost:1313/posts/mockito-on-android/</link>
+      <link>https://wittchen.io/posts/mockito-on-android/</link>
       <pubDate>Sun, 15 Mar 2015 15:44:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mockito-on-android/</guid>
+      <guid>https://wittchen.io/posts/mockito-on-android/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;When we write unit tests for an Android application, sometimes there&amp;rsquo;s a necessity to mock some classes or interfaces. Instead of writing implementations dedicated for unit tests by hand, we can use Mockito library. We can read article about &lt;a href=&#34;https://corner.squareup.com/2012/10/mockito-android.html&#34;&gt;Mockito on Android&lt;/a&gt; on &lt;a href=&#34;https://corner.squareup.com/&#34;&gt;Square&amp;rsquo;s blog&lt;/a&gt;. Mockito can make our tests cleaner and better. It can be used both in &lt;em&gt;classic&lt;/em&gt; Java projects and Android projects. It&amp;rsquo;s one of the most popular mocking framework in Java and if you&amp;rsquo;re a Java developer who writes unit tests and tries to apply TDD approach, you should be familiar with it.&lt;/p&gt;</description>
     </item>
