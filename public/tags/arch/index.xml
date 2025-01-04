@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Arch on Piotr Wittchen</title>
-    <link>http://localhost:1313/tags/arch/</link>
+    <link>https://wittchen.io/tags/arch/</link>
     <description>Recent content in Arch on Piotr Wittchen</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 16 Feb 2020 13:16:49 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wittchen.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I switched to i3 WM</title>
-      <link>http://localhost:1313/posts/i-switched-to-i3wm/</link>
+      <link>https://wittchen.io/posts/i-switched-to-i3wm/</link>
       <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
-      <guid>http://localhost:1313/posts/i-switched-to-i3wm/</guid>
+      <guid>https://wittchen.io/posts/i-switched-to-i3wm/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it. I also read some part of &lt;a href=&#34;https://i3wm.org/docs/&#34;&gt;docs&lt;/a&gt; and &lt;a href=&#34;https://i3wm.org/docs/userguide.html&#34;&gt;user&amp;rsquo;s guide&lt;/a&gt; to customize my configuration. Official docs of i3 are really good.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixing font rendering on Firefox and Arch Linux</title>
-      <link>http://localhost:1313/posts/fixing-font-rendering-on-firefox-and-arch-linux/</link>
+      <link>https://wittchen.io/posts/fixing-font-rendering-on-firefox-and-arch-linux/</link>
       <pubDate>Fri, 01 Nov 2019 11:57:02 +0000</pubDate>
-      <guid>http://localhost:1313/posts/fixing-font-rendering-on-firefox-and-arch-linux/</guid>
+      <guid>https://wittchen.io/posts/fixing-font-rendering-on-firefox-and-arch-linux/</guid>
       <description>&lt;p&gt;After the recent Firefox update (70.0.1 64-bit), I&amp;rsquo;ve got a problem with font rendering on Arch Linux. I&amp;rsquo;ve installed this update probably on 31.10.2019 or 01.11.2019 (I&amp;rsquo;m not exactly sure right now). On several pages (e.g. Facebook or Github) fonts weren&amp;rsquo;t rendered correctly. It looked like fonts without anti-aliasing what was quite ugly.&lt;/p&gt;
 &lt;p&gt;I figured out that I can go to the Firefox Settings and in the &amp;ldquo;Fonts and Colors&amp;rdquo; section, go to &amp;ldquo;Advanced&amp;rdquo; and turn off the option &amp;ldquo;Allow pages to choose their own fonts, instead of your selection above&amp;rdquo;. It fixes problem with ugly fonts on several websites, but rest of the websites is not able to render the right fonts. E.g. when you have website with custom fonts from fonts.google.com (like this website). That&amp;rsquo;s why I couldn&amp;rsquo;t proceed with this solution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Arch Linux - installation notes no. 2 (GUI and utils)</title>
-      <link>http://localhost:1313/posts/arch-install-notes-gui-and-utils/</link>
+      <link>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</link>
       <pubDate>Sat, 27 Jul 2019 09:31:30 +0000</pubDate>
-      <guid>http://localhost:1313/posts/arch-install-notes-gui-and-utils/</guid>
+      <guid>https://wittchen.io/posts/arch-install-notes-gui-and-utils/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;In my &lt;a href=&#34;http://localhost:1313/arch-install-notes&#34;&gt;previous article&lt;/a&gt; I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.&lt;/p&gt;
+&lt;p&gt;In my &lt;a href=&#34;https://wittchen.io/arch-install-notes&#34;&gt;previous article&lt;/a&gt; I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.&lt;/p&gt;
 &lt;h2 id=&#34;desktop-environment-de--windows-manager-wm&#34;&gt;Desktop Environment (DE) / Windows Manager (WM)&lt;/h2&gt;
 &lt;p&gt;There are two main types of the Linux graphical environments for desktop:&lt;/p&gt;
 &lt;ul&gt;
@@ -41,9 +41,9 @@
     </item>
     <item>
       <title>Arch Linux - installation notes</title>
-      <link>http://localhost:1313/posts/arch-install-notes/</link>
+      <link>https://wittchen.io/posts/arch-install-notes/</link>
       <pubDate>Wed, 24 Jul 2019 23:59:20 +0000</pubDate>
-      <guid>http://localhost:1313/posts/arch-install-notes/</guid>
+      <guid>https://wittchen.io/posts/arch-install-notes/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own. Due to these facts I was discouraged to install Arch. Recently, I found awesome video about &lt;a href=&#34;https://www.youtube.com/watch?v=4PBqpX0_UOc&#34;&gt;Full Arch Linux Install&lt;/a&gt; by &lt;a href=&#34;https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA&#34;&gt;Luke Smith&lt;/a&gt; where everything is explained very clearly in each step. I watched it one time without doing anything and then, watched it next time performing all the steps described there. I had a few issues related to my hardware and BIOS, but I managed to install Arch on my ThinkPad T470s thanks to this video. During the installation, I made a few notes for myself for the future possible installations. Maybe you&amp;rsquo;ll find them useful too. The whole process is actually simpler than I thought. It just requires some practical knowledge about Linux, patience and &amp;ldquo;can do&amp;rdquo; attitude. I divided this article into steps and sub-steps, which are required to perform the installation. Please, keep in mind the fact that in the end of the installation, we will have an empty command prompt with plain OS without any GUI and we will have to install the graphical environment from the terminal. It will not be covered in this article, but I think, I&amp;rsquo;ll cover it in another one. Of course, this article contains just my notes, which help me understand everything well because and I like documenting this kind of things for the future. If you searching for Arch installation guide, I recommend you to see linked video or an &lt;a href=&#34;https://wiki.archlinux.org/index.php/Installation_guide&#34;&gt;official Arch installation guide&lt;/a&gt; in Arch Wiki. This article can be additional resource to this stuff.&lt;/p&gt;</description>
     </item>
