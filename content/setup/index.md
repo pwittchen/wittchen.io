@@ -9,27 +9,28 @@ Here's the list of equipment and software I use personally and professionally:
 Server
 ------
 
-- W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
+- Hosting
+  - W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
 
 Software
 --------
-- OS: [Arch Linux](https://www.archlinux.org) / [macOS](https://www.apple.com/pl/macos/)
+- OS: [macOS](https://www.apple.com/pl/macos/) / [Arch Linux](https://www.archlinux.org)
 - WM: [i3](https://i3wm.org)
 - shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
 - terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable) + [iTerm2](https://iterm2.com/)
 - text editor: [Vim](https://vim.org)
 - non-terminal text editor: [VS Code](https://code.visualstudio.com) + [Sublime Text](https://www.sublimetext.com/)
-- IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) + [Xcode](https://developer.apple.com/xcode/) + [AppCode](https://www.jetbrains.com/objc/)
+- IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) + [Xcode](https://developer.apple.com/xcode/) + [AppCode](https://www.jetbrains.com/objc/) + [RustRover](https://www.jetbrains.com/rust/)
 - VCS: [Git](https://git-scm.com)
 - web browser: [Brave](https://brave.com) + [Safari](https://www.apple.com/safari/)
-- file manager: [Ranger](https://github.com/ranger/ranger) + [mc](https://github.com/MidnightCommander/mc)
+- file manager: [Ranger](https://github.com/ranger/ranger) + [mc](https://github.com/MidnightCommander/mc) + Finder
 - PDF viewer: [Zathura](https://pwmt.org/projects/zathura)
 - image viewer: [Sxiv](https://github.com/muennich/sxiv)
 - image editing: [Gthumb](https://wiki.gnome.org/Apps/Gthumb) + [Pixeluvo](http://www.pixeluvo.com)
 - music and podcasts: [Spotify](https://www.spotify.com/) + [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 - videos: [VLC](https://www.videolan.org/vlc/)
 - RSS reader: [Newsboat](https://newsboat.org/)
-- Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org)
+- Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org) + Google
 - torrent client: [Transmission](https://transmissionbt.com)
 - to do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
 - notes: [Simplenote](https://simplenote.com) + Physical notebook
@@ -47,11 +48,10 @@ Configuration
 
 Hardware
 --------
-- Currenly used laptop
+- Currently used laptop:
   - Macbook Pro M4 Max (CPU: Apple M4 Max 14 core, GPU: 32-core integrated, RAM: 36 GB, SSD: 1 TB)
-- Currently unused laptops:
+- Alternative laptop:
   - ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
-  - Macbook Air M1 (CPU: Apple M1 ARM64, GPU: 7-core integrated, RAM: 8 GB, SSD: 256 GB)
 - Samsung C34H890WJUX Curved monitor
 - Logitech MX Keys Mini Keyboard
 - Logitech MX Master Mouse
