@@ -53,11 +53,11 @@ params:
     imageWidth: 120
     imageHeight: 120
     buttons:
-      - name: Blog
+      - name: blog
         url: "/posts"
-      - name: Talks
+      - name: talks
         url: "/talks"
-      - name: Contact
+      - name: contact
         url: "/contact"
 
   homeInfoParams:
