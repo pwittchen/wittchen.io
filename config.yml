@@ -44,7 +44,22 @@ params:
     # icon: /apple-touch-icon.png
     # iconHeight: 35
 
-  # home-info mode
+  profileMode:
+    enabled: true
+    title: "Piotr Wittchen"
+    subtitle: "Software Engineer"
+    imageUrl: "/profile/avatar.png"
+    imageTitle: "avatar"
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: Blog
+        url: "/posts"
+      - name: Talks
+        url: "/talks"
+      - name: Contact
+        url: "/contact"
+
   homeInfoParams:
     Title: "Hi there \U0001F44B"
     Content: My name is **Piotr Wittchen**. I am the [**software developer**](/in) from Poland. **I create software** for mobile devices, servers, web and Linux. I graduated with MS and Engineering degree in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups. I contribute to [open-source](/gh) projects and from time to time give [talks](/talks) related to software development at the conferences and meetups. Moreover, I publish technical [articles](/posts). To check my tools and work environment, visit my [setup](/setup) page. If you would like to contact me, ask me about something, start cooperation or just say hello, send me an [email](mailto:piotr@wittchen.io)!

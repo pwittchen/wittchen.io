@@ -43,6 +43,7 @@
     <nav class="nav">
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
+            {{- if (and (site.Params.profileMode.enabled) (not .IsHome)) }}
             {{- if site.Title }}
             <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
                 {{- if site.Params.label.icon }}
@@ -71,6 +72,7 @@
                 {{- end -}}
                 {{- $label_text -}}
             </a>
+            {{- end }}
             {{- end }}
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
@@ -120,6 +122,8 @@
             </div>
         </div>
         {{- $currentPage := . }}
+
+        {{- if (and (site.Params.profileMode.enabled) (not .IsHome)) }}
         <ul id="menu">
             {{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
@@ -145,5 +149,6 @@
             </li>
             {{- end }}
         </ul>
+        {{- end }}
     </nav>
 </header>
