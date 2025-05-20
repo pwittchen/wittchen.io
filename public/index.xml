@@ -6,12 +6,12 @@
     <description>Recent content on Piotr Wittchen</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Aug 2020 17:01:24 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 20 May 2025 22:47:00 +0200</lastBuildDate>
     <atom:link href="https://wittchen.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup</title>
       <link>https://wittchen.io/setup/</link>
-      <pubDate>Fri, 14 Aug 2020 17:01:24 +0200</pubDate>
+      <pubDate>Tue, 20 May 2025 22:47:00 +0200</pubDate>
       <guid>https://wittchen.io/setup/</guid>
       <description>&lt;p&gt;Here&amp;rsquo;s the list of equipment and software I use personally and professionally:&lt;/p&gt;
 &lt;h2 id=&#34;server&#34;&gt;Server&lt;/h2&gt;
@@ -24,29 +24,24 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;OS: &lt;a href=&#34;https://www.apple.com/pl/macos/&#34;&gt;macOS&lt;/a&gt; / &lt;a href=&#34;https://www.archlinux.org&#34;&gt;Arch Linux&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;WM: &lt;a href=&#34;https://i3wm.org&#34;&gt;i3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS: &lt;a href=&#34;https://www.apple.com/pl/macos/&#34;&gt;macOS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;shell: &lt;a href=&#34;https://www.zsh.org&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh my zsh&lt;/a&gt; + &lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;Tmux&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;terminal: &lt;a href=&#34;https://help.gnome.org/users/gnome-terminal/stable&#34;&gt;Gnome Terminal&lt;/a&gt; + &lt;a href=&#34;https://iterm2.com/&#34;&gt;iTerm2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;terminal: &lt;a href=&#34;https://iterm2.com/&#34;&gt;iTerm2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;text editor: &lt;a href=&#34;https://vim.org&#34;&gt;Vim&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;non-terminal text editor: &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;VS Code&lt;/a&gt; + &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;IDE: &lt;a href=&#34;https://www.jetbrains.com/idea&#34;&gt;IntelliJ IDEA&lt;/a&gt; + &lt;a href=&#34;https://developer.android.com/studio&#34;&gt;Android Studio&lt;/a&gt; + &lt;a href=&#34;https://www.jetbrains.com/pycharm/&#34;&gt;PyCharm&lt;/a&gt; + &lt;a href=&#34;https://developer.apple.com/xcode/&#34;&gt;Xcode&lt;/a&gt; + &lt;a href=&#34;https://www.jetbrains.com/objc/&#34;&gt;AppCode&lt;/a&gt; + &lt;a href=&#34;https://www.jetbrains.com/rust/&#34;&gt;RustRover&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;VCS: &lt;a href=&#34;https://git-scm.com&#34;&gt;Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;web browser: &lt;a href=&#34;https://brave.com&#34;&gt;Brave&lt;/a&gt; + &lt;a href=&#34;https://www.apple.com/safari/&#34;&gt;Safari&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;file manager: &lt;a href=&#34;https://github.com/ranger/ranger&#34;&gt;Ranger&lt;/a&gt; + &lt;a href=&#34;https://github.com/MidnightCommander/mc&#34;&gt;mc&lt;/a&gt; + Finder&lt;/li&gt;
-&lt;li&gt;PDF viewer: &lt;a href=&#34;https://pwmt.org/projects/zathura&#34;&gt;Zathura&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;image viewer: &lt;a href=&#34;https://github.com/muennich/sxiv&#34;&gt;Sxiv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;image editing: &lt;a href=&#34;https://wiki.gnome.org/Apps/Gthumb&#34;&gt;Gthumb&lt;/a&gt; + &lt;a href=&#34;http://www.pixeluvo.com&#34;&gt;Pixeluvo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;web browser: &lt;a href=&#34;https://brave.com&#34;&gt;Brave&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;file manager: &lt;a href=&#34;https://github.com/MidnightCommander/mc&#34;&gt;mc&lt;/a&gt; + Finder&lt;/li&gt;
 &lt;li&gt;music and podcasts: &lt;a href=&#34;https://www.spotify.com/&#34;&gt;Spotify&lt;/a&gt; + &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli-linux&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;videos: &lt;a href=&#34;https://www.videolan.org/vlc/&#34;&gt;VLC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;RSS reader: &lt;a href=&#34;https://newsboat.org/&#34;&gt;Newsboat&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Excel-like spreadsheets: &lt;a href=&#34;https://www.libreoffice.org&#34;&gt;Libre Office&lt;/a&gt; + Google&lt;/li&gt;
+&lt;li&gt;Excel-like spreadsheets: Google Sheets&lt;/li&gt;
 &lt;li&gt;torrent client: &lt;a href=&#34;https://transmissionbt.com&#34;&gt;Transmission&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;to do list: &lt;a href=&#34;https://nozbe.com/?a=piotrwittchen&#34;&gt;Nozbe&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;notes: &lt;a href=&#34;https://simplenote.com&#34;&gt;Simplenote&lt;/a&gt; + Physical notebook&lt;/li&gt;
+&lt;li&gt;notes: &lt;a href=&#34;https://www.notion.so/&#34;&gt;Notion&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;password manager: &lt;a href=&#34;https://www.passwordstore.org&#34;&gt;Pass&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;presentations: &lt;a href=&#34;http://slides.google.com&#34;&gt;Google Slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;calendar: &lt;a href=&#34;https://calendar.google.com&#34;&gt;Google Calendar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;calendar: &lt;a href=&#34;https://calendar.google.com&#34;&gt;Google Calendar&lt;/a&gt; + &lt;a href=&#34;https://www.notion.com/product/calendar&#34;&gt;Notion Calendar&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;email: &lt;a href=&#34;http://gmail.com&#34;&gt;Gmail&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;repository hosting: &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;invoices and accounting: &lt;a href=&#34;https://www.infakt.pl/polecam/piotr-wittchen&#34;&gt;InFakt&lt;/a&gt;&lt;/li&gt;
@@ -58,12 +53,12 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Currently used laptop:
+&lt;li&gt;Main laptop:
 &lt;ul&gt;
 &lt;li&gt;Macbook Pro M4 Max (CPU: Apple M4 Max 14 core, GPU: 32-core integrated, RAM: 36 GB, SSD: 1 TB)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Alternative laptop:
+&lt;li&gt;Backup laptop with Arch Linux and i3:
 &lt;ul&gt;
 &lt;li&gt;ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)&lt;/li&gt;
 &lt;/ul&gt;
