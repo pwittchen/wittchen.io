@@ -1,6 +1,6 @@
 ---
 title: "Setup"
-date: 2020-08-14T17:01:24+02:00
+date: 2025-05-20T22:47:00+02:00
 draft: true
 ---
 
@@ -14,29 +14,24 @@ Server
 
 Software
 --------
-- OS: [macOS](https://www.apple.com/pl/macos/) / [Arch Linux](https://www.archlinux.org)
-- WM: [i3](https://i3wm.org)
+- OS: [macOS](https://www.apple.com/pl/macos/)
 - shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
-- terminal: [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/stable) + [iTerm2](https://iterm2.com/)
+- terminal: [iTerm2](https://iterm2.com/)
 - text editor: [Vim](https://vim.org)
 - non-terminal text editor: [VS Code](https://code.visualstudio.com) + [Sublime Text](https://www.sublimetext.com/)
 - IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) + [Xcode](https://developer.apple.com/xcode/) + [AppCode](https://www.jetbrains.com/objc/) + [RustRover](https://www.jetbrains.com/rust/)
 - VCS: [Git](https://git-scm.com)
-- web browser: [Brave](https://brave.com) + [Safari](https://www.apple.com/safari/)
-- file manager: [Ranger](https://github.com/ranger/ranger) + [mc](https://github.com/MidnightCommander/mc) + Finder
-- PDF viewer: [Zathura](https://pwmt.org/projects/zathura)
-- image viewer: [Sxiv](https://github.com/muennich/sxiv)
-- image editing: [Gthumb](https://wiki.gnome.org/Apps/Gthumb) + [Pixeluvo](http://www.pixeluvo.com)
+- web browser: [Brave](https://brave.com)
+- file manager: [mc](https://github.com/MidnightCommander/mc) + Finder
 - music and podcasts: [Spotify](https://www.spotify.com/) + [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
 - videos: [VLC](https://www.videolan.org/vlc/)
-- RSS reader: [Newsboat](https://newsboat.org/)
-- Excel-like spreadsheets: [Libre Office](https://www.libreoffice.org) + Google
+- Excel-like spreadsheets: Google Sheets
 - torrent client: [Transmission](https://transmissionbt.com)
 - to do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
-- notes: [Simplenote](https://simplenote.com) + Physical notebook
+- notes: [Notion](https://www.notion.so/)
 - password manager: [Pass](https://www.passwordstore.org)
 - presentations: [Google Slides](http://slides.google.com)
-- calendar: [Google Calendar](https://calendar.google.com)
+- calendar: [Google Calendar](https://calendar.google.com) + [Notion Calendar](https://www.notion.com/product/calendar)
 - email: [Gmail](http://gmail.com)
 - repository hosting: [GitHub](https://github.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
@@ -48,9 +43,9 @@ Configuration
 
 Hardware
 --------
-- Currently used laptop:
+- Main laptop:
   - Macbook Pro M4 Max (CPU: Apple M4 Max 14 core, GPU: 32-core integrated, RAM: 36 GB, SSD: 1 TB)
-- Alternative laptop:
+- Backup laptop with Arch Linux and i3:
   - ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
 - Samsung C34H890WJUX Curved monitor
 - Logitech MX Keys Mini Keyboard
