@@ -15,7 +15,7 @@ Server
 Software
 --------
 - OS: [macOS](https://www.apple.com/pl/macos/)
-- shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [Tmux](https://github.com/tmux/tmux/wiki)
+- shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [p10k](https://github.com/romkatv/powerlevel10k)
 - terminal: [iTerm2](https://iterm2.com/)
 - text editor: [Vim](https://vim.org)
 - non-terminal text editor: [VS Code](https://code.visualstudio.com) + [Sublime Text](https://www.sublimetext.com/)
