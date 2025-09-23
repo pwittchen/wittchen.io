@@ -78,8 +78,6 @@ params:
       url: "https://www.strava.com/athletes/848445"
     - name: x
       url: "https://x.com/piotr_wittchen"
-    - name: threads
-      url: "https://www.threads.com/@pwittchen"
     - name: youtube
       url: "https://www.youtube.com/@pwittchen"
     - name: rss
