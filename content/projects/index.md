@@ -6,11 +6,7 @@ draft: true
 
 ## personal
 
-- **varun.surf**
-  - weather forecast and real-time wind conditions dashboard for kitesurfers
-  - links
-    - online: https://varun.surf
-    - source: https://github.com/pwittchen/varun.surf
+https://varun.surf  - weather dashboard for kitesurfers
 
 ## open-source
 
