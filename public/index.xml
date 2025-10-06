@@ -6,8 +6,18 @@
     <description>Recent content on Piotr Wittchen</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 May 2025 22:47:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 06 Oct 2025 01:27:02 +0200</lastBuildDate>
     <atom:link href="https://wittchen.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Projects</title>
+      <link>https://wittchen.io/projects/</link>
+      <pubDate>Mon, 06 Oct 2025 01:27:02 +0200</pubDate>
+      <guid>https://wittchen.io/projects/</guid>
+      <description>&lt;h2 id=&#34;open-source&#34;&gt;open-source&lt;/h2&gt;
+&lt;p&gt;All my open-source projects are here: &lt;a href=&#34;https://github.com/pwittchen&#34;&gt;https://github.com/pwittchen&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;commercial&#34;&gt;commercial&lt;/h2&gt;
+&lt;p&gt;All of my commercial work is described here: &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;https://www.linkedin.com/in/pwittchen/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Setup</title>
       <link>https://wittchen.io/setup/</link>

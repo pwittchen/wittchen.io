@@ -57,6 +57,8 @@ params:
         url: "/posts"
       - name: talks
         url: "/talks"
+      - name: projects
+        url: "/projects"
       - name: contact
         url: "/contact"
 
@@ -116,6 +118,10 @@ menu:
       name: talks
       url: /talks/
       weight: 30
+    - identifier: projects
+      name: projects
+      url: /projects/
+      weight: 40
     - identifier: search
       name: search
       url: /search/
