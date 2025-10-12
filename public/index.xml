@@ -17,6 +17,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://varun.surf&#34;&gt;https://varun.surf&lt;/a&gt;
 &lt;ul&gt;
+&lt;li&gt;source code: &lt;a href=&#34;https://github.com/pwittchen/varun.surf&#34;&gt;https://github.com/pwittchen/varun.surf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Java, Spring Boot, JS, Docker, Bash, Cloudflare&lt;/li&gt;
 &lt;li&gt;weather dashboard for kitesurfers&lt;/li&gt;
 &lt;/ul&gt;

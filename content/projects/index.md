@@ -7,6 +7,7 @@ draft: true
 ## personal and open-source
 
 - https://varun.surf
+  - source code: https://github.com/pwittchen/varun.surf
   - Java, Spring Boot, JS, Docker, Bash, Cloudflare
   - weather dashboard for kitesurfers
 - https://github.com/pwittchen/ReactiveNetwork
