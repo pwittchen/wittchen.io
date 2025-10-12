@@ -74,14 +74,14 @@ params:
       url: "https://www.linkedin.com/in/pwittchen/"
     - name: github
       url: "https://github.com/pwittchen"
-    - name: stackoverflow
-      url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
-    - name: strava
-      url: "https://www.strava.com/athletes/848445"
-    - name: x
-      url: "https://x.com/piotr_wittchen"
-    - name: youtube
-      url: "https://www.youtube.com/@pwittchen"
+#    - name: stackoverflow
+#      url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
+#    - name: strava
+#      url: "https://www.strava.com/athletes/848445"
+#    - name: x
+#      url: "https://x.com/piotr_wittchen"
+#    - name: youtube
+#      url: "https://www.youtube.com/@pwittchen"
     - name: rss
       url: "/posts/index.xml"
   cover:
