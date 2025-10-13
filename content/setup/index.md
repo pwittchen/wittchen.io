@@ -11,6 +11,8 @@ Server
 
 - Hosting
   - W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
+- VPS
+  - [mikr.us](mikr.us)
 
 Software
 --------
