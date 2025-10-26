@@ -59,8 +59,8 @@ params:
         url: "/talks"
       - name: projects
         url: "/projects"
-      - name: contact
-        url: "/contact"
+ #     - name: contact
+ #       url: "/contact"
 
   homeInfoParams:
     Title: "Hi there \U0001F44B"
@@ -82,8 +82,8 @@ params:
 #      url: "https://x.com/piotr_wittchen"
 #    - name: youtube
 #      url: "https://www.youtube.com/@pwittchen"
-    - name: rss
-      url: "/posts/index.xml"
+#    - name: rss
+#      url: "/posts/index.xml"
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
