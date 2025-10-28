@@ -34,7 +34,7 @@ Software
 - password manager: [Pass](https://www.passwordstore.org)
 - presentations: [Google Slides](http://slides.google.com)
 - calendar: [Google Calendar](https://calendar.google.com) + [Notion Calendar](https://www.notion.com/product/calendar)
-- email: [Gmail](http://gmail.com)
+- email: [Gmail](http://gmail.com) + [Notion Mail](https://www.notion.com/product/mail)
 - repository hosting: [GitHub](https://github.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
 
