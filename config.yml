@@ -68,8 +68,8 @@ params:
   socialIcons:
     - name: email
       url: "mailto:piotr@wittchen.io"
-    - name: cv
-      url: "/cv"
+#    - name: cv
+#      url: "/cv"
     - name: linkedin
       url: "https://www.linkedin.com/in/pwittchen/"
     - name: github
