@@ -20,7 +20,7 @@ Software
 - shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [p10k](https://github.com/romkatv/powerlevel10k)
 - terminal: [iTerm2](https://iterm2.com/)
 - text editor: [Vim](https://vim.org)
-- non-terminal text editor: [VS Code](https://code.visualstudio.com) + [Sublime Text](https://www.sublimetext.com/)
+- non-terminal text editor: [VS Code](https://code.visualstudio.com) + [Sublime Text](https://www.sublimetext.com/) + [iA Writer](https://ia.net/writer)
 - IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) + [Xcode](https://developer.apple.com/xcode/) + [AppCode](https://www.jetbrains.com/objc/) + [RustRover](https://www.jetbrains.com/rust/)
 - VCS: [Git](https://git-scm.com)
 - web browser: [Brave](https://brave.com)
