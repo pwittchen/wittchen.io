@@ -27,11 +27,12 @@
 }
 
 .button {
-    background: var(--tertiary);
+/*    background: var(--tertiary);
     border-radius: var(--radius);
     margin: 8px;
     padding: 6px;
     transition: transform 0.1s;
+*/
 }
 
 .button-inner {
@@ -41,3 +42,4 @@
 .button:active {
     transform: scale(0.96);
 }
+
