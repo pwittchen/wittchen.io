@@ -10,25 +10,25 @@
     <atom:link href="https://wittchen.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spotify song in i3 status bar</title>
-      <link>https://wittchen.io/posts/spotify-song-in-i3-status-bar/</link>
+      <link>https://wittchen.io/notes/spotify-song-in-i3-status-bar/</link>
       <pubDate>Thu, 20 Feb 2020 11:29:13 +0000</pubDate>
-      <guid>https://wittchen.io/posts/spotify-song-in-i3-status-bar/</guid>
+      <guid>https://wittchen.io/notes/spotify-song-in-i3-status-bar/</guid>
       <description>&lt;p&gt;While customizing my i3 status bar, I wanted to have currently played Spotify song in it. Some time ago, I created an open source script in Python called &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli-linux&lt;/a&gt; and I wanted to use it. When we want to put something custom into the i3 status bar, the easiest way to do it, is to save data into the file and then read the file.&lt;/p&gt;
 &lt;p&gt;I created the following config inside &lt;code&gt;~/.config/i3status/config&lt;/code&gt; file:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Publishing Python package to PyPi</title>
-      <link>https://wittchen.io/posts/publishing-python-package-to-pypi/</link>
+      <link>https://wittchen.io/notes/publishing-python-package-to-pypi/</link>
       <pubDate>Sun, 08 Apr 2018 11:47:49 +0000</pubDate>
-      <guid>https://wittchen.io/posts/publishing-python-package-to-pypi/</guid>
+      <guid>https://wittchen.io/notes/publishing-python-package-to-pypi/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I have my own tiny Python project called &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli-linux&lt;/a&gt;, which is (surprise!) command line interface for Spotify desktop app on Linux. Python is not my primary programming language and I work more with Java. Nevertheless, I find this language enjoyable and useful in many cases, so I try to learn something new about it from time to time. In the beginning, I&amp;rsquo;ve provided instructions how to install my Python script in the system via &lt;code&gt;curl&lt;/code&gt; and &lt;code&gt;wget&lt;/code&gt;, which is fine, but it&amp;rsquo;s not recommended and official way to do it. Moreover, people may be afraid of running shell scripts from remote resources on their machines. That&amp;rsquo;s why I decided to upload my project to &lt;a href=&#34;http://pypi.org/&#34;&gt;PyPi&lt;/a&gt;, which is The Python Package Index.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Control Spotify on Linux like a hacker</title>
-      <link>https://wittchen.io/posts/control-spotify-on-linux-like-a-hacker/</link>
+      <link>https://wittchen.io/notes/control-spotify-on-linux-like-a-hacker/</link>
       <pubDate>Sun, 05 Mar 2017 22:40:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/control-spotify-on-linux-like-a-hacker/</guid>
+      <guid>https://wittchen.io/notes/control-spotify-on-linux-like-a-hacker/</guid>
       <description>&lt;p&gt;Recently, I created a tiny script called &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli&lt;/a&gt;, which allows you to control &lt;a href=&#34;http://spotify.com&#34;&gt;Spotify&lt;/a&gt; on Linux from terminal. It&amp;rsquo;s inspired by &lt;a href=&#34;https://github.com/hnarayanan/shpotify&#34;&gt;shpotify&lt;/a&gt;, which is a shell script doing similar things, but on macOS. My script is written in Python and uses &lt;a href=&#34;https://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html&#34;&gt;dbus&lt;/a&gt; under the hood, which allows to communicate with bus daemon to pass messages between applications. I used &lt;a href=&#34;https://linux.die.net/man/1/pactl&#34;&gt;pactl&lt;/a&gt; for controlling the system sound.&lt;/p&gt;
 &lt;p&gt;You can install spotify-cli as follows via wget:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sh -c &amp;#34;$(wget https://raw.githubusercontent.com/pwittchen/spotify-cli-linux/master/install.sh -O -)&amp;#34;
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>Automate boring stuff</title>
-      <link>https://wittchen.io/posts/automate-boring-stuff/</link>
+      <link>https://wittchen.io/notes/automate-boring-stuff/</link>
       <pubDate>Sun, 01 Jan 2017 11:10:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/automate-boring-stuff/</guid>
+      <guid>https://wittchen.io/notes/automate-boring-stuff/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for &lt;em&gt;Podwyższone Koszty Uzyskania Przychodu&lt;/em&gt; in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.&lt;/p&gt;
 &lt;h2 id=&#34;how-the-report-looks-in-practice&#34;&gt;How the report looks in practice?&lt;/h2&gt;
@@ -46,9 +46,9 @@
     </item>
     <item>
       <title>3 questions about your Git repository</title>
-      <link>https://wittchen.io/posts/3-questions-about-your-git-repo/</link>
+      <link>https://wittchen.io/notes/3-questions-about-your-git-repo/</link>
       <pubDate>Mon, 28 Dec 2015 21:37:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/3-questions-about-your-git-repo/</guid>
+      <guid>https://wittchen.io/notes/3-questions-about-your-git-repo/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Can you answer the following questions about your Git repository?&lt;/p&gt;
 &lt;ol&gt;
@@ -62,23 +62,23 @@
     </item>
     <item>
       <title>Learning python</title>
-      <link>https://wittchen.io/posts/learning-python/</link>
+      <link>https://wittchen.io/notes/learning-python/</link>
       <pubDate>Tue, 01 Sep 2015 00:03:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/learning-python/</guid>
+      <guid>https://wittchen.io/notes/learning-python/</guid>
       <description>&lt;p&gt;Some time ago, I&amp;rsquo;ve decided to learn Python programming language. I thought it may be useful during performing some basic tasks in the system and Linux or Windows scripting. Moreover, it&amp;rsquo;s good language for developing web applications with frameworks like Django, Flask or Bottle. I&amp;rsquo;ve decided to go through all of the tasks in the &lt;a href=&#34;http://learnpythonthehardway.org/book/&#34;&gt;Learn Python - The Hard Way&lt;/a&gt; course. Basic tasks weren&amp;rsquo;t surprising. They were similar to other object oriented languages. In the further tasks we can learn basic features available in Python language, which are not so common for e.g. Java programmers. I&amp;rsquo;ve placed all tasks in &lt;a href=&#34;https://github.com/pwittchen/learn-python-the-hard-way&#34;&gt;learn-python-the-hard-way repository&lt;/a&gt; on GitHub. Moreover, in &lt;code&gt;README.md&lt;/code&gt; file I&amp;rsquo;ve added information about:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Checking consistency of git branches</title>
-      <link>https://wittchen.io/posts/checking-consistency-of-git-branches/</link>
+      <link>https://wittchen.io/notes/checking-consistency-of-git-branches/</link>
       <pubDate>Thu, 14 May 2015 15:16:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/checking-consistency-of-git-branches/</guid>
+      <guid>https://wittchen.io/notes/checking-consistency-of-git-branches/</guid>
       <description>&lt;p&gt;Recently I&amp;rsquo;ve created a simple Python script, which checks whether &amp;lsquo;development&amp;rsquo; branch has all changes from &amp;lsquo;master&amp;rsquo; branch in a Git repository. It&amp;rsquo;s important when we work in a &lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git Flow&lt;/a&gt;. Branch inconsistency may occur when change with hot-fix will be committed to &amp;lsquo;master&amp;rsquo; branch and we forget to merge &amp;lsquo;master&amp;rsquo; branch back to &amp;lsquo;development&amp;rsquo; branch to have our hot-fix in a &amp;lsquo;development&amp;rsquo; version of the project as well. We should keep branch consistency to avoid merge conflicts and problems with release of the project in the future. Mentioned script is able to perform necessary validation helping to detect potential problems. Moreover, script can be integrated with the Jenkins CI server and we can execute it from a command line via Jenkins job. When, changes from &amp;lsquo;master&amp;rsquo; won&amp;rsquo;t be merged into &amp;lsquo;development&amp;rsquo;, job will fail. In opposite case, job should finish with a success. In a Jenkins job we need to remember to add the following &lt;em&gt;Additional Behaviours&lt;/em&gt; in &lt;em&gt;Source Code Management&lt;/em&gt; (Git) section:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Android resource converter</title>
-      <link>https://wittchen.io/posts/android-resource-converter/</link>
+      <link>https://wittchen.io/notes/android-resource-converter/</link>
       <pubDate>Sat, 17 Jan 2015 00:19:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/android-resource-converter/</guid>
+      <guid>https://wittchen.io/notes/android-resource-converter/</guid>
       <description>&lt;p&gt;In international projects sometimes there&amp;rsquo;s a need to send resource files to the client in order to have translated strings. Client doesn&amp;rsquo;t have to understand XML notation and editing two or more files at the same time is inconvenient. It&amp;rsquo;s easier to send file which can be edited in MS Excel or Libre Office Calc. I&amp;rsquo;ve created Python scripts, which are able to convert Android xml resources with translations to a single &lt;code&gt;*.csv&lt;/code&gt; file ready to open in software for common users. In addition, there&amp;rsquo;s another script, which can generate xml resource files with translations from &lt;code&gt;*.csv&lt;/code&gt; file. Generating &lt;code&gt;*.csv&lt;/code&gt; file from resources is easy:&lt;/p&gt;</description>
     </item>
   </channel>

@@ -12,10 +12,10 @@ contents
 writing
 -------
 
-to create a new post, type
+to create a new note (post), type
 
 ```
-hugo new content/posts/my-new-post.md
+hugo new content/notes/my-new-note.md
 ```
 
 running

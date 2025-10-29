@@ -10,9 +10,9 @@
     <atom:link href="https://wittchen.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modifying mehtod&#39;s input parameters</title>
-      <link>https://wittchen.io/posts/modifying-methods-input-parameters/</link>
+      <link>https://wittchen.io/notes/modifying-methods-input-parameters/</link>
       <pubDate>Mon, 05 Aug 2019 18:27:30 +0000</pubDate>
-      <guid>https://wittchen.io/posts/modifying-methods-input-parameters/</guid>
+      <guid>https://wittchen.io/notes/modifying-methods-input-parameters/</guid>
       <description>&lt;p&gt;During maintenance of the legacy projects, I sometimes see constructions like:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;appendFooter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Report&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;report&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or&lt;/p&gt;
@@ -24,45 +24,45 @@
     </item>
     <item>
       <title>Get rid of the list null-checks</title>
-      <link>https://wittchen.io/posts/get-rid-of-the-list-null-checks/</link>
+      <link>https://wittchen.io/notes/get-rid-of-the-list-null-checks/</link>
       <pubDate>Sun, 28 Jul 2019 23:18:43 +0000</pubDate>
-      <guid>https://wittchen.io/posts/get-rid-of-the-list-null-checks/</guid>
+      <guid>https://wittchen.io/notes/get-rid-of-the-list-null-checks/</guid>
       <description>&lt;p&gt;During development of the legacy Java applications, we still have to deal with &lt;code&gt;null&lt;/code&gt;. It&amp;rsquo;s possible to avoid it completly when we&amp;rsquo;re designing application from the scratch, applying proper code constructions, static code analysis and we&amp;rsquo;re consistent during code reviews. Nevertheless in majority of the cases we will encounter &lt;code&gt;null&lt;/code&gt; in daily projects. We may even expect them in the method inputs and we have to be prepared for it. With the functional programming in Java we can deal with them in quite elegant way, but I often see people are not using features available nowadays.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Zen of the Java library release process</title>
-      <link>https://wittchen.io/posts/zen-of-java-library-release-process/</link>
+      <link>https://wittchen.io/notes/zen-of-java-library-release-process/</link>
       <pubDate>Sat, 08 Jun 2019 10:58:10 +0000</pubDate>
-      <guid>https://wittchen.io/posts/zen-of-java-library-release-process/</guid>
+      <guid>https://wittchen.io/notes/zen-of-java-library-release-process/</guid>
       <description>&lt;p&gt;In my &lt;a href=&#34;https://wittchen.io/publishing-jar-aar-to-maven-central/&#34;&gt;previous article&lt;/a&gt; I published information about publishing JAR/AAR library to the Maven Central Repository. A few steps of that process were automated, but a few of them were still manual. I mean closing and release process which had to be done by manual clicking on the Sonatype website. Fortunately, it&amp;rsquo;s possible to automate it. In order to do that, I used &lt;a href=&#34;https://github.com/Codearte/gradle-nexus-staging-plugin&#34;&gt;gradle-nexus-staging-plugin&lt;/a&gt; developed by &lt;a href=&#34;https://github.com/Codearte&#34;&gt;Codearte&lt;/a&gt;. Thanks to this plugin I could get rid of the remaining manual steps left in the release process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Publishing a JAR/AAR to the Maven Central</title>
-      <link>https://wittchen.io/posts/publishing-jar-aar-to-maven-central/</link>
+      <link>https://wittchen.io/notes/publishing-jar-aar-to-maven-central/</link>
       <pubDate>Fri, 24 May 2019 19:18:27 +0000</pubDate>
-      <guid>https://wittchen.io/posts/publishing-jar-aar-to-maven-central/</guid>
+      <guid>https://wittchen.io/notes/publishing-jar-aar-to-maven-central/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;As a Java/JVM/Android developers we rely on the work of other people through frameworks and libraries. Many of them are open-source. Most of the developers are consumers of such projects. What if we would like to create our own library and distribute it to other developers? We can always create it and share a &lt;code&gt;*.jar&lt;/code&gt; or &lt;code&gt;*.aar&lt;/code&gt; file with others. Drawback of such solution is the fact that source of distribution may not be trusted. We also have problems with versioning. Consumers of the library have to constantly download and update their files. It&amp;rsquo;s much better to publish our library to Maven Central Repository and allow others to easily and seamlessly add it as an external dependency to &lt;code&gt;pom.xml&lt;/code&gt; file (in case of Maven) or &lt;code&gt;build.gradle&lt;/code&gt; file (in case of Gradle). In such case, dependency is managed by the appropriate build system and distributed via trusted source. This may be not easy for the first time that&amp;rsquo;s why I decided to collect information related to this topic in a single article. Let&amp;rsquo;s see how to do this.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Creating a fat AAR</title>
-      <link>https://wittchen.io/posts/creating-fat-aar/</link>
+      <link>https://wittchen.io/notes/creating-fat-aar/</link>
       <pubDate>Tue, 02 Oct 2018 00:01:31 +0000</pubDate>
-      <guid>https://wittchen.io/posts/creating-fat-aar/</guid>
+      <guid>https://wittchen.io/notes/creating-fat-aar/</guid>
       <description>&lt;p&gt;I recently wrote a new library called &lt;a href=&#34;https://github.com/pwittchen/neurosky-android-sdk&#34;&gt;NeuroSky Android SDK&lt;/a&gt;. It&amp;rsquo;s used for writing Android apps using signals of the brain waves received from the NeuroSky MindWave Mobile headsets. Probably I&amp;rsquo;ll write a separate article about it because it&amp;rsquo;s quite interesting topic. This library uses ThinkGear library, which is distributed by the NeuroSky as a &lt;code&gt;*.jar&lt;/code&gt; file, so I couldn&amp;rsquo;t use it as a Gradle or Maven dependency in my project and I had to put this &lt;code&gt;*.jar&lt;/code&gt; file into the &lt;code&gt;lib&lt;/code&gt; directory and link it in the &lt;code&gt;build.gradle&lt;/code&gt; file. Moreover, I wanted to create a library, which can be added to the project as a single Gradle dependency without messing around with additional &lt;code&gt;*.jar&lt;/code&gt; files or custom configuration. Due to this fact, I decided to create a fat &lt;code&gt;*.aar&lt;/code&gt; file and deploy it to the Maven Central repository. For those who are not familar with Android, &lt;code&gt;*.aar&lt;/code&gt; is an Android version or &lt;code&gt;*.jar&lt;/code&gt; file, which can be used as library in the project. I didn&amp;rsquo;t want to reinvent the wheel, so I searched for the different solutions. Unfortunatey, a few of them didn&amp;rsquo;t work, but luckilly I&amp;rsquo;ve found what I wanted. It&amp;rsquo;s &lt;a href=&#34;https://github.com/Mobbeel/fataar-gradle-plugin&#34;&gt;fat AAR Gradle Plugin&lt;/a&gt; developed by &lt;a href=&#34;https://github.com/Mobbeel&#34;&gt;Mobbeel&lt;/a&gt; company.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Separate execution of unit and integration tests in Gradle</title>
-      <link>https://wittchen.io/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</link>
+      <link>https://wittchen.io/notes/separate-execution-of-unit-and-integration-tests-in-gradle/</link>
       <pubDate>Sat, 22 Sep 2018 16:51:47 +0000</pubDate>
-      <guid>https://wittchen.io/posts/separate-execution-of-unit-and-integration-tests-in-gradle/</guid>
+      <guid>https://wittchen.io/notes/separate-execution-of-unit-and-integration-tests-in-gradle/</guid>
       <description>&lt;p&gt;During development process, we often write unit and integration tests. While unit tests verify corectness of the small pieces of code, integration tests verify software as a whole project and sometimes can treat it as a black box where concrete results are expected. During development of the REST API, we can write integration tests for such API with &lt;a href=&#34;https://github.com/rest-assured/rest-assured&#34;&gt;REST Assured&lt;/a&gt;. Integration tests are usually slower, because they need to start the server and sometimes do other stuff. That&amp;rsquo;s why it&amp;rsquo;s good to separate their execution from regular unit tests. On the CI server we can even have separate job for them.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Excluding generated code from JaCoCo report</title>
-      <link>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</link>
+      <link>https://wittchen.io/notes/excluding-generated-code-from-jacoco-report/</link>
       <pubDate>Tue, 18 Sep 2018 20:07:30 +0000</pubDate>
-      <guid>https://wittchen.io/posts/excluding-generated-code-from-jacoco-report/</guid>
+      <guid>https://wittchen.io/notes/excluding-generated-code-from-jacoco-report/</guid>
       <description>&lt;p&gt;I recently wrote a simple java app with Dagger 2 as a DI container and Gradle as a build system. I wanted to generate unit test coverage report for this app, so I used Jacoco.&lt;/p&gt;
 &lt;p&gt;In my &lt;code&gt;build.gradle&lt;/code&gt; file I configured JaCoCo as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gradle&#34; data-lang=&#34;gradle&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;plugins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
@@ -81,9 +81,9 @@
     </item>
     <item>
       <title>Testing exceptions</title>
-      <link>https://wittchen.io/posts/testing-exceptions/</link>
+      <link>https://wittchen.io/notes/testing-exceptions/</link>
       <pubDate>Tue, 04 Sep 2018 19:49:26 +0000</pubDate>
-      <guid>https://wittchen.io/posts/testing-exceptions/</guid>
+      <guid>https://wittchen.io/notes/testing-exceptions/</guid>
       <description>&lt;p&gt;In Java, we can test exceptions via unit tests in a few different ways. In this article, I&amp;rsquo;ll present common methods of doing that. Nevertheless, I suppose we there are different methods as well.&lt;/p&gt;
 &lt;p&gt;First method is basically wrapping a method call with try-catch block, assigning an exception to a variable and performing appropriate assertion. In these examples, I&amp;rsquo;m using &lt;a href=&#34;https://junit.org&#34;&gt;JUnit&lt;/a&gt; for unit tests and &lt;a href=&#34;https://google.github.io/truth/&#34;&gt;Truth&lt;/a&gt; for assertions.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -102,9 +102,9 @@
     </item>
     <item>
       <title>Writing my first library in Kotlin</title>
-      <link>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</link>
+      <link>https://wittchen.io/notes/writing-my-first-library-in-kotlin/</link>
       <pubDate>Sun, 19 Aug 2018 10:24:19 +0000</pubDate>
-      <guid>https://wittchen.io/posts/writing-my-first-library-in-kotlin/</guid>
+      <guid>https://wittchen.io/notes/writing-my-first-library-in-kotlin/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Recently, I decided to create a tiny Android library called &lt;a href=&#34;https://github.com/pwittchen/RxBattery&#34;&gt;RxBattery&lt;/a&gt;, which is monitoring battery state of the device with RxJava and RxKotlin. I created a few Java and Android libraries already and this time I decided to use &lt;a href=&#34;https://kotlinlang.org/&#34;&gt;Kotlin&lt;/a&gt; programming language instead of Java to learn something new and write something more complicated than &amp;ldquo;Hello World&amp;rdquo; app. Here are my observations.&lt;/p&gt;
 &lt;h2 id=&#34;build-system&#34;&gt;Build System&lt;/h2&gt;
@@ -112,24 +112,24 @@
     </item>
     <item>
       <title>Releasing ReactiveNetwork v. 1.0.0 (paying the technical debt)</title>
-      <link>https://wittchen.io/posts/releasing-reactive-network-1/</link>
+      <link>https://wittchen.io/notes/releasing-reactive-network-1/</link>
       <pubDate>Sun, 24 Jun 2018 23:39:18 +0000</pubDate>
-      <guid>https://wittchen.io/posts/releasing-reactive-network-1/</guid>
+      <guid>https://wittchen.io/notes/releasing-reactive-network-1/</guid>
       <description>&lt;p&gt;Today, I&amp;rsquo;ve released next version of my most popular open-source project - &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork&#34;&gt;ReactiveNetwork&lt;/a&gt;. I&amp;rsquo;ve released version &lt;code&gt;0.12.4&lt;/code&gt; for RxJava1.x and version &lt;code&gt;1.0.0&lt;/code&gt; for RxJava2.x. Please note, RxJava1.x is &lt;a href=&#34;https://github.com/ReactiveX/RxJava/releases/tag/v1.3.8&#34;&gt;no longer officially supported&lt;/a&gt; and I&amp;rsquo;m going to follow the same approach in my RxJava-based projects. It&amp;rsquo;s not the first release of this project, but I&amp;rsquo;m breaking the API and removing existing methods, so I decided to stick to proper versioning standard. I didn&amp;rsquo;t always do it properly in the past, but it&amp;rsquo;s never too late.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Deployment of the Java code to AWS Lambda</title>
-      <link>https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/</link>
+      <link>https://wittchen.io/notes/deployment-of-the-java-code-to-aws-lambda/</link>
       <pubDate>Sun, 18 Mar 2018 16:50:02 +0000</pubDate>
-      <guid>https://wittchen.io/posts/deployment-of-the-java-code-to-aws-lambda/</guid>
+      <guid>https://wittchen.io/notes/deployment-of-the-java-code-to-aws-lambda/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In the cloud computing era, companies start using services like Google Cloud Platform, Amazon Web Services or Microsoft Azure. We can hear about the term &amp;ldquo;Serverless&amp;rdquo;. It doesn&amp;rsquo;t mean that we don&amp;rsquo;t have any servers. It means that third-party services provide us server infsrastrucutre, monitoring and scaling capabilities, so we don&amp;rsquo;t have to care about that stuff by ourselves and we can focus on writing code. We have concepts like Backend as a Service (BaaS) and Funtion as a Service (FaaS). In BaaS we can configure whole backend infrastructure using third-party cloud services. In this case, we can have database, REST API and other services, which we need depending on our use case. In FaaS, we have just a tiny piece of code responsible for a single job, which we can take and deploy into the cloud. AWS Lambda is an example of FaaS and we&amp;rsquo;ll focus on it in this article.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Introducing ReactiveBus</title>
-      <link>https://wittchen.io/posts/introducing-reactive-bus/</link>
+      <link>https://wittchen.io/notes/introducing-reactive-bus/</link>
       <pubDate>Sun, 11 Mar 2018 20:02:45 +0000</pubDate>
-      <guid>https://wittchen.io/posts/introducing-reactive-bus/</guid>
+      <guid>https://wittchen.io/notes/introducing-reactive-bus/</guid>
       <description>&lt;p&gt;Today, I&amp;rsquo;ve released my another tiny project. It&amp;rsquo;s a very simple implementation of Event Bus with RxJava 2 under the hood. This library is compatible with Java 1.7 or higher. I didn&amp;rsquo;t use Java 1.8 or 1.9 because I wanted to make it compatible with Android apps.&lt;/p&gt;
 &lt;p&gt;You can use it as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Bus&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bus&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ReactiveBus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -143,31 +143,31 @@
     </item>
     <item>
       <title>Automating generation of the on-line documentation for Java library</title>
-      <link>https://wittchen.io/posts/automating-generation-of-the-on-line-documentation-for-java-library/</link>
+      <link>https://wittchen.io/notes/automating-generation-of-the-on-line-documentation-for-java-library/</link>
       <pubDate>Sun, 11 Feb 2018 10:22:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/automating-generation-of-the-on-line-documentation-for-java-library/</guid>
+      <guid>https://wittchen.io/notes/automating-generation-of-the-on-line-documentation-for-java-library/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In one of my open-source projects - &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork&#34;&gt;ReactiveNetwork&lt;/a&gt; I have a documentation in &lt;code&gt;README.md&lt;/code&gt; file and I have JavaDocs as well. This project is an Android library written in Java and built with Gradle. Moreover, I develop this project on two separate Git branches - one for RxJava1.x and another one for RxJava2.x. Similar convention is in the RxJava repository, so I followed it. After each release I publish documentation and JavaDocs on GitHub pages for both versions. It&amp;rsquo;s kind of boring and repeatable task, so I was wondering if there&amp;rsquo;s any way to automate it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Quality Meetup no. 15 - Fixing a billion dollar mistake</title>
-      <link>https://wittchen.io/posts/quality-meetup-15-fixing-a-billion-dollar-mistake/</link>
+      <link>https://wittchen.io/notes/quality-meetup-15-fixing-a-billion-dollar-mistake/</link>
       <pubDate>Fri, 09 Feb 2018 00:46:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/quality-meetup-15-fixing-a-billion-dollar-mistake/</guid>
+      <guid>https://wittchen.io/notes/quality-meetup-15-fixing-a-billion-dollar-mistake/</guid>
       <description>&lt;p&gt;On the 8th of February 2018, during &lt;a href=&#34;https://www.meetup.com/Quality-Meetup/events/247187036/&#34;&gt;Quality Meetup #15&lt;/a&gt;, I gave a presentation titled &amp;ldquo;Fixing a billion dollar mistake&amp;rdquo;. Tony Hoare introduced Null Reference w in ALGOL language in 1965. He calls this decision a &amp;ldquo;billion dollar mistake&amp;rdquo;. It was so easy to implement and probably it caused a loss of millions of dollars due to the mistakes done in the software over the 40 years. During the time, people came up with different ideas of solving that problem with software libraries, good programming practices, static code analysis and compile time code analysis. Moreover, we have new programming languages with null safety features. During the presentation I&amp;rsquo;ve shown how to deal with the null reference problem in the JVM projects no matter if it&amp;rsquo;s a greenfield solution or legacy code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Creating a Docker container with Alpine Linux including Java 8 and 9</title>
-      <link>https://wittchen.io/posts/creating-a-docker-container-with-alpine-linux-including-java-8-and-9/</link>
+      <link>https://wittchen.io/notes/creating-a-docker-container-with-alpine-linux-including-java-8-and-9/</link>
       <pubDate>Wed, 27 Dec 2017 14:43:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/creating-a-docker-container-with-alpine-linux-including-java-8-and-9/</guid>
+      <guid>https://wittchen.io/notes/creating-a-docker-container-with-alpine-linux-including-java-8-and-9/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;ve decided to refresh my knowledge regarding &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; and created an image with &lt;a href=&#34;https://alpinelinux.org/&#34;&gt;Alpine Linux&lt;/a&gt; and Java 9, which can be a useful base for the future projects. I used Alpine as a base image because it became quite popular in the Docker world due to its simplicity and the fact that it&amp;rsquo;s pretty lightweight when we compare it to containers based on other Linux distributions. Pure Alpine Docker container has about 4.144 MB, what is really impressing.&lt;/p&gt;</description>
     </item>
     <item>
       <title>DroidCon Poland 2017 - Is your app really connected?</title>
-      <link>https://wittchen.io/posts/droidcon-poland-2017-is-your-app-really-connected/</link>
+      <link>https://wittchen.io/notes/droidcon-poland-2017-is-your-app-really-connected/</link>
       <pubDate>Sat, 02 Dec 2017 01:39:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/droidcon-poland-2017-is-your-app-really-connected/</guid>
+      <guid>https://wittchen.io/notes/droidcon-poland-2017-is-your-app-really-connected/</guid>
       <description>&lt;p&gt;Yesterday, I gave a presentation about connectivity in the Android apps during the &lt;a href=&#34;http://droidcon.pl&#34;&gt;DroidCon Poland 2017&lt;/a&gt; Conference in Kraków.&lt;/p&gt;
 &lt;p&gt;Below, you can see slides from this presentation.&lt;/p&gt;
 
@@ -187,16 +187,16 @@
     </item>
     <item>
       <title>Simple reactive HTTP client and server with RxJava, Vert.x and Android</title>
-      <link>https://wittchen.io/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/</link>
+      <link>https://wittchen.io/notes/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/</link>
       <pubDate>Thu, 09 Nov 2017 22:30:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/</guid>
+      <guid>https://wittchen.io/notes/simple-reactive-http-client-and-server-with-rxjava-vertx-and-android/</guid>
       <description>&lt;p&gt;During &lt;a href=&#34;https://www.facebook.com/Hack.your.Career/&#34;&gt;Hack Your Career&lt;/a&gt; event at the Silesian University of Technology, I&amp;rsquo;ve prepared a presentation titled &lt;a href=&#34;https://speakerdeck.com/pwittchen/reactive-programming-efficient-server-applications&#34;&gt;Reactive Programming - Efficient Server Applications&lt;/a&gt; with a colleague from work. Arek told about theory of Reactive Programming, shown basic concepts, data types and a few examples in the code. During my part of the presentation, I&amp;rsquo;ve wrote a very simple server and client in Java (9 on the server, 7 on the client) with &lt;a href=&#34;http://vertx.io/&#34;&gt;Vert.x&lt;/a&gt; (&lt;a href=&#34;http://vertx.io/docs/vertx-core/java/&#34;&gt;Core&lt;/a&gt; and &lt;a href=&#34;http://vertx.io/docs/vertx-rx/java2/&#34;&gt;Rx&lt;/a&gt;), &lt;a href=&#34;https://github.com/ReactiveX/RxJava&#34;&gt;RxJava 2&lt;/a&gt;, &lt;a href=&#34;https://github.com/square/okhttp&#34;&gt;OkHttp 3&lt;/a&gt;, &lt;a href=&#34;https://www.android.com/&#34;&gt;Android&lt;/a&gt; and &lt;a href=&#34;https://github.com/ReactiveX/RxAndroid/&#34;&gt;RxAndroid&lt;/a&gt;. Presentation was targeted mainly to the university students with no experience with reactive programming, but it was an open event and anyone could attend it. Below, we can see a very simple code snippet showing how to create a reactive HTTP server with Vert.x. We can create a stream of requests, make &lt;code&gt;Flowable&lt;/code&gt; out of it, apply any kind of RxJava 2 operator including backpressure handling and subscribe the stream. Moreover, we can also reactively start the server with &lt;code&gt;rxListen(int port)&lt;/code&gt; method. This is just a basic example, where will be sending request to the only one endpoint. In the case, when we want to handle more endpoints, we can use &lt;a href=&#34;http://vertx.io/docs/vertx-web/java/&#34;&gt;vertx-web&lt;/a&gt; library and design REST API.&lt;/p&gt;</description>
     </item>
     <item>
       <title>JDD 2017 - Get ready for java.util.concurrent.Flow! - summary</title>
-      <link>https://wittchen.io/posts/jdd-2017-juc-flow-presentation-summary/</link>
+      <link>https://wittchen.io/notes/jdd-2017-juc-flow-presentation-summary/</link>
       <pubDate>Thu, 05 Oct 2017 16:19:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/jdd-2017-juc-flow-presentation-summary/</guid>
+      <guid>https://wittchen.io/notes/jdd-2017-juc-flow-presentation-summary/</guid>
       <description>&lt;p&gt;Recently on the &lt;a href=&#34;http://jdd.org.pl&#34;&gt;JDD 2017&lt;/a&gt; conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.&lt;/p&gt;
 
 
@@ -210,9 +210,9 @@
     </item>
     <item>
       <title>Integrating ErrorProne and NullAway with an Android project</title>
-      <link>https://wittchen.io/posts/integrating-nullaway-with-an-android-project/</link>
+      <link>https://wittchen.io/notes/integrating-nullaway-with-an-android-project/</link>
       <pubDate>Fri, 15 Sep 2017 18:39:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/integrating-nullaway-with-an-android-project/</guid>
+      <guid>https://wittchen.io/notes/integrating-nullaway-with-an-android-project/</guid>
       <description>&lt;p&gt;Recently, with the &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork/pull/226&#34;&gt;remote help of guys from Uber in California&lt;/a&gt;, I integrated &lt;a href=&#34;https://github.com/uber/NullAway/&#34;&gt;NullAway&lt;/a&gt; and &lt;a href=&#34;https://github.com/google/error-prone&#34;&gt;ErrorProne&lt;/a&gt; with the &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork&#34;&gt;one of my open-source Android projects&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-nullaway&#34;&gt;What is NullAway?&lt;/h2&gt;
 &lt;p&gt;Basically, it&amp;rsquo;s &lt;em&gt;a tool to help eliminate NullPointerExceptions (NPEs) in your Java code&lt;/em&gt;. It detects situations where NPE could occur at the compile time. Let&amp;rsquo;s have a look at the following code:&lt;/p&gt;
@@ -226,9 +226,9 @@
     </item>
     <item>
       <title>Introducing ReactiveAirplaneMode</title>
-      <link>https://wittchen.io/posts/introducing-reactive-airplane-mode/</link>
+      <link>https://wittchen.io/notes/introducing-reactive-airplane-mode/</link>
       <pubDate>Tue, 15 Aug 2017 19:28:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/introducing-reactive-airplane-mode/</guid>
+      <guid>https://wittchen.io/notes/introducing-reactive-airplane-mode/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m continuing &lt;em&gt;Rxfication&lt;/em&gt; of the Android. Recently I released brand new library called &lt;a href=&#34;https://github.com/pwittchen/ReactiveAirplaneMode&#34;&gt;&lt;strong&gt;ReactiveAirplaneMode&lt;/strong&gt;&lt;/a&gt;. As you may guess, it allows listening Airplane mode on Android device with RxJava observables. A usual I&amp;rsquo;ve hidden all implementation details, BroadcastReceivers and rest of the Android related stuff behind RxJava abstraction layer, so API is really simple. Just take a look on that:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ReactiveAirplaneMode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;observe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -239,16 +239,16 @@
     </item>
     <item>
       <title>Releasing ReactiveNetwork v. 0.11.0</title>
-      <link>https://wittchen.io/posts/reactivenetwork-v-0110-walled-garden/</link>
+      <link>https://wittchen.io/notes/reactivenetwork-v-0110-walled-garden/</link>
       <pubDate>Sun, 06 Aug 2017 06:38:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/reactivenetwork-v-0110-walled-garden/</guid>
+      <guid>https://wittchen.io/notes/reactivenetwork-v-0110-walled-garden/</guid>
       <description>&lt;p&gt;In the latest release of &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork&#34;&gt;ReactiveNetwork&lt;/a&gt; library, I focused on &lt;a href=&#34;http://searchsecurity.techtarget.com/definition/walled-garden&#34;&gt;Walled Garden&lt;/a&gt; AKA Great Firewall support during checking Internet connectivity. There are countries with limited Internet access like China and in such cases, pinging commonly known host like &lt;a href=&#34;https://www.google.com&#34;&gt;www.google.com&lt;/a&gt; may have different results than in other countries because it may be blocked. We may get false positive results because users will generally have an access to the Internet, but they don&amp;rsquo;t have access only to several websites. To solve that problem, I created &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork/blob/RxJava2.x/library/src/main/java/com/github/pwittchen/reactivenetwork/library/rx2/internet/observing/strategy/WalledGardenInternetObservingStrategy.java&#34;&gt;WalledGardenInternetObservingStrategy&lt;/a&gt; and made it default strategy for checking Internet connectivity inside the library. Of course, you can still use &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork/blob/RxJava2.x/library/src/main/java/com/github/pwittchen/reactivenetwork/library/rx2/internet/observing/strategy/SocketInternetObservingStrategy.java&#34;&gt;SocketInternetObservingStrategy&lt;/a&gt; if you want to. Detailed release notes are as follows: &lt;strong&gt;RxJava1.x&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Releasing ReactiveNetwork v. 0.10.0</title>
-      <link>https://wittchen.io/posts/releasing-reactivenetwork-v-0100/</link>
+      <link>https://wittchen.io/notes/releasing-reactivenetwork-v-0100/</link>
       <pubDate>Thu, 20 Jul 2017 20:02:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/releasing-reactivenetwork-v-0100/</guid>
+      <guid>https://wittchen.io/notes/releasing-reactivenetwork-v-0100/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently released &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork&#34;&gt;&lt;strong&gt;ReactiveNetwork&lt;/strong&gt;&lt;/a&gt; library v. &lt;strong&gt;0.10.0&lt;/strong&gt; for RxJava1.x and RxJava2.x. ReactiveNetwork is an Android library listening network connection state and Internet connectivity with RxJava Observables, which I&amp;rsquo;m developing for approximately 2 years now. In this version, I&amp;rsquo;ve done a few bug fixes and added new features for RxJava2.x version. Below, you can find the release notes: &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork/releases/tag/v0.10.0&#34;&gt;&lt;strong&gt;Release for RxJava1.x&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;bumped RxJava1 version to 1.3.0&lt;/li&gt;
@@ -262,32 +262,32 @@
     </item>
     <item>
       <title>Release of prefser v. 2.1.0 with RxJava2 support</title>
-      <link>https://wittchen.io/posts/release-of-prefser-210-with-rxjava2/</link>
+      <link>https://wittchen.io/notes/release-of-prefser-210-with-rxjava2/</link>
       <pubDate>Mon, 19 Jun 2017 16:56:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/release-of-prefser-210-with-rxjava2/</guid>
+      <guid>https://wittchen.io/notes/release-of-prefser-210-with-rxjava2/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently released new version of &lt;a href=&#34;https://github.com/pwittchen/prefser&#34;&gt;prefser&lt;/a&gt; library for Android. In case you don&amp;rsquo;t know, it&amp;rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. This version has the new artifact, which has codebase migrated to RxJava2.x. As usual, I kept backward compatibility with RxJava1.x. You can find more details about the project at &lt;a href=&#34;https://github.com/pwittchen/prefser&#34;&gt;https://github.com/pwittchen/prefser&lt;/a&gt;. If you want to use it in your mobile project, you need the following dependencies in the &lt;code&gt;build.gradle&lt;/code&gt; file:&lt;/p&gt;</description>
     </item>
     <item>
       <title>New reactive data types in RxJava2</title>
-      <link>https://wittchen.io/posts/new-reactive-data-types-in-rxjava2/</link>
+      <link>https://wittchen.io/notes/new-reactive-data-types-in-rxjava2/</link>
       <pubDate>Wed, 31 May 2017 17:49:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/new-reactive-data-types-in-rxjava2/</guid>
+      <guid>https://wittchen.io/notes/new-reactive-data-types-in-rxjava2/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;m still exploring reactive programming world and RxJava library. Recently, I&amp;rsquo;ve migrated a few of my open-source libraries from RxJava1 to RxJava2 and written yet another project in RxJava2 from the beginning. Nevertheless, I&amp;rsquo;m still learning this library and its concept. It&amp;rsquo;s very wide topic. In RxJava1 we simply had one reactive data type called &lt;code&gt;Observable&lt;/code&gt;. In RxJava2, we have more data types like &lt;code&gt;Observable&lt;/code&gt;, &lt;code&gt;Flowable&lt;/code&gt;, &lt;code&gt;Single&lt;/code&gt;, &lt;code&gt;Maybe&lt;/code&gt; &amp;amp; &lt;code&gt;Completable&lt;/code&gt;. In this article, I&amp;rsquo;ll briefly explain their purpose and tell you when to use which. The general idea behind these types is code semantics. We should tell consumer of our code, what he or she can expect from our API. Introducing more reactive data types can increase readability and stability of our code base.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Introducing YaaS Java SDK</title>
-      <link>https://wittchen.io/posts/introducing-yaas-java-sdk/</link>
+      <link>https://wittchen.io/notes/introducing-yaas-java-sdk/</link>
       <pubDate>Sun, 28 May 2017 21:24:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/introducing-yaas-java-sdk/</guid>
+      <guid>https://wittchen.io/notes/introducing-yaas-java-sdk/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In my company, there&amp;rsquo;s a concept of so-called &amp;ldquo;innovation day&amp;rdquo;. I have the possibility to &amp;ldquo;use&amp;rdquo; 1 innovation day per 2 development sprints. Last year, I used only 1 day due to the tight release schedule and a lot of work. Now, we are right after release, so I had time to take innovation day once again. I&amp;rsquo;ve decided to create &lt;a href=&#34;https://github.com/pwittchen/yaas-java-sdk&#34;&gt;&lt;strong&gt;YaaS Java SDK&lt;/strong&gt;&lt;/a&gt;. If you don&amp;rsquo;t know what the &lt;a href=&#34;http://yaas.io&#34;&gt;YaaS&lt;/a&gt; is, check out my previous article about basic usage of YaaS proxy for the microservice. In a few words, it&amp;rsquo;s a proxy for the microservices with authorization &amp;amp; monitoring capabilities, which allows using other services available on the YaaS market. SDK created by me is really simple, was created in a short period of time and does not cover all features of the YaaS. This SDK allows performing authorized requests to the microservices hidden behind YaaS proxy. Tech stack used for this project is as follows:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Releasing Prefser v. 2.0.7</title>
-      <link>https://wittchen.io/posts/prefser-207/</link>
+      <link>https://wittchen.io/notes/prefser-207/</link>
       <pubDate>Sun, 28 May 2017 20:48:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/prefser-207/</guid>
+      <guid>https://wittchen.io/notes/prefser-207/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently released new version of &lt;a href=&#34;https://github.com/pwittchen/prefser&#34;&gt;Prefser&lt;/a&gt;. It&amp;rsquo;s a wrapper for Android SharedPreferences with object serialization and RxJava Observables. The new version number is &lt;a href=&#34;https://github.com/pwittchen/prefser/releases/tag/v2.0.7&#34;&gt;2.0.7&lt;/a&gt;. In this release, I performed mostly internal work not related to the external library API. Nevertheless, it&amp;rsquo;s important for the library development in the future. The following things were done:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;updated dependencies&lt;/li&gt;
@@ -301,9 +301,9 @@
     </item>
     <item>
       <title>Joining lists of RxJava Observables</title>
-      <link>https://wittchen.io/posts/joining-lists-of-rxjava-observables/</link>
+      <link>https://wittchen.io/notes/joining-lists-of-rxjava-observables/</link>
       <pubDate>Mon, 15 May 2017 20:37:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/joining-lists-of-rxjava-observables/</guid>
+      <guid>https://wittchen.io/notes/joining-lists-of-rxjava-observables/</guid>
       <description>&lt;p&gt;In &lt;a href=&#34;https://github.com/ReactiveX/RxJava&#34;&gt;RxJava&lt;/a&gt; we have a few operators for joining Observables. The most common are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://reactivex.io/documentation/operators/concat.html&#34;&gt;concat&lt;/a&gt;&lt;/li&gt;
@@ -314,16 +314,16 @@
     </item>
     <item>
       <title>Emitting different observables conditionally</title>
-      <link>https://wittchen.io/posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/</link>
+      <link>https://wittchen.io/notes/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/</link>
       <pubDate>Sun, 14 May 2017 21:44:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/</guid>
+      <guid>https://wittchen.io/notes/emitting-different-rxjava-observables-depending-on-the-condition-with-flatmap/</guid>
       <description>&lt;p&gt;Sometimes, we may need to emit different RxJava Observables depending on the specific condition dynamically. Moreover, it&amp;rsquo;s good to do it right without breaking a chain (stream of Observables). We want to combine different Observables together and do not want to nest one subscription inside another subscription because this will lead us to &amp;ldquo;subscription hell&amp;rdquo; similar to &amp;ldquo;callback hell&amp;rdquo;. Luckily RxJava has mechanisms to deal with such problems. In this article, I&amp;rsquo;m basing my examples on RxJava 2.1.0. Let&amp;rsquo;s say we have two Observables:&lt;/p&gt;</description>
     </item>
     <item>
       <title>ReactiveNetwork - release of v. 0.2.0</title>
-      <link>https://wittchen.io/posts/reactive-network-2/</link>
+      <link>https://wittchen.io/notes/reactive-network-2/</link>
       <pubDate>Thu, 11 Feb 2016 19:19:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/reactive-network-2/</guid>
+      <guid>https://wittchen.io/notes/reactive-network-2/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently released new version of &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork&#34;&gt;ReactiveNetwork&lt;/a&gt; library for Android. Here are the fresh &lt;strong&gt;release notes&lt;/strong&gt; for &lt;a href=&#34;https://github.com/pwittchen/ReactiveNetwork/releases/tag/v0.2.0&#34;&gt;version 0.2.0&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;added possibility to observe WiFi signal level with &lt;code&gt;observeWifiSignalLevel(context, numLevels)&lt;/code&gt; and &lt;code&gt;observeWifiSignalLevel(context)&lt;/code&gt; method&lt;/li&gt;
@@ -341,31 +341,31 @@
     </item>
     <item>
       <title>Reactive Live Coding during GDG DevFest 2015 in Poland</title>
-      <link>https://wittchen.io/posts/reactive-live-coding-gdg-devfest-pl-2015/</link>
+      <link>https://wittchen.io/notes/reactive-live-coding-gdg-devfest-pl-2015/</link>
       <pubDate>Sun, 29 Nov 2015 20:16:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/reactive-live-coding-gdg-devfest-pl-2015/</guid>
+      <guid>https://wittchen.io/notes/reactive-live-coding-gdg-devfest-pl-2015/</guid>
       <description>&lt;p&gt;I was asked to be a speaker during &lt;a href=&#34;http://devfest.pl&#34;&gt;GDG DevFest&lt;/a&gt; 2015 conference in Warsaw, Poland. Of course, I accepted this invitation and prepared presentation titled &amp;ldquo;Reactive Live Coding&amp;rdquo;. Presentation covered basics of Reactive Programming, RxJava and RxAndroid. Besides my talk I&amp;rsquo;ve done live coding to show how to use mentioned libraries and basics principles of Reactive Programming in real life. I had only 20 minutes for all of that, so my time-box was very limited. Being a speaker at conference was really interesting and challenging experience, which I haven&amp;rsquo;t had before. Moreover, I could meet a lot of interesting people and hear very inspiring talks covering different topics. You can check activity from conference by browsing &lt;a href=&#34;https://twitter.com/search?q=%23devfest15pl&#34;&gt;#devfest15pl&lt;/a&gt; hashtag on Twitter and &lt;a href=&#34;https://www.facebook.com/events/595578613913819/&#34;&gt;Facebook event&lt;/a&gt;. You can also check official website of the conference at &lt;a href=&#34;http://devfest.pl&#34;&gt;devfest.pl&lt;/a&gt;. Slides from my presentation are available below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>New release of Kirai - elegant string formatting library for Java</title>
-      <link>https://wittchen.io/posts/new-release-of-kirai-140/</link>
+      <link>https://wittchen.io/notes/new-release-of-kirai-140/</link>
       <pubDate>Sun, 22 Nov 2015 20:34:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/new-release-of-kirai-140/</guid>
+      <guid>https://wittchen.io/notes/new-release-of-kirai-140/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently released version &lt;strong&gt;1.4.0&lt;/strong&gt; of &lt;a href=&#34;https://github.com/pwittchen/kirai&#34;&gt;Kirai&lt;/a&gt; library. Kirai means &lt;em&gt;phrase&lt;/em&gt; in Swahili language. It&amp;rsquo;s string formatting library written in Java. It originally started as an Android library, but it evolved to pure Java library. It&amp;rsquo;s first possibilities were basic string formatting and text formatting for Android TextViews. Now, it allows to format strings for &lt;strong&gt;Java&lt;/strong&gt;, &lt;strong&gt;Web&lt;/strong&gt;, &lt;strong&gt;Android&lt;/strong&gt; and even &lt;strong&gt;Unix Terminal&lt;/strong&gt;! Have you ever wanted to have colorful and styled text in your mobile app, website or terminal app? Now you can with an elegant and fluent API! Moreover, I&amp;rsquo;ve added test coverage supported by &lt;a href=&#34;http://codecov.io&#34;&gt;codecov.io&lt;/a&gt;. It&amp;rsquo;s really nice service, which integrates with &lt;a href=&#34;http://travis-ci.org&#34;&gt;Travis CI&lt;/a&gt; and is free for open-source projects. It&amp;rsquo;s available for various programming languages and build systems. Check library source code and samples at: &lt;a href=&#34;https://github.com/pwittchen/kirai&#34;&gt;https://github.com/pwittchen/kirai&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>An Opinionated Guide to Modern Java by Parallel Universe</title>
-      <link>https://wittchen.io/posts/an-opinionated-guide-to-modern-java-by-parallel-universe/</link>
+      <link>https://wittchen.io/notes/an-opinionated-guide-to-modern-java-by-parallel-universe/</link>
       <pubDate>Thu, 05 Nov 2015 08:27:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/an-opinionated-guide-to-modern-java-by-parallel-universe/</guid>
+      <guid>https://wittchen.io/notes/an-opinionated-guide-to-modern-java-by-parallel-universe/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I recently read series of three articles titled &lt;em&gt;An Opinionated Guide to Modern Java&lt;/em&gt; by &lt;a href=&#34;http://blog.paralleluniverse.co/&#34;&gt;Parallel Universe&lt;/a&gt;. It presents really interesting point of view and can be read even by non-Java developers due to its form. Non-Java developers can learn that Java can be fast, elegant and lightweight as much as other &lt;em&gt;hipster&lt;/em&gt; technologies like Ruby, Go or Node.js. The main difference is the fact that Java is quite old and widely used technology what means it&amp;rsquo;s well tested, stable, solid, has great development and monitoring tools. Besides widely known projects, author of the articles presents some information about tools built by Parallel Universe, which are not commonly used and are less popular, but are also worth considering for modern development. E.g. he writes about so called &lt;a href=&#34;http://www.capsule.io/&#34;&gt;Capsule&lt;/a&gt; project, which is intended to be a Docker alternative for Java and &lt;a href=&#34;http://docs.paralleluniverse.co/quasar/&#34;&gt;Quasar&lt;/a&gt;, which is interesting high level API for multi-threading with concept of actors, which is also available in Akka and Erlang. I recommend any Java and non-Java developer to read this series to learn new things and consolidate the knowledge.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Searching word in a string with KMP algorithm</title>
-      <link>https://wittchen.io/posts/searching-word-in-a-string-with-kmp-algorithm/</link>
+      <link>https://wittchen.io/notes/searching-word-in-a-string-with-kmp-algorithm/</link>
       <pubDate>Wed, 22 Jul 2015 13:03:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/searching-word-in-a-string-with-kmp-algorithm/</guid>
+      <guid>https://wittchen.io/notes/searching-word-in-a-string-with-kmp-algorithm/</guid>
       <description>&lt;p&gt;Sometimes it&amp;rsquo;s good to revise some algorithms and try to implement them in order to get to know, how the built-in functions of high level programming languages actually works. One of the popular problems is &lt;a href=&#34;http://en.wikipedia.org/wiki/String_searching_algorithm&#34;&gt;string searching&lt;/a&gt;. We have many approaches to solve this problem. For example:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Naive string search algorithm&lt;/li&gt;
@@ -379,16 +379,16 @@
     </item>
     <item>
       <title>Get past the syntax - the real scare is in the semantics</title>
-      <link>https://wittchen.io/posts/get-past-the-syntax/</link>
+      <link>https://wittchen.io/notes/get-past-the-syntax/</link>
       <pubDate>Mon, 06 Jul 2015 15:37:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/get-past-the-syntax/</guid>
+      <guid>https://wittchen.io/notes/get-past-the-syntax/</guid>
       <description>&lt;p&gt;Dr. &lt;a href=&#34;http://agiledeveloper.com/&#34;&gt;Venkat Subramaniam&lt;/a&gt; presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C++. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements. Perception of the world is based on experience and things we get used to. The same rule applies to programming languages. Most software developers are familiar with imperative programming paradigm. They often focus on describing computation in terms of statements and changing program state. This approach leads us to necessity of creating a lot of temporary variables and boilerplate code. Let’s have a look at the following code snippet:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Introducing prefser</title>
-      <link>https://wittchen.io/posts/introducing-prefser/</link>
+      <link>https://wittchen.io/notes/introducing-prefser/</link>
       <pubDate>Sun, 22 Feb 2015 22:39:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/introducing-prefser/</guid>
+      <guid>https://wittchen.io/notes/introducing-prefser/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently released &lt;a href=&#34;https://github.com/pwittchen/prefser&#34;&gt;Prefser&lt;/a&gt;, which is a wrapper for Android &lt;a href=&#34;http://developer.android.com/reference/android/content/SharedPreferences.html&#34;&gt;SharedPreferences&lt;/a&gt; with object serialization and &lt;a href=&#34;https://github.com/ReactiveX/RxJava&#34;&gt;RxJava&lt;/a&gt; Observables. Prefser wraps SharedPreferences and thanks to Java Generics provides you simpler API than classic SharedPreferences with only two methods:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;put&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Class&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;classOfT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;defaultValue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -405,38 +405,38 @@
     </item>
     <item>
       <title>Introducing NetworkEvents</title>
-      <link>https://wittchen.io/posts/introducing-network-events/</link>
+      <link>https://wittchen.io/notes/introducing-network-events/</link>
       <pubDate>Sat, 31 Jan 2015 20:35:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/introducing-network-events/</guid>
+      <guid>https://wittchen.io/notes/introducing-network-events/</guid>
       <description>&lt;p&gt;I have released NetworkEvents library for Android. It&amp;rsquo;s a wrapper for system Broadcast Receivers built with Otto library. It allows you to listen change of connectivity status (connected to WiFi network with or without Internet access, mobile network, off-line) and change of the WiFi signal strength very easily with &lt;code&gt;@Subscribe&lt;/code&gt; annotation. The only thing you need to do, is to create &lt;code&gt;Bus&lt;/code&gt; and &lt;code&gt;NetworkEvents&lt;/code&gt; objects, register them in &lt;code&gt;onResume()&lt;/code&gt; method and unregister them in &lt;code&gt;onPause()&lt;/code&gt; method in your activity. After that, you can subscribe for the events you want to listen. Of course, remember to give your app appropriate permissions in &lt;code&gt;AndroidManifest.xml&lt;/code&gt; file. In contrast to Broadcast Receivers available in Android SDK, NetworkEvents sends only one event per one occurrence of this event. Android Broadcast Receivers have a &lt;a href=&#34;http://stackoverflow.com/questions/8412714/broadcastreceiver-receives-multiple-identical-messages-for-one-event&#34;&gt;bug, which causes sending multiple Intents&lt;/a&gt; even if only one event occurred. This behavior may vary on different devices. Regardless of this fact, this bug was handled by NetworkEvents and you shouldn&amp;rsquo;t encounter that problem while using this library. Important facts:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kirai - flavored Android string formatting library</title>
-      <link>https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/</link>
+      <link>https://wittchen.io/notes/kirai-flavored-android-string-formatting-library/</link>
       <pubDate>Tue, 13 Jan 2015 19:12:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/kirai-flavored-android-string-formatting-library/</guid>
+      <guid>https://wittchen.io/notes/kirai-flavored-android-string-formatting-library/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;Recently I&amp;rsquo;ve developed and realased to Maven Central Repository &lt;strong&gt;&lt;a href=&#34;https://github.com/pwittchen/kirai/&#34;&gt;Kirai&lt;/a&gt;&lt;/strong&gt;, which is &lt;strong&gt;flavored Android string formatting library&lt;/strong&gt;. Kirai means &lt;em&gt;phrase&lt;/em&gt; in Swahili language. Project is inspired by &lt;a href=&#34;https://github.com/square/phrase&#34;&gt;phrase&lt;/a&gt;, &lt;a href=&#34;https://github.com/polok/TaggerString&#34;&gt;TaggerString&lt;/a&gt; and &lt;a href=&#34;https://github.com/quiqueqs/BabushkaText&#34;&gt;BabushkaText&lt;/a&gt;. Kirai has fluent API similar to phrase with additional formatting similar to TaggerString and allows to add formatted pieces of text like BabushkaText. Development including writing Unit Tests took me about 2 days. Deployment and release to Maven Central Repository took me about 2 days as well. It was my first deployment, so it wasn&amp;rsquo;t so easy, but people from Sonatype are helpful, problems were solved very quickly and release went quite smooth.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to switch java version on Linux</title>
-      <link>https://wittchen.io/posts/how-to-switch-java-version-on-linux/</link>
+      <link>https://wittchen.io/notes/how-to-switch-java-version-on-linux/</link>
       <pubDate>Sun, 02 Nov 2014 12:33:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/how-to-switch-java-version-on-linux/</guid>
+      <guid>https://wittchen.io/notes/how-to-switch-java-version-on-linux/</guid>
       <description>&lt;p&gt;Sometimes we need to run specific program with a concrete version of JVM. We can also work with Java 7, but we want to try Java 8. In such cases, we can have installed both Java 7 and 8 on our system and easily switch between them. In order to show current java version, we can simply type: &lt;code&gt;java -version&lt;/code&gt; in terminal. On my computer I received the following response:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java Gradle Template</title>
-      <link>https://wittchen.io/posts/java-gradle-template/</link>
+      <link>https://wittchen.io/notes/java-gradle-template/</link>
       <pubDate>Fri, 17 Oct 2014 23:11:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/java-gradle-template/</guid>
+      <guid>https://wittchen.io/notes/java-gradle-template/</guid>
       <description>&lt;p&gt;Some time ago, I had some troubles with configuring Java project with Gradle in IntelliJ IDEA CE. There is possibility to create new Gradle project in mentioned IDE, but for some reason it didn&amp;rsquo;t worked out-of-the box in my case on Ubuntu. I wanted to have pure, clean Java project with Gradle build system ready to open in IntelliJ IDEA. I found well configured simple project at: &lt;a href=&#34;https://github.com/quinnliu/SampleGradleProject&#34;&gt;https://github.com/quinnliu/SampleGradleProject&lt;/a&gt;. Basing on that project, I created my simple template. I modified this project a little bit, added &lt;a href=&#34;https://github.com/alexruiz/fest-assert-2.x&#34;&gt;FEST assertions&lt;/a&gt; and wrote a few Unit Tests. In addition, I configured main class in &lt;code&gt;build.gradle&lt;/code&gt; file in order to execute it via &lt;code&gt;./gradlew run&lt;/code&gt; command. My project template also has gradle wrapper, which is very convenient practice.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Micro-location based on WiFi Access Points</title>
-      <link>https://wittchen.io/posts/micro-location-based-on-wifi-access-points/</link>
+      <link>https://wittchen.io/notes/micro-location-based-on-wifi-access-points/</link>
       <pubDate>Sun, 21 Sep 2014 13:16:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/micro-location-based-on-wifi-access-points/</guid>
+      <guid>https://wittchen.io/notes/micro-location-based-on-wifi-access-points/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Recently, I started working on quite interesting project. One of its elements is micro-location inside the building based on WiFi Access Points. Company&amp;rsquo;s buildings have a lot of Access Points in different locations like regular rooms, conference rooms, corridors, sports building and restaurant. Having pool of Access Points with their names, locations and &lt;a href=&#34;http://en.wikipedia.org/wiki/MAC_address&#34;&gt;MAC&lt;/a&gt; addresses (or more precisely: &lt;a href=&#34;http://en.wiktionary.org/wiki/BSSID&#34;&gt;BSSID&lt;/a&gt;) it&amp;rsquo;s possible to create micro-location for Android mobile devices.&lt;/p&gt;
 &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
@@ -444,17 +444,17 @@
     </item>
     <item>
       <title>Reading/writing generic Java objects to JSON files and vice versa</title>
-      <link>https://wittchen.io/posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</link>
+      <link>https://wittchen.io/notes/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</link>
       <pubDate>Wed, 27 Aug 2014 21:19:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</guid>
+      <guid>https://wittchen.io/notes/reading-writing-generic-java-objects-to-json-files-and-vice-versa/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;Recently, I have written small set of methods for a FileHelper using &lt;a href=&#34;http://jackson.codehaus.org/&#34;&gt;Jackson library&lt;/a&gt; in Android application, which allows to save &lt;a href=&#34;http://en.wikipedia.org/wiki/Generics_in_Java&#34;&gt;generic Java objects&lt;/a&gt; and list of generic objects in &lt;a href=&#34;http://en.wikipedia.org/wiki/JSON&#34;&gt;JSON&lt;/a&gt; format to a file and read them back in the original form. In the beginning I had some problems with saving and reading data properly. I could save and read data (e.g. list of the objects), but their type was &lt;a href=&#34;http://docs.oracle.com/javase/6/docs/api/java/util/LinkedHashMap.html&#34;&gt;LinkedHashMap&lt;/a&gt;, which wasn&amp;rsquo;t the list of desired generic objects. After adjusting Jackson library, I finally achieved my goal. You can see helper class below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to highlight and click on ListView item in Android programmatically?</title>
-      <link>https://wittchen.io/posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</link>
+      <link>https://wittchen.io/notes/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</link>
       <pubDate>Thu, 06 Mar 2014 21:43:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</guid>
+      <guid>https://wittchen.io/notes/how-to-highlight-and-click-on-listview-item-in-android-programmatically/</guid>
       <description>&lt;p&gt;There are many approaches concerning selecting items on Android&amp;rsquo;s ListView. Unfortunately most of them don&amp;rsquo;t work. I was struggling with this problem for some time and decided to publish my solution, which is actually quite easy.&lt;/p&gt;
 &lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
 &lt;p&gt;I want to highlight item on a ListView programmatically (in a source code - without touching item on the screen).
@@ -464,24 +464,24 @@ I also want to click on item of the ListView programmatically.&lt;/p&gt;
     </item>
     <item>
       <title>How to read contacts in Android device using ContentResolver?</title>
-      <link>https://wittchen.io/posts/how-to-read-contacts-in-android-device-using-contentresolver/</link>
+      <link>https://wittchen.io/notes/how-to-read-contacts-in-android-device-using-contentresolver/</link>
       <pubDate>Sun, 02 Mar 2014 22:23:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/how-to-read-contacts-in-android-device-using-contentresolver/</guid>
+      <guid>https://wittchen.io/notes/how-to-read-contacts-in-android-device-using-contentresolver/</guid>
       <description>&lt;p&gt;With &lt;a href=&#34;http://developer.android.com/guide/topics/providers/content-providers.html&#34;&gt;Content Providers&lt;/a&gt; we can access data stored by Android system applications. Popular example of using Content Provider is retrieving contact list from the smartphone. We can also access Calendar or create our own Content Provider. More information about that can be found in documentation of Android. If we want to access Content Provider, we can use &lt;a href=&#34;http://developer.android.com/reference/android/content/ContentResolver.html&#34;&gt;Content Resolver&lt;/a&gt; in our application&amp;rsquo;s context.&lt;/p&gt;
 &lt;p&gt;In this example, we will access contact list. First of all, it’s good to create Contact entity class, which will be model of our data.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Avoiding OutOfMemory Error while loading large Bitmaps in Android UI</title>
-      <link>https://wittchen.io/posts/avoiding-outofmemory-error-while-loading-large-bitmaps-in-android-ui/</link>
+      <link>https://wittchen.io/notes/avoiding-outofmemory-error-while-loading-large-bitmaps-in-android-ui/</link>
       <pubDate>Sun, 23 Feb 2014 13:34:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/avoiding-outofmemory-error-while-loading-large-bitmaps-in-android-ui/</guid>
+      <guid>https://wittchen.io/notes/avoiding-outofmemory-error-while-loading-large-bitmaps-in-android-ui/</guid>
       <description>&lt;p&gt;Sometimes we may encounter an error connected with loading too large Bitmaps into Android UI. In such cases, we may receive &lt;code&gt;OutOfMemoryError&lt;/code&gt; in stack trace. In Android, we are working with limited memory and we shouldn&amp;rsquo;t load images with full resolution into UI. These images should be scaled down in order to save memory and increase performance of the application. It&amp;rsquo;s very well described in official Android documentation in section &lt;a href=&#34;http://developer.android.com/training/displaying-bitmaps/load-bitmap.html&#34; title=&#34;Loading Large Bitmaps Efficiently&#34;&gt;Loading Large Bitmaps Efficiently&lt;/a&gt;. It&amp;rsquo;s worth reading. We can deal with memory problem in three easy steps:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Asynchronous loading and caching bitmaps with Volley</title>
-      <link>https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/</link>
+      <link>https://wittchen.io/notes/asynchronous-loading-and-caching-bitmaps-with-volley/</link>
       <pubDate>Mon, 26 Aug 2013 23:37:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/asynchronous-loading-and-caching-bitmaps-with-volley/</guid>
+      <guid>https://wittchen.io/notes/asynchronous-loading-and-caching-bitmaps-with-volley/</guid>
       <description>&lt;p&gt;We can use &lt;a href=&#34;https://android.googlesource.com/platform/frameworks/volley/&#34;&gt;Volley&lt;/a&gt; library from Google for very clean, simple and easy loading of the images from Internet. Volley uses &lt;a href=&#34;http://developer.android.com/reference/android/util/LruCache.html&#34;&gt;LRU cache&lt;/a&gt;, so first of all, we need to create BitmapLruCache class extending LruCache class.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nn&#34;&gt;com.github.volley.example.toolbox&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
@@ -516,16 +516,16 @@ I also want to click on item of the ListView programmatically.&lt;/p&gt;
     </item>
     <item>
       <title>How to change Fragment layout on orientation change?</title>
-      <link>https://wittchen.io/posts/how-to-change-fragment-layout-on-orientation-change/</link>
+      <link>https://wittchen.io/notes/how-to-change-fragment-layout-on-orientation-change/</link>
       <pubDate>Thu, 15 Aug 2013 22:50:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/how-to-change-fragment-layout-on-orientation-change/</guid>
+      <guid>https://wittchen.io/notes/how-to-change-fragment-layout-on-orientation-change/</guid>
       <description>&lt;p&gt;When we work with Activities in Android, defining different layouts for different screen orientations is easy. The only thing we need to do, is to create two &lt;code&gt;*.xml&lt;/code&gt; files with the same name for layouts in two separate directories (&lt;em&gt;res/layout/&lt;/em&gt; and &lt;em&gt;res/layout-land/&lt;/em&gt;). In &lt;a href=&#34;http://developer.android.com/guide/components/fragments.html&#34;&gt;Fragments&lt;/a&gt; it&amp;rsquo;s not that easy. In such case, we need to perform additional operations in order to achieve our goal. Fragment in Android is not re-inflated on configuration change, but we can recreate layout and repopulate view manually. We need to create two layouts for different orientations of the screen in the same way as for Activity:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixing bug with dissappearing map overlay after zoom in Android</title>
-      <link>https://wittchen.io/posts/fixing-bug-with-dissappearing-map-overlay-after-zoom-in-android/</link>
+      <link>https://wittchen.io/notes/fixing-bug-with-dissappearing-map-overlay-after-zoom-in-android/</link>
       <pubDate>Mon, 21 Jan 2013 22:16:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/fixing-bug-with-dissappearing-map-overlay-after-zoom-in-android/</guid>
+      <guid>https://wittchen.io/notes/fixing-bug-with-dissappearing-map-overlay-after-zoom-in-android/</guid>
       <description>&lt;p&gt;In Android 3.0 – HoneyComb (API 11) or higher occurs specific bug connected with map overlay. When we draw overlay on the map (e.g. routes, directions or polylines) after zooming to particular level, overlay disappear unexpectedly. We can fix this bug very easily by disabling hardware acceleration for drawing overlays. Below, you can see exemplary code snippet with map injected by RoboGuice and disabled hardware acceleration. Changing way of drawing overlays should fix the bug.&lt;/p&gt;</description>
     </item>
   </channel>

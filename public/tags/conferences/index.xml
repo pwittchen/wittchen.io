@@ -10,23 +10,23 @@
     <atom:link href="https://wittchen.io/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brain-Computer Interfaces - Science Fiction or Reality?</title>
-      <link>https://wittchen.io/posts/bci-sci-fi-or-reality-oredev-2018/</link>
+      <link>https://wittchen.io/notes/bci-sci-fi-or-reality-oredev-2018/</link>
       <pubDate>Wed, 21 Nov 2018 21:59:06 +0000</pubDate>
-      <guid>https://wittchen.io/posts/bci-sci-fi-or-reality-oredev-2018/</guid>
+      <guid>https://wittchen.io/notes/bci-sci-fi-or-reality-oredev-2018/</guid>
       <description>&lt;p&gt;Recently, I had an opportunity to speak at the software development conference abroad for the first time. I visited Malmö in Sweden and gave a talk during the &lt;a href=&#34;http://oredev.org/&#34;&gt;Øredev&lt;/a&gt; 2018 conference. The main theme of the conference was Deus Ex Machina, so I decided to adapt to this topic and prepared presentation about Brain-Computer Interfaces, which is my interest since the end of my studies at the Silesian University of Technology where I wrote a Master Thesis about similar topic. Before the conference, I prepared the same presentation in Polish during the SAP Lunch Talks for the colleagues from my company in Gliwice, Poland.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Quality Meetup no. 15 - Fixing a billion dollar mistake</title>
-      <link>https://wittchen.io/posts/quality-meetup-15-fixing-a-billion-dollar-mistake/</link>
+      <link>https://wittchen.io/notes/quality-meetup-15-fixing-a-billion-dollar-mistake/</link>
       <pubDate>Fri, 09 Feb 2018 00:46:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/quality-meetup-15-fixing-a-billion-dollar-mistake/</guid>
+      <guid>https://wittchen.io/notes/quality-meetup-15-fixing-a-billion-dollar-mistake/</guid>
       <description>&lt;p&gt;On the 8th of February 2018, during &lt;a href=&#34;https://www.meetup.com/Quality-Meetup/events/247187036/&#34;&gt;Quality Meetup #15&lt;/a&gt;, I gave a presentation titled &amp;ldquo;Fixing a billion dollar mistake&amp;rdquo;. Tony Hoare introduced Null Reference w in ALGOL language in 1965. He calls this decision a &amp;ldquo;billion dollar mistake&amp;rdquo;. It was so easy to implement and probably it caused a loss of millions of dollars due to the mistakes done in the software over the 40 years. During the time, people came up with different ideas of solving that problem with software libraries, good programming practices, static code analysis and compile time code analysis. Moreover, we have new programming languages with null safety features. During the presentation I&amp;rsquo;ve shown how to deal with the null reference problem in the JVM projects no matter if it&amp;rsquo;s a greenfield solution or legacy code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>DroidCon Poland 2017 - Is your app really connected?</title>
-      <link>https://wittchen.io/posts/droidcon-poland-2017-is-your-app-really-connected/</link>
+      <link>https://wittchen.io/notes/droidcon-poland-2017-is-your-app-really-connected/</link>
       <pubDate>Sat, 02 Dec 2017 01:39:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/droidcon-poland-2017-is-your-app-really-connected/</guid>
+      <guid>https://wittchen.io/notes/droidcon-poland-2017-is-your-app-really-connected/</guid>
       <description>&lt;p&gt;Yesterday, I gave a presentation about connectivity in the Android apps during the &lt;a href=&#34;http://droidcon.pl&#34;&gt;DroidCon Poland 2017&lt;/a&gt; Conference in Kraków.&lt;/p&gt;
 &lt;p&gt;Below, you can see slides from this presentation.&lt;/p&gt;
 
@@ -46,24 +46,24 @@
     </item>
     <item>
       <title>5 ways to attend expensive IT conferences for (almost) free</title>
-      <link>https://wittchen.io/posts/5-ways-to-attend-expansive-it-conferences-for-almost-free/</link>
+      <link>https://wittchen.io/notes/5-ways-to-attend-expansive-it-conferences-for-almost-free/</link>
       <pubDate>Thu, 02 Nov 2017 20:02:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/5-ways-to-attend-expansive-it-conferences-for-almost-free/</guid>
+      <guid>https://wittchen.io/notes/5-ways-to-attend-expansive-it-conferences-for-almost-free/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In the past months, I&amp;rsquo;ve attended a few conferences and meetups related to IT. I also plan to attend a few more in the last quarter of the year as a speaker. I&amp;rsquo;d like to show you a few tips, which can encourage you to attend such events, be more involved in them and spend some time away from your desk ;-). If you are working in a software company, in the most cases you could treat going for a conference as a non-customer facing business trip, so your regular days off will be safe and can be used for your personal plans and holidays :-). &lt;strong&gt;I tried all of the methods described in this article&lt;/strong&gt; both in Poland and abroad, so I can tell you they&amp;rsquo;re confirmed in practice.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Meet and Code 2017 - &#34;Git – tips &amp; tricks&#34; presentation</title>
-      <link>https://wittchen.io/posts/git-tips-and-tricks-meet-and-code-gliwice/</link>
+      <link>https://wittchen.io/notes/git-tips-and-tricks-meet-and-code-gliwice/</link>
       <pubDate>Sat, 21 Oct 2017 10:36:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/git-tips-and-tricks-meet-and-code-gliwice/</guid>
+      <guid>https://wittchen.io/notes/git-tips-and-tricks-meet-and-code-gliwice/</guid>
       <description>&lt;p&gt;Recently, during &lt;a href=&#34;http://media30.pl/2017/10/06/meet-and-code-spotkajmy-sie-w-gliwicach/&#34;&gt;Meet &amp;amp; Code&lt;/a&gt; event organized by &lt;a href=&#34;http://media30.pl/&#34;&gt;Media 3.0&lt;/a&gt; and &lt;a href=&#34;https://www.hybris.com/en/&#34;&gt;SAP Hybris&lt;/a&gt;, I&amp;rsquo;ve gave a talk for university and high-school students about basics of Git. Presentation was titled &lt;a href=&#34;https://speakerdeck.com/pwittchen/git-tips-and-tricks&#34;&gt;Git - tips &amp;amp; tricks&lt;/a&gt; and was organized at the Silesian Univeristy of Technology in the AEI Department where I was studying a few years ago. Presentation covered quite essential usage of Git, which could be helpful for people who are planning to learn it from the scratch. Nevertheless, in the talk I included a few tips, which could be applied even by more advanced users in their daily work. You can view slides from this presentation below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>JDD 2017 - Get ready for java.util.concurrent.Flow! - summary</title>
-      <link>https://wittchen.io/posts/jdd-2017-juc-flow-presentation-summary/</link>
+      <link>https://wittchen.io/notes/jdd-2017-juc-flow-presentation-summary/</link>
       <pubDate>Thu, 05 Oct 2017 16:19:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/jdd-2017-juc-flow-presentation-summary/</guid>
+      <guid>https://wittchen.io/notes/jdd-2017-juc-flow-presentation-summary/</guid>
       <description>&lt;p&gt;Recently on the &lt;a href=&#34;http://jdd.org.pl&#34;&gt;JDD 2017&lt;/a&gt; conference, I gave a presentation regarding introduction to Reactive Streams standard in Java 9. I also talked about existing implementations of this standard with the strongest focus on RxJava2 and created simple Reactive Streams implementation in pure Java 9 during the presentation. Below, you can find slides from this talk.&lt;/p&gt;
 
 
@@ -77,9 +77,9 @@
     </item>
     <item>
       <title>How to make open-source projects, which people want to use</title>
-      <link>https://wittchen.io/posts/how-to-make-open-source-projects-which-people-want-to-use/</link>
+      <link>https://wittchen.io/notes/how-to-make-open-source-projects-which-people-want-to-use/</link>
       <pubDate>Sat, 01 Apr 2017 17:22:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/how-to-make-open-source-projects-which-people-want-to-use/</guid>
+      <guid>https://wittchen.io/notes/how-to-make-open-source-projects-which-people-want-to-use/</guid>
       <description>&lt;p&gt;Today at &lt;a href=&#34;http://careercon.pl/konferencja/kariera-it-katowice-01-04-2017/&#34;&gt;Kariera IT&lt;/a&gt; conference in Katowice, Poland, I presented talk explaining &lt;strong&gt;how to make open-source projects, which people want to use&lt;/strong&gt; from my perspective. Below, you can find slides from my presentation. Thank you all for the attendance, interesting questions and organizers for inviting me. I hope you learned something new. Of course, any constructive feedback for this talk will be appreciated :).&lt;/p&gt;
 
 
@@ -92,16 +92,16 @@
     </item>
     <item>
       <title>Reactive Live Coding during GDG DevFest 2015 in Poland</title>
-      <link>https://wittchen.io/posts/reactive-live-coding-gdg-devfest-pl-2015/</link>
+      <link>https://wittchen.io/notes/reactive-live-coding-gdg-devfest-pl-2015/</link>
       <pubDate>Sun, 29 Nov 2015 20:16:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/reactive-live-coding-gdg-devfest-pl-2015/</guid>
+      <guid>https://wittchen.io/notes/reactive-live-coding-gdg-devfest-pl-2015/</guid>
       <description>&lt;p&gt;I was asked to be a speaker during &lt;a href=&#34;http://devfest.pl&#34;&gt;GDG DevFest&lt;/a&gt; 2015 conference in Warsaw, Poland. Of course, I accepted this invitation and prepared presentation titled &amp;ldquo;Reactive Live Coding&amp;rdquo;. Presentation covered basics of Reactive Programming, RxJava and RxAndroid. Besides my talk I&amp;rsquo;ve done live coding to show how to use mentioned libraries and basics principles of Reactive Programming in real life. I had only 20 minutes for all of that, so my time-box was very limited. Being a speaker at conference was really interesting and challenging experience, which I haven&amp;rsquo;t had before. Moreover, I could meet a lot of interesting people and hear very inspiring talks covering different topics. You can check activity from conference by browsing &lt;a href=&#34;https://twitter.com/search?q=%23devfest15pl&#34;&gt;#devfest15pl&lt;/a&gt; hashtag on Twitter and &lt;a href=&#34;https://www.facebook.com/events/595578613913819/&#34;&gt;Facebook event&lt;/a&gt;. You can also check official website of the conference at &lt;a href=&#34;http://devfest.pl&#34;&gt;devfest.pl&lt;/a&gt;. Slides from my presentation are available below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Get past the syntax - the real scare is in the semantics</title>
-      <link>https://wittchen.io/posts/get-past-the-syntax/</link>
+      <link>https://wittchen.io/notes/get-past-the-syntax/</link>
       <pubDate>Mon, 06 Jul 2015 15:37:00 +0000</pubDate>
-      <guid>https://wittchen.io/posts/get-past-the-syntax/</guid>
+      <guid>https://wittchen.io/notes/get-past-the-syntax/</guid>
       <description>&lt;p&gt;Dr. &lt;a href=&#34;http://agiledeveloper.com/&#34;&gt;Venkat Subramaniam&lt;/a&gt; presented an interesting point of view during his talk at Devoxx conference. Programmers, who start learning a new language, often complain about syntax. They focus on using available keywords and constructions instead of trying to understand their meaning and purpose. Programmers also have their own habits. That’s why Java has similar syntax to C and C++. Creators of Java designed new language with syntax, which was familiar to them, with significant improvements. Perception of the world is based on experience and things we get used to. The same rule applies to programming languages. Most software developers are familiar with imperative programming paradigm. They often focus on describing computation in terms of statements and changing program state. This approach leads us to necessity of creating a lot of temporary variables and boilerplate code. Let’s have a look at the following code snippet:&lt;/p&gt;</description>
     </item>
   </channel>
