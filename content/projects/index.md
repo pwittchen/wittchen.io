@@ -19,6 +19,9 @@ draft: true
 - https://github.com/pwittchen/neurosky-android-sdk
   - Java, Android
   - SDK for the NeuroSky MindWave Mobile Brainwave Sensing Headset
+- https://github.com/pwittchen/ReactiveSensors
+  - Java, Android
+  - library monitoring device hardware sensors with RxJava
 - https://github.com/pwittchen/spotify-cli-linux
   - Python, Linux
   - A command line interface to Spotify on Linux

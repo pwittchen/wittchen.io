@@ -40,6 +40,12 @@
 &lt;li&gt;SDK for the NeuroSky MindWave Mobile Brainwave Sensing Headset&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pwittchen/ReactiveSensors&#34;&gt;https://github.com/pwittchen/ReactiveSensors&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Java, Android&lt;/li&gt;
+&lt;li&gt;library monitoring device hardware sensors with RxJava&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;https://github.com/pwittchen/spotify-cli-linux&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;Python, Linux&lt;/li&gt;
