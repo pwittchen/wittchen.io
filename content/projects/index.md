@@ -6,7 +6,7 @@ draft: true
 
 ## Personal
 
-### Web apps and SaaS
+### Web apps
 
 - link: https://varun.surf
   - source: https://github.com/pwittchen/varun.surf
