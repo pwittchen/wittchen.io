@@ -1,0 +1,73 @@
+# wittchen.io
+
+Personal website and blog of Piotr Wittchen
+
+> https://wittchen.io/
+
+## About
+
+Piotr Wittchen is a Software Engineer from Poland who creates software for mobile devices, servers, web and Linux. He graduated with MS and Engineering degree in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups.
+
+## Main Sections
+
+### Notes (Blog Posts)
+Technical articles about software development, programming, Linux, Android, and various technical topics.
+
+> https://wittchen.io/notes/
+
+### Talks
+Conference and meetup presentations related to software development.
+
+> https://wittchen.io/talks/
+
+### Projects
+Open-source projects and commercial work portfolio.
+
+> https://wittchen.io/projects/
+
+Notable open-source projects:
+- ReactiveNetwork - Android library listening network connection state and Internet connectivity
+- NetworkEvents - Android library listening network connection state and WiFi signal strength
+- neurosky-android-sdk - SDK for the NeuroSky MindWave Mobile Brainwave Sensing Headset
+- RxBiometric - RxJava and RxKotlin bindings for Biometric Prompt
+- spotify-cli-linux - A command line interface to Spotify on Linux
+- jsvs - JavaScript Vulnerability Scanner in Rust
+- varun.surf - Weather dashboard for kitesurfers
+
+### Contact
+Get in touch with Piotr Wittchen.
+
+> https://wittchen.io/contact/
+
+## Technologies & Topics
+
+- **Programming Languages**: Java, Kotlin, Python, Rust
+- **Mobile Development**: Android, mobile apps
+- **Systems**: Linux, Arch Linux
+- **Tools & Frameworks**: Spring Boot, RxJava, Docker, Hugo
+- **Topics**: Software Engineering, Software Architecture, open-source, BCI (Brain-Computer Interfaces), reactive programming, web development
+
+## Social Links
+
+- Email: piotr@wittchen.io
+- LinkedIn: https://www.linkedin.com/in/pwittchen/
+- GitHub: https://github.com/pwittchen
+
+## Additional Features
+
+- Search functionality available at: https://wittchen.io/search/
+- Tags for categorizing content: https://wittchen.io/tags/
+- RSS feed available for blog posts
+- Dark/light theme toggle
+
+## Content Types
+
+The website primarily contains:
+1. Technical blog posts (notes) covering software development topics
+2. Conference talk slides and materials
+3. Project documentation and showcases
+4. Personal portfolio and professional information
+
+## Stack
+
+Built with Hugo static site generator using the PaperMod theme.
