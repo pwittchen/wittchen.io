@@ -78,6 +78,12 @@
 &lt;li&gt;A command line interface to Spotify on Linux&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;source: &lt;a href=&#34;https://github.com/pwittchen/soundsep&#34;&gt;https://github.com/pwittchen/soundsep&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;Script for separating music, vocals and instruments from the youtube songs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;source: &lt;a href=&#34;https://github.com/pwittchen/jsvs&#34;&gt;https://github.com/pwittchen/jsvs&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;Rust&lt;/li&gt;
