@@ -44,9 +44,9 @@ draft: true
 - source: https://github.com/pwittchen/spotify-cli-linux
   - Python, Linux
   - A command line interface to Spotify on Linux
-- source: https://github.com/pwittchen/soundsep
+- source: https://github.com/pwittchen/demix
   - Python
-  - Script for separating music, vocals and instruments from the youtube songs
+  - script, which separates audio from songs into stems (vocals, instruments)
 - source: https://github.com/pwittchen/jsvs
   - Rust
   - JavaScript Vulnerability Scanner
