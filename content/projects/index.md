@@ -11,7 +11,7 @@ draft: true
 - link: https://varun.surf
   - source: https://github.com/pwittchen/varun.surf
   - Java, Spring Boot, JS, Docker, Bash, Cloudflare
-  - weather dashboard for kitesurfers
+  - Kite spots database and weather dashboard for kitesurfers
 
 ### Tools and libraries
 
@@ -19,10 +19,10 @@ draft: true
 
 - source: https://github.com/pwittchen/ReactiveNetwork
   - Java, Android
-  - library listening network connection state and Internet connectivity
+  - Library listening network connection state and Internet connectivity
 - source: https://github.com/pwittchen/NetworkEvents
   - Java, Android
-  - library listening network connection state and change of the WiFi signal strength
+  - Library listening network connection state and change of the WiFi signal strength
 - source: https://github.com/pwittchen/neurosky-android-sdk
   - Java, Android
   - SDK for the NeuroSky MindWave Mobile Brainwave Sensing Headset
@@ -31,13 +31,13 @@ draft: true
   - RxJava and RxKotlin bindings for Biometric Prompt
 - source: https://github.com/pwittchen/swipe
   - Java, Android
-  - detects swipe events on Android
+  - Detects swipe events on Android
 - source: https://github.com/pwittchen/prefser
   - Java, Android
-  - wrapper for Android SharedPreferences with object serialization
+  - Wrapper for Android SharedPreferences with object serialization
 - source: https://github.com/pwittchen/ReactiveSensors
   - Java, Android
-  - library monitoring device hardware sensors with RxJava
+  - Library monitoring device hardware sensors with RxJava
 
 #### Others
 
@@ -46,7 +46,7 @@ draft: true
   - A command line interface to Spotify on Linux
 - source: https://github.com/pwittchen/demix
   - Python
-  - script, which separates audio from songs into stems (vocals, instruments)
+  - Script, which separates audio from songs into stems (vocals, instruments)
 - source: https://github.com/pwittchen/jsvs
   - Rust
   - JavaScript Vulnerability Scanner

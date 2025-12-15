@@ -17,6 +17,18 @@
     gap: 10px;
 }
 
+.profile-social-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.profile-social-row #theme-toggle {
+    font-size: 26px;
+    margin: auto 4px;
+    padding-top: 2px;
+}
+
 .profile img {
     border-radius: 50%;
 }
