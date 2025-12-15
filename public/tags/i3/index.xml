@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>I3 on Piotr Wittchen</title>
-    <link>https://wittchen.io/tags/i3/</link>
+    <link>http://localhost:1313/tags/i3/</link>
     <description>Recent content in I3 on Piotr Wittchen</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate>
-    <atom:link href="https://wittchen.io/tags/i3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/i3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic wallpaper for i3</title>
-      <link>https://wittchen.io/notes/dynamic-wallpaper-for-i3/</link>
+      <link>http://localhost:1313/notes/dynamic-wallpaper-for-i3/</link>
       <pubDate>Sun, 29 Mar 2020 20:29:36 +0000</pubDate>
-      <guid>https://wittchen.io/notes/dynamic-wallpaper-for-i3/</guid>
+      <guid>http://localhost:1313/notes/dynamic-wallpaper-for-i3/</guid>
       <description>&lt;p&gt;Some time ago, I was using macOS. The thing I liked about this OS since Mojave version was the dynamic wallpaper feature. Wallpaper representing picture of the Mojave desert in California was dynamically changing during the day. In the morning, we could see the dawn and sunrise, later picture during the midday, in the evening, desert during the dusk and finally picture at night. I liked the fact that wallpaper were adjusting to the time of the day. I wanted to have the same thing on my Linux. Luckily, on Arch and i3, it&amp;rsquo;s pretty easy to achieve.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spotify song in i3 status bar</title>
-      <link>https://wittchen.io/notes/spotify-song-in-i3-status-bar/</link>
+      <link>http://localhost:1313/notes/spotify-song-in-i3-status-bar/</link>
       <pubDate>Thu, 20 Feb 2020 11:29:13 +0000</pubDate>
-      <guid>https://wittchen.io/notes/spotify-song-in-i3-status-bar/</guid>
+      <guid>http://localhost:1313/notes/spotify-song-in-i3-status-bar/</guid>
       <description>&lt;p&gt;While customizing my i3 status bar, I wanted to have currently played Spotify song in it. Some time ago, I created an open source script in Python called &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli-linux&lt;/a&gt; and I wanted to use it. When we want to put something custom into the i3 status bar, the easiest way to do it, is to save data into the file and then read the file.&lt;/p&gt;
 &lt;p&gt;I created the following config inside &lt;code&gt;~/.config/i3status/config&lt;/code&gt; file:&lt;/p&gt;</description>
     </item>
     <item>
       <title>I switched to i3 WM</title>
-      <link>https://wittchen.io/notes/i-switched-to-i3wm/</link>
+      <link>http://localhost:1313/notes/i-switched-to-i3wm/</link>
       <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
-      <guid>https://wittchen.io/notes/i-switched-to-i3wm/</guid>
+      <guid>http://localhost:1313/notes/i-switched-to-i3wm/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it. I also read some part of &lt;a href=&#34;https://i3wm.org/docs/&#34;&gt;docs&lt;/a&gt; and &lt;a href=&#34;https://i3wm.org/docs/userguide.html&#34;&gt;user&amp;rsquo;s guide&lt;/a&gt; to customize my configuration. Official docs of i3 are really good.&lt;/p&gt;</description>
     </item>

@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ubuntu on Piotr Wittchen</title>
-    <link>https://wittchen.io/tags/ubuntu/</link>
+    <link>http://localhost:1313/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on Piotr Wittchen</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Aug 2015 13:41:00 +0000</lastBuildDate>
-    <atom:link href="https://wittchen.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Geary - neat e-mail client for Linux</title>
-      <link>https://wittchen.io/notes/geary-email-client-for-linux/</link>
+      <link>http://localhost:1313/notes/geary-email-client-for-linux/</link>
       <pubDate>Sat, 01 Aug 2015 13:41:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/geary-email-client-for-linux/</guid>
+      <guid>http://localhost:1313/notes/geary-email-client-for-linux/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. &lt;a href=&#34;https://wiki.gnome.org/Apps/Geary&#34;&gt;Geary&lt;/a&gt; seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message. Unfortunately, we need it running in order to see notifications, which is small drawback. Nevertheless it works quite good, so I&amp;rsquo;m going to give it a try. Install it with the following command:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mutate - yet another Spotlight for Ubuntu</title>
-      <link>https://wittchen.io/notes/mutate-yet-another-spotlight-for-ubuntu/</link>
+      <link>http://localhost:1313/notes/mutate-yet-another-spotlight-for-ubuntu/</link>
       <pubDate>Mon, 06 Apr 2015 12:26:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/mutate-yet-another-spotlight-for-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/mutate-yet-another-spotlight-for-ubuntu/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called &lt;a href=&#34;https://github.com/qdore/Mutate&#34;&gt;Mutate&lt;/a&gt;. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;mutate-1&#34; loading=&#34;lazy&#34; src=&#34;https://wittchen.io/posts/2015/mutate/mutate-1.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;mutate-1&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/2015/mutate/mutate-1.jpg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 &lt;p&gt;We can install it with the following commands:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo add-apt-repository ppa:mutate/ppa
@@ -34,9 +34,9 @@ sudo apt-get install mutate
     </item>
     <item>
       <title>Making Ubuntu faster</title>
-      <link>https://wittchen.io/notes/making-ubuntu-faster/</link>
+      <link>http://localhost:1313/notes/making-ubuntu-faster/</link>
       <pubDate>Sat, 28 Mar 2015 16:43:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/making-ubuntu-faster/</guid>
+      <guid>http://localhost:1313/notes/making-ubuntu-faster/</guid>
       <description>&lt;p&gt;Unity desktop environment consumes lot of computer&amp;rsquo;s memory. I&amp;rsquo;ve recently found good article about &lt;a href=&#34;http://www.techdrivein.com/2013/03/4-simple-tweaks-to-improve-unity-performance-ubuntu.html&#34;&gt;4 simple tweaks to improve Unity performance on Ubuntu&lt;/a&gt;. Here is the short summary of that tweaks:&lt;/p&gt;
 &lt;h2 id=&#34;remove-unwanted-lenses&#34;&gt;Remove Unwanted Lenses&lt;/h2&gt;
 &lt;p&gt;It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.&lt;/p&gt;
@@ -52,29 +52,29 @@ sudo apt-get install mutate
     </item>
     <item>
       <title>Synapse Indicator - Spotlight for Ubuntu</title>
-      <link>https://wittchen.io/notes/synapse-indicator-spotlight-for-ubuntu/</link>
+      <link>http://localhost:1313/notes/synapse-indicator-spotlight-for-ubuntu/</link>
       <pubDate>Thu, 25 Dec 2014 17:06:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/synapse-indicator-spotlight-for-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/synapse-indicator-spotlight-for-ubuntu/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.&lt;/p&gt;
 &lt;h2 id=&#34;synapse&#34;&gt;Synapse&lt;/h2&gt;
-&lt;p&gt;Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options. &lt;img alt=&#34;synapse&#34; loading=&#34;lazy&#34; src=&#34;https://wittchen.io/posts/2014/synapse-indicator-spotlight-for-ubuntu/synapse.jpg&#34;&gt; Synapse can be installed with the following commands:&lt;/p&gt;</description>
+&lt;p&gt;Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options. &lt;img alt=&#34;synapse&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/2014/synapse-indicator-spotlight-for-ubuntu/synapse.jpg&#34;&gt; Synapse can be installed with the following commands:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Indicators for Ubuntu</title>
-      <link>https://wittchen.io/notes/indicators-for-ubuntu/</link>
+      <link>http://localhost:1313/notes/indicators-for-ubuntu/</link>
       <pubDate>Sun, 07 Sep 2014 20:47:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/indicators-for-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/indicators-for-ubuntu/</guid>
       <description>&lt;p&gt;I recently found an article about &lt;a href=&#34;http://www.noobslab.com/2013/12/best-useful-indicators-collection-for.html&#34;&gt;Best Useful Indicators Collection for Ubuntu&lt;/a&gt;. Indicators are very useful feature of the Ubuntu and Unity. Ubuntu has some default indicators, but we can add new indicators if we want to. Mentioned article contains list of many indicators, but personally I prefer and use only a few of them. Here are my favorites:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;ubuntu_indicators&#34; loading=&#34;lazy&#34; src=&#34;https://wittchen.io/posts/2014/indicators-for-ubuntu/ubuntu_indicators.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;ubuntu_indicators&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/2014/indicators-for-ubuntu/ubuntu_indicators.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;multi-load-indicator&#34;&gt;Multi Load indicator&lt;/h2&gt;
 &lt;p&gt;Nice thing. This indicator monitors system resources. E.g. usage of the processor, RAM, disk and network. We can customize it and set refresh interval. I found default low interval like 500 ms very disturbing, so I changed it to 5000 ms and it&amp;rsquo;s ok for me. In the screenshot above, you can see blue chart for CPU usage, green chart for RAM usage and yellow chart for network usage. You can change, configure and customize it as you want.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software for common users on Ubuntu</title>
-      <link>https://wittchen.io/notes/software-for-common-users-on-ubuntu/</link>
+      <link>http://localhost:1313/notes/software-for-common-users-on-ubuntu/</link>
       <pubDate>Mon, 18 Aug 2014 16:17:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/software-for-common-users-on-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/software-for-common-users-on-ubuntu/</guid>
       <description>&lt;p&gt;In this article, I&amp;rsquo;ll describe Ubuntu software for common users, which I personally use and which could be helpful on daily basis. Ubuntu software dedicated to programmers AKA developers will be described in separate article.&lt;/p&gt;
 &lt;h2 id=&#34;chrome&#34;&gt;Chrome&lt;/h2&gt;
 &lt;p&gt;In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:&lt;/p&gt;
@@ -86,9 +86,9 @@ sudo dpkg -i google-chrome*.deb
     </item>
     <item>
       <title>Ubuntu system boot problem</title>
-      <link>https://wittchen.io/notes/ubuntu-system-boot-problem/</link>
+      <link>http://localhost:1313/notes/ubuntu-system-boot-problem/</link>
       <pubDate>Sun, 17 Aug 2014 20:05:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/ubuntu-system-boot-problem/</guid>
+      <guid>http://localhost:1313/notes/ubuntu-system-boot-problem/</guid>
       <description>&lt;h2 id=&#34;description-of-the-problem&#34;&gt;Description of the problem&lt;/h2&gt;
 &lt;p&gt;Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: &lt;code&gt;exit&lt;/code&gt; and system started normally, but this error occurred every time after reboot, so I decided to fix it.&lt;/p&gt;
 &lt;h2 id=&#34;fixing-the-problem&#34;&gt;Fixing the problem&lt;/h2&gt;

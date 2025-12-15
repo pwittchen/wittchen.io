@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Git on Piotr Wittchen</title>
-    <link>https://wittchen.io/tags/git/</link>
+    <link>http://localhost:1313/tags/git/</link>
     <description>Recent content in Git on Piotr Wittchen</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sat, 21 Jul 2018 11:21:54 +0000</lastBuildDate>
-    <atom:link href="https://wittchen.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Different ways of squashing commits</title>
-      <link>https://wittchen.io/notes/squashing-commits/</link>
+      <link>http://localhost:1313/notes/squashing-commits/</link>
       <pubDate>Sat, 21 Jul 2018 11:21:54 +0000</pubDate>
-      <guid>https://wittchen.io/notes/squashing-commits/</guid>
+      <guid>http://localhost:1313/notes/squashing-commits/</guid>
       <description>&lt;p&gt;While creating a Pull Requests it&amp;rsquo;s good to squash all of our intermediate commits into one to avoid clutter in the git log, simplify analysis and allow for simple code revert when necessary.&lt;/p&gt;
 &lt;h2 id=&#34;solution-1&#34;&gt;Solution #1&lt;/h2&gt;
 &lt;p&gt;Some time ago I&amp;rsquo;ve found project &lt;a href=&#34;http://rebaseandsqua.sh/&#34;&gt;http://rebaseandsqua.sh/&lt;/a&gt; made by Jake Wharton. It&amp;rsquo;s really useful, handy and allows us to rebase and squash commits quite easily.&lt;/p&gt;
@@ -22,9 +22,9 @@
     </item>
     <item>
       <title>Avoiding merging master to master branch in Git</title>
-      <link>https://wittchen.io/notes/avoiding-merging-master-to-master/</link>
+      <link>http://localhost:1313/notes/avoiding-merging-master-to-master/</link>
       <pubDate>Sun, 25 Mar 2018 13:35:06 +0000</pubDate>
-      <guid>https://wittchen.io/notes/avoiding-merging-master-to-master/</guid>
+      <guid>http://localhost:1313/notes/avoiding-merging-master-to-master/</guid>
       <description>&lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;
 &lt;p&gt;If you are working with Git Version Control System, probably you have seen a commit messages in your git log like:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Merge branch &amp;#39;master&amp;#39; to &amp;#39;master&amp;#39;
@@ -34,16 +34,16 @@ In this article I&amp;rsquo;m going to explain why is it happenning and how to a
     </item>
     <item>
       <title>Meet and Code 2017 - &#34;Git – tips &amp; tricks&#34; presentation</title>
-      <link>https://wittchen.io/notes/git-tips-and-tricks-meet-and-code-gliwice/</link>
+      <link>http://localhost:1313/notes/git-tips-and-tricks-meet-and-code-gliwice/</link>
       <pubDate>Sat, 21 Oct 2017 10:36:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/git-tips-and-tricks-meet-and-code-gliwice/</guid>
+      <guid>http://localhost:1313/notes/git-tips-and-tricks-meet-and-code-gliwice/</guid>
       <description>&lt;p&gt;Recently, during &lt;a href=&#34;http://media30.pl/2017/10/06/meet-and-code-spotkajmy-sie-w-gliwicach/&#34;&gt;Meet &amp;amp; Code&lt;/a&gt; event organized by &lt;a href=&#34;http://media30.pl/&#34;&gt;Media 3.0&lt;/a&gt; and &lt;a href=&#34;https://www.hybris.com/en/&#34;&gt;SAP Hybris&lt;/a&gt;, I&amp;rsquo;ve gave a talk for university and high-school students about basics of Git. Presentation was titled &lt;a href=&#34;https://speakerdeck.com/pwittchen/git-tips-and-tricks&#34;&gt;Git - tips &amp;amp; tricks&lt;/a&gt; and was organized at the Silesian Univeristy of Technology in the AEI Department where I was studying a few years ago. Presentation covered quite essential usage of Git, which could be helpful for people who are planning to learn it from the scratch. Nevertheless, in the talk I included a few tips, which could be applied even by more advanced users in their daily work. You can view slides from this presentation below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Review your changes in the code before the commit</title>
-      <link>https://wittchen.io/notes/review-your-changes-before-the-commit/</link>
+      <link>http://localhost:1313/notes/review-your-changes-before-the-commit/</link>
       <pubDate>Sun, 26 Mar 2017 22:18:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/review-your-changes-before-the-commit/</guid>
+      <guid>http://localhost:1313/notes/review-your-changes-before-the-commit/</guid>
       <description>&lt;p&gt;Most of the people use git as follows.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;they create a feature branch&lt;/li&gt;
@@ -56,9 +56,9 @@ In this article I&amp;rsquo;m going to explain why is it happenning and how to a
     </item>
     <item>
       <title>My approach to Git aliases</title>
-      <link>https://wittchen.io/notes/my-approach-to-git-aliases/</link>
+      <link>http://localhost:1313/notes/my-approach-to-git-aliases/</link>
       <pubDate>Sun, 12 Mar 2017 13:20:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/my-approach-to-git-aliases/</guid>
+      <guid>http://localhost:1313/notes/my-approach-to-git-aliases/</guid>
       <description>&lt;p&gt;While we are working with Version Control Systems like Git, it&amp;rsquo;s good to adapt them to our needs to perform daily work in a more productive way. People often create so-called Git aliases, which are shortcuts for longer commands. E.g. you can edit your &lt;code&gt;.gitconfig&lt;/code&gt; file, which is usually located in your home directory and place a few aliases in the &lt;code&gt;[alias]&lt;/code&gt; section. For example:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[alias]
   ls = log --pretty=format:&amp;#34;%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]&amp;#34; --decorate
@@ -66,9 +66,9 @@ In this article I&amp;rsquo;m going to explain why is it happenning and how to a
     </item>
     <item>
       <title>Working with different Git configs</title>
-      <link>https://wittchen.io/notes/working-with-different-git-configs/</link>
+      <link>http://localhost:1313/notes/working-with-different-git-configs/</link>
       <pubDate>Fri, 10 Mar 2017 19:30:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/working-with-different-git-configs/</guid>
+      <guid>http://localhost:1313/notes/working-with-different-git-configs/</guid>
       <description>&lt;h2 id=&#34;short-introduction&#34;&gt;Short introduction&lt;/h2&gt;
 &lt;p&gt;Sometimes &lt;a href=&#34;http://stackoverflow.com/questions/4220416/can-i-specify-multiple-users-for-myself-in-gitconfig&#34;&gt;people need to specify multiple values&lt;/a&gt; for single &lt;code&gt;.gitconfig&lt;/code&gt; file or they want to share just part of the configuration between two machines. There are different approaches for that. I can show you mine.&lt;/p&gt;
 &lt;h2 id=&#34;different-configs-for-different-operating-systems&#34;&gt;Different configs for different Operating Systems&lt;/h2&gt;
@@ -76,9 +76,9 @@ In this article I&amp;rsquo;m going to explain why is it happenning and how to a
     </item>
     <item>
       <title>Automate boring stuff</title>
-      <link>https://wittchen.io/notes/automate-boring-stuff/</link>
+      <link>http://localhost:1313/notes/automate-boring-stuff/</link>
       <pubDate>Sun, 01 Jan 2017 11:10:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/automate-boring-stuff/</guid>
+      <guid>http://localhost:1313/notes/automate-boring-stuff/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In my current company all the people who perform creative work (mostly programmers) need to prepare so-called PKUP report. PKUP stands for &lt;em&gt;Podwyższone Koszty Uzyskania Przychodu&lt;/em&gt; in the Polish language. It&amp;rsquo;s legal regulation in Poland, which allows paying a lower income tax due to the particular type of work. For the regular employee, it means that he or she will simply get a bit higher salary per month.&lt;/p&gt;
 &lt;h2 id=&#34;how-the-report-looks-in-practice&#34;&gt;How the report looks in practice?&lt;/h2&gt;
@@ -86,9 +86,9 @@ In this article I&amp;rsquo;m going to explain why is it happenning and how to a
     </item>
     <item>
       <title>3 questions about your Git repository</title>
-      <link>https://wittchen.io/notes/3-questions-about-your-git-repo/</link>
+      <link>http://localhost:1313/notes/3-questions-about-your-git-repo/</link>
       <pubDate>Mon, 28 Dec 2015 21:37:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/3-questions-about-your-git-repo/</guid>
+      <guid>http://localhost:1313/notes/3-questions-about-your-git-repo/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Can you answer the following questions about your Git repository?&lt;/p&gt;
 &lt;ol&gt;
@@ -102,24 +102,24 @@ In this article I&amp;rsquo;m going to explain why is it happenning and how to a
     </item>
     <item>
       <title>Checking consistency of git branches</title>
-      <link>https://wittchen.io/notes/checking-consistency-of-git-branches/</link>
+      <link>http://localhost:1313/notes/checking-consistency-of-git-branches/</link>
       <pubDate>Thu, 14 May 2015 15:16:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/checking-consistency-of-git-branches/</guid>
+      <guid>http://localhost:1313/notes/checking-consistency-of-git-branches/</guid>
       <description>&lt;p&gt;Recently I&amp;rsquo;ve created a simple Python script, which checks whether &amp;lsquo;development&amp;rsquo; branch has all changes from &amp;lsquo;master&amp;rsquo; branch in a Git repository. It&amp;rsquo;s important when we work in a &lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git Flow&lt;/a&gt;. Branch inconsistency may occur when change with hot-fix will be committed to &amp;lsquo;master&amp;rsquo; branch and we forget to merge &amp;lsquo;master&amp;rsquo; branch back to &amp;lsquo;development&amp;rsquo; branch to have our hot-fix in a &amp;lsquo;development&amp;rsquo; version of the project as well. We should keep branch consistency to avoid merge conflicts and problems with release of the project in the future. Mentioned script is able to perform necessary validation helping to detect potential problems. Moreover, script can be integrated with the Jenkins CI server and we can execute it from a command line via Jenkins job. When, changes from &amp;lsquo;master&amp;rsquo; won&amp;rsquo;t be merged into &amp;lsquo;development&amp;rsquo;, job will fail. In opposite case, job should finish with a success. In a Jenkins job we need to remember to add the following &lt;em&gt;Additional Behaviours&lt;/em&gt; in &lt;em&gt;Source Code Management&lt;/em&gt; (Git) section:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Basics of Git</title>
-      <link>https://wittchen.io/notes/basics-of-git/</link>
+      <link>http://localhost:1313/notes/basics-of-git/</link>
       <pubDate>Thu, 27 Nov 2014 21:49:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/basics-of-git/</guid>
+      <guid>http://localhost:1313/notes/basics-of-git/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://git-scm.com/&#34;&gt;Git&lt;/a&gt; is very popular Version Control System used in many software projects today. In my opinion, it&amp;rsquo;s the best VCS available today. In order to start your adventure with this tool, you should know its basic commands and features. There are graphical tools, which allows to use Git without terminal, but I recommend you to use terminal. With CLI you can work faster, you can understand Git better and you have more control over your repository.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to update forked GitHub repository?</title>
-      <link>https://wittchen.io/notes/how-to-update-forked-github-repository/</link>
+      <link>http://localhost:1313/notes/how-to-update-forked-github-repository/</link>
       <pubDate>Fri, 07 Nov 2014 12:29:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/how-to-update-forked-github-repository/</guid>
+      <guid>http://localhost:1313/notes/how-to-update-forked-github-repository/</guid>
       <description>&lt;p&gt;When you fork GitHub repository, you usually want to have your fork up to date with the original repository.
 You can update your fork in a few easy steps. Just look at the following example of the Git commands:&lt;/p&gt;
 &lt;p&gt;Add the remote, call it &lt;code&gt;upstream&lt;/code&gt;:&lt;/p&gt;
@@ -131,16 +131,16 @@ such as upstream/master:&lt;/p&gt;
     </item>
     <item>
       <title>Versioning Android applications</title>
-      <link>https://wittchen.io/notes/versioning-android-applications/</link>
+      <link>http://localhost:1313/notes/versioning-android-applications/</link>
       <pubDate>Sat, 13 Sep 2014 12:49:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/versioning-android-applications/</guid>
+      <guid>http://localhost:1313/notes/versioning-android-applications/</guid>
       <description>&lt;p&gt;When we work in a team projects, our code constantly changes and being tested. Often some bugs occur in a specific version of application and no longer exists in next version of the project, because one programmer might fixed the bug according to the &lt;a href=&#34;http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule&#34;&gt;Boy Scout Rule&lt;/a&gt; and this is good. Nevertheless, sometimes we need to write documentation and check in which version bug occurred to be sure, that it was really fixed. In addition, &lt;a href=&#34;http://en.wikipedia.org/wiki/Quality_assurance&#34;&gt;QA&lt;/a&gt; Engineer needs to know, which version of the project he or she should check. That&amp;rsquo;s why we should introduce versioning system to our project. In Android Manifest we have &lt;code&gt;versionCode&lt;/code&gt; and &lt;code&gt;versionName&lt;/code&gt;. The &lt;code&gt;versionCode&lt;/code&gt; is used for updates on Google Play Store and it has to be integer value. We should increment &lt;code&gt;versionCode&lt;/code&gt; before releasing new version of the application for the users. The &lt;code&gt;versionName&lt;/code&gt; available in Android Manifest is a string value and we can use it to store information, which we need in a current project. When we use Git as a Version Control System, we can put SHA value of a specific commit into our version name. In addition, we can add date and time of compilation to this variable. After that, our &lt;code&gt;versionName&lt;/code&gt; contains very detailed information about current version of our application. Exemplary &lt;code&gt;versionName&lt;/code&gt; will look in as follows: &lt;code&gt;f935ea7-20140913144001&lt;/code&gt;. We can obtain that with proper configuration of &lt;code&gt;build.gradle&lt;/code&gt; file containing &lt;code&gt;buildTime()&lt;/code&gt; method and &lt;code&gt;gitSha()&lt;/code&gt; method. Please, take a look at creation of &lt;code&gt;versionName&lt;/code&gt; in 35th line of the &lt;code&gt;build.gradle&lt;/code&gt; file presented below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Updating Android XML resources before compilation via Gradle</title>
-      <link>https://wittchen.io/notes/updating-android-xml-resources-before-compilation-via-gradle/</link>
+      <link>http://localhost:1313/notes/updating-android-xml-resources-before-compilation-via-gradle/</link>
       <pubDate>Wed, 10 Sep 2014 21:22:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/updating-android-xml-resources-before-compilation-via-gradle/</guid>
+      <guid>http://localhost:1313/notes/updating-android-xml-resources-before-compilation-via-gradle/</guid>
       <description>&lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;
 &lt;p&gt;In a team project, we encountered one of the common problems connected with mobile applications. Android application sends requests to backend web service and we don&amp;rsquo;t have backend web service deployed right now on a separate server, so every mobile developer is compiling and running backend web service on the local machine for testing purposes. In the beginning, url of backend url looked as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span&gt;

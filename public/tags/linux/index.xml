@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Piotr Wittchen</title>
-    <link>https://wittchen.io/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on Piotr Wittchen</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 29 Mar 2020 20:29:36 +0000</lastBuildDate>
-    <atom:link href="https://wittchen.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic wallpaper for i3</title>
-      <link>https://wittchen.io/notes/dynamic-wallpaper-for-i3/</link>
+      <link>http://localhost:1313/notes/dynamic-wallpaper-for-i3/</link>
       <pubDate>Sun, 29 Mar 2020 20:29:36 +0000</pubDate>
-      <guid>https://wittchen.io/notes/dynamic-wallpaper-for-i3/</guid>
+      <guid>http://localhost:1313/notes/dynamic-wallpaper-for-i3/</guid>
       <description>&lt;p&gt;Some time ago, I was using macOS. The thing I liked about this OS since Mojave version was the dynamic wallpaper feature. Wallpaper representing picture of the Mojave desert in California was dynamically changing during the day. In the morning, we could see the dawn and sunrise, later picture during the midday, in the evening, desert during the dusk and finally picture at night. I liked the fact that wallpaper were adjusting to the time of the day. I wanted to have the same thing on my Linux. Luckily, on Arch and i3, it&amp;rsquo;s pretty easy to achieve.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spotify song in i3 status bar</title>
-      <link>https://wittchen.io/notes/spotify-song-in-i3-status-bar/</link>
+      <link>http://localhost:1313/notes/spotify-song-in-i3-status-bar/</link>
       <pubDate>Thu, 20 Feb 2020 11:29:13 +0000</pubDate>
-      <guid>https://wittchen.io/notes/spotify-song-in-i3-status-bar/</guid>
+      <guid>http://localhost:1313/notes/spotify-song-in-i3-status-bar/</guid>
       <description>&lt;p&gt;While customizing my i3 status bar, I wanted to have currently played Spotify song in it. Some time ago, I created an open source script in Python called &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli-linux&lt;/a&gt; and I wanted to use it. When we want to put something custom into the i3 status bar, the easiest way to do it, is to save data into the file and then read the file.&lt;/p&gt;
 &lt;p&gt;I created the following config inside &lt;code&gt;~/.config/i3status/config&lt;/code&gt; file:&lt;/p&gt;</description>
     </item>
     <item>
       <title>I switched to i3 WM</title>
-      <link>https://wittchen.io/notes/i-switched-to-i3wm/</link>
+      <link>http://localhost:1313/notes/i-switched-to-i3wm/</link>
       <pubDate>Sun, 16 Feb 2020 13:16:49 +0000</pubDate>
-      <guid>https://wittchen.io/notes/i-switched-to-i3wm/</guid>
+      <guid>http://localhost:1313/notes/i-switched-to-i3wm/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;From a long time I wanted to try lightweight WM (Window Manager) for Linux. I installed i3 once a few years ago, but I had no idea how to use it, so I just closed this thing and got back to Gnome. Recently, I watched several videos and tutorials about Linux and i3 on youtube, which helped me to learn this WM, how it works and how to use it. I also read some part of &lt;a href=&#34;https://i3wm.org/docs/&#34;&gt;docs&lt;/a&gt; and &lt;a href=&#34;https://i3wm.org/docs/userguide.html&#34;&gt;user&amp;rsquo;s guide&lt;/a&gt; to customize my configuration. Official docs of i3 are really good.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixing font rendering on Firefox and Arch Linux</title>
-      <link>https://wittchen.io/notes/fixing-font-rendering-on-firefox-and-arch-linux/</link>
+      <link>http://localhost:1313/notes/fixing-font-rendering-on-firefox-and-arch-linux/</link>
       <pubDate>Fri, 01 Nov 2019 11:57:02 +0000</pubDate>
-      <guid>https://wittchen.io/notes/fixing-font-rendering-on-firefox-and-arch-linux/</guid>
+      <guid>http://localhost:1313/notes/fixing-font-rendering-on-firefox-and-arch-linux/</guid>
       <description>&lt;p&gt;After the recent Firefox update (70.0.1 64-bit), I&amp;rsquo;ve got a problem with font rendering on Arch Linux. I&amp;rsquo;ve installed this update probably on 31.10.2019 or 01.11.2019 (I&amp;rsquo;m not exactly sure right now). On several pages (e.g. Facebook or Github) fonts weren&amp;rsquo;t rendered correctly. It looked like fonts without anti-aliasing what was quite ugly.&lt;/p&gt;
 &lt;p&gt;I figured out that I can go to the Firefox Settings and in the &amp;ldquo;Fonts and Colors&amp;rdquo; section, go to &amp;ldquo;Advanced&amp;rdquo; and turn off the option &amp;ldquo;Allow pages to choose their own fonts, instead of your selection above&amp;rdquo;. It fixes problem with ugly fonts on several websites, but rest of the websites is not able to render the right fonts. E.g. when you have website with custom fonts from fonts.google.com (like this website). That&amp;rsquo;s why I couldn&amp;rsquo;t proceed with this solution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixing Gnome Boot problem</title>
-      <link>https://wittchen.io/notes/fixing-gnome-boot-problem/</link>
+      <link>http://localhost:1313/notes/fixing-gnome-boot-problem/</link>
       <pubDate>Tue, 22 Oct 2019 22:42:21 +0000</pubDate>
-      <guid>https://wittchen.io/notes/fixing-gnome-boot-problem/</guid>
+      <guid>http://localhost:1313/notes/fixing-gnome-boot-problem/</guid>
       <description>&lt;p&gt;I recently had an issue with Gnome on Arch Linux during the system boot. After turning my computer on, I saw gray screen with message like:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Oh no! Something has gone wrong. A problem has occurred and the system can&amp;#39;t recover...
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and I couldn&amp;rsquo;t log in or do anything and started searching solutions for this problem via my phone. First, I switched to terminal mode with &lt;!-- raw HTML omitted --&gt;Alt+F2&lt;!-- raw HTML omitted --&gt; (you can switch back to GUI with &lt;!-- raw HTML omitted --&gt;Alt+F1&lt;!-- raw HTML omitted --&gt;), logged in and updated system via pacman: &lt;code&gt;sudo pacman -Syu&lt;/code&gt;. I tried to install or reinstall different packages mostly related to graphic card drivers, X11 or Gnome, but it didn&amp;rsquo;t help. Luckily, I found &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=203416&#34;&gt;this thread&lt;/a&gt; on the Arch Forums, where there was &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?pid=1568684#p1568684&#34;&gt;a post&lt;/a&gt; suggesting disabling &lt;a href=&#34;https://en.wikipedia.org/wiki/Wayland_%28display_server_protocol%29&#34;&gt;Wayland&lt;/a&gt; on &lt;a href=&#34;https://wiki.gnome.org/Projects/GDM&#34;&gt;GDM&lt;/a&gt; by opening &lt;code&gt;/etc/gdm/custom.conf&lt;/code&gt; file and uncommenting line with&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cleaning root partition on Linux</title>
-      <link>https://wittchen.io/notes/cleaning-root-partition-on-linux/</link>
+      <link>http://localhost:1313/notes/cleaning-root-partition-on-linux/</link>
       <pubDate>Thu, 17 Oct 2019 09:57:56 +0000</pubDate>
-      <guid>https://wittchen.io/notes/cleaning-root-partition-on-linux/</guid>
+      <guid>http://localhost:1313/notes/cleaning-root-partition-on-linux/</guid>
       <description>&lt;p&gt;Size of the root partition &lt;code&gt;/&lt;/code&gt; on my system is 25 GB. I recently had a situation where I received notification from the system that there&amp;rsquo;s too little free space on that partition, which was around 1 GB. My first attempt was to clean pacman cache with &lt;code&gt;sudo pacman -Sc&lt;/code&gt;. It helped for a moment, but I kept receiving this notification. I searched for the solutions regarding extending the root partition and noticed that it wouldn&amp;rsquo;t be that easy and probably require making backup and reinstalling the system. Although installing Arch is not scary for me anymore, I didn&amp;rsquo;t want to do that again, because it takes some time and after that I will have to configure all my stuff, install apps, etc. which is a lot of work. Due to this fact I started search for the solutions about cleaning root partition. I found nice program called &lt;code&gt;ncdu&lt;/code&gt;, which is abbreviation for NCurses Disk Usage according to the man page. You can install it with pacman: &lt;code&gt;sudo pacman -S ncdu&lt;/code&gt;. This program shows usage of the directories and shows directories, which take the biggest amount of space on the disk. Once you have that program, you can go to the root partition and run it:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Formatting USB disk on Linux</title>
-      <link>https://wittchen.io/notes/formatting-usb-disk-on-linux/</link>
+      <link>http://localhost:1313/notes/formatting-usb-disk-on-linux/</link>
       <pubDate>Sun, 01 Sep 2019 09:16:07 +0000</pubDate>
-      <guid>https://wittchen.io/notes/formatting-usb-disk-on-linux/</guid>
+      <guid>http://localhost:1313/notes/formatting-usb-disk-on-linux/</guid>
       <description>&lt;p&gt;Sometimes we may want to format external USB drive. I recently encountered a situation, where I had bootable USB drive with operating system ready to install, but I wanted to remove all this stuff and use disk for storing data. I couldn&amp;rsquo;t format this disk with GUI tools for some reason and I kept getting errors or information that it&amp;rsquo;s not possible. In case you don&amp;rsquo;t know, on Linux everything is always possible, so I quit that GUI tool, opened terminal and start playing with good old and simple programs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Arch Linux - installation notes no. 2 (GUI and utils)</title>
-      <link>https://wittchen.io/notes/arch-install-notes-gui-and-utils/</link>
+      <link>http://localhost:1313/notes/arch-install-notes-gui-and-utils/</link>
       <pubDate>Sat, 27 Jul 2019 09:31:30 +0000</pubDate>
-      <guid>https://wittchen.io/notes/arch-install-notes-gui-and-utils/</guid>
+      <guid>http://localhost:1313/notes/arch-install-notes-gui-and-utils/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;In my &lt;a href=&#34;https://wittchen.io/arch-install-notes&#34;&gt;previous article&lt;/a&gt; I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.&lt;/p&gt;
+&lt;p&gt;In my &lt;a href=&#34;http://localhost:1313/arch-install-notes&#34;&gt;previous article&lt;/a&gt; I roughly described Arch Linux installation process. After going through whole process, we will end up with clean terminal without any graphical environment etc. In most cases, we will need it on the desktop.&lt;/p&gt;
 &lt;h2 id=&#34;desktop-environment-de--windows-manager-wm&#34;&gt;Desktop Environment (DE) / Windows Manager (WM)&lt;/h2&gt;
 &lt;p&gt;There are two main types of the Linux graphical environments for desktop:&lt;/p&gt;
 &lt;ul&gt;
@@ -79,56 +79,56 @@
     </item>
     <item>
       <title>Arch Linux - installation notes</title>
-      <link>https://wittchen.io/notes/arch-install-notes/</link>
+      <link>http://localhost:1313/notes/arch-install-notes/</link>
       <pubDate>Wed, 24 Jul 2019 23:59:20 +0000</pubDate>
-      <guid>https://wittchen.io/notes/arch-install-notes/</guid>
+      <guid>http://localhost:1313/notes/arch-install-notes/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;For a long time, I was considering switching from Ubuntu do Arch Linux distribution, but I didn&amp;rsquo;t have enough knowledge, time and energy to do this. I definitely knew it requires some specific knowledge and manual steps to perform. I also didn&amp;rsquo;t wat to spend too much time on reading the documentation. Moreover, I know that sometimes I could have specific issues related to my hardware, which are not listed in documentation and I have to deal with them on my own. Due to these facts I was discouraged to install Arch. Recently, I found awesome video about &lt;a href=&#34;https://www.youtube.com/watch?v=4PBqpX0_UOc&#34;&gt;Full Arch Linux Install&lt;/a&gt; by &lt;a href=&#34;https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA&#34;&gt;Luke Smith&lt;/a&gt; where everything is explained very clearly in each step. I watched it one time without doing anything and then, watched it next time performing all the steps described there. I had a few issues related to my hardware and BIOS, but I managed to install Arch on my ThinkPad T470s thanks to this video. During the installation, I made a few notes for myself for the future possible installations. Maybe you&amp;rsquo;ll find them useful too. The whole process is actually simpler than I thought. It just requires some practical knowledge about Linux, patience and &amp;ldquo;can do&amp;rdquo; attitude. I divided this article into steps and sub-steps, which are required to perform the installation. Please, keep in mind the fact that in the end of the installation, we will have an empty command prompt with plain OS without any GUI and we will have to install the graphical environment from the terminal. It will not be covered in this article, but I think, I&amp;rsquo;ll cover it in another one. Of course, this article contains just my notes, which help me understand everything well because and I like documenting this kind of things for the future. If you searching for Arch installation guide, I recommend you to see linked video or an &lt;a href=&#34;https://wiki.archlinux.org/index.php/Installation_guide&#34;&gt;official Arch installation guide&lt;/a&gt; in Arch Wiki. This article can be additional resource to this stuff.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Solving problems with AVD and KVM on Linux</title>
-      <link>https://wittchen.io/notes/solving-problems-with-avd-and-kvm-on-linux/</link>
+      <link>http://localhost:1313/notes/solving-problems-with-avd-and-kvm-on-linux/</link>
       <pubDate>Thu, 16 Aug 2018 22:01:06 +0000</pubDate>
-      <guid>https://wittchen.io/notes/solving-problems-with-avd-and-kvm-on-linux/</guid>
+      <guid>http://localhost:1313/notes/solving-problems-with-avd-and-kvm-on-linux/</guid>
       <description>&lt;p&gt;I installed Android SDK and Android Studio on my new ThinkPad T470s with Ubuntu Linux 18.04.1 LTS. As usual, I wanted to create a new Android phone emulator called AVD (Android Virtual Device). I was able to create a new device, but unfortunately I encoutered problems. After opening AVD window, I saw the error message&amp;hellip;&lt;/p&gt;
 &lt;h2 id=&#34;devkvm-is-not-found&#34;&gt;/dev/kvm is not found&lt;/h2&gt;
 &lt;p&gt;KVM (Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V). In order to enable KVM, I needed to restart the computer and enter the BIOS by pressing &lt;code&gt;F1&lt;/code&gt; key before the system boot. Next, I entered &lt;code&gt;Security&lt;/code&gt; tab and enabled &lt;code&gt;Intel Virtualization Technology&lt;/code&gt; and &lt;code&gt;Intel VT-d Feature&lt;/code&gt;. Now, I could press &lt;code&gt;F10&lt;/code&gt; to save, exit nad restart the computer. Unfortunately, that wasn&amp;rsquo;t the end of the story. I saw another error message&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Poor Man&#39;s Dropbox</title>
-      <link>https://wittchen.io/notes/poor-mans-dropbox/</link>
+      <link>http://localhost:1313/notes/poor-mans-dropbox/</link>
       <pubDate>Sun, 12 Aug 2018 23:10:42 +0000</pubDate>
-      <guid>https://wittchen.io/notes/poor-mans-dropbox/</guid>
+      <guid>http://localhost:1313/notes/poor-mans-dropbox/</guid>
       <description>&lt;h2 id=&#34;dropbox-abandons-linux-users&#34;&gt;Dropbox abandons Linux users&lt;/h2&gt;
 &lt;p&gt;Recently, I&amp;rsquo;ve started receiving a notification from Dropbox desktop app on Linux that they&amp;rsquo;ll stop syncing my files in November. I couldn&amp;rsquo;t understand why. I&amp;rsquo;m using this service for some time and I find it really useful. Moreover, I want to backup several important files on the web server in case of my disk crashes or I&amp;rsquo;ll need to access them from another computer or mobile device. I googled this issue and found pretty long thread on the &lt;a href=&#34;https://www.dropboxforum.com/t5/Syncing-and-uploads/Dropbox-client-warns-me-that-it-ll-stop-syncing-in-Nov-why/td-p/290058&#34;&gt;Dropbox Forum&lt;/a&gt;. There&amp;rsquo;s also &lt;a href=&#34;https://www.reddit.com/r/linux/comments/966xt0/linux_dropbox_client_will_stop_syncing_on_any/&#34;&gt;ongoing discussion on reddit&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Air quality monitoring script for Argos (Linux) and BitBar (macOS)</title>
-      <link>https://wittchen.io/notes/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/</link>
+      <link>http://localhost:1313/notes/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/</link>
       <pubDate>Fri, 29 Dec 2017 10:02:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/</guid>
+      <guid>http://localhost:1313/notes/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/</guid>
       <description>&lt;p&gt;From some time, I wanted to create my own app, which will display some data in top panel in macOS or Gnome environment on Linux. I collected some resources about that and I knew that for macOS I need to write an app in Obj-C and for Gnome I need to write a plugin in JavaScript. In both cases it requires some ceremony and preparation. Recently I&amp;rsquo;ve found a great app for macOS called &lt;a href=&#34;https://getbitbar.com/&#34;&gt;BitBar&lt;/a&gt; (by the way it&amp;rsquo;s &lt;a href=&#34;https://github.com/matryer/bitbar&#34;&gt;open-source&lt;/a&gt;). BitBar allows to put anything to macOS menu bar (top panel) in no time! With this project creating top panel apps is simplified to the limit. Moreover, there&amp;rsquo;s another project called &lt;a href=&#34;https://extensions.gnome.org/extension/1176/argos/&#34;&gt;Argos&lt;/a&gt;, which does the same thing, but for Linux with Gnome (it&amp;rsquo;s an &lt;a href=&#34;https://github.com/p-e-w/argos&#34;&gt;open-source&lt;/a&gt; Gnome Extension). In both cases, we just need to create a shell script, put it into appropriate directory (in case of Argos, it&amp;rsquo;s &lt;code&gt;~/.config/argos/&lt;/code&gt; and in case of BitBar, we define it during the installation or first run) and then app displays our data automatically. We can also set refresh rate. E.g. if we want our script to be executed every 60 seconds, we can name it &lt;code&gt;script.60s.sh&lt;/code&gt;. We can also create more advanced scripts and more details can be found in BitBar and Argos documentation. In my case, I wanted to create a script, which reads &lt;code&gt;CAQI&lt;/code&gt; (Common Air Quality Index) in my current location based on &lt;a href=&#34;http://airly.eu/&#34;&gt;Airly&lt;/a&gt; sensors. Airly provides nice &lt;a href=&#34;https://airly.eu/en/api/&#34;&gt;API&lt;/a&gt;, which we can use in our projects. Please remember that most of the sensors are located in Poland. On my Ubuntu Linux with Gnome 3, I created a new script in the following path:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Using Tmux plugins with Tpm</title>
-      <link>https://wittchen.io/notes/using-tmux-with-tpm/</link>
+      <link>http://localhost:1313/notes/using-tmux-with-tpm/</link>
       <pubDate>Mon, 07 Aug 2017 19:31:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/using-tmux-with-tpm/</guid>
+      <guid>http://localhost:1313/notes/using-tmux-with-tpm/</guid>
       <description>&lt;p&gt;Recently, I decided to organize my Unix &lt;a href=&#34;https://github.com/pwittchen/dotfiles&#34;&gt;dotfiles&lt;/a&gt; in a better way. I had a few custom scripts I used in my Tmux bottom bar. I kept these scripts in &lt;code&gt;.scripts&lt;/code&gt; directory and during installation or upgrade of my personal configuration, &lt;a href=&#34;https://github.com/pwittchen/dotfiles/blob/master/install.sh&#34;&gt;&lt;code&gt;install.sh&lt;/code&gt;&lt;/a&gt; script was copying them from &lt;code&gt;.scripts&lt;/code&gt; directory to &lt;code&gt;/usr/local/bin/&lt;/code&gt; directory. I wanted to make this configuration more solid and consistent, so I decided to transform these scripts into tmux plugins managed by &lt;a href=&#34;https://github.com/tmux-plugins/tpm&#34;&gt;tpm&lt;/a&gt;. I was already using a few plugins like:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Transform Vim into efficient IDE</title>
-      <link>https://wittchen.io/notes/transform-vim-into-efficient-ide/</link>
+      <link>http://localhost:1313/notes/transform-vim-into-efficient-ide/</link>
       <pubDate>Sun, 16 Apr 2017 19:32:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/transform-vim-into-efficient-ide/</guid>
+      <guid>http://localhost:1313/notes/transform-vim-into-efficient-ide/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Some time ago, I decided to learn Vim. A lot of people are afraid of this editor and they usually don&amp;rsquo;t want to know anything about it or just learn how to quit it. In my opinion, it&amp;rsquo;s good to learn it because after mastering the basics, we can work very efficiently. After some time of usage, we may even replace editors like Atom or Sublime Text with Vim. Moreover, Vim is default editor for a few Unix tools like Git, so it&amp;rsquo;s good to know how to use it when we accidentally open it. In addition, sometimes we have an access only to the terminal (e.g. via ssh) and we need to perform a task on the remote server, so we don&amp;rsquo;t have any possibility to use editors with GUI. In such cases, Vim is a perfect solution. Last, but not least - if you want to be a &lt;strong&gt;real&lt;/strong&gt; &lt;em&gt;h4x0r&lt;/em&gt;, you should know it (or at least its basics) ;-).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Automate tile layouts creation in tmux with tmux-auto-pane</title>
-      <link>https://wittchen.io/notes/tmux-auto-pane/</link>
+      <link>http://localhost:1313/notes/tmux-auto-pane/</link>
       <pubDate>Sat, 08 Apr 2017 13:05:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/tmux-auto-pane/</guid>
+      <guid>http://localhost:1313/notes/tmux-auto-pane/</guid>
       <description>&lt;p&gt;I just released &lt;a href=&#34;https://github.com/pwittchen/tmux-auto-pane&#34;&gt;tmux-auto-pane&lt;/a&gt;. It&amp;rsquo;s a tiny shell script for creating pre-defined tile layouts in &lt;a href=&#34;https://tmux.github.io/&#34;&gt;Tmux&lt;/a&gt; on Linux with &lt;a href=&#34;http://www.semicomplete.com/projects/xdotool&#34;&gt;xdotool&lt;/a&gt;. In our workflow, we often have some pre-defined pane configurations in a terminal. The project called &lt;code&gt;tmux-auto-pane&lt;/code&gt; helps to automate that process. It can save us some time and make us a bit more productive. We can call &lt;code&gt;tmux-auto-pane&lt;/code&gt; with one of the following parameters:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--help | -h   showing help
 --1l1r        one left, one right
@@ -142,16 +142,16 @@
     </item>
     <item>
       <title>Browsing directories with Vim</title>
-      <link>https://wittchen.io/notes/browsing-dirs-with-vim/</link>
+      <link>http://localhost:1313/notes/browsing-dirs-with-vim/</link>
       <pubDate>Sun, 02 Apr 2017 19:04:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/browsing-dirs-with-vim/</guid>
+      <guid>http://localhost:1313/notes/browsing-dirs-with-vim/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m still learning Vim every day. At first, it looks quite hard and most of the people want to learn how to quit it and never use again. Nevertheless, when you learn some basics, you can be really productive. This editor has much more cool functionalities than just &lt;code&gt;:q&lt;/code&gt; shortcut ;-). Recently I discovered, you can use Vim not only for editing files but you can use it for browsing directories as well! Just go to any directory you want in terminal and type:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Control Spotify on Linux like a hacker</title>
-      <link>https://wittchen.io/notes/control-spotify-on-linux-like-a-hacker/</link>
+      <link>http://localhost:1313/notes/control-spotify-on-linux-like-a-hacker/</link>
       <pubDate>Sun, 05 Mar 2017 22:40:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/control-spotify-on-linux-like-a-hacker/</guid>
+      <guid>http://localhost:1313/notes/control-spotify-on-linux-like-a-hacker/</guid>
       <description>&lt;p&gt;Recently, I created a tiny script called &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli&lt;/a&gt;, which allows you to control &lt;a href=&#34;http://spotify.com&#34;&gt;Spotify&lt;/a&gt; on Linux from terminal. It&amp;rsquo;s inspired by &lt;a href=&#34;https://github.com/hnarayanan/shpotify&#34;&gt;shpotify&lt;/a&gt;, which is a shell script doing similar things, but on macOS. My script is written in Python and uses &lt;a href=&#34;https://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html&#34;&gt;dbus&lt;/a&gt; under the hood, which allows to communicate with bus daemon to pass messages between applications. I used &lt;a href=&#34;https://linux.die.net/man/1/pactl&#34;&gt;pactl&lt;/a&gt; for controlling the system sound.&lt;/p&gt;
 &lt;p&gt;You can install spotify-cli as follows via wget:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sh -c &amp;#34;$(wget https://raw.githubusercontent.com/pwittchen/spotify-cli-linux/master/install.sh -O -)&amp;#34;
@@ -159,40 +159,40 @@
     </item>
     <item>
       <title>Lifting quality of a shell script</title>
-      <link>https://wittchen.io/notes/lifting-quality-of-a-shell-script/</link>
+      <link>http://localhost:1313/notes/lifting-quality-of-a-shell-script/</link>
       <pubDate>Wed, 30 Nov 2016 23:29:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/lifting-quality-of-a-shell-script/</guid>
+      <guid>http://localhost:1313/notes/lifting-quality-of-a-shell-script/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In release cycle of our team at work, we need to perform so-called system tests. In order to do that, we need to log into Artifactory, search for the latest release package, check if it&amp;rsquo;s up to date, download it, unzip it, install internal configuration recipe, compile, initialize &amp;amp; run it. Not all of that can be easily automated, but I thought that at least searching &amp;amp; downloading phase can be done from the terminal in a semi-automated way. That&amp;rsquo;s why I created &lt;a href=&#34;https://github.com/pwittchen/ydownloader&#34;&gt;&lt;strong&gt;ydownloader&lt;/strong&gt;&lt;/a&gt; shell script.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Converting audio CD to mp3 files on Linux</title>
-      <link>https://wittchen.io/notes/converting-cd-to-mp3-on-linux/</link>
+      <link>http://localhost:1313/notes/converting-cd-to-mp3-on-linux/</link>
       <pubDate>Sun, 24 Jan 2016 17:24:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/converting-cd-to-mp3-on-linux/</guid>
+      <guid>http://localhost:1313/notes/converting-cd-to-mp3-on-linux/</guid>
       <description>&lt;p&gt;Not all songs are available on &lt;a href=&#34;https://www.spotify.com&#34;&gt;Spotify&lt;/a&gt; and sometimes we need to rip music from audio CDs in order to listen it on our computer or mobile device. There are several approaches to do that. Here is mine: Get &lt;a href=&#34;http://ripperx.sourceforge.net/screenshots.html&#34;&gt;RipperX&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;sudo apt-get install ripperx&lt;/p&gt;
 &lt;p&gt;Put audio CD into your computer. Open RipperX, select All Tracks and check Rip to WAV option. Set quality of output files via &amp;ldquo;Config&amp;rdquo; option and names of the tracks if your want. Press &amp;ldquo;Go!&amp;rdquo;. After conversion, you should have directory with ripped &lt;code&gt;*.wav&lt;/code&gt; files in your home directory. Get &lt;a href=&#34;http://soundconverter.org/&#34;&gt;SoundConverter&lt;/a&gt;:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Using tmux</title>
-      <link>https://wittchen.io/notes/using-tmux/</link>
+      <link>http://localhost:1313/notes/using-tmux/</link>
       <pubDate>Sun, 20 Sep 2015 11:04:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/using-tmux/</guid>
+      <guid>http://localhost:1313/notes/using-tmux/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;What is a terminal multiplexer?&lt;/strong&gt; It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;- tmux.github.io&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;ss-tmux1&#34; loading=&#34;lazy&#34; src=&#34;https://wittchen.io/posts/2015/using-tmux/ss-tmux1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;ss-tmux1&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/2015/using-tmux/ss-tmux1.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Tmux feature, which I find very useful is &lt;strong&gt;tiling terminal window&lt;/strong&gt;. We can have several tiles with different terminals within a single terminal window.&lt;/p&gt;
 &lt;h2 id=&#34;how-to-use-tiling&#34;&gt;How to use tiling?&lt;/h2&gt;
 &lt;p&gt;First, we need to install tmux:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gnome Classic desktop environment on Ubuntu</title>
-      <link>https://wittchen.io/notes/gnome-classic-ubuntu/</link>
+      <link>http://localhost:1313/notes/gnome-classic-ubuntu/</link>
       <pubDate>Sun, 23 Aug 2015 01:02:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/gnome-classic-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/gnome-classic-ubuntu/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I was tired of non-minimal and quite slow Unity desktop environment. Of course, I performed a few tricks to &lt;a href=&#34;http://blog.wittchen.biz.pl/making-ubuntu-and-unity-faster/&#34;&gt;make Unity faster&lt;/a&gt;, but still I wasn&amp;rsquo;t satisfied enough. I checked out different desktop environments. I wanted to have clean, minimal and productive environment. I like top panel from Unity as well as HUD and many workspaces. The last thing is quite common among different desktop environments.&lt;/p&gt;
 &lt;h2 id=&#34;new-desktop-environment&#34;&gt;New desktop environment&lt;/h2&gt;
@@ -200,28 +200,28 @@
     </item>
     <item>
       <title>Geary - neat e-mail client for Linux</title>
-      <link>https://wittchen.io/notes/geary-email-client-for-linux/</link>
+      <link>http://localhost:1313/notes/geary-email-client-for-linux/</link>
       <pubDate>Sat, 01 Aug 2015 13:41:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/geary-email-client-for-linux/</guid>
+      <guid>http://localhost:1313/notes/geary-email-client-for-linux/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;I was using web interfaces for e-mail for a long time, but I wanted to give a try a desktop clients for Linux. I was searching for a quite simple solution with almost zero configuration, which I can use for my private and work e-mail accounts. &lt;a href=&#34;https://wiki.gnome.org/Apps/Geary&#34;&gt;Geary&lt;/a&gt; seems to be quite good choice. It is clean, easy to use and pretty neat e-mail client for Linux. It integrates with Unity on Ubuntu and display system notifications informing about new message. Unfortunately, we need it running in order to see notifications, which is small drawback. Nevertheless it works quite good, so I&amp;rsquo;m going to give it a try. Install it with the following command:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Routing internet via SSH tunnel on Raspberry Pi</title>
-      <link>https://wittchen.io/notes/routing-internet-via-ssh-tunnel-on-raspberry-pi/</link>
+      <link>http://localhost:1313/notes/routing-internet-via-ssh-tunnel-on-raspberry-pi/</link>
       <pubDate>Sat, 25 Jul 2015 01:38:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/routing-internet-via-ssh-tunnel-on-raspberry-pi/</guid>
+      <guid>http://localhost:1313/notes/routing-internet-via-ssh-tunnel-on-raspberry-pi/</guid>
       <description>&lt;h2 id=&#34;problem-overview&#34;&gt;Problem overview&lt;/h2&gt;
 &lt;p&gt;Recently I had the following problem. I wanted to connect to my Raspberry Pi from my laptop. For some reason WiFi dongle on the Raspberry Pi was not working properly. Moreover, I had only one slot available for the LAN connection via cable to the router, so I could connect only one device this way. I wanted to have reliable and fast internet connection on my laptop, but via WiFi it&amp;rsquo;s quite slow. To sum the things up two goals were clear:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mutate - yet another Spotlight for Ubuntu</title>
-      <link>https://wittchen.io/notes/mutate-yet-another-spotlight-for-ubuntu/</link>
+      <link>http://localhost:1313/notes/mutate-yet-another-spotlight-for-ubuntu/</link>
       <pubDate>Mon, 06 Apr 2015 12:26:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/mutate-yet-another-spotlight-for-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/mutate-yet-another-spotlight-for-ubuntu/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;Some time ago, I published post about Synapse indicator, which is an alternative to MAC&amp;rsquo;s Spotlight for Ubuntu. Recently, I&amp;rsquo;ve found another software, which is in my opinion even better than Synapse. It&amp;rsquo;s called &lt;a href=&#34;https://github.com/qdore/Mutate&#34;&gt;Mutate&lt;/a&gt;. I like it, because it works quite smooth, looks simple and clean. In addition, it&amp;rsquo;s open-source.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;mutate-1&#34; loading=&#34;lazy&#34; src=&#34;https://wittchen.io/posts/2015/mutate/mutate-1.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;mutate-1&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/2015/mutate/mutate-1.jpg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 &lt;p&gt;We can install it with the following commands:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo add-apt-repository ppa:mutate/ppa
@@ -232,9 +232,9 @@ sudo apt-get install mutate
     </item>
     <item>
       <title>Making Ubuntu faster</title>
-      <link>https://wittchen.io/notes/making-ubuntu-faster/</link>
+      <link>http://localhost:1313/notes/making-ubuntu-faster/</link>
       <pubDate>Sat, 28 Mar 2015 16:43:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/making-ubuntu-faster/</guid>
+      <guid>http://localhost:1313/notes/making-ubuntu-faster/</guid>
       <description>&lt;p&gt;Unity desktop environment consumes lot of computer&amp;rsquo;s memory. I&amp;rsquo;ve recently found good article about &lt;a href=&#34;http://www.techdrivein.com/2013/03/4-simple-tweaks-to-improve-unity-performance-ubuntu.html&#34;&gt;4 simple tweaks to improve Unity performance on Ubuntu&lt;/a&gt;. Here is the short summary of that tweaks:&lt;/p&gt;
 &lt;h2 id=&#34;remove-unwanted-lenses&#34;&gt;Remove Unwanted Lenses&lt;/h2&gt;
 &lt;p&gt;It will speed up loading data under &amp;ldquo;Super&amp;rdquo; button.&lt;/p&gt;
@@ -250,36 +250,36 @@ sudo apt-get install mutate
     </item>
     <item>
       <title>Synapse Indicator - Spotlight for Ubuntu</title>
-      <link>https://wittchen.io/notes/synapse-indicator-spotlight-for-ubuntu/</link>
+      <link>http://localhost:1313/notes/synapse-indicator-spotlight-for-ubuntu/</link>
       <pubDate>Thu, 25 Dec 2014 17:06:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/synapse-indicator-spotlight-for-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/synapse-indicator-spotlight-for-ubuntu/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;If you were using Ubuntu for some time, you might have noticed that Ubuntu Dash from Unity is working quite slow. We can disable on-line search or a few other elements, but it&amp;rsquo;s still very slow. If we want to have fast search, we can use external software like synapse.&lt;/p&gt;
 &lt;h2 id=&#34;synapse&#34;&gt;Synapse&lt;/h2&gt;
-&lt;p&gt;Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options. &lt;img alt=&#34;synapse&#34; loading=&#34;lazy&#34; src=&#34;https://wittchen.io/posts/2014/synapse-indicator-spotlight-for-ubuntu/synapse.jpg&#34;&gt; Synapse can be installed with the following commands:&lt;/p&gt;</description>
+&lt;p&gt;Synapse is searching really fast and we don&amp;rsquo;t have to wait a few seconds like in Ubuntu Dash or disable some search options. &lt;img alt=&#34;synapse&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/2014/synapse-indicator-spotlight-for-ubuntu/synapse.jpg&#34;&gt; Synapse can be installed with the following commands:&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to switch java version on Linux</title>
-      <link>https://wittchen.io/notes/how-to-switch-java-version-on-linux/</link>
+      <link>http://localhost:1313/notes/how-to-switch-java-version-on-linux/</link>
       <pubDate>Sun, 02 Nov 2014 12:33:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/how-to-switch-java-version-on-linux/</guid>
+      <guid>http://localhost:1313/notes/how-to-switch-java-version-on-linux/</guid>
       <description>&lt;p&gt;Sometimes we need to run specific program with a concrete version of JVM. We can also work with Java 7, but we want to try Java 8. In such cases, we can have installed both Java 7 and 8 on our system and easily switch between them. In order to show current java version, we can simply type: &lt;code&gt;java -version&lt;/code&gt; in terminal. On my computer I received the following response:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Indicators for Ubuntu</title>
-      <link>https://wittchen.io/notes/indicators-for-ubuntu/</link>
+      <link>http://localhost:1313/notes/indicators-for-ubuntu/</link>
       <pubDate>Sun, 07 Sep 2014 20:47:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/indicators-for-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/indicators-for-ubuntu/</guid>
       <description>&lt;p&gt;I recently found an article about &lt;a href=&#34;http://www.noobslab.com/2013/12/best-useful-indicators-collection-for.html&#34;&gt;Best Useful Indicators Collection for Ubuntu&lt;/a&gt;. Indicators are very useful feature of the Ubuntu and Unity. Ubuntu has some default indicators, but we can add new indicators if we want to. Mentioned article contains list of many indicators, but personally I prefer and use only a few of them. Here are my favorites:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;ubuntu_indicators&#34; loading=&#34;lazy&#34; src=&#34;https://wittchen.io/posts/2014/indicators-for-ubuntu/ubuntu_indicators.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;ubuntu_indicators&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/2014/indicators-for-ubuntu/ubuntu_indicators.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;multi-load-indicator&#34;&gt;Multi Load indicator&lt;/h2&gt;
 &lt;p&gt;Nice thing. This indicator monitors system resources. E.g. usage of the processor, RAM, disk and network. We can customize it and set refresh interval. I found default low interval like 500 ms very disturbing, so I changed it to 5000 ms and it&amp;rsquo;s ok for me. In the screenshot above, you can see blue chart for CPU usage, green chart for RAM usage and yellow chart for network usage. You can change, configure and customize it as you want.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software for common users on Ubuntu</title>
-      <link>https://wittchen.io/notes/software-for-common-users-on-ubuntu/</link>
+      <link>http://localhost:1313/notes/software-for-common-users-on-ubuntu/</link>
       <pubDate>Mon, 18 Aug 2014 16:17:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/software-for-common-users-on-ubuntu/</guid>
+      <guid>http://localhost:1313/notes/software-for-common-users-on-ubuntu/</guid>
       <description>&lt;p&gt;In this article, I&amp;rsquo;ll describe Ubuntu software for common users, which I personally use and which could be helpful on daily basis. Ubuntu software dedicated to programmers AKA developers will be described in separate article.&lt;/p&gt;
 &lt;h2 id=&#34;chrome&#34;&gt;Chrome&lt;/h2&gt;
 &lt;p&gt;In my opinion, it&amp;rsquo;s currently the best web browser. We can download, unpack and install it, with the following commands:&lt;/p&gt;
@@ -291,9 +291,9 @@ sudo dpkg -i google-chrome*.deb
     </item>
     <item>
       <title>Ubuntu system boot problem</title>
-      <link>https://wittchen.io/notes/ubuntu-system-boot-problem/</link>
+      <link>http://localhost:1313/notes/ubuntu-system-boot-problem/</link>
       <pubDate>Sun, 17 Aug 2014 20:05:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/ubuntu-system-boot-problem/</guid>
+      <guid>http://localhost:1313/notes/ubuntu-system-boot-problem/</guid>
       <description>&lt;h2 id=&#34;description-of-the-problem&#34;&gt;Description of the problem&lt;/h2&gt;
 &lt;p&gt;Recently, after installing Linux Ubuntu 14.04 LTS on my computer, I encountered strange problem during the system boot. Before system launched, I received the following message: After that, I typed: &lt;code&gt;exit&lt;/code&gt; and system started normally, but this error occurred every time after reboot, so I decided to fix it.&lt;/p&gt;
 &lt;h2 id=&#34;fixing-the-problem&#34;&gt;Fixing the problem&lt;/h2&gt;
@@ -303,9 +303,9 @@ I found there the following line:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Distributed inter-process communication</title>
-      <link>https://wittchen.io/notes/distributed-inter-process-communication/</link>
+      <link>http://localhost:1313/notes/distributed-inter-process-communication/</link>
       <pubDate>Fri, 15 Feb 2013 19:17:00 +0000</pubDate>
-      <guid>https://wittchen.io/notes/distributed-inter-process-communication/</guid>
+      <guid>http://localhost:1313/notes/distributed-inter-process-communication/</guid>
       <description>&lt;h2 id=&#34;project-overview&#34;&gt;Project overview&lt;/h2&gt;
 &lt;p&gt;Some time ago, I created presentation for my university connected with &lt;a href=&#34;http://en.wikipedia.org/wiki/Distributed_Inter-Process_Communication&#34;&gt;Distributed Inter-Process Communication&lt;/a&gt;. It is a piece of software dedicated for Linux OS, created by &lt;a href=&#34;http://dipc.kamran-karimi.com/&#34;&gt;Kamran Karimi&lt;/a&gt;, which allows to distribute software operations inside computer cluster. In addition, we can test it on a single machine during development process and run on a several machines in the production phase. I tested this solution on Ubuntu Linux. Short description of this system is presented below.&lt;/p&gt;</description>
     </item>
