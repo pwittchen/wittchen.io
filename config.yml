@@ -54,13 +54,11 @@ params:
     imageHeight: 120
     buttons:
       - name: / notes
-        url: "/notes"
+        url: "/notes/"
       - name: / talks
-        url: "/talks"
+        url: "/talks/"
       - name: / projects
-        url: "/projects"
- #     - name: contact
- #       url: "/contact"
+        url: "/projects/"
 
   homeInfoParams:
     Title: "Hi there \U0001F44B"
@@ -68,22 +66,10 @@ params:
   socialIcons:
     - name: email
       url: "mailto:piotr@wittchen.io"
-#    - name: cv
-#      url: "/cv"
     - name: linkedin
       url: "https://www.linkedin.com/in/pwittchen/"
     - name: github
       url: "https://github.com/pwittchen"
-#    - name: stackoverflow
-#      url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
-#    - name: strava
-#      url: "https://www.strava.com/athletes/848445"
-#    - name: x
-#      url: "https://x.com/piotr_wittchen"
-#    - name: youtube
-#      url: "https://www.youtube.com/@pwittchen"
-#    - name: rss
-#      url: "/notes/index.xml"
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home

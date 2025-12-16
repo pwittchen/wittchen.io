@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.hugo_build.lock
+.DS_Store
+public
+resources/_gen
+README.md
+LICENSE
+Dockerfile
+.dockerignore
+docker-compose.yml

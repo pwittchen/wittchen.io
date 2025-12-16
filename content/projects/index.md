@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 date: 2025-10-06T01:27:02+02:00
-draft: true
+draft: false
 ---
 
 ## Personal

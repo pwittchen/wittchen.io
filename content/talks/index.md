@@ -1,7 +1,7 @@
 ---
 title: "Talks"
 date: 2020-08-14T16:30:57+02:00
-draft: true
+draft: false
 ---
 
 If you would like to invite me for the conference or a meetup to give a talk, feel free to [contact](/contact) me!
