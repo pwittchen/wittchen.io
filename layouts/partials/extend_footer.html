@@ -14,4 +14,51 @@
     window.addEventListener('scroll', updateHeader, { passive: true });
     updateHeader();
 })();
+
+// Mobile hamburger menu toggle
+(function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    if (!menuToggle || !menu) return;
+
+    function toggleMenu() {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isOpen);
+        menu.classList.toggle('menu-open');
+        document.body.classList.toggle('menu-open');
+
+        // Scroll to top when opening the menu
+        if (!isOpen) {
+            window.scrollTo(0, 0);
+        }
+    }
+
+    function closeMenu() {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && menu.classList.contains('menu-open')) {
+            closeMenu();
+        }
+    });
+
+    // Close menu when resizing to desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && menu.classList.contains('menu-open')) {
+            closeMenu();
+        }
+    });
+})();
 </script>

@@ -725,6 +725,31 @@ button:focus-visible {
     background: var(--primary);
 }
 
+/* Hamburger menu button - hidden on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin: auto var(--gap);
+    color: var(--primary);
+    position: relative;
+    z-index: 1001;
+}
+
+.menu-toggle .close-icon {
+    display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-icon {
+    display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .close-icon {
+    display: block;
+}
+
 /* Mobile responsiveness improvements */
 @media (max-width: 768px) {
     .post-entry {
@@ -747,5 +772,77 @@ button:focus-visible {
     .button {
         width: 100%;
         text-align: center;
+    }
+
+    /* Show hamburger button on mobile */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Mobile menu styles */
+    #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--theme);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    #menu.menu-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    #menu li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu li + li {
+        margin-inline-start: 0;
+    }
+
+    #menu a {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--secondary);
+        transition: color 0.15s ease, background 0.15s ease;
+    }
+
+    #menu a:hover {
+        color: var(--primary);
+        background: var(--muted);
+    }
+
+    #menu .active {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    #menu .active::after {
+        display: none;
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 }
