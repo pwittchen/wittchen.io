@@ -64,3 +64,8 @@ to stop and remove everything:
 ```
 docker compose down --rmi all -v
 ```
+
+theme
+-----
+
+Currently I'm using [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) Hugo theme, with some modifications inspired by the [shadcn-ui](https://ui.shadcn.com/)
