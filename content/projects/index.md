@@ -6,50 +6,17 @@ draft: false
 
 ## Personal
 
-### Web apps
-
-- link: https://varun.surf
-  - source: https://github.com/pwittchen/varun.surf
-  - Java, Spring Boot, JS, Docker, Bash, Cloudflare
-  - Kite spots database and weather dashboard for kitesurfers
-
-### Tools and libraries
-
-#### For Android
-
-- source: https://github.com/pwittchen/ReactiveNetwork
-  - Java, Android
-  - Library listening network connection state and Internet connectivity
-- source: https://github.com/pwittchen/NetworkEvents
-  - Java, Android
-  - Library listening network connection state and change of the WiFi signal strength
-- source: https://github.com/pwittchen/neurosky-android-sdk
-  - Java, Android
-  - SDK for the NeuroSky MindWave Mobile Brainwave Sensing Headset
-- source: https://github.com/pwittchen/RxBiometric
-  - Kotlin, Android
-  - RxJava and RxKotlin bindings for Biometric Prompt
-- source: https://github.com/pwittchen/swipe
-  - Java, Android
-  - Detects swipe events on Android
-- source: https://github.com/pwittchen/prefser
-  - Java, Android
-  - Wrapper for Android SharedPreferences with object serialization
-- source: https://github.com/pwittchen/ReactiveSensors
-  - Java, Android
-  - Library monitoring device hardware sensors with RxJava
-
-#### Others
-
-- source: https://github.com/pwittchen/spotify-cli-linux
-  - Python, Linux
-  - A command line interface to Spotify on Linux
-- source: https://github.com/pwittchen/demix
-  - Python
-  - Script, which separates audio from songs into stems (vocals, instruments)
-- source: https://github.com/pwittchen/jsvs
-  - Rust
-  - JavaScript Vulnerability Scanner
+- https://varun.surf (source code: https://github.com/pwittchen/varun.surf)
+- https://github.com/pwittchen/ReactiveNetwork
+- https://github.com/pwittchen/NetworkEvents
+- https://github.com/pwittchen/neurosky-android-sdk
+- https://github.com/pwittchen/RxBiometric
+- https://github.com/pwittchen/swipe
+- https://github.com/pwittchen/prefser
+- https://github.com/pwittchen/ReactiveSensors
+- https://github.com/pwittchen/spotify-cli-linux
+- https://github.com/pwittchen/demix
+- https://github.com/pwittchen/jsvs
 
 ...and more
 
@@ -57,4 +24,4 @@ You can check all of my **open-source** projects at: https://github.com/pwittche
 
 ## Commercial
 
-All of my commercial work is described here: https://www.linkedin.com/in/pwittchen/
+My commercial work is described here: https://www.linkedin.com/in/pwittchen/
