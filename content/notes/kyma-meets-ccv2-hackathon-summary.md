@@ -22,13 +22,15 @@ With this code, we can go to the SAP Hybris Commerce store-front...
 
 ...and get our discount!
 
-![](posts/2018/kyma-meets-ccv2-hackathon-summary/storefront2.png)
+![](/posts/2018/kyma-meets-ccv2-hackathon-summary/storefront2.png)
 
 ## Application overview
 
 General concept of the application flow is presented on the diagram below.
 
-![](/posts/2018/kyma-meets-ccv2-hackathon-summary/diagram.png)
+{{< rawhtml >}}
+<img src="/posts/2018/kyma-meets-ccv2-hackathon-summary/diagram.png" alt="Application diagram" style="margin: 20px 0; padding: 15px; display: block; background: #fff;">
+{{< /rawhtml >}}
 
 We decided to create three microservices:
 - mailing service written in Node.js
