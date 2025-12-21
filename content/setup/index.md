@@ -6,8 +6,8 @@ draft: false
 
 Here's the list of equipment and software I use personally and professionally:
 
-Server
-------
+Servers
+-------
 
 - Hosting: W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
 - VPS: [mikr.us](https://mikr.us)
