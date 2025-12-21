@@ -40,38 +40,30 @@
       <description>&lt;p&gt;Here&amp;rsquo;s the list of equipment and software I use personally and professionally:&lt;/p&gt;
 &lt;h2 id=&#34;server&#34;&gt;Server&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Hosting
-&lt;ul&gt;
-&lt;li&gt;W1GB hosting server by &lt;a href=&#34;https://cyberfolks.pl&#34;&gt;cyberfolks.pl&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;VPS
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://mikr.us&#34;&gt;mikr.us&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;Hosting: W1GB hosting server by &lt;a href=&#34;https://cyberfolks.pl&#34;&gt;cyberfolks.pl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;VPS: &lt;a href=&#34;https://mikr.us&#34;&gt;mikr.us&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;OS: &lt;a href=&#34;https://www.apple.com/pl/macos/&#34;&gt;macOS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;shell: &lt;a href=&#34;https://www.zsh.org&#34;&gt;Zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;Oh my zsh&lt;/a&gt; + &lt;a href=&#34;https://github.com/romkatv/powerlevel10k&#34;&gt;p10k&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;shell: &lt;a href=&#34;https://www.zsh.org&#34;&gt;zsh&lt;/a&gt; + &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;oh my zsh&lt;/a&gt; + &lt;a href=&#34;https://github.com/romkatv/powerlevel10k&#34;&gt;p10k&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;terminal: &lt;a href=&#34;https://iterm2.com/&#34;&gt;iTerm2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;text editor: &lt;a href=&#34;https://vim.org&#34;&gt;Vim&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;non-terminal text editor: &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;VS Code&lt;/a&gt; + &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt; + &lt;a href=&#34;https://ia.net/writer&#34;&gt;iA Writer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;IDE: &lt;a href=&#34;https://www.jetbrains.com/idea&#34;&gt;IntelliJ IDEA&lt;/a&gt; + &lt;a href=&#34;https://developer.android.com/studio&#34;&gt;Android Studio&lt;/a&gt; + &lt;a href=&#34;https://www.jetbrains.com/pycharm/&#34;&gt;PyCharm&lt;/a&gt; + &lt;a href=&#34;https://developer.apple.com/xcode/&#34;&gt;Xcode&lt;/a&gt; + &lt;a href=&#34;https://www.jetbrains.com/objc/&#34;&gt;AppCode&lt;/a&gt; + &lt;a href=&#34;https://www.jetbrains.com/rust/&#34;&gt;RustRover&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;non-terminal text editor: &lt;a href=&#34;https://zed.dev/&#34;&gt;Zed&lt;/a&gt; + &lt;a href=&#34;https://ia.net/writer&#34;&gt;iA Writer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;IDE: &lt;a href=&#34;https://www.jetbrains.com/ides/&#34;&gt;JetBrains IDEs&lt;/a&gt; + &lt;a href=&#34;https://developer.apple.com/xcode/&#34;&gt;Xcode&lt;/a&gt; (just for Apple stuff)&lt;/li&gt;
 &lt;li&gt;VCS: &lt;a href=&#34;https://git-scm.com&#34;&gt;Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;web browser: &lt;a href=&#34;https://brave.com&#34;&gt;Brave&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;file manager: &lt;a href=&#34;https://github.com/MidnightCommander/mc&#34;&gt;mc&lt;/a&gt; + Finder&lt;/li&gt;
-&lt;li&gt;music and podcasts: &lt;a href=&#34;https://www.spotify.com/&#34;&gt;Spotify&lt;/a&gt; + &lt;a href=&#34;https://github.com/pwittchen/spotify-cli-linux&#34;&gt;spotify-cli-linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;file manager: &lt;a href=&#34;https://github.com/MidnightCommander/mc&#34;&gt;mc&lt;/a&gt; + Apple Finder&lt;/li&gt;
+&lt;li&gt;music and podcasts: &lt;a href=&#34;https://www.spotify.com/&#34;&gt;Spotify&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;videos: &lt;a href=&#34;https://www.videolan.org/vlc/&#34;&gt;VLC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Excel-like spreadsheets: Google Sheets&lt;/li&gt;
+&lt;li&gt;Excel-like spreadsheets: &lt;a href=&#34;https://docs.google.com/spreadsheets&#34;&gt;Google Sheets&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;torrent client: &lt;a href=&#34;https://transmissionbt.com&#34;&gt;Transmission&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;to do list: &lt;a href=&#34;https://nozbe.com/?a=piotrwittchen&#34;&gt;Nozbe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;to-do list: &lt;a href=&#34;https://nozbe.com/?a=piotrwittchen&#34;&gt;Nozbe&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;notes: &lt;a href=&#34;https://www.notion.so/&#34;&gt;Notion&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;password manager: &lt;a href=&#34;https://www.passwordstore.org&#34;&gt;Pass&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;presentations: &lt;a href=&#34;http://slides.google.com&#34;&gt;Google Slides&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;calendar: &lt;a href=&#34;https://calendar.google.com&#34;&gt;Google Calendar&lt;/a&gt; + &lt;a href=&#34;https://www.notion.com/product/calendar&#34;&gt;Notion Calendar&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;email: &lt;a href=&#34;http://gmail.com&#34;&gt;Gmail&lt;/a&gt; + &lt;a href=&#34;https://www.notion.com/product/mail&#34;&gt;Notion Mail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;password manager: &lt;a href=&#34;https://www.passwordstore.org&#34;&gt;Pass&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;repository hosting: &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;invoices and accounting: &lt;a href=&#34;https://www.infakt.pl/polecam/piotr-wittchen&#34;&gt;InFakt&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -82,12 +74,12 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Main laptop:
+&lt;li&gt;Main laptop (macOS):
 &lt;ul&gt;
 &lt;li&gt;Macbook Pro M4 Max (CPU: Apple M4 Max 14 core, GPU: 32-core integrated, RAM: 36 GB, SSD: 1 TB)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Backup laptop with Arch Linux and i3:
+&lt;li&gt;Backup laptop (Arch Linux with i3):
 &lt;ul&gt;
 &lt;li&gt;ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)&lt;/li&gt;
 &lt;/ul&gt;

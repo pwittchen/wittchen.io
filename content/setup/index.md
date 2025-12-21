@@ -9,32 +9,30 @@ Here's the list of equipment and software I use personally and professionally:
 Server
 ------
 
-- Hosting
-  - W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
-- VPS
-  - [mikr.us](https://mikr.us)
+- Hosting: W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
+- VPS: [mikr.us](https://mikr.us)
 
 Software
 --------
 - OS: [macOS](https://www.apple.com/pl/macos/)
-- shell: [Zsh](https://www.zsh.org) + [Oh my zsh](https://ohmyz.sh/) + [p10k](https://github.com/romkatv/powerlevel10k)
+- shell: [zsh](https://www.zsh.org) + [oh my zsh](https://ohmyz.sh/) + [p10k](https://github.com/romkatv/powerlevel10k)
 - terminal: [iTerm2](https://iterm2.com/)
 - text editor: [Vim](https://vim.org)
-- non-terminal text editor: [VS Code](https://code.visualstudio.com) + [Sublime Text](https://www.sublimetext.com/) + [iA Writer](https://ia.net/writer)
-- IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea) + [Android Studio](https://developer.android.com/studio) + [PyCharm](https://www.jetbrains.com/pycharm/) + [Xcode](https://developer.apple.com/xcode/) + [AppCode](https://www.jetbrains.com/objc/) + [RustRover](https://www.jetbrains.com/rust/)
+- non-terminal text editor: [Zed](https://zed.dev/) + [iA Writer](https://ia.net/writer)
+- IDE: [JetBrains IDEs](https://www.jetbrains.com/ides/) + [Xcode](https://developer.apple.com/xcode/) (just for Apple stuff)
 - VCS: [Git](https://git-scm.com)
 - web browser: [Brave](https://brave.com)
-- file manager: [mc](https://github.com/MidnightCommander/mc) + Finder
-- music and podcasts: [Spotify](https://www.spotify.com/) + [spotify-cli-linux](https://github.com/pwittchen/spotify-cli-linux)
+- file manager: [mc](https://github.com/MidnightCommander/mc) + Apple Finder
+- music and podcasts: [Spotify](https://www.spotify.com/)
 - videos: [VLC](https://www.videolan.org/vlc/)
-- Excel-like spreadsheets: Google Sheets
+- Excel-like spreadsheets: [Google Sheets](https://docs.google.com/spreadsheets)
 - torrent client: [Transmission](https://transmissionbt.com)
-- to do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
+- to-do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
 - notes: [Notion](https://www.notion.so/)
-- password manager: [Pass](https://www.passwordstore.org)
 - presentations: [Google Slides](http://slides.google.com)
 - calendar: [Google Calendar](https://calendar.google.com) + [Notion Calendar](https://www.notion.com/product/calendar)
 - email: [Gmail](http://gmail.com) + [Notion Mail](https://www.notion.com/product/mail)
+- password manager: [Pass](https://www.passwordstore.org)
 - repository hosting: [GitHub](https://github.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
 
@@ -45,9 +43,9 @@ Configuration
 
 Hardware
 --------
-- Main laptop:
+- Main laptop (macOS):
   - Macbook Pro M4 Max (CPU: Apple M4 Max 14 core, GPU: 32-core integrated, RAM: 36 GB, SSD: 1 TB)
-- Backup laptop with Arch Linux and i3:
+- Backup laptop (Arch Linux with i3):
   - ThinkPad T470S (CPU: Intel i7-7600U, GPU: Intel HD Graphics 620, RAM: 16 GB, SSD: 512 GB)
 - Samsung C34H890WJUX Curved monitor
 - Logitech MX Keys Mini Keyboard
