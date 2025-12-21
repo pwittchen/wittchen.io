@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths:
-      - 'public/*'
+      - 'public/**'
   workflow_dispatch:
 jobs:
   build:
