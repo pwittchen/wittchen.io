@@ -19,13 +19,15 @@ running
 hugo server -D
 ```
 
+`-D` flag generates website with drafts
+
 deployment
 ----------
 
 just update content and run command:
 
 ```
-hugo -D
+hugo
 ```
 
 then commit and push your changes

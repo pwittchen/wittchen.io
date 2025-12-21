@@ -1,7 +1,7 @@
 ---
 title: "Setup"
 date: 2025-05-20T22:47:00+02:00
-draft: true
+draft: false
 ---
 
 Here's the list of equipment and software I use personally and professionally:
