@@ -14,4 +14,4 @@ a daily basis, you can check the software and hardware on the [setup](/setup) pa
 
 ## Contact
 
-If you have a question, would like to start a collaboration, are interested in hiring me, or simply want to say hello, feel free to reach out at **piotr@wittchen.io**.
+If you have a question, are interested in hiring me, or simply want to say hello, reach out at **piotr@wittchen.io**.
