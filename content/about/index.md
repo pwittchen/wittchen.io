@@ -4,8 +4,11 @@ date: 2025-12-22T13:06:33+01:00
 draft: false
 ---
 
-Hello! I’m **Piotr Wittchen**, and I’m glad you took the time to visit my personal website.
+{{< rawhtml >}}
+<img src="/profile/avatar.png" alt="Piotr Wittchen" style="float: left; margin-right: 20px; margin-bottom: 10px; border-radius: 50%; width: 150px; height: auto;">
+{{< /rawhtml >}}
 
+Hello! I'm **Piotr Wittchen**, and I’m glad you took the time to visit my personal website. \
 I’m the [**Software Engineer**](https://www.linkedin.com/in/pwittchen/) from Poland with a strong background in Java. I’ve worked in a variety of environments, including **software houses, large corporations, and startups**, which has given me broad perspective on building and maintaining software at different scales. Over the years, I’ve worked on mobile Android applications, backend systems, data-streaming applications, and software libraries.
 
 I also have experience with Swift and iOS, Kotlin, Python, and I’ve recently started exploring Rust.

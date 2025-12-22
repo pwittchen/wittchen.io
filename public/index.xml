@@ -13,8 +13,11 @@
       <link>https://wittchen.io/about/</link>
       <pubDate>Mon, 22 Dec 2025 13:06:33 +0100</pubDate>
       <guid>https://wittchen.io/about/</guid>
-      <description>&lt;p&gt;Hello! I’m &lt;strong&gt;Piotr Wittchen&lt;/strong&gt;, and I’m glad you took the time to visit my personal website.&lt;/p&gt;
-&lt;p&gt;I’m the &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;strong&gt;Software Engineer&lt;/strong&gt;&lt;/a&gt; from Poland with a strong background in Java. I’ve worked in a variety of environments, including &lt;strong&gt;software houses, large corporations, and startups&lt;/strong&gt;, which has given me broad perspective on building and maintaining software at different scales. Over the years, I’ve worked on mobile Android applications, backend systems, data-streaming applications, and software libraries.&lt;/p&gt;</description>
+      <description>&lt;img src=&#34;https://wittchen.io/profile/avatar.png&#34; alt=&#34;Piotr Wittchen&#34; style=&#34;float: left; margin-right: 20px; margin-bottom: 10px; border-radius: 50%; width: 150px; height: auto;&#34;&gt;
+
+
+&lt;p&gt;Hello! I&amp;rsquo;m &lt;strong&gt;Piotr Wittchen&lt;/strong&gt;, and I’m glad you took the time to visit my personal website. &lt;br&gt;
+I’m the &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;strong&gt;Software Engineer&lt;/strong&gt;&lt;/a&gt; from Poland with a strong background in Java. I’ve worked in a variety of environments, including &lt;strong&gt;software houses, large corporations, and startups&lt;/strong&gt;, which has given me broad perspective on building and maintaining software at different scales. Over the years, I’ve worked on mobile Android applications, backend systems, data-streaming applications, and software libraries.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Projects</title>
