@@ -53,14 +53,10 @@ params:
     imageWidth: 120
     imageHeight: 120
     buttons:
-      - name: / about
+      - name: about
         url: "/about/"
-      - name: / notes
+      - name: notes
         url: "/notes/"
-      - name: / talks
-        url: "/talks/"
-      - name: / projects
-        url: "/projects/"
 
   homeInfoParams:
     Title: "Hi there \U0001F44B"

@@ -10,7 +10,7 @@ I’m the [**Software Engineer**](https://www.linkedin.com/in/pwittchen/) from P
 
 I also have experience with Swift and iOS, Kotlin, Python, and I’ve recently started exploring Rust.
 
-I enjoy learning new programming languages and technologies to broaden my horizons and to be able to choose the best tool for a given task. From time to time, I contribute to [**open-source software**](https://github.com/pwittchen) and build my own [**personal projects**](/projects).
+I enjoy learning new programming languages and technologies to broaden my horizons and to be able to choose the best tool for a given task. I used to give [talks](/talks) at the conferences and meetups and share my knowledge on the [stackoverflow](https://stackoverflow.com/users/1150795/piotr-wittchen). From time to time, I contribute to [**open-source software**](https://github.com/pwittchen) and build my own [**personal projects**](/projects).
 
 ## Setup
 
