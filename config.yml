@@ -53,6 +53,8 @@ params:
     imageWidth: 120
     imageHeight: 120
     buttons:
+      - name: / about
+        url: "/about/"
       - name: / notes
         url: "/notes/"
       - name: / talks
@@ -92,29 +94,29 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 10
     - identifier: notes
       name: notes
       url: /notes/
-      weight: 10
+      weight: 20
     - identifier: tags
       name: tags
       url: /tags/
-      weight: 20
+      weight: 30
     - identifier: talks
       name: talks
       url: /talks/
-      weight: 30
+      weight: 40
     - identifier: projects
       name: projects
       url: /projects/
-      weight: 40
+      weight: 50
     - identifier: search
       name: search
       url: /search/
-      weight: 50
-    - identifier: contact
-      name: contact
-      url: /contact/
       weight: 60
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma

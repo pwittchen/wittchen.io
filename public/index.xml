@@ -6,8 +6,16 @@
     <description>Recent content on Piotr Wittchen</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Oct 2025 01:27:02 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 22 Dec 2025 13:06:33 +0100</lastBuildDate>
     <atom:link href="https://wittchen.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://wittchen.io/about/</link>
+      <pubDate>Mon, 22 Dec 2025 13:06:33 +0100</pubDate>
+      <guid>https://wittchen.io/about/</guid>
+      <description>&lt;p&gt;Hello! I’m &lt;strong&gt;Piotr Wittchen&lt;/strong&gt;, and I’m glad you took the time to visit my personal website.&lt;/p&gt;
+&lt;p&gt;I’m the &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;strong&gt;Software Engineer&lt;/strong&gt;&lt;/a&gt; from Poland with a strong background in Java. I’ve worked in a variety of environments, including &lt;strong&gt;software houses, large corporations, and startups&lt;/strong&gt;, which has given me broad perspective on building and maintaining software at different scales. Over the years, I’ve worked on mobile Android applications, backend systems, data-streaming applications, and software libraries.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Projects</title>
       <link>https://wittchen.io/projects/</link>
@@ -30,9 +38,7 @@
 &lt;p&gt;&amp;hellip;and more&lt;/p&gt;
 &lt;p&gt;You can check all of my &lt;strong&gt;open-source&lt;/strong&gt; projects at: &lt;a href=&#34;https://github.com/pwittchen&#34;&gt;https://github.com/pwittchen&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;commercial&#34;&gt;Commercial&lt;/h2&gt;
-&lt;p&gt;My commercial work is described here: &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;https://www.linkedin.com/in/pwittchen/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-&lt;p&gt;You can check the setup I use daily on the &lt;a href=&#34;https://wittchen.io/setup&#34;&gt;setup&lt;/a&gt; page.&lt;/p&gt;</description>
+&lt;p&gt;My commercial work is described here: &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;https://www.linkedin.com/in/pwittchen/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Setup</title>
@@ -109,13 +115,6 @@
 &lt;li&gt;Tsmn.cc Leather Mousepad&lt;/li&gt;
 &lt;li&gt;Shelter wooden double laptop stand&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>Contact</title>
-      <link>https://wittchen.io/contact/</link>
-      <pubDate>Fri, 14 Aug 2020 16:31:02 +0200</pubDate>
-      <guid>https://wittchen.io/contact/</guid>
-      <description>&lt;p&gt;If you have a question, want to start cooperation, hire me or just say hi, send me a message to &lt;a href=&#34;mailto:piotr@wittchen.io&#34;&gt;piotr@wittchen.io&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Talks</title>

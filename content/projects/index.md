@@ -25,7 +25,3 @@ You can check all of my **open-source** projects at: https://github.com/pwittche
 ## Commercial
 
 My commercial work is described here: https://www.linkedin.com/in/pwittchen/
-
-## Setup
-
-You can check the setup I use daily on the [setup](/setup) page.
