@@ -6,7 +6,7 @@ Personal website and blog of Piotr Wittchen
 
 ## About
 
-Piotr Wittchen is a Software Engineer from Poland who creates software for mobile devices, servers, web and Linux. He graduated with MS and Engineering degree in Computer Science from the Silesian University of Technology and worked with large corporations, medium-sized software houses and small startups.
+Piotr Wittchen is a Software Engineer from Poland with a strong background in backend, data-streaming, web, and mobile software development. He has given talks at tech conferences and meetups, shares knowledge on Stack Overflow, and contributes to open-source software.
 
 ## Main Sections
 
@@ -34,24 +34,26 @@ Notable open-source projects:
 - jsvs - JavaScript Vulnerability Scanner in Rust
 - varun.surf - Weather dashboard for kitesurfers
 
-### Contact
-Get in touch with Piotr Wittchen.
+### Setup
+Software and hardware tools used daily.
 
-> https://wittchen.io/contact/
+> https://wittchen.io/setup/
 
 ## Technologies & Topics
 
-- **Programming Languages**: Java, Kotlin, Python, Rust
-- **Mobile Development**: Android, mobile apps
-- **Systems**: Linux, Arch Linux
-- **Tools & Frameworks**: Spring Boot, RxJava, Docker, Hugo
-- **Topics**: Software Engineering, Software Architecture, open-source, BCI (Brain-Computer Interfaces), reactive programming, web development
+- **Development Areas**: Backend, data-streaming, web, mobile
+- **Systems**: Linux, macOS
+- **Tools & Frameworks**: Docker, Hugo
+- **Topics**: Software Engineering, open-source, reactive programming
 
-## Social Links
+## Contact & Social Links
+
+Contact information is available on the About page: https://wittchen.io/about/
 
 - Email: piotr@wittchen.io
 - LinkedIn: https://www.linkedin.com/in/pwittchen/
 - GitHub: https://github.com/pwittchen
+- Stack Overflow: https://stackoverflow.com/users/1150795/piotr-wittchen
 
 ## Additional Features
 

@@ -17,7 +17,8 @@
 
 
 &lt;p&gt;Hello! I&amp;rsquo;m &lt;strong&gt;Piotr Wittchen&lt;/strong&gt;, and I’m glad you took the time to visit my personal website. &lt;br&gt;
-I’m the &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;strong&gt;Software Engineer&lt;/strong&gt;&lt;/a&gt; from Poland with a strong background in Java. I’ve worked in a variety of environments, including &lt;strong&gt;software houses, large corporations, and startups&lt;/strong&gt;, which has given me broad perspective on building and maintaining software at different scales. Over the years, I’ve worked on mobile Android applications, backend systems, data-streaming applications, and software libraries.&lt;/p&gt;</description>
+I’m a &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;strong&gt;Software Engineer&lt;/strong&gt;&lt;/a&gt; from Poland with a strong background in backend, data-streaming, web, and mobile software development. I have given &lt;a href=&#34;https://wittchen.io/talks&#34;&gt;talks&lt;/a&gt; at tech conferences and meetups, and I share my knowledge on &lt;a href=&#34;https://stackoverflow.com/users/1150795/piotr-wittchen&#34;&gt;Stack Overflow&lt;/a&gt;. From time to time, I contribute to &lt;a href=&#34;https://github.com/pwittchen&#34;&gt;&lt;strong&gt;open-source software&lt;/strong&gt;&lt;/a&gt; and build my own &lt;a href=&#34;https://wittchen.io/projects&#34;&gt;&lt;strong&gt;personal projects&lt;/strong&gt;&lt;/a&gt;. If you’re interested in the tools I use on &lt;br&gt;
+a daily basis, you can check the software and hardware on the &lt;a href=&#34;https://wittchen.io/setup&#34;&gt;setup&lt;/a&gt; page.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Projects</title>
@@ -49,11 +50,6 @@ I’m the &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;str
       <pubDate>Tue, 20 May 2025 22:47:00 +0200</pubDate>
       <guid>https://wittchen.io/setup/</guid>
       <description>&lt;p&gt;Here&amp;rsquo;s the list of equipment and software I use personally and professionally:&lt;/p&gt;
-&lt;h2 id=&#34;servers&#34;&gt;Servers&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hosting: W1GB hosting server by &lt;a href=&#34;https://cyberfolks.pl&#34;&gt;cyberfolks.pl&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;VPS: &lt;a href=&#34;https://mikr.us&#34;&gt;mikr.us&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;OS: &lt;a href=&#34;https://www.apple.com/pl/macos/&#34;&gt;macOS&lt;/a&gt;&lt;/li&gt;
@@ -77,11 +73,6 @@ I’m the &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;str
 &lt;li&gt;password manager: &lt;a href=&#34;https://www.passwordstore.org&#34;&gt;Pass&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;repository hosting: &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;invoices and accounting: &lt;a href=&#34;https://www.infakt.pl/polecam/piotr-wittchen&#34;&gt;InFakt&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pwittchen/dotfiles&#34;&gt;dotfiles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pwittchen/wallpapers&#34;&gt;wallpapers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
 &lt;ul&gt;
@@ -117,6 +108,16 @@ I’m the &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;&lt;str
 &lt;li&gt;Xiaomi Mi LED Desk Lamp&lt;/li&gt;
 &lt;li&gt;Tsmn.cc Leather Mousepad&lt;/li&gt;
 &lt;li&gt;Shelter wooden double laptop stand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pwittchen/dotfiles&#34;&gt;dotfiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pwittchen/wallpapers&#34;&gt;wallpapers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;servers&#34;&gt;Servers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Hosting: W1GB hosting server by &lt;a href=&#34;https://cyberfolks.pl&#34;&gt;cyberfolks.pl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;VPS: &lt;a href=&#34;https://mikr.us&#34;&gt;mikr.us&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>

@@ -6,12 +6,6 @@ draft: false
 
 Here's the list of equipment and software I use personally and professionally:
 
-Servers
--------
-
-- Hosting: W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
-- VPS: [mikr.us](https://mikr.us)
-
 Software
 --------
 - OS: [macOS](https://www.apple.com/pl/macos/)
@@ -35,11 +29,6 @@ Software
 - password manager: [Pass](https://www.passwordstore.org)
 - repository hosting: [GitHub](https://github.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
-
-Configuration
--------------
-- [dotfiles](https://github.com/pwittchen/dotfiles)
-- [wallpapers](https://github.com/pwittchen/wallpapers)
 
 Hardware
 --------
@@ -69,3 +58,14 @@ Desk
 - Xiaomi Mi LED Desk Lamp
 - Tsmn.cc Leather Mousepad
 - Shelter wooden double laptop stand
+
+Configuration
+-------------
+- [dotfiles](https://github.com/pwittchen/dotfiles)
+- [wallpapers](https://github.com/pwittchen/wallpapers)
+
+Servers
+-------
+
+- Hosting: W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
+- VPS: [mikr.us](https://mikr.us)
