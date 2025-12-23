@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wittchen.io/about/</loc>
-    <lastmod>2025-12-22T13:06:33+01:00</lastmod>
+    <loc>https://wittchen.io/experience/</loc>
+    <lastmod>2025-12-23T13:39:28+01:00</lastmod>
   </url><url>
     <loc>https://wittchen.io/</loc>
+    <lastmod>2025-12-23T13:39:28+01:00</lastmod>
+  </url><url>
+    <loc>https://wittchen.io/about/</loc>
     <lastmod>2025-12-22T13:06:33+01:00</lastmod>
   </url><url>
     <loc>https://wittchen.io/projects/</loc>
