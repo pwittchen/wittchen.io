@@ -20,12 +20,14 @@
 }
 .post-content th, .post-content td {
   padding-left: 0 !important;
+  padding-right: 0.5em !important;
   text-align: left;
 }
 &lt;/style&gt;
 
 
 &lt;p&gt;Below, you can see brief overview of my software development work experience and formal education. &lt;br&gt;
+In all companies I worked as a &lt;strong&gt;software engineer&lt;/strong&gt; or a &lt;strong&gt;senior software engineer&lt;/strong&gt;. &lt;br&gt;
 For more details, please visit my &lt;a href=&#34;https://www.linkedin.com/in/pwittchen/&#34;&gt;linkedin profile&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;
 &lt;table&gt;
@@ -45,7 +47,7 @@ For more details, please visit my &lt;a href=&#34;https://www.linkedin.com/in/pw
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;2020-2025&lt;/code&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Digital Fingerprints&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Java, Apache Flink, Spring Boot, Android, Swift, iOS, Python, etc.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Java, Flink, Spring, Android, Swift, iOS, Python&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;2020&lt;/code&gt;&lt;/td&gt;
