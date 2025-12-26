@@ -6,17 +6,17 @@ draft: false
 
 ## Personal
 
-- https://varun.surf (source code: https://github.com/pwittchen/varun.surf)
-- https://github.com/pwittchen/ReactiveNetwork
-- https://github.com/pwittchen/NetworkEvents
-- https://github.com/pwittchen/neurosky-android-sdk
-- https://github.com/pwittchen/RxBiometric
-- https://github.com/pwittchen/swipe
-- https://github.com/pwittchen/prefser
-- https://github.com/pwittchen/ReactiveSensors
-- https://github.com/pwittchen/spotify-cli-linux
-- https://github.com/pwittchen/demix
-- https://github.com/pwittchen/jsvs
+- https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS
+- https://github.com/pwittchen/ReactiveNetwork | Java, Android
+- https://github.com/pwittchen/NetworkEvents | Java, Android
+- https://github.com/pwittchen/neurosky-android-sdk | Java, Android
+- https://github.com/pwittchen/RxBiometric | Kotlin, Android
+- https://github.com/pwittchen/swipe | Java, Android
+- https://github.com/pwittchen/prefser | Java, Android
+- https://github.com/pwittchen/ReactiveSensors | Java, Android
+- https://github.com/pwittchen/spotify-cli-linux | Python
+- https://github.com/pwittchen/demix | Python
+- https://github.com/pwittchen/jsvs | Rust
 
 ...and more
 
@@ -24,4 +24,4 @@ You can check all of my **open-source** projects at: https://github.com/pwittche
 
 ## Commercial
 
-My commercial work is described here: https://www.linkedin.com/in/pwittchen/
+My commercial work is described here: https://www.linkedin.com/in/pwittchen
