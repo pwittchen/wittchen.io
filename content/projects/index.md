@@ -7,14 +7,14 @@ draft: false
 ## Personal
 
 - https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS
-- https://github.com/pwittchen/ReactiveNetwork | Java, Android
-- https://github.com/pwittchen/NetworkEvents | Java, Android
-- https://github.com/pwittchen/neurosky-android-sdk | Java, Android
-- https://github.com/pwittchen/RxBiometric | Kotlin, Android
-- https://github.com/pwittchen/swipe | Java, Android
-- https://github.com/pwittchen/prefser | Java, Android
-- https://github.com/pwittchen/ReactiveSensors | Java, Android
-- https://github.com/pwittchen/spotify-cli-linux | Python
+- https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
+- https://github.com/pwittchen/NetworkEvents | Java, Android | ★ 450+
+- https://github.com/pwittchen/neurosky-android-sdk | Java, Android | ★ 50+
+- https://github.com/pwittchen/RxBiometric | Kotlin, Android | ★ 300+
+- https://github.com/pwittchen/swipe | Java, Android | ★ 320+
+- https://github.com/pwittchen/prefser | Java, Android | ★ 230+
+- https://github.com/pwittchen/ReactiveSensors | Java, Android | ★ 160+
+- https://github.com/pwittchen/spotify-cli-linux | Python | ★ 690+
 - https://github.com/pwittchen/demix | Python
 - https://github.com/pwittchen/jsvs | Rust
 
