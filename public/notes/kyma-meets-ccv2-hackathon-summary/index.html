@@ -24,7 +24,7 @@ I recently I had an opportunity to join &ldquo;Kyma meets CCV2 Hackathon&rdquo; 
 </span></span><span class=line><span class=cl>            <span class=k>get</span><span class=p>(</span><span class=s2>&#34;/&#34;</span><span class=p>)</span> <span class=p>{</span> <span class=k>it</span><span class=p>.</span><span class=n>status</span><span class=p>(</span><span class=nc>HttpStatus</span><span class=p>.</span><span class=n>FORBIDDEN_403</span><span class=p>)</span> <span class=p>}</span>
 </span></span><span class=line><span class=cl>          <span class=p>}</span>
 </span></span><span class=line><span class=cl>          <span class=p>.</span><span class=n>event</span><span class=p>(</span><span class=nc>JavalinEvent</span><span class=p>.</span><span class=n>SERVER_STARTING</span><span class=p>)</span> <span class=p>{</span> <span class=n>voucherController</span><span class=p>.</span><span class=n>loadVouchers</span><span class=p>()</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>          <span class=p>.</span><span class=n>start</span><span class=p>(</span><span class=m>7000</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>          <span class=p>.</span><span class=n>start</span><span class=p>(</span><span class=mi>7000</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>  <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
@@ -34,20 +34,20 @@ I recently I had an opportunity to join &ldquo;Kyma meets CCV2 Hackathon&rdquo; 
 </span></span></code></pre></div><p>Application can be build with Gradle as follows:</p><pre tabindex=0><code>./gradlew build
 </code></pre><p>I&rsquo;m using <a href=https://github.com/johnrengelman/shadow>Shadow Gradle plugin</a> to create fat jar. Once, build is finished, I can start the application with embdedded Jetty HTTP server on the port 7000.</p><pre tabindex=0><code>java -jar build/libs/app-1.0-all.jar
 </code></pre><p>You can find source code of the whole application at: <a href=https://github.com/pwittchen/voucher-storage-service>https://github.com/pwittchen/voucher-storage-service</a>.</p><h2 id=deployment-of-the-microservice>Deployment of the microservice<a hidden class=anchor aria-hidden=true href=#deployment-of-the-microservice>#</a></h2><p>In order to deploy the microservice to the Kyma, I needed to prepare <code>Dockerfile</code>, which looks as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Dockerfile data-lang=Dockerfile><span class=line><span class=cl><span class=k>FROM</span><span class=w> </span><span class=s>openjdk:8-jre-alpine</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>MAINTAINER</span><span class=w> </span><span class=s>pwittchen</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>WORKDIR</span><span class=w> </span><span class=s>/app</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>COPY</span> build/libs/app-1.0-all.jar .<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>RUN</span> ls -la /app<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>CMD</span> java -jar app-1.0-all.jar<span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>MAINTAINER</span><span class=w> </span><span class=s>pwittchen</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>WORKDIR</span><span class=w> </span><span class=s>/app</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>COPY</span> build/libs/app-1.0-all.jar .<span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>RUN</span> ls -la /app<span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>CMD</span> java -jar app-1.0-all.jar<span class=err>
 </span></span></span></code></pre></div><p>It&rsquo;s just a lightweight Alpine Linux with Java 8 and Kotlin application compiled into fat jar.</p><p>To build the container, I invoked command:</p><pre tabindex=0><code>sudo docker build -t pwittchen/voucher-storage-service .
 </code></pre><p>and to run it, I invoked command:</p><pre tabindex=0><code>sudo docker run -p 127.0.0.1:7000:7000 -t pwittchen/voucher-storage-service
 </code></pre><p>I also pushed it to the <a href=https://hub.docker.com/r/pwittchen/voucher-storage-service/>docker hub</a> because Kyma gets required containers from there.</p><p>Next, I created <code>deployment.yml</code> file for Kubernetess, which is used by Kyma under the hood.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>apiVersion</span><span class=p>:</span><span class=w> </span><span class=l>extensions/v1beta1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>kind</span><span class=p>:</span><span class=w> </span><span class=l>Deployment</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>metadata</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>kind</span><span class=p>:</span><span class=w> </span><span class=l>Deployment</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>metadata</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>voucher-storage-service</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>labels</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>app</span><span class=p>:</span><span class=w> </span><span class=l>voucher-storage-service</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spec</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>spec</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>selector</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>matchLabels</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>app</span><span class=p>:</span><span class=w> </span><span class=l>voucher-storage-service</span><span class=w>
@@ -61,14 +61,14 @@ I recently I had an opportunity to join &ldquo;Kyma meets CCV2 Hackathon&rdquo; 
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>docker.io/pwittchen/voucher-storage-service:latest</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>ports</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=nt>containerPort</span><span class=p>:</span><span class=w> </span><span class=m>7000</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>apiVersion</span><span class=p>:</span><span class=w> </span><span class=l>v1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>kind</span><span class=p>:</span><span class=w> </span><span class=l>Service</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>metadata</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>apiVersion</span><span class=p>:</span><span class=w> </span><span class=l>v1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>kind</span><span class=p>:</span><span class=w> </span><span class=l>Service</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>metadata</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>voucher-storage-service</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>labels</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>app</span><span class=p>:</span><span class=w> </span><span class=l>voucher-storage-service</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spec</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>spec</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>ports</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>http</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>7000</span><span class=w>

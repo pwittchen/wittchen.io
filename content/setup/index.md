@@ -19,8 +19,7 @@ Software
 - file manager: [mc](https://github.com/MidnightCommander/mc) + Apple Finder
 - music and podcasts: [Spotify](https://www.spotify.com/)
 - videos: [VLC](https://www.videolan.org/vlc/)
-- Excel-like spreadsheets: [Google Sheets](https://docs.google.com/spreadsheets)
-- torrent client: [Transmission](https://transmissionbt.com)
+- spreadsheets: [Notion](https://www.notion.so/)
 - to-do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
 - notes: [Notion](https://www.notion.so/)
 - presentations: [Google Slides](http://slides.google.com)
@@ -28,6 +27,7 @@ Software
 - email: [Gmail](http://gmail.com) + [Notion Mail](https://www.notion.com/product/mail)
 - password manager: [Pass](https://www.passwordstore.org)
 - repository hosting: [GitHub](https://github.com)
+- torrent client: [Transmission](https://transmissionbt.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
 
 Hardware
@@ -66,6 +66,8 @@ Configuration
 
 Servers
 -------
-
+- Domains management: [seohost.pl](https://seohost.pl)
+- DNS/Proxy management: [cloudflare.com](https://www.cloudflare.com)
 - Hosting: W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
 - VPS: [mikr.us](https://mikr.us)
+

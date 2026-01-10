@@ -6,7 +6,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>.</span><span class=na>vertx</span><span class=p>()</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>.</span><span class=na>createHttpServer</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>server</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>server</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>.</span><span class=na>requestStream</span><span class=p>()</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>.</span><span class=na>toFlowable</span><span class=p>()</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>.</span><span class=na>onBackpressureDrop</span><span class=p>()</span><span class=w>
@@ -15,7 +15,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>      </span><span class=n>request</span><span class=p>.</span><span class=na>response</span><span class=p>().</span><span class=na>end</span><span class=p>(</span><span class=s>&#34;request received&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>});</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>server</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>server</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>.</span><span class=na>rxListen</span><span class=p>(</span><span class=n>8080</span><span class=p>)</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=n>httpServer</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=n>logger</span><span class=p>.</span><span class=na>info</span><span class=p>(</span><span class=s>&#34;server is running at port 8080...&#34;</span><span class=p>));</span><span class=w>
 </span></span></span></code></pre></div><p>We can build this server with Gradle as follows:</p><pre tabindex=0><code>./gradlew shadowJar

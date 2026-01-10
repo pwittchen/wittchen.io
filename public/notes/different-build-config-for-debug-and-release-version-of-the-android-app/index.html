@@ -37,7 +37,7 @@
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=c1>// configuration of the back-end address - begin
-</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=n>applicationVariants</span><span class=o>.</span><span class=na>all</span> <span class=o>{</span> <span class=n>variant</span> <span class=o>-&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=n>variant</span><span class=o>.</span><span class=na>mergeResources</span><span class=o>.</span><span class=na>doLast</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>            <span class=k>if</span><span class=o>(</span><span class=n>variant</span><span class=o>.</span><span class=na>buildType</span><span class=o>.</span><span class=na>isDebuggable</span><span class=o>())</span> <span class=o>{</span>
@@ -49,7 +49,7 @@
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=c1>// configuration of the back-end address - end
-</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=n>packagingOptions</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>        <span class=n>exclude</span> <span class=s1>&#39;META-INF/DEPENDENCIES.txt&#39;</span>
 </span></span><span class=line><span class=cl>        <span class=n>exclude</span> <span class=s1>&#39;META-INF/LICENSE.txt&#39;</span>
@@ -76,7 +76,7 @@
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kt>def</span> <span class=nf>replaceBackendAddressInResources</span><span class=o>(</span><span class=n>variant</span><span class=o>,</span> <span class=n>host</span><span class=o>,</span> <span class=n>port</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>    <span class=c1>// replace the #const_backend_url# with your specific ip address
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>def</span> <span class=n>protocol</span> <span class=o>=</span> <span class=s2>&#34;https://&#34;</span>
+</span></span></span><span class=line><span class=cl>    <span class=kt>def</span> <span class=n>protocol</span> <span class=o>=</span> <span class=s2>&#34;https://&#34;</span>
 </span></span><span class=line><span class=cl>    <span class=kt>def</span> <span class=n>backendAddress</span> <span class=o>=</span> <span class=n>protocol</span> <span class=o>+</span> <span class=n>host</span> <span class=o>+</span> <span class=s2>&#34;:&#34;</span> <span class=o>+</span> <span class=n>port</span> <span class=o>+</span> <span class=s2>&#34;/&#34;</span>
 </span></span><span class=line><span class=cl>    <span class=n>File</span> <span class=n>valuesFile</span> <span class=o>=</span> <span class=n>file</span><span class=o>(</span><span class=s2>&#34;${buildDir}/intermediates/res/${variant.dirName}/values/values.xml&#34;</span><span class=o>)</span>
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=o>(</span><span class=n>valuesFile</span><span class=o>.</span><span class=na>exists</span><span class=o>())</span> <span class=o>{</span>

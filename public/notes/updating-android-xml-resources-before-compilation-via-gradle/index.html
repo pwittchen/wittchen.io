@@ -56,7 +56,7 @@ ignored = !git ls-files -v | grep &#34;^[[:lower:]]&#34;
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=c1>// replace the #const_backend_url# with your current ip address to use your local backend web service
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>applicationVariants</span><span class=o>.</span><span class=na>all</span> <span class=o>{</span> <span class=n>variant</span> <span class=o>-&gt;</span>
+</span></span></span><span class=line><span class=cl>    <span class=n>applicationVariants</span><span class=o>.</span><span class=na>all</span> <span class=o>{</span> <span class=n>variant</span> <span class=o>-&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=n>variant</span><span class=o>.</span><span class=na>mergeResources</span><span class=o>.</span><span class=na>doLast</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>            <span class=kt>def</span> <span class=n>protocol</span> <span class=o>=</span> <span class=s2>&#34;https://&#34;</span>
 </span></span><span class=line><span class=cl>            <span class=kt>def</span> <span class=n>localIp</span> <span class=o>=</span> <span class=n>obtainCurrentIpAddress</span><span class=o>()</span>
@@ -98,7 +98,7 @@ ignored = !git ls-files -v | grep &#34;^[[:lower:]]&#34;
 </span></span><span class=line><span class=cl>    <span class=n>compile</span> <span class=nf>fileTree</span><span class=o>(</span><span class=nl>dir:</span> <span class=s1>&#39;libs&#39;</span><span class=o>,</span> <span class=nl>include:</span> <span class=o>[</span><span class=s1>&#39;*.jar&#39;</span><span class=o>])</span>
 </span></span><span class=line><span class=cl>    <span class=n>compile</span> <span class=s1>&#39;com.jakewharton:butterknife:5.1.2&#39;</span>
 </span></span><span class=line><span class=cl>    <span class=c1>// put your another dependencies here
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>androidTestCompile</span> <span class=s1>&#39;com.jakewharton.espresso:espresso:1.1-r3&#39;</span>
+</span></span></span><span class=line><span class=cl>    <span class=n>androidTestCompile</span> <span class=s1>&#39;com.jakewharton.espresso:espresso:1.1-r3&#39;</span>
 </span></span><span class=line><span class=cl>    <span class=n>androidTestCompile</span> <span class=s1>&#39;com.squareup:fest-android:1.0.8&#39;</span>
 </span></span><span class=line><span class=cl><span class=o>}</span>
 </span></span><span class=line><span class=cl>

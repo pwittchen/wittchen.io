@@ -25,19 +25,19 @@
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></div><p>Next, we need to create class for customized view extending WebView. Let&rsquo;s call it <em>JustifiedTextView</em>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span><span class=w> </span><span class=nn>com.github.sample.view</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.content.Context</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.content.res.TypedArray</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.graphics.Color</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.os.Build</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.text.TextUtils</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.util.AttributeSet</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.util.TypedValue</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.view.View</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>android.webkit.WebView</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.content.Context</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.content.res.TypedArray</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.graphics.Color</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.os.Build</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.text.TextUtils</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.util.AttributeSet</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.util.TypedValue</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.view.View</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>android.webkit.WebView</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>com.github.sample.R</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>com.github.sample.R</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>JustifiedTextView</span><span class=w> </span><span class=kd>extends</span><span class=w> </span><span class=n>WebView</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>JustifiedTextView</span><span class=w> </span><span class=kd>extends</span><span class=w> </span><span class=n>WebView</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>text</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -98,7 +98,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>setTransparentBackground</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></div><p>After that, we need to update <code>res/values/attrs.xml</code> file and put inside the following declaration:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;declare-styleable</span> <span class=na>name=</span><span class=s>&#34;JustifiedTextView&#34;</span><span class=nt>&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;attr</span> <span class=na>name=</span><span class=s>&#34;text&#34;</span> <span class=na>format=</span><span class=s>&#34;reference&#34;</span> <span class=nt>/&gt;</span>
 </span></span><span class=line><span class=cl><span class=nt>&lt;/declare-styleable&gt;</span>
@@ -108,14 +108,14 @@
 </span></span><span class=line><span class=cl><span class=na>android:layout_height=</span><span class=s>&#34;wrap_content&#34;</span> <span class=nt>/&gt;</span>
 </span></span></code></pre></div><p>Next, we can access <code>JustifiedTextView</code> in our activity:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// ...</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>private</span><span class=w> </span><span class=n>JustifiedTextView</span><span class=w> </span><span class=n>tvInformation</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>private</span><span class=w> </span><span class=n>JustifiedTextView</span><span class=w> </span><span class=n>tvInformation</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>onCreate</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>onCreate</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>tvInformation</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>JustifiedTextView</span><span class=p>)</span><span class=w> </span><span class=n>findViewById</span><span class=p>(</span><span class=n>R</span><span class=p>.</span><span class=na>id</span><span class=p>.</span><span class=na>tv_information</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>tVinformation</span><span class=p>.</span><span class=na>setText</span><span class=p>(</span><span class=s>&#34;sample text&#34;</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// ...</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// ...</span><span class=w>
 </span></span></span></code></pre></div><p>We can also set text inside XML layout instead of doing this programmatically. It depends on our project. We also should turn off hardware acceleration for given activity in <code>AndroidManifest.xml</code> file in order to bring this solution to work.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;activity</span>
 </span></span><span class=line><span class=cl>    <span class=na>android:name=</span><span class=s>&#34;.activity.justifiedTextViewActivity&#34;</span>
 </span></span><span class=line><span class=cl>    <span class=na>android:configChanges=</span><span class=s>&#34;orientation|keyboardHidden&#34;</span>
