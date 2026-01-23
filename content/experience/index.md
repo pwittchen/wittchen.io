@@ -24,17 +24,17 @@ For more details, please visit my [linkedin profile](https://www.linkedin.com/in
 
 ## Work
 
-| Years       | Company                           | Tech stack                                                   |
-|:------------|:----------------------------------|:-------------------------------------------------------------|
-| `2020-now`  | VCU (self-employed)               | Java, Kotlin, Rust                                           |
-| `2020-2025` | Digital Fingerprints              | Java, Flink, Kafka, Spring, Android, Swift, iOS, Python      |
-| `2020`      | Koyo                              | Kotlin, Spring Boot                                          |
-| `2019-2020` | Enginiety                         | Java, Spring, SAP Commerce (Hybris)                          |
-| `2015-2019` | SAP                               | Java, Spring, SAP Commerce (Hybris)                          |
-| `2012-2015` | Future-Processing                 | Java, Android                                                |
-| `2009-2010` | Yakamedia                         | PHP                                                          |
-| `2006-2012` | Freelance                         | PHP, MySQL, HTML, CSS, JavaScript                            |
-| `2005-2006` | 3W Serwisy Informacyjne           | PHP, HTML, CSS                                               |
+| Years       | Company                               | Tech stack                                                   |
+|:------------|:--------------------------------------|:-------------------------------------------------------------|
+| `2020-now`  | [VCU](https://vcu.sh) (self-employed) | Java, Kotlin, Rust                                           |
+| `2020-2025` | Digital Fingerprints                  | Java, Flink, Kafka, Spring, Android, Swift, iOS, Python      |
+| `2020`      | Koyo                                  | Kotlin, Spring Boot                                          |
+| `2019-2020` | Enginiety                             | Java, Spring, SAP Commerce (Hybris)                          |
+| `2015-2019` | SAP                                   | Java, Spring, SAP Commerce (Hybris)                          |
+| `2012-2015` | Future-Processing                     | Java, Android                                                |
+| `2009-2010` | Yakamedia                             | PHP                                                          |
+| `2006-2012` | Freelance                             | PHP, MySQL, HTML, CSS, JavaScript                            |
+| `2005-2006` | 3W Serwisy Informacyjne               | PHP, HTML, CSS                                               |
 
 ## Education
 
