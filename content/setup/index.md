@@ -44,6 +44,8 @@ Hardware
 - Sennheiser HD 599 cable headphones
 - Sennheiser Momentum True Wireless headphones
 - Blue Yeti Microphone
+- Anker Prime docking station
+- Unitek USB-C switch and converter
 - DJI Mic Mini wireless Microphone - 2 TX, 1 RX
 - LaCie Rugged Mini 1TB USB 3.0 external HDD
 - Samsung T5 Evo 2TB external SSD
@@ -58,6 +60,7 @@ Desk
 - Xiaomi Mi LED Desk Lamp
 - Tsmn.cc Leather Mousepad
 - Shelter wooden double laptop stand
+- Fifine BM88W microphone mount
 
 Configuration
 -------------
