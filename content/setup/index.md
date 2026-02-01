@@ -23,6 +23,7 @@ Software
 - to-do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
 - notes: [Notion](https://www.notion.so/)
 - presentations: [Google Slides](http://slides.google.com)
+- diagrams and skteches: [excalidraw](https://excalidraw.com/) + [draw.io / diagrams.net](https://app.diagrams.net/)
 - calendar: [Google Calendar](https://calendar.google.com) + [Notion Calendar](https://www.notion.com/product/calendar)
 - email: [Gmail](http://gmail.com) + [Notion Mail](https://www.notion.com/product/mail)
 - password manager: [Pass](https://www.passwordstore.org)
