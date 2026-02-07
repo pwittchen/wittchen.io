@@ -19,9 +19,7 @@ Software
 - file manager: [mc](https://github.com/MidnightCommander/mc) + Apple Finder
 - music and podcasts: [Spotify](https://www.spotify.com/)
 - videos: [VLC](https://www.videolan.org/vlc/)
-- spreadsheets: [Notion](https://www.notion.so/)
-- to-do list: [Nozbe](https://nozbe.com/?a=piotrwittchen)
-- notes: [Notion](https://www.notion.so/)
+- notes, spreadsheets and todo list: [Notion](https://www.notion.so/)
 - presentations: [Google Slides](http://slides.google.com)
 - diagrams and skteches: [excalidraw](https://excalidraw.com/) + [draw.io / diagrams.net](https://app.diagrams.net/)
 - calendar: [Google Calendar](https://calendar.google.com) + [Notion Calendar](https://www.notion.com/product/calendar)
