@@ -1,0 +1,302 @@
+/* Search Modal - macOS Spotlight-inspired styling */
+
+/* Backdrop */
+.search-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.search-modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal container */
+.search-modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.96);
+    width: 90%;
+    max-width: 760px;
+    max-height: 70vh;
+    background: var(--theme);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 2);
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.search-modal-backdrop.open + .search-modal,
+.search-modal.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+}
+
+/* Search input area */
+.search-modal-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    gap: 14px;
+}
+
+.search-modal-header svg {
+    flex-shrink: 0;
+    color: var(--secondary);
+    width: 20px;
+    height: 20px;
+}
+
+.search-modal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    color: var(--primary);
+    caret-color: var(--primary);
+}
+
+.search-modal-input::placeholder {
+    color: var(--secondary);
+}
+
+.search-modal-close {
+    flex-shrink: 0;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 0.5);
+    color: var(--secondary);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 6px;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.search-modal-close:hover {
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+/* Results area */
+.search-modal-results {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 8px;
+    flex: 1;
+}
+
+.search-modal-results:empty {
+    display: none;
+}
+
+/* Empty / no results state */
+.search-modal-empty {
+    padding: 32px 20px;
+    text-align: center;
+    color: var(--secondary);
+    font-size: 0.875rem;
+}
+
+/* Result item */
+.search-modal-result {
+    display: block;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--primary);
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.search-modal-result:hover {
+    background: var(--muted);
+}
+
+.search-modal-result.active {
+    background: var(--border);
+}
+
+.search-modal-result-title {
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 2px;
+}
+
+.search-modal-result-summary {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Footer hint */
+.search-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--secondary);
+    gap: 16px;
+}
+
+.search-modal-footer-keys {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-modal-footer-keys span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.search-modal-footer kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    min-width: 20px;
+    line-height: 1.4;
+}
+
+/* Keyboard shortcut badge on nav search link */
+.search-shortcut-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 6px;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--secondary);
+    vertical-align: middle;
+    line-height: 1.4;
+}
+
+/* Dark mode adjustments */
+.dark .search-modal {
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark .search-modal-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .search-modal {
+        top: 10%;
+        width: 95%;
+        max-height: 80vh;
+    }
+
+    .search-shortcut-badge {
+        display: none;
+    }
+
+    .search-modal-footer {
+        display: none;
+    }
+}
+
+/* Search trigger button on homepage */
+.search-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+    padding: 10px 18px;
+    background: hsl(0 0% 94%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--secondary);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+}
+
+.dark .search-trigger {
+    background: hsl(0 0% 15%);
+}
+
+.search-trigger:hover {
+    border-color: var(--secondary);
+    color: var(--primary);
+}
+
+.search-trigger svg {
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+.search-trigger-kbd {
+    margin-left: auto;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .search-trigger {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-trigger-kbd {
+        display: none;
+    }
+}
+
+/* Prevent body scroll when modal is open */
+body.search-modal-open {
+    overflow: hidden;
+}

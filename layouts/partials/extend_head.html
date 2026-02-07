@@ -1,0 +1,10 @@
+{{- /* Load search modal JS on every page */ -}}
+{{- $fusejs := resources.Get "js/fuse.basic.min.js" -}}
+{{- $searchModal := resources.Get "js/search-modal.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) -}}
+{{- $searchBundle := (slice $fusejs $searchModal) | resources.Concat "js/search-modal-bundle.js" | resources.Minify -}}
+{{- if not site.Params.assets.disableFingerprinting -}}
+{{- $searchBundle = $searchBundle | fingerprint -}}
+<script defer crossorigin="anonymous" src="{{ $searchBundle.RelPermalink }}" integrity="{{ $searchBundle.Data.Integrity }}"></script>
+{{- else -}}
+<script defer crossorigin="anonymous" src="{{ $searchBundle.RelPermalink }}"></script>
+{{- end -}}
