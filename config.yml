@@ -57,6 +57,10 @@ params:
         url: "/about/"
       - name: notes
         url: "/notes/"
+      - name: talks
+        url: "/talks/"
+      - name: projects
+        url: "/projects/"
 
   homeInfoParams:
     Title: "Hi there \U0001F44B"

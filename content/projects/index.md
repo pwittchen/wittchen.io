@@ -14,7 +14,8 @@ draft: false
 - https://github.com/pwittchen/swipe | Java, Android | ★ 320+
 - https://github.com/pwittchen/prefser | Java, Android | ★ 230+
 - https://github.com/pwittchen/ReactiveSensors | Java, Android | ★ 160+
-- https://github.com/pwittchen/spotify-cli-linux | Python | ★ 690+
+- https://github.com/pwittchen/ReactiveBeacons | Java, Android | ★ 160+
+- https://github.com/pwittchen/spotify-cli-linux | Python | ★ 650+
 - https://github.com/pwittchen/demix | Python
 - https://github.com/pwittchen/jsvs | Rust
 - https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) | Typescript, React, Three.js

@@ -256,6 +256,7 @@
     cursor: pointer;
     transition: color 0.15s ease, border-color 0.15s ease;
     text-decoration: none;
+    width: 360px;
 }
 
 .dark .search-trigger {
