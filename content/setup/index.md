@@ -19,8 +19,7 @@ Software
 - file manager: [mc](https://github.com/MidnightCommander/mc) + Apple Finder
 - music and podcasts: [Spotify](https://www.spotify.com/)
 - videos: [VLC](https://www.videolan.org/vlc/)
-- notes, spreadsheets and todo list: [Notion](https://www.notion.so/)
-- presentations: [Google Slides](http://slides.google.com)
+- notes, spreadsheets, presentations and todo list: [Notion](https://www.notion.so/)
 - diagrams and skteches: [excalidraw](https://excalidraw.com/) + [draw.io / diagrams.net](https://app.diagrams.net/)
 - calendar: [Google Calendar](https://calendar.google.com) + [Notion Calendar](https://www.notion.com/product/calendar)
 - email: [Gmail](http://gmail.com) + [Notion Mail](https://www.notion.com/product/mail)
@@ -28,6 +27,7 @@ Software
 - repository hosting: [GitHub](https://github.com)
 - torrent client: [Transmission](https://transmissionbt.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
+- AI tools: claude code, codex, grok, gemini
 
 Hardware
 --------
