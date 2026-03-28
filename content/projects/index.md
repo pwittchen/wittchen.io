@@ -24,7 +24,7 @@ draft: false
 - https://github.com/pwittchen/jsvs | Rust
 - https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) | Typescript, React, Three.js
 - https://github.com/pwittchen/mikrus-cli | Rust
-
+- https://github.com/pwittchen/aictl | Rust
 
 ...and more
 
