@@ -7,6 +7,7 @@ draft: false
 ## Personal
 
 - https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS, Docker, Nginx
+- https://github.com/pwittchen/aictl | Rust
 - https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
 - https://github.com/pwittchen/NetworkEvents | Java, Android | ★ 450+
 - https://github.com/pwittchen/ReactiveWiFi | Java, Android | ★ 150+
@@ -24,7 +25,6 @@ draft: false
 - https://github.com/pwittchen/jsvs | Rust
 - https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) | Typescript, React, Three.js
 - https://github.com/pwittchen/mikrus-cli | Rust
-- https://github.com/pwittchen/aictl | Rust
 
 ...and more
 
