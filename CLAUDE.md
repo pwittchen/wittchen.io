@@ -39,10 +39,10 @@ docker compose down --rmi all -v  # Stop and remove everything
 - `layouts/shortcodes/` - Custom shortcodes (includes `rawhtml` for embedding raw HTML)
 - `themes/papermod/` - PaperMod theme (third-party)
 - `static/` - Static assets
-- `public/` - Generated output (committed, triggers deployment)
+- `public/` - Generated output (gitignored, built in CI)
 
 ## Deployment
 
-Automatic via GitHub Actions on push to master when `public/*` changes. The workflow deploys via FTP using repository secrets.
+Automatic via GitHub Actions on push to master. The workflow builds the site with Hugo and deploys via FTP using repository secrets.
 
-Workflow: Build locally with `hugo -D`, commit the `public/` directory, push to master.
+Workflow: Push to master, GitHub Actions runs `hugo -D` and deploys the generated `public/` directory.

@@ -7,3 +7,4 @@ node_modules/
 config.json
 package-lock.json
 .hugo_build.lock
+public/
