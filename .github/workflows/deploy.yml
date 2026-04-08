@@ -31,5 +31,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./public/
         server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-        dangerous-clean-slate: true
         log-level: verbose
