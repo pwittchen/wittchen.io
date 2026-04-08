@@ -21,7 +21,7 @@ jobs:
         extended: true
 
     - name: Build
-      run: hugo -D
+      run: hugo
 
     - name: Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
