@@ -31,11 +31,17 @@ jobs:
         FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
       run: |
         sudo apt-get update && sudo apt-get install -y lftp
+        ls -la public/ | head
         lftp -c "
           set ftp:ssl-allow no;
           set net:max-retries 3;
           set net:timeout 20;
           set mirror:parallel-transfer-count 10;
           open -u '$FTP_USERNAME','$FTP_PASSWORD' '$FTP_SERVER';
-          mirror -R --delete --verbose --parallel=10 ./public/ '$FTP_REMOTE_DIR';
+          pwd;
+          cls -la;
+          cd '$FTP_REMOTE_DIR';
+          pwd;
+          mirror -R --delete --verbose --parallel=10 ./public/ .;
+          cls -la | head;
         "
