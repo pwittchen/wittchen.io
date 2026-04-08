@@ -1,6 +1,8 @@
 wittchen.io
 ===========
 
+[![Publish Website](https://github.com/pwittchen/wittchen.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/pwittchen/wittchen.io/actions/workflows/deploy.yml)
+
 this is source of [wittchen.io](http://wittchen.io), which is my personal website and blog based on [hugo](https://gohugo.io/)
 
 writing
