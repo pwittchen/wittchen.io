@@ -27,7 +27,6 @@ Software
 - repository hosting: [GitHub](https://github.com)
 - torrent client: [Transmission](https://transmissionbt.com)
 - invoices and accounting: [InFakt](https://www.infakt.pl/polecam/piotr-wittchen)
-- AI tools: claude code, codex, grok, gemini
 
 Hardware
 --------
