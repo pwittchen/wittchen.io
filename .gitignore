@@ -8,3 +8,4 @@ config.json
 package-lock.json
 .hugo_build.lock
 public/
+.claude/settings.local.json
