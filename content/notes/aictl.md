@@ -114,6 +114,20 @@ That said, the mode is more capable than I expected for a side project. While te
 
 It can also serve as a custom inference provider for Claude Code, including opt-in cross-provider routing that translates Claude's `POST /v1/messages` to and from OpenAI, Gemini, Ollama and the rest. Useful if you like Claude Code's UX but want to use a different model underneath.
 
+## Security
+
+A tool that can run shell commands and ship your text to a remote LLM has two obvious attack surfaces: the tool calls themselves, and the data that leaves the machine. AICTL has a layered model for both, with sane defaults and opt-in knobs to tighten things.
+
+- **Tool confirmation by default.** Every tool call (shell exec, file write, code run, etc.) prompts y/N in the REPL before it runs. `--auto` skips confirmations for unattended use; `--unrestricted` additionally disables the security gate. Both are explicit and never the default.
+- **Prompt-injection guard.** User messages are scanned before they reach the model. Instruction-override phrases ("ignore previous instructions", "disable security") and forged role/tool tags (`<|system|>`, `### System:`, `<tool …>`) are blocked with a clear error, so an untrusted document pasted into the prompt can't easily hijack the agent.
+- **Audit log.** Every tool invocation appends one JSON line to `~/.aictl/audit/<session-id>` with timestamp, tool name, truncated input and an outcome tag (`executed`, `denied_by_policy`, `denied_by_user`, `disabled`, `duplicate`). It's stored separately from the chat transcript so a reviewer can reconstruct exactly what the agent ran.
+- **Outbound redaction (opt-in).** Set `AICTL_SECURITY_REDACTION=redact` and every outbound message body is screened for secrets and PII before it reaches a remote provider - provider API keys, AWS access keys, JWTs, PEM private keys, DB/AMQP connection strings, emails, credit cards (Luhn-checked), IBANs (mod-97), and high-entropy tokens. `=block` aborts the turn entirely on any hit. Local providers (Ollama / GGUF / MLX) bypass by default since the data never leaves the host. An optional GLiNER-based NER layer adds person/org/location detection behind the `redaction-ner` cargo feature.
+- **API key storage.** Keys live either in `~/.aictl/config` or, after one `/keys lock` from the REPL, in the system keychain. The `aictl-server` master key follows the same path and can be migrated between the two without restarting the server.
+- **Server-side defence in depth.** When `aictl-server` sits in front of multiple clients, the same injection / redaction / audit passes run server-side too, with `AICTL_SERVER_*` overrides so the proxy can enforce a stricter posture than the local CLI on the same host. Every authenticated route is gated by a bearer master key generated on first launch; only `/healthz` and `/openapi.json` are open.
+- **Signed and notarized binaries, signed updates.** macOS builds are codesigned with a Developer ID certificate and notarized through Apple's `notarytool`, and the in-app updater verifies a minisign signature on each downloaded bundle before swapping itself in - so a compromised release feed can't push an unsigned binary to existing installs.
+
+The defaults assume a developer running AICTL on their own laptop with their own keys: confirmation on, injection guard on, audit on, redaction off (most people don't want PII rewrites on personal chats). For shared or higher-trust environments, the `AICTL_SECURITY_*` keys let you tighten things without touching code.
+
 ## Releases, Apple signing and in-app updates
 
 Releases are fully automated on GitHub Actions. A tag push triggers a workflow that builds the CLI and the desktop app for both Apple Silicon and Intel, code-signs the `.app` bundle with a Developer ID certificate, submits it to Apple's notary service with `notarytool` and staples the resulting ticket back into the bundle. The signed and notarized `.app` is then wrapped into a `.dmg` and published as a GitHub release.
