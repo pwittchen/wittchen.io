@@ -2,9 +2,9 @@
 title: "Six weeks of agentic coding in Rust: AICTL"
 date: 2026-05-19 08:00:00
 tags:
-- AI
+- ai
 - rust
-- CLI
+- cli
 - open-source
 ---
 
