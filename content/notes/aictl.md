@@ -46,6 +46,10 @@ The same config, the same providers, the same tools and agents everywhere. You s
    └────────┘           └───────────┘         └─────────────┘
 ```
 
+{{< rawhtml >}}
+<img src="/posts/2026/aictl/aictl_screenshot.png" alt="" style="border: none;">
+{{< /rawhtml >}}
+
 ## Installation
 
 One-liner:
