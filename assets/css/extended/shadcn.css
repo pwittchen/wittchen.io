@@ -507,6 +507,26 @@ body {
 button#theme-toggle {
     color: var(--muted-foreground);
     transition: color 0.15s ease;
+    transform: translateY(-2px);
+}
+
+/* Show the icon matching the active theme: moon in dark mode, sun in light mode */
+body.dark #moon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body.dark #sun {
+    display: none;
+}
+
+body:not(.dark) #sun {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body:not(.dark) #moon {
+    display: none;
 }
 
 button#theme-toggle:hover {
