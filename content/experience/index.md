@@ -26,7 +26,8 @@ For more details, please visit my [linkedin profile](https://www.linkedin.com/in
 
 | Years       | Company                               | Tech stack                                                   |
 |:------------|:--------------------------------------|:-------------------------------------------------------------|
-| `2025-now`  | [VCU](https://vcu.sh) (self-employed) | Java, Kotlin, Rust                                           |
+| `2025-now`  | [VCU](https://vcu.sh) (self-employed) | Java, Kotlin, Rust                                         |
+| `2026-now`  | AIForecast                            | Kotlin                                                       |
 | `2025-2026` | Beyond Indentity                      | Kotlin, Rust                                                 |
 | `2025-2025` | EPAM Systems                          | Java, Flink, Spring                                          |
 | `2020-2025` | Digital Fingerprints                  | Java, Flink, Kafka, Spring, Android, Swift, iOS, Python      |
