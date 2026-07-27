@@ -19,7 +19,7 @@ draft: false
 {{< /rawhtml >}}
 
 Below, you can see brief overview of my software development work experience and formal education. \
-In all companies I worked as a **software engineer** or a **senior software engineer**. \
+In all companies I worked as a **software engineer**, a **senior software engineer** or a **software architect**. \
 For more details, please visit my [linkedin profile](https://www.linkedin.com/in/pwittchen/).
 
 ## Work
