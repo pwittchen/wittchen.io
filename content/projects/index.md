@@ -7,7 +7,7 @@ draft: false
 ## Personal
 
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
-- https://github.com/pwittchen/jrs | Rust
+- https://github.com/pwittchen/jrs (project website: https://pwittchen.github.io/jrs) | Rust
 - https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS, Docker, Nginx
 - https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
 - https://github.com/pwittchen/NetworkEvents | Java, Android | ★ 450+
