@@ -12,8 +12,9 @@ draft: false
 - https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
 - https://github.com/pwittchen/NetworkEvents | Java, Android | ★ 450+
 - https://github.com/pwittchen/ReactiveWiFi | Java, Android | ★ 150+
-- https://github.com/pwittchen/neurosky-android-sdk | Java, Android | ★ 50+
+- https://github.com/pwittchen/RxBattery | Kotlin, Android | ★ 60+
 - https://github.com/pwittchen/RxBiometric | Kotlin, Android | ★ 300+
+- https://github.com/pwittchen/neurosky-android-sdk | Java, Android | ★ 50+
 - https://github.com/pwittchen/swipe | Java, Android | ★ 300+
 - https://github.com/pwittchen/InfiniteScroll | Java, Android | ★ 180+
 - https://github.com/pwittchen/gesture | Java, Android | ★ 50+
