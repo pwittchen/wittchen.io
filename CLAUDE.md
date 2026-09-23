@@ -41,6 +41,10 @@ docker compose down --rmi all -v  # Stop and remove everything
 - `static/` - Static assets
 - `public/` - Generated output (gitignored, built in CI)
 
+## Git Commits
+
+Do not add `Co-Authored-By` lines (or any other AI attribution) to git commit messages.
+
 ## Deployment
 
 Automatic via GitHub Actions on push to master. The workflow builds the site with Hugo and deploys via FTP using repository secrets.
