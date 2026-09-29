@@ -9,6 +9,7 @@ draft: false
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
 - https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust
 - https://github.com/pwittchen/kayet (project website: https://getkayet.app) | Rust
+- https://github.com/pwittchen/moodbeat | Rust
 - https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS, Docker, Nginx
 - https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
 - https://github.com/pwittchen/NetworkEvents | Java, Android | ★ 450+
