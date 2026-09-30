@@ -11,7 +11,7 @@ Software
 - OS: [macOS](https://www.apple.com/pl/macos/)
 - shell: [zsh](https://www.zsh.org) + [oh my zsh](https://ohmyz.sh/) + [p10k](https://github.com/romkatv/powerlevel10k)
 - terminal: [iTerm2](https://iterm2.com/)
-- text editor: [Vim](https://vim.org)/[Neovim](https://neovim.io/)
+- text editor: [vim](https://vim.org) + [neovim](https://neovim.io/)
 - non-terminal text editor: [kayet](https://getkayet.app)
 - IDE: [JetBrains IDEs](https://www.jetbrains.com/ides/) + [Zed](https://zed.dev/) + [Xcode](https://developer.apple.com/xcode/)
 - VCS: [Git](https://git-scm.com)
