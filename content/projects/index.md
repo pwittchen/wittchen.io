@@ -4,7 +4,7 @@ date: 2025-10-06T01:27:02+02:00
 draft: false
 ---
 
-## Personal
+## Open-source
 
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
 - https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust
