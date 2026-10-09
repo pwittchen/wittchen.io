@@ -10,6 +10,10 @@ Zora is a commercial desktop email app that I’m building as a solo founder, pr
 
 - https://zoramail.app
 
+### Others
+
+You can find details about my professional experience as a full-time software engineer and contractor on [LinkedIn](https://www.linkedin.com/in/pwittchen), or read a brief overview on my [Professional Experience](/experience) page.
+
 ## Open-source
 
 Projects below are free and open-source
@@ -44,6 +48,3 @@ Projects below are free and open-source
 
 You can check all of my **open-source** projects at: https://github.com/pwittchen
 
-## Commercial
-
-My commercial work is described here: https://www.linkedin.com/in/pwittchen
