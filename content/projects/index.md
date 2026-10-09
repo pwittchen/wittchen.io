@@ -16,7 +16,7 @@ You can find details about my professional experience as a full-time software en
 
 ## Open-source
 
-Projects below are free and open-source
+Projects below are free and open-source.
 
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
 - https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust
