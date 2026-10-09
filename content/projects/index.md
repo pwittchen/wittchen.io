@@ -4,11 +4,15 @@ date: 2025-10-06T01:27:02+02:00
 draft: false
 ---
 
-## Apps and SaaS
+## Commercial Apps and SaaS
 
-- https://zoramail.app | Rust | work in progress... app will be ready soon!
+Zora desktop email app is commercial and paid with a free 14-day trial. I develop it as a solo founder. App is not ready yet. Right now, you can check it's landing page. Main programming language for this project is Rust. App will be available soon!
+
+- https://zoramail.app | work in progress...
 
 ## Open-source
+
+Projects below are free and open-source
 
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
 - https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust
