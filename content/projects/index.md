@@ -6,9 +6,9 @@ draft: false
 
 ## Commercial Apps and SaaS
 
-Zora desktop email app is commercial and paid with a free 14-day trial. I develop it as a solo founder. App is not ready yet. Right now, you can check it's landing page. Main programming language for this project is Rust. App will be available soon!
+Zora is a commercial desktop email app that I’m building as a solo founder, primarily using Rust. The app will offer a 14-day free trial, followed by a paid license. It’s currently under active development and isn’t available just yet, but you can already check out its landing page. Stay tuned — Zora is coming soon!
 
-- https://zoramail.app | work in progress...
+- https://zoramail.app
 
 ## Open-source
 
