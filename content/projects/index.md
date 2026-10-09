@@ -4,6 +4,10 @@ date: 2025-10-06T01:27:02+02:00
 draft: false
 ---
 
+## Apps and SaaS
+
+- https://zoramail.app | Rust | work in progress... app will be ready soon!
+
 ## Open-source
 
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
