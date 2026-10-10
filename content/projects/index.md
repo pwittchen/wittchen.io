@@ -10,41 +10,55 @@ Zora is a commercial desktop email app that I’m building as a solo founder, pr
 
 - https://zoramail.app
 
-### Others
+### Professional Work
 
 You can find details about my professional experience as a full-time software engineer and contractor on [LinkedIn](https://www.linkedin.com/in/pwittchen), or read a brief overview on my [Professional Experience](/experience) page.
 
 ## Open-source
 
-Projects below are free and open-source.
+A selection of my free and open-source projects, grouped by area — from AI and desktop apps to Android libraries.
+
+### AI and Desktop Apps
 
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
-- https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust
 - https://github.com/pwittchen/kayet (project website: https://getkayet.app) | Rust
+
+### Developer Tools
+
+- https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust
+- https://github.com/pwittchen/jsvs | Rust
+- https://github.com/pwittchen/mikrus-cli | Rust
+
+### Music and Audio
+
+- https://github.com/pwittchen/spotify-cli-linux | Python | ★ 700+
 - https://github.com/pwittchen/moodbeat | Rust
+- https://github.com/pwittchen/wavo | Rust
+- https://github.com/pwittchen/plainsong | Rust, JS
+- https://github.com/pwittchen/demix | Python
+
+### Web Apps
+
 - https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS, Docker, Nginx
+- https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) | Typescript, React, Three.js
+
+### Android and Java Libraries
+
 - https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
 - https://github.com/pwittchen/NetworkEvents | Java, Android | ★ 450+
-- https://github.com/pwittchen/ReactiveWiFi | Java, Android | ★ 150+
-- https://github.com/pwittchen/RxBattery | Kotlin, Android | ★ 60+
 - https://github.com/pwittchen/RxBiometric | Kotlin, Android | ★ 300+
-- https://github.com/pwittchen/neurosky-android-sdk | Java, Android | ★ 50+
 - https://github.com/pwittchen/swipe | Java, Android | ★ 300+
-- https://github.com/pwittchen/InfiniteScroll | Java, Android | ★ 180+
-- https://github.com/pwittchen/gesture | Java, Android | ★ 50+
 - https://github.com/pwittchen/prefser | Java, Android | ★ 200+
+- https://github.com/pwittchen/InfiniteScroll | Java, Android | ★ 180+
+- https://github.com/pwittchen/ReactiveWiFi | Java, Android | ★ 150+
 - https://github.com/pwittchen/ReactiveSensors | Java, Android | ★ 150+
 - https://github.com/pwittchen/ReactiveBeacons | Java, Android | ★ 150+
 - https://github.com/pwittchen/kirai | Java | ★ 70+
-- https://github.com/pwittchen/spotify-cli-linux | Python | ★ 700+
-- https://github.com/pwittchen/demix | Python
-- https://github.com/pwittchen/mikrus-cli | Rust
-- https://github.com/pwittchen/wavo | Rust
-- https://github.com/pwittchen/plainsong | Rust, JS
-- https://github.com/pwittchen/jsvs | Rust
-- https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) | Typescript, React, Three.js
+- https://github.com/pwittchen/RxBattery | Kotlin, Android | ★ 60+
+- https://github.com/pwittchen/neurosky-android-sdk | Java, Android | ★ 50+
+- https://github.com/pwittchen/gesture | Java, Android | ★ 50+
 
-...and more
+### More Projects
 
 You can check all of my **open-source** projects at: https://github.com/pwittchen
 
