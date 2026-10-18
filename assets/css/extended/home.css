@@ -366,7 +366,7 @@
 
 @media (max-width: 768px) {
     .main .profile {
-        padding-block: 4.5rem 1rem;
+        padding-block: 0 1rem;
     }
 
     .profile .profile_inner {
