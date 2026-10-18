@@ -413,7 +413,8 @@
     /* Keep all nav links on a single line */
     .hero-nav {
         flex-wrap: nowrap;
-        gap: 1.25rem;
+        gap: clamp(0.6rem, 3.5vw, 1.25rem);
+        font-size: clamp(0.8rem, 4.2vw, 1rem);
     }
 
     .hero-nav .arrow {

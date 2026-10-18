@@ -63,6 +63,8 @@ params:
         url: "/talks/"
       - name: projects
         url: "/projects/"
+      - name: setup
+        url: "/setup/"
 
   homeInfoParams:
     Title: "Hi there \U0001F44B"
