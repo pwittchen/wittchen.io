@@ -409,6 +409,16 @@
     .hero-icons {
         flex-basis: 100%;
     }
+
+    /* Keep all nav links on a single line */
+    .hero-nav {
+        flex-wrap: nowrap;
+        gap: 1.25rem;
+    }
+
+    .hero-nav .arrow {
+        display: none;
+    }
 }
 
 /* Footer aligned with the left-aligned home content */
