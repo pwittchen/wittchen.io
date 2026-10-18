@@ -71,5 +71,5 @@ Servers
 - Domains management: [seohost.pl](https://seohost.pl)
 - DNS/Proxy management: [cloudflare.com](https://www.cloudflare.com)
 - Hosting: W1GB hosting server by [cyberfolks.pl](https://cyberfolks.pl)
-- VPS: [mikr.us](https://mikr.us)
+- VPS: [mikr.us](https://mikr.us) 4.2
 
