@@ -42,7 +42,7 @@ A selection of my free and open-source projects, grouped by area — from AI and
 - https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS, Docker, Nginx
 - https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) | Typescript, React, Three.js
 
-### Android and Java Libraries
+### Android, Java and Kotlin Libraries
 
 - https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
 - https://github.com/pwittchen/NetworkEvents | Java, Android | ★ 450+
