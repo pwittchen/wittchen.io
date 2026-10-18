@@ -27,7 +27,7 @@ A selection of my free and open-source projects, grouped by area — from AI and
 
 ### Developer Tools
 
-- https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust
+- https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust, Java, Kotlin, JVM
 - https://github.com/pwittchen/jsvs | Rust
 - https://github.com/pwittchen/mikrus-cli | Rust
 
