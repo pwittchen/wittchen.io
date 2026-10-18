@@ -98,6 +98,15 @@
     max-width: 34rem;
 }
 
+.hero-bio-details {
+    margin: -0.35rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+    color: var(--muted-foreground);
+    max-width: 34rem;
+}
+
 .hero-bio a,
 .hero-status a {
     color: var(--primary);
