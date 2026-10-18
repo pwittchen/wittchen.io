@@ -1,11 +1,12 @@
 /* shadcn/ui inspired styles for PaperMod theme */
 
 /* Import Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* Root variables - Light mode (shadcn zinc palette) */
 :root {
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
     /* Layout - wider content area */
     --main-width: 900px;
@@ -34,6 +35,10 @@
     --ring: hsl(240 5.9% 10%);
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(240 10% 3.9%);
+
+    /* Single accent color - links, status dot, hover states */
+    --brand: hsl(158 64% 32%);
+    --brand-soft: hsl(158 64% 32% / 0.12);
 }
 
 /* Dark mode colors */
@@ -55,6 +60,9 @@
     --ring: hsl(240 4.9% 83.9%);
     --card: hsl(0 0% 10%);
     --card-foreground: hsl(0 0% 98%);
+
+    --brand: hsl(158 58% 52%);
+    --brand-soft: hsl(158 58% 52% / 0.14);
 }
 
 /* Base typography */
@@ -138,68 +146,6 @@ body {
     border-radius: 1px;
 }
 
-/* Profile mode styles */
-.profile .profile_inner h1 {
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    font-size: 1.75rem;
-    text-transform: uppercase;
-}
-
-.profile .profile_inner .tagline {
-    color: var(--muted-foreground);
-    font-size: 1.125rem;
-}
-
-.profile img {
-    border: 4px solid var(--border);
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-/* Button styles - shadcn inspired */
-.buttons {
-    gap: 12px;
-}
-
-.button {
-    background: hsl(0 0% 94%);
-    color: var(--primary);
-    border-radius: var(--radius);
-    padding: 10px 20px;
-    font-weight: 500;
-    font-size: 0.875rem;
-    border: 1px solid var(--border);
-    box-shadow: none;
-    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-}
-
-.dark .button {
-    background: hsl(0 0% 15%);
-}
-
-.button:hover {
-    border-color: var(--secondary);
-}
-
-.button:active {
-    opacity: 0.8;
-}
-
-.button-inner {
-    padding: 0;
-}
-
-/* Outline button variant */
-.button.outline {
-    background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--border);
-}
-
-.button.outline:hover {
-    background: var(--accent);
-}
-
 /* Post entry cards */
 .post-entry {
     background: hsl(0 0% 94%);
@@ -268,7 +214,8 @@ body {
 
 .post-meta {
     color: var(--muted-foreground);
-    font-size: 0.875rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
 }
 
 .breadcrumbs {
@@ -307,6 +254,7 @@ body {
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
+    text-decoration-color: var(--brand);
     box-shadow: none;
 }
 
@@ -642,7 +590,8 @@ button#theme-toggle:hover {
 
 .archive-entry-date {
     color: var(--muted-foreground);
-    font-size: 0.875rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
 }
 
 /* Terms / Tags page */
@@ -782,16 +731,6 @@ button:focus-visible {
 
     .post-title {
         font-size: 2rem;
-    }
-
-    .buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .button {
-        width: 100%;
-        text-align: center;
     }
 
     /* Show hamburger button on mobile */

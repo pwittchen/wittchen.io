@@ -48,10 +48,12 @@ params:
     enabled: true
     title: "Piotr Wittchen"
     subtitle: "Software Engineer"
+    bio: "software engineer"
+    status: "based in Poland 🇵🇱 · [send email](mailto:piotr@wittchen.io)"
     imageUrl: "/profile/avatar.png"
     imageTitle: "avatar"
-    imageWidth: 120
-    imageHeight: 120
+    imageWidth: 64
+    imageHeight: 64
     buttons:
       - name: about
         url: "/about/"
@@ -72,6 +74,8 @@ params:
       url: "https://www.linkedin.com/in/pwittchen/"
     - name: github
       url: "https://github.com/pwittchen"
+    - name: stackoverflow
+      url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
