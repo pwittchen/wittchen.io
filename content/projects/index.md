@@ -6,11 +6,11 @@ draft: false
 
 ## Commercial Apps and SaaS
 
-### Zora
+### <img src="/projects/zora.png" alt="Zora icon" width="40" height="40" style="display:inline-block;vertical-align:middle;margin:0 10px 0 0;border:none;border-radius:0;box-shadow:none;"> Zora
 
 Zora is a commercial desktop email app that I’m building as a solo founder, primarily using Rust. The app will offer a 14-day free trial, followed by a paid license. It’s currently under active development and isn’t available just yet, but you can already check out its landing page. Stay tuned — Zora is coming soon!
 
-- https://zoramail.app
+Read more at https://zoramail.app
 
 ### TBA
 
