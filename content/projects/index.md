@@ -10,7 +10,7 @@ draft: false
 
 Zora is a commercial desktop email app that I’m building as a solo founder, primarily using Rust. The app will offer a 14-day free trial, followed by a paid license. It’s currently under active development and isn’t available just yet, but you can already check out its landing page. Stay tuned — Zora is coming soon!
 
-<img src="/projects/zora.png" alt="zora icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://zoramail.app
+- https://zoramail.app <img src="/projects/zora.png" alt="zora icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
 
 ### TBA
 
@@ -26,27 +26,28 @@ A selection of my free and open-source projects, grouped by area — from AI and
 
 ### AI and Desktop Apps
 
-- <img src="/projects/aictl.png" alt="aictl icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
-- <img src="/projects/kayet.png" alt="kayet icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/kayet (project website: https://getkayet.app) | Rust
+- https://github.com/pwittchen/aictl (project website: https://aictl.app) <img src="/projects/aictl.png" alt="aictl icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
+- https://github.com/pwittchen/kayet (project website: https://getkayet.app) <img src="/projects/kayet.png" alt="kayet icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
 
 ### Developer Tools
 
-- <img src="/projects/jrs.png" alt="jrs icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust, Java, Kotlin, JVM
+- https://github.com/pwittchen/jrs (project website: https://getjrs.dev) <img src="/projects/jrs.png" alt="jrs icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust, Java, Kotlin, JVM
 - https://github.com/pwittchen/jsvs | Rust
 - https://github.com/pwittchen/mikrus-cli | Rust
 
 ### Music and Audio
 
 - https://github.com/pwittchen/spotify-cli-linux | Python | ★ 700+
-- <img src="/projects/moodbeat.png" alt="moodbeat icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/moodbeat | Rust
+- https://github.com/pwittchen/spotify-cli-macos | Shell | ★ 20+
+- https://github.com/pwittchen/demix | Python
+- https://github.com/pwittchen/moodbeat <img src="/projects/moodbeat.png" alt="moodbeat icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
 - https://github.com/pwittchen/wavo | Rust
 - https://github.com/pwittchen/plainsong | Rust, JS
-- https://github.com/pwittchen/demix | Python
 
 ### Web Apps
 
-- https://github.com/pwittchen/varun.surf (online: https://varun.surf) | Java, Spring Boot, JS, Docker, Nginx
-- https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) | Typescript, React, Three.js
+- https://github.com/pwittchen/varun.surf (online: https://varun.surf) <img src="/projects/varun.png" alt="varun.surf icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Java, Spring Boot, JS, Docker, Nginx
+- https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) <img src="/projects/nazarewaves.png" alt="nazarewav.es icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Typescript, React, Three.js
 
 ### Android, Java and Kotlin Libraries
 
