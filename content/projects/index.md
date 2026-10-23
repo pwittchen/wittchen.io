@@ -6,11 +6,11 @@ draft: false
 
 ## Commercial Apps and SaaS
 
-### <img src="/projects/zora.png" alt="Zora icon" width="40" height="40" style="display:inline-block;vertical-align:middle;margin:0 10px 0 0;border:none;border-radius:0;box-shadow:none;"> Zora
+### Zora
 
 Zora is a commercial desktop email app that I’m building as a solo founder, primarily using Rust. The app will offer a 14-day free trial, followed by a paid license. It’s currently under active development and isn’t available just yet, but you can already check out its landing page. Stay tuned — Zora is coming soon!
 
-Read more at https://zoramail.app
+<img src="/projects/zora.png" alt="zora icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://zoramail.app
 
 ### TBA
 
@@ -26,19 +26,19 @@ A selection of my free and open-source projects, grouped by area — from AI and
 
 ### AI and Desktop Apps
 
-- https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
-- https://github.com/pwittchen/kayet (project website: https://getkayet.app) | Rust
+- <img src="/projects/aictl.png" alt="aictl icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/aictl (project website: https://aictl.app) | Rust
+- <img src="/projects/kayet.png" alt="kayet icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/kayet (project website: https://getkayet.app) | Rust
 
 ### Developer Tools
 
-- https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust, Java, Kotlin, JVM
+- <img src="/projects/jrs.png" alt="jrs icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/jrs (project website: https://getjrs.dev) | Rust, Java, Kotlin, JVM
 - https://github.com/pwittchen/jsvs | Rust
 - https://github.com/pwittchen/mikrus-cli | Rust
 
 ### Music and Audio
 
 - https://github.com/pwittchen/spotify-cli-linux | Python | ★ 700+
-- https://github.com/pwittchen/moodbeat | Rust
+- <img src="/projects/moodbeat.png" alt="moodbeat icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 6px 0 0;border:none;border-radius:0;box-shadow:none;"> https://github.com/pwittchen/moodbeat | Rust
 - https://github.com/pwittchen/wavo | Rust
 - https://github.com/pwittchen/plainsong | Rust, JS
 - https://github.com/pwittchen/demix | Python
