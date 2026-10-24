@@ -451,6 +451,26 @@ body {
     height: 1.25rem;
 }
 
+.footer .footer-social-icons {
+    margin-top: 0.5rem;
+}
+
+.footer .footer-social-icons a {
+    display: inline-flex;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+.footer .footer-social-icons a:hover {
+    border-bottom: none;
+    background: none;
+}
+
+.footer .footer-social-icons a svg {
+    width: 1rem;
+    height: 1rem;
+}
+
 /* Theme toggle */
 button#theme-toggle {
     color: var(--muted-foreground);

@@ -7,10 +7,6 @@
         <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
         {{- end }}
         {{- print " · "}}
-        <span>
-            <a href="https://vcu.sh" rel="noopener" target="_blank">vcu</a>
-        </span>
-        {{- print " · "}}
     {{- end }}
 
     {{- with site.Params.footer.text }}
@@ -18,16 +14,20 @@
         {{- print " · "}}
     {{- end }}
 
-    {{- range site.Params.socialIcons }}
-    <span>
-        <a href="{{ trim .url " " | safeURL }}" rel="noopener noreferrer me" target="_blank">{{ .name }}</a>
-    </span>
-    {{- print " · "}}
-    {{- end }}
-
     <span>
         <a href="https://github.com/pwittchen/wittchen.io" rel="noopener" target="_blank">open-source</a>
     </span>
+
+    {{- if not .IsHome }}
+    <div class="social-icons footer-social-icons">
+        {{- range site.Params.socialIcons }}
+        <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me"
+            title="{{ (.title | default .name) | title }}" aria-label="{{ .name }}">
+            {{ partial "svg.html" . }}
+        </a>
+        {{- end }}
+    </div>
+    {{- end }}
 </footer>
 {{- end }}
 
