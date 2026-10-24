@@ -7,6 +7,10 @@
         <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
         {{- end }}
         {{- print " · "}}
+        <span>
+            <a href="https://vcu.sh" rel="noopener" target="_blank">vcu</a>
+        </span>
+        {{- print " · "}}
     {{- end }}
 
     {{- with site.Params.footer.text }}
