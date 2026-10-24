@@ -60,6 +60,7 @@ A selection of my free and open-source projects, grouped by area — from AI and
 - https://github.com/pwittchen/ReactiveWiFi | Java, Android | ★ 150+
 - https://github.com/pwittchen/ReactiveSensors | Java, Android | ★ 150+
 - https://github.com/pwittchen/ReactiveBeacons | Java, Android | ★ 150+
+- https://github.com/pwittchen/ReactiveBus | Java | ★ 20+
 - https://github.com/pwittchen/kirai | Java | ★ 70+
 - https://github.com/pwittchen/RxBattery | Kotlin, Android | ★ 60+
 - https://github.com/pwittchen/neurosky-android-sdk | Java, Android | ★ 50+
