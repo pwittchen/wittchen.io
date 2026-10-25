@@ -49,6 +49,10 @@ A selection of my free and open-source projects, grouped by area — from AI and
 - https://github.com/pwittchen/varun.surf (online: https://varun.surf) <img src="/projects/varun.png" alt="varun.surf icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Java, Spring Boot, JS, Docker, Nginx
 - https://github.com/pwittchen/nazarewav.es (online: https://nazarewav.es) <img src="/projects/nazarewaves.png" alt="nazarewav.es icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Typescript, React, Three.js
 
+### Android Apps
+
+- https://github.com/pwittchen/varun.surf/tree/master/android <img src="/projects/varun.png" alt="varun.surf icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Kotlin, Android
+
 ### Android, Java and Kotlin Libraries
 
 - https://github.com/pwittchen/ReactiveNetwork | Java, Android | ★ 2.5k+
