@@ -38,6 +38,7 @@ Hardware
 - Samsung C34H890WJUX Curved monitor
 - Logitech MX Keys Mini Keyboard
 - Logitech MX Master Mouse
+- Apple Magic Trackpad
 - Logitech Webcam C925e 1080p
 - JBL Go 3 speaker
 - Sennheiser HD 599 cable headphones
