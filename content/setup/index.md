@@ -49,6 +49,7 @@ Hardware
 - DJI Mic Mini wireless Microphone - 2 TX, 1 RX
 - LaCie Rugged Mini 1TB USB 3.0 external HDD
 - Samsung T5 Evo 2TB external SSD
+- BQI-03 Blavec Magsafe wireless phone and watch charger
 - Google Pixel 8 phone
 - Samsung Galaxy Watch Ultra
 
