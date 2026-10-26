@@ -98,6 +98,12 @@
     max-width: 34rem;
 }
 
+.hero-bio-row {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
 .hero-bio-details {
     margin: -0.35rem 0 0;
     font-family: var(--font-mono);
@@ -201,19 +207,19 @@
 }
 
 .hero-icons .social-icons a,
-.hero-icons #theme-toggle {
+.hero-bio-row #theme-toggle {
     display: flex;
     padding: 0.3rem;
     border-radius: var(--radius);
     transform: none;
 }
 
-.hero-icons #theme-toggle:hover {
+.hero-bio-row #theme-toggle:hover {
     background: var(--muted);
 }
 
 .hero-icons .social-icons a svg,
-.hero-icons #theme-toggle svg {
+.hero-bio-row #theme-toggle svg {
     width: 1rem;
     height: 1rem;
 }
