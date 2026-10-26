@@ -79,6 +79,9 @@ params:
       url: "https://github.com/pwittchen"
     - name: stackoverflow
       url: "https://stackoverflow.com/users/1150795/piotr-wittchen"
+    - name: googleplaystore
+      title: "Google Play"
+      url: "https://play.google.com/store/apps/dev?id=7269544076898428056"
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
