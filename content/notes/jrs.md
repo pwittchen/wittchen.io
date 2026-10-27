@@ -144,6 +144,6 @@ cargo install --git https://github.com/pwittchen/jrs.git
 
 - website and docs: [getjrs.dev](https://getjrs.dev)
 - source code: [github.com/pwittchen/jrs](https://github.com/pwittchen/jrs)
-- design: [INITIAL_SPEC.md](https://github.com/pwittchen/jrs/blob/master/specs/INITIAL_SPEC.md) and [ARCH.md](https://github.com/pwittchen/jrs/blob/master/ARCH.md)
+- design: [SPEC.md](https://github.com/pwittchen/jrs/blob/master/SPEC.md) and [ARCH.md](https://github.com/pwittchen/jrs/blob/master/ARCH.md)
 
 Released under the Apache 2.0 license.
