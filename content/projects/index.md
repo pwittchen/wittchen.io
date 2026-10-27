@@ -51,7 +51,7 @@ A selection of my free and open-source projects, grouped by area — from AI and
 
 ### Android Apps
 
-- https://github.com/pwittchen/varun.surf/tree/master/android <img src="/projects/varun.png" alt="varun.surf icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Kotlin, Android
+- https://github.com/pwittchen/varun.surf/tree/master/android ([Google Play](https://play.google.com/store/apps/details?id=surf.varun.app)) <img src="/projects/varun.png" alt="varun.surf icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Kotlin, Android
 
 ### Android, Java and Kotlin Libraries
 
