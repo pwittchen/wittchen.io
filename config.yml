@@ -47,9 +47,9 @@ params:
   profileMode:
     enabled: true
     title: "Piotr Wittchen"
-    subtitle: "software engineer | indie dev"
-    bio: "software engineer | indie dev"
-    bioDetails: "Agentic AI, Java, Kotlin, Rust | remote"
+    subtitle: "AI-native Agentic Software Engineer | indie dev"
+    bio: "AI-native Agentic Software Engineer | indie dev"
+    bioDetails: "Java, Kotlin, Rust | remote"
     status: "based in Poland 🇵🇱 · [send email](mailto:piotr@wittchen.io)"
     imageUrl: "/profile/avatar.png"
     imageTitle: "avatar"
