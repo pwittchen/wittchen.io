@@ -75,6 +75,8 @@ params:
       url: "mailto:piotr@wittchen.io"
     - name: linkedin
       url: "https://www.linkedin.com/in/pwittchen/"
+    - name: x
+      url: "https://x.com/piotr_wittchen"
     - name: github
       url: "https://github.com/pwittchen"
     - name: stackoverflow

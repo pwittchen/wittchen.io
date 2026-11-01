@@ -107,7 +107,7 @@
 .hero-bio-details {
     margin: -0.35rem 0 0;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.01em;
     color: var(--muted-foreground);
     max-width: 34rem;
@@ -137,7 +137,7 @@
     gap: 0.25rem 0.6rem;
     margin: 0;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--muted-foreground);
 }
 
@@ -199,7 +199,7 @@
 .hero-icons {
     display: flex;
     align-items: center;
-    margin: 0 -0.3rem;
+    margin: 0 -0.25rem;
 }
 
 .hero-icons .social-icons {
@@ -212,6 +212,10 @@
     padding: 0.3rem;
     border-radius: var(--radius);
     transform: none;
+}
+
+.hero-icons .social-icons a {
+    padding: 0.25rem;
 }
 
 .hero-bio-row #theme-toggle:hover {
@@ -415,8 +419,9 @@
     }
 }
 
-/* Icons wrap to their own line on narrow screens */
-@media (max-width: 520px) {
+/* Below this width the title shrinks and the status line would outgrow it,
+   so the icons wrap to their own line */
+@media (max-width: 913px) {
     .status-sep {
         display: none;
     }
@@ -424,7 +429,9 @@
     .hero-icons {
         flex-basis: 100%;
     }
+}
 
+@media (max-width: 520px) {
     /* Keep all nav links on a single line */
     .hero-nav {
         flex-wrap: nowrap;
