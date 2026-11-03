@@ -84,6 +84,9 @@ params:
     - name: googleplaystore
       title: "Google Play"
       url: "https://play.google.com/store/apps/dev?id=7269544076898428056"
+    - name: producthunt
+      title: "Product Hunt"
+      url: "https://www.producthunt.com/@piotr_wittchen"
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
