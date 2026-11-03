@@ -54,6 +54,23 @@
                 </div>
             </div>
 
+            {{- if (not site.Params.disableThemeToggle) }}
+            <script>
+                // Narrow view: the icons wrap to their own line, so move the
+                // theme toggle to the end of them (breakpoint matches home.css)
+                (() => {
+                    const toggle = document.getElementById('theme-toggle');
+                    const bioRow = document.querySelector('.hero-bio-row');
+                    const icons = document.querySelector('.hero-icons');
+                    if (!toggle || !bioRow || !icons) return;
+                    const narrow = window.matchMedia('(max-width: 959px)');
+                    const place = () => (narrow.matches ? icons : bioRow).appendChild(toggle);
+                    place();
+                    narrow.addEventListener('change', place);
+                })();
+            </script>
+            {{- end }}
+
             <div class="hero-links reveal" style="--i: 2">
                 {{- with .buttons }}
                 <nav class="hero-nav" aria-label="Sections">
