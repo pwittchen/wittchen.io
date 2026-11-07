@@ -12,7 +12,7 @@ Zora is a commercial desktop email app that I’m building as a solo founder, pr
 
 - https://zoramail.app <img src="/projects/zora.png" alt="zora icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
 
-### TBA
+### Undisclosed 😎
 
 I'm working on more commercial projects as a solo founder and indie developer. Once I'm able to show something, I'll put it here.
 
