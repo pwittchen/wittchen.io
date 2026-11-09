@@ -28,7 +28,7 @@ A selection of my free and open-source projects, grouped by area — from AI and
 
 - https://github.com/pwittchen/aictl (project website: https://aictl.app) <img src="/projects/aictl.png" alt="aictl icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
 - https://github.com/pwittchen/kayet (project website: https://getkayet.app) <img src="/projects/kayet.png" alt="kayet icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
-- https://github.com/pwittchen/nox <img src="/projects/nox.png" alt="nox icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
+- https://github.com/pwittchen/nox (project website: https://noxterminal.app)<img src="/projects/nox.png" alt="nox icon" width="24" height="24" style="display:inline-block;vertical-align:middle;margin:0 0 0 6px;border:none;border-radius:0;box-shadow:none;"> | Rust
 
 ### Developer Tools
 
